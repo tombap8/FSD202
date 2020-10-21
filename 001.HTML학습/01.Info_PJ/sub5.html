@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--lang속성은 메인언어 속성(언어별코드가 있음)-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 요약뉴스 - TV/연예</title>
+    <style>
+        div {
+            /*div는 블록요소다*/
+            width: 700px;
+            margin: 0 auto;
+            /*마진: 위아래는 0, 양쪽은 자동(auto)*/
+            /*크기를 가진 블록박스가 중앙에 온다*/
+        }
+
+
+        /*CSS주석*/
+        /*        
+        [css 셋팅법]
+        선택요소명 {
+            속성명 : 값;
+        }
+        */
+    </style>
+</head>
+
+<body>
+
+    <!--1.상단부분-->
+    <div>
+        <!--1-1.큰제목-->
+        <h1>네이버 요약 뉴스 - TV/연예</h1>
+        <!--h1요소는 한문서안에 하나만 사용하도록 하자-->
+
+        <!--1-2.메뉴-->
+        <h2>
+            <a href="index.html">
+                <img src="images/logo.png" alt="네이버로고" style="width:50px; vertical-align: middle;">
+                <!--style 속성 : 모든 요소에 사용가능
+                - 속성명:값;
+                - CSS속성을 변경 셋팅할 수 있다
+                - CSS 인라인 셋팅(코딩)이라고 함-->
+            </a>
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </h2>
+
+        <hr>
+        <!--hr은 수평선(horizontal)-->
+    </div>
+    <!--
+        div 요소 : 내용을 구분하는 블록요소
+        (블록요소란 다른 내용을 옆에 오지 못하게 막아준다. 랩핑했다고 함)
+    -->
+
+
+    <!--2.중앙내용-->
+    <div>
+        <!--2-1.신문사로고-->
+        <a href="http://www.hankyung.com/" target="_blank">
+            <img src="images/alogo5.gif" alt="한국경제로고">
+        </a>
+        <!--2-2.기사제목-->
+        <h2>함소원 "엄마 엄청 늙어나보다"…딸 혜정 폭풍성장에 울컥 [Oh!마이 Baby]</h2>
+
+        <!--2-3.기사사진-->
+        <figure>
+            <!--기사이미지-->
+            <img src="images/apic5.jpg" alt="기사사진">
+            <!--이미지설명-->
+            <figcaption>
+                함소원 인스타그램
+            </figcaption>
+        </figure>
+
+        <p>[OSEN=장우영 기자] 배우 함소원이 딸 혜정 양의 폭풍성장에 울컥했다.</p>
+
+        <p>함소원은 21일 자신의 인스타그램에 “언제 이렇게 컸니? 세월아 비켜라”는 글과 사진을 올렸다.</p>
+
+        <p>사진에는 함소원의 딸 혜정 양의 모습이 담겼다. 이불을 덮고 자고 있는 모습부터, 아빠 진화 품에 안겨 있는 모습 등이 눈길을 끈다.</p>
+
+        <p>함소원은 “혜정이 자란 만큼 엄마는 늙은 거겠지. 그런 엄마 엄청 늙어나보다. 너 이렇게 큰거 보면 엄마 늙어도 행복하네. 혜정이 예쁘게 잘 커줘서”라고 덧붙였다.</p>
+
+
+    </div>
+    <!--3.하단부분-->
+    <div>
+        <hr>
+        <!--구분선-->
+        <!--주소-->
+        <address>
+            서울시 강동구 천호동 동원빌딩 5층
+            <br>
+            <!--br은 개행(break)-->
+            대표: Tom Brace Parker
+            <br>
+            Tel: 02-333-3333
+        </address>
+
+    </div>
+
+</body></html>
