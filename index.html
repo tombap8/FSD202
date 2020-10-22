@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>나의 아카이브 사이트</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        /*전체부모박스*/
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+            /*중앙정렬*/
+            overflow: hidden;
+            /*자식요소가 float
+            될때 높이감지*/
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            /*내부로 패딩,마진생김-크기유지*/
+            padding: 20px;
+        }
+        /*타이틀*/
+        .tit{
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 20px;
+        }
+        /*양쪽박스 공통*/
+        .cont>div{
+            width: 50%;
+            float: left;
+            /*옆으로 흐르게*/
+            box-sizing: border-box;
+            padding: 15px;
+        }
+        /*각박스 타이틀*/
+        .cont>div>h2{
+            text-align: center;
+            padding: 10px;
+            background-color: cornflowerblue;
+            color: #fff;
+        }
+        /*각박스 리스트*/
+        .cont>div>ol{
+            font-size: 24px;
+            line-height: 40px;
+        }
+        /*각박스 a링크*/
+        .cont>div a{
+           color: darkblue;
+            text-decoration: none;
+        }
+        /*링크에 마우스 오버시*/
+        /*:hover 가상클래스*/
+        .cont>div a:hover{
+           color: darkorange;
+            text-decoration: overline;
+        }
+        
+        
+        /*왼쪽박스*/
+        .lb{
+            border-right: 2px dashed #ccc;
+        }
+        
+    </style>
+</head>
+<body>
+  <!--전체 부모박스-->
+   <div class="wrap">
+       <h1 class="tit">
+           <img src="images3/mylogo_07.png" alt="나의 아카이브 사이트">
+       </h1>
+       <!--내용박스-->
+       <div class="cont">
+           <!--왼쪽정보박스-->
+           <div class="lb">
+               <h2>공통 프로젝트</h2>
+               <ol>
+                   <li>
+                       <a href="001.HTML%25ED%2595%2599%25EC%258A%25B5/01.Info_PJ/001.Info_PJ/" target="_blank">네이버요약뉴스</a>
+                   </li>
+               </ol>
+           </div>
+           <!--오른쪽정보박스-->
+           <div class="rb">
+               <h2>개인 프로젝트</h2>
+               <!--<ol>
+                   <li>
+                       <a href="Bulping/" target="_blank">Black Pink</a>
+                   </li>
+                   <li>
+                       <a href="RollingTrip/" target="_blank">Rolling Trip</a>
+                   </li>
+                   <li>
+                       <a href="svgani/" target="_blank">Car Ani</a>
+                   </li>
+                   <li>
+                       <a href="svgani/carAni.html" target="_blank">오늘한 자동차애니</a>
+                   </li>
+               </ol>-->
+           </div>
+           
+       </div>
+   </div>
+   
+    
+</body>
+</html>
