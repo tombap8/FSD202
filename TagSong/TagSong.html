@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 휠 액션</title>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            transition: all .2s;
+        }
+
+        body::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 60%;
+            height: 100%;
+            background-image: linear-gradient(to left, #f09191, #a4a4f4, #79fcab, #fcd68f);
+            animation: rtl 5s linear infinite alternate;
+        }
+
+        .tit {
+            position: relative;
+            text-align: center;
+            animation: bigsmall 2s ease-in-out infinite alternate;
+        }
+
+        #letterBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font: bold 100px 'Hanalei', cursive;
+            text-shadow: 10px 10px 8px #777;
+            animation: updown 5s linear infinite, rot .5s linear infinite alternate;
+        }
+
+        .sideBox {
+            position: absolute;
+            top: 0;
+            width: 30%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .sideBox img {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            text-align: center;
+        }
+        #leftBox img {
+            animation: dancing .4s ease-in infinite alternate;
+        }
+        #rightBox img {
+            animation: dancing .4s ease-in .4s infinite alternate;
+        }
+        
+        
+
+        #leftBox {
+            left: 0;
+        }
+
+        #rightBox {
+            right: 0;
+        }
+
+        @keyframes updown {
+            0% {
+                top: 50%;
+            }
+
+            30% {
+                top: 30%;
+            }
+
+            60% {
+                top: 50%;
+            }
+
+            90% {
+                top: 70%;
+            }
+
+            100% {
+                top: 50%;
+            }
+        }
+
+        @keyframes rot {
+            from {
+                transform: translate(-50%, -50%) rotate(15deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(-15deg);
+            }
+        }
+
+        @keyframes rtl {
+            from {
+                left: 10%;
+            }
+
+            to {
+                left: 30%;
+            }
+        }
+        
+        @keyframes dancing{
+            from {top:0;}
+            to {top:10px;}
+        }
+
+        @keyframes bigsmall{
+            from {transform: scale(1);}
+            to {transform: scale(1.5);}
+        }
+
+        #aubox {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    </style>
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        var colors = ["DarkRed", "DarkMagenta", "DarkGreen", "Crimson", "Indigo", "MediumVioletRed", "SlateBlue", "Tomato", "GoldenRod", "DarkRed"];
+        
+        var tags = ["html", "body", "head", "div", "h1", "h2", "img", "address", "br", "hr", "blockquote","table","tr","td","button","ul","ol","li","cite","p","q","a","b","strong","i","em","small","sub","sup","mark","meta","title","style","bdo","figure","figcaption","ins","del","address","abbr","dl","dt","dd"];
+        
+//        var tags = ["클래스넣기", "classList.add('on')", "클래스빼기", "classList.remove('on')", "클래스토글", "classList.toggle('on')", "높이값알기", "offsetHeight"];
+        
+        var cnt, cntC;
+        $(function() { ////// jQB /////////////////////
+            cnt = tags.length;
+            cntC = colors.length;
+            var num = 0;
+            var inum = 0;
+            var cnum = 0;
+
+            setInterval(function() {
+                $(".tg").html(tags[num])
+                    .css({
+                        color: colors[cnum]
+                    });
+
+                num++;
+                if (num === cnt) num = 0;
+
+                cnum++;
+                if (cnum === cntC) cnum = 0;
+
+                
+                inum++;
+                if (inum === 26) inum = 1;
+
+                $("#leftBox img").eq(inum).show().siblings().hide();
+                $("#rightBox img").eq(inum).show().siblings().hide();
+
+            }, 2200); ///////////// setInterval ///////////
+
+
+            for (var i = 0; i < 25; i++) {
+                $("#leftBox").append('<img src="collection/Cruise_' + (i + 1) + '_1.jpg" alt="fashion">');
+                $("#rightBox").append('<img src="collection/Cruise_' + (i + 1) + '_2.jpg" alt="fashion">');
+            } //////// for /////////////////////////
+            
+            $("#leftBox img").hide().first().show();
+            $("#rightBox img").hide().first().show();
+
+
+
+
+
+        }); ////////// jQB ///////////////////////////
+
+    </script>
+</head>
+
+<body>
+    <h1 class="tit">Tag Song</h1>
+    <h4 class="tit">by Tom^^</h4>
+    <div id="leftBox" class="sideBox"></div>
+    <div id="rightBox" class="sideBox"></div>
+    <div id="letterBox">
+        &lt;<span class="tg"></span>&gt;
+    </div>
+
+
+    <audio src="aud/tagsong2.mp3" loop controls id="aubox"></audio>
+
+</body>
+
+</html>
