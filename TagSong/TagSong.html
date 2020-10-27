@@ -45,6 +45,7 @@
             font: bold 100px 'Hanalei', cursive;
             text-shadow: 10px 10px 8px #777;
             animation: updown 5s linear infinite, rot .5s linear infinite alternate;
+            text-align: center;
         }
 
         .sideBox {
@@ -61,14 +62,16 @@
             height: 100%;
             text-align: center;
         }
+
         #leftBox img {
             animation: dancing .4s ease-in infinite alternate;
         }
+
         #rightBox img {
             animation: dancing .4s ease-in .4s infinite alternate;
         }
-        
-        
+
+
 
         #leftBox {
             left: 0;
@@ -119,15 +122,25 @@
                 left: 30%;
             }
         }
-        
-        @keyframes dancing{
-            from {top:0;}
-            to {top:10px;}
+
+        @keyframes dancing {
+            from {
+                top: 0;
+            }
+
+            to {
+                top: 10px;
+            }
         }
 
-        @keyframes bigsmall{
-            from {transform: scale(1);}
-            to {transform: scale(1.5);}
+        @keyframes bigsmall {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
         }
 
         #aubox {
@@ -143,11 +156,11 @@
     <script src="js/jquery-ui.min.js"></script>
     <script>
         var colors = ["DarkRed", "DarkMagenta", "DarkGreen", "Crimson", "Indigo", "MediumVioletRed", "SlateBlue", "Tomato", "GoldenRod", "DarkRed"];
-        
-        var tags = ["html", "body", "head", "div", "h1", "h2", "img", "address", "br", "hr", "blockquote","table","tr","td","button","ul","ol","li","cite","p","q","a","b","strong","i","em","small","sub","sup","mark","meta","title","style","bdo","figure","figcaption","ins","del","address","abbr","dl","dt","dd"];
-        
-//        var tags = ["클래스넣기", "classList.add('on')", "클래스빼기", "classList.remove('on')", "클래스토글", "classList.toggle('on')", "높이값알기", "offsetHeight"];
-        
+
+        var tags = ["&lt;!doctype html&gt;<br>선언부", "html<br>최상위부모", "head<br>기본정보", "body<br>출력파트", "title<br>탭제목", "meta<br>기본셋팅", "h1~h6<br>머릿글", "a<br>링크", "img<br>이미지", "div<br>구분박스", "p<br>문단", "address<br>주소", "figure<br>이미지박스", "figcation<br>이미지설명", "hr<br>구분선", "br<br>개행", "b<br>볼드", "strong<br>중요함", "i<br>이탤릭", "em<br>강조", "mark<br>표시", "small<br>작은글씨", "del<br>지움표시", "ins<br>삽입표시", "sub<br>아랫첨자", "sup<br>윗첨자", "blockquote<br>블록인용", "q<br>인용", "abbr<br>약어", "cite<br>작품명", "bdo<br>글자역순", "pre<br>그대로 출력", "ul<br>순서없는 리스트", "ol<br>순서있는 리스트", "li<br>리스트항목", "dl<br>정의항 리스트", "dt<br>정의항 용어", "dd<br>정의항 설명"];
+
+        //        var tags = ["클래스넣기", "classList.add('on')", "클래스빼기", "classList.remove('on')", "클래스토글", "classList.toggle('on')", "높이값알기", "offsetHeight"];
+
         var cnt, cntC;
         $(function() { ////// jQB /////////////////////
             cnt = tags.length;
@@ -168,21 +181,21 @@
                 cnum++;
                 if (cnum === cntC) cnum = 0;
 
-                
+
                 inum++;
                 if (inum === 26) inum = 1;
 
                 $("#leftBox img").eq(inum).show().siblings().hide();
                 $("#rightBox img").eq(inum).show().siblings().hide();
 
-            }, 2200); ///////////// setInterval ///////////
+            }, 5000); ///////////// setInterval ///////////
 
 
             for (var i = 0; i < 25; i++) {
                 $("#leftBox").append('<img src="collection/Cruise_' + (i + 1) + '_1.jpg" alt="fashion">');
                 $("#rightBox").append('<img src="collection/Cruise_' + (i + 1) + '_2.jpg" alt="fashion">');
             } //////// for /////////////////////////
-            
+
             $("#leftBox img").hide().first().show();
             $("#rightBox img").hide().first().show();
 
@@ -201,7 +214,7 @@
     <div id="leftBox" class="sideBox"></div>
     <div id="rightBox" class="sideBox"></div>
     <div id="letterBox">
-        &lt;<span class="tg"></span>&gt;
+        <span class="tg"></span>
     </div>
 
 
