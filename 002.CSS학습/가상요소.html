@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 가상요소</title>
+    <style>
+        /*
+            가상요소란?
+            (Pseudo-element:슈도엘러먼트)
+            : 데이터를 담을 수 있는 요소일 경우
+            맨앞과 맨뒤에 이미지나 글자를 넣을 수 있고
+            또한 첫글자나 첫째줄의 디자인을 마치
+            요소를 넣은 것 처럼 디자인을 변경할 수 있는
+            CSS 요소추가 방법이다.
+            실제로 태그(요소)를 넣지 않고도 넣은것 처럼
+            쓰기때문에 "가상요소"라고 부르는 것이다~!
+        
+        1. ::before -> 콜론을 두개겹쳐쓰고 before라고 쓰면
+        요소의 맨앞에 무엇인가가 추가된다!
+        2. ::after -> 요소의 맨뒤에 무엇인가가 추가된다!
+        -> 필수 속성 
+            content : 문자 / url(이미지경로)
+        -> 이것을 셋팅하는 순간 맨앞/맨뒤에 span태그를 넣은
+        것처럼 생각하면 된다!(이미지경로를 넣으면 이미지태그)
+        
+        */
+
+        /*맨앞추가 가상요소::before*/
+        h2::before {
+            content: url(imgs/blogo.png);
+            /*이미지를 직접불러오면 크기설정안됨!*/
+            margin-right: 20px;
+            /*마진적용됨!*/
+            /*인라인요소의 오른쪽 인라인요소의 세로위치설정*/
+            vertical-align: middle;
+            /*
+                사용값: top/bottom/middle/px값
+            */
+        }
+
+        /*맨뒤추가 가상요소::after*/
+        h2::after {
+            content: "";
+            /*빈값을 쓰면 빈span태그 쓴것 같아요*/
+            /*크기디자인 변경위해 display변경!*/
+            display: inline-block;
+            /*inline-block은 크기적용되고 한줄에 나옴!*/
+            width: 50px;
+            height: 25px;
+            /*배경넣기*/
+            /*            background-color: yellow;*/
+            background-image: url(imgs/blogo.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            /*위치변경*/
+            margin-left: 10px;/*왼쪽바깥여백*/
+            vertical-align: -6px;/*인라인요소 세로위치*/
+        }
+
+
+        dl {
+            font-size: 24px;
+            margin-left: 50px;
+        }
+        
+        dt::before{
+            content: "♣";
+            color: blue;
+            vertical-align: 3px;
+        }
+        
+        dd::before{
+            content: "♥";
+            color: red;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS 가상요소</h1>
+
+    <h2>[ 드라마 "도깨비" 제작발표회 ]</h2>
+    <dl>
+        <dt>등장인물</dt>
+        <dd>김신</dd>
+        <dd>저승사자</dd>
+        <dd>지은탁</dd>
+        <dd>써니</dd>
+        <dd>유덕화</dd>
+
+        <dt>출연배우</dt>
+        <dd>공유</dd>
+        <dd>이동욱</dd>
+        <dd>김고은</dd>
+        <dd>유인나</dd>
+        <dd>육성재</dd>
+
+        <dt>OST 아티스트</dt>
+        <dd>헤이즈</dd>
+        <dd>마마무</dd>
+        <dd>찬열,펀치</dd>
+
+    </dl>
+
+
+
+
+</body></html>

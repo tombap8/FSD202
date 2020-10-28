@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>visibility and display</title>
+<style>
+	div{width:200px; border:1px solid red;}
+	#dis button:first-of-type{
+		display: none;
+		transition: all 0.5s;
+	}	
+	#dis:hover button:first-of-type{
+		display: inline;
+	}	
+	#vis button:first-of-type{
+		visibility: hidden;
+		transition: all 0.5s;
+	}
+	#vis:hover button:first-of-type{
+		visibility: visible;
+	}
+	#opa button:first-of-type{
+		opacity: 0;
+		transition: all 0.5s;
+	}
+	#opa:hover button:first-of-type{
+		opacity: 1;
+	}
+/*
+	
+	display:none 과 visibility:hidden 은 둘다 요소를 안보이게 해준다.
+	차이점은 display:none은 요소 자체가 사라지게 하고
+	visibility:hidden은 요소의 투명도만 0으로 하여 안보일때도 요소의 크기를 점유한다.
+	흡사 opacity를 0으로 조절한 것과 비슷한 효과를 나타낸다.
+	그러나 transition 애니메이션 효과가 제대로 적용되는 것은 opacity뿐임을 명심!!
+	(visibility는 transition의 영향을 약간 받지만 의도대로 되는것은 아니다.)
+	이것이 팩트다!
+	
+*/
+</style>
+</head>
+
+<body>
+<div id="dis">
+  display:none 속성 사용 : <br>
+<button>나는버튼1</button> <button>나는버튼2</button><br>
+
+</div>
+<div id="vis">
+	visibility:hidden 속성 사용 : <br>
+<button>나는버튼3</button> <button>나는버튼4</button><br>
+
+</div>
+<div id="opa">
+	opacity:0 속성 사용 : <br>
+<button>나는버튼5</button> <button>나는버튼6</button>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인라인 요소의 정렬</title>
+    <style>
+        h1,h2{
+            text-align: center;
+        }
+        /*박스공통*/
+        .bx{
+            border: 5px dotted #3d4ecc;
+            width: 600px;
+            margin: 50px auto;/*블록박스 중앙*/
+            padding: 5px;
+        }
+        /*첫번째박스*/
+        .bx1{
+            text-align: center;
+        }
+        /*두번째박스*/
+        .bx2{
+            text-align: right;
+        }
+        /*세번째박스*/
+        .bx3{
+            text-align: center;
+            width: 300px;/*기존값을 덮어씀!*/
+        }
+        /*네번째박스*/
+        .bx4{
+            width: 400px;
+            height: 400px;
+            /*자식인라인요소 가로중앙*/
+            text-align: center;
+            /*자식인라인요소 세로중앙*/
+            line-height: 400px;
+            /*
+                줄간격으로 세로중앙 정렬함
+                박스의 높이값 만큼 써줌
+                단, 한줄짜리 인라인 요소를 처리할때 사용!
+            */
+        }
+        
+        /*인라인요소간 간격밀기 - 마진밀기*/
+        .bx6 i{
+            margin-left: 100px;
+            margin-right: 150px;
+        }
+        .bx6 strong{
+            margin-left: 50px;
+            margin-right: 100px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+ <h1>인라인 요소의 정렬</h1>
+  <!--클래스는 여러개 줄 수 있다(띄어쓰기!!!)-->
+  <h2>박스안의 글자정렬 - 중앙정렬</h2>
+   <div class="bx bx1">
+       나는 누구인가?
+   </div>
+   
+   <h2>박스안의 b태그 - 오른쪽정렬</h2>
+   <div class="bx bx2">
+       <b>나는 김수현이다!</b>
+   </div>
+   
+   <h2>박스안의 img태그 - 중앙정렬</h2>
+   <div class="bx bx3">
+       <img src="imgs/blogo.png" alt="로고">
+   </div>
+   
+   <h2>박스안의 글자가 박스의 정중앙에 오기</h2>
+   <div class="bx bx4">
+       나는 김수현이 좋다!
+   </div>
+   
+   <h2>박스안의 img태그가 박스의 정중앙에 오기</h2>
+   <div class="bx bx4">
+       <img src="imgs/blogo.png" alt="로고">
+   </div>
+   
+   <h2>인라인 요소간 간격밀기</h2>
+   <div class="bx bx6">
+       <i>봄</i><em>여름</em>
+       <strong>가을</strong><span>겨울</span>
+   </div>
+   
+   
+   
+   
+    
+</body>
+</html>
