@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 가상 클래스</title>
+    <style>
+        /*큰제목, 시제목*/
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        /*작자명*/
+        h3 {
+            width: 800px;
+            margin: 0 auto;
+            text-align: right;
+        }
+        
+        /*첫번째 파트*/
+        ul.part1{
+            margin: 0 auto;
+            padding: 20px;
+            width: 800px;
+            /*테두리*/
+            border: 1px solid #ccc;
+            /*둥근모서리*/
+            border-radius: 10px;
+            /*블릿없애기*/
+            list-style: none;
+            /*글자중앙*/
+            text-align: center;
+        }
+        /*
+        [ 가상클래스란? ]
+        - Pseudo-class 슈도클래스 라고도 함
+        - 마치 클래스를 별도로 준것처럼 선택하여 디자인을 변경할 수 있다
+        
+        1. 자식선택 가상클래스
+        - 조건: 한부모 아래 같은 종류의 태그로 구성되어야함!
+        예) ul>li  이와 같이 ul아래의 li로만 구성된 경우
+            div> div 같은 종류의 직계자식으로만 구성
+        
+        - 선택방법
+        :first-child 첫번째 요소
+        :last-child 마지막 요소
+        :nth-child(n) n번째 요소(n은 1부터)
+        
+        
+        
+        [ CSS 선택자 우선순위 ]
+        - 기본적으로 같은 선택자일 경우 아래쪽 코딩한 것이
+        기존값을 덮어쓴다
+        - 코딩 순서에 상관없이 아래의 순서로 우선권가진다
+        1. 인라인코딩 : 요소 내부에 속성으로 style=""
+        2. 아이디요소 : #아이디명
+        3. 클래스요소 : .클래스명 + 가상클래스
+        4. 타입요소 : 일반 태그명
+        
+        -> 같은 클래스일 경우 다른 선택자가 더 추가되면 우선순위가 올라간다! 
+        
+        예) li:nth-child(3){코딩}
+        li:nth-child(3)~li{코딩} 위의 선택자보다 한단계 더 선택했으므로 우선순위 상위다!
+        
+        [ -> 적용 최우선 적용방법 ]
+        1. 위의 우선순위를 봐서 부모요소를 써주면 
+          기존 선택자보다 우선한다.(이 방법 추천!!!)
+        예) .my span {코드}
+        #you .my span {코드} 위의 클래스만 쓴것 보다 더 우선된다!
+        -> 호가호위! 호랑이 앞에 여우!
+        
+        2. 강제 순위 올리기 : 셋팅값 뒤에 띄어쓰고 !important
+        -> 주의사항: 인라인보다 더 강하므로 JS코딩시 이런셋팅이 있으면
+        걸림이 되기도 한다. 따라서 최대한 쓰지 말자!!!
+        
+       */ 
+        
+        /*1번 li*/
+        ul.part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
+        /*2번 li*/
+        ul.part1 li:nth-child(2){
+            font-size: 30px;
+            font-family: "굴림";
+            color: blueviolet;
+            font-weight: bold;
+        }
+        /*3번 li*/
+        ul.part1 li:nth-child(3){
+            font-size: 24px;
+            font-family: "돋움";
+            color: brown;
+            font-weight: bold;
+            font-style: italic;
+        }
+        /*4번 li*/
+        ul.part1 li:nth-child(4){
+            font-size: 50px;
+            font-family: "궁서";
+            color: dodgerblue;
+        }
+        /*4번 이후 li 전부셋팅*/
+        ul.part1 li:nth-child(4)~li{
+            font-size: 25px;
+            font-family: "궁서";
+            color: #4d5bff;
+        }
+        
+        /*마지막 li*/
+        body ul.part1 li:last-child{
+            font-size: 40px;
+            font-family: "맑은 고딕";
+            color: coral;
+        }
+        
+        /*4번째 li에 b태그 숨기기*/
+        ul.part1 li:nth-child(4) b{
+            display: none;
+        }
+        
+        /*클래스가 part1인 ul의 li 자식 중 4번째에 
+        마우스 오버시 자기자신의 배경색을 노란색으로 변경함 */
+        ul.part1 li:nth-child(4):hover{
+            background-color: yellow;
+        }
+        /*클래스가 part1인 ul의 li 자식 중 4번째에
+        마우스 오버시 그 아래 자식 중 b요소의 display를 보이게함*/
+        ul.part1 li:nth-child(4):hover b{
+            display: inline;
+        }
+        /*클래스가 part1인 ul의 li 자식 중 4번째에
+        마우스 오버시 그 아래 자식 중 span요소의 display를 숨김*/
+        ul.part1 li:nth-child(4):hover span{
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <h1>CSS 가상 클래스</h1>
+
+    <h2>진달래꽃</h2>
+    <h3>김소월</h3>
+
+    <ul class="part1">
+        <li>나보기가 역겨워</li>
+        <li>가실ᄯᅢ에는</li>
+        <li>말업시 고히 보내드리우리다</li>
+
+        <li><span>寧邊</span><b>영변</b>에
+            <span>藥山</span><b>약산</b></li>
+        <li>진달내ᄭᅩᆺ</li>
+        <li>아름ᄯᅡ다 가실길에 ᄲᅮ리우리다</li>
+
+        <li>가시는거름거름</li>
+        <li>노힌그ᄭᅩᆺ츨</li>
+        <li>삽분히즈려밟고 가시옵소서</li>
+
+        <li>나보기가 역겨워</li>
+        <li>가실ᄯᅢ에는</li>
+        <li>죽어도아니 눈물흘니우리다</li>
+
+    </ul>
+
+    <div class="part2">
+        <div>나 보기가 역겨워</div>
+        <em>가실 때에는</em>
+        <div>말없이 고이 보내 드리우리다</div>
+
+        <em>영변에 약산</em>
+        <div>진달래꽃</div>
+        <i>아름 따다 가실 길에 뿌리우리다</i>
+
+        <div>가시는 걸음 걸음</div>
+        <i>놓인 그 꽃을</i>
+        <div>사뿐히 즈려밟고 가시옵소서</div>
+
+        <i>나 보기가 역겨워</i>
+        <div>가실 때에는</div>
+        <span>죽어도 아니 눈물 흘리우리다</span>
+
+    </div>
+
+
+
+
+</body></html>
