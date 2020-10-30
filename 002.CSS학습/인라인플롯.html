@@ -5,11 +5,12 @@
     <title>CSS 인라인 요소의 float</title>
     <style>
         /*타이틀*/
-        h1{
+        h1 {
             text-align: center;
         }
+
         /*박스공통*/
-        .bx{
+        .bx {
             width: 800px;
             max-width: 100%;
             margin: 0 auto;
@@ -18,28 +19,32 @@
             border-radius: 20px;
             padding: 15px;
             margin-bottom: 50px;
-            
+
             /*글자셋팅*/
             font-size: 18px;
             /*줄간격*/
             line-height: 28px;
         }
+
         /*캐릭터 이미지*/
-        .bx img{
+        .bx img {
             width: 50%;
             margin: 15px;
         }
+
         /*이미지 float셋팅 class*/
-        .fll{
+        .fll {
             float: left;
             /*나는 왼쪽에 글은 오른쪽으로 올라와!*/
         }
-        .flr{
+
+        .flr {
             float: right;
             /*나는 오른쪽에 글은 왼쪽에 올라와!*/
         }
+
         /*float 해재 clear 설정 class*/
-        .newln{
+        .newln {
             clear: both;
             /*
                 float: left 는 
@@ -52,11 +57,11 @@
                 clear: both 
             */
         }
-        
-        
-        
+
+
+
         /*가상요소로 첫째줄 디자인변경*/
-        .bx::first-line{
+        .bx::first-line {
             font-size: 30px;
             font-weight: bold;
             font-family: "궁서";
@@ -64,13 +69,32 @@
             letter-spacing: -1px;
             /*줄간격*/
             line-height: 100px;
+            /*중앙정렬*/
+            text-align: center;
+        }
+
+        /*첫번째 .bx의 글자색변경*/
+        /* 가상클래스 -of-type을 쓴 이유는 같은 형제요소가 같은 종류만 있지 않기때문에 사용(h1이 있음!)*/
+        .bx:first-of-type::first-line {
+            color: #1052d0;
+        }
+
+        /*두번째 .bx의 글자색변경*/
+        .bx:nth-of-type(2)::first-line {
+            color: #d010ba;
+        }
+        
+        /*세번째 .bx의 글자색변경*/
+        .bx:nth-of-type(3)::first-line {
+            color: #d09c10;
+        }
+        
+        /*네번째 .bx의 글자색변경*/
+        .bx:last-of-type::first-line {
+            color: #d01710;
         }
         
         
-                
-        
-
-
     </style>
 </head>
 

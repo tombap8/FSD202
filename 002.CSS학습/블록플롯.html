@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 블록요소의 float</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        /*부모박스*/
+        .wrap{
+            border: 5px dashed #ff01bb;
+            margin: 10px;
+            padding: 10px;
+            
+            /*
+            [자식요소의 float에 의한 자동높이 상실 해결법]
+                1. 부모에 overflow: hidden 설정
+                    - 자식요소가 바깥으로 나가서 보여야할 경우 한계!
+                2. 높이값을 강제로 설정
+                3. 부모요소의 맨 마지막 자식요소를 만들어서 
+                    clear:both 로 해제하기
+                -> 클래스를 만들고 가상요소를 맨마지막에 설정하여
+                    해제 셋팅을 한다!
+            */
+        }
+        
+        /*float해제 class*/
+        /*이 클래스만 float자식을 가진 부모에게 주면 해결!!!*/
+        .clb::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        
+
+        /*블록박스 공통 디자인*/
+        .bx{
+            width: 300px;
+            height: 200px;
+            border: 5px ridge #ccb2ff;
+            /*배경셋팅*/
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            /*블록박스 옆으로 흐르게*/
+            float: left;/*나는 왼쪽 너는 오른쪽에와!*/
+        }
+        .bx1{
+            background-image: url(imgs/dc1.png);
+        }
+        .bx2{
+            background-image: url(imgs/dc2.png);
+        }
+        .bx3{
+            background-image: url(imgs/dc3.png);
+        }
+        .bx4{
+            background-image: url(imgs/dc4.png);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS 블록요소의 float</h1>
+
+    <div class="wrap clb">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+
+    <div class="wrap clb">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+    
+    <div class="wrap clb">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+
+
+    <!--
+       [젠코딩]
+       .bx.bx$*4
+       클래스가 2개인데 뒤에 $는 만들어진 개수만큼 
+       번호가 증가함
+   -->
+
+
+
+
+</body></html>

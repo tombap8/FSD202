@@ -9,6 +9,26 @@
         h2 {
             text-align: center;
         }
+        
+        /*시제목 링크셋팅*/
+        h2 a{
+            color: #0fc400;
+            /*:link보다 일반적인 a요소에 셋팅함*/
+            text-decoration: none;
+        }
+
+        h2 a:hover{
+            color: hotpink;
+            text-decoration: underline;
+        }
+        /*
+        보통  :active, :visited는 잘 셋팅하지 않는다
+        h2 a:active{
+            color: #00ffc4;
+        }
+        h2 a:visited{
+            color: #d86c00;
+        }*/
 
         /*작자명*/
         h3 {
@@ -46,6 +66,34 @@
         :last-child 마지막 요소
         :nth-child(n) n번째 요소(n은 1부터)
         
+        ********************************
+        
+        2. 종류가 다른 자식선택 가상클래스
+        - 한 가지가 아닌 여러 종류의 자식요소로 구성된 경우
+        자식요소를 선택하는 방법
+        
+        - 선택방법
+        :first-of-type 같은 타입(요소) 중 첫번째 선택
+        :last-of-type 같은 타입 중 마지막째 선택
+        :nth-of-type(n) 같은 타입 중 n번째 선택
+        
+        ***********************************
+        
+        3. 마우스 오버시 요소 변경 가상클래스
+        - 마우스가 요소에 오버되면 자기자신 또는 자손요소를 디자인 변경할 수 있다
+        - 선택방법
+        :hover
+        
+        **************************************
+        
+        4. a요소 관련 가상클래스
+        - :hover 오버시
+        - :link 링크설정
+        - :visited 방문 후 설정
+        - :active 마우스를 누르고 있는상태
+        
+        
+        
         
         
         [ CSS 선택자 우선순위 ]
@@ -73,7 +121,7 @@
         -> 주의사항: 인라인보다 더 강하므로 JS코딩시 이런셋팅이 있으면
         걸림이 되기도 한다. 따라서 최대한 쓰지 말자!!!
         
-       */ 
+        */
         
         /*1번 li*/
         ul.part1 li:first-child{
@@ -81,6 +129,12 @@
             font-family: "궁서";
             color: red;
         }
+        /*1번 li에 마우스 오버시 글자 크게하기*/
+        ul.part1 li:first-child:hover{
+            font-size: 50px;
+        }
+        
+        
         /*2번 li*/
         ul.part1 li:nth-child(2){
             font-size: 30px;
@@ -138,13 +192,62 @@
         }
         
         
+        /*두번째 파트*/
+        div.part2{
+            margin: 50px auto;
+            padding: 20px;
+            width: 800px;
+            /*테두리*/
+            border: 1px solid #ccc;
+            /*둥근모서리*/
+            border-radius: 10px;
+            /*글자중앙*/
+            text-align: center;
+        }
+        
+        /*두번째 파트 첫번째 div*/
+        div.part2 div:first-of-type{
+            font-size: 30px;
+            font-family: "궁서";
+            color: blueviolet;
+        }
+        
+        /*두번째 파트 두번째 div*/
+        div.part2 div:nth-of-type(2){
+            font-size: 25px;
+            font-family: "굴림";
+            color: mediumvioletred;
+        }
+        /*두번째 파트 마지막번째 div*/
+        div.part2 div:last-of-type{
+            font-size: 35px;
+            font-family: "돋움";
+            color: dodgerblue;
+            font-style: italic;
+        }
+        
+        /*두번째 파트 첫번째 i*/
+        div.part2 i:first-of-type{
+            font-size: 20px;
+            font-weight: bold;
+            color: palevioletred;
+        }
+        
+        /*두번째 파트 첫번째 i 이후의 i요소 모두 변경하기*/
+/*        div.part2 i:first-of-type~span{ 다른요소를 쓸수있음!*/
+        div.part2 i:first-of-type~i{
+            color: red;
+            font-family: "궁서";
+        }
+        
+        
     </style>
 </head>
 
 <body>
     <h1>CSS 가상 클래스</h1>
 
-    <h2>진달래꽃</h2>
+    <h2><a href="">진달래꽃</a></h2>
     <h3>김소월</h3>
 
     <ul class="part1">

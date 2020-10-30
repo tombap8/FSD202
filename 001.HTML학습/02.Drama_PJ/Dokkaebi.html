@@ -192,6 +192,7 @@
         /*캐릭터 전체박스*/
         #cont {
             width: 90%;
+            min-height: 400px;
             margin: 0 auto;
             /*
                 block 박스일 경우 양쪽마진을 auto로
@@ -257,16 +258,155 @@
             width: 100%;
             /*가로크기가 싸고 있는 박스를 100%채운다*/
         }
-        
+
+        /*캐릭터 이름박스*/
+        .cnm {
+            text-align: center;
+            margin-top: -64px;
+            /*마진탑값을 마이너스로 쓰면 반대방향으로 올라감*/
+        }
+
+        /*첫번째 자식 (진한 이미지)숨기기*/
+        .cnm img:first-child {
+            display: none;
+        }
+
+        /*캐릭터 개별박스에 마우스 오버시 캐릭터 이름 변경하기*/
+        /*진한이미지 보이기*/
+        #cont>div:hover .cnm img:first-child {
+            display: inline;
+        }
+
+        /*흐린이미지 숨기기*/
+        #cont>div:hover .cnm img:last-child {
+            display: none;
+        }
+
         /*캐릭터 설명박스*/
-        .dbox{
-           background: url(imgs/eachBG.jpg) no-repeat 0/100% 100%;
+        .dbox {
+            /*글자공통 설정*/
+            /*한번에 폰트셋팅
+            font:스두크/줄체*/
+            /*font: italic bold 24px/30px "궁서";*/
+
+            /*1.글자스타일
+            normal/italic/oblique*/
+            /*font-style: italic;*/
+
+            /*2.글자두께
+            보통 두꺼운 체는 bold
+            older/lighter/200~900
+            글자체가 지원해야 여러옵션사용가능*/
+            /*font-weight: bold;*/
+
+            /*3.글자크기
+            단위: px,pt,em,% 등
+            글자최소크기는 9px임*/
+            font-size: 11px;
+
+            /*4.줄간격
+            단위: px,pt,em,% 등*/
+            line-height: 18px;
+
+            /*5.글자체- 여러개를 셋팅하는 이유는 첫번째 글자체가 없을을 뒤의 글자체 순번으로 출력됨
+            - 브라우저에 웹폰트를 출력할 수 있다!*/
+            font-family: "맑은 고딕", "굴림";
+
+            /*
+                참고로 영어글자일 경우
+                소문자를 작은 대문자로 바꿔 출력하는
+                속성이 있다!
+                font-variant: small-caps;
+            */
+
+            background: url(imgs/eachBG.jpg) no-repeat 0/100% 100%;
+
+            /*위쪽마진*/
+            margin-top: 20px;
+            /*안쪽여백*/
+            /*padding: 15px;*/
+            /*.dbox를 숨기려면 높이값을 0으로 하고 
+            넘치는 자식요소 숨기기를 해야하는데 이때
+            패딩이 있으면 패딩만큼 숨길 수 없다;;;;
+                패딩을 빼주자!
+            대신 패딩을 h3와 p태그에 넣어주자!
+            */
+            
+            /*내용숨기기*/
+            /*1.높이값 0*/
+            height: 0;
+            /*2.넘치는자식요소 숨기기*/
+            overflow: hidden;
+            
+            /*트랜지션 설정하기(속시이지)*/
+            transition: height .6s ease-in-out;
+            
         }
         
+        /*캐릭터 개별박스에 마우스 오버시
+        .dbox 높이값 생성하기*/
+        #cont>div:hover .dbox{
+            height: 500px;
+        }
         
+        /*
+            [ css 변화상태를 애니메이션 하기 ]
+            CSS 트랜지션(transition)
+            - css 설정을 변경할 경우 중간 변화과정을
+            애니메이션으로 처리하는 CSS 표현기법
+            
+            - 사용법:
+            transition : 속 시 이 지;
+                        (속성값 시간 이징 지연시간)
+        
+            1. 속성값 - 변화과정으로 보여줄 속성값 지정
+            예) height, width, margin 등...
+            만약 아무값도 안 쓰면  all을 쓴 것과 같다
+            - 모든 변화과정은 all로 표기한다!
+        
+            2. 시간 - 변화시간 (단위: 초단위로 끝에 s표기)
+            예) 3s, 7s, 0.5s, .4s 등
+        
+            3. 이징 (easing) - 애니메이션 가속도
+            예) ease-in, ease-out, ease-in-out, linear
+                처음에 느리게, 나중에 느리게, 처음과 나중에 느리게, 등속도
+            
+            4. 지연시간 - 시간과 표기법은 같고 처음에 지연되는 시간을 셋팅
+            예) 3s, .6s 등
+        
+            [ 통합표기법 예시 ]
+            transition: all .5s ease-in-out 1s;
+            - 모든 변화과정을 0.5초동안 처음과 나중에 천천히 동작하며 1초뒤에 시작해라!(all생략 가능)
+        
+            transition: height .4s ease-out;
+            - 높이값 변경일 경우 0.4초동안 변화과정을 나중에 천천히 가속도로 보여줄것
+        
+            [ 트랜지션이 안되는 속성 ]
+            1. display: none -> display 보이게
+            2. z-index
+            3. 어떤요소의 속성값에 auto로 표기하면 적용안됨!
+            (값이 구체적이어야 함!!!)
+        
+            [ 트랜지션은 어디에 코딩하나? ]
+            - 적용할 대상 원본에 쓰면 예컨데 hover설정된 경우
+            양방향이 동일하게 적용됨!
+        
+        */
+        
+        
+       
+        /*h3와 p에 패딩넣기*/
+        .dbox h3, .dbox p{
+            padding: 5px 15px;
+        }
+
+
+
+
 
         /*float해제 class*/
-        .clb {
+        .clb::after {
+            content: "";
             display: block;
             clear: both;
             /*
@@ -287,6 +427,67 @@
             padding: 15px;
         }
 
+        /*하단링크*/
+        #info h4 {
+            text-align: center;
+        }
+
+        #info h4 a {
+            font-size: 14px;
+            color: #222;
+            text-decoration: none;
+            /*밑줄없앰*/
+            margin: 0 5px;
+            /*양쪽마진*/
+        }
+
+        /*마우스오버시*/
+        #info h4 a:hover {
+            color: #f00;
+            text-decoration: underline;
+        }
+
+        /*주소셋팅*/
+        #info address {
+            width: 90%;
+            border: 2px solid #ccc;
+            padding: 15px;
+            /*글자스타일 - 평범하게*/
+            font-style: normal;
+            /*글자크기*/
+            font-size: 12px;
+            /*자간*/
+            letter-spacing: -1px;
+            /*단어간격*/
+            word-spacing: 2px;
+            /*줄간격*/
+            line-height: 18px;
+            /*박스가로 중앙 - block요소만 적용됨!*/
+            margin: 0 auto;
+            /*마영오*/
+        }
+        
+        /*하단로고박스*/
+        #blogo{
+            width: 74px;
+            height: 36px;
+            /*outline: 1px solid red;*/
+            margin: 0 auto;/*마영오*/
+            margin-top: 10px;
+        }
+        /*하단링크 글자 숨기기*/
+        #blogo span{
+            display: none;
+        }
+        /*하단 a요소*/
+        #blogo a{
+            display: block;
+            /*크기적용위해 block변경*/
+            width: 100%;
+            height: 100%;
+            background-image: url(imgs/blogo.png);
+        }
+
     </style>
 
 </head>
@@ -297,13 +498,13 @@
         <img src="imgs/bg_logo_a_01.png" alt="쓸쓸하고 찬란하신(神) 도깨비">
     </h1>
     <!--2.컨텐츠-->
-    <div id="cont">
+    <div id="cont" class="clb">
         <!--공유캐릭터-->
         <div>
             <!--2-1.캐릭터이미지-->
             <img src="imgs/dc1.png" alt="김신이미지">
             <!--2-2.캐릭터이름-->
-            <div>
+            <div class="cnm">
                 <img src="imgs/d01.png" alt="진한김신이름">
                 <img src="imgs/d011.png" alt="흐린김신이름">
             </div>
@@ -325,7 +526,7 @@
             <!--2-1.캐릭터이미지-->
             <img src="imgs/dc2.png" alt="지은탁이미지">
             <!--2-2.캐릭터이름-->
-            <div>
+            <div class="cnm">
                 <img src="imgs/d02.png" alt="진한지은탁이름">
                 <img src="imgs/d022.png" alt="흐린지은탁이름">
             </div>
@@ -344,7 +545,7 @@
             <!--2-1.캐릭터이미지-->
             <img src="imgs/dc3.png" alt="저승사자이미지">
             <!--2-2.캐릭터이름-->
-            <div>
+            <div class="cnm">
                 <img src="imgs/d03.png" alt="진한저승사자글자">
                 <img src="imgs/d033.png" alt="흐린저승사자글자">
             </div>
@@ -365,7 +566,7 @@
             <!--2-1.캐릭터이미지-->
             <img src="imgs/dc4.png" alt="써니이미지">
             <!--2-2.캐릭터이름-->
-            <div>
+            <div class="cnm">
                 <img src="imgs/d04.png" alt="진한써니이름">
                 <img src="imgs/d044.png" alt="흐린써니이름">
             </div>
@@ -379,7 +580,6 @@
             </div>
         </div>
 
-        <span class="clb"></span>
     </div>
     <!--3.하단정보-->
     <div id="info">
@@ -397,8 +597,10 @@
             CJ ENM
         </address>
         <!--3-3.회사로고-->
-        <div>
-            <a href="http://www.cjenm.com">CJ ENM</a>
+        <div id="blogo">
+            <a href="http://www.cjenm.com" target="_blank">
+                <span>CJ ENM</span>
+            </a>
         </div>
     </div>
 
