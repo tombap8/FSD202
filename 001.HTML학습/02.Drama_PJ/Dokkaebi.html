@@ -192,14 +192,21 @@
         /*캐릭터 전체박스*/
         #cont {
             width: 90%;
-            margin: 0 auto;
+            min-height: 700px;
+            /*
+                height값을 주면 자식요소가 늘어나도 높이을 유지함!
+                최소 높이를 가지고 있다가 내용이 늘어나면 같이
+                늘어나게 하고 싶을때 이것을 사용해라!
+                min-height !!!
+            */
+            margin: 100px auto;
             /*
                 block 박스일 경우 양쪽마진을 auto로
                 셋팅하면 가로방향 중앙에 위치한다.
                 (주의사항: width값이 auto이거나 100%이면 중앙에 올 수 없다. 당연하지!)
             */
 
-            outline: 5px solid lime;
+/*            outline: 5px solid lime;*/
             /*
                 outline: 두종색; (두께 종류 색상)
                 outline은 박스요소 바깥쪽에 
@@ -256,6 +263,12 @@
         #cont>div>img {
             width: 100%;
             /*가로크기가 싸고 있는 박스를 100%채운다*/
+            /*트랜지션주기*/
+            transition: margin-top .6s ease-in-out;
+        }
+        /*캐릭터박스에 마우스 오버시 마진탑으로 위로 이동하기*/
+        #cont>div:hover>img{
+            margin-top: -100px;
         }
 
         /*캐릭터 이름박스*/
@@ -332,20 +345,35 @@
             */
             
             /*내용숨기기*/
-            /*1.높이값 0*/
-            height: 0;
+            /*1.최대높이값 0, height:0과 효과동일*/
+            max-height: 0;
             /*2.넘치는자식요소 숨기기*/
             overflow: hidden;
             
             /*트랜지션 설정하기(속시이지)*/
-            transition: height .6s ease-in-out;
+            transition: max-height 2s ease-in-out;
             
         }
         
         /*캐릭터 개별박스에 마우스 오버시
         .dbox 높이값 생성하기*/
         #cont>div:hover .dbox{
-            height: 500px;
+            max-height: 3000px;
+            /*컨텐츠보다 큰 값으로 적당히 최대높이를 준다.
+            그러면 컨텐츠만큼의 작은 높이값 자동 설정된다!*/
+            /*
+                height값으로 변화설정을 할 경우 단점!
+                - 내용이 더 많아지면 안보임!
+                - 내용이 적을때는 남는 공간이 많아짐!
+            
+                max-height 값으로 이것을 극복한다!
+                - 최대높이값을 설정하면 내용이 이 값보다 커지면
+                    이 설정값을 넘지 못하게 높이값이 설정됨
+                - 반대로 최대높이값 보다 내용이 적으면 적은 값으로 설정됨 (이것을 이용하여 설정해보자!!!)
+            
+            */
+            
+            
         }
         
         /*

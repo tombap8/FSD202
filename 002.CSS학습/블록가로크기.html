@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록 요소 가로크기 설정</title>
+    <style>
+        .bx{
+            border: 5px dashed blue;
+            padding: 15px;
+            margin: 15px;
+            /*글자설정 한번에 주기(font:스두크/줄체)*/
+            font: bold 24px "맑은 고딕","굴림";
+            text-align: center;/*인라인요소 박스 중앙*/
+        }
+        /*가로600px*/
+        .bx1{
+            width: 600px;
+        }
+        /*최대가로1000px*/
+        .bx2{
+            max-width: 1000px;
+        }
+        /*최소가로700px*/
+        .bx3{
+            min-width: 700px;
+        }
+        /*최대1200px,최소800px*/
+        .bx4{
+            max-width: 1200px;
+            min-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bx bx1">
+        가로크기 600px <br> (width:600px)
+    </div>
+    <div class="bx bx2">
+        최대가로크기 1000px <br> (max-width:1000px)
+    </div>
+    <div class="bx bx3">
+        최소가로크기 700px <br> (min-width:700px)
+    </div>
+    <div class="bx bx4">
+        최대가로크기 1200px<br> 최소가로크기 800px <br>
+        (max-width:1200px, min-width:800px)
+    </div>
+
+
+
+
+
+</body></html>
