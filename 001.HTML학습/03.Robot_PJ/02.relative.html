@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Position - relative</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            /*외곽선(경계선) : 두 종 색*/
+            text-align: center;
+            /*인라인요소 가로중앙정렬*/
+            font-size: 24px;
+            /*글자크기*/
+            font-weight: bold;
+            /*글자두께*/
+            line-height: 100px;
+            /*줄간격-글자세로 중앙에 사용*/
+        }
+
+        #r1 {
+            position: relative;
+            /*
+                [ relative 포지션 ] :
+            
+                1. 위치이동속성이 적용됨!
+            
+                2. 위치이동의 기준은 원래있던 위치임
+                (그래서 상대적인 (relative:렐러티브)라는 명칭이 사용됨)
+            
+                3. 이동시에 다른 요소에 영향없이 겹쳐질 수 있다!!!! 또한 원래 자신이 있던 위치는 그대로 보존된다!
+            
+                4. 위치값 설정시 2가지 기준으로만 셋팅한다.(위아래 중 하나, 우좌중 하나)
+                    1) top, left
+                    2) top, right
+                    3) bottom, left
+                    4) bottom, right
+                    - 수치의 양수는 요소 내부방향
+                        수치의 음수는 요소 외부방향
+            
+                5. 마진은 그대로 적용된다.(다른 static요소에 영향을 준다.그대로임!)
+            
+                6. margin: 0 auto 중앙정렬도 적용됨!
+            
+                7. relative는 위치이동값을 사용하지 않으면 static과 똑같은 특징을 가진다.
+            
+                8. 자식요소에 대한 다음의 중요특징이 있다
+                - 잠시후.......
+            
+                9. 위치순서를 정하는 z-index가 적용되는 포지션이다.(겹쳐질 수 있는 포지션 동일)
+            
+                [ z-index 란?]
+                - 겹치는 포지션일 경우 위치순서를 정하여
+                디스플레이를 변경하는 속성
+            
+                - z는 화면방향의 z축을 말하며
+                기본값 0임
+                포지션이 static 또는 아무포지션도 없는 경우 z-index는 적용불가!
+            
+                - static이 아닌 위치이동 가능 포지션만 이 속성을 사용할 수 있다.
+                
+                - 기본적으로 나중에 그려진 html 요소가 포지션이 static이 아닐 경우 위에 온다!
+            
+                z-index의 숫자는 단순 위치비교개념임
+                
+                static요소는 무조건 아래쪽에 깔린다!!!
+                그런데 z-index를 마이너스를 주면
+                먼저그려진 static요소보다 아래쪽에
+                위치할 수 있다!!!
+            
+                
+            */
+            top: 37px;
+            left: 71px;
+            /*
+                위치이동속성: 
+                - 선택요소의 위치를 이동하기 위한 속성
+                - 포지션에 따라 달리 적용된다
+                
+                종류: 4가지
+                top, bottom, left, right
+            */
+
+            z-index: 1;
+
+
+
+            background-color: red;
+        }
+
+        #s2 {
+            background-color: green;
+        }
+
+        #s3 {
+            background-color: yellow;
+        }
+
+        #r2 {
+            position: relative;
+            bottom: 104px;
+            right: -132px;
+
+            background-color: #32eac6;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="r1">r1</div>
+    <div id="s2">s2</div>
+    <div id="r2">r2</div>
+    <div id="s3">s3</div>
+
+    <!--
+   [젠코딩]
+   #은 아이디요소(기본 div)
+    $는 순서대로 숫자붙임
+    *숫자 는 개수
+    {} 중괄호는 내용
+    
+    ex)
+   #s${s$}*3
+   -->
+
+</body></html>
