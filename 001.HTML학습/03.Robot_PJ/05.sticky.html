@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Position - sticky</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            /*외곽선(경계선) : 두 종 색*/
+            text-align: center;
+            /*인라인요소 가로중앙정렬*/
+            font-size: 24px;
+            /*글자크기*/
+            font-weight: bold;
+            /*글자두께*/
+            line-height: 100px;
+            /*줄간격-글자세로 중앙에 사용*/
+        }
+        
+        #st1{
+            position: sticky;
+            top: 0;
+            /*
+                [ sticky 포지션 ] :
+                1. 위치값 설정에 따라 보이는 화면에 고정되는 포지션
+                2. 처음에는 relative 하게 가만히 있다가
+                    위치값 보다 스크롤이 더 나갈경우
+                위치를 fixed하게 고정한다. 
+                이때 top값으로 위치를 잡아준다.
+                (만약 top값을 설정하지 않으면 relative하게 그대로 있게 된다.)
+            
+            */
+            
+            width: 500px;
+            background-color: #937bf7;
+            
+        }
+        
+        
+        
+        #f1{
+            position: fixed;
+            /*
+                [ fixed 포지션 ] :
+                1. 위치이동값을 쓰지 않았을때
+                - 자신보다 위에 있는 static요소 아래에 있다가 스크롤로 이동시 그 자리를 지킴(고정!)
+            
+                2. 위치이동값을 썼을때
+                - 부모를 기준하여 위치를 잡음
+                부모는 보이는 화면 즉, window가 부모가됨!
+            
+                - 따라서 보이는 화면에서 사라지지 않게 할 수 있음
+            
+            
+            */
+            
+            top: 50%;
+            right: 5%;
+            z-index: 999;
+            
+            width: 300px;
+            border: 10px dashed red;
+            
+            
+            background-color: #4bf500;
+        }
+        
+        /*
+            많은 요소 하위 요소일때 
+            과연 fixed의 부모는 누구인가?
+        
+            부모 요소 중 포지션이 static이 아닐지라도
+            앱솔루트처럼 그것이 부모가 되지 않고
+            보이는 화면(window)이 부모가 되어 위치를 결정한다!
+            (화면에서 사라지지 않는다!)
+        
+        */
+        #f2{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            background-color: red;
+        }
+        
+        
+        
+        
+        #a1{
+            position: absolute;
+            /*
+                [ absolute 포지션 ] :
+            
+                1. absolute 포지션은 위치이동값을 쓰기전과
+                쓴 후로 나누어 볼 수 있다!
+            
+                1) 위치 이동값을 쓰지 않은 경우
+                - 위에 있는 static요소를 존중하여 그 아래 
+                위치한다.(젠틀앱솔루트!)
+                - 아래쪽에 있는 static/relative요소는 앱솔루트 요소를 인식하지 못하여 같은 자리에 올라온다!
+            
+                2) 위치 이동값을 사용한 경우
+                - 위치값을 사용한 부분에 대하여 부모로 삼을
+                요소를 찾는다!!!!(부모찾아 삼만리!)
+                예) left: 50px 부모요소로 부터 왼쪽에서 50px
+                    top: 10px 부모요소로 부터 위쪽에서 10px
+                -> 만약에 위,아래 (top/bottom)을 사용하지 
+            않으면 그 부분에 대하여는 젠틀하다!!!!!!!!!!!!!
+            (static요소 아래에 그대로 위치한다!)
+            
+            2. 위치값 사용의 경우 부모요소는 누구인가?
+            - 일반적인 부모요소는 그 요소를 싸고 있는 인접요소가
+            부모가 된다!
+            그.러.나..........
+            앱솔루트는 싸고 있다고 부모가 아니다~!
+            부모라이센스가 있다!
+            포지션이 static이 아니면 부모가 된다!
+            position: relative/absolute/fixed
+            
+            -> 만약 싸고 바로 위의 요소가 static이면 부모가 아님
+            더 위로 올라가서 static이 아닌요소가 나올때까지
+            조상요소를 찾아올라감!
+            
+            -> 바로 body아래 있거나 싸고 있는 요소중 부모가 없으면 보이는 화면이 기준이된다.(body가 아님)   
+            (예컨데 body에 높이값 3000px을 주고position:relative를 주면 body가 부모요소가 된다!)
+            
+            */
+            bottom: 10px;
+            right: 10px;
+            
+            
+            background-color: #00ff62;
+        }
+        
+        
+        
+        
+        
+
+        #r1 {
+            position: relative;
+            /*
+                [ relative 포지션 ] :
+            
+                1. 위치이동속성이 적용됨!
+            
+                2. 위치이동의 기준은 원래있던 위치임
+                (그래서 상대적인 (relative:렐러티브)라는 명칭이 사용됨)
+            
+                3. 이동시에 다른 요소에 영향없이 겹쳐질 수 있다!!!! 또한 원래 자신이 있던 위치는 그대로 보존된다!
+            
+                4. 위치값 설정시 2가지 기준으로만 셋팅한다.(위아래 중 하나, 우좌중 하나)
+                    1) top, left
+                    2) top, right
+                    3) bottom, left
+                    4) bottom, right
+                    - 수치의 양수는 요소 내부방향
+                        수치의 음수는 요소 외부방향
+            
+                5. 마진은 그대로 적용된다.(다른 static요소에 영향을 준다.그대로임!)
+            
+                6. margin: 0 auto 중앙정렬도 적용됨!
+            
+                7. relative는 위치이동값을 사용하지 않으면 static과 똑같은 특징을 가진다.
+            
+                8. 자식요소에 대한 다음의 중요특징이 있다
+                - 잠시후.......
+            
+                9. 위치순서를 정하는 z-index가 적용되는 포지션이다.(겹쳐질 수 있는 포지션 동일)
+            
+                [ z-index 란?]
+                - 겹치는 포지션일 경우 위치순서를 정하여
+                디스플레이를 변경하는 속성
+            
+                - z는 화면방향의 z축을 말하며
+                기본값 0임
+                포지션이 static 또는 아무포지션도 없는 경우 z-index는 적용불가!
+            
+                - static이 아닌 위치이동 가능 포지션만 이 속성을 사용할 수 있다.
+                
+                - 기본적으로 나중에 그려진 html 요소가 포지션이 static이 아닐 경우 위에 온다!
+            
+                z-index의 숫자는 단순 위치비교개념임
+                
+                static요소는 무조건 아래쪽에 깔린다!!!
+                그런데 z-index를 마이너스를 주면
+                먼저그려진 static요소보다 아래쪽에
+                위치할 수 있다!!!
+            
+                
+            */
+            top: 37px;
+            left: 71px;
+            /*
+                위치이동속성: 
+                - 선택요소의 위치를 이동하기 위한 속성
+                - 포지션에 따라 달리 적용된다
+                
+                종류: 4가지
+                top, bottom, left, right
+            */
+
+            z-index: 1;
+
+
+
+            background-color: red;
+        }
+
+        #s2 {
+            background-color: green;
+        }
+
+        #s3 {
+            background-color: yellow;
+        }
+
+        #r2 {
+            /*position: relative;*/
+            bottom: 104px;
+            right: -132px;
+
+            background-color: #32eac6;
+        }
+        
+        .s5{
+/*            position: relative;*/
+            width: 500px;
+            height: 500px;
+        }
+        
+        .s6{
+/*            position: relative;*/
+            width: 400px;
+            height: 400px;
+        }
+        
+        .s7{
+/*            position: relative;*/
+            width: 300px;
+            height: 300px;
+        }
+        .s8{
+/*            position: relative;*/
+            width: 200px;
+            height: 200px;
+        }
+        
+        /*주인공 앱솔루트!*/
+        .a3{
+            position: absolute;
+            /*
+                위치이동값을 주기전에는 젠틀하다!
+                만약 박스안에 있으면 그 자리에 그대로 위치한다!
+            */
+            top: 0;
+            right: 0;
+            /*위치값을 쓰는 순간 나의부모는 누구인가?????*/
+            /*
+                부모는 싸고 있는 요소들 중 제일 먼저 만나는
+                static이 아닌 포지션 요소가 부모가 된다!!!
+                (주석 달린 relative를 풀어서 꼭 테스트해봄!)
+            
+            */
+            
+            background-color: #ff00ff;
+        }
+        
+        
+        
+        
+        
+        
+    </style>
+</head>
+
+<body>
+
+
+    <div id="r1">r1</div>
+    <div id="s2">s2</div>
+    <div id="a1">a1</div>
+    <div id="r2">r2</div>
+    <div id="s3">s3</div>
+    <div id="a2">a2</div>
+    
+    <div id="f1">f1</div>
+    
+    
+    <div id="st1">st1</div>
+    
+    
+    
+    
+    
+    <!--.s5{s5}>.s6{s6}>.s7{s7}>.s8{s8}>.a3{a3}-->
+    <div class="s5">s5
+        <div class="s6">s6
+            <div class="s7">s7
+                <div class="s8">s8
+                    <div class="a3">a3</div>
+                    <div id="f2">f2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <!--
+   [젠코딩]
+   #은 아이디요소(기본 div)
+    $는 순서대로 숫자붙임
+    *숫자 는 개수
+    {} 중괄호는 내용
+    
+    ex)
+   #s${s$}*3
+   -->
+
+</body></html>
