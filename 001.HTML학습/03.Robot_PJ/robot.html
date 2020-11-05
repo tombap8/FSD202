@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Robot PJ</title>
@@ -14,9 +15,9 @@
         div {
             /*            outline: 2px solid lime;*/
         }
-        
+
         /*로봇페이지 로고*/
-        #logo{
+        #logo {
             position: fixed;
             /*
                 로고 정중앙보내기!
@@ -54,26 +55,24 @@
             /*정사각형일 경우 
             border-radius값을 50%
             로 설정하면 정원이 나옴*/
-            
+
             /*글자정중앙*/
             text-align: center;
             line-height: 200px;
-            
             text-shadow: 2px 2px 2px #000;
-            
             font-family: "vladimir script";
             font-size: 60px;
             background: #ffc9ff url(images/robot_03.png) no-repeat;
             background-position: center 10px;
             background-size: 160px auto;
-            
+
             /*박스그림자*/
             box-shadow: 0 0 20px pink;
-            
+
             /*트랜지션:둘사이의 속성변화를 애니메이션 보여주기!*/
             transition: all 2s ease-in-out 2s;
-            
-            
+
+
             /*
             transition-property: 속성값;
             transition-duration: 시간초단위s;
@@ -84,20 +83,21 @@
             transition: 속 시 이 지;
             */
         }
-        
+
         /*body에 마우스 오버시 로고의 위치값 변경하기*/
-        body:hover #logo{
+        body:hover #logo {
             top: 50px;
             left: 50px;
         }
-        
-        
+
+
 
         /*로봇머리*/
         #head {
             position: relative;
             /*부모자격-자식요소가 absolute인것의 부모!*/
-            left: 100%;/*퍼센트기준은 부모박스 크기임*/
+            left: 100%;
+            /*퍼센트기준은 부모박스 크기임*/
             /*left값으로 머리를 오른쪽 바깥에 나가있게 하고
             마우스오버시 원래 위치로 돌아오게함!*/
             width: 250px;
@@ -106,11 +106,11 @@
             /*마영오-가로중앙*/
             margin-top: 100px;
             background: url(images/metal01.jpg) no-repeat center/cover;
-            
+
             /*트랜지션:둘사이의 속성변화를 애니메이션 보여주기!*/
             transition: all 2s ease-in-out 2s;
         }
-        
+
         /*body에 마우스 오버시 로봇머리가 원래 위치로 돌아온다*/
         body:hover #head {
             left: 0;
@@ -196,14 +196,15 @@
             margin: 0 auto;
             /*마영오-가로중앙*/
             background: url(images/metal01.jpg) no-repeat center/cover;
-            
+
             /*트랜지션:둘사이의 속성변화를 애니메이션 보여주기!*/
             transition: all 2s ease-in-out 2s;
         }
-        
+
         /*body에 마우스 오버시 로봇몸통이 원래 위치로 돌아온다*/
-        body:hover #body{
-            left: 0;/*원위치*/
+        body:hover #body {
+            left: 0;
+            /*원위치*/
         }
 
         /*목*/
@@ -310,7 +311,7 @@
                 1. 검정색 반투명: 오버레이(overlay)
                 2. 흰색 반투명: 트랜스페런트(transparent)
             */
-            
+
             /*
             [ 박스그림자: box-shadow ]
             
@@ -327,7 +328,7 @@
                 그림자효과는 꼭 그림자만 만들어야 하는 건 아니다!
                 글로우효과(빛남효과)도 그림자를 이용해서 줄 수 있다!
             */
-            
+
         }
 
         /*로봇설명 타이틀*/
@@ -343,9 +344,9 @@
             color: #ff0;
             text-align: center;
         }
-        
+
         /*로봇설명 문단박스*/
-        #rdesc p{
+        #rdesc p {
             font-size: 15px;
             /*글자크기*/
             line-height: 25px;
@@ -353,7 +354,7 @@
             letter-spacing: 1px;
             /*글자사이간격*/
             word-spacing: 2px;
-            
+
             /*다중열속성(Multi Columns)*/
             column-count: 3;
             /*다중열개수*/
@@ -362,7 +363,7 @@
             column-rule:두께 종류 색상*/
             column-gap: 50px;
             /*다중열 사이간격*/
-            
+
             /*
                 column-span:all
                 다단안에 h태그가 
@@ -372,7 +373,7 @@
                 column-width는 
                 다단 하나당 최적의 크기를 지정함
             */
-            
+
             /*글자양쪽정렬*/
             text-align: justify;
             /*
@@ -388,45 +389,46 @@
             줄바꿈을 하기때문에 생기는 
             빈공간을 없애기위해 단어단위에서 
             글자단위로 단어를 깨주는 설정*/
-            
-            
+
+
         }
-        
-        
+
+
         /*위로가기 버튼*/
-        #tbtn{
+        #tbtn {
             position: fixed;
             bottom: 50px;
             right: 50px;
             width: 100px;
             height: 100px;
-            
+
             /*가로세로 텍스트 중앙*/
             text-align: center;
             line-height: 100px;
             font-family: arial;
             font-weight: bold;
-            
+
             /*a요소 기본변경*/
             color: #fff;
             text-decoration: none;
-            
+
             background-color: #4f25ff;
-            border-radius: 50%;/*원*/
-            
+            border-radius: 50%;
+            /*원*/
+
             /*트랜지션*/
             transition: .5s;
             /*시간만쓰면 속성은 all임*/
         }
-        
+
         /*탑버튼에 마우스 오버시 색상변경*/
-        #tbtn:hover{
+        #tbtn:hover {
             background-color: #ff0;
             color: #00f;
         }
-        
+
         /*컨텐츠 유도 버튼(이동버튼)*/
-        #goCont{
+        #goCont {
             position: absolute;
             top: 100px;
             right: 50px;
@@ -435,7 +437,7 @@
             text-decoration: none;
             font: bold 40px arial;
             text-shadow: 0 0 10px #000;
-            
+
             /*처음에 투명하게*/
             opacity: 0;
             /*
@@ -444,30 +446,28 @@
                 - 값으로 0을 쓰면 완전투명, 1은 다 보임
                     0.수치를 쓰면 중간 투명도를 줄 수 있다!
             */
-            
+
             /*트랜지션
             투명도에 관하여 4초기다렸다가 0.5초간 애니메이션 설정*/
             transition: opacity .5s 4s;
         }
-        
+
         /*body에 마우스 오버시 모두 등장 후에 유도글자 나오기*/
-        body:hover #goCont{
+        body:hover #goCont {
             opacity: 1;
         }
-        
+
         /*유도글자에 마우스 오버시 색상변경*/
-        #goCont:hover{
+        #goCont:hover {
             color: #f00;
             text-decoration: underline;
         }
-        
-        
-        
+
     </style>
 </head>
 
 <body>
-    
+
     <!--로봇페이지 로고-->
     <h1 id="logo">
         R2D2
@@ -528,13 +528,13 @@
             Robots have replaced humans[10] in performing repetitive and dangerous tasks which humans prefer not to do, or are unable to do because of size limitations, or which take place in extreme environments such as outer space or the bottom of the sea. There are concerns about the increasing use of robots and their role in society. Robots are blamed for rising technological unemployment as they replace workers in increasing numbers of functions.[11] The use of robots in military combat raises ethical concerns. The possibilities of robot autonomy and potential repercussions have been addressed in fiction and may be a realistic concern in the future.
         </p>
     </div>
-    
+
     <!--맨위로 이동버튼-->
     <a id="tbtn" href="#">TOP</a>
 
     <!--글 내용 유도 메뉴-->
     <a id="goCont" href="#rdesc">What is Robot?</a>
-    
+
     <!--
         a 요소의 href에 #은 무엇인가?
         - 원래 가지고있는 이동속성 중 같은 페이지 내의 아이디요소로
@@ -543,12 +543,14 @@
         (#만 쓸경우 맨위로이동됨)
     
     -->
-    
-    
-    
 
 
 
 
 
-</body></html>
+
+
+
+</body>
+
+</html>

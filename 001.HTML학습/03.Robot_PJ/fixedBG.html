@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed Background</title>
+    <style>
+        /*import방식 CDN 웹폰트*/
+        @import url('https://fonts.googleapis.com/css?family=Black+And+White+Picture|Cute+Font|Single+Day&display=swap');
+
+        /*
+            font-family: 'Cute Font', ;
+            font-family: 'Black And White Picture', ;
+            font-family: 'Single Day', ;
+        */
+
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*특히 높이값을 100%로 설정해야
+            직계자식요소의 높이값 %가 적용될 수 있다!
+            body의 높이값 100%의 의미는
+            보이는 window화면을 기준한다는 뜻*/
+        }
+
+        /*공통 페이지*/
+        .page {
+            width: 100%;
+            height: 100%;
+            /*body셋팅을 기준함!*/
+
+            /*공통배경셋팅*/
+            /*반복여부*/
+            background-repeat: no-repeat;
+            /*고정여부*/
+            background-attachment: fixed;
+            /*위치*/
+            background-position: center;
+            /*크기*/
+            background-size: cover;
+
+        }
+
+        /*전체 타이틀*/
+        .tit {
+            position: fixed;
+            top: 50px;
+            /*화면에 고정*/
+            width: 100%;
+            /*fixed포지션은 크기가 내용만큼 설정
+            되므로 100%로 크기를 늘려준다!*/
+            margin: 0;
+            padding: 0;
+            /*기본마진,패딩없앰*/
+            text-align: center;
+            /*글자중앙*/
+
+            font-family: 'Black And White Picture';
+            /*웹폰트를 적용한다!*/
+            font-size: 50px;
+            color: #fff;
+
+            text-shadow: 1px 0 #000, -1px 0 #000,
+                0 1px #000, 0 -1px #000;
+            /*
+                텍스트 그림자로 테두리 만들기
+                text-shadow: 콤마로 구분하여 여러개의 그림자를 줄 수 있다;
+                - 네 방향으로 그림자를 1px씩 움직여서
+                 블러없이 테두리를 만들 수 있다
+            
+                (참조사이트:            https://www.w3schools.com/css/css3_shadows.asp#simpleshadowborder)
+            
+                -> 웹주소 페이지 맨뒤에 #아이디명
+                을 쓰면 해당 페이지의 아이디가 있는 
+                위치로 바로 이동할 수 있다!
+            */
+        }
+
+        /*메뉴 디자인*/
+        ul#menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /*ul 3가지 없애기*/
+        }
+
+        /*메뉴 리스트(li) 공통*/
+        #menu li {
+            position: fixed;
+            /*나의 부모는? 화면(window)*/
+
+            width: 100px;
+            height: 100px;
+
+            /*글자셋팅*/
+            text-align: center;
+            font: bold 25px/100px "맑은 고딕", arial;
+            /*
+            스타일/두께/크기/줄간격/글자체(스두크/줄체)
+            font-style: italic;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 100px;
+            font-family: "맑은 고딕",arial;
+            */
+        }
+
+        /*메뉴 공통 a*/
+        #menu a {
+            color: #fff;
+            text-decoration: none;
+            /*a기본 디자인 변경*/
+            text-shadow: 2px 2px 1px #777;
+            /*텍스트 그림자*/
+
+            display: block;
+            /*디자인적용위해 셋팅!*/
+            width: 100%;
+            height: 100%;
+        }
+
+        /*각 메뉴 셋팅*/
+        /*home메뉴*/
+        #menu li:first-child {
+            top: 0;
+            left: 0;
+            background-color: #d061ea;
+            border-radius: 0 0 50% 0;
+            /*둥근모서리 방향별셋팅
+                border-radius:
+                위왼 위오른 아래오른 아래왼;
+            
+                왼쪽 위부터 시계방향!
+                -> 2개만쓰면 대각선 셋팅
+            */
+        }
+
+        /*로고셋팅*/
+        .logo {
+            height: 80px;
+            /*이미지는 가로와 세로중
+            한쪽만 크기를 변경하면
+            나머지는 자동으로 비율유지함*/
+            margin-top: 7px;
+        }
+
+        /*html메뉴*/
+        #menu li:nth-child(2) {
+            top: 0;
+            right: 0;
+            background-color: #61abea;
+            border-radius: 0 0 0 50%;
+        }
+
+        /*css메뉴*/
+        #menu li:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background-color: #61ea6c;
+            border-radius: 0 50% 0 0;
+        }
+
+        /*js메뉴*/
+        #menu li:last-child {
+            bottom: 0;
+            right: 0;
+            background-color: #ea9b61;
+            border-radius: 50% 0 0 0;
+        }
+
+
+
+
+
+
+        /*각 페이지*/
+
+        /*1. 첫화면*/
+        #home {
+            background-image: url(images2/001.jpg);
+        }
+
+        /*2. HTML화면*/
+        #html {
+            background-image: url(images2/002.jpg);
+        }
+
+        /*3. CSS화면*/
+        #css {
+            background-image: url(images2/005.jpg);
+        }
+
+        /*4. JS화면*/
+        #js {
+            background-image: url(images2/004.jpg);
+        }
+
+        /*내용박스 공통*/
+        .inbox {
+            position: relative;
+            top: 25%;
+            width: 70%;
+            height: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            outline: 2px solid lime;
+        }
+
+
+        /*중앙구분선 넣기*/
+        /*가상요소로 absolute박스 만들어서 보더 */
+        .inbox::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            /*나의부모? 싸고있는 relative div*/
+            width: 0;
+            height: 80%;
+            border-right: 3px dotted blue;
+        }
+
+        /*내용박스 파티션박스 공통*/
+        .inbox>div {
+            width: 50%;
+            /*가로절반*/
+            height: 100%;
+            /*높이전체*/
+            float: left;
+            /*옆으로 흐르게*/
+
+            padding: 15px;
+            /*박스크기에 패딩이 영향을 줌
+                따라서 가로크기나 세로크기를 원하는 크기로
+                하려면 패딩이나 보더수치를 빼고 만들어야한다.
+                -> 패딩이나 보더를 내부에 포함하도록 하는 셋팅이 있다!
+            
+                [ 박스사이징: 보더박스!!! ]
+            
+                box-sizing: border-box
+                셋팅된 박스크기의 경계선을 유지하는 박스임
+            
+                -> content-box 컨텐트 내용만 포함하며 
+                패딩,보더가 있으면 커지는 박스(기본값)
+            */
+            box-sizing: border-box;
+            /*박스 크기 지정시 패딩, 보더 포함*/
+
+            /*내용이 많아지면 스크롤 자동생성*/
+            overflow: auto;
+
+
+            /*outline: 2px solid red;*/
+        }
+
+        /*스크롤바 디자인변경*/
+
+        .inbox>div::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+
+        /*공통 내용 중제목*/
+        .inbox>div>h2 {
+            position: absolute;
+            background-color: #a05c5c;
+            padding: 10px;
+            font-family: 'Cute Font';
+            color: #fff;
+        }
+
+        /*공통 내용 소제목*/
+        .inbox>div>h3 {
+            font-family: 'Single Day', serif;
+            margin-top: 100px;
+            /*중제목이 absolute이므로
+            아래있는 소제목은 중제목을 인식
+            하지 못한다! 따라서 마진으로
+            위쪽 여백을 준다*/
+        }
+
+        /*공통 내용 상세리스트*/
+        .inbox>div>ul {
+            font-family: 'Cute Font';
+            font-size: 24px;
+            line-height: 34px;
+            list-style: square;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1.전체 타이틀-->
+    <h1 class="tit">
+        웹 퍼블리싱 개발
+    </h1>
+    <!--2. 메뉴-->
+    <ul id="menu">
+        <li>
+            <a href="#home">
+                <img src="images2/logo.png" alt="로고" class="logo">
+            </a>
+        </li>
+        <li>
+            <a href="#html">HTML</a>
+        </li>
+        <li>
+            <a href="#css">CSS</a>
+        </li>
+        <li>
+            <a href="#js">JS</a>
+        </li>
+    </ul>
+
+    <!--
+        a요소의 href값으로 "#아이디명"을 쓰면
+        같은 페이지 안의 아이디명 박스 위치로 이동한다!
+    -->
+
+
+    <!--3. 각 페이지-->
+    <!--3-1.홈-->
+    <div id="home" class="page">
+        <div class="inbox">
+
+        </div>
+    </div>
+
+    <!--3-2.HTML소개-->
+    <div id="html" class="page">
+        <div class="inbox">
+            <!--한글내용-->
+            <div>
+                <!--중제목-->
+                <h2>HTML이란 무엇입니까?</h2>
+                <!--소제목-->
+                <h3>HTML은 웹 페이지를 만들기위한 표준 마크 업 언어입니다.</h3>
+                <!--세부항목 리스트-->
+                <ul>
+                    <li>HTML은 Hyper Text Markup Language를 나타냅니다.</li>
+                    <li>HTML은 웹 페이지를 만들기위한 표준 마크 업 언어입니다.</li>
+                    <li>HTML은 웹 페이지의 구조를 설명합니다.</li>
+                    <li>HTML은 일련의 요소로 구성됩니다.</li>
+                    <li>HTML 요소는 콘텐츠를 표시하는 방법을 브라우저에 알려줍니다.</li>
+                    <li>HTML 요소는 "이것은 제목입니다", "이것은 단락입니다", "이것은 링크입니다"등과 같은 콘텐츠 조각에 레이블을 지정합니다.</li>
+                </ul>
+
+
+
+
+
+            </div>
+            <!--영어내용-->
+            <div>
+                <h2>What is HTML?</h2>
+                <h3>HTML is the standard markup language for creating Web pages.</h3>
+                <ul>
+                    <li>HTML stands for Hyper Text Markup Language</li>
+                    <li>HTML is the standard markup language for creating Web pages</li>
+                    <li>HTML describes the structure of a Web page</li>
+                    <li>HTML consists of a series of elements</li>
+                    <li>HTML elements tell the browser how to display the content</li>
+                    <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!--3-3.CSS소개-->
+    <div id="css" class="page">
+        <div class="inbox">
+            <!--한글내용-->
+            <div>
+                <h2>CSS 란 무엇입니까?</h2>
+                <h3>CSS는 의미 Cascading Style Sheets이다.</h3>
+                <ul>
+                    <li>CSS는 HTML 요소가 화면, 종이 또는 기타 미디어에 표시되는 방법을 설명 합니다.</li>
+                    <li>CSS 는 많은 작업을 절약합니다 . 한 번에 여러 웹 페이지의 레이아웃을 제어 할 수 있습니다.</li>
+                    <li>외부 스타일 시트는 CSS 파일에 저장됩니다.</li>
+                </ul>
+            </div>
+            <!--영어내용-->
+            <div>
+                <h2>What is CSS?</h2>
+                <h3>CSS stands for Cascading Style Sheets</h3>
+                <ul>
+                    <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                    <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+                    <li>External stylesheets are stored in CSS files</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--3-4.JS소개-->
+    <div id="js" class="page">
+        <div class="inbox">
+            <!--한글내용-->
+            <div>
+                <h2>자바스크립트란 무엇입니까?</h2>
+                <h3>JavaScript는 세계에서 가장 널리 사용되는 프로그래밍 언어입니다.</h3>
+                <ul>
+                    <li>JavaScript는 웹의 프로그래밍 언어입니다.</li>
+                    <li>JavaScript는 배우기 쉽습니다.</li>
+                    <li>JavaScript와 Java 는 개념과 디자인면에서 완전히 다른 언어입니다.</li>
+                    <li>JavaScript는 1995 년 Brendan Eich에 의해 발명되었으며 1997 년 ECMA 표준이되었습니다.</li>
+                    <li>ECMA-262는 표준의 공식 이름입니다. ECMAScript는 언어의 공식 이름입니다.</li>
+                </ul>
+            </div>
+            <!--영어내용-->
+            <div>
+                <h2>What is Javascript?</h2>
+                <h3>JavaScript is the world's most popular programming language.</h3>
+                <ul>
+                    <li>JavaScript is the programming language of the Web.</li>
+                    <li>JavaScript is easy to learn.</li>
+                    <li>JavaScript and Java are completely different languages, both in concept and design.</li>
+                    <li>JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.</li>
+                    <li>ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body></html>
