@@ -78,6 +78,8 @@
                 을 쓰면 해당 페이지의 아이디가 있는 
                 위치로 바로 이동할 수 있다!
             */
+            z-index: 1;
+            /*아래쪽 포지션 있는 요소보다 위에 오도록!*/
         }
 
         /*메뉴 디자인*/
@@ -184,6 +186,98 @@
             background-image: url(images2/001.jpg);
         }
 
+        /*첫페이지 .inbox*/
+        #home .inbox {
+            position: relative;
+            /*부모자격*/
+            overflow: hidden;
+            /*자식요소인 block이 margin-top을 설정했을때 
+            부모는 기본적으로 자식의 마진을 포함하지 않는다! 
+            따라서 바깥쪽으로 밀려서 부모도 마지이동이됨. 
+            이것을 내부로 포함하려면 overflow:hidden을 
+            설정하면 된다!
+            
+            [overflow:hidden 정리]
+            1. 넘치는 자식컨텐츠 숨기기
+            2. float된 자식요소 높이값 인식하기
+            3. block 자식요소의 margin-top 포함하기
+            
+            */
+        }
+
+        /*인트로 타이틀박스*/
+        .tbox {
+            position: absolute;
+            /*em태그를 사용했는데 이것은 inline이다
+            absolute를 주면 모든 요소가 무조건 block으로 바뀜*/
+            top: 50%;
+            left: 50%;
+            /*부모는? #home .inbox*/
+            transform: translate(-50%, -50%);
+            /*트랜스폼(변형) 중 위치이동 x축,y축 
+            내크기의 절반만큼 반대방향으로 이동하기
+            (정중앙이동함!)*/
+            padding: 0;
+            font-style: normal;
+            /*em기본 italic변경*/
+        }
+
+
+        /*인트로 글자*/
+        .ftit {
+            position: relative;
+            display: block;
+            font-family: 'Black And White Picture';
+            font-weight: bold;
+            font-size: 60px;
+            text-shadow: 3px 3px 1px #222;
+            text-align: center;
+
+            /*트랜지션*/
+            transition: all 2s ease-in-out;
+        }
+
+        /*웹퍼블리싱 글자*/
+        .tit1 {
+            color: #ed00ed;
+            /*            margin-top: 5%;*/
+            top: 225px;
+            left: -71%;
+        }
+
+        /*HTML 글자*/
+        .tit2 {
+            color: #002eed;
+            top: 52px;
+            left: 100%;
+        }
+
+        /*CSS 글자*/
+        .tit3 {
+            color: #f87300;
+            top: -200px;
+            left: 50%;
+        }
+
+        /*Javascript 글자*/
+        .tit4 {
+            color: #00eef8;
+            top: -200px;
+            left: -50%;
+        }
+
+        /*#home .inbox에 마우스 오버시 각 글자 제자리로!*/
+        #home .inbox:hover .tit1,
+        #home .inbox:hover .tit2,
+        #home .inbox:hover .tit3,
+        #home .inbox:hover .tit4 {
+            top: 0;
+            left: 0;
+        }
+
+
+
+
         /*2. HTML화면*/
         #html {
             background-image: url(images2/002.jpg);
@@ -224,6 +318,30 @@
             width: 0;
             height: 80%;
             border-right: 3px dotted blue;
+        }
+
+        /*첫페이지 중앙박스 구분선 없애기*/
+        #home .inbox::after {
+            display: none;
+        }
+
+
+        /*페이지제목 공통*/
+        .pgtit{
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            /*부모는? .inbox*/
+            /*가로방향 중앙이동*/
+            transform: translateX(-50%);
+            /*변형: 위치이동 x축방향으로 내크기의 절반 반대방향이동*/
+            
+            /*글자디자인*/            
+            font-family: 'Black And White Picture';
+            font-weight: bold;
+            font-size: 60px;
+            text-shadow: 3px 3px 1px #222;
+            color: #fff;
         }
 
         /*내용박스 파티션박스 공통*/
@@ -275,6 +393,28 @@
             border-radius: 5px;
         }
 
+        /*
+            속성값 접두어 사용할 경우
+            [ 밴더 프레픽스 - 브라우저 제작사 별 접두어 ]
+            1. -webkit- : 크롬, 사파리 브라우저
+                (크롱과 사파리로 웹킷을 가지고 놀러간다~)
+            2. -ms- : ms 익스플로러
+            3. -o- : 오페라 브라우저
+            4. -moz- : 모질라 파이어폭스 브라우저
+        
+            이것을 가끔 왜쓸까?
+        
+            이유: 새로운 속성이 나오면 밴더사들 마다
+                브라우저를 새로 업데이트 해야하는데
+                부분적으로 지원하는 버전의 경우 이런 
+                접두어를 사용하여 쓸 수 있게 함
+        
+            예) border-radius: 10px;
+                -webkit-border-radius: 10px;
+            중간 지원버전 브라우저도 적용되도록 두가지 코딩을함!
+        
+        */
+
 
         /*공통 내용 중제목*/
         .inbox>div>h2 {
@@ -283,6 +423,7 @@
             padding: 10px;
             font-family: 'Cute Font';
             color: #fff;
+
         }
 
         /*공통 내용 소제목*/
@@ -338,6 +479,12 @@
     <!--3-1.홈-->
     <div id="home" class="page">
         <div class="inbox">
+            <em class="tbox">
+                <span class="ftit tit1">웹퍼블리싱</span>
+                <span class="ftit tit2">HTML</span>
+                <span class="ftit tit3">CSS</span>
+                <span class="ftit tit4">Javascript</span>
+            </em>
 
         </div>
     </div>
@@ -345,6 +492,8 @@
     <!--3-2.HTML소개-->
     <div id="html" class="page">
         <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">HTML</h2>
             <!--한글내용-->
             <div>
                 <!--중제목-->
@@ -386,6 +535,8 @@
     <!--3-3.CSS소개-->
     <div id="css" class="page">
         <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">CSS</h2>
             <!--한글내용-->
             <div>
                 <h2>CSS 란 무엇입니까?</h2>
@@ -413,6 +564,8 @@
     <!--3-4.JS소개-->
     <div id="js" class="page">
         <div class="inbox">
+            <!--페이지제목-->
+            <h2 class="pgtit">Javascript</h2>
             <!--한글내용-->
             <div>
                 <h2>자바스크립트란 무엇입니까?</h2>
