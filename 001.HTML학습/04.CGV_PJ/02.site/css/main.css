@@ -1,0 +1,54 @@
+@charset "utf-8";
+/*
+    @charset은 외부css의 언어인코딩 설정임(필수!)
+    "utf-8" 은 2바이트 문자도 깨짐없이 인코딩 설정
+*/
+
+/*공통초기화*/
+html,body,h1,h2,h3{
+    margin: 0;
+    padding: 0;
+}
+
+/*전체배경색*/
+body{
+    /*검정색배경*/
+    background-color: #000;
+    /*흰색글씨*/
+    color: #fff;    
+}
+
+/******공통 레이아웃 class**********/
+.part{
+    width: 1200px;
+    margin: 0 auto;
+    outline: 3px dashed lime;
+}
+
+/******각 영역별 레이아웃*****/
+/*A.상단영역*/
+#top{
+    height: 80px;
+}
+
+/*B.메인영역*/
+#cont{
+    height: 788px;
+}
+
+/*C.하단영역*/
+#info{
+    height: 100px;
+}
+
+/******** 각 구성요소 디자인 *********/
+/*1. 전체타이틀*/
+
+
+
+
+
+
+
+
+
