@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>네비게이션 유형1 -
+        가로네비 서브별 드롭다운 세로형</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            /*3無*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /*가상요소로 float해제설정*/
+        ul::after,
+        ol::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+            /*옆으로흐르게*/
+        }
+        
+        /*GNB 디자인*/
+        .gnb{
+            background-color: #3974e5;
+        }
+        
+        .gnb>ul{
+            width: 800px;
+            margin: 0 auto;
+            /*마영오-블록가로중앙
+            (가로크기가 화면보다 작아야함!)*/
+            /*outline: 2px solid red;*/
+        }
+        .gnb>ul>li{
+            width: 200px;
+            text-align: center;
+        }
+        
+        /*
+        .gnb>ul>li>a
+        -> 상위메뉴 li의 직계자식 a요소
+        .gnb>ul>li a
+        -> 상위메뉴 li의 자손 a요소 전부
+            (서브메뉴의 a요소가 포함됨!)
+        */
+        .gnb>ul>li a{
+            display: block;
+            /*디자인적용위해*/
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-decoration: none;
+            font: bold 14px/50px "맑은 고딕", Verdana;
+            /*font: 스 두 크/줄 체;*/
+            /*font를 한번에 설정할 경우 줄간격을 여기서 설정하거나
+            아랫줄에서 설정해야 초기화 되지 않는다!*/
+            /*line-height: 50px;*/
+            
+            /*트랜지션: 속시이지*/
+            transition: all .4s; 
+            
+        }
+        
+        /*상위메뉴 li에 마우스 오버시 a요소의 배경색, 글자색변경*/
+        .gnb>ul>li:hover>a{
+            color: #001795;
+            background-color: #bdd1ff;
+        }
+        
+        /*서브메뉴 디자인*/
+        .smenu{
+            position: absolute;
+            /*겹쳐지고 위치부모기준*/
+            width: 200px;
+            /*
+            float을 해제 안하고
+            아래로 내려가는 방법:
+            
+            하위의 li가 float되어
+            옆으로 흐르지만 가로크기를
+            지정하여 li가 그 크기와 
+            같으면 아래로 자동으로 내려감
+            
+            참고)
+            float 없애는 셋팅 -> float: none;
+            */
+            background-color: #219be6;
+            
+            /*서브메뉴 숨기기*/
+            /*1.높이값 0*/
+            height: 0;
+            /*2.넘치는 요소 숨기기*/
+            overflow: hidden;
+            
+            /*트랜지션*/
+            transition: height .4s ease-out;
+            
+        }
+        
+        /*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
+        /*두번째 메뉴 하위 높이값 200px*/
+        .gnb>ul>li:nth-child(2):hover .smenu{
+            height: 200px;
+        }
+        /*세번째 메뉴 하위 높이값 100px*/
+        .gnb>ul>li:nth-child(3):hover .smenu{
+            height: 100px;
+        }
+        
+        /*
+            원래 css의 transition은 두가지 크기에 변화 과정이다.
+            따라서 높이값을 각각 설정해 주는 것이 기본이다.
+            여러개일 경우 셋팅의 편의성을 위해 max-height를 사용하는
+            방법이 있다
+        */
+        
+        
+        .smenu li{
+            width: 100%;
+            /*부모박스의 가로크기를 채운다
+            -옆으로 흐르지 못한다!*/
+        }
+        
+        /*하위 메뉴의 li에 마우스 오버시 
+        a요소의 글자색, 배경색 변경*/
+        .smenu li:hover a{
+            color: #001aac;
+            background-color: #97e7ff;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <!--
+      GNB : Global Navigation Bar
+      전역적 네비게이션 바
+      - 사이트 전체에서 항상 보이는 이동 메뉴
+  -->
+    <nav class="gnb">
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">웹개발</a>
+                <ol class="smenu">
+                    <li>
+                        <a href="">
+                           웹디자인 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                           HTML5+CSS3 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                           jQuery 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                          웹+모바일  
+                        </a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="">게시판</a>
+                <ol class="smenu">
+                    <li>
+                        <a href="">
+                          Q&amp;A  
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            방명록
+                        </a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="">프로필</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+</body></html>

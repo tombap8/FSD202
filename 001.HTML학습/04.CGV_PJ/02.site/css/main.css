@@ -3,6 +3,20 @@
     @charset은 외부css의 언어인코딩 설정임(필수!)
     "utf-8" 은 2바이트 문자도 깨짐없이 인코딩 설정
 */
+/*
+
+    @import url(경로)
+    - 다른 외부 CSS를 불러와서 합치는 방식(merging머징)
+    - CSS의 상단에 코딩한다(@charset 아래)
+    - link방식에 비해 효율성이 좋아짐
+*/
+
+/*CDN방식 웹폰트*/
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Jua&display=swap');
+/*
+    font-family: 'Cute Font', cursive;
+    font-family: 'Jua', sans-serif;
+*/
 
 /*공통초기화*/
 html,body,h1,h2,h3{
@@ -28,13 +42,29 @@ body{
 /******각 영역별 레이아웃*****/
 /*A.상단영역*/
 #top{
+    position: relative;
+    /*부모자격!*/
     height: 80px;
 }
 
 /*B.메인영역*/
 #cont{
+    position: relative;
+    /*부모자격*/
     height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
 }
+/*
+
+[ 웹 경로 설정방법 ]
+1. 절대경로 : 웹 사이트의 root(최상위폴더)를 
+            기준한 경로 표기법
+            슬래쉬로 시작함 - /경로...
+2. 상대경로 : 현재위치를 기준한 경로 표기법
+            1) 현재파일위치 폴더 ./
+            2) 현재파일 폴더의 부모폴더 ../
+3. 외부경로 : http로 시작하는 웹경로
+*/
 
 /*C.하단영역*/
 #info{
@@ -43,8 +73,112 @@ body{
 
 /******** 각 구성요소 디자인 *********/
 /*1. 전체타이틀*/
+.tit {
+    height: 100%;
+    text-align: center;  
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+    line-height: 80px;
+    color: aquamarine;
+    /*텍스트그림자로 글로우 효과*/
+    /* x y blur color */
+    text-shadow: 0 0 10px aquamarine;
+}
+
+/*2. GNB메뉴*/
+.gnb{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    /*나의부모? #top
+        #top에 부모자격을 줌
+        부모자격은 static이
+    아니면됨! 기존 디자인을
+    해치지 않는 포지션은 
+    relative 가 주로 사용됨!
+    */
+}
+.gnb ul{
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    
+    outline: 2px solid red;
+}
+/*float된 자식의 높이값인식*/
+/*가상요소 clear:both*/
+.gnb ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
 
 
+.gnb ul li{
+    /*block요소 옆으로 흐르게*/
+    float: left;
+    padding: 0 10px;
+}
+.gnb ul li a{
+    /*글자색과 밑줄은 a요소에서
+    변경해야함! 여기에 기본셋팅
+    있으므로!*/
+   color: #fff; 
+    text-decoration: none;
+    /*글자체*/
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
+}
+
+/*3. 스크린박스*/
+#screen{
+    position: absolute;
+    top: 136px;
+    left: 257px;
+    /*나의 부모는? #cont*/
+    width: 701px;
+    height: 398px;
+    background-color: #000;
+}
+/*스크린 아이프레임*/
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/*4. 영화선택메뉴*/
+.mlist{
+    position: absolute;
+    bottom: 56px;
+    left: 252px;
+    /*나의 부모는? #cont*/
+}
+.mlist ul{
+    /*3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    overflow: hidden;
+    /*float자식요소 높이값 인식*/
+    /*outline: 10px solid cyan;*/
+}
+
+.mlist ul li{
+    float: left;
+    /*옆으로흐르게*/
+    padding: 0 10px;
+    /*패딩 양쪽 10px*/
+}
+
+/*썸네일 포스터 이미지 크기지정으로 li크기만들기*/
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
 
 
 

@@ -6,6 +6,45 @@
     <title>CGV PJ</title>
     <!--외부CSS불러오기-->
     <link rel="stylesheet" href="css/main.css">
+    <!--
+        자바스크립트 구역: script요소
+        - 스크립트 태그 내부는 자바스크립트 문법구역이다!
+        - 인터널방식의 스크립트 삽입을 페이지내부에 한다.
+        - type="text/javascript" 라는 속성을 과거엔
+        필수요소였는데 지금은 기본으로 js가 설정되어서
+        안써도 된다!
+    -->
+    <script>
+        //JS주석
+        /*JS주석*/
+        // 호출시에만 실행되는 코드구역이 있음
+        // 이름하여 함수.....영어로 function
+        // 형식: function 함수명(){구현코드}
+        // 호출: 함수이름과 넘길값이 있다면 같이 보낸다
+        //      함수명() -> 소괄호를 반드시 한다!!!
+        //      예) 멍멍("고기")
+        // 함수는 이벤트와 연결되어 호출된다!
+        // 이벤트는 각 요소의 내부에 이미 만들어져 있다!!!
+        // 예컨데 click 이벤트는 onclick 이라는 속성으로
+        // 요소에서 사용할 수 있다. 
+        // 그 값으로 함수를 호출해보자!!!
+        function 멍멍(먹이){//먹이-전달값을 담는 그릇역할
+            alert("왈왈!!"+먹이);
+            // alert(메시지) - 경고창띄우기
+            
+            // 전체문서 document
+            // 하위 .(점)
+            // 아이디에의한 요소명 getElementById(아이디명)
+            // 하위속성 .(점)
+            // 속성명 src
+            // 이퀄 -> "같다"는 의미가 아님!!!
+            // 이퀄은 오른쪽의 값이 왼쪽에 들어감을 뜻함!
+            document.getElementById("ifr").src =
+                "https://www.youtube.com/embed/"+먹이+"?autoplay=1";
+            
+        } //// 멍멍 함수 ///////////////
+    
+    </script>
 </head>
 
 <body>
@@ -13,14 +52,69 @@
     <!--A. 상단영역-->
     <header id="top" class="part">
         <!--1.전체타이틀-->
-        <h1>CGV 예고편 상영관</h1>
+        <h1 class="tit">CGV 예고편 상영관</h1>
         <!--2.전체메뉴(GNB)-->
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="">영화</a>
+                </li>
+                <li>
+                    <a href="">예매</a>
+                </li>
+                <li>
+                    <a href="">극장</a>
+                </li>
+                <li>
+                    <a href="">이벤트&amp;컬처</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    
+    <!--
+        html문서에 특수문자 출력하기    
+        & 엠퍼센트 -> &amp;
+        < 여는꺽쇠 -> &lt;
+        > 닫는꺽쇠 -> &gt;
+        공백 -> &nbsp;
+        
+        그밖에 특수문자를 문자표에서 
+        선택하여 넣는 방법도 있음
+        (ㅁ+한자키, ㄱ+한자키 등)
+    -->
+
     <!--B. 메인영역-->
     <main id="cont" class="part">
         <!--3.스크린-->
+        <div id="screen">
+           <iframe id="ifr" src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1"></iframe> 
+        </div>
         <!--4.영화선택메뉴-->
+        <nav class="mlist">
+            <ul>
+                <li onclick="멍멍('HHXyQiCGgKw')">
+                    <img src="images/m1.jpg" alt="도굴">
+                </li>
+                <li>
+                    <img src="images/m2.jpg" alt="삼진그룹영어토익반">
+                </li>
+                <li>
+                    <img src="images/m3.jpg" alt="담보">
+                </li>
+                <li>
+                    <img src="images/m4.jpg" alt="21브릿지">
+                </li>
+                <li>
+                    <img src="images/m5.jpg" alt="테넷">
+                </li>
+                <li>
+                    <img src="images/m6.jpg" alt="렛임고">
+                </li>
+            </ul>
+        </nav>
+        
+        
+        
     </main>
 
     <!--C. 하단영역-->
@@ -65,6 +159,4 @@
    -->
 
 
-</body>
-
-</html>
+</body></html>
