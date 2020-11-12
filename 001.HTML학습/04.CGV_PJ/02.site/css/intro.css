@@ -1,0 +1,105 @@
+@charset "utf-8";
+/*인트로 페이지 CSS - intro.css*/
+
+/*웹폰트 외부파일 불러오기*/
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;/*보이는 화면기준*/
+}
+
+/*body의 가상요소로 비디오 커버 만들기 - 오버레이효과*/
+body::after{
+    content: "";
+    display: block;
+    /*div를 넣은것 같다*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*나의부모? 화면(window)*/
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+}
+
+
+/*비디오*/
+#myvid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*
+        object-fit 속성 : img, video 요소에 사용함
+        부모요소의 크기에 채우는 방식을 결정함
+        - cover : 비율에 맞게 부모박스를 꽉채운다
+        - fill : 비율을 깨고 부모박스를 꽉채운다
+        - contain : 이미지나 비디오의 전체크기를 다 보이게 한다
+        
+    */
+    
+}
+
+/*들어가기 버튼 박스*/
+#enter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*부모? 화면*/
+    transform: translate(-50%,-50%);/*중앙이동*/
+    
+    /*outline: 10px dotted lime;*/
+    
+    
+    z-index: 1;
+    
+}
+
+/*들어가기 글자*/
+#enter a{
+    color: #fff;
+    text-decoration: none;
+    /*a요소 기본셋팅 변경하기*/
+}
+/*click here 글자박스*/
+#enter span{
+    display: block;
+    /*줄바꿈됨!*/
+    text-align: center;
+    /*글자중앙*/
+    font: bold 34px/40px Audiowide;
+    /*트랜지션(속시이지)*/
+    transition: all .4s ease-out .2s;
+    /*지연시간 0.2초*/
+}
+/*마우스 오버시 글자 트랜스폼 변경하기*/
+#enter:hover span{
+    /*크기: scale(배수)*/
+    transform: scale(2);/*2배키우기*/
+    color: chartreuse;
+}
+
+/*마우스 오버시 트랜스폼 변경하기*/
+#enter img{
+    /*트랜지션*/
+    transition: all .4s ease-out;
+}
+#enter:hover img{
+    /*회전 rotate(각도deg)*/
+    transform: scale(1.5) rotate(-15deg);
+    /*확대와 회전 두가지를 동시에 변경*/
+    
+}
+
+
+
+
+
+
+
+
+

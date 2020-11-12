@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform PJ</title>
+    <style>
+        body {
+            background: url(images/bg-main.jpg) no-repeat fixed top/cover;
+        }
+        /*안보임class*/
+        .bld{
+            display: none;
+        }
+        /*부모박스*/
+        .cont{
+            width: 1500px;
+            margin: 100px auto;
+            /*블록박스 static기준 중앙정렬*/
+            outline: 10px solid lime;
+/*            overflow: hidden;*/
+        }
+        /*캐릭터박스 공통*/
+        .cont>div{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            
+            float: left;
+            /*block박스를 옆으로 흐르게*/
+            /*
+                float설정된 요소의 부모가 
+                자식요소를 인식하는 방법!
+                1. 부모요소에 overflow:hidden
+                2. 자식요소 맨 끝에 clear속성 주기
+                (보통 요소 맨 마지막에 가상요소를 사용함)
+            */
+        }
+        /*가상요소로 float해제하기*/
+        .cont::after{
+            content: "";
+            display: block;
+            /*block이어야 clear사용가능*/
+            clear: both;
+            /*float해제*/
+        }
+        .cont>div>img{
+            width: 100%;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            /*원*/
+            /*
+                밴더 프레픽스(Vender Prefix)
+                - 브라우저 제조사(vender)별로
+                새로운 css속성을 지원하는 경우
+                이전 브라우저 버전에 적용될 수 
+                있도록 접두어를 사용한다.
+                (W3C에서 확인한 후 사용한다!)
+                
+                -webkit- : 크롬, 사파리
+                (크롱과 사파리로 웹킷을 가지고 놀러간다~!)
+                -moz- : 파이어폭스(모질라 불여우!)
+                -o- : 오페라
+                -ms- : 익스플로러                
+            */
+/*            transition: 속 시 이 지;*/
+            transition: all .6s;
+        }
+        
+        /*
+            Transform 효과 주기
+            - 선택요소의 크기, 회전, 이동, 기울임
+            등 변형을 하기위한 속성
+            - 2D, 3D 지원됨
+        
+            1. rotateY(각도deg) - Y축회전
+        */
+        #trans1:hover img{
+            transform: rotateY(180deg);
+        }
+        /*
+            2. rotateX(각도deg) - X축회전
+        */
+        #trans2:hover img{
+            transform: rotateX(180deg);
+        }
+        /*
+            3. translateX(거리) - X축이동
+            - 단위: px, %
+            - 현재 위치로부터 이동
+            - 기준점은 요소의 왼쪽선
+            - %의 기준은 요소의 width
+            - 방향: +는 오른쪽 , -는 왼쪽
+        */
+        #trans3:hover img{
+            transform: translateX(-100px);
+        }
+        /*
+            4. translateY(거리) - Y축이동
+            - 단위: px, %
+            - 현재 위치로부터 이동
+            - 기준점은 요소의 윗선
+            - %의 기준은 요소의 height
+            - 방향: +는 아래쪽 , -는 윗쪽
+        */
+        #trans4:hover img{
+            transform: translateY(200%);
+        }
+        /*
+            5. translate(x축거리,y축거리) 
+            - x,y축이동
+            - 단위: px, %
+            - 현재 위치로부터 이동
+            - 기준점은 요소의 왼쪽선,윗선
+            - %의 기준은 요소의 width,height
+            - 방향: +는 오른쪽/아래쪽 , 
+                    -는 왼쪽/윗쪽
+        */
+        #trans5:hover img{
+             transform: translate(-200%,100%);
+        }
+        /*
+            6. rotate(각도deg) - 원형회전
+            - 각도가 양수이면 시계방향(음수는 반시계)
+            - 기본축이 정중앙(변경가능-transform-origin)
+        */
+        #trans6:hover img{
+            transform: rotate(5423deg);
+            /*트랜지션 시간변경*/
+            transition-duration: 10s;
+            /*트랜스폼 축변경*/
+            /*transform-origin: right bottom;*/
+            /*
+            축변경 값은 아래와 같다
+            transform-origin: 가로값 세로값;
+            - 가로값: left, right, center, 몇px, 몇%
+            - 세로값: top, bottom, center, 몇px, 몇%
+            */
+            
+        }
+        /*
+            7. skew(각도deg) - x,y축 기울임
+            - skewX(각도deg), skewY(각도deg) - x,y축별
+        */
+        #trans7:hover img{
+            transform: skewX(-30deg);
+        }
+        /*
+            8. scale(배수)
+            - 배수가 1보다크면 확대, 작으면 축소
+            - scaleX(배수), scaleY(배수) - x,y축별
+        */
+        #trans8 img{/*축소*/
+            transform: scale(.5);
+        }
+        #trans8:hover img{/*확대*/
+            transform: scale(2);
+        }
+        /*
+            9. 복합적용하기
+            transform: 속성1 속성2 속성3 ........;
+        */
+        #trans9:hover img{
+            transform: scale(2) translate(-200%,-100%) rotateX(1000deg) skewX(50deg) rotate(5300deg);
+            /*트랜지션 시간변경*/
+            transition-duration: 20s;
+        }
+        
+        /*
+            10. 앞뒤로 있는 이미지 뒤집기
+        */
+        
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="bld">트랜스폼 연습</h1>
+    <div class="cont">
+        <div id="trans1"><img src="images/cast01.jpg" alt=""></div>
+        <div id="trans2"><img src="images/cast02.jpg" alt=""></div>
+        <div id="trans3"><img src="images/cast03.jpg" alt=""></div>
+        <div id="trans4"><img src="images/cast04.jpg" alt=""></div>
+        <div id="trans5"><img src="images/cast05.jpg" alt=""></div>
+        <div id="trans6"><img src="images/cast01.jpg" alt=""></div>
+        <div id="trans7"><img src="images/cast02.jpg" alt=""></div>
+        <div id="trans8"><img src="images/cast03.jpg" alt=""></div>
+        <div id="trans9"><img src="images/cast04.jpg" alt=""></div>
+        <div id="trans10">
+            <img src="images/cast02.jpg" alt="김유정">
+            <img src="images/cast03.jpg" alt="박보검">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body></html>
