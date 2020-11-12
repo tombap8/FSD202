@@ -40,7 +40,7 @@ body {
 .part {
     width: 1200px;
     margin: 0 auto;
-    outline: 3px dashed lime;
+    /*outline: 3px dashed lime;*/
 }
 
 /******각 영역별 레이아웃*****/
@@ -49,6 +49,8 @@ body {
     position: relative;
     /*부모자격!*/
     height: 80px;
+    z-index: 999;
+    /*아래쪽 레이아웃박스 보다 위!*/
 }
 
 /*B.메인영역*/
@@ -90,6 +92,8 @@ body {
     /*텍스트그림자로 글로우 효과*/
     /* x y blur color */
     text-shadow: 0 0 10px aquamarine;
+    /*배경이미지*/
+    background: url(../images/curtain.jpg) repeat-x;
 }
 
 /*2. GNB메뉴*/
@@ -111,9 +115,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-
-
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
 }
 
 /*float된 자식의 높이값인식*/
@@ -125,7 +127,9 @@ body {
 }
 
 
-.gnb ul li {
+.gnb ul > li {/*상위메뉴 li만 선택*/
+    position: relative;
+    /*부모자격-서브메뉴박스*/
     /*block요소 옆으로 흐르게*/
     float: left;
     padding: 0 10px;
@@ -141,6 +145,80 @@ body {
     font-family: 'Jua', sans-serif;
     font-size: 16px;
 }
+
+/*서브메뉴박스*/
+.smenu{
+    position: absolute;
+    left: 50%;
+    /*부모? 싸고있는 .gnb ul>li*/
+    transform: translateX(-50%);
+    /*가로중앙이동*/
+    width: 100px;
+    padding: 5px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    /*outline: 2px solid aqua;*/
+    display: none;
+    /*처음에 서브메뉴 안보임!*/
+}
+/*상위메뉴li에 마우스 오버시 하위메뉴 보이기*/
+.gnb ul>li:hover .smenu{
+    display: block;
+}
+
+/*가상요소로 삼각형 만들기!*/
+.smenu::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 45px;
+    /*부모? .smenu*/
+    width: 0px;
+    height: 0px;
+    /*정삼각형 보더로 만들기*/
+    border-bottom: 10px solid #ccc;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /*역삼각형은 border-bottom 대신 
+    border-top으로 함*/
+}
+
+
+.smenu ol{
+    border: 2px solid #ccc;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    
+}
+/*적용우선순위를 높이려면
+기존 셋팅의 부모를 앞에 쓴다!*/
+.gnb .smenu a{
+    font-size: 11px;
+}
+/*서브메뉴 a요소에 마우스 오버시*/
+/*글자색변경*/
+.gnb .smenu a:hover{
+    color: #f00;
+}
+/*가상요소로 손가락모양 넣기*/
+.gnb .smenu a:hover::after{
+    content: "☞";
+    float: right;
+    position: relative;
+    /*현재 위치에서 위치이동이 필요할경우
+    다른요소에 영향없이 움직일때도 사용함!*/
+    top: 5px;
+    left: 5px;
+}
+
+/*서브메뉴 구분선*/
+.sbar {
+    margin-top: 5px;
+    border-top: 2px solid #ccc;
+}
+
+
 
 /*3. 스크린박스*/
 #screen {
@@ -297,10 +375,41 @@ ol.movtxt {
     float: left;
     width: 34px;
     height: 34px;
-    outline: 2px solid lime;
+    margin: 2px;
+    /*outline: 2px solid lime;*/
+    /*공통 배경이미지*/
+    background: url(../images/sprites_logo.png) no-repeat;
+}
+/*
+    [ 스프라이츠 위치정보 알아내기 ]
+    - 포토샵에서 사각선택툴로 맨위에서 부터 알고자하는 위치까지
+    드래그하여 가로크기는 배경 left, 세로크기는 배경 top값으로 셋팅함
+*/
+.sns li:first-child{/*페이스북*/
+    background-position: -509px -429px;
 }
 
+.sns li:nth-child(2){/*트위터*/
+    background-position: -551px -429px;
+}
 
+.sns li:last-child{/*인스타그램*/
+    background-position: -593px -429px;
+}
+
+/*a요소 확장*/
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*IR(배경이미지 설명)*/
+.bld{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
 
 
 
