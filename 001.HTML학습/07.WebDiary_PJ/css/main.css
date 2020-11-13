@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* 웹 다이어리 메인 CSS - main.css */
+
+/*다른 외부 CSS 합치기*/
+@import url(reset.css);
+@import url(common.css);
+/*
+    @import url(경로)
+    1.css 파일 최상단(@charset아래)에 넣어 준다
+    2.여러번 사용가능함
+    3.html 의 link태그를 사용하지 않고 하나의
+    외부파일에서 다른 외부파일을 합치기 때문에
+    http request가 줄어들어 랜더링 속도가 빨라진다
+    
+*/
+/*전체 배경색*/
+body{
+    background-color: #4D7BF3;
+}
+
+/*전체 컨텐츠 박스*/
+.cont{
+    position: relative;
+    /*부모자격-자식 absolute*/
+    width: 1000px;
+    height: 800px;
+    background-color: #fff;
+    margin: 0 auto;/*마영오*/
+    outline: 2px solid red;
+}
+
+/*1. 타이틀박스*/
+#tit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*부모? .cont*/
+    width: 620px;
+    height: 198px;
+    background: url(../images/title.png) no-repeat;
+}
+
+/*2. 체크무늬박스*/
+#check{
+    position: absolute;
+    top: 0;
+    left: -383px;/*왼쪽에 나가있음!*/
+    /*부모? .cont*/
+    width: 383px;
+    height: 345px;
+    background: url(../images/check.png) no-repeat;
+    /*애니메이션호출(이시이지반방마)*/
+    animation: checkAni 1s ease-in-out 1s forwards;
+    /*animation: checkAni 1s ease-in-out 1s infinite alternate;*/
+    
+}
+/*체크무늬박스 키프레임*/
+/*내용: left값 변경으로 왼쪽에 나가있다가 들어옴*/
+@keyframes checkAni{
+    from{
+        left: -383px;
+    }
+    to{
+        left: 0;
+    }
+}/*키프레임*/
+
+/* 3.하단바다박스*/
+#sea{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*부모? .cont*/
+    width: 1000px;
+    height: 219px;
+    background: url(../images/sea.png) no-repeat;
+}
+
+/*4. 다이어리*/
+#diary{
+    position: absolute;
+    /*부모자격도 있음!(자식요소 absolute)*/
+    top: 50%;
+    left: 50%;
+    /*부모? .cont*/
+    transform: translate(-50%,-50%);
+    /*트랜스폼 중앙이동하기! 내크기의 절반!*/
+    margin-left: 15px;
+    /*책갈피를 고려하여 다이어리본책만 약간이동*/
+    
+    width: 834px;
+    height: 500px;
+    background: url(../images/diary.png) no-repeat;
+}
+
+/*다이*/
+
+/*4-1.폴라1*/
+.pola1{
+    position: absolute;
+    top: 48px;
+    left: 6px;
+    
+    width: 223px;
+    height: 235px;
+    
+    background: url(../images/pola1.png) no-repeat;
+    z-index: 1;/*위로*/
+}
+/*폴라1 글자이미지*/
+.pola1 img{
+    position: absolute;
+    /*부모? .pola1*/
+    bottom: 5px;
+    right: -187px;
+    display: none;/*처음에 안보임*/
+}
+
+/*4-2.폴라2*/
+.pola2{
+    position: absolute;
+    top: 32px;
+    left: 101px;
+    
+    width: 210px;
+    height: 200px;
+    
+    background: url(../images/pola2.png) no-repeat;
+}
+/*폴라2 글자이미지*/
+.pola2 img{
+    position: absolute;
+    top: 3px;
+    right: -89px;
+    /*부모? .pola2*/  
+    display: none;/*처음에 안보임*/
+}
+
+/*폴라박스에 마우스 오버시 이미지글자 보이기*/
+.pola:hover img{
+    display: block;/*보이게*/
+}
+
+/*마우스 오버된 폴라박스 위로오기*/
+.pola:hover{
+    z-index: 1;
+}
+
+/*4-3.스케줄박스*/
+.schedule{
+    position: absolute;
+    bottom: 45px;
+    left: 60px;
+}
+
+.schedule img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*처음이미지 위에 겹쳐짐!*/
+    display: none;/*처음에 안보임*/
+}
+
+/*스케줄에 마우스 오버시 표시보이기*/
+.schedule:hover img:last-child {
+    display: block;/*보임*/
+}
+
+/*4-4.포스트잍1*/
+.post1{
+    position: absolute;    
+    top: 68px;
+    right: 134px;
+    z-index: 1;/*위로*/
+    /*트랜지션*/
+    transition: transform .4s;
+}
+/*포스트1에 마우스 오버시 확대/회전하기*/
+.post1:hover{
+    transform: scale(1.2) rotate(-11deg);
+}
+
+
+/*4-5.포스트잍2*/
+.post2{
+    position: absolute;    
+    top: 46px;
+    right: 238px;
+    /*트랜지션*/
+    transition: transform .4s;
+}
+/*포스트2에 마우스 오버시 확대하기*/
+.post2:hover{
+    transform: scale(1.2);
+    z-index: 1;/*오버시 위로*/
+}
+
+/*4-6.스페인 음식*/
+.food{
+    position: absolute;
+    bottom: 43px;
+    right: 96px;
+}
+
+
+/*
+
+[ CSS에서 애니메이션 구현하기 : animation ]
+
+- html요소의 변화를 키프레임(장면)에 주고 이를 호출하여
+브라우저에서 애니메이션 연출할 수 있게 하는 CSS 구현기술
+
+[ 키프레임이란? ]
+- 애니메이션 변화를 지정하는 코딩영역
+
+[ 2장면 코딩법 ]
+
+@keyframes 키프레임명{
+    from {시작CSS}
+    to{마지막CSS}
+}
+
+[ 여러장면 코딩법 ]
+
+@keyframes 키프레임명{
+    0% {CSS설정}
+    10% {CSS설정}
+    20% {CSS설정}
+    ...
+    90% {CSS설정}
+    100% {CSS설정}
+}
+
+[ 설정된 키프레임 호출하는 방법 ]
+
+animation : 이시이지반방마
+(이름 시간 이징 지연 반복 방향 마지막상태)
+
+1) 이름(animation-name) : keyframe 이름
+2) 시간(animation-duration) : 애니메이션 동작시간 (초단위s)
+3) 이징(animation-timing-function) : easing 가속도
+4) 지연(animation-delay) : 애니메이션 시작지연시간
+5) 반복여부(animation-iteration-count) 
+   : 애니메이션 반복횟수, 기본값1, 숫자는 반복횟수
+    영원히 무한반복은 infinite (인피니트!)
+6) 방향(animation-direction) : 시작-끝 (기본)
+                            시작-끝,끝-시작 
+                            alternate(대체경로)
+7) 마지막상태(animation-fill-mode) : 애니메이션이 끝났을때
+                        처음상태로 돌아가는 것이 기본!
+                        마지막상태로 끝나고 싶으면?
+                        -> forwards(앞쪽에...즉,끝쪽에)
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* 웹 다이어리 리셋CSS - reset.css */
+
+html,body,h1,h2{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: #222;
+    text-decoration: none;
+}
+
+
+
+
+
+
+

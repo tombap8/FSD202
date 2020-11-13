@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스타벅스 연습</title>
+    <style>
+        body {
+            background: #000 url(starbucks_img/reserve_bg.jpg) no-repeat 0/100%;
+        }
+        
+         
+        #trans10{
+            position: relative;
+            /*부모자격*/
+            width: 334px;
+            height: 334px;
+            margin: 100px auto;
+            /*가로중앙*/
+        }
+        
+        /*두개의 이미지를 겹쳐지게 한다!*/
+        #trans10 img{
+            position: absolute;
+            /*2개의 이미지가 겹쳐져 나옴!*/
+        }
+        
+        /*1. 유정이 미리 90도 회전하여 숨기기*/
+        #trans10 img:first-child{
+            transform: rotateY(90deg);
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-in;
+            /*기다림없이 처음에 천천히*/
+        }
+        /*2. 오버시 유정이 0도로 회전하여 보이기*/
+        #trans10:hover img:first-child{
+            transform: rotateY(0deg);
+            /*트랜지션-0.4초 기다림*/
+            transition: all .4s ease-out .4s;
+        }
+        
+        /*3. 보거미 처음상태*/
+        #trans10 img:last-child{            
+            /*원상태로 돌아올때 트랜지션*/
+            transition: all .4s ease-out .4s;
+            /*돌아올때는 기다렸다가 마지막에 천천히*/
+        }
+        
+        /*4. 오버시 보거미 90도 회전하여 사라짐*/
+        #trans10:hover img:last-child{
+            transform: rotateY(90deg);
+            /*트랜지션*/
+            transition: all .4s ease-in;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="trans10">
+        <img src="starbucks_img/reserve_medal02.png" alt="매장안내">
+        <img src="starbucks_img/reserve_medal01.png" alt="스타벅스별">
+    </div>
+
+
+
+
+</body></html>
