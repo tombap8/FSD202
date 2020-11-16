@@ -26,19 +26,60 @@ body{
     height: 800px;
     background-color: #fff;
     margin: 0 auto;/*마영오*/
-    outline: 2px solid red;
+    overflow: hidden;/*넘치는자식요소숨김*/
+    /*outline: 2px solid red;*/
 }
 
 /*1. 타이틀박스*/
 #tit{
     position: absolute;
     top: 0;
-    right: 0;
+    right: -620px;/*가로크기만큼 오른쪽에 나가있음*/
     /*부모? .cont*/
     width: 620px;
     height: 198px;
     background: url(../images/title.png) no-repeat;
+    /*애니메이션:이시이지반방마*/
+    animation: titAni 1s ease-in-out 1.5s forwards;
 }
+/*타이틀박스 키프레임*/
+@keyframes titAni{
+    to{
+        right: 0;
+    }
+}/*키프레임*/
+
+/*타이틀박스 걷는남자*/
+#man{
+    position: absolute;
+    top: 10px;
+    right: -90px;
+    /*오른쪽 바깥에 나가있음*/
+    /*부모? #tit*/
+    /*애니메이션:이시이지반방마*/
+    animation: showMan 4s linear 6s forwards,
+        walk .5s linear 6s infinite alternate;
+    /*2개 애니메이션 적용(콤마뒤에 이시이지반방마!)*/
+}
+/*걷는남자 키프레임-등장*/
+@keyframes showMan{
+    to{
+        right: 70px;
+    }
+}/*키프레임*/
+
+/*걷는남자 키프레임-걷기*/
+@keyframes walk{
+    from{
+        transform: rotate(10deg);
+    }
+    to{        
+        transform: rotate(-10deg);
+    }
+}/*키프레임*/
+
+
+
 
 /*2. 체크무늬박스*/
 #check{
@@ -51,36 +92,139 @@ body{
     background: url(../images/check.png) no-repeat;
     /*애니메이션호출(이시이지반방마)*/
     animation: checkAni 1s ease-in-out 1s forwards;
-    /*animation: checkAni 1s ease-in-out 1s infinite alternate;*/
+/*    animation: checkAni 1s ease-in-out 3s infinite alternate;*/
     
 }
 /*체크무늬박스 키프레임*/
 /*내용: left값 변경으로 왼쪽에 나가있다가 들어옴*/
 @keyframes checkAni{
-    from{
+    /*처음셋팅값과 from의 셋팅값이 같으면 생략가능!*/
+    /*from{
         left: -383px;
-    }
+    }*/
     to{
         left: 0;
+    }
+}/*키프레임*/
+
+/*체크박스 고양이*/
+#cat {
+    position: absolute;
+    bottom: 103px;
+    left: -92px;/*-68px로변경*/
+    transform: rotate(0deg);/*rotate(42deg)로 변경*/
+    transform-origin: bottom;
+    /*회전축을 하단으로 변경(기본값은 center)*/
+    
+    /*애니메이션: 이시이지반방마*/
+    animation: catAni 2s ease-in-out 10s infinite alternate;
+}
+
+/*고양이 키프레임*/
+@keyframes catAni{
+    to{
+        left: -68px;
+        transform: rotate(42deg);
     }
 }/*키프레임*/
 
 /* 3.하단바다박스*/
 #sea{
     position: absolute;
-    bottom: 0;
+    bottom: -219px;
     left: 0;
     /*부모? .cont*/
     width: 1000px;
     height: 219px;
     background: url(../images/sea.png) no-repeat;
+    /*애니메이션:이시이지반방마*/
+    animation: seaAni 1s ease-in-out 2s forwards,
+        updown 2s ease-in-out 3s infinite alternate;
+    /*두번째 애니 updown은 앞의 애니총 시간 동안 기다렸다가 실행
+    즉, 대기시간+애니시간=2s+1s=3s*/
+    /*
+        infinite 영원히
+        alternate 대체경로(from-to-to-from)
+    */
+    
+    /*중첩애니메이션은 콤마(,)후 엔터가능하며
+    이시이지반방마 순으로 셋팅한다!*/
 }
+/*하단바다박스 키프레임*/
+@keyframes seaAni {
+    to{
+        bottom: 0;
+    }
+}/*키프레임*/
+
+/*하단바다박스 오르락 내리락 키프레임 추가!*/
+/*동작: 바다박스 등장애니 직후 작동시작함(영원히~)*/
+@keyframes updown{
+    from{
+        bottom: 0;
+        /*시작위치*/
+    }
+    to{
+        bottom: -10px;
+        /*마지막위치-아래쪽 10px*/
+    }
+}/*키프레임*/
+
+/*바다박스 상어*/
+#shark{
+    position: absolute;
+    bottom: -20px;
+    left: 110%;
+    height: 150px;
+    /*애니메이션:이시이지반방마*/
+    animation: shark 20s ease-in-out 5s infinite;
+}
+
+/*상어 키프레임*/
+@keyframes shark{
+    /*8장면 키프레임*/
+    0%{/*1.상어 오른쪽 바깥출발*/
+        left: 110%;
+    }
+    5%{/*2.오른쪽 끝에 등장하기*/
+        left: 60%;
+    }
+    40%{/*3.천천히 왼쪽으로 이동하기*/
+        left: 20%
+    }
+    50%{/*4.왼쪽 바깥으로 빠르게 나가기*/
+        left: -50%;
+        transform: rotateY(0deg);
+    }
+    /*반대로 돌아오는 구간*/
+    51%{/*5.왼쪽바깥에서 반대방향으로 뒤집기*/
+        left: -50%;
+        transform: rotateY(180deg);
+    }
+    60%{/*6.왼쪽끝에 반대방향으로 등장하기*/
+        left: 10%;
+        transform: rotateY(180deg);
+    }
+    95%{/*7.왼쪽에서 오른쪽까지 천천히 이동하기*/
+        left: 50%;
+        transform: rotateY(180deg);
+    }
+    100%{/*8.오른쪽끝에서 바깥으로 빠르게 나가기*/
+        left: 110%;
+        transform: rotateY(180deg);
+    }
+    
+    
+}/*키프레임*/
+
+
+
 
 /*4. 다이어리*/
 #diary{
     position: absolute;
     /*부모자격도 있음!(자식요소 absolute)*/
-    top: 50%;
+    top: 70%;/*50% 아래로 셋팅*/
     left: 50%;
     /*부모? .cont*/
     transform: translate(-50%,-50%);
@@ -91,9 +235,33 @@ body{
     width: 834px;
     height: 500px;
     background: url(../images/diary.png) no-repeat;
+    
+    /*투명하게 셋팅하여 나타나게하기*/
+    opacity: 0;
+    /*
+        opacity 속성 - 투명도 속성
+        0 은 완전투명, 1은 완전 불투명
+        0.1~0.9 투명도가 조정됨
+    
+        만약 투명도 애니메이션을 할 경우
+        display:none 을 사용하지 않아야함!
+        opacity로 애니메이션 연출함!
+    */
+    
+    /*애니메이션:이시이지반방마*/
+    animation: diaryAni 2s ease-in-out 3s forwards;
+    
 }
 
-/*다이*/
+/*다이어리 키프레임*/
+/*동작: 중앙위치로 올라오며 투명도1로 보이기*/
+@keyframes diaryAni{
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+    
+}/*키프레임*/
 
 /*4-1.폴라1*/
 .pola1{
@@ -201,6 +369,57 @@ body{
     bottom: 43px;
     right: 96px;
 }
+
+/*이미지맵 클릭시 포커스 아웃라인 없애기 - 크롬브라우저*/
+/*:focus가상클래스는 마우스로 요소를 클릭해서 포커스가 갈때 발생함*/
+area:focus{ 
+    outline: none;
+    /*
+        outline 디자인은 브라우저 마다 다름
+        기본 디자인 기능을 없애는 설정임
+        outline: 0 또는 outline:none
+    
+        a요소도 마찬가지임!(링크걸리면 생긴다!)
+    */
+}
+
+
+/*자유로운 애니 캐릭터*/
+#act1 {
+    position: fixed;
+    top: 20%;
+    left: 110%;/*오른쪽 바깥에 나가있음!*/
+    /*애니메이션:이시이지반방마*/
+    animation: freeAni 15s ease-in-out 5s infinite;
+}
+/*자유로운 캐릭터 키프레임*/
+@keyframes freeAni{
+    0%{/*1. 오른쪽 위(바깥)*/
+        top: 20%;
+        left: 110%;
+        transform: rotate(0deg);
+    }
+    30%{/*2. 왼쪽 위(바깥)*/
+        top: 5%;
+        left: -10%;
+        transform: rotate(1270deg);
+    }
+    60%{/*3. 왼쪽 아래(안쪽)*/
+        top: 80%;
+        left: 20%;
+        transform: rotate(-360deg);
+    }
+    100%{/*4. 오른쪽 중간(바깥)*/
+        top: 40%;
+        left: 110%;
+        transform: rotate(1180deg);
+    }
+}/*키프레임*/
+
+
+
+
+
 
 
 /*
