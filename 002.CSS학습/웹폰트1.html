@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹폰트란 무엇인가?</title>
+    <style>
+    /*
+    [ 웹폰트란? ]
+        - 브라우저에서 사용할 수 있도록 서버에
+        폰트를 올려놓고 브라우저가 이를 다운로드
+        하여 화면에 적용된 요소에서 사용할 수 있도록
+        개발한 폰트형식
+        
+    [ 웹폰트의 형식 ]
+        1. woff(Web Open Font Format) :
+        - w3c에서 표준으로 지정한 웹폰트형식
+        2017년에 woff2까지 발표됨(압축률,전송속도향상)
+        
+        2. eot(embeded open type):
+        - ms사에서 개발한 초기버전 웹폰트
+        (ie6~ie8에서 사용함)
+        
+        3. ttf(true type font):
+        - 구형 안드로이드 버전4.4에서 사용함
+        
+        (참고: 일반PC에 설치되는 글꼴형식)
+        1. ttf(true type font)
+        - 애플사에서 개발한 속도가 빠른 폰트형식
+        - 일반 브라우저 혹은 워드프로세스 등에서 많이사용
+        2. otf(open type font)
+        - ms+어도비 공동개발한 글꼴
+        - ttf보다 정교한 3차원방식으로 글자를 표현함
+        - 정교한 대신 무겁고 속도가 느린편임
+        
+        [ 웹폰트 코딩법 ]
+        @font-face{
+            font-family: 웹폰트명(내가지은이름);
+            src: url(경로/글꼴명.woff) format("woff"),
+                url(경로/글꼴명.ttf) format("truetype"),
+                url(경로/글꼴명.eot) format("eot");
+        }
+        
+        - 웹폰트 글꼴명은 자유롭게 지정할 수 있다
+        - src에는 같은 글꼴을 여러형식으로 셋팅할 수 있음
+        - 요즘은 이전형식인 eot, ttf 등을 셋팅 안하는 경향이 있다
+        
+        [ 웹폰트 생성법 ]
+        1. ttf 등의 일반 글꼴을 구한다
+        (네이버 무료폰트, 구글폰트, 유료폰트 등)
+        2. 웹폰트 변환 프로그램으로 파일을 생성한다
+        - 온라인 웹폰트 변환 사이트도 있음
+        (onlinefontconverter.com 등)
+        3. 실제 적용할 요소에 css 웹폰트 설정을 통해 셋팅한다.
+        
+        [ 웹폰트가 안나오는 경우 ]
+        1. font-face 설정에서 src경로가 부정확할때
+        2. 폰트명이 잘못됐을때
+        3. woff파일 변환에 문제가 있을때
+        (오프라인 변환인 경우 온라인 사이트변환을 해보고 문제가 
+        지속되면 다른 폰트를 구해본다!)
+        
+        [ font-face 셋팅시 유의점 ]
+        1. 폰트명은 font-family 에 써주는데 붙어있는 영문일 경우
+            따옴표로 안싸도 된다. (경로도 마찬가지!)
+        2. src에 format을 지정해야 웹폰트로딩 속도가 빠르다
+        (브라우저가 파일포멧을 보고 판단하므로!)
+        3. 웹폰트셋팅은 css파일 상단에 셋팅해야한다!
+        */
+    
+    
+        
+        /*웹폰튼 다운로드 설정*/
+        @font-face {/*훈고양이체*/
+            font-family:hoon;
+            src:url(fonts/Hoon.woff) format("woff");
+        }
+        @font-face {/*구기체*/
+            font-family:gugi;
+            src:url(fonts/Gugi.woff) format("woff");
+        }
+        @font-face {/*나눔브러시*/
+            font-family:nb;
+            src:url(fonts/NBrush.woff) format("woff");
+        }
+        @font-face {/*빅체*/
+            font-family:big;
+            src:url(fonts/Big.woff2) format("woff2");
+        }
+        @font-face {/*골드맨체*/
+            font-family:gm;
+            src:url(fonts/Goldman.woff2) format("woff2");
+        }
+        
+    
+        /*적용하기*/
+        .wf1{
+            font-family: hoon;
+            color: purple;
+        }
+        .wf2{
+            font-family: gugi;
+            color: #eb2b2b;
+        }
+        .wf3{
+            font-family: nb;
+            color: #04be0b;
+        }
+        .wf4{
+            font-family: big;
+            color: #b4009f;
+        }
+    
+        .wf5{
+            font-family: gm;
+            color: #0072e3;
+        }
+    
+    
+    
+    
+    </style>
+    
+    
+    
+</head>
+<body>
+   
+   
+   <h1 class="wf1">저 멀리 있는 별을 바라보는 일은 신성한 음악이나 고귀한 그림 또는 위대한 시인의 글귀와 같이 우리의 생각을 자극하고 정화하는 힘을 갖고 있어. 언제나 효과가 좋지.</h1>
+   <h1 class="wf2">저 멀리 있는 별을 바라보는 일은 신성한 음악이나 고귀한 그림 또는 위대한 시인의 글귀와 같이 우리의 생각을 자극하고 정화하는 힘을 갖고 있어. 언제나 효과가 좋지.</h1>
+   <h1 class="wf3">저 멀리 있는 별을 바라보는 일은 신성한 음악이나 고귀한 그림 또는 위대한 시인의 글귀와 같이 우리의 생각을 자극하고 정화하는 힘을 갖고 있어. 언제나 효과가 좋지.</h1>
+   <h1 class="wf4">A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music, or a noble picture, or a passage from the grander poets. It always does one good.</h1>
+   <h1 class="wf5">A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music, or a noble picture, or a passage from the grander poets. It always does one good.</h1>
+   
+   
+   
+   
+   
+   
+   
+   
+    
+</body>
+</html>
