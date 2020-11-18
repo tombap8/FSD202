@@ -28,7 +28,7 @@ body{
     transform: translateX(-50%);
     /*가로방향 중앙이동*/
     opacity: .5;
-/*    display: none;*/
+    display: none;
     z-index: 10;
 }
 
