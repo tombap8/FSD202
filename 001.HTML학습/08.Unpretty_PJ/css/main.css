@@ -1,0 +1,72 @@
+@charset "utf-8";
+/*언프리티 메인페이지 CSS - main.css*/
+
+/*공통*/
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000;
+}
+/*공통class*/
+.dn{/*안보임처리*/
+    display: none;
+}
+.bld{/*IR*/
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/*디자인검수용*/
+#dsn{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /*가로방향 중앙이동*/
+    opacity: .5;
+    display: none;
+    z-index: 10;
+}
+
+/*전체박스*/
+.wrap{
+    position: relative;
+    /*부모자격*/
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    background: url(../images/bg.jpg) no-repeat;
+}
+
+/*로고박스*/
+.logo{
+    position: absolute;
+    /*위치값없으면 젠틀!, 크기주안주면 내용만큼!*/
+    top: 20px;
+    left: 2%;
+    /*나의부모? .wrap*/
+    width: 96%;
+    /*가로크기 주기*/
+}
+/*두번째 로고 오른쪽 끝으로!*/
+.logo img:last-child{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
