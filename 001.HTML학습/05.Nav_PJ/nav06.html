@@ -66,7 +66,7 @@
             height: 100%;
             color: #fff;
             text-decoration: none;
-            font: bold 15px/50px "맑은 고딕", Verdana;
+            font: bold 14px/50px "맑은 고딕", Verdana;
             /*font: 스 두 크/줄 체;*/
             /*font를 한번에 설정할 경우 줄간격을 여기서 설정하거나
             아랫줄에서 설정해야 초기화 되지 않는다!*/
@@ -131,13 +131,13 @@
         /*하위메뉴 a요소*/
         /*우선순위 올리려고 .gnb씀!*/
         .gnb .smenu li a {
-            color: #ff00ff;
+            color: navy;
         }
 
         /*하위 메뉴의 li에 마우스 오버시 
         a요소의 밑줄셋팅 변경*/
         .smenu li:hover a {
-            text-decoration: line-through;
+            text-decoration: underline;
         }
 
 
@@ -151,14 +151,14 @@
             background: #bdd1ff;
             overflow: hidden;
             /*자식요소 숨기기*/
-            transition: all .4s ease-out;
+            transition: height .4s ease-out;
         }
         
         /*서브박스 이미지*/
         .sbi{
             position: absolute;
             top: 10px;
-            right: 15px;
+            right: 10px;
             /*나의부모? .sbox*/
             height: 180px;            
         }
