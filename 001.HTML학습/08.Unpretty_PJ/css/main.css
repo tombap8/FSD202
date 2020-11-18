@@ -57,6 +57,64 @@ body{
     float: right;
 }
 
+/*메인로고*/
+#mlogo{
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    /*나의부모? .wrap*/
+    transform: translate(-50%,-50%);
+    /*정중앙이동!*/
+}
+
+
+/*랩퍼컨텐츠 박스*/
+.cont{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*잡아늘려 채우기!*/
+}
+
+/*랩퍼박스 공통*/
+.rapper{
+    position: absolute;
+    /*부모는? .cont*/
+    width: 170px;
+    height: 170px;
+    border: 10px solid #ccc;
+    border-radius: 50%;/*원*/
+    box-sizing: border-box;
+    /*보더,패딩을 포함하는 박스*/
+}
+/*뮤지션공통*/
+.mu{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    /*부모내부 보더만큼이동*/
+    /*부모? .rapper*/
+    width: 100%;
+    height: 100%;
+    
+    /*배경설정*/
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 230px;
+    
+    /*배경개별설정*/
+    background-image: url(../images/01ash-b.png);
+    background-position: -50px 10px;
+    
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+
+
+
+
 
 
 
