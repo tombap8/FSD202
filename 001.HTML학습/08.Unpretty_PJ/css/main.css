@@ -28,7 +28,7 @@ body{
     transform: translateX(-50%);
     /*가로방향 중앙이동*/
     opacity: .5;
-    display: none;
+/*    display: none;*/
     z-index: 10;
 }
 
@@ -102,20 +102,128 @@ body{
     /*배경설정*/
     background-color: #000;
     background-repeat: no-repeat;
-    background-size: 230px;
-    
-    /*배경개별설정*/
-    background-image: url(../images/01ash-b.png);
-    background-position: -50px 10px;
+    background-size: 202px;
     
     border: 10px solid #ccc;
     border-radius: 50%;
 }
 
+/*개별 랩퍼셋팅하기*/
 
+/*1.애쉬비*/
+.r1{
+    /*랩퍼개별위치값*/
+    top: 19px;
+    left: 417px;
+}
+.r1 .mu{
+    /*배경개별설정*/
+    background-image: url(../images/01ash-b.png);
+    background-position: -32px 13px;
+}
 
+/*2.엑시*/
+.r2{
+    /*랩퍼개별위치값*/
+    top: 69px;
+    right: 161px;
+}
+.r2 .mu{    
+    /*배경개별설정*/
+    background-image: url(../images/01EXY.png);
+    background-position: -32px 20px;
 
+}
 
+/*3. 헤이즈*/
+.r3{
+    /*랩퍼개별위치값*/
+    top: 289px;
+    right: 20px;
+}
+.r3 .mu{    
+    /*배경개별설정*/
+    background-image: url(../images/01heize.png);
+    background-position: -32px 20px;
+
+}
+
+/*4.효린*/
+.r4 {
+    bottom: 300px;
+    right: 20px;
+}
+.r4 .mu{
+    background-image: url(../images/01hyorin.png);
+    background-position: -30px -5px;
+    background-size: 230px;
+}
+
+/*5.전지윤*/
+.r5 {
+    bottom: 70px;
+    right: 160px;
+}
+.r5 .mu{
+    background-image: url(../images/01jenyer.png);
+    background-position: -50px 0px;
+    background-size: 220px;
+}
+
+/*6.캐스퍼*/
+.r6 {
+    bottom: 20px;
+    right: 416px;
+}
+.r6 .mu{
+    background-image: url(../images/01kasper.png);
+    background-position: -30px 0px;
+    background-size: 220px;
+}
+
+/*7.키디비*/
+.r7 {
+    bottom: 70px;
+    left: 160px;
+}
+.r7 .mu{
+    background-image: url(../images/01kittib.png);
+    background-position: -30px 0px;
+    background-size: 220px;
+}
+
+/*8.수아*/
+.r8 {
+    bottom: 300px;
+    left: 20px;
+}
+.r8 .mu{
+    background-image: url(../images/01sua.png);
+    background-position: -50px 0px;
+    background-size: 220px;
+}
+
+/*9.트루디*/
+.r9 {
+    top: 290px;
+    left: 20px;
+}
+.r9 .mu{
+    background-image: url(../images/01truedy.png);
+    background-position: -50px -40px;
+    background-size: 220px;
+}
+
+/*10.유빈*/
+.r10 {
+    top: 70px;
+    left: 160px;
+}
+.r10 .mu{
+    background-image: url(../images/01yubin.png);
+    background-position: -50px 5px;
+    background-size: 220px;
+}
 
 
 
