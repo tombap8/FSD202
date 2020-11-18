@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>네비게이션 유형2 -
-        가로네비 서브별 드롭다운 가로형</title>
+    <title>네비게이션 유형5 -
+        세로네비 서브별 드롭다운 사이드형</title>
     <style>
         html,
         body {
@@ -34,50 +34,22 @@
         
         /*GNB 디자인*/
         .gnb{
-            position: relative;
-            /*상위메뉴 li의 가상요소 before의 부모!*/
+            position: fixed;
+            width: 200px;
+            height: 100%;
             background-color: #3974e5;
-        }
-        /*변경7-
-        .gnb>ul>li에 가상요소로 하위메뉴 배경판 만들기*/
-        /*하위메뉴가 있는 상위메뉴li는 class가 sm이다!*/
-        .gnb>ul>li.sm::before{
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            /*li의 가상요소지만 부모인 .gnb를 
-            기준하여 위치를 정한다!*/
-            /*부모는? .gnb*/
-            width: 100%;
-            height: 0;/*처음에 안보임*/
-            background-color: #219be6;
-            /*트랜지션: 속시이지*/
-            transition: all .4s; 
-        }
-        /*변경8-.gnb에 마우스 오버시 가상요소 배경판 보이기*/
-        /*
-            [ 서브메뉴 100% 배경 만들기의 원리 ]
-            상위메뉴 li에 가상요소를 넣고
-            배경을 만들어 absolute를 주면
-            부모자격으로 .gnb에 주게되면
-            비록 li의 가상요소지만 .gnb를 기준하게된다!
-            화면끝까지 가는 100% 배경 디자인이 가능하다!
-        */
-        /*상위메뉴li중 하위메뉴가 있는 .sm만 hover*/
-        .gnb>ul>li.sm:hover::before{
-            height: 50px;
         }
         
         .gnb>ul{
-            width: 800px;
+            width: 200px;
             margin: 0 auto;
             /*마영오-블록가로중앙
             (가로크기가 화면보다 작아야함!)*/
             /*outline: 2px solid red;*/
         }
         .gnb>ul>li{
+            position: relative;
+            /*부모자격-서브메뉴의 부모*/
             width: 200px;
             text-align: center;
         }
@@ -116,13 +88,17 @@
         /*서브메뉴 디자인*/
         .smenu{
             position: absolute;
-            /*겹쳐지고 위치부모기준*/
-/*            width: 800px;*/
-            
-            /*변경1-자식요소 모두포함-옆으로 흐르게
-            width없애고 자동으로 
-            내용만큼 생김
+            top: 0;
+            left: 100%;
+            /*
+                싸고 있는 li가 부모자격을 가지고
+                top, left를 설정한다!
+                left:100%는 부모박스의 가로크기를 기준한다!
             */
+            
+            
+            /*겹쳐지고 위치부모기준*/
+            width: 200px;
             /*
             float을 해제 안하고
             아래로 내려가는 방법:
@@ -135,8 +111,7 @@
             참고)
             float 없애는 셋팅 -> float: none;
             */
-            /*background-color: #219be6;*/
-            /*변경6-배경색 빼기(.gnb가상요소에 배경있음)*/
+            background-color: #219be6;
             
             /*서브메뉴 숨기기*/
             /*1.높이값 0*/
@@ -147,17 +122,16 @@
             /*트랜지션*/
             transition: height .4s ease-out;
             
-            /*변경5-왼쪽패딩*/
-            padding-left: 60px;
-            
-            
         }
         
         /*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
         /*두번째 메뉴 하위 높이값 200px*/
-        .gnb>ul>li:hover .smenu{
-            height: 50px;
-            /*변경3-마우스 오버시 높이값 변경*/
+        .gnb>ul>li:nth-child(2):hover .smenu{
+            height: 200px;
+        }
+        /*세번째 메뉴 하위 높이값 100px*/
+        .gnb>ul>li:nth-child(3):hover .smenu{
+            height: 100px;
         }
         
         /*
@@ -169,12 +143,7 @@
         
         
         .smenu li{
-/*            width: 200px;*/
-            padding: 0 10px;
-            /*변경2-li하나당 크기 없애고 양쪽패딩 
-            (부모박스에서 옆으로 흐르게)*/
-            
-            
+            width: 100%;
             /*부모박스의 가로크기를 채운다
             -옆으로 흐르지 못한다!*/
         }
@@ -183,9 +152,7 @@
         a요소의 글자색, 배경색 변경*/
         .smenu li:hover a{
             color: #001aac;
-            /*background-color: #97e7ff;*/
-            text-decoration: underline;
-            /*변경4-배경색없애고 밑줄*/
+            background-color: #97e7ff;
         }
         
         
@@ -204,7 +171,7 @@
             <li>
                 <a href="">Home</a>
             </li>
-            <li class="sm">
+            <li>
                 <a href="">웹개발</a>
                 <ol class="smenu">
                     <li>
@@ -229,7 +196,7 @@
                     </li>
                 </ol>
             </li>
-            <li class="sm">
+            <li>
                 <a href="">게시판</a>
                 <ol class="smenu">
                     <li>
