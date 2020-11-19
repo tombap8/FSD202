@@ -88,7 +88,23 @@ body{
     border-radius: 50%;/*원*/
     box-sizing: border-box;
     /*보더,패딩을 포함하는 박스*/
+    
+    /*배경셋팅*/
+    background-color: #000;
+    background-image: url(../images/tv3_small.png);
+    background-repeat: no-repeat;
+    background-position: center 150px;
+    background-size: 160px;
+    
+    /*트랜지션:속시이지*/
+    transition: background .4s ease-out;
 }
+/*랩퍼박스에 마우스 오버시 배경 tv이미지 올라오기*/
+.rapper:hover{
+    background-position: center 5px;
+}
+
+
 /*뮤지션공통*/
 .mu{
     position: absolute;
