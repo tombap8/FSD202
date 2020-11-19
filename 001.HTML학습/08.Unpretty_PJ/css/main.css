@@ -133,6 +133,12 @@ body{
     background-image: url(../images/01ash-b.png);
     background-position: -32px 13px;
 }
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r1:hover .mu{
+    top: 212px;
+    left: -47px;
+    background-position: 17px 21px;
+}
 
 /*2.엑시*/
 .r2{
@@ -145,6 +151,12 @@ body{
     background-image: url(../images/01EXY.png);
     background-position: -32px 20px;
 
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r2:hover .mu{
+    top: 200px;
+    left: -287px;
+    background-position: 0px 21px;
 }
 
 /*3. 헤이즈*/
@@ -159,6 +171,12 @@ body{
     background-position: -32px 11px;
 
 }
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r3:hover .mu{
+    top: -20px;
+    left: -427px;
+    background-position: 0px 21px;
+}
 
 /*4.효린*/
 .r4 {
@@ -169,6 +187,12 @@ body{
     background-image: url(../images/01hyorin.png);
     background-position: -30px -5px;
     background-size: 230px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r4:hover .mu{
+    top: -280px;
+    left: -427px;
+    background-position: 0px 21px;
 }
 
 /*5.전지윤*/
@@ -181,6 +205,12 @@ body{
     background-position: -50px 0px;
     background-size: 220px;
 }
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r5:hover .mu{
+    top: -500px;
+    left: -300px;
+    background-position: 0px 21px;
+}
 
 /*6.캐스퍼*/
 .r6 {
@@ -191,6 +221,12 @@ body{
     background-image: url(../images/01kasper.png);
     background-position: -30px 0px;
     background-size: 220px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r6:hover .mu{
+    top: -560px;
+    left: -30px;
+    background-position: 0px 21px;
 }
 
 /*7.키디비*/
@@ -203,6 +239,12 @@ body{
     background-position: -30px 0px;
     background-size: 220px;
 }
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r7:hover .mu{
+    top: -530px;
+    left: 200px;
+    background-position: 0px 21px;
+}
 
 /*8.수아*/
 .r8 {
@@ -213,6 +255,12 @@ body{
     background-image: url(../images/01sua.png);
     background-position: -50px 0px;
     background-size: 220px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r8:hover .mu{
+    top: -280px;
+    left: 350px;
+    background-position: 0px 21px;
 }
 
 /*9.트루디*/
@@ -225,6 +273,12 @@ body{
     background-position: -50px -40px;
     background-size: 220px;
 }
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r9:hover .mu{
+    top: -80px;
+    left: 350px;
+    background-position: 0px 21px;
+}
 
 /*10.유빈*/
 .r10 {
@@ -235,6 +289,12 @@ body{
     background-image: url(../images/01yubin.png);
     background-position: -50px 5px;
     background-size: 220px;
+}
+/*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
+.r10:hover .mu{
+    top: 160px;
+    left: 210px;
+    background-position: 0px 21px;
 }
 
 
