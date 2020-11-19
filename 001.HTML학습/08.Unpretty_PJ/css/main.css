@@ -106,7 +106,19 @@ body{
     
     border: 10px solid #ccc;
     border-radius: 50%;
+    
+    /*트랜지션:속시이지*/
+    transition: all .4s ease-out;
 }
+
+/*랩퍼박스에 마우스 오버시 자식(.mu)요소 변경하기*/
+.rapper:hover .mu{
+    width: 220px;
+    height: 500px;
+    border-radius: 7px;
+}
+
+
 
 /*개별 랩퍼셋팅하기*/
 
@@ -144,7 +156,7 @@ body{
 .r3 .mu{    
     /*배경개별설정*/
     background-image: url(../images/01heize.png);
-    background-position: -32px 20px;
+    background-position: -32px 11px;
 
 }
 
