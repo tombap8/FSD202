@@ -44,8 +44,20 @@ body{
 
 /*큰별*/
 #bigstar{
-    transform: rotate(720deg) scale(0);
+    transform: scale(0) rotateY(720deg);
+    /*셋팅순서 중요!*/
+    
+    /*애니메이션:이시이지반방마*/
+    animation: rotScale 3s ease-in-out forwards;
 }
+
+/*큰별과 랩퍼박스의 키프레임*/
+/*변경사항: 스케일 복원(1), Y축회전 복원(0deg)*/
+@keyframes rotScale{
+    to{
+        transform: scale(1) rotateY(0deg)
+    }
+}/*키프레임*/
 
 
 /*로고박스*/
@@ -79,7 +91,18 @@ body{
     opacity: 0;
     /*투명하게!*/
     
+    /*애니메이션: 이시이지반방마*/
+    animation: mlogo 2s ease-in-out 4s forwards;
+    
 }
+
+/*메인로고 키프레임*/
+@keyframes mlogo{
+    to{
+        opacity: 1;
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}/*키프레임*/
 
 
 /*랩퍼컨텐츠 박스*/
@@ -114,7 +137,10 @@ body{
     transition: background .4s ease-out;
     
     /*트랜스폼 셋팅*/
-    transform: scale(0) rotate(720deg);
+    transform: scale(0) rotateY(720deg);    
+    
+    /*애니메이션:이시이지반방마*/
+    animation: rotScale .8s ease-in-out 3s forwards;
 }
 /*랩퍼박스에 마우스 오버시 배경 tv이미지 올라오기*/
 .rapper:hover{
