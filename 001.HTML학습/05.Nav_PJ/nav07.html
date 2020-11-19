@@ -24,7 +24,26 @@
         .gnb li{
             float: left;
             width: 150px;
+            height: 40px;
+        }
+        .gnb a{
+            display: block;
+            width: 100%;
             height: 100%;
+            
+            /*글자색과 밑줄은 꼭 a요소에서!*/
+            color: #333;
+            text-decoration: none;
+            
+            /*글자셋팅*/
+            font: 12px/40px Verdana;
+            text-align: center;
+            
+            /*CSS로 그라데이션 주기*/
+            /*그라데이션은 예전에 무조건 이미지로 만듦*/
+            /*그래서 배경이미지로 셋팅한다!*/
+            background-image: linear-gradient(to bottom, #6d6d6d, #d6d6d6);
+            
         }
         
     </style>
