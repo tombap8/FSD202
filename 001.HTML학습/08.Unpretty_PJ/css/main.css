@@ -154,8 +154,8 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r2:hover .mu{
-    top: 200px;
-    left: -287px;
+    top: 161px;
+    left: -300px;
     background-position: 0px 21px;
 }
 
@@ -173,8 +173,8 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r3:hover .mu{
-    top: -20px;
-    left: -427px;
+    top: -59px;
+    left: -440px;
     background-position: 0px 21px;
 }
 
@@ -190,8 +190,8 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r4:hover .mu{
-    top: -280px;
-    left: -427px;
+    top: -300px;
+    left: -441px;
     background-position: 0px 21px;
 }
 
@@ -207,7 +207,7 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r5:hover .mu{
-    top: -500px;
+    top: -530px;
     left: -300px;
     background-position: 0px 21px;
 }
@@ -224,8 +224,8 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r6:hover .mu{
-    top: -560px;
-    left: -30px;
+    top: -580px;
+    left: -44px;
     background-position: 0px 21px;
 }
 
@@ -242,7 +242,7 @@ body{
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r7:hover .mu{
     top: -530px;
-    left: 200px;
+    left: 211px;
     background-position: 0px 21px;
 }
 
@@ -258,7 +258,7 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r8:hover .mu{
-    top: -280px;
+    top: -300px;
     left: 350px;
     background-position: 0px 21px;
 }
@@ -275,7 +275,7 @@ body{
 }
 /*랩퍼박스에 마우스 오버시 자식요소(.mu) 개별위치설정하기*/
 .r9:hover .mu{
-    top: -80px;
+    top: -60px;
     left: 350px;
     background-position: 0px 21px;
 }
