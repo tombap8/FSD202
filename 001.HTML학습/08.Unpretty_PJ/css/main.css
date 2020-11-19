@@ -42,6 +42,12 @@ body{
     background: url(../images/bg.jpg) no-repeat;
 }
 
+/*큰별*/
+#bigstar{
+    transform: rotate(720deg) scale(0);
+}
+
+
 /*로고박스*/
 .logo{
     position: absolute;
@@ -63,8 +69,16 @@ body{
     top: 51%;
     left: 50%;
     /*나의부모? .wrap*/
-    transform: translate(-50%,-50%);
+    
+    /*트랜스폼 셋팅*/
+    transform: translate(-50%,-50%) rotate(180deg);
     /*정중앙이동!*/
+    transform-origin: bottom;
+    /*회전시 아래쪽으로 기준선을 변경*/
+    
+    opacity: 0;
+    /*투명하게!*/
+    
 }
 
 
@@ -98,6 +112,9 @@ body{
     
     /*트랜지션:속시이지*/
     transition: background .4s ease-out;
+    
+    /*트랜스폼 셋팅*/
+    transform: scale(0) rotate(720deg);
 }
 /*랩퍼박스에 마우스 오버시 배경 tv이미지 올라오기*/
 .rapper:hover{
