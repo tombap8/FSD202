@@ -5,47 +5,101 @@
     <title>네비게이션 유형7-
         가로네비 서브없는 디자인형</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
         }
+
         /*전체부모*/
-        .gnb{
+        .gnb {
             width: 900px;
             height: 40px;
             margin: 0 auto;
         }
-        .gnb>ul{
+
+        .gnb>ul {
             /*3無*/
             margin: 0;
             padding: 0;
             list-style: none;
         }
-        .gnb li{
+
+        .gnb li {
             float: left;
             width: 150px;
             height: 40px;
         }
-        .gnb a{
+
+        .gnb a {
             display: block;
             width: 100%;
             height: 100%;
-            
+
             /*글자색과 밑줄은 꼭 a요소에서!*/
             color: #333;
             text-decoration: none;
-            
+
             /*글자셋팅*/
             font: 12px/40px Verdana;
             text-align: center;
-            
+
             /*CSS로 그라데이션 주기*/
             /*그라데이션은 예전에 무조건 이미지로 만듦*/
             /*그래서 배경이미지로 셋팅한다!*/
             background-image: linear-gradient(to bottom, #6d6d6d, #d6d6d6);
             
+/*            background-image: linear-gradient(-30deg, red, yellow 30%,yellow 70%, blue);*/
+            
+            
+            
+ /*           
+    [ CSS 그라디언트 주기 방법 ]
+            
+    1. 선형그라디언트
+            (참고: https://www.w3schools.com/css/css3_gradients.asp)
+        1) 균등분할 그라데이션
+        background-image: 
+                linear-gradient(방향,색1,색2,....);
+        2) 사용자 지정 영역 그라데이션
+        background-image: 
+                linear-gradient(방향,색1 몇%,색2 몇%,....);
+        3) 각도 지정 그라데이션
+        background-image: 
+                linear-gradient(각도,색1,색2,색3,...);
+            
+        - 옵션설명: 첫번째 설정값
+        > 방향 : to top, to bottom, to left, to right
+        > 각도 : 기울임 각도 설정(단위: deg)
+
+    2. 원형그라디언트
+            (참고: https://www.w3schools.com/css/css3_gradients_radial.asp)
+            
+        1) 기본형: 중앙중심
+        background-image: 
+            radial-gradient(색1,색2,색3,....);
+
+        2) 영역지정형:
+        background-image: 
+            radial-gradient(색1 몇%,색2 몇%,색3 몇%,....);
+
+        3) 정원일 경우: circle 키워드 사용
+        background-image: 
+            radial-gradient(circle,색1,색2,색3,....);
+
+        4) 영역옵션 지정형: 중심점 지정
+        background-image: 
+            radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,....);
+        - 옵션: closest-side / farthest-side
+                closest-corner / farthest-corner
+        - 가로위치, 세로위치 (중심점) - 단위는 px/%
+*/
+
+
+
+
+
         }
-        
     </style>
 </head>
 
