@@ -9,6 +9,20 @@
     background-color: #fff;
     /*배경흰색*/
 }
+/*가상요소로 GNB메뉴 100% 배경바 만들기*/
+.wrap::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    /*부모? 보이는 화면*/
+    width: 100%;
+    height: 40px;
+    
+    /*배경 그라데이션*/
+    background-image: linear-gradient(to bottom, #cecece 0%, #bababa 20%, #8a8a8a 80%, #5c5c5c 100%);
+}
 
 /*표시*/
 .wrap > * {
