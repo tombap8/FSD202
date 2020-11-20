@@ -8,6 +8,11 @@
     /*가로중앙정렬-마영오*/
     background-color: #fff;
     /*배경흰색*/
+    /*box-shadow: x축 y축 spread blur 색;*/
+    box-shadow: 0 0 5px #ccc;
+    /*값을 4개만쓰면 세번째요소를 blur로 인식함*/
+    /*spread는 박스가 그림자와 떨어진 정도임*/
+    
 }
 /*가상요소로 GNB메뉴 100% 배경바 만들기*/
 .wrap::before{
@@ -26,7 +31,7 @@
 
 /*표시*/
 .wrap > * {
-    outline: 2px dashed blue;
+    /*outline: 2px dashed blue;*/
 }
 
 /*************** 1.상단영역 ********************/
@@ -257,6 +262,7 @@
 /*************** 3.하단영역 ********************/
 #info {
     height: 90px;
+    border-top: 1px solid #ccc;
 }
 
 /*3-1.하단로고*/
@@ -264,6 +270,13 @@
     margin-top: 5px;
     margin-left: 5px;
     vertical-align: middle;
+    
+    /*vertical-align은 이 속성을
+    셋팅한 요소가 기준이되어
+    인라인요소의 진행방향인 왼쪽에서
+    오른쪽이므로 오른쪽 인라인요소의
+    세로 정렬을 정의 하는데 사용됨!*/
+    
 }
 /*3-2.회사주소*/
 #info address{
@@ -273,6 +286,19 @@
         디자인적용도 block처럼되면서 
         inline처럼 한줄에 오는 display
     */
+    width: calc(100% - 185px);
+    /*가로 전체 100% - 이미지크기+마진+엔터간극*/
+    /*
+        calc(값1 - 값2)
+        값1과 값2 사이에 마이너스
+        앞뒤공백 필수!!!
+    */
+    
+    text-align: center;
+    /*가로크기의 텍스트 중간정렬*/
+    
+    font-style: normal;
+    /*address 기본 이탤릭 해제!*/
 }
 
 
