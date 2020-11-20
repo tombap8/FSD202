@@ -258,3 +258,25 @@
 #info {
     height: 90px;
 }
+
+/*3-1.하단로고*/
+#info>img{
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+/*3-2.회사주소*/
+#info address{
+    display: inline-block;
+    /*
+        inline-block 이란?
+        디자인적용도 block처럼되면서 
+        inline처럼 한줄에 오는 display
+    */
+}
+
+
+
+
+
+
