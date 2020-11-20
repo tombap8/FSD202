@@ -34,6 +34,30 @@
     position: relative;
     /*부모자격*/
     height: 130px;
+    z-index: 9999;
+    /*
+        보통 하위 형제요소가 포지션이 static이 아닌경우
+        먼저 그려진 요소는 아래쪽에 깔리게 된다.
+        따라서 일반적으로 최상위 메뉴박스를 z-index로
+        상위를 주기위해 높은 숫자로 셋팅한다!
+    */
+    
+}
+
+/*1-1.로고*/
+#logo{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    /*
+        왜 relative를 사용해서 top이동을 하였는가?
+        (block요소에 대한 margin-top만 그렇다!!!)
+        - margin-top은 부모요소에 포함되지 않아서
+        부모 바깥쪽을 밀기때문에 이를 포함하려면 
+        부모가 overflow: hidden을 주면되는데 자식요소중
+        부모 바깥으로 나가야하는 것이 있을때는 줄 수 없다!
+        이때 relative 위치이동을 사용하자!!!
+    */
 }
 
 /*1-2.공통메뉴*/
@@ -49,7 +73,53 @@
     line-height: 40px;
     font-size: 12px;
 }
+/*공통메뉴 사이점 가상요소로 만들기*/
+.tmenu li+li::before{
+    content: "·";
+    margin-right: 3px;
+}
 
+/*1-3.SNS메뉴*/
+.sns{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    /*부모는? #top*/
+}
+/*SNS메뉴 li*/
+.sns li{
+    width: 30px;
+    height: 30px;
+    background: url(../images/icons.png) no-repeat;
+    /*outline: 2px solid red;*/
+}
+/*개별 배경이미지 Sprites기법으로 이동하기*/
+.sns li:first-child{/*트위터*/
+    background-position: 0 0;
+}
+.sns li:first-child:hover{/*트위터오버시*/
+    background-position: 0 -30px;
+}
+.sns li:nth-child(2){/*인스타그램*/
+    background-position: -30px 0;
+}
+.sns li:nth-child(2):hover{/*인스타그램오버시*/
+    background-position: -30px -30px;
+}
+.sns li:last-child{/*페이스북*/
+    background-position: -60px 0;
+}
+.sns li:last-child:hover{/*페이스북오버시*/
+    background-position: -60px -30px;
+}
+
+/*링크확장*/
+.sns a{
+    display: block;
+    /*디자인적용위해*/
+    width: 100%;
+    height: 100%;
+}
 
 /*1-4.GNB메뉴*/
 
