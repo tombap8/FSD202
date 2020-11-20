@@ -36,6 +36,21 @@
     height: 130px;
 }
 
+/*1-2.공통메뉴*/
+.tmenu{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    /*부모는? #top*/
+}
+/*공통메뉴 리스트*/
+.tmenu li{
+    padding: 0 3px;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+
 /*1-4.GNB메뉴*/
 
 /*GNB 디자인*/
