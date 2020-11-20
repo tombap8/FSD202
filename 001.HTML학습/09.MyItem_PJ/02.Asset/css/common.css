@@ -85,7 +85,7 @@
 .smenu {
     position: absolute;
     /*겹쳐지고 위치부모기준*/
-    width: 200px;
+    width: 150px;
     /*
             float을 해제 안하고
             아래로 내려가는 방법:
@@ -98,7 +98,13 @@
             참고)
             float 없애는 셋팅 -> float: none;
             */
-    background-color: #219be6;
+    background-color: #cecece;
+    /*추가*/
+    text-shadow: 1px 1px 0 #777;
+    /*글자그림자*/
+    border-radius: 0 0 4px 4px;
+    /*왼쪽위부터 시계방향*/
+    
 
     /*서브메뉴 숨기기*/
     /*1.높이값 0*/
@@ -112,14 +118,8 @@
 }
 
 /*상위메뉴에 마우스 오버시 하위메뉴 보이기*/
-/*두번째 메뉴 하위 높이값 200px*/
-.gnb > ul > li:nth-child(2):hover .smenu {
-    height: 200px;
-}
-
-/*세번째 메뉴 하위 높이값 100px*/
-.gnb > ul > li:nth-child(3):hover .smenu {
-    height: 100px;
+.gnb > ul > li:hover .smenu {
+    height: 120px;
 }
 
 /*
@@ -139,8 +139,9 @@
 /*하위 메뉴의 li에 마우스 오버시 
         a요소의 글자색, 배경색 변경*/
 .smenu li:hover a {
-    color: #001aac;
-    background-color: #97e7ff;
+    color: #777;
+    background-color: #bababa;
+    text-shadow: 0 1px 0 #fff;
 }
 
 
