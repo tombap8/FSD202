@@ -36,7 +36,7 @@
 }
 
 .gnb > ul {
-    width: 800px;
+    width: 600px;
     margin: 0 auto;
     /*마영오-블록가로중앙
             (가로크기가 화면보다 작아야함!)*/
@@ -44,7 +44,7 @@
 }
 
 .gnb > ul > li {
-    width: 200px;
+    width: 150px;
     text-align: center;
 }
 
@@ -62,11 +62,11 @@
     height: 100%;
     color: #fff;
     text-decoration: none;
-    font: bold 14px/50px "맑은 고딕", Verdana;
-    /*font: 스 두 크/줄 체;*/
-    /*font를 한번에 설정할 경우 줄간격을 여기서 설정하거나
-            아랫줄에서 설정해야 초기화 되지 않는다!*/
-    /*line-height: 50px;*/
+    
+    /*글자설정*/
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px;
 
     /*트랜지션: 속시이지*/
     transition: all .4s;
@@ -75,8 +75,10 @@
 
 /*상위메뉴 li에 마우스 오버시 a요소의 배경색, 글자색변경*/
 .gnb > ul > li:hover > a {
-    color: #001795;
-    background-color: #bdd1ff;
+    color: #777;
+    text-shadow: 0 1px 0 #fff;
+    /*배경 그라데이션*/
+    background-image: linear-gradient(to top, #cecece 0%, #bababa 20%, #8a8a8a 80%, #5c5c5c 100%);
 }
 
 /*서브메뉴 디자인*/
