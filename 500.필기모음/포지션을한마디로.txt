@@ -1,0 +1,7 @@
+[포지션을 한마디로!]
+relative
+자기로 부터
+absolute
+부모로 부터
+fixed
+화면으로 부터

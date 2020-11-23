@@ -1,0 +1,37 @@
+[ 브라켓 단축키 ]
+
+1. 자동완성 안나오면 ctrl+space
+2. 개행(새라인으로 내려가기) ctrl+Ent
+3. 자동줄맞춤 : ctrl+B (beautify설치시)
+4. 라인복제 : ctrl+D (duplicate)
+  - 영역을 잡으면 인라인복제
+5. 라인삭제 : ctrl+shift+D (delete)
+6. 동시코딩 : alt+드래그(같은위치세로라인)
+   동시코딩 :  ctrl+클릭(떨어진 위치)
+7. 요소선택영역잡기 : ctrl+shift+alt+B
+8. 전체열린파일저장: ctrl+alt+S
+
+9. 태그싸기: ctrl+shift+A
+10. 태그변경하기: ctrl+shift+I
+11. 태그지우기: ctrl+shift+K
+
+12. 전체라인주석: ctrl+/
+     부분주석: ctrl+shift+/
+
+13. 찾기 : ctrl+F
+14. 찾아변경하기 : ctrl+H
+15. 라인이동하기 : ctrl+G
+
+16. 아이템 영역잡기
+ - 현재,다음이동 : ctrl+shift+.
+ - 현재,이전이동 : ctrl+shift+,
+
+17. 글자크기변경: ctrl+플러스/마이너스
+	(원래 제일작은 크기로 가기: ctrl+0)
+
+18. CSS 색상코드 위에서 : ctrl+E (컬러픽커)
+
+19. 코드라인이동 : ctrl+shift+위아래방향키
+
+
+
