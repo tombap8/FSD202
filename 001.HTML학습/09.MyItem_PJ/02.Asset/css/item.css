@@ -20,7 +20,7 @@
     line-height: 45px;
     color: #777;
 
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
 }
 
 /*아이템 타이틀에 가상요소로 아이콘넣기*/
@@ -44,7 +44,7 @@
     margin: 0 auto;
     /*가로중앙(block박스,width가 있어야)*/
 
-    outline: 5px dotted purple;
+    /*outline: 5px dotted purple;*/
 }
 
 /*아이템 이미지,컨텐츠박스 공통*/
@@ -64,7 +64,7 @@
 .timg {
     left: 0;
     text-align: center;
-    outline: 4px dashed orange;
+    /*outline: 4px dashed orange;*/
 }
 
 /*아이템 이미지*/
@@ -80,5 +80,10 @@
 .tcont {
     left: 50%;
     
-    outline: 4px dashed green;
+    /*글자관련*/
+    font-size: 13px;
+    color: #777;
+    line-height: 30px;
+    
+    /*outline: 4px dashed green;*/
 }
