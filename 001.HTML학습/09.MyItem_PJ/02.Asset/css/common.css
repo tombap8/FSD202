@@ -80,6 +80,33 @@
     top: 16px;
     left: 55px;
 }
+/*카멜레온 박스*/
+#cb{
+    position: absolute;
+    top: 5px;
+    left: 77px;
+    outline: 2px dotted red;
+}
+/*카멜레온혀*/
+#tung{
+    position: absolute;
+    width: 48px;
+    height: 8px;
+    top: 6px;
+    left: -21px;
+    /*부모? #cb*/
+    background: url(../images/mlogo_01.png) no-repeat;
+}
+/*카멜레온 이미지*/
+#cam{
+    position: relative;
+    /*
+    겹쳐질 수 있는 포지션만 나중에 오는경우위에 오거나 z-index를 사용할 수 있다!
+    
+    겹쳐질 수 있는 포지션이란 static이 아닌 포지션이다(relative,absolute,fixed)
+    */
+}
+
 
 /*1-2.공통메뉴*/
 .tmenu{
