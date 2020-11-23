@@ -52,6 +52,7 @@
 /*1-1.로고*/
 #logo{
     position: relative;
+    /*부모자격!*/
     top: 10px;
     left: 10px;
     /*
@@ -63,6 +64,21 @@
         부모 바깥으로 나가야하는 것이 있을때는 줄 수 없다!
         이때 relative 위치이동을 사용하자!!!
     */
+    width: 150px;
+    height: 64px;
+    outline: 2px dotted blue;
+}
+/*카멜레온 로고 구성하기*/
+/*로고타이틀*/
+#mtit{
+    position: absolute;
+    bottom: 0;
+}
+/*빨간공*/
+#rb{
+    position: absolute;
+    top: 16px;
+    left: 55px;
 }
 
 /*1-2.공통메뉴*/
