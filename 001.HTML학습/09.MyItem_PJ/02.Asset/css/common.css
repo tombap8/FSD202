@@ -80,6 +80,25 @@
     top: 16px;
     left: 55px;
 }
+/*빨간공 애니 키프레임*/
+/*1.빨간공 위아래 이동*/
+@keyframes rbAni{
+    0%{
+        top: 16px;
+    }
+    49%{
+        top: 7px;
+    }
+    51%{
+        top: 7px;
+    }
+    100%{
+        top: 16px;
+    }
+    
+}/*키프레임*/
+
+
 /*카멜레온 박스*/
 #cb{
     position: absolute;
