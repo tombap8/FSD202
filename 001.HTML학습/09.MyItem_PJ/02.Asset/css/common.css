@@ -79,6 +79,9 @@
     position: absolute;
     top: 16px;
     left: 55px;
+    
+    /*애니메이션:이시이지반방마*/
+    animation: rbAni 1s ease-in-out 2s;
 }
 /*빨간공 애니 키프레임*/
 /*1.빨간공 위아래 이동*/
@@ -115,7 +118,44 @@
     left: -21px;
     /*부모? #cb*/
     background: url(../images/mlogo_01.png) no-repeat;
+    
+    /*애니메이션:이시이지반방마*/
+    animation: tungAni .5s linear 3s infinite;
 }
+
+/*혀바닥 애니 키프레임*/
+/*2.혓바닥 날름(left값이동+이미지변경)*/
+@keyframes tungAni{
+    0%{
+        left: -21px;
+        background-image: url(../images/mlogo_01.png);
+    }
+    10%{
+        background-image: url(../images/mlogo_02.png);
+    }
+    20%{
+        background-image: url(../images/mlogo_03.png);
+    }
+    40%{/*가장긴혀 유지(40%~60%)*/
+        left: -40px;
+        background-image: url(../images/mlogo_04.png);
+    }
+    60%{/*가장긴혀 유지(40%~60%)*/
+        left: -40px;
+        background-image: url(../images/mlogo_04.png);
+    }
+    80%{
+        background-image: url(../images/mlogo_03.png);
+    }
+    90%{
+        background-image: url(../images/mlogo_02.png);
+    }
+    100%{
+        left: -21px;
+        background-image: url(../images/mlogo_01.png);
+    }
+}/*키프레임*/
+
 /*카멜레온 이미지*/
 #cam{
     position: relative;
