@@ -44,8 +44,24 @@
     margin: 0 auto;
     /*가로중앙(block박스,width가 있어야)*/
 
-    /*outline: 5px dotted purple;*/
+    outline: 5px dotted purple;
 }
+
+/*아이템 박스 가상요소로 중앙 구분선 넣기*/
+.ibox::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    /*부모는? .ibox*/
+    width: 1px;
+    height: 70%;
+    background-color: #ccc;
+}
+
+
+
 
 /*아이템 이미지,컨텐츠박스 공통*/
 .itbx {
