@@ -6,4 +6,40 @@
 @import url(reset.css);
 @import url(common.css);
 
+/*아이템 페이지 메인영역*/
+#cont{
+    padding-top: 80px;
+    /*상단패딩여백*/
+}
+
+/*아이템 타이틀*/
+.tit{
+    width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 45px;
+    color: #777;
+    
+    outline: 2px solid red;
+}
+/*아이템 타이틀에 가상요소로 아이콘넣기*/
+.tit::before{
+    content: url(../images/myitems_icon_01.png);
+    /*
+        가상요소로 이미지넣기
+        content: url(이미지경로)
+    */
+    /*인라인요소간 오른쪽 세로정렬*/
+    vertical-align: -15px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
 
