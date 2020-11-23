@@ -66,7 +66,7 @@
     */
     width: 150px;
     height: 64px;
-    outline: 2px dotted blue;
+    /*outline: 2px dotted blue;*/
 }
 /*카멜레온 로고 구성하기*/
 /*로고타이틀*/
@@ -90,10 +90,10 @@
         top: 16px;
     }
     49%{
-        top: 7px;
+        top: 5px;
     }
     51%{
-        top: 7px;
+        top: 5px;
     }
     100%{
         top: 16px;
@@ -107,8 +107,35 @@
     position: absolute;
     top: 5px;
     left: 77px;
-    outline: 2px dotted red;
+    /*outline: 2px dotted red;*/
+    
+    /*애니메이션:이시이지반방마*/
+    animation: cbAni 1.5s ease-in-out 3.5s,
+        rotAni .6s ease-in-out 5s;
 }
+/*카멜레온 박스 애니 키프레임*/
+/*3.카멜레온박스 왼쪽,오른쪽(원위치)이동*/
+@keyframes cbAni{
+    0%{
+        left: 77px;
+    }
+    50%{
+        left: 10px;
+    }
+    100%{
+        left: 77px;
+    }
+}/*키프레임*/
+/*4.카멜레온박스 반시계방향 360도 회전하기*/
+@keyframes rotAni{
+    to{
+        transform: rotate(-360deg);
+    }
+}/*키프레임*/
+
+
+
+
 /*카멜레온혀*/
 #tung{
     position: absolute;
@@ -120,7 +147,7 @@
     background: url(../images/mlogo_01.png) no-repeat;
     
     /*애니메이션:이시이지반방마*/
-    animation: tungAni .5s linear 3s infinite;
+    animation: tungAni .5s linear 3s;
 }
 
 /*혀바닥 애니 키프레임*/
