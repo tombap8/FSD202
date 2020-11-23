@@ -44,6 +44,47 @@
     
     outline: 5px dotted purple;
 }
+/*아이템 이미지박스*/
+.timg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    /*보더,패딩포함 크기유지*/
+    padding: 20px;
+    
+    
+    text-align: center;
+    outline: 4px dashed orange;
+}
+/*아이템 이미지*/
+.timg img{
+    width: 100%;
+    /*부모박스 패딩안쪽을 100%채운다*/
+    /*이미지는 기본적으로...
+    가로,세로값 중 하나만 주면
+    나머지는 자동으로 비율유지된다!*/
+}
+
+/*아이템 글자박스*/
+.tcont{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    /*보더,패딩포함 크기유지*/
+    padding: 20px;
+    
+    
+    outline: 4px dashed green;
+}
+
+
+
 
 
 
