@@ -30,8 +30,19 @@
         content: url(이미지경로)
     */
     /*인라인요소간 오른쪽 세로정렬*/
-    vertical-align: -15px;
+    vertical-align: -17px;
     margin-right: 10px;
+}
+/*아이템 컨텐츠 박스*/
+.ibox{
+    position: relative;
+    /*부모자격*/
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    /*가로중앙(block박스,width가 있어야)*/
+    
+    outline: 5px dotted purple;
 }
 
 
