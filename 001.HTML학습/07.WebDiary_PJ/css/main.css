@@ -420,9 +420,9 @@ area:focus{
 
 
 
-
-
 /*
+
+
 
 [ CSS에서 애니메이션 구현하기 : animation ]
 
@@ -462,16 +462,16 @@ animation : 이시이지반방마
 5) 반복여부(animation-iteration-count) 
    : 애니메이션 반복횟수, 기본값1, 숫자는 반복횟수
     영원히 무한반복은 infinite (인피니트!)
-6) 방향(animation-direction) : 시작-끝 (기본)
-                            시작-끝,끝-시작 
-                            alternate(대체경로)
+6) 방향(animation-direction) : 시작-끝 (기본) 
+        alternate(대체경로) -> 시작-끝,끝-시작 
+        제한사항! 반복횟수(1회가 아닌 2이상) 또는 infinite일때
 7) 마지막상태(animation-fill-mode) : 애니메이션이 끝났을때
                         처음상태로 돌아가는 것이 기본!
                         마지막상태로 끝나고 싶으면?
                         -> forwards(앞쪽에...즉,끝쪽에)
+
+
 */
-
-
 
 
 
