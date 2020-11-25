@@ -1,0 +1,6 @@
+/*CDN방식 웹폰트*/
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Jua&display=swap');
+/*
+    font-family: 'Cute Font', cursive;
+    font-family: 'Jua', sans-serif;
+*/

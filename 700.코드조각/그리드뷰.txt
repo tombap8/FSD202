@@ -1,0 +1,52 @@
+<style>
+.grid{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /*화면고정 가로중앙, 세로꽉참*/
+    
+    /*크기지정*/
+    width: 960px;
+    /*가로폭은 960px/1200px또는 사용자지정 가로폭*/
+    height: 100%;
+    
+    /*ul 3無*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    opacity: .2;
+    z-index: 999999;
+/*    display: none;*/
+}
+
+/*12컬럼 설정*/
+.grid li{
+   float: left; 
+    width: 8.33%;
+    height: 100%;
+    background-color: #00f;
+    box-sizing: border-box;
+    padding: 0 10px;
+    background-clip: content-box;
+}
+
+
+</style>
+
+<!--그리드뷰:그리드 시스템 비주얼뷰-->
+   <ul class="grid">
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+   </ul>

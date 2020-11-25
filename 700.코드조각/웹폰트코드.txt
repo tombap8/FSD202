@@ -1,0 +1,8 @@
+/*import방식 CDN 웹폰트*/
+        @import url('https://fonts.googleapis.com/css?family=Black+And+White+Picture|Cute+Font|Single+Day&display=swap');
+        
+        /*
+            font-family: 'Cute Font', ;
+            font-family: 'Black And White Picture', ;
+            font-family: 'Single Day', ;
+        */
