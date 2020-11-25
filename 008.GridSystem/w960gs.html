@@ -6,129 +6,38 @@
     <link rel="stylesheet" href="css/gridSet.css">
     <link rel="stylesheet" href="css/gridView.css">
     <style>
-        html,body,h1,h2{
-            margin: 0;
-            padding: 0;
-        }
-        
-        /*그리드뷰 재설정*/
-        .grid{
-            width: 1280px;
-            z-index: -1;
-        }
-        
-        /*공통class*/
-        
-        /*속박스 class*/
-        .ibx{
-            width: 1280px;
-            margin: 0 auto;
-            outline: 3px dashed blue;
-        }
-        
-        /*각 영역별 파티션 높이값 설정하기*/
-        /*1.상단영역*/
-        .t1{
-            height: 100px;
-        }
-        /*2.컨텐츠1영역*/
-        .c11{
-            height: 305px;
-        }
-        .c12{
-            height: 343px;
-        }
-        .c13{
-            height: 100px;
-        }
-        /*3.컨텐츠2영역*/
-        .c21,.c22{
-            height: 210px;
-        }
-        /*4.컨텐츠3영역*/
-        .c31{
-            height: 295px;
-        }
-        .c32{
-            height: 262px;
-        }
-        /*5.하단영역*/
-        .i1{
-            height: 72px;
-        }
-        .i2{
-            height: 117px;
-        }
-        
         
     </style>
 </head>
 <body>
-  
-  <!--1.상단영역-->
-   <div id="top">
-       <header class="ibx clb top">
-           <h1>한국무역협회</h1>
-           <div class="col-2 t1"></div>
-           <div class="col-7 t1"></div>
-           <div class="col-3 t1"></div>
-       </header>
-   </div>
-    <!--2.컨텐츠영역1-->
-    <div id="cont1">
-        <section class="ibx clb cont1">
-            <h2>배너,요약정보</h2>
-            <div class="col-8 c11"></div>
-            <div class="col-4 c11"></div>
-            <div class="col-12 c12"></div>
-            <div class="col-12 c13"></div>
-        </section>
+    
+    <!--1.상단영역-->
+    <div id="top">
+        <header class="ibx clb top">
+           <h1>호암재단</h1>
+           <div class="col-8 t1"></div>
+           <div class="col-4 t1"></div>
+        </header>
     </div>
-    <!--3.컨텐츠영역2-->
-    <div id="cont2">
-        <section class="ibx clb cont2">
-            <h2>KITA 사업일정</h2>
-            <div class="col-3 c21"></div>
-            <div class="col-3 c21"></div>
-            <div class="col-3 c21"></div>
-            <div class="col-3 c21"></div>
-            <div class="col-3 c22"></div>
-            <div class="col-3 c22"></div>
-            <div class="col-3 c22"></div>
-            <div class="col-3 c22"></div>
-        </section>
+    <!--2.컨텐츠영역-->
+    <div id="cont">
+        <main class="ibx clb cont">
+            <h2>요약정보링크</h2>
+            <div class="col-6 c1"></div>
+            <div class="col-6 c1"></div>
+        </main>
     </div>
-    <!--4.컨텐츠영역3-->
-    <div id="cont3">
-        <section class="ibx clb cont3">
-            <h2>회원/업무지원</h2>
-            <div class="col-2 c31"></div>
-            <div class="col-2 c31"></div>
-            <div class="col-2 c31"></div>
-            <div class="col-2 c31"></div>
-            <div class="col-2 c31"></div>
-            <div class="col-2 c31"></div>
-            <div class="col-3 c32"></div>
-            <div class="col-3 c32"></div>
-            <div class="col-3 c32"></div>
-            <div class="col-3 c32"></div>
-        </section>
-    </div>
-    <!--5.하단영역-->
+    <!--3.하단영역-->
     <div id="info">
         <footer class="ibx clb info">
             <h2>하단정보링크</h2>
-            <div class="col-6 i1"></div>
-            <div class="col-6 i1"></div>
-            <div class="col-6 i2"></div>
-            <div class="col-2 i2"></div>
-            <div class="col-4 i2"></div>
+            <div class="col-10 i1"></div>
+            <div class="col-2 i1"></div>
         </footer>
     </div>
-  
-  
-   
-   <!--그리드뷰:그리드 시스템 비주얼뷰-->
+    
+    
+    <!--그리드뷰:그리드 시스템 비주얼뷰-->
    <ul class="grid">
        <li></li>
        <li></li>
@@ -143,9 +52,8 @@
        <li></li>
        <li></li>
    </ul>
-   
-   
-   
+    
+    
     
 </body>
 </html>
