@@ -25,6 +25,16 @@
             height: 280px;
             margin: 0 auto;
             background: url(images/seashore.jpg) no-repeat center/auto 100%;
+            /*
+            [ 3D 원근설정 ]
+            1. 셋팅위치: 3D원근설정을 할 대상의 부모박스에 셋팅
+            2. 설정방법:
+            perspective: 수치;
+            - 수치는 px단위로 숫자가 클수록
+            소실점이 먼것이므로 각도가 작아짐(기준점에서 소실점까지의 거리)
+            */
+            perspective: 480px;
+            
         }
         
         /*문짝*/
@@ -34,7 +44,31 @@
             width: 150px;
             height: 280px;
             background-color: #C90;
+            
+            /*문짝회전하기*/
+            transform: rotateY(65deg);
+            /*회전기준변경하기*/
+            transform-origin: left;
+            /*
+            회전기준선 변경하기
+            transform-origin: 가로 세로;
+            - 가로값: right, center, left
+            - 세로값: top, center, bottom
+            - 정해지지 않은값 px, %도 사용가능
+            */
+            /*애니메이션:이시이지반방마*/
+            animation: openDoor 2s ease-in-out infinite alternate;
         }
+        /*문짝열기 키프레임*/
+        @keyframes openDoor{
+            from{
+                transform: rotateY(65deg);
+            }
+            to{
+                transform: rotateY(-65deg);
+            }
+        }/*키프레임*/
+        
         
         /*손잡이*/
         .handle{
