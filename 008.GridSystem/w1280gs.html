@@ -11,6 +11,12 @@
             padding: 0;
         }
         
+        body{
+            /*사이트 디자인이미지 배경넣기*/
+            background: url(images/kita.png) no-repeat center top;
+        }
+        
+        
         /*그리드뷰 재설정*/
         .grid{
             width: 1280px;
@@ -36,7 +42,12 @@
         .t1{
             height: 100px;
         }
-        /*2.컨텐츠1영역*/
+        
+        
+        /*2.컨텐츠1영역*/        
+        #cont1{
+            padding-top: 19px;
+        }
         .c11{
             height: 305px;
         }
@@ -46,11 +57,28 @@
         .c13{
             height: 100px;
         }
-        /*3.컨텐츠2영역*/
-        .c21,.c22{
-            height: 210px;
+        /*뉴스파트*/
+        .news{
+            margin-top: 21px;
         }
+        /*서비스파트*/
+        .service{
+            margin-top: 19px;
+        }
+        
+        /*3.컨텐츠2영역*/
+        #cont2{
+            padding-top: 102px;
+        }
+        .c21,.c22{
+            height: 219px;
+        }
+        
         /*4.컨텐츠3영역*/
+        #cont3{
+            padding-top: 110px;
+            padding-bottom: 16px;
+        }
         .c31{
             height: 295px;
         }
@@ -90,8 +118,8 @@
             <h2 class="dn">배너,요약정보</h2>
             <div class="col-8 c11"></div>
             <div class="col-4 c11"></div>
-            <div class="col-12 c12"></div>
-            <div class="col-12 c13"></div>
+            <div class="col-12 c12 news"></div>
+            <div class="col-12 c13 service"></div>
         </section>
     </div>
     <!--3.컨텐츠영역2-->
