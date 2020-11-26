@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* 그리드 셋 - gridSet.css */
+
+/* 12그리드로 레이아웃을 나눌때 사용하는 class */
+
+/*12컬럼 %셋팅 class*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+    
+/*
+    [] css선택자에서 대괄호는 속성을 선택하는 선택자임!
+    = 이퀄은 정확히 같은 속성명을 선택
+    *= 별이퀄은 같은 문자가 있기만 하면 선택
+        (별은 하늘에 있음 모든의 의미)
+    ^= 윗꺽쇠이퀄은 시작하는 문자가 있으면 선택(웃으면서 시작^^)
+    $= 딸라이퀄은 끝나는 문자가 있으면 선택(끝날땐 돈받고 끝나라$)
+*/
+
+/*"col-"로된 class명만 float:left 설정하기*/
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+/*float해제설정*/
+.clb::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+
+
+
+

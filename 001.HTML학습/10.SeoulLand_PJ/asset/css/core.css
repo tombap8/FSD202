@@ -4,8 +4,7 @@
 /*웹폰트*/
 @font-face {
     font-family: Nanum;
-    src: url(../fonts/NanumGothic.ttf) format("ttf"),
-    url(../fonts/NanumGothic.woff) format("woff");
+    src: url(../fonts/NanumGothic.woff) format("woff");
 }
 
 /*공통*/

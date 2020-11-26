@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* 서울랜드 메인페이지 CSS - main.css */
+
+/*외부파일 불러오기*/
+@import url(gridSet.css);
+@import url(gridView.css);
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
