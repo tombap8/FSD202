@@ -35,6 +35,15 @@
             */
             perspective: 480px;
             
+            /*
+            [ 뷰포인트(관찰자위치) 위치변경옵션 ]
+            perspective-origin:  가로 세로;
+            - 가로값: left, center, right (x축변경일경우)
+            - 세로값: top, center, bottom (y축변경일경우)
+            - 두값 중 회전축에 따라 한값만 쓸 수 있고
+            복합일 경우 2가지 값을 같이 셋팅할 수 있다
+            - %사용가능(예: 50%는 중앙)
+            */
         }
         
         /*문짝*/
@@ -81,6 +90,16 @@
             border-radius: 50%;
             background-color: #00f;
         }
+        
+        /*엘사박스*/
+        #elsa{
+            position: absolute;
+            top: 0;
+            /*나의부모? .frame*/
+            width: 150px;
+            height: 280px;
+            overflow: hidden;
+        }
     
     
     
@@ -97,6 +116,12 @@
                 <!--손잡이-->
                 <div class="handle"></div>
             </div>
+            
+            <!--엘사박스-->
+            <div id="elsa">
+                <img src="images/elsa.png" alt="엘사">
+            </div>
+            
         </div>
     </div>
    
