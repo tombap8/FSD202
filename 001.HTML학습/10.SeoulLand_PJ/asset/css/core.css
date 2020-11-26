@@ -1,0 +1,25 @@
+@charset "utf-8";
+/*서울랜드 core.css - 웹폰트,전체설정*/
+
+/*웹폰트*/
+@font-face {
+    font-family: Nanum;
+    src: url(../fonts/NanumGothic.ttf) format("ttf"),
+    url(../fonts/NanumGothic.woff) format("woff");
+}
+
+/*공통*/
+body {
+    font-family: dotum, "돋움", sans-serif;
+    color: #808080;
+/*    word-spacing: -0.2em;*/
+    line-height: 136%;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
