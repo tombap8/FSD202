@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* 서울랜드 메인페이지 CSS - main.css */
+/* 메인페이지에만 나오는 요소를 코딩한다! */
 
 /*외부파일 불러오기*/
 @import url(gridSet.css);
@@ -7,3 +8,37 @@
 @import url(reset.css);
 @import url(core.css);
 @import url(common.css);
+
+/*메인페이지 전체 디자인보기*/
+body{
+    position: relative;
+    /*가상요소의 부모*/
+}
+body::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/SeoulLand_main.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    z-index: -1;
+    opacity: .5;
+}
+
+/*********** 2.배너영역 **************/
+/*배너영역 파티션높이*/
+.b1{
+   height: 419px;
+}
+
+/*********** 3.컨텐츠영역 **************/
+/*컨텐츠영역 파티션높이*/
+.c1{
+   height: 256px;
+}
+
+
+
+

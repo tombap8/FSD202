@@ -16,6 +16,16 @@ body {
     font-size: 12px;
 }
 
+/*공통 class*/
+/*속박스*/
+.ibx{
+    width: 960px;
+    max-width: 100%;
+    /*설정된 width보다 작아질때 화면에 꽉참*/
+    margin: 0 auto;
+    /*가로중앙*/
+    outline: 2px dashed blue;
+}
 
 
 
