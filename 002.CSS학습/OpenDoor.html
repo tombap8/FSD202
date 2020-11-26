@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Open Door 
-    - CSS3 : 3D Perspective Animation</title>
+    <title>Open Door
+        - CSS3 : 3D Perspective Animation</title>
     <style>
-        body{
+        body {
             background-color: #9C0;
         }
+
         /*문전체부모*/
-        .cont{
+        .cont {
             position: relative;
             top: 100px;
             width: 200px;
             height: 300px;
-            margin: 0 auto;/*마영오*/
+            margin: 0 auto;
+            /*마영오*/
             background-color: #900;
         }
+
         /*문열었을때 뚫린부분*/
-        .frame{
+        .frame {
             position: relative;
             top: 20px;
             width: 150px;
@@ -34,7 +37,7 @@
             소실점이 먼것이므로 각도가 작아짐(기준점에서 소실점까지의 거리)
             */
             perspective: 480px;
-            
+
             /*
             [ 뷰포인트(관찰자위치) 위치변경옵션 ]
             perspective-origin:  가로 세로;
@@ -44,16 +47,27 @@
             복합일 경우 2가지 값을 같이 셋팅할 수 있다
             - %사용가능(예: 50%는 중앙)
             */
+
+            /*애니메이션:이시이지반방마*/
+            animation: sea 5s ease-in-out infinite alternate;
+
         }
-        
+
+        /*프레임 배경 바다 애니메이션*/
+        @keyframes sea {
+            to {
+                background-size: auto 120%;
+            }
+        }/*키프레임*/
+
         /*문짝*/
-        .door{
+        .door {
             position: relative;
             /*부모자격-손잡이*/
             width: 150px;
             height: 280px;
             background-color: #C90;
-            
+
             /*문짝회전하기*/
             transform: rotateY(65deg);
             /*회전기준변경하기*/
@@ -67,23 +81,27 @@
             */
             /*애니메이션:이시이지반방마*/
             animation: openDoor 2s ease-in-out infinite alternate;
-            
+
             /*엘사보다 위로!*/
             z-index: 1;
         }
+
         /*문짝열기 키프레임*/
-        @keyframes openDoor{
-            from{
+        @keyframes openDoor {
+            from {
                 transform: rotateY(65deg);
             }
-            to{
+
+            to {
                 transform: rotateY(-65deg);
             }
-        }/*키프레임*/
-        
-        
+        }
+
+        /*키프레임*/
+
+
         /*손잡이*/
-        .handle{
+        .handle {
             position: absolute;
             top: 150px;
             right: 10px;
@@ -93,9 +111,9 @@
             border-radius: 50%;
             background-color: #00f;
         }
-        
+
         /*엘사박스*/
-        #elsa{
+        #elsa {
             position: absolute;
             top: 0;
             /*나의부모? .frame*/
@@ -103,30 +121,109 @@
             height: 280px;
             overflow: hidden;
         }
-        #elsa img{
+
+        #elsa img {
             margin-top: 50px;
             margin-left: 150px;
             transform: rotate(0deg);
             transform-origin: bottom;
             /*회전축변경하기-하단*/
-            
+
             /*애니메이션:이시이지반방마*/
             animation: elsa 2s ease-in-out infinite alternate
         }
+
         /*엘사키프레임*/
-        @keyframes elsa{
-            to{
+        @keyframes elsa {
+            to {
                 transform: rotate(-15deg);
             }
-        }/*키프레임*/
-    
-    
-    
+        }
+
+        /*키프레임*/
+        
+        /**********창문만들기*************/
+        /*창문전체부모*/
+        .cont2 {
+            position: absolute;
+            top: 100px;
+            left: 70%;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            /*마영오*/
+            background-color: #900;
+        }
+
+        /*문열었을때 뚫린부분*/
+        .frame2 {
+            position: relative;
+            top: 10px;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            background: url(images/seashore.jpg) no-repeat center/auto 100%;
+            /*
+            [ 3D 원근설정 ]
+            1. 셋팅위치: 3D원근설정을 할 대상의 부모박스에 셋팅
+            2. 설정방법:
+            perspective: 수치;
+            - 수치는 px단위로 숫자가 클수록
+            소실점이 먼것이므로 각도가 작아짐(기준점에서 소실점까지의 거리)
+            */
+            perspective: 480px;
+
+
+        }
+
+
+        /*창문*/
+        .door2 {
+            position: relative;
+            /*부모자격-손잡이*/
+            width: 130px;
+            height: 130px;
+            background-color: #C90;
+            
+            /*문짝회전하기*/
+            transform: rotateX(0deg);
+            /*회전기준변경하기*/
+            transform-origin: top;
+            /*
+            회전기준선 변경하기
+            transform-origin: 가로 세로;
+            - 가로값: right, center, left
+            - 세로값: top, center, bottom
+            - 정해지지 않은값 px, %도 사용가능
+            */
+        }
+
+        /*키프레임*/
+
+
+        /*손잡이*/
+        .handle2 {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            /*부모? .door*/
+            width: 20px;
+            height: 5px;
+            background-color: #00f;
+        }
+        
+        
+        
+        
+        
+        
     </style>
 </head>
+
 <body>
-   
-   <!--문전체부모-->
+
+    <!--문전체부모-->
     <div class="cont">
         <!--문열었을때 뚫린부분-->
         <div class="frame">
@@ -135,18 +232,32 @@
                 <!--손잡이-->
                 <div class="handle"></div>
             </div>
-            
+
             <!--엘사박스-->
             <div id="elsa">
                 <img src="images/elsa.png" alt="엘사">
             </div>
-            
+
         </div>
     </div>
-   
-   
-   
-   
     
-</body>
-</html>
+    <!--창문만들기-->
+    <div class="cont2">
+        <!--문열었을때 뚫린부분-->
+        <div class="frame2">
+            <!--문짝-->
+            <div class="door2">
+               오버해!
+                <!--손잡이-->
+                <div class="handle2"></div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+
+</body></html>
