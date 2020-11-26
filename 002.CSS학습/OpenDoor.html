@@ -67,6 +67,9 @@
             */
             /*애니메이션:이시이지반방마*/
             animation: openDoor 2s ease-in-out infinite alternate;
+            
+            /*엘사보다 위로!*/
+            z-index: 1;
         }
         /*문짝열기 키프레임*/
         @keyframes openDoor{
@@ -100,6 +103,22 @@
             height: 280px;
             overflow: hidden;
         }
+        #elsa img{
+            margin-top: 50px;
+            margin-left: 150px;
+            transform: rotate(0deg);
+            transform-origin: bottom;
+            /*회전축변경하기-하단*/
+            
+            /*애니메이션:이시이지반방마*/
+            animation: elsa 2s ease-in-out infinite alternate
+        }
+        /*엘사키프레임*/
+        @keyframes elsa{
+            to{
+                transform: rotate(-15deg);
+            }
+        }/*키프레임*/
     
     
     
