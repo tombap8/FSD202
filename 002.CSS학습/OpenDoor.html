@@ -162,7 +162,7 @@
             width: 130px;
             height: 130px;
             margin: 0 auto;
-            background: url(images/seashore.jpg) no-repeat center/auto 100%;
+            background: url(images/seashore.jpg) no-repeat center top/auto 200%;
             /*
             [ 3D 원근설정 ]
             1. 셋팅위치: 3D원근설정을 할 대상의 부모박스에 셋팅
@@ -183,7 +183,15 @@
             /*부모자격-손잡이*/
             width: 130px;
             height: 130px;
-            background-color: #C90;
+            background-color: rgba(204, 153, 0, 0.58);
+            
+            text-align: center;
+            writing-mode: vertical-lr;
+            
+            padding: 0 30px;
+            border: 5px solid red;
+            box-sizing: border-box;
+            
             
             /*문짝회전하기*/
             transform: rotateX(0deg);
@@ -196,10 +204,13 @@
             - 세로값: top, center, bottom
             - 정해지지 않은값 px, %도 사용가능
             */
+            transition: .4s;
         }
 
-        /*키프레임*/
-
+        /*창문부모에 마우스 오버시 창문열기*/
+        .cont2:hover .door2{            
+            transform: rotateX(65deg);
+        }
 
         /*손잡이*/
         .handle2 {
@@ -247,7 +258,9 @@
         <div class="frame2">
             <!--문짝-->
             <div class="door2">
-               오버해!
+               여기에<br>
+               마우스<br>
+               오버해
                 <!--손잡이-->
                 <div class="handle2"></div>
             </div>
