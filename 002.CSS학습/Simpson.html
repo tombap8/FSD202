@@ -339,9 +339,21 @@
         .marge{
             position: absolute;
             bottom: -150px;
-            right: -100px;
-            transform: rotate(-15deg);
+            right: -202px;/*-100px;*/
+            transform: rotate(0deg);/*rotate(-15deg);*/
+            
+            /*애니메이션:이시이지반방마*/
+            animation: marge .6s ease-in-out 13s forwards;
         }
+        /*마지 등장 키프레임*/
+        @keyframes marge{
+            to{
+                right: -100px;
+                transform: rotate(-15deg);
+            }
+        }/*키프레임*/
+        
+        
         /*리사*/
         .lisa{
             position: absolute;
