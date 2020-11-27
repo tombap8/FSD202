@@ -281,20 +281,22 @@
             font: bold 20px/23px Verdana;
             text-align: center;
             padding-top: 20px;
-            
+
             /*말풍선 투명하게*/
             opacity: 0;
-            
+
             /*애니메이션:이시이지반방마*/
             animation: talk 1s ease-in-out 12s forwards;
         }
-        
+
         /*말풍선 키프레임*/
-        @keyframes talk{
-            to{
+        @keyframes talk {
+            to {
                 opacity: 1;
             }
-        }/*키프레임*/
+        }
+
+        /*키프레임*/
 
         /*가상요소로 삼각형 만들기*/
         .words::before {
@@ -315,6 +317,7 @@
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
         }
+
         /*흰삼각형*/
         .words::after {
             content: "";
@@ -334,62 +337,97 @@
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
         }
-        
+
         /*마지*/
-        .marge{
+        .marge {
             position: absolute;
             bottom: -150px;
-            right: -202px;/*-100px;*/
-            transform: rotate(0deg);/*rotate(-15deg);*/
-            
+            right: -202px;
+            /*-100px;*/
+            transform: rotate(0deg);
+            /*rotate(-15deg);*/
+
             /*애니메이션:이시이지반방마*/
             animation: marge .6s ease-in-out 13s forwards;
         }
+
         /*마지 등장 키프레임*/
-        @keyframes marge{
-            to{
+        @keyframes marge {
+            to {
                 right: -100px;
                 transform: rotate(-15deg);
             }
-        }/*키프레임*/
-        
-        
+        }
+
+        /*키프레임*/
+
+
         /*리사*/
-        .lisa{
+        .lisa {
             position: absolute;
             top: 20px;
-            left: -278px;/*-50px;*/
+            left: -278px;
+            /*-50px;*/
             width: 200px;
             transform: rotate(90deg);
-            
+
             /*애니메이션:이시이지반방마*/
             animation: lisa .6s ease-out 13.5s forwards;
         }
+
         /*리사 키프레임*/
-        @keyframes lisa{
-            to{
+        @keyframes lisa {
+            to {
                 left: -50px;
+            }
+        }
+
+        /*키프레임*/
+
+
+
+        /*매기*/
+        .maggie {
+            position: absolute;
+            width: 200px;
+            bottom: -273px;
+            /*-70px;*/
+            left: 200px;
+            
+            /*애니메이션: 이시이지반방마*/
+            animation: maggie .6s ease-out 14s forwards,
+                updown .4s ease-in-out 14.6s infinite alternate;
+        }
+
+        /*매기 등장 키프레임*/
+        @keyframes maggie {
+            to {
+                bottom: -70px;
             }
         }/*키프레임*/
         
-        
-        
-        /*매기*/
-        .maggie{
-            position: absolute;
-            width: 200px;
-            bottom: -70px;
-            left: 200px;
-        }
+        /*매기 업다운 키프레임*/
+        @keyframes updown{
+            from{
+                bottom: -70px;
+            }
+            to{
+                bottom: -80px;
+            }
+        }/*키프레임*/
+
+
+
+
+
         /*바트*/
-        .bart{
+        .bart {
             position: absolute;
             top: -110px;
             right: 80px;
             width: 220px;
             transform: rotate(180deg);
         }
-        
     </style>
 
 
@@ -413,13 +451,13 @@
             It's Fantastic! <br>
             I LOVE MY FAMILY!!!
         </div>
-        
+
         <!--마지-->
         <img class="marge" src="images/Marge_Simpson.png" alt="마지">
-        
+
         <!--리사-->
         <img class="lisa" src="images/Lisa_Simpson.png" alt="리사">
-        
+
         <!--매기-->
         <img class="maggie" src="images/Maggie_Simpson.png" alt="매기">
 
