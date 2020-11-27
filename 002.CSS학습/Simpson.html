@@ -281,7 +281,20 @@
             font: bold 20px/23px Verdana;
             text-align: center;
             padding-top: 20px;
+            
+            /*말풍선 투명하게*/
+            opacity: 0;
+            
+            /*애니메이션:이시이지반방마*/
+            animation: talk 1s ease-in-out 12s forwards;
         }
+        
+        /*말풍선 키프레임*/
+        @keyframes talk{
+            to{
+                opacity: 1;
+            }
+        }/*키프레임*/
 
         /*가상요소로 삼각형 만들기*/
         .words::before {
@@ -344,6 +357,18 @@
             It's Fantastic! <br>
             I LOVE MY FAMILY!!!
         </div>
+        
+        <!--마지-->
+        <img class="marge" src="images/Marge_Simpson.png" alt="마지">
+        
+        <!--리사-->
+        <img class="lisa" src="images/Lisa_Simpson.png" alt="리사">
+        
+        <!--매기-->
+        <img class="maggie" src="images/Maggie_Simpson.png" alt="매기">
+
+        <!--바트-->
+        <img class="bart" src="images/Bart_Simpson.png" alt="바트">
 
 
     </div>
