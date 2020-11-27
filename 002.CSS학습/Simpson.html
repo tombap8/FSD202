@@ -393,7 +393,7 @@
             bottom: -273px;
             /*-70px;*/
             left: 200px;
-            
+
             /*애니메이션: 이시이지반방마*/
             animation: maggie .6s ease-out 14s forwards,
                 updown .4s ease-in-out 14.6s infinite alternate,
@@ -405,65 +405,104 @@
             to {
                 bottom: -70px;
             }
-        }/*키프레임*/
-        
+        }
+
+        /*키프레임*/
+
         /*매기 업다운 키프레임*/
-        @keyframes updown{
-            from{
+        @keyframes updown {
+            from {
                 bottom: -70px;
             }
-            to{
+
+            to {
                 bottom: -80px;
             }
-        }/*키프레임*/
-        
+        }
+
+        /*키프레임*/
+
         /*매기 왔다갔다 키프레임*/
-        @keyframes comego{
-            0%{
+        @keyframes comego {
+            0% {
                 left: 200px;
             }
-            40%{/*왼쪽이동*/
+
+            40% {
+                /*왼쪽이동*/
                 left: 50px;
             }
-            100%{/*오른쪽이동*/
+
+            100% {
+                /*오른쪽이동*/
                 left: 600px;
             }
-        }/*키프레임*/
+        }
+
+        /*키프레임*/
 
 
 
         /*바트*/
         .bart {
             position: absolute;
-            top: -305px;/*-110px;*/
+            top: -305px;
+            /*-110px;*/
             right: 80px;
             width: 220px;
             transform: rotate(180deg);
-            
+
             /*애니메이션:이시이지반방마*/
             animation: bart .5s ease-out 16s forwards,
-                fall .4s ease-in 20s forwards;
+                fall .4s ease-in 20s forwards,
+                stand 1s ease-out 25s forwards;
         }
-        
+
         /*바트 등장 키프레임*/
-        @keyframes bart{
-            to{
+        @keyframes bart {
+            to {
                 top: -110px;
             }
-        }/*키프레임*/
-        
+        }
+
+        /*키프레임*/
+
         /*바트 추락 키프레임*/
-        @keyframes fall{
-            from{/*처음상태가 변경되어서 from을 써준다!*/
+        @keyframes fall {
+            from {
+                /*처음상태가 변경되어서 from을 써준다!*/
                 top: -110px;
                 transform: rotate(180deg);
             }
-            to{
+
+            to {
                 top: 500px;
                 transform: rotate(10deg);
             }
-        }/*키프레임*/
-        
+        }
+
+        /*키프레임*/
+
+        /*바트 일어섬 키프레임*/
+        @keyframes stand {
+            from {
+                top: 500px;
+                transform: rotate(10deg);
+                width: 270px;
+                right: 41px;
+                z-index: 1;
+            }
+
+            to {
+                top: 259px;
+                transform: rotate(0deg);
+                width: 270px;
+                right: 41px;
+                z-index: 1;
+            }
+        }
+
+        /*키프레임*/
     </style>
 
 
