@@ -432,16 +432,38 @@
 
 
 
-
-
         /*바트*/
         .bart {
             position: absolute;
-            top: -110px;
+            top: -305px;/*-110px;*/
             right: 80px;
             width: 220px;
             transform: rotate(180deg);
+            
+            /*애니메이션:이시이지반방마*/
+            animation: bart .5s ease-out 16s forwards,
+                fall .4s ease-in 20s forwards;
         }
+        
+        /*바트 등장 키프레임*/
+        @keyframes bart{
+            to{
+                top: -110px;
+            }
+        }/*키프레임*/
+        
+        /*바트 추락 키프레임*/
+        @keyframes fall{
+            from{/*처음상태가 변경되어서 from을 써준다!*/
+                top: -110px;
+                transform: rotate(180deg);
+            }
+            to{
+                top: 500px;
+                transform: rotate(10deg);
+            }
+        }/*키프레임*/
+        
     </style>
 
 
