@@ -250,6 +250,26 @@
             padding-top: 20px;
         }
         
+        /*가상요소로 삼각형 만들기*/
+        .words::before{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            right: 10px;
+            /*부모는? .words*/
+            transform: rotate(-35deg);
+            
+            /*width,height가 0인 
+            보더셋팅으로 삼각형만들기*/
+            /*보더탑:역삼각형*/
+            border-top: 20px solid #4E8BF8;
+            /*보더버텀:삼각형*/
+            /*border-bottom: 20px solid red;*/
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+        
         
         
     </style>
