@@ -65,7 +65,47 @@
             /*문짝과 같은 위치*/
             width: 32px;
             /*문짝과 같은 크기*/
+            
+            /*애니메이션:이시이지반방마*/
+            animation: simpson 7s ease-in-out 5s;
         }
+        
+        /*심슨 애니 키프레임*/
+        @keyframes simpson {
+            0%{
+                top: 305px;
+                left: 356px;
+                width: 32px;
+                transform: rotate(0deg);
+                z-index: 1;
+            }
+            5%{/*1.문옆이동*/
+                top: 310px;
+                /*아래로*/
+                left: 346px;
+                /*왼쪽이동*/
+                width: 37px;
+                /*크게*/
+                transform: rotate(-10deg);
+                /*기울임*/
+                z-index: 1;
+            }
+            10%{/*2.앞으로 이동*/
+                top: 315px;
+                /*아래로*/
+                left: 346px;
+                /*왼쪽이동*/
+                width: 40px;
+                /*크게*/
+                transform: rotate(10deg);
+                /*기울임*/
+                z-index: 1;
+            }
+            
+            
+        }/*키프레임*/
+        
+        
         
         
         
