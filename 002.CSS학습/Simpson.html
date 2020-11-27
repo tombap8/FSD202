@@ -358,10 +358,22 @@
         .lisa{
             position: absolute;
             top: 20px;
-            left: -50px;
+            left: -278px;/*-50px;*/
             width: 200px;
             transform: rotate(90deg);
+            
+            /*애니메이션:이시이지반방마*/
+            animation: lisa .6s ease-out 13.5s forwards;
         }
+        /*리사 키프레임*/
+        @keyframes lisa{
+            to{
+                left: -50px;
+            }
+        }/*키프레임*/
+        
+        
+        
         /*매기*/
         .maggie{
             position: absolute;
