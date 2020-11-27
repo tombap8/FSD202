@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>심슨가족소개 애니</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        /*전체박스*/
+        .house {
+            position: relative;
+            /*부모자격*/
+            width: 800px;
+            height: 441px;
+            background: url(images/house.png) no-repeat;
+            margin: 0 auto;
+            /*마영오-블록박스 가로중앙정렬*/
+            
+            /*원근설정*/
+            perspective: 480px;
+        }
+
+        /*문짝*/
+        .door {
+            position: absolute;
+            top: 284px;
+            left: 356px;
+            /*부모? .house*/
+            width: 32px;
+            
+            /*문짝Y축회전-원근으로 보이려면 
+            부모에게 perspective*/
+            transform: rotateY(0deg);
+            transform-origin: right;
+            /*문짝축 오른쪽변경*/
+            
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--전체화면박스-->
+    <div class="house">
+
+        <!--문짝-->
+        <img class="door" src="images/door.png" alt="문짝">
+
+
+
+    </div>
+
+
+
+
+
+</body></html>
