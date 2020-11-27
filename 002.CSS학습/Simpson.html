@@ -396,7 +396,8 @@
             
             /*애니메이션: 이시이지반방마*/
             animation: maggie .6s ease-out 14s forwards,
-                updown .4s ease-in-out 14.6s infinite alternate;
+                updown .4s ease-in-out 14.6s infinite alternate,
+                comego 10s ease-in-out 20s infinite alternate;
         }
 
         /*매기 등장 키프레임*/
@@ -413,6 +414,19 @@
             }
             to{
                 bottom: -80px;
+            }
+        }/*키프레임*/
+        
+        /*매기 왔다갔다 키프레임*/
+        @keyframes comego{
+            0%{
+                left: 200px;
+            }
+            40%{/*왼쪽이동*/
+                left: 50px;
+            }
+            100%{/*오른쪽이동*/
+                left: 600px;
             }
         }/*키프레임*/
 
