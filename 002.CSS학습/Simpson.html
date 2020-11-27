@@ -36,7 +36,26 @@
             transform-origin: right;
             /*문짝축 오른쪽변경*/
             
+            /*애니메이션:이시이지반방마*/
+            animation: doorAni 2s ease-in-out 4s;
+            
         }
+        
+        /*문열기 키프레임*/
+        @keyframes doorAni{
+            0%{
+                transform: rotateY(0deg);
+            }
+            30%{
+                transform: rotateY(110deg);
+            }
+            70%{
+                transform: rotateY(110deg);
+            }
+            100%{
+                transform: rotateY(0deg);
+            }
+        }/*키프레임*/
     </style>
 
 
