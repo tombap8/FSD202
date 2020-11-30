@@ -77,6 +77,43 @@
     outline: none;
 }
 
+/********* GNB 메뉴 ************/
+.gnb{
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    /*부모? .navbx*/
+/*    background-color: #fff;*/
+    outline: 5px dotted blue;
+    
+}
+/*각 dl박스*/
+.gnb dl{
+    width: 120px;
+    height: 172px;
+    float: left;
+    /*옆으로 흐르게*/
+    
+    box-sizing: border-box;
+    padding-left: 14px;
+    
+    outline: 2px dotted red;
+}
+
+/*최상위 메뉴(dt)*/
+.gnb dt{
+    font: bold 14px Nanum;
+}
+
+/*하위메뉴(dd)*/
+.gnb dd a{
+    font: bold 11px/21px Nanum;
+    color: #949494;
+}
+
+
+
+
 
 
 
