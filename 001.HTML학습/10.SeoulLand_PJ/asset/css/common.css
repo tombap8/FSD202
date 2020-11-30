@@ -99,18 +99,20 @@
     /*outline: 2px dotted red;*/
 }
 
-/*dl의 가상요소로 왼쪽 바 만들기*/
-.gnb dl::before{
+/*.gnb에 마우스 오버시 dl의 가상요소로 왼쪽바 만들기*/
+.gnb:hover dl::before{
     content: "";
     display: block;
     position: absolute;
     left: 5px;
     width: 1px;
     height: 100%;
-    background-color: #f00;
-    
+    background-color: #e8e8e8;
 }
-
+/*.gnb에 마우스 오버시 3번째 dl부터 가상요소 왼쪽바 위치변경*/
+.gnb:hover dl:nth-child(2)~dl::before{
+    left: 4px;
+}
 /*3번째 dl부터 패딩값 변경*/
 /*
     틸드(~) 선택자: 선택요소 뒤의 형제들 선택
@@ -192,7 +194,6 @@
     color: #fff;
     font: bold 9px/11px arial;
     text-align: center;
-    
     
 }
 
