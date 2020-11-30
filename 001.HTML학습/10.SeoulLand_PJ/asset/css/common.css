@@ -172,6 +172,30 @@
     font: bold 11px/21px Nanum;
     color: #949494;
 }
+/*하위메뉴에 마우스 오버시 글자색 변경*/
+.gnb dd:hover a{
+    color: #818181;
+}
+/*하위메뉴에 마우스 오버시 가상요소로 빨간공 아이콘 만들기*/
+.gnb dd:hover a::before{
+    content: "＞";
+    display: block;
+    position: absolute;
+    /*젠틀앱솔루트!!! - 마진으로 세부위치조정!*/
+    margin-top: 5px;
+    margin-left: -20px;
+    
+    width: 11px;
+    height: 11px;
+    background-color: #f00;
+    border-radius: 50%;
+    color: #fff;
+    font: bold 9px/11px arial;
+    text-align: center;
+    
+    
+}
+
 
 
 
