@@ -28,7 +28,7 @@
 .tmenu{
     position: absolute;
     top: 9px;
-    right: 21px;
+    right: 11px;
     /*부모? .navbx*/
     font-family: Nanum;
     font-size: 10px;
@@ -40,6 +40,41 @@
     margin: 0 6px;
     font-size: 12px;
     vertical-align: 0px;
+}
+
+/*첫번째 a요소 글자색 변경하기*/
+.tmenu li:first-child a{
+    color: #f26522;
+}
+
+/*4번째 li의 세부조정*/
+.tmenu li:nth-child(4) {
+    transform: translateX(3px);
+}
+
+/*마지막 li에 가상요소 점 숨기기*/
+.tmenu li:last-child::before{
+    opacity: 0;
+    /*display: none인 경우 기존 디자인이 틀어지므로
+    투명하게 처리하는것이 좋겠다~*/
+}
+
+/*언어선택박스*/
+#lang{
+    width: 110px;
+    height: 19px;
+    font-family: arial;
+    font-size: 11px;
+    color: #979797;
+    border: 1px solid #a8a8a8;
+    padding-left: 4px;
+    transform: translate(2px,-2px);
+    /*다른요소에 영향없이 현재위치에서 살짝위치조정!*/
+    box-shadow: 1px 1px 8px #d1d1d1 inset;
+}
+/*크롬 포커스 아웃라인 해제*/
+#lang:focus{
+    outline: none;
 }
 
 
