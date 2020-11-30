@@ -34,7 +34,7 @@
     font-size: 10px;
     font-weight: bold;
 }
-/*가상요로소 사이점 넣기*/
+/*가상요소로 사이점 넣기*/
 .tmenu li+li::before{
     content: "·";
     margin: 0 6px;
@@ -88,13 +88,27 @@
 }
 /*각 dl박스*/
 .gnb dl{
+    position: relative;
+    /*부모자격*/
     width: 127px;
     height: 172px;
     float: left;
     /*옆으로 흐르게*/
     box-sizing: border-box;
     padding-left: 20px;
-    outline: 2px dotted red;
+    /*outline: 2px dotted red;*/
+}
+
+/*dl의 가상요소로 왼쪽 바 만들기*/
+.gnb dl::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    width: 1px;
+    height: 100%;
+    background-color: #f00;
+    
 }
 
 /*3번째 dl부터 패딩값 변경*/
@@ -111,6 +125,36 @@
 .gnb dt{
     font: bold 14px Nanum;
     margin-bottom: 8px;
+}
+
+/*dl에 마우스 오버시 dt의 a의 글자색 빨간색*/
+.gnb dl:hover dt a{
+    color: #f00;
+}
+/*dl에 마우스 오버시 dt의 a에 가상요소로 별넣기*/
+.gnb dl:hover dt a::after{
+    content: "*";
+    font-size: 19px;
+    position: absolute;
+    top: -7px;
+    /*
+        top의 부모는 .gnb인데 상단 기준값이 모두 동일하므로
+        위치 잡는데 무리가 없다. 다만 left를 사용할 경우 
+        .gnb를 기준하므로 위치잡기가 어려워진다!
+        따라서 left는 사용하지 말고 젠틀하게 있는 위치 그대로 나오게하고
+        margin-left로 세부 위치를 조정한다!
+    */
+    margin-left: 2px;
+    
+}
+/*마지막 dl의 dt의 a요소만 가상요소 별이 안나오게함!*/
+.gnb dl:last-child:hover dt a::after{
+    content: "";
+}
+
+/*마지막 dl의 dt의 a요소의 글자색 빨간색*/
+.gnb dl:last-child dt a{
+    color: #f00;
 }
 
 /*마지막 dl의 dt의 a요소에 가상요소로 아이콘 넣기*/
