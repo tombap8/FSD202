@@ -113,6 +113,16 @@
     margin-bottom: 8px;
 }
 
+/*마지막 dl의 dt의 a요소에 가상요소로 아이콘 넣기*/
+.gnb dl:last-child dt a::before{
+    content: url(../images/micon.png);
+    vertical-align: -3px;
+    /*오른쪽 위치 인라인요소 세로정렬*/
+    margin-right: 3px;
+    /*이미지 오른쪽 여백*/
+}
+
+
 /*하위메뉴(dd)*/
 .gnb dd a{
     font: bold 11px/21px Nanum;
