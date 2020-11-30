@@ -2,14 +2,14 @@
 /* 서울랜드 공통요소 CSS - common.css */
 
 /*그리드뷰 재정의*/
-.grid{
+.grid {
     z-index: -1;
 }
 
 /*********1.상단영역***********/
 
 /*상단영역파티션 높이*/
-.t1{
+.t1 {
     height: 87px;
 }
 
@@ -20,12 +20,13 @@
 }
 
 /*네비게이션 부모박스*/
-.navbx{
+.navbx {
     position: relative;
     /*부모자격*/
 }
+
 /*공통메뉴*/
-.tmenu{
+.tmenu {
     position: absolute;
     top: 9px;
     right: 11px;
@@ -34,8 +35,9 @@
     font-size: 10px;
     font-weight: bold;
 }
+
 /*가상요소로 사이점 넣기*/
-.tmenu li+li::before{
+.tmenu li + li::before {
     content: "·";
     margin: 0 6px;
     font-size: 12px;
@@ -43,7 +45,7 @@
 }
 
 /*첫번째 a요소 글자색 변경하기*/
-.tmenu li:first-child a{
+.tmenu li:first-child a {
     color: #f26522;
 }
 
@@ -53,14 +55,14 @@
 }
 
 /*마지막 li에 가상요소 점 숨기기*/
-.tmenu li:last-child::before{
+.tmenu li:last-child::before {
     opacity: 0;
     /*display: none인 경우 기존 디자인이 틀어지므로
     투명하게 처리하는것이 좋겠다~*/
 }
 
 /*언어선택박스*/
-#lang{
+#lang {
     width: 110px;
     height: 19px;
     font-family: arial;
@@ -68,26 +70,41 @@
     color: #979797;
     border: 1px solid #a8a8a8;
     padding-left: 4px;
-    transform: translate(2px,-2px);
+    transform: translate(2px, -2px);
     /*다른요소에 영향없이 현재위치에서 살짝위치조정!*/
     box-shadow: 1px 1px 8px #d1d1d1 inset;
 }
+
 /*크롬 포커스 아웃라인 해제*/
-#lang:focus{
+#lang:focus {
     outline: none;
 }
 
 /********* GNB 메뉴 ************/
-.gnb{
+.gnb {
     position: absolute;
     top: 44px;
     left: 34px;
     /*부모? .navbx*/
-    /*    background-color: #fff;*/
+    
+    /*높이값을 설정하여 자식요소 숨기기/보이기*/
+    height: 19px;
+    overflow: hidden;
+    /*넘치는 자식요소 숨기기*/
+    transition: height .4s ease-out;
+    /*트랜지션:속시이지*/
+    
+    background-color: #fff;
     outline: 5px dotted blue;
 }
+/*.gnb에 마우스 오버시 높이값 변경하여 하위메뉴 보이기*/
+.gnb:hover{
+    height: 180px;
+}
+
+
 /*각 dl박스*/
-.gnb dl{
+.gnb dl {
     position: relative;
     /*부모자격*/
     width: 127px;
@@ -100,7 +117,7 @@
 }
 
 /*.gnb에 마우스 오버시 dl의 가상요소로 왼쪽바 만들기*/
-.gnb:hover dl::before{
+.gnb:hover dl::before {
     content: "";
     display: block;
     position: absolute;
@@ -109,32 +126,35 @@
     height: 100%;
     background-color: #e8e8e8;
 }
+
 /*.gnb에 마우스 오버시 3번째 dl부터 가상요소 왼쪽바 위치변경*/
-.gnb:hover dl:nth-child(2)~dl::before{
+.gnb:hover dl:nth-child(2) ~ dl::before {
     left: 4px;
 }
+
 /*3번째 dl부터 패딩값 변경*/
 /*
     틸드(~) 선택자: 선택요소 뒤의 형제들 선택
     .gnb dl:nth-child(2)~dl
     해석: 두번째 dl 뒤의 모든 형제 dl을 선택!
 */
-.gnb dl:nth-child(2)~dl{
+.gnb dl:nth-child(2) ~ dl {
     padding-left: 19px;
 }
 
 /*최상위 메뉴(dt)*/
-.gnb dt{
+.gnb dt {
     font: bold 14px Nanum;
     margin-bottom: 8px;
 }
 
 /*dl에 마우스 오버시 dt의 a의 글자색 빨간색*/
-.gnb dl:hover dt a{
+.gnb dl:hover dt a {
     color: #f00;
 }
+
 /*dl에 마우스 오버시 dt의 a에 가상요소로 별넣기*/
-.gnb dl:hover dt a::after{
+.gnb dl:hover dt a::after {
     content: "*";
     font-size: 19px;
     position: absolute;
@@ -147,20 +167,21 @@
         margin-left로 세부 위치를 조정한다!
     */
     margin-left: 2px;
-    
+
 }
+
 /*마지막 dl의 dt의 a요소만 가상요소 별이 안나오게함!*/
-.gnb dl:last-child:hover dt a::after{
+.gnb dl:last-child:hover dt a::after {
     content: "";
 }
 
 /*마지막 dl의 dt의 a요소의 글자색 빨간색*/
-.gnb dl:last-child dt a{
+.gnb dl:last-child dt a {
     color: #f00;
 }
 
 /*마지막 dl의 dt의 a요소에 가상요소로 아이콘 넣기*/
-.gnb dl:last-child dt a::before{
+.gnb dl:last-child dt a::before {
     content: url(../images/micon.png);
     vertical-align: -3px;
     /*오른쪽 위치 인라인요소 세로정렬*/
@@ -170,23 +191,25 @@
 
 
 /*하위메뉴(dd)*/
-.gnb dd a{
+.gnb dd a {
     font: bold 11px/21px Nanum;
     color: #949494;
 }
+
 /*하위메뉴에 마우스 오버시 글자색 변경*/
-.gnb dd:hover a{
+.gnb dd:hover a {
     color: #818181;
 }
+
 /*하위메뉴에 마우스 오버시 가상요소로 빨간공 아이콘 만들기*/
-.gnb dd:hover a::before{
+.gnb dd:hover a::before {
     content: "＞";
     display: block;
     position: absolute;
     /*젠틀앱솔루트!!! - 마진으로 세부위치조정!*/
     margin-top: 5px;
     margin-left: -20px;
-    
+
     width: 11px;
     height: 11px;
     background-color: #f00;
@@ -194,7 +217,7 @@
     color: #fff;
     font: bold 9px/11px arial;
     text-align: center;
-    
+
 }
 
 
@@ -207,13 +230,11 @@
 /*********4.하단영역***********/
 
 /*하단영역 첫째줄 파티션 높이*/
-.i1{
-     height: 34px;
+.i1 {
+    height: 34px;
 }
+
 /*하단영역 둘째줄 파티션 높이*/
-.i2{
+.i2 {
     height: 96px;
 }
-
-
-
