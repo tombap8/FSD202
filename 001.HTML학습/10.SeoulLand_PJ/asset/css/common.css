@@ -93,8 +93,18 @@
     float: left;
     /*옆으로 흐르게*/
     box-sizing: border-box;
-    padding-left: 21px;
+    padding-left: 20px;
     outline: 2px dotted red;
+}
+
+/*3번째 dl부터 패딩값 변경*/
+/*
+    틸드(~) 선택자: 선택요소 뒤의 형제들 선택
+    .gnb dl:nth-child(2)~dl
+    해석: 두번째 dl 뒤의 모든 형제 dl을 선택!
+*/
+.gnb dl:nth-child(2)~dl{
+    padding-left: 19px;
 }
 
 /*최상위 메뉴(dt)*/
