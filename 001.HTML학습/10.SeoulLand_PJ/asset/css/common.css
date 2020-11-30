@@ -24,6 +24,23 @@
     position: relative;
     /*부모자격*/
 }
+/*공통메뉴*/
+.tmenu{
+    position: absolute;
+    top: 9px;
+    right: 21px;
+    /*부모? .navbx*/
+    font-family: Nanum;
+    font-size: 10px;
+    font-weight: bold;
+}
+/*가상요로소 사이점 넣기*/
+.tmenu li+li::before{
+    content: "·";
+    margin: 0 6px;
+    font-size: 12px;
+    vertical-align: 0px;
+}
 
 
 
