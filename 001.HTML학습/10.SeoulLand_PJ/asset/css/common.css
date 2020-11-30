@@ -80,29 +80,27 @@
 /********* GNB 메뉴 ************/
 .gnb{
     position: absolute;
-    top: 40px;
-    left: 30px;
+    top: 44px;
+    left: 34px;
     /*부모? .navbx*/
-/*    background-color: #fff;*/
+    /*    background-color: #fff;*/
     outline: 5px dotted blue;
-    
 }
 /*각 dl박스*/
 .gnb dl{
-    width: 120px;
+    width: 127px;
     height: 172px;
     float: left;
     /*옆으로 흐르게*/
-    
     box-sizing: border-box;
-    padding-left: 14px;
-    
+    padding-left: 21px;
     outline: 2px dotted red;
 }
 
 /*최상위 메뉴(dt)*/
 .gnb dt{
     font: bold 14px Nanum;
+    margin-bottom: 8px;
 }
 
 /*하위메뉴(dd)*/
