@@ -13,6 +13,21 @@
     height: 87px;
 }
 
+/*로고*/
+.logo img {
+    margin-top: 6px;
+    margin-left: -10px;
+}
+
+/*네비게이션 부모박스*/
+.navbx{
+    position: relative;
+    /*부모자격*/
+}
+
+
+
+
 /*********4.하단영역***********/
 
 /*하단영역 첫째줄 파티션 높이*/

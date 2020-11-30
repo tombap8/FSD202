@@ -11,8 +11,52 @@
     <!--1.상단영역-->
     <div id="top">
         <header class="ibx clb top">
-           <div class="col-2 t1"></div>
-           <div class="col-10 t1"></div> 
+            <div class="col-2 t1">
+                <!--로고이미지-->
+                <h1 class="logo">
+                    <a href="">
+                        <img src="images/logoTop.png" alt="서울랜드 로고">
+                    </a>
+                </h1>
+            </div>
+            <div class="col-10 t1 navbx">
+                <!--공통메뉴-->
+                <nav class="tmenu">
+                    <ul>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">회원가입</a></li>
+                        <li><a href="">고객의소리함</a></li>
+                        <li><a href="">사이트맵</a></li>
+                        <li>
+                            <select>
+                                <option value="opt">
+                                    LANGUAGE
+                                </option>
+                                <option value="en">
+                                    English
+                                </option>
+                                <option value="ja">
+                                    Japanese
+                                </option>
+                                <option value="ch">
+                                    Chinese
+                                </option>
+                            </select>
+                            <!--
+                                select 요소 : 선택옵션을 제공하는 요소
+                                - option : 필수하위요소, 선택메뉴제공
+                                - value 속성은 선택시 코드설정
+                                (만약 value속성이 없으면 option요소의
+                                데이터를 읽어감)
+                                - 주로 사용되는 이벤트: change 이벤트
+                                : 선택이 변경될 경우 발생하는 이벤트사용
+                            -->
+                        </li>
+                    </ul>
+                </nav>
+                <!--GNB(Global Navigation Bar)메뉴-->
+                nav.gnb>dl*6>(dt>a)+(dd>a)*7
+            </div>
         </header>
     </div>
     <!--2.배너영역-->
@@ -40,23 +84,23 @@
             <div class="col-2 i2"></div>
         </footer>
     </div>
-    
 
-<!--그리드뷰-->
-<ul class="grid">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+
+    <!--그리드뷰-->
+    <ul class="grid">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
 
 
