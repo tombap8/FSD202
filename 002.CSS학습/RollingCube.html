@@ -2,28 +2,34 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Rolling Cube 
-    CSS3 3D Animation-</title>
+    <title>Rolling Cube
+        CSS3 3D Animation-</title>
     <style>
-        html,body{
-           margin: 0;
+        html,
+        body {
+            margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;/*보이는화면에 기준*/
+            height: 100%;
+            /*보이는화면에 기준*/
         }
-        body{
+
+        body {
             background-image: linear-gradient(to bottom, #777 30%, #ccc 70%, #ccc 100%);
+            
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
         }
-        
+
         /*부모큐브*/
-        .cube{
+        .cube {
             position: absolute;
             top: 50%;
             left: 50%;
             width: 300px;
             height: 300px;
-            outline: 2px solid #000;
-            
+            /*outline: 2px solid #000;*/
+
             /*
                 입체설정하기:
                 입체로 설정할 요소의 부모박스에 아래와 같이
@@ -35,64 +41,118 @@
                 3D로 전환함!
             */
             transform-style: preserve-3d;
-            transform: translate(-50%,-50%) rotateX(10deg) rotateY(30deg);
+            transform: translate(-50%, -50%) rotateX(10deg) rotateY(30deg);
         }
-        
+
         /*큐브각면 공통*/
-        .cube>span{
+        .cube>span {
             position: absolute;
             /*block자동전환!*/
             width: 100%;
             height: 100%;
             opacity: .8;
         }
-        
+
         /*큐브 각면 셋팅*/
-        
+
         /*1. 앞면*/
-        .cube>span:nth-child(1){
-            background-color: red;
+        .cube>span:nth-child(1) {
+            /*            background-color: red;*/
+            background: url(images/img1.jpg) no-repeat 0/100% 100%;
             transform: translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
+
         /*2. 오른쪽면*/
-        .cube>span:nth-child(2){
-            background-color: green;
+        .cube>span:nth-child(2) {
+            /*            background-color: green;*/
+            background: url(images/img2.jpg) no-repeat 0/100% 100%;
             transform: rotateY(90deg) translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
+
         /*3. 뒷면*/
-        .cube>span:nth-child(3){
-            background-color: orange;
+        .cube>span:nth-child(3) {
+            /*            background-color: orange;*/
+            background: url(images/img3.jpg) no-repeat 0/100% 100%;
             transform: rotateY(180deg) translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
+
         /*4. 왼쪽면*/
-        .cube>span:nth-child(4){
-            background-color: yellow;
+        .cube>span:nth-child(4) {
+            /*            background-color: yellow;*/
+            background: url(images/img4.jpg) no-repeat 0/100% 100%;
             transform: rotateY(-90deg) translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
+
         /*5. 윗면*/
-        .cube>span:nth-child(5){
-            background-color: blue;
+        .cube>span:nth-child(5) {
+            /*            background-color: blue;*/
+            background: url(images/img5.jpg) no-repeat 0/100% 100%;
             transform: rotateX(90deg) translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
+
         /*6. 아랫면*/
-        .cube>span:nth-child(6){
-            background-color: purple;
+        .cube>span:nth-child(6) {
+            /*            background-color: purple;*/
+            background: url(images/img6.jpg) no-repeat 0/100% 100%;
             transform: rotateX(-90deg) translateZ(150px);
             /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
         }
-        
-        
+
+        /*애니메이션 호출 class*/
+        .cube-ani {
+            /*애니메이션:이시이지반방마*/
+            animation: rolling 5s linear infinite;
+            /*linear는 등속도*/
+        }
+
+        /*큐브회전 애니메이션 키프레임*/
+        @keyframes rolling {
+            to {
+                transform: translate(-50%, -50%) rotateX(370deg) rotateY(-330deg);
+                /*
+                    x축은 같은 방향으로 10도 나가있으므로
+                    360도+10도=370도
+                    y축은 반대방향으로 30도 덜가므로
+                    360도-30도=330도 (방향이 반대니까 -330도)
+                */
+            }
+        }
+
+        /*키프레임*/
+
+        /*애니메이션 호출 class*/
+        .cube-ani2 {
+            /*애니메이션:이시이지반방마*/
+            animation: rolling2 10s linear infinite alternate;
+            /*linear는 등속도*/
+            top: 100%;
+            left: 0%;
+            /*왼쪽아래에서 출발!*/
+        }
+
+        /*큐브회전 애니메이션 키프레임*/
+        @keyframes rolling2 {
+            to {
+                transform: translate(-50%, -50%) rotateX(370deg) rotateY(-330deg);
+                top: 0%;
+                left: 100%;
+                /*오른쪽위로 이동*/
+            }
+        }
+
+        /*키프레임*/
     </style>
 </head>
+
 <body>
-   
-   <!--큐브박스-->
-    <div class="cube">
+
+    <!--큐브박스-->
+    <div class="cube cube-ani">
         <span></span>
         <span></span>
         <span></span>
@@ -100,11 +160,20 @@
         <span></span>
         <span></span>
     </div>
-   
-   
-   
-   
-   
-    
-</body>
-</html>
+
+    <!--큐브박스-->
+    <div class="cube cube-ani2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+
+
+
+
+</body></html>
