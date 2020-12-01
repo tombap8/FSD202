@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Rolling Cube 
+    CSS3 3D Animation-</title>
+    <style>
+        html,body{
+           margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;/*보이는화면에 기준*/
+        }
+        body{
+            background-image: linear-gradient(to bottom, #777 30%, #ccc 70%, #ccc 100%);
+        }
+        
+        /*부모큐브*/
+        .cube{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            outline: 2px solid #000;
+            
+            /*
+                입체설정하기:
+                입체로 설정할 요소의 부모박스에 아래와 같이
+                설정한다!
+                
+                transform-style: preserve-3d
+            
+                기본값은 flat 즉, 2D
+                3D로 전환함!
+            */
+            transform-style: preserve-3d;
+            transform: translate(-50%,-50%) rotateX(10deg) rotateY(30deg);
+        }
+        
+        /*큐브각면 공통*/
+        .cube>span{
+            position: absolute;
+            /*block자동전환!*/
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+        }
+        
+        /*큐브 각면 셋팅*/
+        
+        /*1. 앞면*/
+        .cube>span:nth-child(1){
+            background-color: red;
+            transform: translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        /*2. 오른쪽면*/
+        .cube>span:nth-child(2){
+            background-color: green;
+            transform: rotateY(90deg) translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        /*3. 뒷면*/
+        .cube>span:nth-child(3){
+            background-color: orange;
+            transform: rotateY(180deg) translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        /*4. 왼쪽면*/
+        .cube>span:nth-child(4){
+            background-color: yellow;
+            transform: rotateY(-90deg) translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        /*5. 윗면*/
+        .cube>span:nth-child(5){
+            background-color: blue;
+            transform: rotateX(90deg) translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        /*6. 아랫면*/
+        .cube>span:nth-child(6){
+            background-color: purple;
+            transform: rotateX(-90deg) translateZ(150px);
+            /*한면 크기의 절반만큼 화면방향으로(z축방향으로)이동!*/
+        }
+        
+        
+    </style>
+</head>
+<body>
+   
+   <!--큐브박스-->
+    <div class="cube">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+   
+   
+   
+   
+   
+    
+</body>
+</html>
