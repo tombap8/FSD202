@@ -73,6 +73,22 @@
             height: 30%;
         }
         
+        /*상단영역*/
+        /*최상위부모를 고정하라!*/
+        #top{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.54);
+            z-index: 9999;
+            /*아래박스보다 항상 위에!*/
+        }
+        .t1{
+            height: 70px;
+        }
+        
+        
         /*개별 페이지 박스 셋팅*/
         #cont1{
             background: url(images/bg1.jpg) no-repeat center/cover;
@@ -131,7 +147,11 @@
 <body>
     <!--1.상단영역-->
     <div id="top">
-        <header class="ibx top"></header>
+        <header class="ibx clb top">
+            <div class="col-3 t1"></div>
+            <div class="col-6 t1"></div>
+            <div class="col-3 t1"></div>
+        </header>
     </div>
     <!--2.컨텐츠1 영역-->
     <div id="cont1" class="page">
