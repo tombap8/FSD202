@@ -27,11 +27,40 @@
         /*속박스*/
         .ibx{
             width: 1440px;
-            max-width: 100%;
-            /*width크기보다 작으면 화면채우기*/
+            max-width: 90%;
+            /*width크기보다 작으면 %적용*/
             margin: 0 auto;
             
             outline: 2px dashed blue;
+        }
+        
+        /*화면을 채우는 .page 아래 .ibx 속박스 셋팅*/
+        /*세로 중앙정렬 셋팅*/
+        .page .ibx{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        /*비율유지박스 class*/
+        .rbx::before{
+            content: "";
+            display: block;
+            padding-top: 35%;
+        }
+        /*비율유지속박스*/
+        .rbx>div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        /*비율유지박스 아래있는 파티션박스*/
+        /*비율유지박스의 크기에 맞춰야 하므로 높이100%*/
+        .rbx [class*="col-"]{
+            height: 100%;
         }
     
     </style>
@@ -46,27 +75,45 @@
     </div>
     <!--2.컨텐츠1 영역-->
     <div id="cont1" class="page">
-        <section class="ibx cont1"></section>
+        <section class="ibx rbx cont1">
+            <div>
+                
+            </div>
+        </section>
     </div>
     <!--3.컨텐츠2 영역-->
     <div id="cont2" class="page">
-        <section class="ibx cont2"></section>
+        <section class="ibx rbx cont2">
+            <div class="clb">
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
+        </section>
     </div>
     <!--4.컨텐츠3 영역-->
     <div id="cont3" class="page">
-        <section class="ibx cont3"></section>
+        <section class="ibx cont3">
+            
+        </section>
     </div>
     <!--5.컨텐츠4 영역-->
     <div id="cont4" class="page">
-        <section class="ibx cont4"></section>
+        <section class="ibx cont4">
+            
+        </section>
     </div>
     <!--6.컨텐츠5 영역-->
     <div id="cont5" class="page">
-        <section class="ibx cont5"></section>
+        <section class="ibx cont5">
+            
+        </section>
     </div>
     <!--7.컨텐츠6 영역-->
     <div id="cont6" class="page">
-        <section class="ibx cont6"></section>
+        <section class="ibx cont6">
+            
+        </section>
     </div>
     <!--8.하단영역-->
     <div id="info">
