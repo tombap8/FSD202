@@ -3,24 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>100% Grid System</title>
+    <link rel="stylesheet" href="css/gridView.css">
+    <link rel="stylesheet" href="css/gridSet.css">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*한페이지를 채우는 .page를 위해
+            높이값 100% 보이는화면 기준을 꼭해야함!*/
+        }
+        
+        /*공통class*/
+        
+        /*한 페이지를 채우는 박스*/
+        .page{
+            width: 100%;
+            height: 100%;
+            outline: 2px dotted red;
+        }
+        
+        /*속박스*/
+        .ibx{
+            width: 1440px;
+            max-width: 100%;
+            /*width크기보다 작으면 화면채우기*/
+            margin: 0 auto;
+            
+            outline: 2px dashed blue;
+        }
+    
+    </style>
+    
+    
 </head>
 
 <body>
     <!--1.상단영역-->
-    #top>header.ibx.top
+    <div id="top">
+        <header class="ibx top"></header>
+    </div>
     <!--2.컨텐츠1 영역-->
-    #cont1.page>section.ibx.cont1
+    <div id="cont1" class="page">
+        <section class="ibx cont1"></section>
+    </div>
     <!--3.컨텐츠2 영역-->
-    #cont2.page>section.ibx.cont2
+    <div id="cont2" class="page">
+        <section class="ibx cont2"></section>
+    </div>
     <!--4.컨텐츠3 영역-->
-    #cont3.page>section.ibx.cont3
+    <div id="cont3" class="page">
+        <section class="ibx cont3"></section>
+    </div>
     <!--5.컨텐츠4 영역-->
-    #cont4.page>section.ibx.cont4
+    <div id="cont4" class="page">
+        <section class="ibx cont4"></section>
+    </div>
     <!--6.컨텐츠5 영역-->
-    #cont5.page>section.ibx.cont5
+    <div id="cont5" class="page">
+        <section class="ibx cont5"></section>
+    </div>
     <!--7.컨텐츠6 영역-->
-    #cont6.page>section.ibx.cont6
+    <div id="cont6" class="page">
+        <section class="ibx cont6"></section>
+    </div>
     <!--8.하단영역-->
-    #info>footer.ibx.info
+    <div id="info">
+        <footer class="ibx info"></footer>
+    </div>
 
 </body></html>

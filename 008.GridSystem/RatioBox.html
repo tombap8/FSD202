@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>비율유지박스</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .page{
+            width: 100%;
+            height: 100%;
+        }
+        /*중앙속박스*/
+        .ibx{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로중앙이동*/
+            width: 50%;
+            /*height: 60%;*/
+            margin: 0 auto;
+            outline: 5px dotted red;
+            
+            background: url(images/kim.jpg) no-repeat top/cover;
+        }
+        
+        /*비율유지 class*/
+        /*
+        [비율유지를 위한 필요요건]
+        1. 기존 박스에 높이값이 없어야함
+        2. 비율을 만드는 높이값을 위해 가상요소로
+            padding-top값을 %로 준다
+        */
+        .rbx::before{
+            content: "";
+            display: block;
+            padding-top: 50%;/*2:1비율*/
+        }
+    
+    
+    </style>
+</head>
+<body>
+   <div class="page">
+       <section class="ibx rbx">
+           
+       </section>
+   </div>
+   
+   
+    
+</body>
+</html>
