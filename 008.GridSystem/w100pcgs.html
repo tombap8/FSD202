@@ -84,6 +84,7 @@
         
         #cont3{
             position: relative;
+            /*가상요소의 부모자격*/
             background: url(images/bg3.png) no-repeat center/cover;
         }
         /*가상요소로 배경 반투명 덮개 만들기*/
@@ -96,6 +97,30 @@
             bottom: 0;
             right: 0;
             background-color: rgba(0, 118, 255, 0.51);
+        }
+        
+        #cont4{
+            position: relative;
+            background: url(images/bg4.jpg) no-repeat center/cover;
+        }
+        /*가상요소로 배경 반투명 덮개 만들기*/
+        #cont4::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.46);
+        }
+        
+        #cont5{
+            background: url(images/bg5.png) no-repeat left bottom/600px;
+        }
+        
+        #cont6{
+            background: url(images/bg6.jpg) no-repeat center/cover;
         }
         
     </style>
