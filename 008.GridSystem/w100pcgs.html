@@ -72,6 +72,32 @@
             text-align: center;
             height: 30%;
         }
+        
+        /*개별 페이지 박스 셋팅*/
+        #cont1{
+            background: url(images/bg1.jpg) no-repeat center/cover;
+        }
+        
+        #cont2{
+            background: #d8f0ff url(images/bg2.png) no-repeat right bottom;
+        }
+        
+        #cont3{
+            position: relative;
+            background: url(images/bg3.png) no-repeat center/cover;
+        }
+        /*가상요소로 배경 반투명 덮개 만들기*/
+        #cont3::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 118, 255, 0.51);
+        }
+        
     </style>
 
 
@@ -105,10 +131,10 @@
     <div id="cont3" class="page">
         <section class="ibx rbx cont3">
             <div class="clb">
-                <h2>K-water</h2>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                <h2>서비스</h2>
+                <div class="col-3"></div>
+                <div class="col-6"></div>
+                <div class="col-3"></div>
             </div>
         </section>
     </div>
@@ -116,10 +142,11 @@
     <div id="cont4" class="page">
         <section class="ibx rbx cont4">
             <div class="clb">
-                <h2>K-water</h2>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                <h2>뉴스</h2>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
             </div>
         </section>
     </div>
@@ -127,10 +154,9 @@
     <div id="cont5" class="page">
         <section class="ibx rbx cont5">
             <div class="clb">
-                <h2>K-water</h2>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                <h2>문화</h2>
+                <div class="col-6"></div>
+                <div class="col-6"></div>
             </div>
         </section>
     </div>
@@ -138,7 +164,7 @@
     <div id="cont6" class="page">
         <section class="ibx rbx cont6">
             <div class="clb">
-                <h2>K-water</h2>
+                <h2>채용</h2>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
