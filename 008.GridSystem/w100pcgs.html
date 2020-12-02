@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/gridView.css">
     <link rel="stylesheet" href="css/gridSet.css">
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -14,65 +15,66 @@
             /*한페이지를 채우는 .page를 위해
             높이값 100% 보이는화면 기준을 꼭해야함!*/
         }
-        
+
         /*공통class*/
-        
+
         /*한 페이지를 채우는 박스*/
-        .page{
+        .page {
             width: 100%;
             height: 100%;
             outline: 2px dotted red;
         }
-        
+
         /*속박스*/
-        .ibx{
+        .ibx {
             width: 1440px;
             max-width: 90%;
             /*width크기보다 작으면 %적용*/
             margin: 0 auto;
-            
+
             outline: 2px dashed blue;
         }
-        
+
         /*화면을 채우는 .page 아래 .ibx 속박스 셋팅*/
         /*세로 중앙정렬 셋팅*/
-        .page .ibx{
+        .page .ibx {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
         }
-        
+
         /*비율유지박스 class*/
-        .rbx::before{
+        .rbx::before {
             content: "";
             display: block;
-            padding-top: 35%;
+            padding-top: 45%;
         }
+
         /*비율유지속박스*/
-        .rbx>div{
+        .rbx>div {
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
         }
-        
+
         /*비율유지박스 아래있는 파티션박스*/
         /*비율유지박스의 크기에 맞춰야 하므로 높이100%*/
-        .rbx [class*="col-"]{
+        .rbx [class*="col-"] {
             height: 70%;
         }
+
         /*비율유지 박스내의 타이틀*/
-        .rbx h2{
+        .rbx h2 {
             margin: 0;
             padding: 0;
             text-align: center;
             height: 30%;
         }
-    
     </style>
-    
-    
+
+
 </head>
 
 <body>
@@ -84,7 +86,7 @@
     <div id="cont1" class="page">
         <section class="ibx rbx cont1">
             <div>
-                
+
             </div>
         </section>
     </div>
@@ -92,7 +94,7 @@
     <div id="cont2" class="page">
         <section class="ibx rbx cont2">
             <div class="clb">
-               <h2>K-water</h2>
+                <h2>K-water</h2>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
                 <div class="col-4"></div>
@@ -101,26 +103,46 @@
     </div>
     <!--4.컨텐츠3 영역-->
     <div id="cont3" class="page">
-        <section class="ibx cont3">
-            
+        <section class="ibx rbx cont3">
+            <div class="clb">
+                <h2>K-water</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
         </section>
     </div>
     <!--5.컨텐츠4 영역-->
     <div id="cont4" class="page">
-        <section class="ibx cont4">
-            
+        <section class="ibx rbx cont4">
+            <div class="clb">
+                <h2>K-water</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
         </section>
     </div>
     <!--6.컨텐츠5 영역-->
     <div id="cont5" class="page">
-        <section class="ibx cont5">
-            
+        <section class="ibx rbx cont5">
+            <div class="clb">
+                <h2>K-water</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
         </section>
     </div>
     <!--7.컨텐츠6 영역-->
     <div id="cont6" class="page">
-        <section class="ibx cont6">
-            
+        <section class="ibx rbx cont6">
+            <div class="clb">
+                <h2>K-water</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
         </section>
     </div>
     <!--8.하단영역-->
