@@ -85,11 +85,11 @@
         // 변수 자리출력 연습
 
         // 사용자이름
-        var usr_name = "줄리아";
+        var usr_name = "제시카";
         // 오늘의 날씨
-        var today_weather = "맑음";
+        var today_weather = "쨍하고 맑음";
         // 인사 메시지
-        var message = "행복하게 하루를 멋지게!";
+        var message = "쿨하게 멋지게 자신있게~!";
 
         //출력
         document.write("<h1>" + usr_name + "님, 안녕하세요!</h1>");
@@ -155,12 +155,84 @@
                        (5>10)+"</h1>");
         // &gt; 은 html 특수문자출력 (>)
         // < 는 &lt;
+        /*
+        4. 대입연산자 : 기존값에 연산을 중첩시키는 연산자
+        (1) += : 기존값에 더함
+            예) A += 5 와 같은 것은 A = A + 5
+        (2) -= : 기존값에 뺌
+            예) A -= 5 와 같은 것은 A = A - 5
+        (3) *= : 기존값에 곱함
+            예) A *= 5 와 같은 것은 A = A * 5
+        (4) /= : 기존값에 나눔
+            예) A /= 5 와 같은 것은 A = A / 5
+        (5) %= : 기존값에 나머지구함
+            예) A %= 5 와 같은 것은 A = A % 5
+        
+        ※ 주의사항 : += 대입연산자는 붙여서 기호사용할것!
+            (+ = 는 안됨!)
+        */
+        
+        var txt = "무궁화 꽃이 ";
+        var num = 5;
+        
+        document.write("<h1>4.대입연산자</h1>");
+        document.write("<h1>"+txt+"</h1>");
+        num *= 100;//기존값에 곱함
+        txt += num + "개 ";//기존값에 더함
+        txt += "피었습니다!";//기존값에 더함
+        document.write("<h1>"+txt+"</h1>");
+        
+        /*
+        5. 증감연산자 : 기존값에 1씩 더하거나 뺌
+            ++ : 1씩 증가
+            -- : 1씩 감소
+        */
+        
+        // 고양이변수
+        var cat = 33;
+        
+        document.write("<h1>5. 증감연산자</h1>");
+        document.write("<h1>우리동네 고양이수는 "+cat+"마리</h1>");        
+        document.write("<h1>고양이 한마리가 새끼를 낳고 있어요</h1>");
+        document.write("<h1>일곱마리 낳았더니</h1>");
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        cat++;//기존수에 1씩더함
+        document.write("<h1>전체 고양이수는 "+cat+"마리</h1>");
+        document.write("<h1>우리동네 강아지수는 고양이수와 같다</h1>");
+        
+        // 강아지변수
+        var dog = cat;
+        
+        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
+        document.write("<h1>강아지 한마리가 새끼를 낳고 있어요</h1>");
+        document.write("<h1>한마리의 강아지 태어났어요</h1>");
+        
+        // 고양이 수를 1씩 증가하여 할당해서 표현할것!
+        dog = cat++;
+        
+        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
+        document.write("<h1>전체 고양이수는 "+cat+"마리</h1>");
+        document.write("<h1>알고 보니 고양이가 새끼 낳았네!</h1>");
+        
+        // 고양이수를 1씩 증가할때 ++을 앞에 붙인다!
+        dog = ++cat;
+        
+        document.write("<h1>강아지가 새끼를 낳았네!</h1>");
+        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
+        document.write("<h1>강아지가 새끼를 두마리 낳았구나~!</h1>");
+        
+        
         
         
     </script>
 
 </head>
 
-`<body>
+<body>
 
 </body></html>
