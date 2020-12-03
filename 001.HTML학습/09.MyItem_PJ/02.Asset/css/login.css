@@ -6,4 +6,48 @@
 @import url(reset.css);
 @import url(common.css);
 
+/*부모박스 상단패딩*/
+#cont{
+    padding-top: 80px;
+}
+
+/*타이틀*/
+.tit{
+    width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 45px;
+    color: #777;
+    /*outline: 1px solid red;*/
+}
+/*가상요소로 타이틀 아이콘 넣기*/
+.tit::before{
+    content: url(../images/login_icon.png);
+    vertical-align: -15px;
+    margin-left: 5px;
+    margin-right: 13px;
+}
+
+/*로그인박스*/
+#login{
+    width: 700px;
+    height: 275px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid #737373;
+    border-radius: 10px;
+    
+    box-sizing: border-box;
+    /*보더,패딩포함 크기유지*/
+    padding-top: 60px;
+    padding-left: 15px;
+}
+
+
+
+
+
+
+
+
 
