@@ -117,7 +117,7 @@
             <h2 class="tit">로그인</h2>
             <!--로그인박스-->
             <div id="login">
-                <form action="" class="logF">
+                <form action="process.php" method="post" class="logF">
                     <!--아이디박스-->
                     <div class="minput">
                         <label for="mid">아이디</label>
@@ -125,12 +125,25 @@
                     </div>
                     <!--비밀번호박스-->
                     <div class="minput">
-                        
+                        <label for="mpw">비밀번호</label>
+                        <input type="password" name="mpw" id="mpw">
                     </div>
                     <!--버튼영역-->
+                    <div class="btnBox">
+                        <input type="submit" id="sbtn" value="LOGIN">
+                        <!--value는 출력글자-->
+                    </div>
                     
                     <!--기타체크링크-->
-                    
+                    <div class="addBox">
+                        <span>
+                            <input type="checkbox" id="chkbox" name="chkbox">
+                            <label for="chkbox">아이디저장</label>
+                        </span>
+                        <a href="">아이디찾기</a> | 
+                        <a href="">비밀번호찾기</a> | 
+                        <a href="">회원가입</a>
+                    </div>
                 </form>
             </div>
             <!--
