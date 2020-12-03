@@ -42,6 +42,13 @@
     padding-top: 60px;
     padding-left: 15px;
 }
+/*입력창 공통*/
+.minput label{
+    display: inline-block;
+    /*inline인 label요소 디자인적용*/
+    width: 150px;
+    padding-top: 9px;
+}
 
 
 
