@@ -116,7 +116,7 @@
             J = 2;
         /*변수의 선언과 할당을 한번에 콤마로 연결하여 할 수 있음*/
         document.write("<h1>1.산술연산자</h1>");
-        document.write("<h1>G+H*I/J="+(G+H*I/J)+"</h1>");
+        document.write("<h1>G+H*I/J=" + (G + H * I / J) + "</h1>");
         /*
         2. 나머지연산자 : %
             앞수%뒷수 -> 앞수를 뒷수로 나눈 나머지
@@ -124,7 +124,7 @@
         
         */
         document.write("<h1>2.나머지연산자 : %</h1>");
-        document.write("<h1>I%H=12%5의 결과는? "+(I%H)+"</h1>");
+        document.write("<h1>I%H=12%5의 결과는? " + (I % H) + "</h1>");
         /*
         3. 비교연산자 :
         두 가지 값을 비교하여 true/false 의 결과값을
@@ -145,14 +145,14 @@
                     반드시 true/false 가 나옴!
         
         */
-        
+
         document.write("<h1>3. 비교연산자</h1>");
-        document.write("<h1>1=='1' 의 결과는? "+
-                       (1=='1')+"</h1>");
-        document.write("<h1>1==='1' 의 결과는? "+
-                       (1==='1')+"</h1>");
-        document.write("<h1> 5 &gt; 10 의 결과는? "+
-                       (5>10)+"</h1>");
+        document.write("<h1>1=='1' 의 결과는? " +
+            (1 == '1') + "</h1>");
+        document.write("<h1>1==='1' 의 결과는? " +
+            (1 === '1') + "</h1>");
+        document.write("<h1> 5 &gt; 10 의 결과는? " +
+            (5 > 10) + "</h1>");
         // &gt; 은 html 특수문자출력 (>)
         // < 는 &lt;
         /*
@@ -171,59 +171,59 @@
         ※ 주의사항 : += 대입연산자는 붙여서 기호사용할것!
             (+ = 는 안됨!)
         */
-        
+
         var txt = "무궁화 꽃이 ";
         var num = 5;
-        
+
         document.write("<h1>4.대입연산자</h1>");
-        document.write("<h1>"+txt+"</h1>");
-        num *= 100;//기존값에 곱함
-        txt += num + "개 ";//기존값에 더함
-        txt += "피었습니다!";//기존값에 더함
-        document.write("<h1>"+txt+"</h1>");
-        
+        document.write("<h1>" + txt + "</h1>");
+        num *= 100; //기존값에 곱함
+        txt += num + "개 "; //기존값에 더함
+        txt += "피었습니다!"; //기존값에 더함
+        document.write("<h1>" + txt + "</h1>");
+
         /*
         5. 증감연산자 : 기존값에 1씩 더하거나 뺌
             ++ : 1씩 증가
             -- : 1씩 감소
         */
-        
+
         // 고양이변수
         var cat = 33;
-        
+
         document.write("<h1>5. 증감연산자</h1>");
-        document.write("<h1>우리동네 고양이수는 "+cat+"마리</h1>");        
+        document.write("<h1>우리동네 고양이수는 " + cat + "마리</h1>");
         document.write("<h1>고양이 한마리가 새끼를 낳고 있어요</h1>");
         document.write("<h1>일곱마리 낳았더니</h1>");
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        cat++;//기존수에 1씩더함
-        document.write("<h1>전체 고양이수는 "+cat+"마리</h1>");
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        cat++; //기존수에 1씩더함
+        document.write("<h1>전체 고양이수는 " + cat + "마리</h1>");
         document.write("<h1>우리동네 강아지수는 고양이수와 같다</h1>");
-        
+
         // 강아지변수
         var dog = cat;
-        
-        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
+
+        document.write("<h1>전체 강아지수는 " + dog + "마리</h1>");
         document.write("<h1>강아지 한마리가 새끼를 낳고 있어요</h1>");
         document.write("<h1>한마리의 강아지 태어났어요</h1>");
-        
+
         // 고양이 수를 1씩 증가하여 할당해서 표현할것!
         dog = cat++;
-        
-        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
-        document.write("<h1>전체 고양이수는 "+cat+"마리</h1>");
+
+        document.write("<h1>전체 강아지수는 " + dog + "마리</h1>");
+        document.write("<h1>전체 고양이수는 " + cat + "마리</h1>");
         document.write("<h1>알고 보니 고양이가 새끼 낳았네!</h1>");
-        
+
         // 고양이수를 1씩 증가할때 ++을 앞에 붙인다!
         dog = ++cat;
-        
+
         document.write("<h1>강아지가 새끼를 낳았네!</h1>");
-        document.write("<h1>전체 강아지수는 "+dog+"마리</h1>");
+        document.write("<h1>전체 강아지수는 " + dog + "마리</h1>");
         document.write("<h1>강아지가 새끼를 두마리 낳았구나~!</h1>");
         /*
         ++ 이나 --를 앞이나 뒤에 붙일 수 있다!
@@ -247,33 +247,33 @@
         document.write("<h1>6. 논리연산자</h1>");
         // 여자나이
         var woman = 29;
-        document.write("<h1>여자분의 나이는 "+woman+"살입니다.</h1>");
-        
-        document.write("<h1>이 여자분은 30살이상입니까? "+
-        (woman>=30)+"</h1>");
-        document.write("<h1>이 여자분은 40살미만입니까? "+
-        (woman<40)+"</h1>");
-        document.write("<h1>이 여자분은 30대입니까? "+
-        (woman>=30&&woman<40)+"</h1>");
+        document.write("<h1>여자분의 나이는 " + woman + "살입니다.</h1>");
+
+        document.write("<h1>이 여자분은 30살이상입니까? " +
+            (woman >= 30) + "</h1>");
+        document.write("<h1>이 여자분은 40살미만입니까? " +
+            (woman < 40) + "</h1>");
+        document.write("<h1>이 여자분은 30대입니까? " +
+            (woman >= 30 && woman < 40) + "</h1>");
         // 30대라 함은 30이상 40미만이 조건이다
-        
+
         // 남자의 회원가입
         var man = "네이버";
         // 남자의 나이
         var age = 40;
-        
-        document.write("<h1>한 남자분은 "+man+"회원입니다.</h1>");
-        document.write("<h1>이 분의 나이는 "+age+"살입니다.</h1>");
-        
-        document.write("<h1>이 남자분은 20살 미만입니까? "+(age<20)+"</h1>");
-        document.write("<h1>이 남자분은 카카오회원 입니까? "+(man=="카카오")+"</h1>");
-        document.write("<h1>이 남자분은 20살 미만이거나 카카오회원 입니까? "+(age<20||man=="카카오")+"</h1>");
-        
+
+        document.write("<h1>한 남자분은 " + man + "회원입니다.</h1>");
+        document.write("<h1>이 분의 나이는 " + age + "살입니다.</h1>");
+
+        document.write("<h1>이 남자분은 20살 미만입니까? " + (age < 20) + "</h1>");
+        document.write("<h1>이 남자분은 카카오회원 입니까? " + (man == "카카오") + "</h1>");
+        document.write("<h1>이 남자분은 20살 미만이거나 카카오회원 입니까? " + (age < 20 || man == "카카오") + "</h1>");
+
         // 사람의 성별
         var person = "여자";
-        
-        document.write("<h1>한 사람의 성별은 "+person+"입니다.</h1>");
-        document.write("<h1>이 사람이 여자가 맞으면 false라고 답하세요! "+(!person==="여자")+"</h1>");
+
+        document.write("<h1>한 사람의 성별은 " + person + "입니다.</h1>");
+        document.write("<h1>이 사람이 여자가 맞으면 false라고 답하세요! " + (!person === "여자") + "</h1>");
         /*
         7. 조건 연산자 
         - if문과 유사하게 조건에 맞으면 실행할 수 있는 코드를
@@ -286,13 +286,19 @@
         -> 비가오면 집에 있고 안오면 놀이동산 간다~~!
         -> 항목이 3개여서 삼항연산자 라고도 함
         */
-        
-        
-        document.write("<h1></h1>");
-        document.write("<h1></h1>");
-        document.write("<h1></h1>");
-        
-        
+
+        // 오늘날씨변수
+        var today = "맑음";
+        // 결과변수
+        var res;
+
+        document.write("<h1>7. 조건연산자</h1>");
+
+        // 조건연산자를 사용하여 결과문을 만든다!
+        today === "비" ? res = "집에 있어요!" : res = "놀이동산가요!";
+
+        document.write("<h1>오늘 날씨가 어떤가요? " + today + "</h1>");
+        document.write("<h1>오늘 집에 있을까요? 놀러갈까요? " + res + "</h1>");
     </script>
 
 </head>
