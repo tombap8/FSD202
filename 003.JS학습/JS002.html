@@ -235,7 +235,45 @@
         앞변수 = 뒷변수++
         해석: 뒷변수를 먼저 앞변수에 할당 후 뒷변수를 1증가한다
         */
+        /*
+        6. 논리 연산자
+        (1) 논리합(OR) -> ||
+            - 여러조건 중 하나만 true 이면 true
+        (2) 논리곱(AND) -> &&
+            - 여러조건 모두 true 이면 true
+        (3) 논리부정(NOT) -> !
+            - true 이면 false, false 이면 true
+        */
+        document.write("<h1>6. 논리연산자</h1>");
+        // 여자나이
+        var woman = 29;
+        document.write("<h1>여자분의 나이는 "+woman+"살입니다.</h1>");
         
+        document.write("<h1>이 여자분은 30살이상입니까? "+
+        (woman>=30)+"</h1>");
+        document.write("<h1>이 여자분은 40살미만입니까? "+
+        (woman<40)+"</h1>");
+        document.write("<h1>이 여자분은 30대입니까? "+
+        (woman>=30&&woman<40)+"</h1>");
+        // 30대라 함은 30이상 40미만이 조건이다
+        
+        // 남자의 회원가입
+        var man = "카카오";
+        // 남자의 나이
+        var age = 40;
+        
+        document.write("<h1>한 남자분은 "+man+"회원입니다.</h1>");
+        document.write("<h1>이 분의 나이는 "+age+"살입니다.</h1>");
+        
+        document.write("<h1>이 남자분은 20살 미만입니까? "+(age<20)+"</h1>");
+        document.write("<h1>이 남자분은 카카오회원 입니까? "+(man=="카카오")+"</h1>");
+        document.write("<h1>이 남자분은 20살 미만이거나 카카오회원 입니까? "+(age<20||man=="카카오")+"</h1>");
+        
+        document.write("<h1></h1>");
+        document.write("<h1></h1>");
+        document.write("<h1></h1>");
+        document.write("<h1></h1>");
+        document.write("<h1></h1>");
         
         
     </script>
