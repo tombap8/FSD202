@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Transform 3D Menu</title>
     <style>
+        /*웹폰트*/
+        @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
         
         html,body{
             margin: 0;
@@ -34,6 +37,42 @@
             color: #fff;
             text-decoration: none;
         }
+        
+        /*네비게이션 공통*/
+        nav a{
+            font-family: 'Nerko One', cursive;
+        }
+        
+        /*가로 네비게이션*/
+        .gnb1{
+            width: 800px;
+            margin: 0 auto;
+            
+            /*트랜스폼 3D설정하기*/
+            transform-style: preserve-3d;
+            transform: rotateX(10deg) rotateY(30deg);
+        }
+        .gnb1 li{
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        /*a요소 공통*/
+        .gnb1 a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, #ccc, #777);
+        }
+        .gnb1 a:first-child{
+            z-index: 1;
+        }
+        /*두번째 a요소(한글메뉴) 아래쪽으로 x축회전*/
+        .gnb1 a:last-child{
+            transform-origin: top;
+            transform: rotateX(10deg);
+        }
     
     
     </style>
@@ -43,15 +82,19 @@
        <ul>
            <li>
                <a href="">HOME</a>
+               <a href="">홈으로</a>
            </li>
            <li>
                <a href="">MEN</a>
+               <a href="">남성용</a>
            </li>
            <li>
                <a href="">WOMEN</a>
+               <a href="">여성용</a>
            </li>
            <li>
                <a href="">BOARD</a>
+               <a href="">게시판</a>
            </li>
        </ul>
    </nav>
