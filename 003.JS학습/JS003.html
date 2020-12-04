@@ -32,6 +32,8 @@
             
             // 점수별 스티커 배경위치값 변경하기 변수
             var jshow;
+            // 칭찬스티커 박스 요소
+            var jbox = document.getElementById("jshow");
             
             
             
@@ -43,18 +45,22 @@
             //조건2: 80점 이상
             else if(score < 90 && score >= 80){
                 res = "잘함";
+                jshow = "-322px 0";
             }
             //조건3: 70점 이상
             else if(score >= 70){
                 res = "보통"
+                jshow = "-322px -322px";
             }
             //조건4: 60점 이상
             else if(score >= 60){
                 res = "노력요함"
+                jshow = "-644px -644px";
             }
             //조건5: 위의 조건에 모두 해당안될때
             else{
                res = "재시험" 
+                jshow = "-322px -644px";
             }
             
             // 결과찍기
@@ -65,6 +71,9 @@
             document.getElementById("jexp")
             .innerText = "평가결과는 "+res;
             // innerText 선택된 요소의 내부에 글자넣기 속성
+            
+            // 스티커 이동하기
+            jbox.style.backgroundPosition = jshow;
             
             
             
