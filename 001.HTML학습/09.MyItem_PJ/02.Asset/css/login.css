@@ -94,10 +94,25 @@ input:focus{
     text-shadow: 1px 1px 0 #666;
 }
 
-
-
-
-
+/*기타체크링크박스*/
+.addBox{
+    margin-top: 50px;
+    text-align: center;
+}
+/*체크박스영역*/
+.addBox>span{
+    margin: 0 15px;
+    color: #666;
+}
+/*체크박스 옆 세로정렬 맞추기*/
+.addBox>span>input{
+    vertical-align: -2px;
+}
+/*기타링크*/
+.addBox>a{
+    margin: 0 15px;
+    /*마진: 위아래 양쪽*/
+}
 
 
 
