@@ -29,6 +29,32 @@
             var score = document.getElementById("jumsu").value;
             //입력값 확인
             console.log(score);
+            
+            // score변수에 값을 받은 후
+            // 만약 숫자가 아니면 돌려보낸다!!!
+            // 숫자가 아닌지 여부판별 메서드
+            /*
+            [ isNaN() 메서드 ]
+            숫자가 아니냐?
+            is Not a Number?
+            isNaN(값) -> 결과로 true/false 리턴함!
+            true는 숫자가 아님!
+             */   
+            console.log("숫자가 아니니? "+isNaN(score));
+            
+            if(isNaN(score)){//숫자가 아닐경우 들어온다!
+                alert("숫자를 입력해 주세요!");
+                return false;
+                // return 키워드는 만나는 순간 함수를 빠져나감
+                // false를 리턴하는 것은 아무것도 안한다는 의미(0리턴)
+            } //// if 문 ///////////////////////////////
+            
+            // 입력된 숫자값이 0미만 또는 100초과일때 걸러냄!
+            else if(score < 0 || score > 100){
+                alert("0과 100사이 범위의 수를 입력하세요!");
+                return false;//돌아가!
+            } //// else if문 ////////////////////////////
+            
 
             // 점수별 스티커 배경위치값 변경하기 변수
             var jshow;
