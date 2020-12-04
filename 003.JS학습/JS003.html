@@ -30,9 +30,15 @@
             //입력값 확인
             console.log(score);
             
+            // 점수별 스티커 배경위치값 변경하기 변수
+            var jshow;
+            
+            
+            
             // 조건1: 90점 이상
             if(score >= 90){
                 res = "매우잘함";
+                jshow = "0 0";
             }
             //조건2: 80점 이상
             else if(score < 90 && score >= 80){
@@ -94,7 +100,7 @@
             
             그러나....
             else를 빼고 if문으로 모두 쓰면 사이범위로 모두 조건문을
-            써줘야함 (왜 모두 조건문을 각각 들어감)
+            써줘야함 (이유는 모든 조건문을 각각 들어감)
             
             첫번째 빼고 예컨데 두번째는
             if(score < 90 && score >= 80){실행문}
@@ -109,6 +115,28 @@
         } //////// jumsu함수 /////////////////////////
         ////////////////////////////////////////////
     </script>
+    <style>
+        /*칭찬스티커박스*/
+        #jshow{
+            position: absolute;
+            top: 50px;
+            left: 390px;
+            width: 322px;
+            height: 322px;
+            background: url(images/ifshow.jpg) no-repeat;
+            background-position: 322px 0;
+            /*위치이동하여 처음에 배경이미지 숨김(x축밀기)*/
+            
+            /*트랜지션*/
+            transition: all .4s ease-out;
+        }
+        #jshow span{/*IR*/
+            display: block;
+            text-indent: -999px;
+        }
+    
+    
+    </style>
 
 </head>
 
@@ -120,6 +148,11 @@
     <label for="jumsu">점수입력:</label>
     <input type="text" id="jumsu">점
     <button class="sBtn" onclick="jumsu()">평가하기</button>
+    
+    <!--점수에 따른 스티커-->
+    <div id="jshow">
+        <span>칭찬스티커</span>
+    </div>
     
     <!--
         자바스크립트 이벤트연결은 이미 셋팅된 이벤트속성을
