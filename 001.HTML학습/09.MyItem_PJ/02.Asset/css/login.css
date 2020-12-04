@@ -30,6 +30,8 @@
 
 /*로그인박스*/
 #login{
+    position: relative;
+    /*부모자격*/
     width: 700px;
     height: 275px;
     margin: 0 auto;
@@ -66,6 +68,34 @@
 .logF div:nth-child(2){
     margin-top: 20px;
 }
+
+/*크롬브라우저 포커스 아웃라인제거*/
+input:focus{
+    outline: none;
+}
+
+/*로그인버튼*/
+.btnBox{
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    /*부모는? #login*/
+}
+/*서브밋 버튼*/
+#sbtn{
+    width: 113px;
+    height: 98px;
+    border: 1px solid #737373;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #ddd, #555);
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 0 #666;
+}
+
+
+
 
 
 
