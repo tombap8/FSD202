@@ -103,26 +103,28 @@
             line-height: 200px;
             /*트랜스폼 3D설정하기*/
             transform-style: preserve-3d;
-            transform-origin: right;
             /*회전기준을 상단으로 변경하기*/
             transition: .4s ease-out;
             /*트랜지션으로 마우스 오버시 시간 설정하기*/
         }
         /*a요소 공통*/
         .gnb2 a{
+            float: left;
             display: block;
             width: 100%;
             height: 100%;
             /*배경이미지넣기*/
-            background: url(images/img1.jpg) no-repeat center/cover;
+            background: url(images/img1.jpg) no-repeat left/cover;
         }
         /*두번째 a요소(한글메뉴) 아래쪽으로 x축회전*/
         .gnb2 a:last-child{
-            position: absolute;
-            top: 0;
-            left: -200px;
-            transform-origin: right;
-            transform: rotateY(90deg);
+            transform: translateZ(100px);
+        }
+        /*두번째 a요소(한글메뉴) 아래쪽으로 x축회전*/
+        .gnb2 a:first-child{
+            
+            margin-left: -200px;
+            transform: rotateY(-90deg) translateZ(-100px);
             /*미리회전하여 아래쪽에 가있게함!*/
             background-image: url(images/img2.jpg);
             /*배경이미지 다른것 넣기*/
@@ -130,7 +132,7 @@
         
         /*마우스 오버시 X축 회전*/
         .gnb2 li:hover {
-            transform: rotateY(-90deg);
+            transform: rotateY(90deg);
         }
     
     
@@ -161,20 +163,20 @@
    <nav class="gnb2">
        <ul>
            <li>
-               <a href="">HOME</a>
                <a href="">홈으로</a>
+               <a href="">HOME</a>
            </li>
            <li>
-               <a href="">MEN</a>
                <a href="">남성용</a>
+               <a href="">MEN</a>
            </li>
            <li>
-               <a href="">WOMEN</a>
                <a href="">여성용</a>
+               <a href="">WOMEN</a>
            </li>
            <li>
-               <a href="">BOARD</a>
                <a href="">게시판</a>
+               <a href="">BOARD</a>
            </li>
        </ul>
    </nav>
