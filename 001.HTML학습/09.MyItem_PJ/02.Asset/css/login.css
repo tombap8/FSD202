@@ -48,6 +48,23 @@
     /*inline인 label요소 디자인적용*/
     width: 150px;
     padding-top: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #737373;
+    text-align: center;
+}
+.minput input{
+   width: 320px;
+    height: 36px;
+    border: 1px solid #737373;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+    color: #666;
+}
+/*두번째 비번박스 마진탑밀기*/
+.logF div:nth-child(2){
+    margin-top: 20px;
 }
 
 
