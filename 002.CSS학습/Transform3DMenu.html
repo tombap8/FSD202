@@ -55,7 +55,7 @@
             line-height: 50px;
             /*트랜스폼 3D설정하기*/
             transform-style: preserve-3d;
-            transform-origin: top;
+/*            transform-origin: top;*/
             /*회전기준을 상단으로 변경하기*/
             transition: .4s ease-out;
             /*트랜지션으로 마우스 오버시 시간 설정하기*/
@@ -68,10 +68,15 @@
             /*배경이미지넣기*/
             background: url(images/img1.jpg) no-repeat center/cover;
         }
+        
+        /*첫번째 a요소를 화면방향(z축)으로 높이값의 절반이동하기*/
+        .gnb1 a:first-child{
+            transform: translateZ(25px);
+        }
+        
         /*두번째 a요소(한글메뉴) 아래쪽으로 x축회전*/
         .gnb1 a:last-child{
-            transform-origin: top;
-            transform: rotateX(90deg);
+            transform: rotateX(-90deg) translateZ(-25px);
             /*미리회전하여 아래쪽에 가있게함!*/
             background-image: url(images/img2.jpg);
             /*배경이미지 다른것 넣기*/
@@ -79,7 +84,53 @@
         
         /*마우스 오버시 X축 회전*/
         .gnb1 li:hover {
-            transform: rotateX(-90deg);
+            transform: rotateX(90deg);
+        }
+        
+        /*세로 네비게이션*/
+        .gnb2{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+        }
+        .gnb2 li{
+            position: relative;
+            /*부모자격*/
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            /*트랜스폼 3D설정하기*/
+            transform-style: preserve-3d;
+            transform-origin: right;
+            /*회전기준을 상단으로 변경하기*/
+            transition: .4s ease-out;
+            /*트랜지션으로 마우스 오버시 시간 설정하기*/
+        }
+        /*a요소 공통*/
+        .gnb2 a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            /*배경이미지넣기*/
+            background: url(images/img1.jpg) no-repeat center/cover;
+        }
+        /*두번째 a요소(한글메뉴) 아래쪽으로 x축회전*/
+        .gnb2 a:last-child{
+            position: absolute;
+            top: 0;
+            left: -200px;
+            transform-origin: right;
+            transform: rotateY(90deg);
+            /*미리회전하여 아래쪽에 가있게함!*/
+            background-image: url(images/img2.jpg);
+            /*배경이미지 다른것 넣기*/
+        }
+        
+        /*마우스 오버시 X축 회전*/
+        .gnb2 li:hover {
+            transform: rotateY(-90deg);
         }
     
     
@@ -111,15 +162,19 @@
        <ul>
            <li>
                <a href="">HOME</a>
+               <a href="">홈으로</a>
            </li>
            <li>
                <a href="">MEN</a>
+               <a href="">남성용</a>
            </li>
            <li>
                <a href="">WOMEN</a>
+               <a href="">여성용</a>
            </li>
            <li>
                <a href="">BOARD</a>
+               <a href="">게시판</a>
            </li>
        </ul>
    </nav>
