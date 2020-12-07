@@ -223,16 +223,16 @@
 
             // 분류 메시지 확인
             console.log("메시지:" + msg);
-            
+
             // 4. 메시지 만들기
             // msg변수에 최종 출력내용을 다시 담아서 변경함
-            if(msg === "esc"){
+            if (msg === "esc") {
                 msg = "등록되지 않은 지역입니다.";
             } //// if //////////
-            else{ // 등록된 지역
-                msg = name + "의 지역번호는 " + msg + "입니다."; 
+            else { // 등록된 지역
+                msg = name + "의 지역번호는 " + msg + "입니다.";
             } //// else ////////
-            
+
             // 최종메시지
             console.log(msg);
 
@@ -266,14 +266,14 @@
 
         } //////// local함수 //////////////////////////////
         //////////////////////////////////////////////////
-        
-       /*///////////////////////////////////////////////
-            함수명: gugu
-            기능: 선택박스에서 선택된 구구단을 출력함
-            이벤트: change
-                - 선택박스(select)가 변경될때 발생하는 이벤트
-       *////////////////////////////////////////////////
-        function gugu(me) {// me는 전달변수
+
+        /*///////////////////////////////////////////////
+             함수명: gugu
+             기능: 선택박스에서 선택된 구구단을 출력함
+             이벤트: change
+                 - 선택박스(select)가 변경될때 발생하는 이벤트
+        */ ///////////////////////////////////////////////
+        function gugu(me) { // me는 전달변수
             // 전달변수는 함수내부에서만 쓰이는 지역변수이며 
             // var로 선언하지 않는다!
             // me 라는 전달변수에 select박스 객체 자신을
@@ -281,23 +281,43 @@
             // select의 여러 속성에 접근 가능해진다!
             // 선택한 option 의 value값은 이렇게 접근한다.
             // me.value
-            
+
             // 1. 함수호출여부확인, 전달값 확인
-            console.log("구구단을 외자!"+ me.value);
-            
+            console.log("구구단을 외자!" + me.className);
+            /*
+                this 키워드를 받은 변수 me로
+                me.name, me.id, me.className
+                과 같이 내부 속성을 읽어올 수 있다!
+                따라서 this 키워드는 호출된 요소의 
+                내부 속성을 모두 담고 있다는 것을 알 수 있다!
+            */
+
+
+
             // 2. 전달값을 변수에 담기
+            // me.value는 선택된 option의 value 속성값
             var gnum = me.value;
-            
+
             // 구구단 계산해 보기
-            console.log(gnum*9)
-            
-            
+            //console.log(gnum*9)
+
+            // 3. 구구단 계산하여 html 만들기
+
+            // 결과값 변수
+            var res;
+
+            // 첫번째 단수 할당!
+            res = "<h2>" + gnum + "단</h2>";
+
+
+
+            // 결과찍기
+            console.log("결과: " + res);
+
+
+
         } //////// gugu함수 //////////////////////
         /////////////////////////////////////////
-        
-        
-        
-        
     </script>
     <style>
         /*칭찬스티커박스*/
@@ -320,9 +340,9 @@
             display: block;
             text-indent: -999px;
         }
-        
+
         /*구구단 출력박스*/
-        .gugu{
+        .gugu {
             width: 300px;
             height: 300px;
             overflow-y: scroll;
@@ -330,8 +350,6 @@
             border: 2px dashed blue;
             text-align: center;
         }
-        
-        
     </style>
 
 </head>
@@ -368,12 +386,12 @@
     <!--placeholder속성:안내문구출력(글씨쓸때 사라짐)-->
     <button class="sBtn" onclick="local()">국번문의</button>
 
-    
+
     <!--for문 연습-->
     <h2>구구단 출력하기(For문)</h2>
     <!--onchange이벤트 속성: option을 변경할때 발생함-->
     <select name="sel" id="sel" class="sel" onchange="gugu(this)">
-       <!--gugu(this): this키워드는 select요소 자신임!-->
+        <!--gugu(this): this키워드는 select요소 자신임!-->
         <option value="1">구구단을 선택하세요</option>
         <option value="2">2단</option>
         <option value="3">3단</option>
@@ -397,13 +415,12 @@
     </select>
     <!--구구단 출력박스-->
     <div class="gugu"></div>
-    
-<!--
+
+    <!--
     select.sel>option[value=$]{$단}*20
     젠코딩에서 대괄호는 속성, 중괄호는 데이터(태그내부값)
 -->
-    
-    
+
 
 
 
