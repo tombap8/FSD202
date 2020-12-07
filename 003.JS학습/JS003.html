@@ -178,6 +178,9 @@
                 case "부산":
                     msg = "051";
                     break;
+                case "대구":
+                    msg = "053";
+                    break;
                 case "광주":
                     msg = "062";
                     break;
@@ -220,7 +223,24 @@
 
             // 분류 메시지 확인
             console.log("메시지:" + msg);
+            
+            // 4. 메시지 만들기
+            // msg변수에 최종 출력내용을 다시 담아서 변경함
+            if(msg === "esc"){
+                msg = "등록되지 않은 지역입니다.";
+            } //// if //////////
+            else{ // 등록된 지역
+                msg = name + "의 지역번호는 " + msg + "입니다."; 
+            } //// else ////////
+            
+            // 최종메시지
+            console.log(msg);
 
+            // 5. 화면출력
+            // 대상: #info
+            document.getElementById("info").innerText = msg;
+            // innerText는 텍스트 내용넣는 속성
+            // innerHTML은 태그요소가 있을 경우에 사용함!
 
             /*
             [ switch case 문 ]
