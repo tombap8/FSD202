@@ -312,12 +312,25 @@
             // 위의 값을 그대로 살린 상태에서 더하기 하는 방법은??
             //res = res + "2 × 1 ＝ 2";
             // 대입연산자(+=)로 간단히 아래와 같이 쓴다!
-            res += "2 × 1 ＝ 2";
-
-
+            res += "<br>" + gnum + " × 1 ＝ " + (gnum*1);
+            res += "<br>" + gnum + " × 2 ＝ " + (gnum*2);
+            res += "<br>" + gnum + " × 3 ＝ " + (gnum*3);
+            res += "<br>" + gnum + " × 4 ＝ " + (gnum*4);
+            res += "<br>" + gnum + " × 5 ＝ " + (gnum*5);
+            res += "<br>" + gnum + " × 6 ＝ " + (gnum*6);
+            res += "<br>" + gnum + " × 7 ＝ " + (gnum*7);
+            res += "<br>" + gnum + " × 8 ＝ " + (gnum*8);
+            res += "<br>" + gnum + " × 9 ＝ " + (gnum*9);
 
             // 결과찍기
             console.log("결과: " + res);
+            
+            // 4. 화면출력
+            // 대상: .gugu
+            // 클래스 선택후 item(0)은 첫번째 class를 선택함 
+            document
+            .getElementsByClassName("gugu").item(0)
+            .innerHTML = res;
 
 
 
