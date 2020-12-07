@@ -273,9 +273,17 @@
             이벤트: change
                 - 선택박스(select)가 변경될때 발생하는 이벤트
        *////////////////////////////////////////////////
-        function gugu() {
+        function gugu(me) {// me는 전달변수
+            // 전달변수는 함수내부에서만 쓰이는 지역변수이며 
+            // var로 선언하지 않는다!
+            // me 라는 전달변수에 select박스 객체 자신을
+            // this 키워드로 보낸것을 받아준다!
+            // select의 여러 속성에 접근 가능해진다!
+            // 선택한 option 의 value값은 이렇게 접근한다.
+            // me.value
+            
             // 1. 함수호출여부확인, 전달값 확인
-            console.log("구구단을 외자!");
+            console.log("구구단을 외자!"+ me.value);
         } //////// gugu함수 //////////////////////
         /////////////////////////////////////////
         
@@ -356,7 +364,8 @@
     <!--for문 연습-->
     <h2>구구단 출력하기(For문)</h2>
     <!--onchange이벤트 속성: option을 변경할때 발생함-->
-    <select name="sel" id="sel" class="sel" onchange="gugu()">
+    <select name="sel" id="sel" class="sel" onchange="gugu(this)">
+       <!--gugu(this): this키워드는 select요소 자신임!-->
         <option value="1">구구단을 선택하세요</option>
         <option value="2">2단</option>
         <option value="3">3단</option>
