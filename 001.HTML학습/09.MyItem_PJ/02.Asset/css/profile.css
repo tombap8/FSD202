@@ -41,7 +41,6 @@
     background-image: url(../images/ip01.png);
     transform: translateZ(10px);
     /*화면앞으로 z축 이동하기*/
-    display: none;
 }
 /*왼쪽(음량스위치)*/
 #iphone li:nth-child(2){
@@ -66,7 +65,20 @@
     top: -10px;
     transform: rotateX(90deg);
 }
+/*아래쪽*/
+#iphone li:nth-child(5){
+    background-image: url(../images/ip05.png);
+    height: 20px;
+    bottom: -10px;
+    transform: rotateX(90deg);
+}
 
+/*뒷면*/
+#iphone li:nth-child(6){
+    background-image: url(../images/ip02.png);
+    transform: translateZ(-10px) rotateY(180deg);
+    /*화면앞으로 z축 이동하기*/
+}
 
 
 
