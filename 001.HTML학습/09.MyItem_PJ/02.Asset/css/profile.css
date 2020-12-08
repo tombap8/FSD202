@@ -48,6 +48,23 @@
     background-image: url(../images/ip04.png);
     width: 20px;
     left: -10px;
+    transform: rotateY(-90deg);
+}
+
+/*오른쪽(전원스위치)*/
+#iphone li:nth-child(3){
+    background-image: url(../images/ip03.png);
+    width: 20px;
+    right: -10px;
+    transform: rotateY(90deg);
+}
+
+/*위쪽*/
+#iphone li:nth-child(4){
+    background-image: url(../images/ip06.png);
+    height: 20px;
+    top: -10px;
+    transform: rotateX(90deg);
 }
 
 
