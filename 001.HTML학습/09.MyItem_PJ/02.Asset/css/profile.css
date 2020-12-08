@@ -86,13 +86,6 @@
     /*화면앞으로 z축 이동하기*/
 }
 
-/*IR(배경이미지설명숨기기)*/
-.ir{
-    display: block;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
 
 /*앞면 얼굴이미지 박스*/
 .newFace{
