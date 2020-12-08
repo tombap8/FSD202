@@ -111,6 +111,9 @@
     /*세로방향 중앙정렬*/
     width: 300px;
     height: 0;/*200px;*/
+    
+    /*애니메이션:이시이지반방마*/
+    animation: showtxt .48s linear 4.72s forwards;
 }
 /*디자이너 글박스*/
 .dtxt{
