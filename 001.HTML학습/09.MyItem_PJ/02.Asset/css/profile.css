@@ -117,7 +117,7 @@
     transform: translateY(-50%);
     /*세로방향 중앙정렬*/
     width: 300px;
-    height: 200px;
+    height: 0;/*200px;*/
 }
 /*디자이너 글박스*/
 .dtxt{
