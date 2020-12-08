@@ -1,9 +1,29 @@
 @charset "utf-8";
-/*My Item PJ 템플릿 CSS - temp.css*/
+/*My Item PJ 프로필 페이지 CSS - profile.css*/
 
 /*외부css파일 합치기*/
 @import url(core.css);
 @import url(reset.css);
 @import url(common.css);
 
+/*메인영역 재정의*/
+#cont{
+    height: 590px;
+}
+
+/*아이폰 부모박스*/
+#iphone{
+    position: relative;
+    /*부모자격*/
+    top: 100px;
+    width: 200px;
+    height: 400px;
+    margin: 0 auto;/*마영오*/
+    
+    /*트랜스폼 3D설정하기*/
+    transform-style: preserve-3d;
+    transform: rotateY(30deg) rotateX(10deg);
+    outline: 2px solid red;
+    
+}
 
