@@ -23,7 +23,7 @@
     /*트랜스폼 3D설정하기*/
     transform-style: preserve-3d;
     transform: rotateY(30deg) rotateX(10deg);
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
 }
 
 /*공통 li 각면*/
@@ -32,6 +32,7 @@
     /*부모? #iphone*/
     width: 200px;
     height: 400px;
+    background-color: #fff;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
