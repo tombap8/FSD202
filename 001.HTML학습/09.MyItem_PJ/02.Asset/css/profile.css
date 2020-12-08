@@ -46,6 +46,7 @@
 /*왼쪽(음량스위치)*/
 #iphone li:nth-child(2){
     background-image: url(../images/ip04.png);
+    width: 20px;
 }
 
 
