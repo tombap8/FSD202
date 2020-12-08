@@ -405,13 +405,23 @@
             res = "<h2>" + gnum + "단</h2>";
             
             // while문 사용하기
-            var i = 0;//시작값
+            var i = 1;//시작값
             while(i<=9){ //한계값
+                
+                //console.log("반복?!"+i);
+                
+                // 반복실행할 코드 넣기!!!
+                res += "<br>" + gnum + " × " + i + " ＝ " + (gnum * i);
                 
                 i++;// 증감필수!!!
                 
             } /// while문 //////////////
             
+            // 4.화면출력
+            // 대상: .gugu(두번째 class) -> item번호를 1번으로 선택!
+            document
+            .getElementsByClassName("gugu").item(1) //0부터니까 1은 두번째
+            .innerHTML = res;
             
             
             
