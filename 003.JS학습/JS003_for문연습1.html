@@ -32,11 +32,19 @@
             
             // 2. 파란박스에 이미지요소 넣기
             // 대상: #Bcase
+            var tg = document.getElementById("Bcase");
             
-            document.getElementById("Bcase")
-            .innerHTML = 
+            // for문으로 코드를 반복시킴!
+            //for(시;한;증){실행코드}
+            for(var i=0;i<100;i++){
+                //console.log("순번:"+i);
+                tg.innerHTML += 
                 '<img src="images/Minions.png" alt="미니언즈">';
+            }//// for문 /////////////
             
+            
+            
+            // += 대입연산자를 사용하여 태그가 추가된다!
             
         }////////// insMini함수 ///////////////////
         //////////////////////////////////////////
