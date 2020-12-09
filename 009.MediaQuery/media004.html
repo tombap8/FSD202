@@ -15,7 +15,7 @@
         2) initial-scale=1.0 물리적크기를 그대로 쓸때 1.0을 사용
             (1보다 작게하면 축소, 1보다 크면 확대해서 출력됨)
     -->
-    <title>유연한 이미지3 - 이미지 4개</title>
+    <title>유연한 이미지4 - 이미지 6개</title>
     <style>
         /*
         [ 미디어쿼리(Media Query) 란? ]
@@ -53,9 +53,9 @@
         
     */
     
-        /*큰화면에서 4개가 한줄에 오도록 배열*/
+        /*큰화면에서 6개가 한줄에 오도록 배열*/
         .lee{
-            width: 24%;
+            width: 15.66%;/*양쪽마진1%뺌*/
             margin: .5%;
             /*이미지는 가로,세로 중 한쪽 사이즈만 주면 
             나머지는 자동 비율유지하여 설정됨*/
@@ -66,12 +66,19 @@
         
         /*미디어쿼리*/
         
+        /*데스크탑 1200px이하일때 한줄에 3개씩*/
+        @media only screen and (max-width:1200px){
+            .lee{
+                width: 32.33%;
+            }
+        }/*미디어쿼리 - 1200px이하*/
+        
         /*태블릿 사이즈일때(1024px이하) 한둘에 2개씩*/
         @media only screen and (max-width:1024px){
             .lee{
                 width: 49%;
             }
-        }/*미디어쿼리 - 1024이하*/
+        }/*미디어쿼리 - 1024px이하*/
         
         /*모바일 사이즈일때 한줄에 한개씩*/
         @media only screen and (max-width:800px){
@@ -92,6 +99,8 @@
    <img src="images/jeong4.jpg" alt="이정재" class="lee">
    <img src="images/jeong6.jpg" alt="이정재" class="lee">
    <img src="images/jeong7.jpg" alt="이정재" class="lee">
+   <img src="images/jeong1.jpg" alt="이정재" class="lee">
+   <img src="images/jeong2.jpg" alt="이정재" class="lee">
    
     
 </body>
