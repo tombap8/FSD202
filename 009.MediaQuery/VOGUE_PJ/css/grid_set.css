@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*grid_set.css*/
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;/*자식요소가 %로 height를 잡을 경우 반드시 셋팅해야함!*/
+}
+
+.bld{/*IR(Image Replacement) class*/
+  display: none;
+}
+
+*{
+  box-sizing: border-box;/*크기유*/
+}
+
+
+/* width % 크기 셋팅 */
+.col-1{width:8.33%;}/*10개*/
+.col-2{width:16.66%;}/*5개*/
+.col-3{width:25%;}/*4개*/
+.col-4{width:33.33%;}/*3개*/
+.col-5{width:41.66%;}/*2개*/
+.col-6{width:50%;}/*2개*/
+.col-7{width:58.33%;}
+.col-8{width:66.33%;}
+.col-9{width:75%;}
+.col-10{width:83.33%;}
+.col-11{width:91.66%;}
+.col-12{width:100%;}
+
+[class*="col-"]{
+	float:left;/*옆으로 흐르기*/
+	padding:10px;
+    height: 100%;
+    /*파티션박스에 높이값을 px로 주지 않는 경우는
+    한줄로 레이아웃 구성시 부모박스에 맞춤
+    구체적인 px높이값은 부모박스(.inbox)에 줌!
+    비율유지박스는 예외!*/
+    /*outline: 2px dotted blue;*/
+}
+
+/*float해제를 위한 class*/
+.clb::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+

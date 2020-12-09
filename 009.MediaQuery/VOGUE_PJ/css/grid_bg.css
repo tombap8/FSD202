@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*grid_bg.css*/
+ul.grid{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);/*내크기의절반!*/
+  width: 1200px;
+  max-width: 100%;/*추*/
+  height: 100%;
+  /*ul기본없앰-3가지*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  
+}
+.grid::after{/*가상요소를 이용한 float해제*/
+  content: "";
+  display: block;
+  clear: both;
+}
+.grid li{
+  float: left;
+  width: 8.333%;/*100/12*/
+  height: 100%;
+  background-color: #edcfcf;
+  box-sizing: border-box;/*박스크기유지*/
+  padding: 0 10px;
+  background-clip: content-box;/*내용만배경색!*/
+  /*
+    border-box - 보더까지 배경색(기본값)
+    padding-box - 패딩까지 배경색(보더제외)
+  */
+}
+
+
+
+
+
+
+
+
+
