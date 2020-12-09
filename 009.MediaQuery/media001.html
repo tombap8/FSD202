@@ -40,6 +40,25 @@
         
     */
     
+        .lee{
+            width: 800px;
+            /*이미지는 가로,세로 중 한쪽 사이즈만 주면 
+            나머지는 자동 비율유지하여 설정됨*/
+            display: block;/*마영오 적용위해*/
+            margin: 0 auto;/*가로중앙*/
+        }
+        
+        /*미디어쿼리
+        - 사진 가로 사이즈 보다 화면폭이 작으면 width:100%로 변경*/
+        @media only screen and (max-width:800px){
+            .lee{
+                width: 100%;
+                border: 20px ridge blue;
+                box-sizing: border-box;
+                /*보더,패딩포함*/
+            }
+        }/*미디어쿼리 - 800px이하*/
+        
     
     
     </style>
