@@ -6,13 +6,39 @@
     <title>if문 연습</title>
     <!--CDN웹폰트-->
     <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        /*타이틀*/
+        .tit{
+            text-align: center;
+            font: bold 72px/100px 'Audiowide';
+        }
+        /*포토박스*/
+        .photo{
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #86ecff;
+        }
+        /*메인이미지*/
+        #scene{
+            height: 290px;
+        }
+        /*버튼박스*/
+        .bbox{
+            text-align: center;
+        }
+        .btns{
+            font-size: 42px;
+        }
+        
+    </style>
 </head>
 
 <body>
     <h1 class="tit">All New Aladin</h1>
 
     <div class="photo">
-        <img src="images/ala1.jpg" alt="알라딘장면">
+        <img id="scene" src="images/ala1.jpg" alt="알라딘장면">
     </div>
     
     <div class="bbox">
