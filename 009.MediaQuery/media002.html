@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--  
+        [뷰포트(viewport) 란?]
+        - 모바일 기기에서 볼때 모바일 기기의 랜더링 화면 사이즈를
+        일반 물리적 크기의 픽셀로 변환해 주는 메타태그임
+        - 미디어쿼리를 사용하는 웹 페이지에서 필수!
+        
+        meta 요소 속성 name="viewport" 로 설정
+        content 속성에 
+        1) width=device-width 가로픽셀크기를 디바이스 물리적크기와 일치
+        2) initial-scale=1.0 물리적크기를 그대로 쓸때 1.0을 사용
+            (1보다 작게하면 축소, 1보다 크면 확대해서 출력됨)
+    -->
+    <title>유연한 이미지2 - 이미지 2개</title>
+    <style>
+        /*
+        [ 미디어쿼리(Media Query) 란? ]
+        
+        - 디바이스의 가로 사이즈에 대해 계속된 질의(Query)를
+        브라우저에 함므로써 사이즈의 변경 시점에 필요한 CSS를
+        적용하여 디자인 변경을 할 수 있도록 구현된 CSS 코딩기법
+        
+        - 반응형(적응형)웹을 구현하는 핵심기술
+        
+        1. 반응형웹(Responsive Web) : 미디어 화면크기에 따라
+        종합적인 변경사항을 기술적으로 다룬 웹사이트
+        
+        2. 적응형웹(Adaptive Web) : 미디어 화면크기에 따라
+        레이아웃 등의 CSS로 요소의 속성 변경을 다룬 웹사이트
+        
+        - 우리가 CSS코딩으로 구현하는 것은 적응형웹이다.
+        즉, 적응형웹은 반응형웹의 일부분이다!
+        하지만 일반적인 명칭으로 반응형웹으로 부른다!
+        
+        [ 구현방법 ]
+        @media only screen and (max-width:1300px) and (min-width:700px){
+            CSS 코딩구역
+        }
+        1) @media : 미디어쿼리 선언부
+        2) only screen : 회피코드(미디어쿼리를 아는 브라우저만 들어옴)
+        3) max-width : 최대사이즈(반드시 px단위를 사용, 소괄호사용)
+        4) min-width : 최소사이즈(반드시 px단위를 사용, 소괄호사용)
+        - 최대,최소 사이즈는 표기된 사이즈를 포함한 이상,이하임
+        - 최대 사이즈만 쓰면 기준사이즈 하위가 모두 포함됨
+            (큰 사이즈부터 작은 사이즈 순으로 코딩함!-데스크탑 기준사이즈)
+        - 최소 사이즈만 쓰면 기준사이즈 상위가 모두 포함됨
+            (작은 사이즈부터 큰 사이즈 순으로 코딩함!-모바일 기준사이즈)
+        5) and : 구문 사이에 연결자(주의사항: and앞뒤에 공백필수!)
+        
+    */
+    
+        .lee{
+            width: 49%;
+            margin: .5%;
+            /*이미지는 가로,세로 중 한쪽 사이즈만 주면 
+            나머지는 자동 비율유지하여 설정됨*/
+            display: block;/*마영오 적용위해*/
+            float: left;
+        }
+        
+        /*미디어쿼리
+        - 사진 가로 사이즈 보다 화면폭이 작으면 width:100%로 변경*/
+        @media only screen and (max-width:800px){
+            .lee{
+                width: 100%;
+                margin: 0;
+            }
+        }/*미디어쿼리 - 800px이하*/
+        
+    
+    
+    </style>
+    
+    
+</head>
+<body>
+   <img src="images/jeong5.jpg" alt="이정재" class="lee">
+   <img src="images/jeong4.jpg" alt="이정재" class="lee">
+   
+    
+</body>
+</html>
