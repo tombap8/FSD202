@@ -33,6 +33,15 @@
 
                 // for문 안에 조건문과 함께 continue를 쓰면
                 // 조건에 맞는 순번을 빼고 계속해~!(영어로 continue!)
+                
+                // 6번부터 안나오게하기
+                if(num===2 && i===6) break;
+                
+                // for문 안에 조건문과 함께 break를 쓰면
+                // 조건에 맞는 순번에서 for문을 빠져 나감!
+                
+                // -> continue와 break는 실행문 위에 있어야한다!!!
+                // 이유: 실행문을 실행하기 전에 조건을 걸러야 하므로!
 
                 //console.log("반복!"+i);
                 // 변경대상에 이미지 넣기(대입연산자사용! +=)
@@ -60,8 +69,10 @@
 
     <h2>4번과 7번빼고 돌리기</h2>
     <div class="forCls"></div>
-
-    <h2>어디까지만 돌리기</h2>
+    
+    <button onclick="addNum(2)">함수호출3</button>
+    
+    <h2>5번까지만 돌리기</h2>
     <div class="forCls"></div>
 
 
