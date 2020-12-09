@@ -6,7 +6,7 @@
     <title>For문 옵션</title>
     <style>
         .forCls img {
-            width: 100px;
+            height: 100px;
         }
     </style>
     <script>
@@ -14,16 +14,29 @@
         함수명: addNum
         기능: for문으로 숫자이미지를 추가한다
     */ ////////////////////////////////////
-        function addNum() {
+        function addNum(num) {//num - 전달변수(호출구분)
             // 1.함수호출확인
-            console.log("함수호출!!!");
-            // 2. 변경대상: .forCls
-            var tg = document.getElementsByClassName("forCls");
+            console.log("함수호출!!!"+num);
+            
+            // 2. 변경대상: .forCls (전달된 num의 순번으로 클래스선택!)
+            var tg = document
+            .getElementsByClassName("forCls").item(num);
+            
+            // 내용초기화!(html지우기)
+            tg.innerHTML = "";
+            
             // 3. 변경내용: 변경대상내부에 이미지태그를 for문으로 넣어줌
             for (var i = 1; i <= 10; i++) {
+                
+                // 순번빼고 돌리기
+                if(i===4 || i===7) continue;
+                
+                // for문 안에 조건문과 함께 continue를 쓰면
+                // 조건에 맞는 순번을 빼고 계속해~!(영어로 continue!)
+                
                 //console.log("반복!"+i);
-                // 변경대상에 이미지 넣기
-                tg.item(0).innerHTML =
+                // 변경대상에 이미지 넣기(대입연산자사용! +=)
+                tg.innerHTML +=
                     '<img src="images/num/num_0' + i +
                     '.png" alt="숫자">';
 
@@ -38,14 +51,17 @@
 <body>
     <h1>For문 옵션</h1>
 
-    <button onclick="addNum()">함수호출</button>
+    <button onclick="addNum(0)">함수호출1</button>
+    
     <div class="forCls">
         <h2>기본for문</h2>
 
     </div>
+    
+    <button onclick="addNum(1)">함수호출2</button>
 
     <div class="forCls">
-        <h2>빼고 돌리기</h2>
+        <h2>4번과 7번빼고 돌리기</h2>
     </div>
 
     <div class="forCls">

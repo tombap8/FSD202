@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For문 옵션</title>
+    <style>
+        .forCls img{
+            width: 100px;
+        }
+    
+    </style>
+    
+    
+    <script>
+    /*////////////////////////////////////
+        함수명: addnum
+        기능: for문으로 숫자이미지를 추가한다
+    */////////////////////////////////////
+        function addNum(){
+           // 1.함수호출확인
+            console.log("함수호출!!!");
+            //변겨어대상: .forCls
+            var tg = document.getElementsByClassName("forCls");
+            // 3. 변경내용: 변경대상내부에 이미지태그를 for문으로 넣어줌
+            for(var i= 1; i <=10; i++) {
+                
+                //console.log("반복!"+i);
+                // 변경대상에 이미지 넣기
+                tg.item(0).innerHTML += 
+                    '<img src="images/num/num_0' + i + '.png" alt="숫자">';
+            }//// for문 /////////////////////
+            
+            
+            
+        } /////////// addNum함수 ////////////
+        ////////////////////////////////////
+        
+    </script>
+</head>
+
+<body>
+    <h1>For문 옵션</h1>
+    <button onclick="addNum()">함수호출</button>
+    <div class="forCls">
+        <h2>기본for문</h2>
+        
+    </div>
+    <div class="forCls">
+        <h2>빼고 돌리기</h2>
+    </div>
+    <div class="forCls">
+        <h2>어디까지만 돌리기</h2>
+    </div>
+
+
+
+
+</body>
+
+</html>
