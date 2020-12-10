@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--뷰포트는 미디어쿼리 필수!-->
+    <title>비율유지박스1(Ratio Box)</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+    
+        /*비율유지박스 공통클래스*/
+        .rbx{
+            position: relative;
+            /*비율유지박스의 속박스부모*/
+            outline: 3px dotted red;
+        }
+        .rbx::before{
+            content: "";
+            display: block;
+            padding-top: 80%;
+            /*가로크기에 대한 80%크기 - 박스의 높이값*/
+        }
+        /*내부밀착 속박스*/
+        .ibx{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        /*개별박스 설정*/
+        .bx1{
+            width: 50%;
+            margin: 0 auto;
+            background: url(images/jeong3.jpg) no-repeat top/cover;
+        }
+        
+        /*타이틀 디자인*/
+        .tit{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로중앙이동*/
+            color: #fff;
+            text-align: center;
+            
+            /*h1태그 기본없앰!*/
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+<body>
+  
+  <div class="rbx bx1">
+      <div class="ibx">
+          <h1 class="tit">이정재 스타일1</h1>
+      </div>
+  </div>
+  
+  
+  
+  
+   
+   
+    
+</body>
+</html>
