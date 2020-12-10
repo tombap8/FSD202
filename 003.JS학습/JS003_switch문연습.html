@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>switch문 연습</title>
+    <!--CDN웹폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        /*타이틀*/
+        .tit {
+            text-align: center;
+            font: bold 72px/100px 'Audiowide';
+        }
+
+        /*포토박스*/
+        .photo {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #86ecff;
+        }
+
+        /*메인이미지*/
+        #scene {
+            height: 290px;
+        }
+
+        /*버튼박스*/
+        .bbox {
+            text-align: center;
+        }
+
+        .btns {
+            font-size: 42px;
+        }
+    </style>
+
+    <script>
+        /*/////////////////////////////////////////////////
+            함수명: chgImg
+            기능: 버튼 클릭시 버튼에 따라 보이는 이미지 변경하기
+        */ /////////////////////////////////////////////////
+        function chgImg(num) { // num 전달변수
+            // 1. 호출확인 및 전달값 확인
+            console.log("나야나!" + num);
+
+            // 2. 변경대상: #scene
+            var tg = document.getElementById("scene");
+
+            // 3. 변경내용: 변경대상의 src속성을 변경하여 이미지 바꾸기
+
+            // 이미지경로
+            var isrc;
+            
+            // 제어문 switch case로 변경!
+            // case에 해당값은 데이터형까지 정확히할것!
+            // 예컨데 문자형 숫자는 안됨 "1" 이런것...
+            
+            switch(num){
+                case 1:
+                    isrc = "images/ala1.jpg";
+                    break;
+                case 2:
+                    isrc = "images/ala2.jpg";
+                    break;
+                case 3:
+                    isrc = "images/ala3.jpg";
+                    break;
+                case 4:
+                    isrc = "images/ala4.jpg";
+                    break;
+            }
+            
+            
+
+//            if (num === 1) {
+//                isrc = "images/ala1.jpg";
+//            } /// if /////
+//            else if (num === 2) {
+//                isrc = "images/ala2.jpg";
+//            } /// else if ////
+//            else if (num === 3) {
+//                isrc = "images/ala3.jpg";
+//            } /// else if /////
+//            else if (num === 4) {
+//                isrc = "images/ala4.jpg";
+//            } /// else if /////
+
+            // 4. 이미지 요소에 src 적용하기
+            tg.src = isrc;
+
+        } ////////// chgImg함수 ////////////////////////////
+        //////////////////////////////////////////////////
+    </script>
+
+</head>
+
+<body>
+    <h1 class="tit">All New Aladin</h1>
+
+    <div class="photo">
+        <img id="scene" src="images/ala1.jpg" alt="알라딘장면">
+    </div>
+
+    <div class="bbox">
+        <button class="btns" onclick="chgImg(1)">포스터</button>
+        <button class="btns" onclick="chgImg(2)">장면1</button>
+        <button class="btns" onclick="chgImg(3)">장면2</button>
+        <button class="btns" onclick="chgImg(4)">장면3</button>
+    </div>
+
+
+
+
+</body></html>
