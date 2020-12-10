@@ -20,9 +20,11 @@
     left: 0;
     /*부모는? #top*/
     width: 100%;
-    height: 142px;
+    height: 0;/*142px;*/
     background-color: #fff;
     border-bottom: 3px solid #cd0102;
+    transition: height .4s ease-out;
+    /*트랜지션:속시이지-.gnb의 트랜지션과 동일!*/
 }
 /*gnbline 중앙에 960px 박스를 가상요소로 넣고 배경넣기*/
 .gnbline::before{

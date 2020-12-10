@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Welcome to Seoul Land!!!</title>
     <link rel="stylesheet" href="css/main.css">
+    <script>
+        /*//////////////////////////////////////
+            함수명:showG
+            기능: gnbline박스를 높이값 변경하기
+        */ //////////////////////////////////////
+        function showG(hv) {//hv - 높이값 전달변수
+            // 1. 함수호출 및 전달값 확인
+            console.log("나야나!"+hv);
+        } ////// showG함수 ////////////////////
+        /////////////////////////////////////
+    </script>
 </head>
 
 <body>
@@ -57,7 +68,7 @@
                     </ul>
                 </nav>
                 <!--GNB(Global Navigation Bar)메뉴-->
-                <nav class="gnb clb">
+                <nav class="gnb clb" onmouseover="showG(142)" onmouseout="showG(0)">
                     <dl>
                         <dt><a href="">계획세우기</a></dt>
                         <dd><a href="">이용시간</a></dd>
