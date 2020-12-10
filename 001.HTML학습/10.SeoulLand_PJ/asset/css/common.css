@@ -21,8 +21,20 @@
     /*부모는? #top*/
     width: 100%;
     height: 142px;
-/*    background-color: #fff;*/
+    background-color: #fff;
     border-bottom: 3px solid #cd0102;
+}
+/*gnbline 중앙에 960px 박스를 가상요소로 넣고 배경넣기*/
+.gnbline::before{
+    content: "";
+    display: block;
+    /*block하는 순간 div처럼된다!*/
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;/*가로중앙*/
+    background: url(../images/bg_gnb.gif) no-repeat;
+    background-position: -5px -8px;
+    opacity: .7;
 }
 
 /*상단영역파티션 높이*/
