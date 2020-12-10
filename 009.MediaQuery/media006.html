@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--뷰포트는 미디어쿼리 필수!-->
-    <title>비율유지박스1(Ratio Box)</title>
+    <title>비율유지박스2(Ratio Box) - 두개의 박스 정렬</title>
     <style>
         html,body{
             margin: 0;
@@ -15,7 +15,12 @@
         .rbx{
             position: relative;
             /*비율유지박스의 속박스부모*/
-            outline: 3px dotted red;
+            /*outline: 3px dotted red;*/
+            
+            float: left;
+            /*옆으로 흐르게*/
+            width: 49%;
+            margin: .5%;
         }
         .rbx::before{
             content: "";
@@ -34,9 +39,10 @@
         
         /*개별박스 설정*/
         .bx1{
-            width: 50%;
-            margin: 0 auto;
             background: url(images/jeong3.jpg) no-repeat top/cover;
+        }
+        .bx2{
+            background: url(images/jeong4.jpg) no-repeat top/cover;
         }
         
         /*타이틀 디자인*/
@@ -66,17 +72,45 @@
         */
         
         /* 미디어쿼리 */
-        /* 1024px 이하에서 가로크기 100%, 글자크기 30px로 변경 */
+        /* 1024px 이하에서 글자크기 24px로 변경, 글자색은 aqua */
         @media only screen and (max-width: 1024px){
             /*css재정의*/
-            .bx1{
-                width: 100%;
+            /*글자크기변경*/
+            .tit{
+                font-size: 24px;
+                color: aqua;
             }
+        }/*미디어쿼리 - 1024px이하*/
+        
+        /*800px 이하에서 가로크기 100%, 글자크기 30px*/
+        @media only screen and (max-width: 800px){
+            /*css재정의*/
+            .rbx{
+                width: 100%;
+                margin: 0;
+            }
+            
             /*글자크기변경*/
             .tit{
                 font-size: 30px;
             }
-        }/*미디어쿼리 - 1024px이하*/
+        }/*미디어쿼리 - 800px이하*/
+        
+        /*화면의 가로크기 세로에 비해 클 경우 디자인변경*/
+        /*목적: 모바일에서 화면을 옆으로 할 경우와 구분*/
+        /*모바일에서만 적용하려면 크기제한 조건을 넣어준다!*/
+        @media only screen and (orientation:landscape) and (max-width:800px){
+            .tit{
+                color: red;
+            }
+        }/*미디어쿼리 - 랜드스케이프*/
+        
+        
+        
+        
+        
+        
+        
         /*
         [ 미디어쿼리로 디자인 재정의 시에 중요한 점 ]
         - 이미 설정된 선택자를 동일하게 사용하여 셋팅한다!
@@ -90,6 +124,12 @@
   <div class="rbx bx1">
       <div class="ibx">
           <h1 class="tit">이정재 스타일1</h1>
+      </div>
+  </div>
+  
+  <div class="rbx bx2">
+      <div class="ibx">
+          <h1 class="tit">이정재 스타일2</h1>
       </div>
   </div>
   
