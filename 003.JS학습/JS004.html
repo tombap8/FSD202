@@ -55,6 +55,10 @@
             // 이 방식 많이 사용되는 방식임!
             // new Array라고 객체 생성을 할 필요가 없다!(자동생성)
             var arr2 = ["삼일절","태극기",1919];
+            
+            // 배열개수 찍기(배열변수명.length)
+            console.log("arr2배열변수개수:"+arr2.length);
+            
             // 출력대상: #txt2
             var txt2 = document.getElementById("txt2");
             // 출력하고픈 문장: "삼일절은 1919년에 일제에 항거하여 태극기를 들고 일어난 민중봉기를 기념하는 날이다"
@@ -78,6 +82,32 @@
             arr3[5] = "훨훨";
             arr3[6] = "훠얼훨";
             arr3[7] = "날아서~!";
+            
+            // 배열전체값 찍기 : valueOf() -> 콤마로 구분되어 찍힘
+            console.log("arr3배열 전체값:"+arr3.valueOf());
+            // 참고로 변수만 찍어도 valueOf()를 브라우저가 해줌~^^
+            
+            // 미션: arr3의 각 배열변수 사이에 별(★) 넣고 출력하기
+            
+            //결과값 저장변수
+            var show="";
+            // 배열을 개수만큼 for문을 돌려서 사이에 별넣고 결과만들기
+            for(var i=0;i<arr3.length;i++){
+                
+                show += arr3[i];
+                
+                // 사이에 별넣기
+                // 마지막 별은 빼기!
+                show += "★";
+                
+            }//// for문 ///////////
+            
+            // 화면에 출력하기
+            // 대상: #txt3
+            var txt3 = document.getElementById("txt3");
+            txt3.innerHTML = show;
+            
+            
             
             
             
