@@ -340,8 +340,8 @@
 
         var MV_KTH = {
             title: "The Mask",
-            directer: "척 러셀",
-            acter: "짐 캐리, 카메론 디아즈",
+            director: "척 러셀",
+            actors: "짐 캐리, 카메론 디아즈",
             genre: "코미디",
             ratings: "15세 관람가",
             trailer: function() {
@@ -500,6 +500,64 @@
             } //////trailer함수/////////
         }; //////MV_KHY 객체///////
 
+        
+        
+         var MV_KYS = { //고영승
+                    //1.영화제목
+                    title: "터미널",
+                    //2.감독
+                    director:"스티븐스필버그",
+                    //3.배우
+                    actors:"톰행크스",
+                    //4.장르
+                    genre: "드라마",
+                    //5.관람가
+                    ratings: "전체관람가",
+                    //6.예고편
+                    trailer: function() {
+                        //영화박스에 iframe넣기
+                        // body태그의 맨끝에 div넣기
+                        document.body.innerHTML +=
+                            '<div id="mv">' +
+                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/iZqQRmhRvyg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + 
+                            '<span class="close">×</span></div>';
+                    
+                    // 삽입된 동영상박스 CSS설정하기!!
+                    var mv = document.getElementById("mv");
+                    mv.style.position = "fixed";
+                    mv.style.top = "50%";
+                    mv.style.left = "50%";
+                    mv.style.transform = "translate(-50%,-50%)";
+                    mv.style.width = "700px";
+                    mv.style.height = "450px";
+                        
+                    // 닫기버틑 셋팅
+                    var close = document
+                    .getElementsByClassName("close")[0]; // 클래스요소를 선택할때 순번중요(컬랙션)
+                    close.style.position = "absolute";
+                    close.style.top = "0";
+                    close.style.right = "-70px";
+                    close.style.backgroundColor = "blue";
+                    close.style.width = "50px";
+                    close.style.height = "50px";
+                    close.style.textAlign = "center";
+                    close.style.lineHeight = "40px";
+                    close.style.fontSize = "40px";
+                    close.style.fontWeight = "bold";
+                    close.style.color = "white";
+                    close.style.borderRadius = "50%";
+                    close.style.cursor = "pointer";
+                    
+                    // 닫기버튼 클릭시 리로드!
+                    close.onclick = function(){
+                        window.location.reload();
+                        
+                    };///// 클릭함수 /////////////
+                        
+                        
+                    } /// trailer함수 ////
+
+                }; //// MV_KYS객체 ////////////////
 
 
 
@@ -515,7 +573,6 @@
             // 화면출력
             var txt6 = document.getElementById("txt6");
             txt6.style.lineHeight = "34px";
-
 
             //2.초이스별 영화정보 뿌리기
             if (num === 1) { // 탐쌤
@@ -544,8 +601,8 @@
 
                 txt6.innerHTML =
                     "▣ 영화명 : " + MV_KTH.title +
-                    "▣ 감독 : " + MV_KTH.directer +
-                    "▣ 배우 : " + MV_KTH.acter +
+                    "▣ 감독 : " + MV_KTH.director +
+                    "▣ 배우 : " + MV_KTH.actors +
                     "<br>▣장르: " + MV_KTH.genre +
                     "▣ 등급 : " + MV_KTH.ratings;
 
@@ -563,8 +620,8 @@
 
                 txt6.innerHTML =
                     "▣ 영화명 : " + MV_LJE.title +
-                    "▣ 감독 : " + MV_LJE.directer +
-                    "▣ 배우 : " + MV_LJE.acter +
+                    "▣ 감독 : " + MV_LJE.director +
+                    "▣ 배우 : " + MV_LJE.actors +
                     "<br>▣장르: " + MV_LJE.genre +
                     "▣ 등급 : " + MV_LJE.ratings;
 
@@ -584,8 +641,8 @@
 
                 txt6.innerHTML =
                     "▣ 영화명 : " + MV_KHY.title +
-                    "▣ 감독 : " + MV_KHY.directer +
-                    "▣ 배우 : " + MV_KHY.acter +
+                    "▣ 감독 : " + MV_KHY.director +
+                    "▣ 배우 : " + MV_KHY.actors +
                     "<br>▣장르: " + MV_KHY.genre +
                     "▣ 등급 : " + MV_KHY.ratings;
 
@@ -594,6 +651,28 @@
 
                 txt6.onclick = function() {
                     MV_KHY.trailer(); //함수호출은 소괄호 필수
+                }; ////// click함수 ///////
+
+
+            } ///// else if ///////
+
+
+
+            else if (num === 5) { //고영승
+
+
+                txt6.innerHTML =
+                    "▣ 영화명 : " + MV_KYS.title +
+                    "▣ 감독 : " + MV_KYS.director +
+                    "▣ 배우 : " + MV_KYS.actors +
+                    "<br>▣장르: " + MV_KYS.genre +
+                    "▣ 등급 : " + MV_KYS.ratings;
+
+
+                txt6.title = "클릭하시면 " + MV_KYS.title + " 예고편을 볼 수 있습니다!";
+
+                txt6.onclick = function() {
+                    MV_KYS.trailer(); //함수호출은 소괄호 필수
                 }; ////// click함수 ///////
 
 
@@ -623,6 +702,7 @@
         <button onclick="chgMV(2)">김태환초이스</button>
         <button onclick="chgMV(3)">이정은초이스</button>
         <button onclick="chgMV(4)">김하영초이스</button>
+        <button onclick="chgMV(5)">고영승초이스</button>
     </div>
 
 </body></html>
