@@ -108,103 +108,112 @@
                 // 대상: #txt3
                 var txt3 = document.getElementById("txt3");
                 txt3.innerHTML = show;
-            /*
-            [ 객체(Object) 란? ]
-            - 독립된 속성과 메서드를 가지는 프로그램 단위체
-            - 속성은 명사적 특징(예:자동차-핸들,바퀴,백미러...)
-            - 메서드는 동사적 특징(예:자동차-운전하다,주차하다,정지하다...)
-            - 브라우저에 이미 만들어져 있는 객체를 내장객체라고 한다.
-            브라우저 내장객체들:
-            window, document, Array, Object, Date, Math 등
-            
-            ※ Object 객체는 객체를 만들 수 있는 객체다! ㅎㅎㅎ
-            
-            [ 객체의 선언 ]
-            - new Object()
-            
-            [ 객체의 할당 ]
-            - 중괄호를 사용하여 할당코딩을 함
-            - {속성명:값,속성명:값,.....}
-            - 여러값을 셋팅할때 콤마로 구분한다
-            - 배열과 비교하여 이해하기가 쉽고 호출하기 쉽다!
-            
-            [ 객체의 호출 ]
-            - 객체명[속성명]
-            */
-            
-            var SHK = new Object({
-                "너의 이름은?":"김수현",
-                "생일":"1988년 2월 16일",
-                "키":"180cm",
-                "몸무게":"65kg",
-                "성별":"남자",
-                "비밀번호":7777,
-                "팬레터":function(){
-                    alert("오빠, 지금뭐해?");
-                    //배경이미지 출력박스에 넣기
-                    txt4.style.background =
-                        "url(https://lh3.googleusercontent.com/proxy/QQE7CUFHktmJ0KHa_n3POyOSbkRUzkoeyLRM7bzanTn3BiaHLFLb9YGL2Aunf36umBAX3KvAlGstna-SNX1kKFQlHfVXed6NleRtBu0zgWAUGdxOAwfSC0w) repeat-x 0/auto 100%";
-                    //글자색 흰색
-                    txt4.style.color = "#fff";
-                    //글자그림자
-                    txt4.style.textShadow = "0 0 5px #000";
-                }//// 팬레터함수 //////
+                /*
+                [ 객체(Object) 란? ]
+                - 독립된 속성과 메서드를 가지는 프로그램 단위체
+                - 속성은 명사적 특징(예:자동차-핸들,바퀴,백미러...)
+                - 메서드는 동사적 특징(예:자동차-운전하다,주차하다,정지하다...)
+                - 브라우저에 이미 만들어져 있는 객체를 내장객체라고 한다.
+                브라우저 내장객체들:
+                window, document, Array, Object, Date, Math 등
                 
-            }); //// SHK객체 ////////
+                ※ Object 객체는 객체를 만들 수 있는 객체다! ㅎㅎㅎ
+                
+                [ 객체의 선언 ]
+                - new Object()
+                
+                [ 객체의 할당 ]
+                - 중괄호를 사용하여 할당코딩을 함
+                - {속성명:값,속성명:값,.....}
+                - 여러값을 셋팅할때 콤마로 구분한다
+                - 배열과 비교하여 이해하기가 쉽고 호출하기 쉽다!
+                
+                [ 객체의 호출 ]
+                - 객체명[속성명]
+                */
+
+                var SHK = new Object({
+                    "너의 이름은?": "김수현",
+                    "생일": "1988년 2월 16일",
+                    "키": "180cm",
+                    "몸무게": "65kg",
+                    "성별": "남자",
+                    "비밀번호": 7777,
+                    "팬레터": function() {
+                        alert("오빠, 지금뭐해?");
+                        //배경이미지 출력박스에 넣기
+                        txt4.style.background =
+                            "url(https://lh3.googleusercontent.com/proxy/QQE7CUFHktmJ0KHa_n3POyOSbkRUzkoeyLRM7bzanTn3BiaHLFLb9YGL2Aunf36umBAX3KvAlGstna-SNX1kKFQlHfVXed6NleRtBu0zgWAUGdxOAwfSC0w) repeat-x 0/auto 100%";
+                        //글자색 흰색
+                        txt4.style.color = "#fff";
+                        //글자그림자
+                        txt4.style.textShadow = "0 0 5px #000";
+                    } //// 팬레터함수 //////
+
+                }); //// SHK객체 ////////
+
+                // 객체 출력하기
+                // 대상: #txt4
+                var txt4 = document.getElementById("txt4");
+                txt4.innerHTML =
+                    "당신이 좋아하는 남자배우는? " +
+                    SHK["너의 이름은?"];
+                txt4.innerHTML +=
+                    " / 몸무게를 아세요? " +
+                    SHK["몸무게"];
+
+                // 객체에 셋팅된 함수 호출하기!
+                txt4.onclick = function() {
+                    SHK["팬레터"]();
+                    //함수호출시 소괄호 필수!!!
+                }; ///// click이벤트 함수 ///////
+
+                // title속성넣기(툴팁나오게~)
+                txt4.title = "여기를 바로 클릭하세요~!!!";
+
+                // new 키워드 없이 객체 생성하기!!!!!
+                // 방법: 변수선언 후 이퀄뒤에 중괄호로 객체를 셋팅함!
+                // 객체를 설정시 속성명을 문자형 또는 변수형으로 할 수 있다
+                // - 문자형은 따옴표로 싼것
+                // - 변수형은 따옴표없이 한문자로 사용
+                // 객체의 속성명을 변수형으로 사용하면 호출시 편리하다!
+                // 호출: 객체명.속성명
+                var GU = {
+                    name: "공유",
+                    tall: "184cm",
+                    weight: "74kg",
+                    com: "매니지먼트 숲",
+                    work: "도깨비,부산행",
+                    msg: function(txt) { // txt전달변수
+                        alert("팬레터:" + txt);
+                    } //// msg함수 //////
+                }; ///// GU객체 ///////////////////
             
-            // 객체 출력하기
-            // 대상: #txt4
-            var txt4 = document.getElementById("txt4");
-            txt4.innerHTML = 
-                "당신이 좋아하는 남자배우는? " +
-                SHK["너의 이름은?"];
-            txt4.innerHTML += 
-                " / 몸무게를 아세요? " + 
-                SHK["몸무게"];
             
-            // 객체에 셋팅된 함수 호출하기!
-            txt4.onclick = function(){
-                SHK["팬레터"]();
-                //함수호출시 소괄호 필수!!!
-            }; ///// click이벤트 함수 ///////
+                // 공유 몸무게 늘리기(기존값 변경하기)
+                GU.weight = "100kg";
             
-            // title속성넣기(툴팁나오게~)
-            txt4.title = "여기를 바로 클릭하세요~!!!";
-            
-            // new 키워드 없이 객체 생성하기!!!!!
-            // 방법: 변수선언 후 이퀄뒤에 중괄호로 객체를 셋팅함!
-            // 객체를 설정시 속성명을 문자형 또는 변수형으로 할 수 있다
-            // - 문자형은 따옴표로 싼것
-            // - 변수형은 따옴표없이 한문자로 사용
-            // 객체의 속성명을 변수형으로 사용하면 호출시 편리하다!
-            // 호출: 객체명.속성명
-            var GU = {
-                name:"공유",
-                tall:"184cm",
-                weight:"74kg",
-                com:"매니지먼트 숲",
-                work:"도깨비,부산행",
-                msg:function(txt){// txt전달변수
-                    alert("팬레터:"+txt);
-                }//// msg함수 //////
-            };///// GU객체 ///////////////////
-            
-            // GU객체 출력하기
-            // 출력대상: #txt5
-            var txt5 = document.getElementById("txt5");
-            txt5.style.lineHeight = "24px";/*줄간격변경*/
-            
-            txt5.innerHTML = "저는 "+GU.name+"입니다.";
-            txt5.innerHTML += "몸무게는 비일인데요 그래도 말씀드리자면 " + GU.weight + "입니다. ㅎㅎㅎ<br>";
-            txt5.innerHTML += "제 대표작은 "+GU.work+"입니다.<br>";
-            
-            
-            
-            
-            
-            
-            
-            
+                // GU객체 출력하기
+                // 출력대상: #txt5
+                var txt5 = document.getElementById("txt5");
+                txt5.style.lineHeight = "24px"; /*줄간격변경*/
+
+                txt5.innerHTML =
+                    "저는 " + GU.name + "입니다.";
+                txt5.innerHTML +=
+                    "몸무게는 비일인데요 그래도 말씀드리자면 " +
+                    GU.weight + "입니다. ㅎㅎㅎ<br>";
+                txt5.innerHTML +=
+                    "제 대표작은 " + GU.work + "입니다.<br>";
+                txt5.innerHTML +=
+                    "제 소속사는 잘 모르시는 분들이 많은데 " +
+                    GU.com + "입니다. 빠이빠이~!";
+
+
+
+
+
+
 
 
 
