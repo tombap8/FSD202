@@ -280,6 +280,14 @@
                     "▣배우:" + MV_PSH.actors +
                     "<br>▣장르:" + MV_PSH.genre +
                     "▣등급:" + MV_PSH.ratings;
+            
+            // 트레일러 함수 호출하기
+            // #txt6를 클릭시
+            txt6.title = "클릭하시면 영화예고편을 볼 수 있습니다!";
+            txt6.addEventListener("click",function(){
+                MV_PSH.trailer();
+                //함수호출은 소괄호필수!
+            });////// click함수 ///////////////////////
 
 
 
