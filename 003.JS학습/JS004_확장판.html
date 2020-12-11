@@ -240,91 +240,8 @@
 
 
 
-                //// 미션: #txt6는 객체를 만들어서 자유출력하시오
-                // 자신이 영화를 선정하여 아래와 같은 항목으로 
-                // 영화의 정보를 셋팅하시오.
-                // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
-                // 객체소스만 전송!
-                // 객체명은 MV_자기이름이니셜
-                var MV_PSH = {
-                    //1.영화제목
-                    title: "런(Run)",
-                    //2.감독
-                    director: "아니쉬 차간티",
-                    //3.배우
-                    actors: "사라 폴슨, 키에라 앨런",
-                    //4.장르
-                    genre: "미스터리, 스릴러",
-                    //5.관람가
-                    ratings: "15세 관람가",
-                    //6.예고편
-                    trailer: function() {
-                        //영화박스에 iframe넣기
-                        // body태그의 맨끝에 div넣기
-                        document.body.innerHTML +=
-                            '<div id="mv">' +
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                            '<span class="close">×</span></div>';
 
-                        // 삽입된 동영상박스 CSS설정하기!!!
-                        var mv = document.getElementById("mv");
-                        mv.style.position = "fixed";
-                        mv.style.top = "50%";
-                        mv.style.left = "50%";
-                        mv.style.transform = "translate(-50%,-50%)";
-                        mv.style.width = "700px";
-                        mv.style.height = "450px";
-
-                        // 닫기버튼 셋팅
-                        var close = document
-                            .getElementsByClassName("close")[0];
-                        // 클래스요소를 선택할때 순번중요!(컬렉션순번)
-                        close.style.position = "absolute";
-                        close.style.top = "0";
-                        close.style.right = "-70px";
-                        close.style.backgroundColor = "blue";
-                        close.style.width = "50px";
-                        close.style.height = "50px";
-                        close.style.textAlign = "center";
-                        close.style.lineHeight = "40px";
-                        close.style.fontSize = "40px";
-                        close.style.fontWeight = "bold";
-                        close.style.color = "white";
-                        close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer"; //손가락
-
-                        // 닫기버튼 클릭시 리로드!
-                        close.onclick = function() {
-                            window.location.reload();
-                            //페이지 새로고침!
-                        }; ////// click함수 /////////
-
-
-
-
-
-                    } /// trailer함수 ////
-
-                }; //// MV_PSH객체 ////////////////
-
-                // 화면출력
-                var txt6 = document.getElementById("txt6");
-                txt6.style.lineHeight = "34px";
-
-                txt6.innerHTML =
-                    "▣영화명:" + MV_PSH.title +
-                    "▣감독:" + MV_PSH.director +
-                    "▣배우:" + MV_PSH.actors +
-                    "<br>▣장르:" + MV_PSH.genre +
-                    "▣등급:" + MV_PSH.ratings;
-
-                // 트레일러 함수 호출하기
-                // #txt6를 클릭시
-                txt6.title = "클릭하시면 영화예고편을 볼 수 있습니다!";
-                txt6.addEventListener("click", function() {
-                    MV_PSH.trailer();
-                    //함수호출은 소괄호필수!
-                }); ////// click함수 ///////////////////////
+                chgMV(1);
 
 
 
@@ -351,6 +268,75 @@
         - 특징은 load 이벤트와 달리 태그만 그려지면
         바로 실행하므로 실행속도가 빠르다!
     */
+
+
+        //// 미션: #txt6는 객체를 만들어서 자유출력하시오
+        // 자신이 영화를 선정하여 아래와 같은 항목으로 
+        // 영화의 정보를 셋팅하시오.
+        // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
+        // 객체소스만 전송!
+        // 객체명은 MV_자기이름이니셜
+        var MV_PSH = {
+            //1.영화제목
+            title: "런(Run)",
+            //2.감독
+            director: "아니쉬 차간티",
+            //3.배우
+            actors: "사라 폴슨, 키에라 앨런",
+            //4.장르
+            genre: "미스터리, 스릴러",
+            //5.관람가
+            ratings: "15세 관람가",
+            //6.예고편
+            trailer: function() {
+                //영화박스에 iframe넣기
+                // body태그의 맨끝에 div넣기
+                document.body.innerHTML +=
+                    '<div id="mv">' +
+                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
+                    '<span class="close">×</span></div>';
+
+                // 삽입된 동영상박스 CSS설정하기!!!
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%,-50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+
+                // 닫기버튼 셋팅
+                var close = document
+                    .getElementsByClassName("close")[0];
+                // 클래스요소를 선택할때 순번중요!(컬렉션순번)
+                close.style.position = "absolute";
+                close.style.top = "0";
+                close.style.right = "-70px";
+                close.style.backgroundColor = "blue";
+                close.style.width = "50px";
+                close.style.height = "50px";
+                close.style.textAlign = "center";
+                close.style.lineHeight = "40px";
+                close.style.fontSize = "40px";
+                close.style.fontWeight = "bold";
+                close.style.color = "white";
+                close.style.borderRadius = "50%";
+                close.style.cursor = "pointer"; //손가락
+
+                // 닫기버튼 클릭시 리로드!
+                close.onclick = function() {
+                    window.location.reload();
+                    //페이지 새로고침!
+                }; ////// click함수 /////////
+
+
+
+
+
+            } /// trailer함수 ////
+
+        }; //// MV_PSH객체 ////////////////
+
 
         var MV_KTH = {
             title: "The Mask",
@@ -397,7 +383,122 @@
             }
         }; ////// 객체 ///////
 
+        var MV_LJE = {
+            //1.영화제목
+            title: "공범",
+            //2.감독
+            director: "국동석",
+            //3.배우
+            actors: "손예진,김갑수",
+            //4.장르
+            genre: "스릴러",
+            //5.관람가
+            ratings: "15세",
+            //6.예고편
+            trailer: function() {
+                //영화박스에 iframe 넣기
+                //body태그의 맨끝에 div 넣기
+                document.body.innerHTML +=
+                    '<div id="mv">' +
+                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rLP36NlrUvs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브iframe동영상코드
+                    '<span class="close">×</span></div>';
 
+
+                // 삽입된 동영상박스 CSS설정하기!!!
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%,-50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+
+                //닫기버튼
+                var close = document
+                    .getElementsByClassName('close')[0];
+                // 클래스요소를 선택할 때 순번중요(컬렉션순번)
+                close.style.position = "absolute";
+                close.style.top = "0";
+                close.style.right = "-70px";
+                close.style.backgroundColor = "blue";
+                close.style.width = "50px";
+                close.style.height = "50px";
+                close.style.textAlign = "center";
+                close.style.lineHeight = "40px";
+                close.style.fontSize = "40px";
+                close.style.fontWeight = "bold";
+                close.style.color = "white";
+                close.style.borderRadius = "50%";
+                close.style.cursor = "pointer"; //손가락
+
+                //닫기버튼 클릭 시 리로드!
+                close.onclick = function(arguments) {
+                    window.location.reload();
+                } ////// click 함수 /////////////////
+            } //// trailer 함수 /////////
+        }; ////MV_LJE 객체 ////////////////
+
+
+        var MV_KHY = {
+            // 1.영화제목
+            title: "올드 가드",
+
+            // 2. 감독
+            director: "지나 프린스-바이스우드",
+
+            // 3. 배우
+            actors: "샤를리즈 테론",
+
+            // 4. 장르
+            genre: "액션, 판타지",
+
+            // 5. 관람가
+            ratings: "19세 이상",
+
+            // 6. 예고편
+            trailer: function() {
+                // 영화박스에 iframe넣기
+                // body태그 맨 끝에 div넣기
+                document.body.innerHTML += '<div id="mv">' + '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/MSS96b__v8g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' /*유튜브 iframe동영상 코드*/ + '<span class="close">×</span></div>';
+
+                // 삽입된 동영상박스 CSS설정하기!!
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%, -50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+
+                // 닫기버튼 셋팅
+                var close = document.getElementsByClassName("close")[0];
+                // 클라스 요소를 선택할 때 순번중요!(콜렉션순번)
+                close.style.position = "absolute";
+                close.style.top = "0";
+                close.style.right = "-70px";
+                close.style.backgroundColor = "blue";
+                close.style.width = "50px";
+                close.style.height = "50px";
+                close.style.textAlign = "center";
+                close.style.lineHeight = "40px";
+                close.style.fontSize = "40px";
+                close.style.fontWeight = "bold";
+                close.style.color = "white";
+                close.style.borderRadius = "50%";
+                close.style.cursor = "pointer"; // 손가락
+
+                // 닫기버튼 클릭시 리로드!
+                close.onclick = function() {
+                    window.location.reload(); // 페이지 새로고침!
+                }; /////click함수/////
+
+
+
+
+
+
+            } //////trailer함수/////////
+        }; //////MV_KHY 객체///////
 
 
 
@@ -408,10 +509,38 @@
         */ ////////////////////////////////////////
         function chgMV(num) {
             //1.함수호출확인 및 전달값 확인
-            console.log("영화변경하기:" + num);            
-            
+            console.log("영화변경하기:" + num);
+
+
+            // 화면출력
+            var txt6 = document.getElementById("txt6");
+            txt6.style.lineHeight = "34px";
+
+
             //2.초이스별 영화정보 뿌리기
-            if (num === 1) {
+            if (num === 1) { // 탐쌤
+
+                txt6.innerHTML =
+                    "▣영화명:" + MV_PSH.title +
+                    "▣감독:" + MV_PSH.director +
+                    "▣배우:" + MV_PSH.actors +
+                    "<br>▣장르:" + MV_PSH.genre +
+                    "▣등급:" + MV_PSH.ratings;
+
+                // 트레일러 함수 호출하기
+                // #txt6를 클릭시
+
+                txt6.title = "클릭하시면 " + MV_PSH.title + " 예고편을 볼 수 있습니다!";
+
+                txt6.onclick = function() {
+                    MV_PSH.trailer();
+                    //함수호출은 소괄호필수!
+                }; ////// click함수 ///////
+
+
+            } ///// if ///////
+            else if (num === 2) { //김태환
+
 
                 txt6.innerHTML =
                     "▣ 영화명 : " + MV_KTH.title +
@@ -421,15 +550,52 @@
                     "▣ 등급 : " + MV_KTH.ratings;
 
 
-                txt6.title = "클릭하시면 영화 예고편을 볼 수 있습니다!";
-                
-                txt6.removeEventListener("click");
-                txt6.addEventListener("click", function() {
-                    MV_KTH.trailer(); //함수호출은 소괄호 필수
-                });
+                txt6.title = "클릭하시면 " + MV_KTH.title + " 예고편을 볼 수 있습니다!";
 
-            } ///// if ///////
-            else if (num === 2) {
+                txt6.onclick = function() {
+                    MV_KTH.trailer(); //함수호출은 소괄호 필수
+                }; ////// click함수 ///////
+
+
+            } ///// else if ///////
+            else if (num === 3) { //이정은
+
+
+                txt6.innerHTML =
+                    "▣ 영화명 : " + MV_LJE.title +
+                    "▣ 감독 : " + MV_LJE.directer +
+                    "▣ 배우 : " + MV_LJE.acter +
+                    "<br>▣장르: " + MV_LJE.genre +
+                    "▣ 등급 : " + MV_LJE.ratings;
+
+
+                txt6.title = "클릭하시면 " + MV_LJE.title + " 예고편을 볼 수 있습니다!";
+
+                txt6.onclick = function() {
+                    MV_LJE.trailer(); //함수호출은 소괄호 필수
+                }; ////// click함수 ///////
+
+
+            } ///// else if ///////
+
+
+            else if (num === 4) { //김하영
+
+
+                txt6.innerHTML =
+                    "▣ 영화명 : " + MV_KHY.title +
+                    "▣ 감독 : " + MV_KHY.directer +
+                    "▣ 배우 : " + MV_KHY.acter +
+                    "<br>▣장르: " + MV_KHY.genre +
+                    "▣ 등급 : " + MV_KHY.ratings;
+
+
+                txt6.title = "클릭하시면 " + MV_KHY.title + " 예고편을 볼 수 있습니다!";
+
+                txt6.onclick = function() {
+                    MV_KHY.trailer(); //함수호출은 소괄호 필수
+                }; ////// click함수 ///////
+
 
             } ///// else if ///////
 
@@ -453,7 +619,10 @@
     <div id="txt6"></div>
 
     <div>
-        <button onclick="chgMV(1)">김태환초이스</button>
+        <button onclick="chgMV(1)">탐쌤초이스</button>
+        <button onclick="chgMV(2)">김태환초이스</button>
+        <button onclick="chgMV(3)">이정은초이스</button>
+        <button onclick="chgMV(4)">김하영초이스</button>
     </div>
 
 </body></html>
