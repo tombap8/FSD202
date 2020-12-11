@@ -245,7 +245,28 @@
             // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
             // 객체소스만 전송!
             // 객체명은 MV_자기이름이니셜
-            var MV_PSH = {};
+            var MV_PSH = {
+                //1.영화제목
+                title:"",
+                //2.감독
+                director:"",
+                //3.배우
+                actors:"",
+                //4.장르
+                genre:"",
+                //5.관람가
+                ratings:"",
+                //6.예고편
+                trailer:function(){
+                    //영화박스에 iframe넣기
+                    // body태그의 맨끝에 div넣기
+                    document.body.innerHTML += 
+                        '<div id="mv">'+
+                        ''+ //유튜브 iframe동영상코드
+                        '</div>';
+                }/// trailer함수 ////
+                
+            };//// MV_PSH객체 ////////////////
             
 
 
