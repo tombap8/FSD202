@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>배열변수와 객체</title>
@@ -15,6 +16,7 @@
             margin: 5px auto;
             font-size: 24px;
         }
+
     </style>
 
     <script>
@@ -188,11 +190,11 @@
                         alert("팬레터:" + txt);
                     } //// msg함수 //////
                 }; ///// GU객체 ///////////////////
-            
-            
+
+
                 // 공유 몸무게 늘리기(기존값 변경하기)
                 GU.weight = "100kg";
-            
+
                 // GU객체 출력하기
                 // 출력대상: #txt5
                 var txt5 = document.getElementById("txt5");
@@ -209,65 +211,76 @@
                     "제 소속사는 잘 모르시는 분들이 많은데 " +
                     GU.com + "입니다. 빠이빠이~!";
 
-            // 공유 박스 클릭시 메시지 띄우기
-            txt5.title = "공유의 메시지를 보세요! 바로클릭여기!!!";
-//            txt5.onclick = function(){
-//                GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
-//            };//// click이벤트 함수 ///////
-            
-            txt5.addEventListener("click",function(){
-                GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
-            });////// click 이벤트 함수 ///////////////
-            
-            
-        /*    
-        [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
+                // 공유 박스 클릭시 메시지 띄우기
+                txt5.title = "공유의 메시지를 보세요! 바로클릭여기!!!";
+                //            txt5.onclick = function(){
+                //                GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
+                //            };//// click이벤트 함수 ///////
 
-        1. 선택요소.addEventListener(이벤트명,함수)
-
-        예) 
-            document.getElementById("my")
-            .addEventListener("click",function(){구현코드});
-
-        2. 이벤트 속성에 익명함수 넣기
-            선택요소.on이벤트명 = function(){구현코드};
-
-        예)
-            document
-            .getElementById("my").onclick = function(){구현코드};
-        */
+                txt5.addEventListener("click", function() {
+                    GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
+                }); ////// click 이벤트 함수 ///////////////
 
 
+                /*    
+                [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
 
-            //// 미션: #txt6는 객체를 만들어서 자유출력하시오
-            // 자신이 영화를 선정하여 아래와 같은 항목으로 
-            // 영화의 정보를 셋팅하시오.
-            // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
-            // 객체소스만 전송!
-            // 객체명은 MV_자기이름이니셜
-            var MV_PSH = {
-                //1.영화제목
-                title:"",
-                //2.감독
-                director:"",
-                //3.배우
-                actors:"",
-                //4.장르
-                genre:"",
-                //5.관람가
-                ratings:"",
-                //6.예고편
-                trailer:function(){
-                    //영화박스에 iframe넣기
-                    // body태그의 맨끝에 div넣기
-                    document.body.innerHTML += 
-                        '<div id="mv">'+
-                        ''+ //유튜브 iframe동영상코드
-                        '</div>';
-                }/// trailer함수 ////
-                
-            };//// MV_PSH객체 ////////////////
-            
+                1. 선택요소.addEventListener(이벤트명,함수)
+
+                예) 
+                    document.getElementById("my")
+                    .addEventListener("click",function(){구현코드});
+
+                2. 이벤트 속성에 익명함수 넣기
+                    선택요소.on이벤트명 = function(){구현코드};
+
+                예)
+                    document
+                    .getElementById("my").onclick = function(){구현코드};
+                */
+
+
+
+                //// 미션: #txt6는 객체를 만들어서 자유출력하시오
+                // 자신이 영화를 선정하여 아래와 같은 항목으로 
+                // 영화의 정보를 셋팅하시오.
+                // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
+                // 객체소스만 전송!
+                // 객체명은 MV_자기이름이니셜
+                var MV_PSH = {
+                    //1.영화제목
+                    title: "",
+                    //2.감독
+                    director: "",
+                    //3.배우
+                    actors: "",
+                    //4.장르
+                    genre: "",
+                    //5.관람가
+                    ratings: "",
+                    //6.예고편
+                    trailer: function() {
+                        //영화박스에 iframe넣기
+                        // body태그의 맨끝에 div넣기
+                        document.body.innerHTML +=
+                            '<div id="mv">' +
+                            '' + //유튜브 iframe동영상코드
+                            '</div>';
+                    } /// trailer함수 ////
+
+                }; //// MV_PSH객체 ////////////////
+
+                // 화면출력
+                var txt6 = document.getElementById("txt6");
+                txt6.style.lineHeight = "34px";
+
+                txt6.innerHTML =
+                    "▣영화명:" + MV_PSH.title +
+                    "▣감독:" + MV_PSH.director +
+                    "▣배우:" + MV_PSH.actors +
+                    "<br>▣장르:" + MV_PSH.genre +
+                    "▣등급:" + MV_PSH.ratings;
+
 
 
 
@@ -293,6 +306,7 @@
         - 특징은 load 이벤트와 달리 태그만 그려지면
         바로 실행하므로 실행속도가 빠르다!
     */
+
     </script>
 
 
@@ -308,4 +322,6 @@
 
 
 
-</body></html>
+</body>
+
+</html>
