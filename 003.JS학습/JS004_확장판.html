@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>배열변수와 객체</title>
+    <title>배열변수와 객체 - 확장판</title>
     <style>
         div {
             width: 1000px;
@@ -16,7 +16,6 @@
             margin: 5px auto;
             font-size: 24px;
         }
-
     </style>
 
     <script>
@@ -266,7 +265,7 @@
                             '<div id="mv">' +
                             '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
                             '<span class="close">×</span></div>';
-                        
+
                         // 삽입된 동영상박스 CSS설정하기!!!
                         var mv = document.getElementById("mv");
                         mv.style.position = "fixed";
@@ -275,10 +274,10 @@
                         mv.style.transform = "translate(-50%,-50%)";
                         mv.style.width = "700px";
                         mv.style.height = "450px";
-                        
+
                         // 닫기버튼 셋팅
                         var close = document
-                        .getElementsByClassName("close")[0];
+                            .getElementsByClassName("close")[0];
                         // 클래스요소를 선택할때 순번중요!(컬렉션순번)
                         close.style.position = "absolute";
                         close.style.top = "0";
@@ -292,18 +291,18 @@
                         close.style.fontWeight = "bold";
                         close.style.color = "white";
                         close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer";//손가락
-                        
+                        close.style.cursor = "pointer"; //손가락
+
                         // 닫기버튼 클릭시 리로드!
-                        close.onclick = function(){
+                        close.onclick = function() {
                             window.location.reload();
                             //페이지 새로고침!
-                        };////// click함수 /////////
-                        
-                        
-                        
-                        
-                        
+                        }; ////// click함수 /////////
+
+
+
+
+
                     } /// trailer함수 ////
 
                 }; //// MV_PSH객체 ////////////////
@@ -318,14 +317,14 @@
                     "▣배우:" + MV_PSH.actors +
                     "<br>▣장르:" + MV_PSH.genre +
                     "▣등급:" + MV_PSH.ratings;
-            
-            // 트레일러 함수 호출하기
-            // #txt6를 클릭시
-            txt6.title = "클릭하시면 영화예고편을 볼 수 있습니다!";
-            txt6.addEventListener("click",function(){
-                MV_PSH.trailer();
-                //함수호출은 소괄호필수!
-            });////// click함수 ///////////////////////
+
+                // 트레일러 함수 호출하기
+                // #txt6를 클릭시
+                txt6.title = "클릭하시면 영화예고편을 볼 수 있습니다!";
+                txt6.addEventListener("click", function() {
+                    MV_PSH.trailer();
+                    //함수호출은 소괄호필수!
+                }); ////// click함수 ///////////////////////
 
 
 
@@ -353,6 +352,93 @@
         바로 실행하므로 실행속도가 빠르다!
     */
 
+        var MV_KTH = {
+            title: "The Mask",
+            directer: "척 러셀",
+            acter: "짐 캐리, 카메론 디아즈",
+            genre: "코미디",
+            ratings: "15세 관람가",
+            trailer: function() {
+                //유튜브 동영상
+                document.body.innerHTML +=
+                    '<div id="mv">' +
+                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/LZl69yk5lEY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                    '<span class="close">×</span></div>';
+
+                //삽입된 동영상 박스 css 설정
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%, -50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+
+                //닫기 버튼
+                var close = document.getElementsByClassName("close")[0];
+                close.style.position = "absolute";
+                close.style.top = "0";
+                close.style.right = "-70px";
+                close.style.backgroundColor = "gray";
+                close.style.width = "50px";
+                close.style.height = "50px";
+                close.style.textAlign = "center";
+                close.style.lineHeight = "40px";
+                close.style.fontSize = "40px";
+                close.style.fontWeight = "bold";
+                close.style.color = "white";
+                close.style.borderRadius = "50%";
+                close.style.cursor = "pointer";
+
+                //닫기 버튼 클릭 시 리로드
+                close.onclick = function() {
+                    window.location.reload(); //누르면 페이지 세로고침
+                };
+            }
+        }; ////// 객체 ///////
+
+
+
+
+
+
+        /*////////////////////////////////////////
+            함수명: chgMV
+            기능: 영화변경 처리함수
+        */ ////////////////////////////////////////
+        function chgMV(num) {
+            //1.함수호출확인 및 전달값 확인
+            console.log("영화변경하기:" + num);            
+            
+            //2.초이스별 영화정보 뿌리기
+            if (num === 1) {
+
+                txt6.innerHTML =
+                    "▣ 영화명 : " + MV_KTH.title +
+                    "▣ 감독 : " + MV_KTH.directer +
+                    "▣ 배우 : " + MV_KTH.acter +
+                    "<br>▣장르: " + MV_KTH.genre +
+                    "▣ 등급 : " + MV_KTH.ratings;
+
+
+                txt6.title = "클릭하시면 영화 예고편을 볼 수 있습니다!";
+                
+                txt6.removeEventListener("click");
+                txt6.addEventListener("click", function() {
+                    MV_KTH.trailer(); //함수호출은 소괄호 필수
+                });
+
+            } ///// if ///////
+            else if (num === 2) {
+
+            } ///// else if ///////
+
+
+
+
+
+        } ////// chgMV함수 /////////////////////////
+        //////////////////////////////////////////
     </script>
 
 
@@ -366,8 +452,8 @@
     <div id="txt5"></div>
     <div id="txt6"></div>
 
+    <div>
+        <button onclick="chgMV(1)">김태환초이스</button>
+    </div>
 
-
-</body>
-
-</html>
+</body></html>
