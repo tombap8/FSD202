@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* 세계의 도시 메인페이지 CSS - main.css */
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #777 30%, #ccc 70%);
+}
