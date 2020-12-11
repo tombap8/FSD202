@@ -264,8 +264,23 @@
                         // body태그의 맨끝에 div넣기
                         document.body.innerHTML +=
                             '<div id="mv">' +
-                            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/SeB3SRrIASw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
+                            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
                             '</div>';
+                        
+                        // 삽입된 동영상박스 CSS설정하기!!!
+                        var mv = document.getElementById("mv");
+                        mv.style.position = "fixed";
+                        mv.style.top = "50%";
+                        mv.style.left = "50%";
+                        mv.style.transform = "translate(-50%,-50%)";
+                        mv.style.width = "700px";
+                        mv.style.height = "450px";
+                        
+                        
+                        
+                        
+                        
+                        
                     } /// trailer함수 ////
 
                 }; //// MV_PSH객체 ////////////////
