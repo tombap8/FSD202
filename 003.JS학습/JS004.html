@@ -265,7 +265,7 @@
                         document.body.innerHTML +=
                             '<div id="mv">' +
                             '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                            '</div>';
+                            '<span class="close">×</span></div>';
                         
                         // 삽입된 동영상박스 CSS설정하기!!!
                         var mv = document.getElementById("mv");
@@ -275,6 +275,25 @@
                         mv.style.transform = "translate(-50%,-50%)";
                         mv.style.width = "700px";
                         mv.style.height = "450px";
+                        
+                        // 닫기버튼 셋팅
+                        var close = document
+                        .getElementsByClassName("close")[0];
+                        // 클래스요소를 선택할때 순번중요!(컬렉션순번)
+                        close.style.position = "absolute";
+                        close.style.top = "0";
+                        close.style.right = "-70px";
+                        close.style.backgroundColor = "blue";
+                        close.style.width = "50px";
+                        close.style.height = "50px";
+                        close.style.textAlign = "center";
+                        close.style.lineHeight = "40px";
+                        close.style.fontSize = "40px";
+                        close.style.fontWeight = "bold";
+                        close.style.color = "white";
+                        close.style.borderRadius = "50%";
+                        close.style.cursor = "pointer";//손가락
+                        
                         
                         
                         
