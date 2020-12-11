@@ -171,6 +171,34 @@
             // title속성넣기(툴팁나오게~)
             txt4.title = "여기를 바로 클릭하세요~!!!";
             
+            // new 키워드 없이 객체 생성하기!!!!!
+            // 방법: 변수선언 후 이퀄뒤에 중괄호로 객체를 셋팅함!
+            // 객체를 설정시 속성명을 문자형 또는 변수형으로 할 수 있다
+            // - 문자형은 따옴표로 싼것
+            // - 변수형은 따옴표없이 한문자로 사용
+            // 객체의 속성명을 변수형으로 사용하면 호출시 편리하다!
+            // 호출: 객체명.속성명
+            var GU = {
+                name:"공유",
+                tall:"184cm",
+                weight:"74kg",
+                com:"매니지먼트 숲",
+                work:"도깨비,부산행",
+                msg:function(txt){// txt전달변수
+                    alert("팬레터:"+txt);
+                }//// msg함수 //////
+            };///// GU객체 ///////////////////
+            
+            // GU객체 출력하기
+            // 출력대상: #txt5
+            var txt5 = document.getElementById("txt5");
+            txt5.style.lineHeight = "24px";/*줄간격변경*/
+            
+            txt5.innerHTML = "저는 "+GU.name+"입니다.";
+            txt5.innerHTML += "몸무게는 비일인데요 그래도 말씀드리자면 " + GU.weight + "입니다. ㅎㅎㅎ<br>";
+            txt5.innerHTML += "제 대표작은 "+GU.work+"입니다.<br>";
+            
+            
             
             
             
