@@ -249,22 +249,22 @@
                 // 객체명은 MV_자기이름이니셜
                 var MV_PSH = {
                     //1.영화제목
-                    title: "",
+                    title: "런(Run)",
                     //2.감독
-                    director: "",
+                    director: "아니쉬 차간티",
                     //3.배우
-                    actors: "",
+                    actors: "사라 폴슨, 키에라 앨런",
                     //4.장르
-                    genre: "",
+                    genre: "미스터리, 스릴러",
                     //5.관람가
-                    ratings: "",
+                    ratings: "15세 관람가",
                     //6.예고편
                     trailer: function() {
                         //영화박스에 iframe넣기
                         // body태그의 맨끝에 div넣기
                         document.body.innerHTML +=
                             '<div id="mv">' +
-                            '' + //유튜브 iframe동영상코드
+                            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/SeB3SRrIASw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
                             '</div>';
                     } /// trailer함수 ////
 
