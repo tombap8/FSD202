@@ -1,5 +1,15 @@
 @charset "utf-8";
 /* 세계의 도시 메인페이지 CSS - main.css */
+
+ @import url('https://fonts.googleapis.com/css?family=Black+And+White+Picture|East+Sea+Dokdo|Jua&display=swap');
+/*
+    font-family: 'Black And White Picture', sans-serif;
+    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Jua', sans-serif;
+
+*/
+
+
 html,body{
     margin: 0;
     padding: 0;
@@ -10,3 +20,16 @@ body{
     overflow: hidden;
     background-image: linear-gradient(to bottom, #777 30%, #ccc 70%);
 }
+
+/*1. 전체제목*/
+.tit{
+    text-align: center;
+    padding-top: 50px;font-family: 'Black And White Picture', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    background: url(../images/citybg.png) no-repeat center/auto 100%;
+}
+
+
+
+
