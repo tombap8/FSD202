@@ -221,12 +221,13 @@
                     GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
                 }); ////// click 이벤트 함수 ///////////////
 
+/*
 
-                /*    
+                    
                 [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
 
                 1. 선택요소.addEventListener(이벤트명,함수)
-
+                
                 예) 
                     document.getElementById("my")
                     .addEventListener("click",function(){구현코드});
@@ -237,7 +238,15 @@
                 예)
                     document
                     .getElementById("my").onclick = function(){구현코드};
-                */
+            
+            ※ addEventListener로 이벤트를 등록하면
+            브라우저 이벤트 등록 메모리에 쓰여지므로 현재이벤트를
+            변경하려면 지워야 하는데 이 부분이 불편해진다.
+            
+            이벤트를 변경함에 편하게 하려면 on이벤트명 즉, 이벤트속성에
+            함수를 할당하는 2번방법으로 해야 한다!!!
+                
+*/
 
 
 
