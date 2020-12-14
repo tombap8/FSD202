@@ -16,7 +16,6 @@
             margin: 5px auto;
             font-size: 24px;
         }
-
     </style>
 
     <script>
@@ -221,32 +220,32 @@
                     GU.msg("여러분, 사랑합니다~! 아주많이~!!!");
                 }); ////// click 이벤트 함수 ///////////////
 
-/*
+                /*
 
-                    
-                [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
+                                    
+                                [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
 
-                1. 선택요소.addEventListener(이벤트명,함수)
-                
-                예) 
-                    document.getElementById("my")
-                    .addEventListener("click",function(){구현코드});
+                                1. 선택요소.addEventListener(이벤트명,함수)
+                                
+                                예) 
+                                    document.getElementById("my")
+                                    .addEventListener("click",function(){구현코드});
 
-                2. 이벤트 속성에 익명함수 넣기
-                    선택요소.on이벤트명 = function(){구현코드};
+                                2. 이벤트 속성에 익명함수 넣기
+                                    선택요소.on이벤트명 = function(){구현코드};
 
-                예)
-                    document
-                    .getElementById("my").onclick = function(){구현코드};
-            
-            ※ addEventListener로 이벤트를 등록하면
-            브라우저 이벤트 등록 메모리에 쓰여지므로 현재이벤트를
-            변경하려면 지워야 하는데 이 부분이 불편해진다.
-            
-            이벤트를 변경함에 편하게 하려면 on이벤트명 즉, 이벤트속성에
-            함수를 할당하는 2번방법으로 해야 한다!!!
-                
-*/
+                                예)
+                                    document
+                                    .getElementById("my").onclick = function(){구현코드};
+                            
+                            ※ addEventListener로 이벤트를 등록하면
+                            브라우저 이벤트 등록 메모리에 쓰여지므로 현재이벤트를
+                            변경하려면 지워야 하는데 이 부분이 불편해진다.
+                            
+                            이벤트를 변경함에 편하게 하려면 on이벤트명 즉, 이벤트속성에
+                            함수를 할당하는 2번방법으로 해야 한다!!!
+                                
+                */
 
 
 
@@ -255,92 +254,93 @@
                 // 영화의 정보를 셋팅하시오.
                 // 셋팅된 영화정보가 잘 출력되면 탐쌤에게 소스를 전송하시오!
                 // 객체소스만 전송!
-                // 객체명은 MV_자기이름이니셜
-                var MV_PSH = {
-                    //1.영화제목
-                    title: "런(Run)",
-                    //2.감독
-                    director: "아니쉬 차간티",
-                    //3.배우
-                    actors: "사라 폴슨, 키에라 앨런",
-                    //4.장르
-                    genre: "미스터리, 스릴러",
-                    //5.관람가
-                    ratings: "15세 관람가",
-                    //6.예고편
-                    trailer: function() {
-                        //영화박스에 iframe넣기
-                        // body태그의 맨끝에 div넣기
-                        document.body.innerHTML +=
-                            '<div id="mv">' +
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                            '<span class="close">×</span></div>';
-                        
-                        // 삽입된 동영상박스 CSS설정하기!!!
-                        var mv = document.getElementById("mv");
-                        mv.style.position = "fixed";
-                        mv.style.top = "50%";
-                        mv.style.left = "50%";
-                        mv.style.transform = "translate(-50%,-50%)";
-                        mv.style.width = "700px";
-                        mv.style.height = "450px";
-                        
-                        // 닫기버튼 셋팅
-                        var close = document
-                        .getElementsByClassName("close")[0];
-                        // 클래스요소를 선택할때 순번중요!(컬렉션순번)
-                        close.style.position = "absolute";
-                        close.style.top = "0";
-                        close.style.right = "-70px";
-                        close.style.backgroundColor = "blue";
-                        close.style.width = "50px";
-                        close.style.height = "50px";
-                        close.style.textAlign = "center";
-                        close.style.lineHeight = "40px";
-                        close.style.fontSize = "40px";
-                        close.style.fontWeight = "bold";
-                        close.style.color = "white";
-                        close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer";//손가락
-                        
-                        // 닫기버튼 클릭시 리로드!
-                        close.onclick = function(){
-                            window.location.reload();
-                            //페이지 새로고침!
-                        };////// click함수 /////////
-                        
-                        
-                        
-                        
-                        
-                    } /// trailer함수 ////
+                // -> chgMV함수로 이관!
 
-                }; //// MV_PSH객체 ////////////////
-
-                // 화면출력
-                var txt6 = document.getElementById("txt6");
-                txt6.style.lineHeight = "34px";
-
-                txt6.innerHTML =
-                    "▣영화명:" + MV_PSH.title +
-                    "▣감독:" + MV_PSH.director +
-                    "▣배우:" + MV_PSH.actors +
-                    "<br>▣장르:" + MV_PSH.genre +
-                    "▣등급:" + MV_PSH.ratings;
-            
-            // 트레일러 함수 호출하기
-            // #txt6를 클릭시
-            txt6.title = "클릭하시면 영화예고편을 볼 수 있습니다!";
-            txt6.addEventListener("click",function(){
-                MV_PSH.trailer();
-                //함수호출은 소괄호필수!
-            });////// click함수 ///////////////////////
 
 
 
 
             }); /////// 로드구역 //////////////////////////
         ////////////////////////////////////////////
+
+        // script 전역변수 구역 /////////
+
+        // 어떤 함수에도 포함되지 않은 이 구역에 선언된 변수가]
+        // 전역변수다!!!
+        // 전역변수는 모든 함수에서 참조할 수 있다! 그래서 전역변수다!
+        // Global Variable 전지역 참조 변수
+
+        // 반면 지역변수(Local Variable)는 함수 내부 혹은 
+        // 제어문 내부에서 선언된 변수로 그 구역에서만 참조할 수 있는
+        // 변수다!
+
+        // 객체를 전역변수로 승격함!
+        // 객체명은 MV_자기이름이니셜
+        var MV_PSH = {
+            //1.영화제목
+            title: "런(Run)",
+            //2.감독
+            director: "아니쉬 차간티",
+            //3.배우
+            actors: "사라 폴슨, 키에라 앨런",
+            //4.장르
+            genre: "미스터리, 스릴러",
+            //5.관람가
+            ratings: "15세 관람가",
+            //6.예고편
+            trailer: function() {
+                //영화박스에 iframe넣기
+                // body태그의 맨끝에 div넣기
+                document.body.innerHTML +=
+                    '<div id="mv">' +
+                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
+                    '<span class="close">×</span></div>';
+
+                // 삽입된 동영상박스 CSS설정하기!!!
+                var mv = document.getElementById("mv");
+                mv.style.position = "fixed";
+                mv.style.top = "50%";
+                mv.style.left = "50%";
+                mv.style.transform = "translate(-50%,-50%)";
+                mv.style.width = "700px";
+                mv.style.height = "450px";
+
+                // 닫기버튼 셋팅
+                var close = document
+                    .getElementsByClassName("close")[0];
+                // 클래스요소를 선택할때 순번중요!(컬렉션순번)
+                close.style.position = "absolute";
+                close.style.top = "0";
+                close.style.right = "-70px";
+                close.style.backgroundColor = "blue";
+                close.style.width = "50px";
+                close.style.height = "50px";
+                close.style.textAlign = "center";
+                close.style.lineHeight = "40px";
+                close.style.fontSize = "40px";
+                close.style.fontWeight = "bold";
+                close.style.color = "white";
+                close.style.borderRadius = "50%";
+                close.style.cursor = "pointer"; //손가락
+
+                // 닫기버튼 클릭시 리로드!
+                close.onclick = function() {
+                    window.location.reload();
+                    //페이지 새로고침!
+                }; ////// click함수 /////////
+
+
+            } /// trailer함수 ////
+
+        }; //// MV_PSH객체 ////////////////
+
+
+
+
+
+
+
+
 
         /*이벤트가 발생하면 실행하는 함수로 외부함수를
         사용하기도 하지만 코드를 저장하고만 있는 익명함수
@@ -361,39 +361,72 @@
         - 특징은 load 이벤트와 달리 태그만 그려지면
         바로 실행하므로 실행속도가 빠르다!
     */
-       /* 
-        객체에 대한 단상
-        
-        - 객체는 배열처럼 데이터를 묶어서 저장하는 메모리공간
-        역할을 한다. 그런데 호출시 번호로 호출하는 배열처럼
-        기계적이지 않고 사람이 잘 이해할 수 있는 문자로 호출
-        값을 사용하는 아주 편리한 것이다!
-            
-        두루 널리 쓰도록 하여라~~~!
-            
-        ※ 정리!
-        
-        배열값 설정
-        var 변수명 = [값1,값2,값3,....];
-        
-        배열값 호출
-        변수명[순번] -> (순번은 0부터)
-        
-        객체값 설정
-        var 변수명 = {속성명1:값1, 속성명2:값2, ...};
-        
-        객체값 호출
-        변수명[속성명]
-        또는
-        변수명.속성명 -> 속성명이 변수형이어야함!
-       */ 
-        
-        
-        
-        
-        
-        
+        /* 
+         객체에 대한 단상
+         
+         - 객체는 배열처럼 데이터를 묶어서 저장하는 메모리공간
+         역할을 한다. 그런데 호출시 번호로 호출하는 배열처럼
+         기계적이지 않고 사람이 잘 이해할 수 있는 문자로 호출
+         값을 사용하는 아주 편리한 것이다!
+             
+         두루 널리 쓰도록 하여라~~~!
+             
+         ※ 정리!
+         
+         배열값 설정
+         var 변수명 = [값1,값2,값3,....];
+         
+         배열값 호출
+         변수명[순번] -> (순번은 0부터)
+         
+         객체값 설정
+         var 변수명 = {속성명1:값1, 속성명2:값2, ...};
+         
+         객체값 호출
+         변수명[속성명]
+         또는
+         변수명.속성명 -> 속성명이 변수형이어야함!
+        */
 
+
+        /*//////////////////////////////////////////////
+            함수명: chgMV
+            기능: 설정된 객체의 값을 특정요소에 셋팅함
+        */ //////////////////////////////////////////////
+        function chgMV(num) { // num - 구분숫자 전달값
+            // 1. 함수호출 및 전달값 확인
+            console.log("나야나! " + num + MV_PSH.title);
+
+            // 화면출력
+            var txt6 = document.getElementById("txt6");
+            txt6.style.lineHeight = "34px";
+
+
+            // 2. 조건문을 만들어서 특정 객체를 요소에 셋팅하기!
+            if (num === 1) {
+
+                txt6.innerHTML =
+                    "▣영화명:" + MV_PSH.title +
+                    "▣감독:" + MV_PSH.director +
+                    "▣배우:" + MV_PSH.actors +
+                    "<br>▣장르:" + MV_PSH.genre +
+                    "▣등급:" + MV_PSH.ratings;
+
+                // 트레일러 함수 호출하기
+                // #txt6를 클릭시
+                txt6.title = "클릭하시면 " + MV_PSH.title +
+                    " 예고편을 볼 수 있습니다!";
+                
+                //onclick 이벤트 속성으로 해야 다른 경우에 바뀜!
+                txt6.onclick = function() {
+                    MV_PSH.trailer();
+                    //함수호출은 소괄호필수!
+                }; ////// click함수 ///////////////////////
+
+            } /// if ///////////////////
+
+        } //////// chgMV 함수 ///////////////////////////
+        ///////////////////////////////////////////////
     </script>
 
 
@@ -407,8 +440,11 @@
     <div id="txt5"></div>
     <div id="txt6"></div>
 
+    <!--호출버튼구역-->
+    <div>
+        <button onclick="chgMV(1)">내꺼얌!</button>
+    </div>
 
 
-</body>
 
-</html>
+</body></html>
