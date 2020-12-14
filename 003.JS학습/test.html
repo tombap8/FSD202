@@ -11,7 +11,7 @@
             border: 2px solid #000;
             text-align: center;
             white-space: nowrap;
-            /*줄바꿈방지*/
+            /* 줄바꿈 방지*/
             line-height: 84px;
             margin: 5px auto;
             font-size: 24px;
@@ -221,19 +221,15 @@
                 }); ////// click 이벤트 함수 ///////////////
 
                 /*
-
                                     
                                 [ 이벤트와 함수를 특정요소와 연결하는 방법 2가지 ]
-
                                 1. 선택요소.addEventListener(이벤트명,함수)
                                 
                                 예) 
                                     document.getElementById("my")
                                     .addEventListener("click",function(){구현코드});
-
                                 2. 이벤트 속성에 익명함수 넣기
                                     선택요소.on이벤트명 = function(){구현코드};
-
                                 예)
                                     document
                                     .getElementById("my").onclick = function(){구현코드};
@@ -263,6 +259,7 @@
             }); /////// 로드구역 //////////////////////////
         ////////////////////////////////////////////
 
+        
         // script 전역변수 구역 /////////
 
         // 어떤 함수에도 포함되지 않은 이 구역에 선언된 변수가]
@@ -275,65 +272,63 @@
         // 변수다!
 
         // 객체를 전역변수로 승격함!
-        // 객체명은 MV_자기이름이니셜
-        var MV_PSH = {
-            //1.영화제목
-            title: "런(Run)",
-            //2.감독
-            director: "아니쉬 차간티",
-            //3.배우
-            actors: "사라 폴슨, 키에라 앨런",
-            //4.장르
-            genre: "미스터리, 스릴러",
-            //5.관람가
-            ratings: "15세 관람가",
-            //6.예고편
-            trailer: function() {
-                //영화박스에 iframe넣기
-                // body태그의 맨끝에 div넣기
-                document.body.innerHTML +=
-                    '<div id="mv">' +
-                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SeB3SRrIASw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                    '<span class="close">×</span></div>';
+           // 객체명은 MV_자기이름이니셜
+                var MV_LJE = {
+                    //1.영화제목
+                    title: "공범",
+                    //2.감독
+                    director: "국동석",
+                    //3.배우
+                    actors: "손예진,김갑수",
+                    //4.장르
+                    genre: "스릴러",
+                    //5.관람가
+                    ratings: "15세",
+                    //6.예고편
+                    trailer: function() {
+                        //영화박스에 iframe 넣기
+                        //body태그의 맨끝에 div 넣기
+                        document.body.innerHTML +=
+                            '<div id="mv">' +
+                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rLP36NlrUvs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브iframe동영상코드
+                            '<span class="close">×</span></div>';
+                        
+                        
+                         // 삽입된 동영상박스 CSS설정하기!!!
+                        var mv = document.getElementById("mv");
+                        mv.style.position = "fixed";
+                        mv.style.top = "50%";
+                        mv.style.left = "50%";
+                        mv.style.transform = "translate(-50%,-50%)";
+                        mv.style.width = "700px";
+                        mv.style.height = "450px";
+                        
+                         //닫기버튼
+                        var close = document
+                        .getElementsByClassName('close')[0];
+                        // 클래스요소를 선택할 때 순번중요(컬렉션순번)
+                        close.style.position= "absolute";
+                        close.style.top = "0";
+                        close.style.right = "-70px";
+                        close.style.backgroundColor = "blue";
+                        close.style.width = "50px";
+                        close.style.height = "50px";
+                        close.style.textAlign = "center";
+                        close.style.lineHeight = "40px";
+                        close.style.fontSize = "40px";
+                        close.style.fontWeight = "bold";
+                        close.style.color = "white";
+                        close.style.borderRadius = "50%";
+                        close.style.cursor = "pointer"; //손가락
+                        
+                         //닫기버튼 클릭 시 리로드!
+                        close.onclick = function () {
+                            window.location.reload();
+                        }////// click 함수 /////////////////
+                } //// trailer 함수 /////////
+            }; ////MV_LJE객체 ////////////////
 
-                // 삽입된 동영상박스 CSS설정하기!!!
-                var mv = document.getElementById("mv");
-                mv.style.position = "fixed";
-                mv.style.top = "50%";
-                mv.style.left = "50%";
-                mv.style.transform = "translate(-50%,-50%)";
-                mv.style.width = "700px";
-                mv.style.height = "450px";
-
-                // 닫기버튼 셋팅
-                var close = document
-                    .getElementsByClassName("close")[0];
-                // 클래스요소를 선택할때 순번중요!(컬렉션순번)
-                close.style.position = "absolute";
-                close.style.top = "0";
-                close.style.right = "-70px";
-                close.style.backgroundColor = "blue";
-                close.style.width = "50px";
-                close.style.height = "50px";
-                close.style.textAlign = "center";
-                close.style.lineHeight = "40px";
-                close.style.fontSize = "40px";
-                close.style.fontWeight = "bold";
-                close.style.color = "white";
-                close.style.borderRadius = "50%";
-                close.style.cursor = "pointer"; //손가락
-
-                // 닫기버튼 클릭시 리로드!
-                close.onclick = function() {
-                    window.location.reload();
-                    //페이지 새로고침!
-                }; ////// click함수 /////////
-
-
-            } /// trailer함수 ////
-
-        }; //// MV_PSH객체 ////////////////
-        // 강근영
+         // 강근영
         var MV_GYK = {
                     //1.영화제목
                     title: "줄리 & 줄리아",
@@ -965,404 +960,7 @@
                     } //// trailer함수 ////
 
                 }; //// MV_SHR객체 ////
-        //신명화
-        var MV_SMH = {
-            //1.영화제목
-            title: "듄",
-            //2.감독
-            director: "드니 빌뇌브",
-            //3.배우
-            actors: "티모시 샬라메",
-            //4.장르
-            genre: "SF",
-            //5.관람가
-            ratings: "15",
-            //6.예고편
-            trailer: function() {
-                //영화박스에 iframe 넣기
-                //body 태그의 맨 끝에 div 넣기
-                document.body.innerHTML +=
-                    '<div id="mv">' +
-                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/VXjGcWq6VnM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + '<span class="close">×</span></div>'; //특수기호 ㄷ 한자 넣기
 
-                ///삽입된 동영상 박스 css 설정힉;
-                var mv = document.getElementById("mv");
-                mv.style.position = "fixed";
-                mv.style.top = "50%";
-                mv.style.left = "50%";
-                mv.style.transform = "translate(-50%,-50%)";
-                mv.style.width = "700px";
-                mv.style.height = "450px";
-
-                var close = document.getElementsByClassName("close")[0];
-                // 클래스요소를 선택할때 순번 중요 (컬렉션순번)
-                /*닫힘 버튼 세팅*/
-                close.style.position = "absolute";
-                close.style.top = "0";
-                close.style.right = "-70px";
-                close.style.borderRadius = "50%";
-                close.style.backgroundColor = "blue";
-                close.style.width = "50px";
-                close.style.height = "50px";
-                close.style.textAlign = "center";
-                close.style.lineHeight = "40px";
-                close.style.fontsize = "40px";
-                close.style.fontWeight = "bold";
-                close.style.color = "white";
-                close.style.cursor = "pointer"; //손가락모양
-
-                //닫기버튼 클릭시 리로드
-                close.onclick = function() {
-                    window.location.reload();
-                    //페이지 새로고침 ////////
-
-                }; /////////click 함수 //////////
-
-
-
-
-
-            } /////trailer 함수 /////////////
-
-
-        }; /////MV_SMH 객체//////////////
-        //이인혁
-        var MV_IHL = {
-            //1. 영화제목
-            title: "러빙 빈센트",
-            //2. 감독
-            director: "도로타 코비엘라",
-            //3. 배우
-            actors: "더글러스 부스",
-            //4. 장르
-            genre: "미스터리",
-            //5. 관랍가
-            ratings: "15세 관람가",
-            //6. 예고편
-            trailer: function() {
-                //영화 박스에 iframe 넣기
-                //body태그의 맨끝에 div 넣기
-                document.body.innerHTML +=
-                    '<div id="mv">' +
-                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/cpQCUcwbIr0?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe 동영상코드
-                    '<span class="close">x</span></div>';
-
-
-                //삽입된 동영상박스 CSS설정하기
-                var mv = document.getElementById("mv");
-                mv.style.position = "fixed";
-                mv.style.top = "50%";
-                mv.style.left = "50%";
-                mv.style.transform = "translate(-50%,-50%)";
-                mv.style.width = "700px";
-                mv.style.height = "450px";
-
-                //닫기버튼 셋팅
-                var close = document
-                    .getElementsByClassName("close")[0];
-                //클래스요소를 선택할때 순번중요!(컬랙션)
-                close.style.position = "absolute";
-                close.style.top = "0";
-                close.style.right = "-70px";
-                close.style.backgroundColor = "blue";
-                close.style.width = "50px";
-                close.style.height = "50px";
-                close.style.textAlign = "center";
-                close.style.lineHeight = "40px";
-                close.style.fontSize = "40px";
-                close.style.fontWeight = "bold";
-                close.style.color = "white";
-                close.style.borderRadius = "50%";
-                close.style.cursor = "pointer"; //손가락
-
-                //닫기 버튼 클릭시 리로드!
-                close.onclick = function() {
-
-                    window.location.reload();
-                    //페이지 새로고침
-
-                }; /////click함수
-
-
-            } ////////트레일러///////////
-
-        }; /////////////////////MV
-        //이경선
-        var MV_LKS = {
-                    //1.영화제목
-                    title: "조제",
-                    //2.감독
-                    director: "김종관",
-                    //3.배우
-                    actors: "한지민,남주혁",
-                    //4.장르
-                    genre: "멜로,로맨스",
-                    //5.관람가
-                    ratings: "15세 관람가",
-                    //6.예고편
-                    trailer: function() {
-                        //영화박스에 iframe넣기
-                        // body태그의 맨끝에 div넣기
-                        document.body.innerHTML +=
-                            '<div id="mv">' +
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/M5tvXLIu2iE?autoplay=1" allow="autoplay"></iframe>' + //유튜브 iframe동영상코드
-                            '<span class="close">×</span></div>';
-
-                        // 삽입된 동영상박스 CSS설정하기!!!
-                        var mv = document.getElementById("mv");
-                        mv.style.position = "fixed";
-                        mv.style.top = "50%";
-                        mv.style.left = "50%";
-                        mv.style.transform = "translate(-50%,-50%)";
-                        mv.style.width = "700px";
-                        mv.style.height = "450px";
-
-                        // 닫기버튼 셋팅
-                        var close = document
-                            .getElementsByClassName("close")[0];
-                        // 클래스요소를 선택할때 순번중요!(컬렉션순번)
-                        close.style.position = "absolute";
-                        close.style.top = "0";
-                        close.style.right = "-70px";
-                        close.style.backgroundColor = "blue";
-                        close.style.width = "50px";
-                        close.style.height = "50px";
-                        close.style.textAlign = "center";
-                        close.style.lineHeight = "40px";
-                        close.style.fontSize = "40px";
-                        close.style.fontWeight = "bold";
-                        close.style.color = "white";
-                        close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer"; //손가락모양
-
-                        // 닫기버튼 클릭시 리로드!
-                        close.onclick = function() {
-                            window.location.reload();
-                            // 페이지 새로고침!
-                        }; ////////click함수//////////////////
-
-
-
-                    } /// trailer함수 ////
-
-                }; //// MV_LKS객체 ////////////////
-        //유정연
-        var MV_YJY = {
-                    //1.영화제목
-                    title: "도굴",
-                    //2.감독
-                    director: "박정배",
-                    //3.배우
-                    actors: "이제훈",
-                    //4.장르
-                    genre: "범죄",
-                    //5.관람가
-                    ratings: "12세 관람가",
-                    //6.예고편
-                    trailer: function() {
-                        //영화박스에 iframe넣기
-                        // body태그의 맨끝에 div넣기
-                        document.body.innerHTML +=
-                            '<div id="mv">' +
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/HHXyQiCGgKw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                            '<span class="close">×</span></div>';
-
-                        // 삽입된 동영상박스 CSS 설정하기!!!
-                        var mv = document.getElementById("mv");
-                        mv.style.position = "fixed";
-                        mv.style.top = "50%";
-                        mv.style.left = "50%";
-                        mv.style.transform = "translate(-50%,-50%)";
-                        mv.style.width = "700px";
-                        mv.style.height = "450px";
-
-                        // 닫기 버튼 세팅
-                        var close = document
-                            .getElementsByClassName("close")[0];
-                        // 클래스 요소를 선택할 때 순번 중요! (컬렉션 순번)
-                        close.style.position = "absolute";
-                        close.style.top = "0";
-                        close.style.right = "-70px";
-                        close.style.backgroundColor = "blue";
-                        close.style.width = "50px";
-                        close.style.height = "50px";
-                        close.style.textAlign = "center";
-                        close.style.lineHeight = "40px";
-                        close.style.fontSize = "40px";
-                        close.style.fontWeight = "bold";
-                        close.style.color = "white";
-                        close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer"; //손가락
-
-                        // 닫기버튼 클릭 시 리로드!
-                        close.onclick = function() {
-                            window.location.reload();
-                        }; ////// 클릭 함수 /////////////////
-
-                    } /// trailer함수 ////
-
-                }; //// MV_YJY객체 ////////////////
-        //신대철
-        var MV_SDC = {
-            //1. 영화제목
-            title: "킹덤 오브 헤븐: 디렉터스 컷",
-            //2. 감독
-            director: "리들리 스콧",
-            //3. 배우
-            actors: "올랜도 블룸, 에바 그린",
-            //4. 장르
-            genre: "액션",
-            //5. 관람가
-            ratings: "15세 관람가",
-            //6. 예고편
-            trailer: function() {
-                // 영화박스에 iframe넣기
-                // body태그에 맨 끝에 
-                document.body.innerHTML +=
-                    '<div id="mv">' +
-                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/gg22TMYpkxk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
-                    '<span class="close">×</span></div>';
-                // 삽입된 동영상박스 CSS설정하기!!
-                var mv = document.getElementById("mv");
-                mv.style.position = "fixed";
-                mv.style.top = "50%";
-                mv.style.left = "50%";
-                mv.style.transform = "translate(-50%,-50%)";
-                mv.style.width = "700px";
-                mv.style.height = "450px";
-
-                // 닫기버튼 셋팅
-                var close = document.getElementsByClassName("close")[0];
-                // 클래스 요소를 선택할 때 순번중요!(컬랙션순번)
-                close.style.position = "absolute";
-                close.style.top = "0";
-                close.style.right = "-70px";
-                close.style.backgroundColor = "blue";
-                close.style.width = "50px";
-                close.style.height = "50px";
-                close.style.textAlign = "center";
-                close.style.lineHeight = "40px";
-                close.style.fontSize = "40px";
-                close.style.fontWeight = "bold";
-                close.style.color = "white";
-                close.style.borderRadius = "50%";
-                close.style.cursor = "pointer"; //손가락
-
-                // 닫기버튼 클릭시 리로드!
-                close.onclick = function() {
-                    window.location.reload();
-                    //페이지 새로고침!
-                }; //// click함수 /////
-            } //// trailer 함수 //////
-        }; //// MV_SDC객체 /////////////
-        //이정은 
-        var MV_LJE = {
-                    //1.영화제목
-                    title: "공범",
-                    //2.감독
-                    director: "국동석",
-                    //3.배우
-                    actors: "손예진,김갑수",
-                    //4.장르
-                    genre: "스릴러",
-                    //5.관람가
-                    ratings: "15세",
-                    //6.예고편
-                    trailer: function() {
-                        //영화박스에 iframe 넣기
-                        //body태그의 맨끝에 div 넣기
-                        document.body.innerHTML +=
-                            '<div id="mv">' +
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rLP36NlrUvs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브iframe동영상코드
-                            '<span class="close">×</span></div>';
-                        
-                        
-                         // 삽입된 동영상박스 CSS설정하기!!!
-                        var mv = document.getElementById("mv");
-                        mv.style.position = "fixed";
-                        mv.style.top = "50%";
-                        mv.style.left = "50%";
-                        mv.style.transform = "translate(-50%,-50%)";
-                        mv.style.width = "700px";
-                        mv.style.height = "450px";
-                        
-                         //닫기버튼
-                        var close = document
-                        .getElementsByClassName('close')[0];
-                        // 클래스요소를 선택할 때 순번중요(컬렉션순번)
-                        close.style.position= "absolute";
-                        close.style.top = "0";
-                        close.style.right = "-70px";
-                        close.style.backgroundColor = "blue";
-                        close.style.width = "50px";
-                        close.style.height = "50px";
-                        close.style.textAlign = "center";
-                        close.style.lineHeight = "40px";
-                        close.style.fontSize = "40px";
-                        close.style.fontWeight = "bold";
-                        close.style.color = "white";
-                        close.style.borderRadius = "50%";
-                        close.style.cursor = "pointer"; //손가락
-                        
-                         //닫기버튼 클릭 시 리로드!
-                        close.onclick = function () {
-                            window.location.reload();
-                        }////// click 함수 /////////////////
-                } //// trailer 함수 /////////
-            }; ////MV_LJE객체 ////////////////
-        //정지훈
-        var MV_JJH = {
-            // 1. 영화제목
-            title: "타짜 ",
-            // 2. 감독
-            director: "최동훈 ",
-            // 3. 배우
-            actors: "조승우,유해진,김혜수",
-            // 4. 장르
-            genre: "범죄,드라마 ",
-            // 5. 관람가
-            ratings: "청소년 관람불가",
-            // 6. 예고편
-            trailer: function() {
-                // 영화박스에 iframe넣기
-                // body태그의 맨끝에 div넣기
-                document.body.innerHTML += '<div id="mv">' + '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vLHyh8F-vQo?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + '<span class="close">×</span></div>';
-
-                // 삽입된 동영상박스 CSS설정하기
-                var mv = document.getElementById("mv");
-                mv.style.position = "fixed";
-                mv.style.top = "50%";
-                mv.style.left = "50%";
-                mv.style.transform = "translate(-50%,-50%)";
-                mv.style.width = "700px";
-                mv.style.height = "450px";
-
-                // 닫기버튼 셋팅
-                var close = document.getElementsByClassName("close")[0];
-                // 클래스요소를 선택할때 순번중요!(컬렉션순번)
-                close.style.position = "absolute";
-                close.style.top = "0";
-                close.style.right = "-70px";
-                close.style.backgroundColor = "blue";
-                close.style.width = "50px";
-                close.style.height = "50px";
-                close.style.textAlign = "center";
-                close.style.lineHeight = "40px";
-                close.style.fontSize = "40px";
-                close.style.fontWeight = "bold";
-                close.style.color = "white";
-                close.style.borderRadius = "50%";
-                close.style.cursor = "pointer"; //손가락모양
-
-                // 닫기버튼 클릭시 리로드!
-                close.onclick = function() {
-                    window.location.reload();
-                    // 페이지 새로고침!!
-                }; ////// click함수 ///////////
-
-
-            } ////// trailer함수 //////////
-        }; ///// MV_JJH객체 ////////////////////
 
 
 
@@ -1421,7 +1019,7 @@
         */ //////////////////////////////////////////////
         function chgMV(num) { // num - 구분숫자 전달값
             // 1. 함수호출 및 전달값 확인
-            console.log("나야나! " + num + MV_PSH.title);
+            console.log("나야나! " + num + MV_LJE.title);
 
             // 화면출력
             var txt6 = document.getElementById("txt6");
@@ -1436,7 +1034,7 @@
             
             // 내꼬얌~!
             if (num === 1) {
-                my_obj = MV_PSH;
+                my_obj = MV_LJE;
             } /// if ///////////////////
             // 강근영
             else if (num === 2) {
@@ -1481,34 +1079,6 @@
             // 양기현
             else if (num === 12) {
                 my_obj = MV_SHR;
-            } /// else if ///////////////////
-            // 신명화
-            else if (num === 13) {
-                my_obj = MV_SMH;
-            } /// else if ///////////////////
-            // 이인혁
-            else if (num === 14) {
-                my_obj = MV_IHL;
-            } /// else if ///////////////////
-            // 이경선
-            else if (num === 15) {
-                my_obj = MV_LKS;
-            } /// else if ///////////////////            
-            // 유정연
-            else if (num === 16) {
-                my_obj = MV_YJY;
-            } /// else if ///////////////////         
-            // 신대철
-            else if (num === 17) {
-                my_obj = MV_SDC;
-            } /// else if ///////////////////      
-            // 이정은
-            else if (num === 18) {
-                my_obj = MV_LJE;
-            } /// else if ///////////////////    
-            // 정지훈
-            else if (num === 19) {
-                my_obj = MV_JJH;
             } /// else if ///////////////////
             
             
@@ -1560,13 +1130,6 @@
         <button onclick="chgMV(10)">문태복초이스</button>
         <button onclick="chgMV(11)">양기현초이스</button>
         <button onclick="chgMV(12)">송혜리초이스</button>
-        <button onclick="chgMV(13)">신명화초이스</button>
-        <button onclick="chgMV(14)">이인혁초이스</button>
-        <button onclick="chgMV(15)">이경선초이스</button>
-        <button onclick="chgMV(16)">유정연초이스</button>
-        <button onclick="chgMV(17)">신대철초이스</button> <br>
-        <button onclick="chgMV(18)">이정은초이스</button> 
-        <button onclick="chgMV(19)">정지훈초이스</button> 
     </div>
 
 
