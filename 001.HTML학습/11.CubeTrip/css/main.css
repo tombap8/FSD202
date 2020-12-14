@@ -41,10 +41,45 @@ body{
     margin: 0;
     padding: 0;
     list-style: none;
+    
+    /*원근설정(원근대상의 부모에 준다!*/
+    perspective: 480px;
 }
 .city li{
     height: 100px;
+    background-image: linear-gradient(to right, transparent, blue);
+    /*transparent는 투명을 지칭하는 키워드(만약 이 키워드대신 쓸수 있는것은 rgba로 투명만들기를 할 수 있음)*/
+    
+    /*트랜스폼 회전축 기준변경*/
+    transform-origin: right;
+    
+    /*트랜지션:속시이지*/
+    transition: transform .4s ease-out;
+    /*트랜스폼만 애니적용!*/
 }
+
+/*마우스오버시*/
+.city li:hover{
+    background-image: linear-gradient(to right, transparent, red);
+    transform: rotateY(15deg);
+}
+.city ul li:nth-child(2):hover{
+    background-image: linear-gradient(to right, transparent, orange);
+}
+.city ul li:nth-child(3):hover{
+    background-image: linear-gradient(to right, transparent, yellow);
+}
+.city ul li:nth-child(4):hover{
+    background-image: linear-gradient(to right, transparent, orangered);
+}
+.city ul li:nth-child(5):hover{
+    background-image: linear-gradient(to right, transparent, cyan);
+}
+.city ul li:nth-child(6):hover{
+    background-image: linear-gradient(to right, transparent, #00ffb1);
+}
+
+
 .city a{
     display: block;
     /*디자인적용위해*/
