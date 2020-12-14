@@ -460,49 +460,41 @@
 
 
             // 2. 조건문을 만들어서 특정 객체를 요소에 셋팅하기!
+            
+            // 객체변수를 담을 변수선언!
+            var my_obj;
+            // 객체변수를 할당하여 변수가 변수를 참조한다!
+            
             if (num === 1) {
-
-                txt6.innerHTML =
-                    "▣영화명:" + MV_PSH.title +
-                    "▣감독:" + MV_PSH.director +
-                    "▣배우:" + MV_PSH.actors +
-                    "<br>▣장르:" + MV_PSH.genre +
-                    "▣등급:" + MV_PSH.ratings;
-
-                // 트레일러 함수 호출하기
-                // #txt6를 클릭시
-                txt6.title = "클릭하시면 " + MV_PSH.title +
-                    " 예고편을 볼 수 있습니다!";
-                
-                //onclick 이벤트 속성으로 해야 다른 경우에 바뀜!
-                txt6.onclick = function() {
-                    MV_PSH.trailer();
-                    //함수호출은 소괄호필수!
-                }; ////// click함수 ///////////////////////
-
+                my_obj = MV_PSH;
             } /// if ///////////////////
             // 강근영
             else if (num === 2) {
-
-                txt6.innerHTML =
-                    "▣영화명:" + MV_GYK.title +
-                    "▣감독:" + MV_GYK.director +
-                    "▣배우:" + MV_GYK.actors +
-                    "<br>▣장르:" + MV_GYK.genre +
-                    "▣등급:" + MV_GYK.ratings;
+                my_obj = MV_GYK;
+            } /// else if ///////////////////
+            
+            
+            /// 공통 코딩 구역 /////////////////
+            txt6.innerHTML =
+                    "▣영화명:" + my_obj.title +
+                    "▣감독:" + my_obj.director +
+                    "▣배우:" + my_obj.actors +
+                    "<br>▣장르:" + my_obj.genre +
+                    "▣등급:" + my_obj.ratings;
 
                 // 트레일러 함수 호출하기
                 // #txt6를 클릭시
-                txt6.title = "클릭하시면 " + MV_GYK.title +
+                txt6.title = "클릭하시면 " + my_obj.title +
                     " 예고편을 볼 수 있습니다!";
                 
                 //onclick 이벤트 속성으로 해야 다른 경우에 바뀜!
                 txt6.onclick = function() {
-                    MV_GYK.trailer();
+                    my_obj.trailer();
                     //함수호출은 소괄호필수!
                 }; ////// click함수 ///////////////////////
-
-            } /// if ///////////////////
+            
+            
+            
 
         } //////// chgMV 함수 ///////////////////////////
         ///////////////////////////////////////////////
