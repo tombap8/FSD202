@@ -60,22 +60,24 @@ body{
 
 /*마우스오버시*/
 .city li:hover{
-    background-image: linear-gradient(to right, transparent, red);
     transform: rotateY(15deg);
 }
-.city ul li:nth-child(2):hover{
+.city li:nth-child(1):hover{
+    background-image: linear-gradient(to right, transparent, red);
+}
+.city li:nth-child(2):hover{
     background-image: linear-gradient(to right, transparent, orange);
 }
-.city ul li:nth-child(3):hover{
+.city li:nth-child(3):hover{
     background-image: linear-gradient(to right, transparent, yellow);
 }
-.city ul li:nth-child(4):hover{
+.city li:nth-child(4):hover{
     background-image: linear-gradient(to right, transparent, orangered);
 }
-.city ul li:nth-child(5):hover{
+.city li:nth-child(5):hover{
     background-image: linear-gradient(to right, transparent, cyan);
 }
-.city ul li:nth-child(6):hover{
+.city li:nth-child(6):hover{
     background-image: linear-gradient(to right, transparent, #00ffb1);
 }
 
@@ -90,6 +92,20 @@ body{
     text-align: center;
     color: #fff;
 }
+
+/*3.큐브박스*/
+.cube{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
 
 
 
