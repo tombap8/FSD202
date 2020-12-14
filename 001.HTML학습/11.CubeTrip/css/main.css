@@ -30,6 +30,31 @@ body{
     background: url(../images/citybg.png) no-repeat center/auto 100%;
 }
 
+/*2. 메뉴*/
+.city{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+.city ul{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.city li{
+    height: 100px;
+}
+.city a{
+    display: block;
+    /*디자인적용위해*/
+    width: 100%;
+    height: 100%;
+    font: bold 52px/100px 'East Sea Dokdo', cursive;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
 
 
 
