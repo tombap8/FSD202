@@ -333,7 +333,64 @@
             } /// trailer함수 ////
 
         }; //// MV_PSH객체 ////////////////
+        // 강근영
+        var MV_GYK = {
+                    //1.영화제목
+                    title: "줄리 & 줄리아",
+                    //2.감독
+                    director: "노라애프론",
+                    //3.배우
+                    actors: "메릴스트립, 에이미애덤스",
+                    //4.장르
+                    genre: "드라마",
+                    //5.관람가
+                    ratings: "12세 관람가",
+                    //6.예고편
+                    trailer: function() {
+                        //영화박스에 iframe넣기
+                        // body태그의 맨끝에 div넣기
+                        document.body.innerHTML +=
+                            '<div id="mv">' +
+                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2DVXeYU9SOs?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' + //유튜브 iframe동영상코드
+                            '<span class="close">×</span></div>';
+                   // 삽입된 동영상박스 CSS설정하기!!!
+                        var mv = document.getElementById("mv");
+                        mv.style.position = "fixed";
+                        mv.style.top = "50%";
+                        mv.style.left = "50%";
+                        mv.style.transform = "translate(-50%,-50%)";
+                        mv.style.width = "700px";
+                        mv.style.height = "450px";
+                    
+                    // 닫기버튼 셋팅
+                        var close = document.getElementsByClassName("close")[0];
+                        // 클래스요소를 선택할때 순번중요!(컬랙션순번)
+                        close.style.position = "absolute";
+                        close.style.top = "0";
+                        close.style.right = "-70px";
+                        close.style.backgroundColor = "blue";
+                        close.style.width = "50px";
+                        close.style.height = "50px";
+                        close.style.textAlign = "center";
+                        close.style.lineHeight = "40px";
+                        close.style.fontSize = "40px";
+                        close.style.fontWeight = "bold";
+                        close.style.color = "#fff";
+                        close.style.borderRadius = "50%";
+                        close.style.cursor = "pointer";//손가락
+                        
+                        //닫기버튼 클릭시 리로드!
+                        close.onclick = function(){
+                            window.location.reload();
+                            //페이지 새로고침!
+                        };/// 닫기버튼 click함수  /////
+                        
+                    
+                    
+                    } /// trailer함수 ////
 
+                    
+                }; //// MV_GYK객체 ////////////////
 
 
 
@@ -420,6 +477,28 @@
                 //onclick 이벤트 속성으로 해야 다른 경우에 바뀜!
                 txt6.onclick = function() {
                     MV_PSH.trailer();
+                    //함수호출은 소괄호필수!
+                }; ////// click함수 ///////////////////////
+
+            } /// if ///////////////////
+            // 강근영
+            else if (num === 2) {
+
+                txt6.innerHTML =
+                    "▣영화명:" + MV_GYK.title +
+                    "▣감독:" + MV_GYK.director +
+                    "▣배우:" + MV_GYK.actors +
+                    "<br>▣장르:" + MV_GYK.genre +
+                    "▣등급:" + MV_GYK.ratings;
+
+                // 트레일러 함수 호출하기
+                // #txt6를 클릭시
+                txt6.title = "클릭하시면 " + MV_GYK.title +
+                    " 예고편을 볼 수 있습니다!";
+                
+                //onclick 이벤트 속성으로 해야 다른 경우에 바뀜!
+                txt6.onclick = function() {
+                    MV_GYK.trailer();
                     //함수호출은 소괄호필수!
                 }; ////// click함수 ///////////////////////
 
