@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded",function(){
     console.log("로딩완료!");
     
     
-    
 });///////// 로드구역 //////////////////////////////////
 //////////////////////////////////////////////////////
 
@@ -21,6 +20,7 @@ window.addEventListener("DOMContentLoaded",function(){
 function chgCity(me){ // me - 클릭된 요소 자신
     // 1.함수호출확인, 전달값 확인
     console.log("나야나!"+me.innerText);
+    
 }//////// chgCity 함수 ////////////////////////
 ////////////////////////////////////////////
 
