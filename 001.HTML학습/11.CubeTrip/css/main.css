@@ -61,6 +61,7 @@ body{
 /*마우스오버시*/
 .city li:nth-child(1):hover{
     background-image: linear-gradient(to right, transparent, red);
+    transform: rotateY(15deg);
 }
 .city li:nth-child(2):hover{
     background-image: linear-gradient(to right, transparent, orange);
@@ -103,6 +104,7 @@ body{
     width: 400px;
     height: 400px;
     transform: translate(-50%,-50%);
+    outline: 2px solid #000;
 }
 
 
