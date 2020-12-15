@@ -122,6 +122,32 @@ body{
 /*앞면: 시작면*/
 .cube>span:nth-child(1){
     background: url(../images/cityMain.jpg) no-repeat center/cover;
+    transform: translateZ(200px);
+}
+/*오른쪽면: 런던*/
+.cube>span:nth-child(2){
+    background: url(../images/London_city.jpg) no-repeat center/cover;
+    transform: rotateY(90deg) translateZ(200px);
+}
+/*뒷면: 파리*/
+.cube>span:nth-child(3){
+    background: url(../images/parisCity.jpg) no-repeat center/cover;
+    transform: rotateY(180deg) translateZ(200px);
+}
+/*왼쪽면: 베를린*/
+.cube>span:nth-child(4){
+    background: url(../images/berlin_city.jpg) no-repeat center/cover;
+    transform: rotateY(-90deg) translateZ(200px);
+}
+/*윗면: 서울*/
+.cube>span:nth-child(5){
+    background: url(../images/seoulCity.jpg) no-repeat center/cover;
+    transform: rotateX(90deg) translateZ(200px);
+}
+/*윗면: 서울*/
+.cube>span:nth-child(6){
+    background: url(../images/newyorkCity.jpg) no-repeat center/cover;
+    transform: rotateX(-90deg) translateZ(200px);
 }
 
 
