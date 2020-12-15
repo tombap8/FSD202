@@ -103,13 +103,13 @@ body{
     left: 50%;
     width: 400px;
     height: 400px;
-    transform: translate(-50%,-50%) rotateX(10deg) rotateY(30deg);
+    transform: translate(-50%,-50%) rotateX(90deg) rotateY(0deg);
     
     /*입체설정*/
     transform-style: preserve-3d;
     
     
-    outline: 2px solid #000;
+    /*outline: 2px solid #000;*/
 }
 
 /*큐브 각면 공통*/
@@ -144,9 +144,9 @@ body{
     background: url(../images/seoulCity.jpg) no-repeat center/cover;
     transform: rotateX(90deg) translateZ(200px);
 }
-/*윗면: 서울*/
+/*아랫면: 뉴욕*/
 .cube>span:nth-child(6){
-    background: url(../images/newyorkCity.jpg) no-repeat center/cover;
+    background: url(../images/newyorkCity.jpg) no-repeat right/auto 110%;
     transform: rotateX(-90deg) translateZ(200px);
 }
 
