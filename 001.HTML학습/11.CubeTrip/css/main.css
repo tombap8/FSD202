@@ -150,6 +150,38 @@ body{
     transform: rotateX(-90deg) translateZ(200px);
 }
 
+/*도시설명박스*/
+.cbox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+    
+    /*글자설정*/
+    font-family: 'Jua',sans-serif;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+}
+/*개별도시 박스*/
+.ctxt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 3px solid #fff;
+}
+/*도시명*/
+.ctxt h2{
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 50px;
+}
+
 
 
 
