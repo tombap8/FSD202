@@ -59,26 +59,28 @@ body{
 }
 
 /*마우스오버시*/
-.city li:hover{
-    transform: rotateY(15deg);
-}
 .city li:nth-child(1):hover{
     background-image: linear-gradient(to right, transparent, red);
 }
 .city li:nth-child(2):hover{
     background-image: linear-gradient(to right, transparent, orange);
+    transform: rotateY(30deg);
 }
 .city li:nth-child(3):hover{
     background-image: linear-gradient(to right, transparent, yellow);
+    transform: rotateY(-35deg);
 }
 .city li:nth-child(4):hover{
     background-image: linear-gradient(to right, transparent, orangered);
+    transform: rotateY(55deg);
 }
 .city li:nth-child(5):hover{
     background-image: linear-gradient(to right, transparent, cyan);
+    transform: rotateY(-55deg);
 }
 .city li:nth-child(6):hover{
     background-image: linear-gradient(to right, transparent, #00ffb1);
+    transform: rotateY(20deg);
 }
 
 
