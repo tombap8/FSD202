@@ -103,9 +103,27 @@ body{
     left: 50%;
     width: 400px;
     height: 400px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) rotateX(10deg) rotateY(30deg);
+    
+    /*입체설정*/
+    transform-style: preserve-3d;
+    
+    
     outline: 2px solid #000;
 }
+
+/*큐브 각면 공통*/
+.cube>span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+}
+/*앞면: 시작면*/
+.cube>span:nth-child(1){
+    background: url(../images/cityMain.jpg) no-repeat center/cover;
+}
+
 
 
 
