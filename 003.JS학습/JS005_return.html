@@ -27,6 +27,22 @@
                 var res = reAct(age);
                 console.log("결과:"+res);
                 
+                // 결과찍기
+                // 출력대상: #msg
+                var msg = document.getElementById("msg");
+                
+                // true일때: 성년일때
+                if(res){
+                    msg.innerHTML = 
+                        "당신은 성년입니다. 맘대로 하세요~!";
+                } //// if //////
+                // false일때: 미성년일때
+                else{
+                    msg.innerHTML = 
+                        "당신은 미성년입니다. 엄마데려와~!";
+                } //// else /////
+                
+                
                 
                 
                 
