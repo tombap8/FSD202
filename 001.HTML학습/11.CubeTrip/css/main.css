@@ -163,6 +163,9 @@ body{
     font-family: 'Jua',sans-serif;
     color: #fff;
     text-shadow: 0 0 1px #000;
+    
+    opacity: 0;
+    /*처음에 안보이게*/
 }
 /*개별도시 박스*/
 .ctxt{
@@ -190,7 +193,13 @@ body{
         calc(%수치 - px수치)
         -주의: 빼기기호 앞뒤에 띄어쓰기
     */
-    background: #000;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 28px;
+    
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 

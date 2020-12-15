@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Trip</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
    <!--1.전체제목-->
@@ -13,22 +14,30 @@
     <nav class="city">
         <ul>
             <li>
-                <a href="">출발</a>
+                <a href="" onclick="chgCity(this);return false;">출발</a>
+                <!--
+                    href는 원래 이동의 특성이 있으므로
+                    onclick에서 함수를 호출시 클릭됨을 인해
+                    페이지이동(새로고침)이 되어진다.
+                    이것을 막기위해 return false를 함수호출 뒤에 쓴다.
+                    이것의 목적은 a태그 이동을 취소하는 것이다!
+                    (리턴폴스-돌아갈때 불꺼!)
+                -->
             </li>
             <li>
-                <a href="">서울</a>
+                <a href="" onclick="chgCity(this);return false;">서울</a>
             </li>
             <li>
-                <a href="">뉴욕</a>
+                <a href="" onclick="chgCity(this);return false;">뉴욕</a>
             </li>
             <li>
-                <a href="">파리</a>
+                <a href="" onclick="chgCity(this);return false;">파리</a>
             </li>
             <li>
-                <a href="">베를린</a>
+                <a href="" onclick="chgCity(this);return false;">베를린</a>
             </li>
             <li>
-                <a href="">런던</a>
+                <a href="" onclick="chgCity(this);return false;">런던</a>
             </li>
         </ul>
     </nav>
