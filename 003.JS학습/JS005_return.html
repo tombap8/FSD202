@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS함수 - 리턴의 활용</title>
+    <script>
+        /*///////////////////////////////////////////
+            함수명:chkAge
+            기능: 입력된 나이의 성년여부에 따라 메시지 출력!
+        *////////////////////////////////////////////
+        function chkAge(age){// age - 나이값 변수
+            // 1. 함수호출,전달값 확인
+            console.log("나이체크:"+age);
+            
+            // 2. 데이터 유효성검사
+            // 숫자여부확인 : isNaN(값) -> 숫자가 아니니? 응(true)
+            if(isNaN(age)){
+                alert("숫자만 입력하세요!");
+            }///// if //////////
+            // 숫자나이한계(0~200)
+            else if(age < 0 || age > 200){
+                alert("나이는 사람나이로 해주세요!");
+            } ///// else if ///////
+            
+            
+        }//////// chkAge 함수 ////////////////////////
+        ////////////////////////////////////////////
+        
+        
+    </script>
+</head>
+<body>
+   <h1>당신의 나이를 만으로 입력하세요!</h1>
+    <input type="text" id="age">
+    <input type="button" value="구분검사" onclick="chkAge(document.getElementById('age').value)">
+    <h2 id="msg"></h2>
+    
+   
+   
+   
+   
+    
+</body>
+</html>
