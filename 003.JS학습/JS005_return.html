@@ -24,7 +24,8 @@
             // 위의 기준에 통과된 경우
             else{
                 // 성년여부 검사함수를 호출!
-                reAct(age);
+                var res = reAct(age);
+                console.log("결과:"+res);
                 
                 
                 
@@ -43,6 +44,18 @@
         function reAct(age){
             // 1.함수호출, 전달값 확인
             console.log("전달된나이:"+age);
+            
+            // 2.성년여부검사
+            var res;//성년결과변수
+            if(age>=19){ // 19세이상
+                res = true;
+            } //// if ///////
+            else{ // 미성년
+                res = false;
+            } ///// else //////
+            
+            // 3.결과리턴
+            return res;
             
         }//////// reAct 함수 ////////////////////////
         ////////////////////////////////////////////
