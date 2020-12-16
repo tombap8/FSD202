@@ -73,10 +73,33 @@
         // 선언적 함수를 아래에서 호출(당연히 되겠지?)
         callMe("아래에서 호출!");
         
+        
+        
+        
+        
+        // 선언적함수 ////////
+        function calling(){
+            console.log("calling호출!");
+            
+            // 익명함수 호출하기!
+            myHome("나중에 버튼눌러 호출!");
+            
+        }///// calling함수 ///////
+        
+        
+        
+        
+        
+        // 익명함수를 함수생성 전 위에서 호출하기
+        //myHome("위에서 익명함수 호출!");
+        
+        // 할당형 익명함수 만들기
+        var myHome = function(txt){
+            console.log("오!나의집!"+txt);
+        };///// myHome함수 //////////////
     
-        
-        
-        
+        // 익명함수를 함수생성 후 아래에서 호출하기
+        myHome("아래에서 익명함수 호출!")
         
     
     
@@ -84,6 +107,10 @@
     
 </head>
 <body>
+   
+   <button id="btngo" onclick="calling()">익명함수호출하기!</button>
+   
+   
     
 </body>
 </html>
