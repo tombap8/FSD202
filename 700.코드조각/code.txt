@@ -1,0 +1,49 @@
+/*//////////////////////////////////////////////
+            함수명: chgMV
+            기능: 영화별 정보를 객체로부터 셋팅함
+        */ //////////////////////////////////////////////
+        function chgMV() {
+            // 1. 함수호출여부
+            console.log("나야나!");
+
+            // 2. 객체 선택하기
+            var tg = document.getElementById("listbx");
+
+            for (var x in movie) {
+                
+                console.log(x);
+                console.log(movie[x]);
+
+                tg.innerHTML +=
+                    '<div class="mvlist">' +
+                    '<div class="photo fl">' +
+                    '<img src="' +
+                    movie[x]["포스터"] +
+                    '" alt="포스터">' +
+                    '</div>' +
+                    '<div class="cont fl">' +
+                    '<h2 class="tit">' +
+                    x +
+                    '</h2>' +
+                    '<h3 class="sum">▣ 개요:' +
+                    movie[x]["개요"] +
+                    '</h3>' +
+                    '<h3 class="dir">▣ 감독:' +
+                    movie[x]["감독"] +
+                    '</h3>' +
+                    '<h3 class="act">▣ 출연:' +
+                    movie[x]["출연"] +
+                    '</h3>' +
+                    '</div>' +
+                    '</div>';
+
+
+
+            } ///// for ///////////////
+
+
+
+
+        } ////// chgMV 함수 //////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////

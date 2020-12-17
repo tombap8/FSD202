@@ -31,49 +31,20 @@
         };
 
 
-        /*//////////////////////////////////////////////
-            함수명: chgMV
-            기능: 영화별 정보를 객체로부터 셋팅함
-        */ //////////////////////////////////////////////
-        function chgMV() {
-            // 1. 함수호출여부
-            console.log("나야나!");
-
-            // 2. 객체 선택하기
-            var tg = document.getElementById("listbx");
-
-            for (var x in movie) {
-
-                tg.innerHTML +=
-                    '<div class="mvlist">' +
-                    '<div class="photo fl"></div>' +
-                    '<div class="cont fl">' +
-                    '<h2 class="tit"></h2>' +
-                    '<h3 class="sum"></h3>' +
-                    '<h3 class="dir"></h3>' +
-                    '<h3 class="act"></h3>' +
-                    '</div>' +
-                    '</div>';
-
-
-
-            } ///// for ///////////////
-
-
-
-
-        } ////// chgMV 함수 //////////////////////////////
-        /////////////////////////////////////////////////
-        /////////////////////////////////////////////////
-
-        
         
     </script>
     <style>
         .fl {
             float: left;
         }
-
+        
+        /*float해제 설정*/
+        .mvlist::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
         .photo img {
             height: 200px;
             margin-right: 20px;
@@ -90,6 +61,4 @@
 
 
 
-</body>
-
-</html>
+</body></html>
