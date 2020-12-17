@@ -25,36 +25,62 @@
             "감독": "박정배",
             "출연": "이제훈, 조우진, 신혜선, 임원희"
         };
-        
+
         /*//////////////////////////////////////////////
             함수명: chgMV
             기능: 영화별 정보를 객체로부터 셋팅함
-        *///////////////////////////////////////////////
-        function chgMV(num){ // num - 구분전달값
+        */ //////////////////////////////////////////////
+        function chgMV(num) { // num - 구분전달값
             // 1. 함수호출여부
-            console.log("나야나!"+num);
+            console.log("나야나!" + num);
             
+            // 2. 변경대상: .photo, .tit, .sum, .dir, .act
+            var photo = document.getElementsByClassName("photo")[0];
+            var tit = document.getElementsByClassName("tit")[0];
+            var sum = document.getElementsByClassName("sum")[0];
+            var dir = document.getElementsByClassName("dir")[0];
+            var act = document.getElementsByClassName("act")[0];
+            
+            // 3. 객체 선택하기
+            // 객체담을 변수
+            var obj;
+            
+            switch(num){
+                case 1: obj = mv1; break;
+                case 2: obj = mv2; break;
+                case 3: obj = mv3; break;
+            } /// switch case /////////
+            
+            // for문 돌리기
+            // 일반 for문 : for(시;한;증){구현코드}
+            // for in문 : for(var 변수명 in 객체){구현코드}
+            for(var x in obj){
+                console.log(x);
+            }//// for //////////////
+            
+            
+
         } ////// chgMV //////////////////////////////////
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
-        
-        
-        
-        
     </script>
-
+    <style>
+        .fl{
+            float: left;
+        }
+    </style>
 
 </head>
 
 <body>
     <h1>영화정보</h1>
-    
+
     <button onclick="chgMV(1)">조제</button>
     <button onclick="chgMV(2)">이웃사촌</button>
     <button onclick="chgMV(3)">도굴</button>
 
     <hr>
-    
+
     <div class="photo fl"></div>
     <div class="cont fl">
         <h2 class="tit"></h2>
