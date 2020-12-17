@@ -10,7 +10,7 @@
             "개요": "멜로/로맨스, 드라마",
             "감독": "김종관",
             "출연": "한지민, 남주혁",
-            "문구": "조제보러오세요"
+            "문구": "조제 보러 오세요"
         };
         var mv2 = {
             "포스터": "https://movie-phinf.pstatic.net/20201111_193/1605056611896fc6Ef_JPEG/movie_image.jpg?type=m99_141_2",
@@ -18,7 +18,7 @@
             "개요": "드라마, 코미디",
             "감독": "이환경",
             "출연": "정우, 김희원",
-            "문구": "이웃을사랑합시다"
+            "문구": "이웃을 사랑합시다"
         };
         var mv3 = {
             "포스터": "https://movie-phinf.pstatic.net/20201104_45/160445535053439akc_JPEG/movie_image.jpg?type=m99_141_2",
@@ -26,7 +26,7 @@
             "개요": "범죄",
             "감독": "박정배",
             "출연": "이제훈, 조우진, 신혜선, 임원희",
-            "문구": "도굴은범죄예요"
+            "문구": "도굴은 범죄예요"
         };
 
         /*//////////////////////////////////////////////
@@ -96,12 +96,19 @@
             
             // 문구넣기 대상
             var show = document.getElementById("show");
-            show.innerHTML = "";//초기화
+            show.innerHTML = "";//초기화(기존값 지우기-빈값으로 덮어쓰기)
             
             // for of로 문자 자르기
+            // 문자를 담은 변수를 for of에 적용하면 문자를 한글자씩 나누어 
+            // for문을 개수만큼 돌아준다!
             for(var txt of obj["문구"]){
                 console.log(txt);
-                show.innerHTML += "<span>"+txt+"</span>";
+                
+                if(txt!==" ")//공백이 아니면 span에 글자넣기!
+                    show.innerHTML += "<span>"+txt+"</span>";
+                else // 스페이스바 공백이면 &nbsp; 공백처리 html 특수기호
+                    show.innerHTML += "&nbsp;&nbsp;&nbsp;";
+                
             } //// for //////////////////
             
 
