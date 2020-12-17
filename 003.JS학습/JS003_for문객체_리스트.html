@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>객체안의 객체를 위한 for문 </title>
+    <script>
+        var movie = {
+            "조제": {
+                "포스터": "https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "멜로/로맨스, 드라마",
+                "감독": "김종관",
+                "출연": "한지민, 남주혁",
+                "문구": "조제 보러 오세요"
+            },
+            "이웃사촌": {
+                "포스터": "https://movie-phinf.pstatic.net/20201111_193/1605056611896fc6Ef_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마, 코미디",
+                "감독": "이환경",
+                "출연": "정우, 김희원",
+                "문구": "이웃을 사랑합시다"
+            },
+            "도굴": {
+                "포스터": "https://movie-phinf.pstatic.net/20201104_45/160445535053439akc_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "범죄",
+                "감독": "박정배",
+                "출연": "이제훈, 조우진, 신혜선, 임원희",
+                "문구": "도굴은 범죄예요"
+            }
+
+        };
+
+
+        /*//////////////////////////////////////////////
+            함수명: chgMV
+            기능: 영화별 정보를 객체로부터 셋팅함
+        */ //////////////////////////////////////////////
+        function chgMV() {
+            // 1. 함수호출여부
+            console.log("나야나!");
+
+            // 2. 객체 선택하기
+            var tg = document.getElementById("listbx");
+
+            for (var x in movie) {
+
+                tg.innerHTML +=
+                    '<div class="mvlist">' +
+                    '<div class="photo fl"></div>' +
+                    '<div class="cont fl">' +
+                    '<h2 class="tit"></h2>' +
+                    '<h3 class="sum"></h3>' +
+                    '<h3 class="dir"></h3>' +
+                    '<h3 class="act"></h3>' +
+                    '</div>' +
+                    '</div>';
+
+
+
+            } ///// for ///////////////
+
+
+
+
+        } ////// chgMV 함수 //////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
+
+        
+        
+    </script>
+    <style>
+        .fl {
+            float: left;
+        }
+
+        .photo img {
+            height: 200px;
+            margin-right: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body onload="chgMV()">
+    <h1>영화정보</h1>
+    <hr>
+    <div id="listbx"></div>
+
+
+
+</body>
+
+</html>
