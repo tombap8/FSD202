@@ -3,6 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>다국어 메뉴(객체의 활용)</title>
+    <style>
+        html,body,h1,ul{
+            margin: 0;
+            padding: 0;
+        }
+        /*탑영역*/
+        #top{
+            position: relative;
+            /*부모자격*/
+            width: 1000px;
+            margin: 0 auto;
+            outline: 1px dashed red;
+        }
+        /*로고*/
+        #logo{
+            text-align: center;
+        }
+        #logo img{
+            height: 40px;
+            margin-top: 50px;
+        }
+        /*선택박스*/
+        .sel{
+            position: absolute;
+            right: 0;
+        }
+        /*GNB메뉴*/
+        #gnb{
+            width: 1000px;
+            margin-top: 30px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+        #gnb ul{
+            list-style: none;/*블릿없앰*/
+            width: 800px;
+            margin: 0 auto;
+        }
+        #gnb ul::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #gnb li{
+            float: left;
+            width: 200px;
+        }
+        
+    
+    </style>
 </head>
 <body>
    <!--탑영역-->
