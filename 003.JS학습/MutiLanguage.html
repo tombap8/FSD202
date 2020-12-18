@@ -108,6 +108,27 @@
         };///////// lang 객체 ///////
     
     
+        /*////////////////////////////////////////////////////////
+            함수명: chgLang
+            기능: 선택박스의 언어선택이 변경될때 각 요소의 언어를 바꿔준다
+        */////////////////////////////////////////////////////////
+        function chgLang(obj){// obj - select요소 자신(this로 보냄)
+            
+            // 0.전달값에서 선택한 option 의 value속성값 읽기
+            var sv = obj.value;
+            
+            // 1.호출여부확인
+            console.log("나야나!"+sv);
+            
+            // 2. 언어설정 객체의 값 가져오기
+            var lcode = lang[sv];
+            console.log("선택언어코드:"+lcode);
+            
+            
+        } ////// chgLang 함수 /////////////////////////////////////
+        //////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////
+        
     
     
     
@@ -127,7 +148,7 @@
             <img src="images/logoM.png" alt="로고">
         </h1>
         <!--다국어선택옵션박스-->
-        <select class="sel">
+        <select class="sel" onchange="chgLang(this)">
             <option value="ko">Korea</option>
             <option value="en">English</option>
             <option value="ja">Japanese</option>
