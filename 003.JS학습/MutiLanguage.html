@@ -139,7 +139,7 @@
             console.log("선택언어코드:" + lcode);
 
             // 3. 가져온 값으로 메뉴와 하단 정보 바꾸기
-            // 변경대상: #gnb a
+            // (1)변경대상(메뉴): #gnb a
             var tg = document.getElementById("gnb")
                 .getElementsByTagName("a");
 
@@ -152,6 +152,11 @@
                 tg[i].innerHTML = lcode[i];
                 // 해당순번 a요소에 해당순번 배열값 넣기
             } ///// for ///////
+            
+            // (2)변경대상(하단정보): #info address
+            document.getElementById("info")
+            .getElementsByTagName("address")
+            .item(0).innerHTML = lcode[4];
 
 
         } ////// chgLang 함수 /////////////////////////////////////
