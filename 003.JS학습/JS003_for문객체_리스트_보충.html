@@ -215,15 +215,33 @@
             /*********** 추가코딩!!! **********/
             
             var show = document.getElementsByClassName("show");
-            for(var x of show){
+            // 이미 만들어진 문구박스 .show를 모두 변수에 넣고
+            // 그 개수만큼 for문을 돌면서 한글자씩 span으로 싸는 처리를 함!
+            // for of를 사용하여 요소컬렉션을 돌 수 있다!
+            /*
+            for of 는 언제 쓰면 좋은가요?
+                1) 배열값 처리
+                2) 요소 컬렉션값 처리
+                3) 문자하나씩 잘라 처리
+            
+            for in 은 언제 쓰면 좋은가요?
+                -> 객체 처리시
+            */
+            
+            for(var x of show){ // 요소 개수만큼 돌아줌! x는 요소자신!
+                // 1.변수 temp에 지금 요소에 담긴값을 담는다
                 var temp = x.innerHTML;
+                // 2. 기존값은 지운다!
                 x.innerHTML = "";
+                
+                // 3. 기존에 담긴 문자개수만큼 돌면서 한글자를 span으로싼다
                 for(var y of temp){
                     if (y !== " ") //공백이 아니면 span에 글자넣기!
                         x.innerHTML += "<span>"+y+"</span>";
-                    else // 스페이스바 공백이면 &nbsp; 공백처리 html 특수기호
+                    else // 스페이스바 공백이면 &nbsp; 공백처리(html 특수기호)
                         x.innerHTML += "&nbsp;&nbsp;&nbsp;";
                 }////// for of //////////////////
+                
             } ////////// for of ////////////////////
 
         } ////// chgMV 함수 //////////////////////////////////
