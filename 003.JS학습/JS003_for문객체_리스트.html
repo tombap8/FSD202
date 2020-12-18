@@ -90,7 +90,7 @@
                 "출연": "쿠보타 마사타카, 오모리 나오, 소메타니 쇼타",
                 "문구": "퍼스트러브는 첫사랑"
             },
-            "800": {
+            "'800'": {
                 "포스터": "https://movie-phinf.pstatic.net/20201126_265/16063653529367gj6w_JPEG/movie_image.jpg?type=m99_141_2",
                 "개요": "전쟁, 액션",
                 "감독": "관후",
@@ -169,25 +169,6 @@
                 // 속성명의 값: movie[x]
                 console.log(movie[x]);
                 
-                // 문구 넣기!!!
-                
-                // .show박스를 for문 바깥에서 싸줘야함!
-                tg.innerHTML += "<div class='show'>";
-                
-                for (var txt of movie[x]["문구"]) {
-                    console.log(txt);
-
-                    if (txt !== " ") //공백이 아니면 span에 글자넣기!
-                        tg.innerHTML += "<span>" + txt + "</span>";
-                    else // 스페이스바 공백이면 &nbsp; 공백처리 html 특수기호
-                        tg.innerHTML += "&nbsp;&nbsp;&nbsp;";
-
-                } //// for //////////////////
-                
-                // .show박스를 for문 바깥에서 싸줘야함!
-                tg.innerHTML += "</div>";
-
-                
 
                 // 대상의 내부에 html 만들어서 넣기!
                 tg.innerHTML +=
@@ -217,6 +198,9 @@
                     '      </h3>' +
                     '  </div>' +
                     '</div>';
+                
+                
+                
 
             } ///// for in //////////
 
