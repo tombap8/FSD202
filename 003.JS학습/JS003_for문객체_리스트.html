@@ -48,14 +48,14 @@
                 "출연": "조 퍼디(엘리엇), 앰버 루바스(조니)",
                 "문구": "Replay!"
             },
-             "삼진구룹 영어토익반": {
+            "삼진구룹 영어토익반": {
                 "포스터": "https://movie-phinf.pstatic.net/20201021_273/16032618054109Yvje_JPEG/movie_image.jpg?type=m99_141_2",
                 "개요": "드라마",
                 "감독": "이종필",
                 "출연": "고아성, 이솜, 박혜수",
                 "문구": "아이 캔 두 잇, 유 캔 두 잇, 위 캔 두 잇!"
             },
-             "호프": {
+            "호프": {
                 "포스터": "https://movie-phinf.pstatic.net/20201215_4/1608020588176gqfUv_JPEG/movie_image.jpg?type=m99_141_2",
                 "개요": "드라마",
                 "감독": "마리아 소달",
@@ -117,7 +117,7 @@
                 "감독": "조지클루니",
                 "출연": "조지 클루니(어거스틴), 펠리시티 존스(설리)",
                 "문구": "조지클루니감독이 출연도 하는 영화"
-                
+
             },
             "극장판 바이올렛 에버가든": {
                 "포스터": "https://movie-phinf.pstatic.net/20201015_24/1602727813929ObxtV_JPEG/movie_image.jpg?type=m99_141_2",
@@ -133,7 +133,7 @@
                 "출연": "라이언 고슬링,엠마 스톤",
                 "문구": "도레미파솔라라라라라"
             },
-             "내언니전지현과 나": {
+            "내언니전지현과 나": {
                 "포스터": "https://movie-phinf.pstatic.net/20201119_223/1605770759962Bq1oi_JPEG/movie_image.jpg?type=f67",
                 "개요": "다큐멘터리",
                 "감독": "박윤진",
@@ -147,37 +147,100 @@
                 "출연": "션 알다란, 잭 힙스",
                 "문구": "가나초콜릿 먹고싶다"
             }
-            
-        };
+
+        }; ////////////// movie객체 ///////////////
+
+        /*/////////////////////////////////////////////////
+            함수명: chgMV
+            기능: 영화별 정보를 객체로 부터 가져와서 html을 그려줌
+        */ /////////////////////////////////////////////////
+        function chgMV() {
+
+            // 1. 함수호출여부
+            console.log("나야나!");
+
+            // 2. 대상: #listbx
+            var tg = document.getElementById("listbx");
+
+            // 객체의 개수만큼 돌면서 영화리스트 셋팅하기 //
+            for (var x in movie) {
+                // x값 확인하기: x값은 객체의 속성명
+                console.log(x);
+                // 속성명의 값: movie[x]
+                console.log(movie[x]);
+
+            } ///// for in //////////
 
 
-        
+
+
+        } ////// chgMV 함수 //////////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
     </script>
     <style>
         .fl {
             float: left;
         }
-        
+
         /*float해제 설정*/
         .mvlist::after {
             content: "";
             display: block;
             clear: both;
         }
-        
+
         .photo img {
             height: 200px;
             margin-right: 20px;
         }
-
     </style>
 
 </head>
 
 <body onload="chgMV()">
+    <!--
+       body에 onload 이벤트는 body태그 내부가 모두 로딩후 실행함
+        즉, 로딩후 chgMV() 라는 함수를 호출함!
+   -->
     <h1>영화정보</h1>
     <hr>
-    <div id="listbx"></div>
+    <div id="listbx">
+
+        <div class="mvlist">
+            <div data-brackets-id="14" class="photo fl">
+                <img src="
+                
+                https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2
+                
+                " alt="포스터">
+            </div>
+            <div data-brackets-id="15" class="cont fl">
+                <h2 data-brackets-id="16" class="tit">
+                
+                조제
+                
+                </h2>
+                <h3 data-brackets-id="17" class="sum">▣ 개요: 
+                
+                멜로/로맨스, 드라마
+                
+                </h3>
+                <h3 data-brackets-id="18" class="dir">▣ 감독: 
+                
+                김종관
+                
+                </h3>
+                <h3 data-brackets-id="19" class="act">▣ 출연: 
+                
+                한지민, 남주혁
+                
+                </h3>
+            </div>
+        </div>
+
+
+    </div>
 
 
 
