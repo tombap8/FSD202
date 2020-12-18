@@ -84,7 +84,7 @@
                 "문구": "포스터만 봐도 재미 없겠네요"
             },
             "퍼스트 러브": {
-                "포스터": "https://movie.naver.com/movie/bi/mi/basic.nhn?code=187848#",
+                "포스터": "https://movie-phinf.pstatic.net/20201116_139/16055146252563zQB3_JPEG/movie_image.jpg?type=m99_141_2",
                 "개요": "범죄,멜로/로맨스",
                 "감독": "미이케 다카시",
                 "출연": "쿠보타 마사타카, 오모리 나오, 소메타니 쇼타",
@@ -168,49 +168,37 @@
                 console.log(x);
                 // 속성명의 값: movie[x]
                 console.log(movie[x]);
-                
+
                 // 대상의 내부에 html 만들어서 넣기!
                 tg.innerHTML +=
-          '<div class="mvlist">'+
-          '   <div data-brackets-id="14" class="photo fl">'+
-          '       <img src="'+
-                
-                https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2
-                
-          '      " alt="포스터">'+
-          '  </div>'+
-          '  <div data-brackets-id="15" class="cont fl">'+
-          '      <h2 data-brackets-id="16" class="tit">'+
-                
-                조제
-                
-          '      </h2>'+
-          '      <h3 data-brackets-id="17" class="sum">▣ 개요: '+
-                
-                멜로/로맨스, 드라마
-                
-          '      </h3>'+
-          '      <h3 data-brackets-id="18" class="dir">▣ 감독: '+
-                
-                김종관
-                
-          '      </h3>'+
-          '      <h3 data-brackets-id="19" class="act">▣ 출연: '+
-                
-                한지민, 남주혁
-                
-          '      </h3>'+
-          '  </div>'+
-          '</div>';
-                
-                
-                
-                
+                    '<div class="mvlist">' +
+                    '   <div data-brackets-id="14" class="photo fl">' +
+                    '       <img src="' +
+                    //포스터 경로값->객체변수[객체명][값의객체명]
+                    movie[x]["포스터"] +
+                    '      " alt="포스터">' +
+                    '  </div>' +
+                    '  <div data-brackets-id="15" class="cont fl">' +
+                    '      <h2 data-brackets-id="16" class="tit">' +
+                    //영화제목->객체의 속성명 즉, x임!       
+                    x +
+                    '      </h2>' +
+                    '      <h3 data-brackets-id="17" class="sum">▣ 개요: ' +
+                    //개요     
+                    movie[x]["개요"] +
+                    '      </h3>' +
+                    '      <h3 data-brackets-id="18" class="dir">▣ 감독: ' +
+                    //감독
+                    movie[x]["감독"] +
+                    '      </h3>' +
+                    '      <h3 data-brackets-id="19" class="act">▣ 출연: ' +
+                    //출연      
+                    movie[x]["출연"] +
+                    '      </h3>' +
+                    '  </div>' +
+                    '</div>';
 
             } ///// for in //////////
-
-
-
 
         } ////// chgMV 함수 //////////////////////////////////
         /////////////////////////////////////////////////
