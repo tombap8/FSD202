@@ -18,8 +18,39 @@ window.addEventListener("DOMContentLoaded",function(){
          설명이 나오게함
 *////////////////////////////////////////////
 function chgCity(me){ // me - 클릭된 요소 자신
+    
+    // 0. 선택된 요소의 값담기
+    var sv = me.innerText;
+    
     // 1.함수호출확인, 전달값 확인
-    console.log("나야나!"+me.innerText);
+    console.log("나야나!"+sv);
+    
+    // 2.변경대상: .cube
+    var tg = document.getElementsByClassName("cube")[0];
+    // 클래스니까 선택후 몇번째 꼭해야함! .item(순번) 또는 [순번]
+    
+    // 3. 큐브도시에 맞게 회전하기
+    if(sv==="출발"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(0deg) rotateY(0deg)";
+    }
+    else if(sv==="서울"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(-90deg) rotateY(720deg)";
+    }
+    else if(sv==="런던"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(360deg) rotateY(-90deg)";
+    }
+    else if(sv==="베를린"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(-360deg) rotateY(90deg)";
+    }
+    else if(sv==="파리"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(720deg) rotateY(-180deg)";
+    }
+    else if(sv==="뉴욕"){
+        tg.style.transform = "translate(-50%,-50%) rotateX(90deg) rotateY(-360deg)";
+    }
+    
+    
+        tg.style.transition = "all 1.5s ease-in-out";
     
 }//////// chgCity 함수 ////////////////////////
 ////////////////////////////////////////////
