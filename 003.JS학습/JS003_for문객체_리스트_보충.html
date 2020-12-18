@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>객체안의 객체를 위한 for문 </title>
+    <script>
+        var movie = {
+            "조제": {
+                "포스터": "https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "멜로/로맨스, 드라마",
+                "감독": "김종관",
+                "출연": "한지민, 남주혁",
+                "문구": "조제 보러 오세요"
+            },
+            "이웃사촌": {
+                "포스터": "https://movie-phinf.pstatic.net/20201111_193/1605056611896fc6Ef_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마, 코미디",
+                "감독": "이환경",
+                "출연": "정우, 김희원",
+                "문구": "이웃을 사랑합시다"
+            },
+            "도굴": {
+                "포스터": "https://movie-phinf.pstatic.net/20201104_45/160445535053439akc_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "범죄",
+                "감독": "박정배",
+                "출연": "이제훈, 조우진, 신혜선, 임원희",
+                "문구": "도굴은 범죄예요"
+            },
+            "럭키몬스터": {
+                "포스터": "https://movie-phinf.pstatic.net/20201112_281/1605160677106alosf_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "봉준영",
+                "출연": "김도윤,장진희,박성준",
+                "문구": "럭키한 날이예요"
+            },
+            "언플랜드": {
+                "포스터": "https://movie-phinf.pstatic.net/20201123_34/1606100949624hqghN_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "척 콘젤만, 캐리 솔로몬",
+                "출연": "애슐리 브래처, 브룩스 라이언, 로비아 스캇",
+                "문구": "생명은 소중하다"
+            },
+            "리플레이": {
+                "포스터": "https://movie-phinf.pstatic.net/20201215_127/1608017965171bMxml_JPEG/movie_image.jpg",
+                "개요": "드라마,뮤지컬",
+                "감독": "데이비드 하인즈",
+                "출연": "조 퍼디(엘리엇), 앰버 루바스(조니)",
+                "문구": "Replay!"
+            },
+            "삼진구룹 영어토익반": {
+                "포스터": "https://movie-phinf.pstatic.net/20201021_273/16032618054109Yvje_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "이종필",
+                "출연": "고아성, 이솜, 박혜수",
+                "문구": "아이 캔 두 잇, 유 캔 두 잇, 위 캔 두 잇!"
+            },
+            "호프": {
+                "포스터": "https://movie-phinf.pstatic.net/20201215_4/1608020588176gqfUv_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "마리아 소달",
+                "출연": "안드레아 베인 호픽",
+                "문구": "행복한 크리스마스"
+            },
+            "런": {
+                "포스터": "https://movie-phinf.pstatic.net/20201105_262/1604555368600IOHyJ_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "미스터리, 스릴러 ",
+                "감독": "아니쉬 차간티",
+                "출연": "사라 폴슨, 키에라 앨런",
+                "문구": "이영화 뭐예요 무서워요"
+            },
+            "러브 액츄얼리": {
+                "포스터": "https://movie-phinf.pstatic.net/20191202_278/1575250003279Taafr_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "멜로/로맨스, 드라마, 코미디",
+                "감독": "리차드 커티스",
+                "출연": "휴 그랜트, 리암 니슨, 콜린 퍼스, 로라 리니, 엠마 톰슨, 앨런 릭먼, 키이라 나이틀리, 마틴 맥커친, 빌 나이",
+                "문구": "크리스마스에 모두에게 전하고 싶은 로맨틱한 고백"
+            },
+            "그날이 온다": {
+                "포스터": "https://movie-phinf.pstatic.net/20201214_259/1607930993384LCBln_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "코미디",
+                "감독": "크리스토퍼 모리스",
+                "출연": "마샨트 데이비스, 안나 켄드릭, 다니엘 브룩스, 데니스 오헤어",
+                "문구": "포스터만 봐도 재미 없겠네요"
+            },
+            "퍼스트 러브": {
+                "포스터": "https://movie-phinf.pstatic.net/20201116_139/16055146252563zQB3_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "범죄,멜로/로맨스",
+                "감독": "미이케 다카시",
+                "출연": "쿠보타 마사타카, 오모리 나오, 소메타니 쇼타",
+                "문구": "퍼스트러브는 첫사랑"
+            },
+            "'800'": {
+                "포스터": "https://movie-phinf.pstatic.net/20201126_265/16063653529367gj6w_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "전쟁, 액션",
+                "감독": "관후",
+                "출연": "왕첸웬, 어우 하오, 두순, 장유호, 당예흔, 강무, 야오천, 장역, 웨이 천, 리천, 허우용",
+                "문구": "초대형 전쟁 블록버스터"
+            },
+            "스웨그": {
+                "포스터": "https://movie-phinf.pstatic.net/20201111_179/1605078320372dIspO_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "임성관",
+                "출연": "니엘, 이보림, 최규진",
+                "문구": "스웩스웩"
+            },
+            "페이트 스테이 나이트 헤븐즈필 III.스프링 송": {
+                "포스터": "https://movie-phinf.pstatic.net/20201022_2/1603341280685vUa8i_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "애니매이션, 액션, 판타지",
+                "감독": "스도 토모노리",
+                "출연": "출연스기야마 노리아키(에미야 시로 목소리), 시타야 노리코(마토 사쿠라 목소리)",
+                "문구": "애니매이션 보러오세요!~"
+            },
+            "미드나이트 스카이": {
+                "포스터": "https://movie-phinf.pstatic.net/20201029_48/1603933692802GfEyT_JPEG/movie_image.jpg",
+                "개요": "SF",
+                "감독": "조지클루니",
+                "출연": "조지 클루니(어거스틴), 펠리시티 존스(설리)",
+                "문구": "조지클루니감독이 출연도 하는 영화"
+
+            },
+            "극장판 바이올렛 에버가든": {
+                "포스터": "https://movie-phinf.pstatic.net/20201015_24/1602727813929ObxtV_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "애니메이션, 드라마, 판타지",
+                "감독": "이시다테 타이치",
+                "출연": "이시카와 유이, 나미카와 다이스케",
+                "문구": "평점이 높아요"
+            },
+            "라라랜드": {
+                "포스터": "https://movie-phinf.pstatic.net/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "드라마",
+                "감독": "데이미언 셔젤",
+                "출연": "라이언 고슬링,엠마 스톤",
+                "문구": "도레미파솔라라라라라"
+            },
+            "내언니전지현과 나": {
+                "포스터": "https://movie-phinf.pstatic.net/20201119_223/1605770759962Bq1oi_JPEG/movie_image.jpg?type=f67",
+                "개요": "다큐멘터리",
+                "감독": "박윤진",
+                "출연": "박윤진",
+                "문구": "본인감독 본인출연"
+            },
+            "가나의 혼인잔치:언약": {
+                "포스터": "https://movie-phinf.pstatic.net/20201023_21/1603421248315A8uvj_JPEG/movie_image.jpg?type=m99_141_2",
+                "개요": "다큐멘터리, 드라마 ",
+                "감독": "브렌트 밀러 주니어",
+                "출연": "션 알다란, 잭 힙스",
+                "문구": "가나초콜릿 먹고싶다"
+            }
+
+        }; ////////////// movie객체 ///////////////
+
+        /*/////////////////////////////////////////////////
+            함수명: chgMV
+            기능: 영화별 정보를 객체로 부터 가져와서 html을 그려줌
+        */ /////////////////////////////////////////////////
+        function chgMV() {
+
+            // 1. 함수호출여부
+            console.log("나야나!");
+
+            // 2. 대상: #listbx
+            var tg = document.getElementById("listbx");
+
+            // 객체의 개수만큼 돌면서 영화리스트 셋팅하기 //
+            for (var x in movie) {
+                // x값 확인하기: x값은 객체의 속성명
+                console.log(x);
+                // 속성명의 값: movie[x]
+                console.log(movie[x]);
+                
+                /*********** 추가코딩!!! **********/
+                // 문구넣기
+                tg.innerHTML += '<div class="show">'+
+                    movie[x]["문구"]+
+                    '</div>';
+                /***********************************/
+
+                // 대상의 내부에 html 만들어서 넣기!
+                tg.innerHTML +=
+                    '<div class="mvlist">' +
+                    '   <div data-brackets-id="14" class="photo fl">' +
+                    '       <img src="' +
+                    //포스터 경로값->객체변수[객체명][값의객체명]
+                    movie[x]["포스터"] +
+                    '      " alt="포스터">' +
+                    '  </div>' +
+                    '  <div data-brackets-id="15" class="cont fl">' +
+                    '      <h2 data-brackets-id="16" class="tit">' +
+                    //영화제목->객체의 속성명 즉, x임!       
+                    x +
+                    '      </h2>' +
+                    '      <h3 data-brackets-id="17" class="sum">▣ 개요: ' +
+                    //개요     
+                    movie[x]["개요"] +
+                    '      </h3>' +
+                    '      <h3 data-brackets-id="18" class="dir">▣ 감독: ' +
+                    //감독
+                    movie[x]["감독"] +
+                    '      </h3>' +
+                    '      <h3 data-brackets-id="19" class="act">▣ 출연: ' +
+                    //출연      
+                    movie[x]["출연"] +
+                    '      </h3>' +
+                    '  </div>' +
+                    '</div>';
+                
+                
+                
+
+            } ///// for in //////////
+            
+            
+            
+            /*********** 추가코딩!!! **********/
+            
+            var show = document.getElementsByClassName("show");
+            for(var x of show){
+                var temp = x.innerHTML;
+                x.innerHTML = "";
+                for(var y of temp){
+                    if (y !== " ") //공백이 아니면 span에 글자넣기!
+                        x.innerHTML += "<span>"+y+"</span>";
+                    else // 스페이스바 공백이면 &nbsp; 공백처리 html 특수기호
+                        x.innerHTML += "&nbsp;&nbsp;&nbsp;";
+                }////// for of //////////////////
+            } ////////// for of ////////////////////
+
+        } ////// chgMV 함수 //////////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
+    </script>
+    <style>
+        .fl {
+            float: left;
+        }
+
+        /*float해제 설정*/
+        .mvlist::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .photo img {
+            height: 200px;
+            margin-right: 20px;
+        }
+        
+        /*글자나오기*/
+        .show span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #d30000;
+            background-color: #00f;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+
+<body onload="chgMV()">
+    <!--
+       body에 onload 이벤트는 body태그 내부가 모두 로딩후 실행함
+        즉, 로딩후 chgMV() 라는 함수를 호출함!
+   -->
+    <h1>영화정보</h1>
+    <hr>
+    <div id="listbx"></div>
+
+
+
+</body></html>
