@@ -168,6 +168,26 @@
                 console.log(x);
                 // 속성명의 값: movie[x]
                 console.log(movie[x]);
+                
+                // 문구 넣기!!!
+                
+                // .show박스를 for문 바깥에서 싸줘야함!
+                tg.innerHTML += "<div class='show'>";
+                
+                for (var txt of movie[x]["문구"]) {
+                    console.log(txt);
+
+                    if (txt !== " ") //공백이 아니면 span에 글자넣기!
+                        tg.innerHTML += "<span>" + txt + "</span>";
+                    else // 스페이스바 공백이면 &nbsp; 공백처리 html 특수기호
+                        tg.innerHTML += "&nbsp;&nbsp;&nbsp;";
+
+                } //// for //////////////////
+                
+                // .show박스를 for문 바깥에서 싸줘야함!
+                tg.innerHTML += "</div>";
+
+                
 
                 // 대상의 내부에 html 만들어서 넣기!
                 tg.innerHTML +=
@@ -219,6 +239,20 @@
         .photo img {
             height: 200px;
             margin-right: 20px;
+        }
+        
+        /*글자나오기*/
+        .show span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px solid #d30000;
+            background-color: #00f;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
         }
     </style>
 
