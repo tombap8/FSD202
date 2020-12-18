@@ -124,6 +124,15 @@
             var lcode = lang[sv];
             console.log("선택언어코드:"+lcode);
             
+            // 3. 가져온 값으로 메뉴와 하단 정보 바꾸기
+            // 변경대상: #gnb a
+            var tg = document.getElementById("gnb")
+            .getElementsByTagName("a");
+            
+            // a의 개수는 몇개?
+            console.log("a의 개수:"+tg.length);
+            // a의 개수 만큼 for문을 돌아준다!
+            
             
         } ////// chgLang 함수 /////////////////////////////////////
         //////////////////////////////////////////////////////////
