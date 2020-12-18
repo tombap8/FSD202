@@ -157,6 +157,25 @@
             document.getElementById("info")
             .getElementsByTagName("address")
             .item(0).innerHTML = lcode[4];
+            
+            // (3)변경대상(중앙이미지): #cont img
+            // 코드명과 똑같은 이미지를 src에 넣어준다!
+            document.getElementById("cont")
+            .getElementsByTagName("img")
+            .item(0).setAttribute("src","images/"+sv+".jpg");
+            
+            /*
+            [ 선택요소의 속성변경하기 2가지 방법 ]
+            
+            1. 선택요소.속성명 = 속성값
+            2. 선택요소.setAttribute(속성명,속성값)
+            
+            1번은 속성에 직접 할당하는 방법
+            2번은 JS내장함수로 속성을 DOM객체를 사용하여 변경하는 방법
+            
+            (참고: 속성값을 가져오는 JS내장함수는 getAttribute(속성명) 이다!)
+            */
+            
 
 
         } ////// chgLang 함수 /////////////////////////////////////
