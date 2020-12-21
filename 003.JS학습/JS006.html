@@ -116,6 +116,18 @@
             document.getElementsByClassName("minute").item(0)
             .innerText = M;
             
+            // 초넣기 /////////////////////////
+            
+            // 테스트용 초넣기(테스트 후 반드시 주석!!!)
+            S = 9;
+            
+            // 초단위 두자릿수 표시하기(10미만일때)
+            if(S < 10) S = "0" + S;
+            
+            // 초출력
+            document.getElementsByClassName("second").item(0)
+            .innerText = S;
+            
             
             
             
