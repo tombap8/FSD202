@@ -65,6 +65,22 @@ function chgCity(me){ // me - 클릭된 요소 자신
     tg.style.transition = "all 1.5s ease-in-out";
     
     
+    ///////////////////////////////////////////////
+    // 도시정보 박스 변수에 할당하기!!! ///////////////
+    // 대상: .cbox
+    var cbox = document.getElementsByClassName("cbox")[0];
+    
+    // 만약 "출발"메뉴를 클릭하면 위의 코드까지만 실행하여
+    // 큐브 회전은 하되 도시정보 셋팅과 보이는기는 
+    // 하지 않아야 한다!
+    if(sv === "출발"){
+        //1. 출발이면 도시정보박스 없애기
+        cbox.style.opacity = "0";
+        cbox.style.transition = "none";
+        //2. 출발이면 아래 소스 실행하지 않기
+        return false;//여기서 돌아감(false는 아무것도 안함!)
+    } ///// if ///////////////
+    
     // 4. 도시정보 셋팅하기 //
     // (1). 도시이름 셋팅하기
     // 대상: #cname
@@ -77,8 +93,6 @@ function chgCity(me){ // me - 클릭된 요소 자신
     document.getElementById("cinfo").innerHTML = city[sv];
     
     // 5. 도시정보박스 보이기(처음 이동시 바로 숨기기)
-    // 대상: .cbox
-    var cbox = document.getElementsByClassName("cbox")[0];
     
     // (1) 트랜지션 없이 투명하게!
     cbox.style.opacity = "0";
@@ -91,11 +105,10 @@ function chgCity(me){ // me - 클릭된 요소 자신
     // 1500은 1.5초임
     // 1.5초후 함수를 실행함!
     setTimeout(function(){
+        console.log("여기실행!!!");
         cbox.style.opacity = "1";
         cbox.style.transition = "opacity .8s ease-in-out";
     },1500);//// 타임아웃함수 /////
-    
-    
     
     
 }//////// chgCity 함수 ////////////////////////
