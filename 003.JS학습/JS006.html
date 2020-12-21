@@ -67,6 +67,23 @@
             // 일넣기
             document.getElementsByClassName("date").item(0)
             .innerText = nowDate;
+            // 요일넣기
+            document.getElementsByClassName("day").item(0)
+            .innerText = week[nowDay];
+            
+            // 오전/오후 넣기
+            // 시간은 24시간제로 리턴되므로 
+            // 12보다 작으면 오전
+            // 12보다 크면 오후로 표시한다!
+            
+            var noon;// 변수를 쓴이유는 값이 오전/오후로 바뀌니까!
+            // 조건연산자(삼항연산자)
+            // 비?집:놀이동산;
+            H >= 12 ? noon = "오후" : noon = "오전";
+            
+            // 오전/오후 출력
+            document.getElementsByClassName("noon").item(0)
+            .innerText = noon;
             
             
             
