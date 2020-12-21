@@ -76,11 +76,24 @@ function chgCity(me){ // me - 클릭된 요소 자신
     // 미리셋팅된 도시명 속성의 내용으로 만든 city객체를 불러온다!
     document.getElementById("cinfo").innerHTML = city[sv];
     
-    // 5. 도시정보박스 보이기
+    // 5. 도시정보박스 보이기(처음 이동시 바로 숨기기)
     // 대상: .cbox
     var cbox = document.getElementsByClassName("cbox")[0];
-    cbox.style.opacity = "1";
-    cbox.style.transition = "opacity .8s ease-in-out 1.5s";
+    
+    // (1) 트랜지션 없이 투명하게!
+    cbox.style.opacity = "0";
+    cbox.style.transition = "none";
+    
+    // (2) 트랜지션으로 나타나기
+    //setTimeout(함수,시간)
+    //일정시간 후 함수실행하기
+    // 함수는 직접 코드를 저장하는 익명함수로 구현함!
+    // 1500은 1.5초임
+    // 1.5초후 함수를 실행함!
+    setTimeout(function(){
+        cbox.style.opacity = "1";
+        cbox.style.transition = "opacity .8s ease-in-out";
+    },1500);//// 타임아웃함수 /////
     
     
     
