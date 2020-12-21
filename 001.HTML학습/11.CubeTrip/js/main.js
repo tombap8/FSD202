@@ -61,8 +61,21 @@ function chgCity(me){ // me - 클릭된 요소 자신
         tg.style.transform = "translate(-50%,-50%) rotateX(90deg) rotateY(-360deg)";
     }
     
+    // 큐브 트랜지션 설정하기
+    tg.style.transition = "all 1.5s ease-in-out";
     
-        tg.style.transition = "all 1.5s ease-in-out";
+    // 도시정보 셋팅하기 //
+    // 1. 도시이름 셋팅하기
+    // 대상: #cname
+    // 선택된 메뉴명과 같으므로 메뉴명을 넣어준다!
+    document.getElementById("cname").innerHTML = sv;
+    
+    // 2. 도시상세정보 셋팅하기
+    // 대상: #cinfo
+    // 미리셋팅된 도시명 속성의 내용으로 만든 city객체를 불러온다!
+    document.getElementById("cinfo").innerHTML = city[sv];
+    
+    
     
 }//////// chgCity 함수 ////////////////////////
 ////////////////////////////////////////////
