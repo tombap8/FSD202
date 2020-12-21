@@ -57,6 +57,18 @@
             var S = today.getSeconds();
             console.log("현재시간-"+H+":"+M+":"+S);
             
+            // (6) 화면출력
+            // 년도넣기
+            document.getElementsByClassName("year").item(0)
+            .innerText = nowYear;
+            // 월넣기
+            document.getElementsByClassName("month").item(0)
+            .innerText = nowMonth;
+            // 일넣기
+            document.getElementsByClassName("date").item(0)
+            .innerText = nowDate;
+            
+            
             
             
         } ////// showTime 함수 /////////////////////////////
