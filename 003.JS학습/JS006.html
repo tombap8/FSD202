@@ -24,6 +24,15 @@
             // 월을 부르는 이름이 언어마다 달라서 배열순번임
             // 월을 숫자로 찍고자 하면 1을 더한다
             console.log("현재월:"+nowMonth);
+            // 영어월표시로 변경해 보기
+            // 배열에 순서대로 담으면 첫번째가 0번임!
+            var EM = ["Jan.", "Feb.", "Mar.", "Apr.","May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+            console.log("영어식 현재월:"+EM[today.getMonth()]);
+            
+            //(2) 현재일 가져오기: getDate()
+            var nowDate = today.getDate();
+            // 현재일은 날짜숫자를 그대로 리턴함
+            console.log("현재일:"+nowDate);
             
             
             
