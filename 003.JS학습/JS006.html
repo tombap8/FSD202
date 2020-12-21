@@ -43,6 +43,20 @@
             var week = ["일","월","화","수","목","금","토"];
             console.log("현재요일:"+week[nowDay]);
             
+            // (4) 현재년도: getYear()
+            var nowYear = today.getFullYear();
+            // getYear() 는 1900년을 기점으로 해를 셈
+            // 컴퓨터 시스템 날짜기준 년도가 1900년이라서 그렇다고함
+            // getFullYear()는 전체년도가 표시됨
+            console.log("현재년도:"+nowYear);
+            
+            // (5) 시,분,초
+            // getHours(), getMinutes(), getSeconds()
+            var H = today.getHours();
+            var M = today.getMinutes();
+            var S = today.getSeconds();
+            console.log("현재시간-"+H+":"+M+":"+S);
+            
             
             
         } ////// showTime 함수 /////////////////////////////
