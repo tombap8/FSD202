@@ -71,7 +71,7 @@
             document.getElementsByClassName("day").item(0)
             .innerText = week[nowDay];
             
-            // 오전/오후 넣기
+            // 오전/오후 넣기 //////////////////////////////
             // 시간은 24시간제로 리턴되므로 
             // 12보다 작으면 오전
             // 12보다 크면 오후로 표시한다!
@@ -84,6 +84,18 @@
             // 오전/오후 출력
             document.getElementsByClassName("noon").item(0)
             .innerText = noon;
+            
+            // 시간넣기 /////////////////////////////
+            // 24시간 표시 이므로 12보다 크면 12를 빼서 표현함
+            
+            // 테스트용 시간넣기
+            H = 16;
+            
+            if(H > 12) H = H -12;
+            
+            // 시간출력
+            document.getElementsByClassName("hour").item(0)
+            .innerText = H;
             
             
             
