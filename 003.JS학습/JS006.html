@@ -104,6 +104,18 @@
             document.getElementsByClassName("hour").item(0)
             .innerText = H;
             
+            // 분넣기 ////////////////////////////
+            
+            // 테스트용 분넣기(테스트 후 반드시 주석!!!)
+            //M = 7;
+            
+            // 분단위 두자릿수 표시하기(10미만일때)
+            if(M < 10) M = "0" + M;
+            
+            // 분출력
+            document.getElementsByClassName("minute").item(0)
+            .innerText = M;
+            
             
             
             
