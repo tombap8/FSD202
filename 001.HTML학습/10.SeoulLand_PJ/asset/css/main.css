@@ -34,6 +34,26 @@ body::before{
 .b1{
    height: 419px;
 }
+/*배너 겉박스*/
+#ban{
+    position: relative;
+    /*부모자격*/
+}
+/*배너슬라이드*/
+/*ul,li모두 absolute로 겹치게!*/
+.slider, .slider li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
 
 /*********** 3.컨텐츠영역 **************/
 /*컨텐츠영역 파티션높이*/
