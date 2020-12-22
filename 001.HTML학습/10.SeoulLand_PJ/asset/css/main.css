@@ -60,7 +60,9 @@ body::before{
 /*on이라는 클래스를 설정한 li 디자인*/
 .slider li.on{
     opacity: 1;
-    
+    z-index: 1;
+    /*현재 보이는 슬라이드가 맨위로 오게함!
+    클릭가능!*/
 }
 
 
