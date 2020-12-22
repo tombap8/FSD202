@@ -11,6 +11,7 @@
 #top{
     position: relative;
     /*GNB Line박스의 부모*/
+    z-index: 9999;/*가장위!*/
     
 }
 /*GNB 메뉴 100% 라인박스*/
