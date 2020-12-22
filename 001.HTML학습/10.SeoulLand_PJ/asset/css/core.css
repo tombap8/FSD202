@@ -27,6 +27,15 @@ body {
     outline: 2px dashed blue;
 }
 
+/*IR배경이미지설명*/
+.bld{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
 
 
 
