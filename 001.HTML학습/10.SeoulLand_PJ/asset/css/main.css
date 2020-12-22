@@ -103,6 +103,16 @@ body::before{
     z-index: 2;/*배너리스트보다 위에 옴!*/
     outline: 2px solid red;
 }
+/*왼쪽이동버튼*/
+.lb{
+    left: -25px;
+    background: url(../images/btn_shop_bn_left.png) no-repeat;
+}
+/*오른쪽이동버튼*/
+.rb{
+    right: -25px;
+    background: url(../images/btn_shop_bn_right.png) no-repeat;
+}
 
 
 
