@@ -64,7 +64,8 @@
     } ////// chgImg 함수 /////////////////////////////
     /////////////////////////////////////////////////
     /////////////////////////////////////////////////
-        /*
+        
+       /* 
         [ 요소를 선택하는 새로운 방법! ]
         - 기존방식: document.getElementById(아이디명)
                 document.getElementsByClassName(클래스명).item(순번)
@@ -82,6 +83,8 @@
              
             예) document.querySelector("#my ul li a")
         
+            -> 기존방식이라면 document.getElementById("my").getElementsByTagName("ul") .item(0).getElementsByTagName("li").item(0).getElementsByTagName("a").item(0) 헉헉헉;;;;;죽음;;;;;
+        
             2. document.querySelectorAll(CSS선택자)
             - 선택된 요소가 한개든 여러개든지 컬렉션에 담아온다
             - .item(순번) 또는 [순번] 으로 구체적인 선택을 함
@@ -94,8 +97,8 @@
                     - css선택자로 브라우저에게 질의를 해서 요소를 가져옴!
                 selector는 "선택자"라는 뜻(CSS선택자)
     
-    */
     
+    */
     
     
     </script>
