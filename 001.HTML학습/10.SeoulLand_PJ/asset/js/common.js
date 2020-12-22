@@ -6,7 +6,7 @@
 */ //////////////////////////////////////
 function showG(hv) { //hv - 높이값 전달변수
     // 1. 함수호출 및 전달값 확인
-    console.log("나야나!" + hv);
+    //console.log("나야나!" + hv);
     // 2. 변경대상: .gnbline
     var tg = document
         .getElementsByClassName("gnbline").item(0);
