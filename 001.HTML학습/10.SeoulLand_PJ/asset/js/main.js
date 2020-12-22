@@ -14,11 +14,21 @@ window.addEventListener("DOMContentLoaded",function(){
     var abtn = document.querySelectorAll('.abtn');
     // 3. 이벤트 종류: click
     
-    // (1)왼쪽버튼
-    abtn[0].onclick = function(){};
+    // (1)왼쪽버튼 /////////////////
+    abtn[0].onclick = function(){
+        // 이동함수호출
+        goSlide(0);
+        // a요소 클릭시 이동속성 없애기!
+        return false;
+    };/////// click함수 ///////////
     
-    // (2)오른쪽버튼
-    abtn[1].onclick = function(){};
+    // (2)오른쪽버튼 ///////////////
+    abtn[1].onclick = function(){
+        // 이동함수호출
+        goSlide(1);
+        // a요소 클릭시 이동속성 없애기!
+        return false;
+    };/////// click함수 ///////////
     
     
 });///////// 로드구역 //////////////////////////////////
