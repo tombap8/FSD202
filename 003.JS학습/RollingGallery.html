@@ -57,13 +57,44 @@
             console.log("왼쪽이양!");
         } //// else //////////
         
+        // 3. 이미지변경하기
+        // 대상: #mbox img
+        
         
     } ////// chgImg 함수 /////////////////////////////
     /////////////////////////////////////////////////
     /////////////////////////////////////////////////
+        /*
+        [ 요소를 선택하는 새로운 방법! ]
+        - 기존방식: document.getElementById(아이디명)
+                document.getElementsByClassName(클래스명).item(순번)
+                document.getElementsByTagName(태그명).item(순번)
+        - 기존방식의 불변한점
+            1. 너무길다
+            2. 하위요소 선택시 불편하다 
+        - 새로운방식: CSS선택자를 그대로 사용할 수 있는 방식!
+            
+            1. document.querySelector(CSS선택자)
+            - 선택된 요소를 무조건 처음만나는 하나만 선택함
+            - 순번이 필요없음!
+            - 주의사항: CSS선택자 방식을 그대로 씀
+            (#-아이디,.-클래스,띄어쓰기-자손,꺽쇠-직계자식)
+             
+            예) document.querySelector("#my ul li a")
+        
+            2. document.querySelectorAll(CSS선택자)
+            - 선택된 요소가 한개든 여러개든지 컬렉션에 담아온다
+            - .item(순번) 또는 [순번] 으로 구체적인 선택을 함
+            - .length 컬렉션 개수를 가져올 수 있음
+            - 주의사항: CSS선택자를 사용해야함!
+            
+            예) document.querySelectorAll("ul li").item(4) -> 5번째요소
     
+            참고) 여기서 사용된 query라는 말은 "질의하다"라는 뜻임
+                    - css선택자로 브라우저에게 질의를 해서 요소를 가져옴!
+                selector는 "선택자"라는 뜻(CSS선택자)
     
-    
+    */
     
     
     
