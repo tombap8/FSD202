@@ -12,6 +12,8 @@ window.addEventListener("DOMContentLoaded",function(){
     
     // 2. 이벤트 대상선정: .abtn
     var abtn = document.querySelectorAll('.abtn');
+    
+    
     // 3. 이벤트 종류: click
     
     // (1)왼쪽버튼 /////////////////
@@ -77,6 +79,38 @@ function goSlide(gubun){//gubun(왼쪽:0,오른쪽:1)
     
     // 1.함수호출, 전달값 확인
     console.log("슬라이드이동!"+gubun);
+    
+    // 2.변경대상: .slider li
+    var tg = document.querySelectorAll('.slider li');
+    console.log("슬라이드개수:"+tg.length);
+    
+    // 3.버튼 구분하여 배너순번 증감하기
+    // 오른쪽버튼(gubun이 1이면 true)
+    if(gubun){
+        
+        //확인
+        console.log("오른쪽!!!");
+        // 배너순번 증가
+        bseq++;
+        // 한계수 설정(마지막 컬렉선번호 다음번호이면 처음으로)
+        if(bseq === tg.length) bseq = 0;
+        
+    } ////// if //////
+    /// 왼쪽버튼 //////////////
+    else{
+        
+        //확인
+        console.log("왼쪽!!!");
+        // 배너순번 감소
+        bseq--;
+        // 한계수 설정(0보다작은 -1일경우 끝번호로)
+        if(bseq === -1) bseq = tg.length-1;
+        // 마지막 컬렉션 번호는 개수보다 1작다!
+    } ///// else //////
+    
+    // 변경된 배너순번 확인!
+    console.log("배너순번:"+bseq);
+    
     
 } ////// goSlide 함수 /////////////////////////////
 /////////////////////////////////////////////////
