@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #tt{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            animation: tt 5s ease-in-out 3s forwards;
+        }
+        @keyframes tt{
+            0%{
+                left: 0px;
+                transform: translateY(0px)
+            }
+            50%{
+                transform: translateY(-500px)
+            }
+            100%{
+                left: 1000px;
+                transform: translateY(0px)
+            }
+        }
+    </style>
+</head>
+<body>
+   <img src="images/num/num_05.png" id="tt">
+    
+</body>
+</html>
