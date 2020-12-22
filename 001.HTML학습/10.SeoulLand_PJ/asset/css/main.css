@@ -113,6 +113,10 @@ body::before{
     right: -25px;
     background: url(../images/btn_shop_bn_right.png) no-repeat;
 }
+/*이동버튼 공통 마우스 오버시 배경이미지 위치변경하기*/
+.abtn:hover{
+    background-position: 0 -49px;
+}
 
 
 
