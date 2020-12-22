@@ -86,6 +86,23 @@ body::before{
     background: url(../images/ban05.jpg) no-repeat center;
 }
 
+/*배너 중앙속박스*/
+.ban{
+    position: relative;
+    /*부모자격*/
+}
+
+/*배너이동버튼*/
+.abtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*세로중앙이동*/
+    width: 25px;
+    height: 49px;
+    z-index: 2;/*배너리스트보다 위에 옴!*/
+    outline: 2px solid red;
+}
 
 
 
