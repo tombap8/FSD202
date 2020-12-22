@@ -193,13 +193,27 @@
             기능: 랜덤하게 이미지 변경하기
         *///////////////////////////////////////////////
         function chgImg(){
+            // 1. 함수호출확인
+            console.log("이미지변경!");
+            
+            // 2. 랜덤수 구하기 : 1~7사이 난수
+            var rdn = Math.ceil(Math.random()*7);
+            console.log("이미지랜덤수:"+rdn);
+            
+            // 3. 랜덤수의 이미지 src변경하기
+            // 대상: .ibox img
+            document.getElementsByClassName("ibox").item(0)
+            .getElementsByTagName("img").item(0)
+            .setAttribute("src","images/img"+rdn+".jpg");
+            //.setAttribute(속성명,속성값)
             
         } ////// chgImg 함수 /////////////////////////////
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
         
         
-        
+        // 인터발함수로 랜덤이미지 변경함수 호출!
+        setInterval(chgImg,2000);//2초간격
         
         
         
