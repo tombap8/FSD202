@@ -49,6 +49,21 @@ body::before{
     height: 100%;
 }
 
+/*슬라이드 리스트 공통*/
+.slider li{
+    opacity: 0;
+    
+    /*트랜지션:속시이지*/
+    transition: opacity .8s ease-in-out;
+}
+/*보이는 리스트 class*/
+/*on이라는 클래스를 설정한 li 디자인*/
+.slider li.on{
+    opacity: 1;
+    
+}
+
+
 /*슬라이드 개별셋팅*/
 .slider li:nth-child(1){
     background: url(../images/ban00.jpg) no-repeat center;
