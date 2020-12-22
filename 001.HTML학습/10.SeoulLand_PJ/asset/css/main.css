@@ -22,7 +22,7 @@ body::before{
     height: 100%;
     /*크기는 부모를 기준함
     (body에 relative가 없으면 보이는 화면기준)*/
-    background-image: url(../images/SeoulLand_main_over.jpg);
+    background-image: url(../images/SeoulLand_main.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     z-index: -1;

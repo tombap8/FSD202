@@ -23,6 +23,8 @@
     height: 0;/*142px;*/
     background-color: #fff;
     border-bottom: 3px solid #cd0102;
+    box-shadow: 0 2px 1px #999;
+    
     transition: height .4s ease-out;
     /*트랜지션:속시이지-.gnb의 트랜지션과 동일!*/
 }
