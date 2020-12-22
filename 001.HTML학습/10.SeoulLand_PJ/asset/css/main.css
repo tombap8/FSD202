@@ -101,7 +101,7 @@ body::before{
     width: 25px;
     height: 49px;
     z-index: 2;/*배너리스트보다 위에 옴!*/
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
 }
 /*왼쪽이동버튼*/
 .lb{
