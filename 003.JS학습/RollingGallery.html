@@ -4,71 +4,93 @@
     <meta charset="UTF-8">
     <title>Rolling Gallery</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;/*세로화면기준*/
+            height: 100%;
+            /*세로화면기준*/
             overflow: hidden;
         }
-        body{
+
+        body {
             background: url(images/space.jpg) no-repeat center/auto 200%;
         }
-        
-        img{
+
+        img {
             border: none;
             /*이미지링크시 보더 없앰*/
             vertical-align: middle;
             /*인라인요소간 오른쪽요소의 세로정렬*/
         }
-        a{
+
+        a {
             text-decoration: none;
         }
+
         /*갤러리부모박스*/
-        #wrap{
+        #wrap {
             width: 520px;
             margin: 0 auto;
             text-align: center;
             padding-top: 20px;
             /*outline: 2px dotted red;*/
         }
+
         /*메인이미지박스*/
-        #mbox{
+        #mbox {
             display: inline-block;
             /*block처럼 디자인적용되며
             inline처럼 한줄에 온다!*/
         }
     </style>
     <script>
-    /*//////////////////////////////////////////////
-        함수명: chgImg
-        기능: 이동버튼 클릭시 해당순번의 이미지가 연속나옴
-    *///////////////////////////////////////////////
-    function chgImg(dir){// dir-방향(0-왼쪽,1-오른쪽)
-        
-        // 1.함수호출,전달값 확인
-        console.log("나야나!"+dir);
-        
-        // 2. 방향분기
-        // 오른쪽버튼
-        if(dir){// dir만 쓰면 1일때, 즉, true임!
-            console.log("오른쪽이양!");
-        } //// if /////////////
-        else{
-            console.log("왼쪽이양!");
-        } //// else //////////
-        
-        // 3. 이미지변경하기
-        // 대상: #mbox img
-        var tg = document.querySelector('#mbox img');
-        // 이미지 src 변경하기
-        tg.setAttribute("src","images/img2.jpg");
-        
-        
-    } ////// chgImg 함수 /////////////////////////////
-    /////////////////////////////////////////////////
-    /////////////////////////////////////////////////
-        
-       /* 
+        /*//////////////////////////////////////////////
+            함수명: chgImg
+            기능: 이동버튼 클릭시 해당순번의 이미지가 연속나옴
+        */ //////////////////////////////////////////////
+
+        // 이미지번호 변수
+        //(전역변수로 있어야 한번 생성해서 값을 바꿔서 사용가능!)
+        var num = 1; //처음이미지가 1번이므로
+
+        function chgImg(dir) { // dir-방향(0-왼쪽,1-오른쪽)
+
+            // 1.함수호출,전달값 확인
+            console.log("나야나!" + dir);
+
+            // 2. 방향분기
+            // 오른쪽버튼
+            if (dir) { // dir만 쓰면 1일때, 즉, true임!
+                console.log("오른쪽이양!");
+                // 이미지번호 증가
+                num++; //1씩증가
+                // 이미지번호 한계값(처음으로 롤링!)
+                if (num === 8) num = 1;
+            } //// if /////////////
+            else {
+                console.log("왼쪽이양!");
+                // 이미지번호 감소
+                num--; //1씩감소
+                // 이미지번호 한계값(마지막으로 롤링!)
+                if (num === 0) num = 7;
+            } //// else //////////
+
+            // 이미지번호 찍기
+            console.log("이미지번호:" + num);
+
+            // 3. 이미지변경하기
+            // 대상: #mbox img
+            var tg = document.querySelector('#mbox img');
+            // 이미지 src 변경하기
+            tg.setAttribute("src", "images/img2.jpg");
+
+
+        } ////// chgImg 함수 /////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
+
+        /* 
         [ 요소를 선택하는 새로운 방법! ]
         - 기존방식: document.getElementById(아이디명)
                 document.getElementsByClassName(클래스명).item(순번)
@@ -102,12 +124,11 @@
     
     
     */
-    
-    
     </script>
 </head>
+
 <body>
-   <!--갤러리부모박스-->
+    <!--갤러리부모박스-->
     <div id="wrap">
         <!--타이틀-->
         <h1>Rolling Gallery</h1>
@@ -124,6 +145,5 @@
             <img src="images/right_btn.png" alt="오른쪽이동버튼">
         </a>
     </div>
-    
-</body>
-</html>
+
+</body></html>
