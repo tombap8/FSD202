@@ -4,7 +4,42 @@
     <meta charset="UTF-8">
     <title>Rolling Gallery</title>
     <style>
-    
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;/*세로화면기준*/
+            overflow: hidden;
+        }
+        body{
+            background: url(images/space.jpg) no-repeat center/auto 200%;
+        }
+        
+        img{
+            border: none;
+            /*이미지링크시 보더 없앰*/
+            vertical-align: middle;
+            /*인라인요소간 오른쪽요소의 세로정렬*/
+        }
+        a{
+            text-decoration: none;
+        }
+        /*갤러리부모박스*/
+        #wrap{
+            width: 520px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+            outline: 2px dotted red;
+        }
+        /*메인이미지박스*/
+        #mbox{
+            display: inline-block;
+            /*block처럼 디자인적용되며
+            inline처럼 한줄에 온다!*/
+        }
+        
+        
+        
     </style>
 </head>
 <body>
