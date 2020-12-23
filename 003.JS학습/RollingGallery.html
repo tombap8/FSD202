@@ -121,6 +121,11 @@
             var tg = document.querySelector('#mbox img');
             // 이미지 src 변경하기
             tg.setAttribute("src", "images/img"+num+".jpg");
+            
+            // 4. 추가변경 - 이미지문구넣기
+            // 변경대상: .imgtxt
+            document.querySelector('.imgtxt').innerText = txt[num-1];
+            // 이미지번호보다 1작게 배열번호를 만들어서 넣어준다!
 
 
         } ////// chgImg 함수 /////////////////////////////
