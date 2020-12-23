@@ -49,6 +49,21 @@
         3) 공통사항 : substr(시작순서) / substring(시작순서)
          - 시작순서만 쓰면 시작순번부터 끝까지 문자열을 가져온다!
         */
+        
+        var sub1 = "쓸쓸하고 찬란하신 도깨비, 공유씨!";
+        console.log(sub1);
+        //"도깨비"만 추출
+        console.log(sub1.substr(10,3));
+        console.log(sub1.substring(10,13));
+        // 주의사항: substring의 끝번호는 잘라올 마지막문자 순번 다음순번임!
+        //"공유"만 추출
+        console.log(sub1.substr(15,2));
+        console.log(sub1.substring(15,17));
+        //"도깨비, 공유씨!" 도깨비부터 마지막까지 잘라오기
+        console.log(sub1.substr(10));
+        console.log(sub1.substring(10));
+        
+        
     
     
     
