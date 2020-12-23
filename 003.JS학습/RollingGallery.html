@@ -129,8 +129,14 @@
             
             // 4. 추가변경 - 이미지문구넣기
             // 변경대상: .imgtxt
-            document.querySelector('.imgtxt').innerText = txt[num-1];
+            var imgtxt =  document.querySelector('.imgtxt');
+            
+            // 텍스트 변경하기
+            imgtxt.innerText = txt[num-1];
             // 이미지번호보다 1작게 배열번호를 만들어서 넣어준다!
+            
+            // 텍스트 색상변경하기
+            imgtxt.style.color = tcolor[num-1];
 
 
         } ////// chgImg 함수 /////////////////////////////
