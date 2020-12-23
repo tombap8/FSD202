@@ -62,6 +62,32 @@
         //"도깨비, 공유씨!" 도깨비부터 마지막까지 잘라오기
         console.log(sub1.substr(10));
         console.log(sub1.substring(10));
+        /*
+        3. 문자 자르기 함수 : split(자를기준문자)
+        -> 문자열을 기준문자로 split하여 자르면 배열이 된다!
+        */
+        var sp1="나는,월요일,화요일,수요일,목요일,금요일,까지,학원,에서,공부,한다";
+        console.log(sp1);
+        // 콤마(,)로 잘라서 변수에 할당
+        var arr = sp1.split(",");
+        console.log(arr);
+        // "목요일"을 선택하여 출력
+        console.log(arr[4]);
+        // 배열에서 데이터를 선택하여 다른말로 변경하시오.
+        // "나는 학원에서까지 공부한다"
+        console.log(arr[0]+" "+arr[7]+arr[8]+arr[6]+" "+arr[9]+arr[10]);
+        /*
+        4. String(숫자데이터)
+        -> 숫자형 데이터를 문자형으로 변환
+        */
+        var str1 = 35;
+        var str2 = 11;
+        // 결과
+        var res1 = str1 + str2;
+        var res2 = String(str1) + String(str2);
+        
+        console.log("이번주 복권당첨번호는? "+res1);
+        console.log("이번주 복권당첨번호는? "+res2);
         
         
     
