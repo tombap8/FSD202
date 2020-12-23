@@ -165,7 +165,7 @@
         *///////////////////////////////////////////////
         
         // 인터발용변수
-        var autoI;
+        var autoI;// 아무값도 할당안하면 undefined 데이터형 상태임!
         
         function autoSlide(gubun){// gubun - 자동넘김:1, 멈춤:0
             
@@ -175,7 +175,22 @@
             // 2. 버튼 구분하여 작동하기
             // (1) 자동넘김버튼
             if(gubun){
-                autoI = setInterval("chgImg(1)",2000);
+                //console.log("autoI변수:"+autoI);
+                
+                // 만약 변수가 할당되지 않으면 undefined라는 값을 찍힌다
+                // 이것을 if문에 사용하면 false나옴
+                // 따라서 할당되지 않았을때문 실행하면
+                // 여러번 자동넘김 버튼을 클릭해도
+                // 인터발 함수를 한번만 실행할 수 있다!
+                
+                // 할당되지 않은 변수 autoI에 NOT연산자를 붙이면
+                // !autoI 는 false가 나면 true로 바꾸라는 말
+                // 따라서 if문은 false일때 실행된다는 말!!!
+                
+                if(!autoI) // false일때만 아래 문장을 실행해!!!
+                    autoI = setInterval("chgImg(1)",2000);
+                
+                //console.log("autoI변수:"+autoI);
                 // 2초 간격으로 오른쪽으로 넘어가는 값의 함수호출을함
                 // 인터발함수를 변수에 넣는 이유:
                 // 멈추게 하려면 변수에 넣어야함!
@@ -184,6 +199,19 @@
             else{
                 clearInterval(autoI);
                 // 지금 변수에 들어가 활동하는 인터발함수를 지운다!
+                
+                // 인터발함수의 실행을 autoI라는 변수의 할당여부로
+                // 실행되게 해 놨기 때문에 autoI라는 변수를
+                // undefined / null / false
+                // 위의 셋중 하나로 리셋해줘야한다!
+                
+                autoI = false;// null / undefined
+                
+                // undefined 나 null 도 데이터형 중 하나이다
+                // undefined는 "정의되지 않은 값" 이라는 의미의 데이터형
+                // null  "빈값"이라는 의미의 데이터형
+                // 위의 2가지 값은 if문에 들어가면 false로 판단된다!
+                
             } ////// else ////////////////////
             
             
