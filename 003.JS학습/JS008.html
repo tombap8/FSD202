@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>JS의 숫자데이터 가공
-    (숫자변환,숫자여부판별,숫자추출,
-    문자로된 숫자계산식 실제로 계산하기)</title>
+        (숫자변환,숫자여부판별,숫자추출,
+        문자로된 숫자계산식 실제로 계산하기)</title>
     <script>
-        
         //1. 숫자변환: Number(문자형숫자) -> 숫자형변환!
-        
-        var num1 = "3";//문자형숫자
-        var num2 = "2";//문자형숫자
-        
+
+        var num1 = "3"; //문자형숫자
+        var num2 = "2"; //문자형숫자
+
         // 결과
         var res1 = num1 + num2;
         var res2 = Number(num1) + Number(num2);
-        
-        console.log("문자형숫자 더하기:"+res1);
-        console.log("문자형숫자 숫자변환 후 더하기:"+res2);
+
+        console.log("문자형숫자 더하기:" + res1);
+        console.log("문자형숫자 숫자변환 후 더하기:" + res2);
         /*
-        2. 숫자여부판별 : isNaN(값)
-        - 값이 숫자가 아닐 경우 true를 리턴함
-        - is Not a Number ? (숫자가 아니니?)
-        - 답변: true(응, 숫자가 아니야) / false(아니, 숫자야)
+            2. 숫자여부판별 : isNaN(값)
+            - 값이 숫자가 아닐 경우 true를 리턴함
+            - is Not a Number ? (숫자가 아니니?)
+            - 답변: true(응, 숫자가 아니야) / false(아니, 숫자야)
         */
+
+        var nan1 = "32"; // 문자형숫자
+        var nan2 = 59; // 숫자
+        var nan3 = "22mynum"; // 문자
         
+        console.log("문자형숫자는 숫자가 아닌가? "+isNaN(nan1));
+        console.log("숫자는 숫자가 아닌가? "+isNaN(nan2));
+        console.log("문자는 숫자가 아닌가? "+isNaN(nan3));
         
-            
-    
-    
-    
-    
     </script>
 </head>
+
 <body>
-    
-</body>
-</html>
+
+</body></html>
