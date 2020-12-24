@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <!--모바일에 필수 뷰포트!!!-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1280px Grid System - Media Query</title>
     <link rel="stylesheet" href="css/gridSet.css">
     <link rel="stylesheet" href="css/gridView.css">
@@ -112,9 +114,13 @@
         그리드 시스템의 미디어쿼리는 단순하게 처리할 수 있다!(원칙상)
         
         [방법]
+        
         1. 변경할 크기의 미디어쿼리 구간에 그리드 사이즈 class를 
             다른이름으로 넣어준다!
         2. 변경할 레이아웃의 class를 추가적으로 html요소에 넣어준다!
+        
+        3. 모바일 레이아웃에서 100% 로 가로크기를 일괄 변경할 경우
+        "col-"라는 클래스명을 선택하여 width:100%를 설정해 준다
         */
         
         @media only screen and (max-width:1024px){
@@ -132,8 +138,18 @@
             .col-2nd-11 {width: 91.66%;}
             .col-2nd-12 {width: 100%;}
             
-            
         }/*미디어쿼리 - 1024px이하*/
+        
+        /*모바일 미디어쿼리*/
+        @media only screen and (max-width:800px){
+            
+            /* 클래스에 "col-"를 가진 모든 요소에 적용!*/
+            [class*="col-"]{
+                width: 100%;
+            }
+            
+            
+        }/*미디어쿼리 - 800px이하*/
         
         
         
