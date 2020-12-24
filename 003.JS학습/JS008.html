@@ -32,6 +32,40 @@
         console.log("숫자는 숫자가 아닌가? "+isNaN(nan2));
         console.log("문자는 숫자가 아닌가? "+isNaN(nan3));
         
+        /*
+        3. 숫자추출(숫자형변환)
+        
+        1) parseInt(숫자+문자)
+        -> 정수(Integer)형인 숫자만 추출하여 정수형 숫자로 변환함
+
+        2) parseFloat(숫자+문자)
+        -> 실수(Float)형인 숫자만 추출하여 실수형 숫자로 변환함
+
+        - 원래는 parseInt, parseFloat 은 형변환함수임!
+        - 웹에서 주로 숫자뒤에 단위가 붙은 경우가 많은데
+        계산할때 단위가 있으면 숫자 계산이 안되기때문에 형변환하면
+        단위를 자동으로 없애고 숫자만 계산해 준다!
+        */  
+        
+        var pa1 = "32px";
+        var pa2 = "64px";
+        
+        // 결과
+        var pares1 = pa1 + pa2;
+        var pares2 = parseInt(pa1) + parseInt(pa2);
+        
+        console.log("단위가 있는 숫자더하기: "+pares1);
+        console.log("단위가 있는 숫자 변환 후 더하기: "+pares2);
+            
+            
+            
+            
+        
+        
+        
+        
+        
+        
     </script>
 </head>
 
