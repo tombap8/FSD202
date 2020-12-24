@@ -130,12 +130,13 @@
         @media only screen and (max-width:800px){
             
             /*최상위 root만 건드려서 기본값 16px을 변경한다!*/
-            /*html{
-                font-size: 12px;
-            }*/
-            body{
+            /*만일 html의 크기를 변경하지 않으면 rem은 바뀌지 않음!*/
+            html{
                 font-size: 12px;
             }
+            /*body{
+                font-size: 12px;
+            }*/
             /*만약 px단위와 같이 절대단위로 셋팅했다면 미디어쿼리에서
             각각의 요소의 글자크기를 모두 수정해야하는 번거로움이 생김
             상대단위는 최상위 변경해도 모두에게 적용되는 편리함이 있다!*/
