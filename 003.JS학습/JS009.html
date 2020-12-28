@@ -229,6 +229,28 @@
             var link = document.querySelectorAll(".smenu ol a");
             console.log("서브메뉴개수:"+link.length);
             
+            ////////////////////////////////////////////////////
+            /// for of문으로 컬랙션의 개수만큼 반복해서 click셋팅하기!
+            for(var x of link){
+                
+                console.log("서브메뉴:"+x.innerText);
+                
+                // 해당요소를 클릭하면 ////
+                x.onclick = function(){
+                    
+                    // 링크텍스트
+                    var txt = this.innerText;
+                    // this는 링크걸린 a요소 자신!
+                    alert(txt);
+                    
+                    
+                    
+                };////// click 함수 ////////////
+                
+                
+            }/////// for of문 //////////////////////////////////
+            ////////////////////////////////////////////////////
+            
             
             
 
