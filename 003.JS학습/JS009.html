@@ -154,64 +154,67 @@
             - blur : 요소를 찍었다가 다른곳을 찍었을때(초점이 벗어날때)
             - change : select요소, input의 체크박스, 라디오버튼 등의 
             요소의 상태가 변경될때
-       */         
-                
-         //////////// 로드구역 ///////////////////////////
-        window.addEventListener("DOMContentLoaded",function(){
-            
+       */
+
+        //////////// 로드구역 ///////////////////////////
+        window.addEventListener("DOMContentLoaded", function() {
+
             // 로드구역 확인
             console.log("로딩완료!");
-            
+
             //// #div01의 각 메뉴에 마우스 오버시 하위메뉴 보이기 ////
             // 이벤트: mouseover / mouseout
             // 이벤트 대상: .smenu
             var menu = document.querySelectorAll('.smenu');
-            console.log("메뉴개수:"+menu.length);
-            
+            console.log("메뉴개수:" + menu.length);
+
             // 변경 대상: .smenu ol
             // 변경 내용: 마우스 오버시 높이값이 생기고 아웃시엔 높이값 0            
-            
-            // 메뉴 개수만큼 for문을 돌려서 모두 셋팅한다!
-            // for문의 대상은 li.smenu 즉, 컬랙션에 담긴 요소임!
-            // for of문을 사용해 보자!
-            
-            for(var x of menu){
-                
-                console.log("돌아!");
-                
-            } //// for of 문 ///////////////////
-            
-            
-            
+            /////////////////////////////////////////////////
+            // 메뉴 개수만큼 for문을 돌려서 모두 셋팅한다! ////////
+            // for문의 대상은 li.smenu 즉, 컬랙션에 담긴 요소임!//
+            // for of문을 사용해 보자!//////////////////////////
+            /////////////////////////////////////////////////
+            for (var x of menu) { //x는 해당순번의 .smenu요소
+
+                //console.log("돌아!");
+                // 마우스 오버시 ///////////////////////////
+                menu.item(0).onmouseover = function() {
+
+                    // 선택된 li의 서브메뉴박스 div를 선택한다!
+                    var tg = this.querySelector("div");
+                    // 서브메뉴 박스의 ol의 높이값을 측정한다
+                    var hv = tg.querySelector("ol").offsetHeight;
+                    // offsetHeight는 현재 선택요소의 높이값을 알아옴
+                    // 리턴결과는 단위없는 px숫자값이 나옴!
+                    console.log("ol높이값:" + hv);
+
+                    tg.style.height = hv + "px";
+                    tg.style.transition = "height .4s";
+
+                }; ///// mosueover 함수 /////////////////
+
+                // 마우스 아웃시 ///////////////////////////////
+                menu.item(0).onmouseout = function() {
+
+                    var tg = this.querySelector("div");
+                    tg.style.height = "0";
+
+                }; ////// mouseout 함수 ///////////////
+
+
+
+            } //// for of 문 ////////////////////////////////
+            /////////////////////////////////////////////////
+
+
+
             /*for(시;한;증){}
             for(var i=0;i<menu.length;i++){}*/
-            
-            
-            
-            // 마우스 오버시 ////
-            menu.item(0).onmouseover = function(){
-                
-                // 선택된 li의 서브메뉴박스 div를 선택한다!
-                var tg = this.querySelector("div");
-                // 서브메뉴 박스의 ol의 높이값을 측정한다
-                var hv = tg.querySelector("ol").offsetHeight;
-                // offsetHeight는 현재 선택요소의 높이값을 알아옴
-                // 리턴결과는 단위없는 px숫자값이 나옴!
-                console.log("ol높이값:"+hv);
-                
-                tg.style.height = hv+"px";
-                tg.style.transition = "height .4s";
-                
-            };///// mosueover 함수 /////////////////
-            
-            // 마우스 아웃시 ////
-            menu.item(0).onmouseout = function(){
-                
-                var tg = this.querySelector("div");
-                tg.style.height = "0";
-                
-            }; ////// mouseout 함수 ///////////////
-            
+
+
+
+
             /*
             [ 선택요소의 현재 크기,위치값 알아오는 JS속성 ]
                 1. 선택요소.offsetWidth : 가로값
@@ -219,22 +222,15 @@
                 3. 선택요소.offsetTop : top위치값
                 4. 선택요소.offsetLeft : left위치값
             */
-            
-            
-            
-            
-        });///////// 로드구역 //////////////////////////////////////
+
+
+
+
+        }); ///////// 로드구역 //////////////////////////////////////
         //////////////////////////////////////////////////////////
-        
-        
-    
-    
-    
-    
-    
     </script>
     <style>
-        body>div{
+        body>div {
             outline: 1px solid red;
             width: 200px;
             display: inline-block;
@@ -242,104 +238,103 @@
             /*인라인블록은 인라인성격이 있어서 기본 옆으로 세로정렬은
             baseline이므로 아래쪽선을 기준한다. 이것을 위줄 기준변경함*/
         }
-        
-        div img{
+
+        div img {
             width: 50px;
         }
-        
+
         /*서브메뉴 숨기기*/
-        .smenu>div{
+        .smenu>div {
             height: 0;
             overflow: hidden;
         }
-    
-    
     </style>
-    
+
 </head>
+
 <body>
-   <div id="div01">
-       마우스오버시 <br>
-       1. 서브메뉴 보이기 <br>
-       2. 링크이동하기
-       
-       <!--ul>li.smenu*6>a+ol>li*6>a-->
-       <ul>
-           <li class="smenu">
-               <a href="">검색포털사이트</a>
-               <div>
-                   <ol>
-                       <li><a href="">Google</a></li>
-                       <li><a href="">Naver</a></li>
-                       <li><a href="">Daum</a></li>
-                       <li><a href="">Nate</a></li>
-                   </ol>
-               </div>
-               
-           </li>
-           <li class="smenu">
-               <a href="">통신사사이트</a>
-               <div>
-                   <ol>
-                       <li><a href="">SK</a></li>
-                       <li><a href="">KT</a></li>
-                       <li><a href="">Uplus</a></li>
-                   </ol>
-               </div>
-               
-           </li>
-           <li class="smenu">
-               <a href="">영화관사이트</a>
-               <div>
-                   <ol>
-                       <li><a href="">CGV</a></li>
-                       <li><a href="">MEGABOX</a></li>
-                       <li><a href="">LOTTE CINEMA</a></li>
-                   </ol>
-               </div>
-               
-           </li>
-           <li class="smenu">
-               <a href="">쇼핑몰사이트</a>
-               <div>
-                   <ol>
-                       <li><a href="">GMARKET</a></li>
-                       <li><a href="">11번가</a></li>
-                       <li><a href="">Auction</a></li>
-                       <li><a href="">스토어팜</a></li>
-                       <li><a href="">인터파크</a></li>
-                       <li><a href="">쿠팡</a></li>
-                   </ol>
-               </div>
-               
-           </li>
-           <li class="smenu">
-               <a href="">스마트폰사이트</a>
-               <div>
+    <div id="div01">
+        마우스오버시 <br>
+        1. 서브메뉴 보이기 <br>
+        2. 링크이동하기
+
+        <!--ul>li.smenu*6>a+ol>li*6>a-->
+        <ul>
+            <li class="smenu">
+                <a href="">검색포털사이트</a>
+                <div>
                     <ol>
-                       <li><a href="">Apple</a></li>
-                       <li><a href="">Samsung</a></li>
-                   </ol>
-               </div>
-              
-           </li>
-           <li class="smenu">
-               <a href="">게임사이트</a>
-               <div>
-                   <ol>
-                       <li><a href="">넷마블</a></li>
-                       <li><a href="">넥슨</a></li>
-                       <li><a href="">IMC</a></li>
-                   </ol>
-               </div>
-               
-           </li>
-       </ul>
-       
-   </div>
-   
-   <div id="div02">
-       <h2>맨앞의 요소 맨뒤로 이동하기</h2>
+                        <li><a href="">Google</a></li>
+                        <li><a href="">Naver</a></li>
+                        <li><a href="">Daum</a></li>
+                        <li><a href="">Nate</a></li>
+                    </ol>
+                </div>
+
+            </li>
+            <li class="smenu">
+                <a href="">통신사사이트</a>
+                <div>
+                    <ol>
+                        <li><a href="">SK</a></li>
+                        <li><a href="">KT</a></li>
+                        <li><a href="">Uplus</a></li>
+                    </ol>
+                </div>
+
+            </li>
+            <li class="smenu">
+                <a href="">영화관사이트</a>
+                <div>
+                    <ol>
+                        <li><a href="">CGV</a></li>
+                        <li><a href="">MEGABOX</a></li>
+                        <li><a href="">LOTTE CINEMA</a></li>
+                    </ol>
+                </div>
+
+            </li>
+            <li class="smenu">
+                <a href="">쇼핑몰사이트</a>
+                <div>
+                    <ol>
+                        <li><a href="">GMARKET</a></li>
+                        <li><a href="">11번가</a></li>
+                        <li><a href="">Auction</a></li>
+                        <li><a href="">스토어팜</a></li>
+                        <li><a href="">인터파크</a></li>
+                        <li><a href="">쿠팡</a></li>
+                    </ol>
+                </div>
+
+            </li>
+            <li class="smenu">
+                <a href="">스마트폰사이트</a>
+                <div>
+                    <ol>
+                        <li><a href="">Apple</a></li>
+                        <li><a href="">Samsung</a></li>
+                    </ol>
+                </div>
+
+            </li>
+            <li class="smenu">
+                <a href="">게임사이트</a>
+                <div>
+                    <ol>
+                        <li><a href="">넷마블</a></li>
+                        <li><a href="">넥슨</a></li>
+                        <li><a href="">IMC</a></li>
+                    </ol>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <div id="div02">
+        <h2>맨앞의 요소 맨뒤로 이동하기</h2>
         <ul>
             <li><img src="images/img1.jpg" alt="이미지"></li>
             <li><img src="images/img2.jpg" alt="이미지"></li>
@@ -349,10 +344,10 @@
             <li><img src="images/img6.jpg" alt="이미지"></li>
             <li><img src="images/img7.jpg" alt="이미지"></li>
         </ul>
-   </div>
-   
-   <div id="div03">
-       <h2>맨뒤의 요소 맨앞으로 이동하기</h2>
+    </div>
+
+    <div id="div03">
+        <h2>맨뒤의 요소 맨앞으로 이동하기</h2>
         <ul>
             <li><img src="images/img1.jpg" alt="이미지"></li>
             <li><img src="images/img2.jpg" alt="이미지"></li>
@@ -362,13 +357,12 @@
             <li><img src="images/img6.jpg" alt="이미지"></li>
             <li><img src="images/img7.jpg" alt="이미지"></li>
         </ul>
-   </div>
-   
-   
-   
-   
-   
-   
-    
-</body>
-</html>
+    </div>
+
+
+
+
+
+
+
+</body></html>
