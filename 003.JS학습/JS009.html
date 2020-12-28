@@ -171,7 +171,22 @@
             // 변경 대상: .smenu ol
             // 변경 내용: 마우스 오버시 높이값이 생기고 아웃시엔 높이값 0            
             
-            // 첫번째 메뉴 샘플
+            // 메뉴 개수만큼 for문을 돌려서 모두 셋팅한다!
+            // for문의 대상은 li.smenu 즉, 컬랙션에 담긴 요소임!
+            // for of문을 사용해 보자!
+            
+            for(var x of menu){
+                
+                console.log("돌아!");
+                
+            } //// for of 문 ///////////////////
+            
+            
+            
+            /*for(시;한;증){}
+            for(var i=0;i<menu.length;i++){}*/
+            
+            
             
             // 마우스 오버시 ////
             menu.item(0).onmouseover = function(){
