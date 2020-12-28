@@ -44,6 +44,61 @@
             을 사용하여 구체적인 선택을 한다.
             - 집합의 개수를 가져올 수 있다 -> length
         
+            (4) CSS 선택자 코드로 접근하기
+                1) document.querySelector(선택자)
+                - CSS선택자 문법을 그대로 사용하여 브라우저에 질의(query)를 보내서 결과를 얻는 방식
+                - CSS요소가 다중 선택되어도 처음만나는 단하나의 요소만 선택함!
+                - item(순번) 과 같은 것은 불필요!
+                    
+                2) document.querySelectorAll(선택자)
+                - CSS 선택자로 선택된 결과가 컬렉션 집합에 담긴다
+                - 반드시 순번 선택으로 구체적인 요소를 선택한다!
+                    item(순번) / [순번]
+                - 선택된 요소의 개수 얻기 -> length
+        
+        ※ 위의 5가지 선택법 중 다중요소 선택일 경우 컬렉션이 생성되어
+            선택방법이 세분화된다!
+            - document.getElementsByClassNameI(클래스명)
+            - document.getElementsByTagName(태그명)
+            - document.querySelectorAll(선택자)
+            - 컬랙션은 item(순번)/[순번], length 를 사용함!
+                
+            [참고:컬렉션을 for문 사용하여 모두 돌아될 경우 
+                 for of문이 편리하다!]
+             ex) for(var x of 컬렉션변수){실행코드}
+            
+        [3] DOM으로 각 요소 변경방법:
+            
+            (1) 선택요소 내부의 html 변경하기 : innerHTML
+                예) document.getElementById("my")
+                    .innerHTML = "<div>my</div>";
+            
+            (2) 선택요소 내부의 데이터 변경하기 : innerText
+                예) document.getElementById("my")
+                    .innerText = "나야나!";
+        
+            (3) 선택요소 속성 변경하기
+                1) 선택요소.속성명 = 값
+                예) document.getElementById("my").title = "안녕!";
+                
+                2) 선택요소.setAttribute(속성명,속성값)
+                예) document.getElementById("my")
+                    .setAttribute("title","안녕!");
+                
+            참고) 속성값을 가져오는 2가지 방법
+            
+                1) 변수 = 선택요소.속성명
+                예) var tt = document.getElementById("my").title;
+                
+                2) 변수 = 선택요소.getAttribute(속성명)
+                예) var tt = document.getElementById("my")
+                            .getAttribute("title");
+            
+            
+        
+            
+            
+        
         
     
     
