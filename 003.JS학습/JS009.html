@@ -168,6 +168,20 @@
             var menu = document.querySelectorAll('.smenu');
             console.log("메뉴개수:"+menu.length);
             
+            // 변경 대상: .smenu ol
+            // 변경 내용: 마우스 오버시 높이값이 생기고 아웃시엔 높이값 0            
+            
+            // 첫번째 메뉴 샘플
+            menu.item(0).onmouseover = function(){
+                
+                // 선택된 li의 ol을 선택한다!
+                var tg = this.querySelector("ol");
+                tg.style.height = "80px";
+                tg.style.transition = "height .4s";
+                
+            };///// mosueover 함수 /////////////////
+            
+            
             
             
             
