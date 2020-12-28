@@ -166,7 +166,7 @@
             // 이벤트: mouseover / mouseout
             // 이벤트 대상: .smenu
             var menu = document.querySelectorAll('.smenu');
-            console.log("메뉴개수:" + menu.length);
+            //console.log("메뉴개수:" + menu.length);
 
             // 변경 대상: .smenu ol
             // 변경 내용: 마우스 오버시 높이값이 생기고 아웃시엔 높이값 0            
@@ -187,7 +187,7 @@
                     var hv = tg.querySelector("ol").offsetHeight;
                     // offsetHeight는 현재 선택요소의 높이값을 알아옴
                     // 리턴결과는 단위없는 px숫자값이 나옴!
-                    console.log("ol높이값:" + hv);
+                    //console.log("ol높이값:" + hv);
 
                     tg.style.height = hv + "px";
                     tg.style.transition = "height .4s";
@@ -222,6 +222,15 @@
                 4. 선택요소.offsetLeft : left위치값
             */
 
+            
+            ///// #div01의 서브메뉴 a요소를 클릭하면 해당 주소로 새창열기
+            // 이벤트 종류: click 
+            // 이벤트 대상: .smenu ol a
+            var link = document.querySelectorAll(".smenu ol a");
+            console.log("서브메뉴개수:"+link.length);
+            
+            
+            
 
 
 
