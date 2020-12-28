@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>method</title>
+</head>
+<body>
+    <script>
+    var car = {
+        x: 0,
+        y: 0,
+        move: function(nx,ny){
+            this.x += nx;
+            this.y += ny;
+        }
+    }
+    
+    document.write(car.x,',', car.y,'<br>');
+        car.move(10, 20);
+    document.write(car.x,',', car.y,'<br>');
+        car.move(20, 30);
+    document.write(car.x,',', car.y,'<br>');
+    
+    </script>
+</body>
+</html>
