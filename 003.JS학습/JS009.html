@@ -108,7 +108,31 @@
                 예) document.getElementById("my")
                     .onmouseover = function(){코드};
         
+            (2) 선택요소.addEventListener(이벤트명, 함수)
+                예) document.getElementById("my")
+                    .addEventListener("mouseover",function(){코드});
+        
+            ※ on이벤트명 방법과 addEventListener방법은 근본적인 차이가 있다! addEventListener는 이벤트 등록 전역메모리 구역에 등록을 해서 중간이 일반적으로 삭제되거나 변경되지 않는다. 반면에 on이벤트명에 할당하는 방법은 중간에 삭제하거나 변경하기가 수월함. 그래서 변경이 중간에 필요할 때는 on이벤트명을 사용하는 것이 좋다!
+                
             
+        [5] html 요소보다 위에 코딩된 JS를 나중에 실행하는 방법
+            
+            (1) load 이벤트를 사용함
+                - window.onload = function(){코드}
+                ※ window.onload 는 한 문서 안에 단 하나만 사용가능함!
+                - window.addEventListener("load",function(){코드})
+                - load 이벤트의 특성은 이미지, 동영상 등 모든 컨텐츠가
+                페이지로 로드 될때까지 기다렸다가 끝나면 이벤트가 발생함
+                
+            (2) DOMContentLoaded 이벤트를 사용함
+                - window.addEventListener("DOMContentLoaded",
+                                          function(){코드})
+                - DOMContentLoaded 이벤트는 html 태그요소만 그려지만
+                바로 발생하는 이벤트임(load보다 발생 속도가 빠름!)
+        
+        
+                
+                
             
         
         
