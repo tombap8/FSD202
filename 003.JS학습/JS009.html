@@ -231,9 +231,9 @@
 
             ////////////////////////////////////////////////////
             /// for of문으로 컬랙션의 개수만큼 반복해서 click셋팅하기!
-            for (var x of link) {
+            for (var x of link) { // x는 각 a요소
 
-                console.log("서브메뉴:" + x.innerText);
+                //console.log("서브메뉴:" + x.innerText);
 
                 // 해당요소를 클릭하면 ////
                 x.onclick = function() {
@@ -268,50 +268,63 @@
                         case "Uplus":
                             url = "http://www.uplus.co.kr";
                             break;
-                        case "":
+                        case "CGV":
+                            url = "http://www.cgv.co.kr";
                             break;
-                        case "":
+                        case "MEGABOX":
+                            url = "http://www.megabox.co.kr";
                             break;
-                        case "":
+                        case "LOTTE CINEMA":
+                            url = "https://www.lottecinema.co.kr/NLCHS";
                             break;
-                        case "":
+                        case "GMARKET":
+                            url = "http://www.gmarket.co.kr";
                             break;
-                        case "":
+                        case "11번가":
+                            url = "http://www.11st.co.kr";
                             break;
-                        case "":
+                        case "Auction":
+                            url = "http://www.auction.co.kr";
                             break;
-                        case "":
+                        case "스토어팜":
+                            url = "https://shopping.naver.com/";
                             break;
-                        case "":
+                        case "인터파크":
+                            url = "http://www.interpark.co.kr";
                             break;
-                        case "":
+                        case "쿠팡":
+                            url = "http://www.coopang.co.kr";
                             break;
-                        case "":
+                        case "Apple":
+                            url = "http://www.apple.com";
                             break;
-                        case "":
+                        case "Samsung":
+                            url = "http://www.samsung.com";
                             break;
-                        case "":
+                        case "넷마블":
+                            url = "http://www.netmarble.net";
                             break;
-                        case "":
+                        case "넥슨":
+                            url = "https://www.nexon.com";
                             break;
-                        case "":
+                        case "IMC":
+                            url = "http://www.imc.co.kr";
                             break;
                     } ///// switch case문 /////
-                    
+
                     // 페이지 이동하기(새창)
                     window.open().location.href = url;
                     // window.open() 새창열기
                     // location.href 페이지이동
 
-
-
+                    return false;
+                    // a요소 이동속성 없애기!
 
                 }; ////// click 함수 ////////////
 
 
             } /////// for of문 //////////////////////////////////
             ////////////////////////////////////////////////////
-
 
 
 
