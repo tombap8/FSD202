@@ -176,9 +176,15 @@
             // 마우스 오버시 ////
             menu.item(0).onmouseover = function(){
                 
-                // 선택된 li의 ol을 선택한다!
+                // 선택된 li의 서브메뉴박스 div를 선택한다!
                 var tg = this.querySelector("div");
-                tg.style.height = "80px";
+                // 서브메뉴 박스의 ol의 높이값을 측정한다
+                var hv = tg.querySelector("ol").offsetHeight;
+                // offsetHeight는 현재 선택요소의 높이값을 알아옴
+                // 리턴결과는 단위없는 px숫자값이 나옴!
+                console.log("ol높이값:"+hv);
+                
+                tg.style.height = hv+"px";
                 tg.style.transition = "height .4s";
                 
             };///// mosueover 함수 /////////////////
@@ -191,6 +197,13 @@
                 
             }; ////// mouseout 함수 ///////////////
             
+            /*
+            [ 선택요소의 현재 크기,위치값 알아오는 JS속성 ]
+                1. 선택요소.offsetWidth : 가로값
+                2. 선택요소.offsetHeight : 세로값
+                3. 선택요소.offsetTop : top위치값
+                4. 선택요소.offsetLeft : left위치값
+            */
             
             
             
