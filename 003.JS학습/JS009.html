@@ -177,7 +177,7 @@
             menu.item(0).onmouseover = function(){
                 
                 // 선택된 li의 ol을 선택한다!
-                var tg = this.querySelector("ol");
+                var tg = this.querySelector("div");
                 tg.style.height = "80px";
                 tg.style.transition = "height .4s";
                 
@@ -186,7 +186,7 @@
             // 마우스 아웃시 ////
             menu.item(0).onmouseout = function(){
                 
-                var tg = this.querySelector("ol");
+                var tg = this.querySelector("div");
                 tg.style.height = "0";
                 
             }; ////// mouseout 함수 ///////////////
