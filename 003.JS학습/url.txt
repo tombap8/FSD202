@@ -1,0 +1,22 @@
+
+url = "http://www.google.com";
+url = "http://www.naver.com";
+url = "http://www.daum.net";
+url = "http://www.nate.com";
+url = "http://www.sktelecom.com";
+url = "http://www.kt.com";
+url = "http://www.uplus.co.kr";
+url = "http://www.cgv.co.kr";
+url = "http://www.megabox.co.kr";
+url = "https://www.lottecinema.co.kr/NLCHS";
+url = "http://www.gmarket.co.kr";
+url = "http://www.11st.co.kr";
+url = "http://www.auction.co.kr";
+url = "https://shopping.naver.com/";
+url = "http://www.interpark.co.kr";
+url = "http://www.coopang.co.kr";
+url = "http://www.apple.com";
+url = "http://www.samsung.com";
+url = "http://www.netmarble.net";
+url = "https://www.nexon.com";
+url = "http://www.imc.co.kr";
