@@ -367,6 +367,43 @@
 
 
                 }; /////////// click 함수 ////////////////
+            
+            
+            /// 랜덤생성 버튼 클릭시 새로운 li에 랜덤으로 img넣기
+            // 이벤트 종류: click
+            // 이벤트 대상: .rbt
+            document.querySelector(".rbt").onclick = 
+                function(){
+                
+                // 1.함수호출확인
+                //console.log("랜덤이양~!");
+                
+                // 2.새로운 li 생성하기
+                var nn = document.createElement("li");
+                
+                // 3.새로운 img 생성하기
+                var im = document.createElement("img");
+                
+                // 4.새로운 속성 src 생성하기
+                var att = document.createAttribute("src");
+                
+                // 5.새로운 속성 src에 값넣기
+                att.value = "images/img1.jpg";
+                
+                // 6.새로운 속성 src를 새로운 img에 적용하기
+                im.setAttributeNode(att);
+                
+                // 7.새로운 li에 img넣기
+                nn.appendChild(im);
+                
+                // 8.변경대상 ul(변수d2)에 li 넣기
+                d2.appendChild(nn);
+                
+                
+                
+                
+                
+            };////////// click 함수 ///////////////////
 
 
 
@@ -483,6 +520,7 @@
     <div id="div02">
         <h2>요소의 생성,삭제,이동하기</h2>
         <button class="nbt">새리스트생성</button>
+        <button class="rbt">랜덤생성</button>
         <ul>
             <li><img src="images/img1.jpg" alt="이미지"></li>
             <li><img src="images/img2.jpg" alt="이미지"></li>
