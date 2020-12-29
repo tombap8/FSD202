@@ -356,19 +356,27 @@
             document.querySelector('.nbt').onclick =
                 function() {
 
-                    // 새로운 li를 생성하여 변수에 할당
+                    // 1.새로운 li를 생성하여 변수에 할당
                     var nn = document.createElement("li");
 
-                    // 새로생성된 li에 img태그 넣기
+                    // 2.새로생성된 li에 img태그 넣기
                     nn.innerHTML = '<img src="images/img' + inum +
                         '.jpg" alt="이미지">';
 
-                    // 이미지번호 증가(다음에 클릭할때 적용됨)
+                    // 3.이미지번호 증가(다음에 클릭할때 적용됨)
                     inum++;
                     if (inum === 8) inum = 1;
-                    //마지막번호 넘어가면 처음으로!
+                    //마지막번호 넘어가면 처음으로!                
+                
+                    // 4.새로운 li에 툴팁넣기
+                    nn.title = "클릭하면 삭제됩니다!";
 
-                    // 변경대상(ul)에 새로운 태그 li넣기
+                    // 5.새로운 li에 이벤트 셋팅하기
+                    nn.onclick = function() {
+                        this.remove();
+                    };////// click 함수 ///////
+
+                    // 6.변경대상(ul)에 새로운 태그 li넣기
                     d2.appendChild(nn);
 
 
