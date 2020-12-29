@@ -325,8 +325,8 @@
 
             } /////// for of문 //////////////////////////////////
             ////////////////////////////////////////////////////
-            
-            
+
+
             // 요소의 생성, 삭제, 이동하기 //////
             /*
             1. 선택요소.appendChild(요소)
@@ -338,10 +338,38 @@
             4. 선택요소.insertBefore(넣을놈,넣을놈전놈)
             - 특정요소에 새로운 요소 또는 기존요소를 넣거나 이동함
             */
-            
-            
-            
-            
+
+            // 새리스트생성 버튼 클릭시 리스트 만들기 ///
+            // 이벤트종류: click
+            // 이벤트대상: .nbt
+            // 변경대상: #div02 ul
+            var d2 = document.querySelector("#div02 ul");
+
+            /// 버튼클릭시 ///////////////////////////
+            var inum = 1; //이미지번호
+            document.querySelector('.nbt').onclick =
+                function() {
+
+                    // 새로운 li를 생성하여 변수에 할당
+                    var nn = document.createElement("li");
+
+                    // 새로생성된 li에 img태그 넣기
+                    nn.innerHTML = '<img src="images/img' + inum +
+                        '.jpg" alt="이미지">';
+
+                    // 이미지번호 증가(다음에 클릭할때 적용됨)
+                    inum++;
+                    if (inum === 8) inum = 1; 
+                    //마지막번호 넘어가면 처음으로!
+
+                    // 변경대상(ul)에 새로운 태그 li넣기
+                    d2.appendChild(nn);
+
+
+                }; /////////// click 함수 ////////////////
+
+
+
 
 
 
