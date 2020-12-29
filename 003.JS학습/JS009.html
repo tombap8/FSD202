@@ -444,6 +444,21 @@
             
             
             ///// 리스트의 li를 클릭하면 지우기! //////////
+            // 이벤트: click
+            // 이벤트대상: #div02 ul li
+            // 변경대상: 이벤트대상
+            // 변경내용: 변경대상 삭제하기
+            var dele = document.querySelectorAll('#div02 ul li');
+            // 모든 li에 onclick을 for of문으로 셋팅한다!
+            for(var x of dele){
+                //console.log("리스트양?");
+                x.onclick = function(){
+                    this.remove();
+                    // 자기자신을 노드에서 삭제함!
+                };///// click함수 ////////
+                
+                
+            } /////// for of문 ////////////
 
 
 
