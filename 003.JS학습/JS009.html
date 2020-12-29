@@ -325,8 +325,23 @@
 
             } /////// for of문 //////////////////////////////////
             ////////////////////////////////////////////////////
-
-
+            
+            
+            // 요소의 생성, 삭제, 이동하기 //////
+            /*
+            1. 선택요소.appendChild(요소)
+            - 어떤 요소를 선택요소내부의 맨뒤에 추가하거나 기존요소를 이동함
+            2. 선택요소.remove()
+            - 선택요소를 삭제함
+            3. document.createElement(태그명)
+            - 새로운 태그요소를 메모리상에 생성함
+            4. 선택요소.insertBefore(넣을놈,넣을놈전놈)
+            - 특정요소에 새로운 요소 또는 기존요소를 넣거나 이동함
+            */
+            
+            
+            
+            
 
 
 
@@ -438,7 +453,8 @@
     </div>
 
     <div id="div02">
-        <h2>맨앞의 요소 맨뒤로 이동하기</h2>
+        <h2>요소의 생성,삭제,이동하기</h2>
+        <button class="nbt">새리스트생성</button>
         <ul>
             <li><img src="images/img1.jpg" alt="이미지"></li>
             <li><img src="images/img2.jpg" alt="이미지"></li>
@@ -449,21 +465,6 @@
             <li><img src="images/img7.jpg" alt="이미지"></li>
         </ul>
     </div>
-
-    <div id="div03">
-        <h2>맨뒤의 요소 맨앞으로 이동하기</h2>
-        <ul>
-            <li><img src="images/img1.jpg" alt="이미지"></li>
-            <li><img src="images/img2.jpg" alt="이미지"></li>
-            <li><img src="images/img3.jpg" alt="이미지"></li>
-            <li><img src="images/img4.jpg" alt="이미지"></li>
-            <li><img src="images/img5.jpg" alt="이미지"></li>
-            <li><img src="images/img6.jpg" alt="이미지"></li>
-            <li><img src="images/img7.jpg" alt="이미지"></li>
-        </ul>
-    </div>
-
-
 
 
 
