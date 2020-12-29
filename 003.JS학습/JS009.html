@@ -452,6 +452,7 @@
             // 모든 li에 onclick을 for of문으로 셋팅한다!
             for(var x of dele){
                 //console.log("리스트양?");
+                x.title = "클릭하면 삭제됩니다!";
                 x.onclick = function(){
                     this.remove();
                     // 자기자신을 노드에서 삭제함!
