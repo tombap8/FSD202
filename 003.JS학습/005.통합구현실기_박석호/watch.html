@@ -263,14 +263,55 @@
         */
     </script>
     <style>
+        /*웹폰트(CDN)*/
+        /*학생변경파트1*/
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+        
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;/*보이는화면기준*/
+        }
+        body{
+            background: url(img_watch/watchBG.jpg) no-repeat center/1600px;
+            
+        }
+        /*시계박스*/
+        .clock{
+            position: relative;
+            /*부모자격*/
+            top: 50%;
+            transform: translateY(-50%);
+            width: 330px;
+            height: 568px;
+            margin: 0 auto;
+            background: url(img_watch/AppleWatch.png) no-repeat center;
+            /*outline: 1px solid blue;*/
+        }
+        
+        /*학생변경파트2*/
         .time {
+            position: absolute;
+            /*부모? .clock*/
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%,-50%);
+            /*정중앙이동*/
             width: 200px;
             padding: 10px;
             text-align: center;
-            font-size: 20px;
+            /*웹폰트적용*/
+            font-family: 'Audiowide', cursive;
+            font-size: 18px;
             color: aqua;
             background-color: #000;
             margin: 0 auto;
+            /*outline: 1px solid red;*/
+        }
+        /*시간파트*/
+        .tt{
+            font-size: 30px;
         }
 
         /*이미지박스*/
@@ -292,10 +333,10 @@
             <!--일-->
             <span class="date"></span>
             <!--요일-->
-            (<span class="day"></span>) <br>
+            /<span class="day"></span> <br>
             <div class="tt">
                 <!--오전/오후-->
-                <span class="noon"></span>
+                <span class="noon"></span> <br>
                 <!--시간-->
                 <span class="hour"></span> :
                 <!--분-->
