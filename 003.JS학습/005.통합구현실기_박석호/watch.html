@@ -282,12 +282,17 @@
             position: relative;
             /*부모자격*/
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotate(45deg) scale(.75);
             width: 330px;
             height: 568px;
             margin: 0 auto;
             background: url(img_watch/AppleWatch.png) no-repeat center;
             /*outline: 1px solid blue;*/
+            transition: all 1s ease-out;
+        }
+        /*마우스오버시 시계변경*/
+        .clock:hover{
+            transform: translateY(-50%) rotate(0deg) scale(1);
         }
         
         /*학생변경파트2*/
@@ -307,12 +312,14 @@
             color: aqua;
             background-color: #000;
             margin: 0 auto;
+            white-space: nowrap;/*줄바꿈방지!*/
             /*outline: 1px solid red;*/
         }
         /*시간파트*/
         .tt{
             font-size: 28px;
             text-align: left;
+            margin-left: 12px;
         }
 
         /*이미지박스*/
