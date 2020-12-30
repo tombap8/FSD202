@@ -476,6 +476,25 @@
 
 
             } /////// for of문 ////////////
+            
+            
+            ///// 맨앞요소를 맨뒤로 이동하기 ////////////////////
+            // 이벤트 종류: click
+            // 이벤트 대상: .mvl
+            // 변경 대상: #div02 ul li (위에서 dele변수에 담김)
+            // 변경 내용: 첫번째 li를 선택하여 맨뒤로 추가함
+            // 사용 메서드: appendChild(요소)
+            // -> 기존요소를 선택하면 이동이 됨!
+            /////////////////////////////////////////////////
+            document.querySelector(".mvl").onclick =
+                function(){
+                
+                // 1. 호출확인
+                console.log("나야나!맨뒤로!");
+                
+            };///////////// click 함수 ///////////////////////
+            
+            
 
 
 
@@ -592,7 +611,9 @@
     <div id="div02">
         <h2>요소의 생성,삭제,이동하기</h2>
         <button class="nbt">새리스트생성</button>
-        <button class="rbt">랜덤생성</button>
+        <button class="rbt">랜덤생성</button> <br><br>
+        <button class="mvl">맨뒤이동</button>
+        <button class="mvf">맨앞이동</button>
         <ul>
             <li><img src="images/img1.jpg" alt="이미지"></li>
             <li><img src="images/img2.jpg" alt="이미지"></li>
