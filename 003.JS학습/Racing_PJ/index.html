@@ -11,8 +11,8 @@
             margin: 0;
             padding: 0;
         }
-        
-        body{
+
+        body {
             overflow-x: hidden;
             /*가로스크롤 없앰*/
         }
@@ -27,15 +27,19 @@
             /*애니메이션:이시이지반방마*/
             animation: mov 1s ease-in-out infinite alternate;
         }
+
         /*타이틀 키프레임*/
-        @keyframes mov{
-            from{
+        @keyframes mov {
+            from {
                 transform: rotate(-5deg) scale(1);
             }
-            to{
+
+            to {
                 transform: rotate(5deg) scale(1.2);
             }
-        }/*키프레임*/
+        }
+
+        /*키프레임*/
 
         /*2.메인스테이지*/
         #bgi {
@@ -69,13 +73,13 @@
         }
 
         /*2-4.거북*/
-        #t1{
+        #t1 {
             top: 600px;
             left: 0;
         }
-        
+
         /*3.게임조작버튼*/
-        #btns{
+        #btns {
             position: fixed;
             top: 10%;
             right: 5%;
@@ -83,47 +87,52 @@
             height: 480px;
             list-style: none;
         }
-        #btns li{
+
+        #btns li {
             width: 150px;
             height: 150px;
             border: 5px solid #ccc;
             border-radius: 50%;
             text-align: center;
-            font: bold 30px/150px "맑은 고딕",Verdana;
+            font: bold 30px/150px "맑은 고딕", Verdana;
             background-color: #fff;
             margin-bottom: 20px;
         }
-        #btns a{
+
+        #btns a {
             display: block;
             width: 100%;
             height: 100%;
             text-decoration: none;
             color: #333;
         }
+
         /*버튼에 마우스 오버시*/
-        #btns li:hover{
+        #btns li:hover {
             background-color: lime;
             transform: scale(1.1);
         }
+
         /*버튼 a요소를 누르고 있을때(:active)*/
-        #btns a:active{
+        #btns a:active {
             color: red;
         }
-        
+
         /*4.게임레벨*/
-        .levbox{
+        .levbox {
             position: absolute;
             top: 3%;
             right: 5%;
         }
-        #level{
+
+        #level {
             width: 150px;
             height: 40px;
-            font: 24px "맑은 고딕","굴림";
+            font: 24px "맑은 고딕", "굴림";
         }
-        
+
         /*5.결과 메시지창*/
-        #msg{
+        #msg {
             position: fixed;
             margin: 0;
             padding: 0;
@@ -133,9 +142,39 @@
             text-align: center;
             color: #ceff00;
             text-shadow: 0 0 10px #000;
-            display: none;/*처음에 안보임!*/
+            display: none;
+            /*처음에 안보임!*/
         }
     </style>
+    <script>
+        //////////////// 전역변수구역 /////////////////
+        // 토끼, 거북, 메시지 변수
+        var rabbit, turtle, msg;
+        // 토끼의 위치값(left) 변수
+        var rbpos = 0;
+        // 거북의 위치값(left)
+        var ttpos = 0;
+        // 인터발용변수
+        var autoI;
+        // 게임레벨용변수
+        var level;
+        // 거북동작상태(0-허용,1불허용)
+        var ttsts = 0;
+        //////////////////////////////////////////////
+
+        /////// 로드구역 ///////////////////////////////////
+        // DOMContentLoaded : html 태그가 모두 로딩된 후 발생
+        window.addEventListener("DOMContentLoaded",
+            function() {
+                
+                // 로딩확인
+                console.log("로딩완료!");
+
+
+
+            }); ////////// 로드구역 /////////////////////////
+        ///////////////////////////////////////////////////
+    </script>
 </head>
 
 <body>
