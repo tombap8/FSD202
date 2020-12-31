@@ -347,9 +347,26 @@
                 
                 // 1.토끼멈춤
                 clearInterval(autoI);
+                
                 // 2.거북멈춤
                 ttsts = 1;//goT1함수에서 막기!
                 
+                // 3.승자 메시지 띄우기
+                if(rbpos>ttpos){ // 토끼승!
+                    msg.innerText = 
+                        "토끼가 승리하였군요! 역쉬! 나이쓰!!!";
+                } ///// if //////////////////
+                else if(ttpos>rbpos){ // 거북승!
+                    msg.innerText = 
+                        "거북이 이기다아아아아아니!!!! 기적이양!!!";
+                } ////// else if /////////////
+                else{ // 비겼을때
+                    msg.innerText = 
+                        "다시해~!!!";
+                } ////// else ////////////////
+                
+                // 4. 메시지 보이게하기
+                msg.style.display = "block";
                 
                 
             }/////////// if 문 //////////////////////
