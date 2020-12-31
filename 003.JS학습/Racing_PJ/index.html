@@ -5,25 +5,64 @@
     <title>Racing PJ</title>
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <style>
-        html,body,ul{
+        html,
+        body,
+        ul {
             margin: 0;
             padding: 0;
         }
-        
+
         /*1.타이틀*/
-        #mtit{
+        #mtit {
             font-family: 'ZCOOL KuaiLe', cursive;
             font-size: 60px;
             color: #0347ff;
             text-align: center;
             text-shadow: 2px 2px 3px #777;
         }
-        
+
+        /*2.메인스테이지*/
+        #bgi {
+            position: relative;
+            /*부모자격*/
+            width: 800px;
+            height: 600px;
+            background: url(images/bg.jpg) no-repeat;
+        }
+
+        /*메인하위 공통*/
+        #bgi>div {
+            position: absolute;
+        }
+
+        /*2-1.출발선*/
+        #f1 {
+            top: 243px;
+        }
+
+        /*2-2.도착선*/
+        #f2 {
+            top: 243px;
+            left: 650px;
+        }
+
+        /*2-3.토끼*/
+        #r1 {
+            top: 400px;
+            left: 0;
+        }
+
+        /*2-4.거북*/
+        #t1{
+            top: 600px;
+            left: 0;
+        }
     </style>
 </head>
+
 <body>
-   
-   <!--1.타이틀-->
+
+    <!--1.타이틀-->
     <h1 id="mtit">Racing Game</h1>
     <!--2.메인스테이지-->
     <div id="bgi">
@@ -44,7 +83,7 @@
             <img src="images/racer_06.png" alt="거북">
         </div>
     </div>
-    
+
     <!--3.게임조작버튼-->
     <ul id="btns">
         <li>
@@ -57,8 +96,8 @@
             <a href="">처음으로</a>
         </li>
     </ul>
-   
-   <!--4.게임레벨-->
+
+    <!--4.게임레벨-->
     <div class="levbox">
         <select name="level" id="level">
             <option value="10">레벨1</option>
@@ -70,13 +109,12 @@
             <option value="4">레벨7</option>
         </select>
     </div>
-    
+
     <!--5.결과 메시지창-->
     <h2 id="msg">테스트 테스트 테스트!!!</h2>
-   
-   
-   
-   
-    
-</body>
-</html>
+
+
+
+
+
+</body></html>
