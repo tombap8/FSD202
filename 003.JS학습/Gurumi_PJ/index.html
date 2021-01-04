@@ -210,6 +210,22 @@
                 // 1. 함수호출 및 전달값 확인
                 console.log("나야나!"+dir);
                 
+                // 2. 변경된 img리스트 읽어오기
+                var ilist = gbox.querySelectorAll("img");
+                // 첫번째 이미지
+                var fele = ilist.item(0);
+                // 마지막 이미지(끝번호는 전체길이-1)
+                var lele = ilist.item(ilist.length-1)
+                
+                // 3. 오른쪽버튼 클릭시 맨앞요소 맨뒤로 이동하기
+                if(dir){ // 1이면 true
+                    gbox.appendChild(fele);
+                } ///// if ///////////////////
+                // 4. 왼쪽버튼 클릭시 맨뒤요소 맨앞으로 이동하기
+                else{//insertBefore(넣을놈,넣을놈전놈)
+                    gbox.insertBefore(lele,fele);
+                } ///// else ////////////////////
+                
                 
             };///////// chgImg 함수 ////////////////////////////////
             ///////////////////////////////////////////////////////
