@@ -41,6 +41,26 @@
             background: url(images/img-pd.jpg) no-repeat;
             background-size: 100% 100%;
             border-radius: 50%;/*원*/
+            box-shadow: -15px 0 30px #555 inset;
+            /*inset은 내부그림자*/
+        }
+        
+        /*2.갤러리박스*/
+        .gbox{
+            position: relative;
+            /*부모자격*/
+            width: 20%;
+            /*비율유지하려고 height안씀!*/
+            margin: 0 auto;
+            outline: 2px solid red;
+        }
+        
+        /*갤러리 이미지*/
+        .gbox img{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
         
     </style>
@@ -56,7 +76,7 @@
     <!--2.메인부분-->
     <main>
         <!--갤러리박스-->
-        <div class="gbox">
+        <div class="gbox rbx">
             <img src="images/cast01.jpg" alt="구르미">
             <img src="images/cast02.jpg" alt="구르미">
             <img src="images/cast03.jpg" alt="구르미">
