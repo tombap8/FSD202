@@ -52,7 +52,7 @@
             width: 20%;
             /*비율유지하려고 height안씀!*/
             margin: 0 auto;
-            outline: 2px solid red;
+            /*outline: 2px solid red;*/
         }
         
         /*갤러리 이미지*/
@@ -63,6 +63,8 @@
             height: 100%;
             border-radius: 15px;
             box-shadow: 6px 6px 5px #333;
+            /*트랜지션:속시이지*/
+            transition: all .4s ease-in-out;
         }
         
         /*개별이미지 설정*/
@@ -71,7 +73,7 @@
             top: -40%;
             left: -210%;
             transform: scale(.7);
-            opacity: 1;
+            opacity: 0;
         }
         /*2.왼쪽옆*/
         .gbox img:nth-child(2){
@@ -99,7 +101,7 @@
             top: -40%;
             left: 210%;
             transform: scale(.7);
-            opacity: 1;
+            opacity: 0;
         }
         
     </style>
