@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Gurumi PJ</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;/*보이는화면기준*/
+        }
+        body{
+            background: url(images/bg-main.jpg) no-repeat top/cover;
+        }
+        
+        /*공통class*/
+        /*IR(Image Replacement)-웹접근성*/
+        .bld{
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        /*비율유지class-정사각형비율(1:1)*/
+        .rbx::before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+            /*부모요소의 가로크기에 대한 패딩탑%*/
+            /*높이값이 없는 부모요소에 높이값을 만들어줌!*/
+        }
+        
+        
+        /*1.타이틀*/
+        .tit{
+            width: 15%;
+            /*비율유지패딩탑을 사용하려면 height가 없어야함!*/
+            margin: 50px auto;
+            padding: 0;
+            background: url(images/img-pd.jpg) no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50%;/*원*/
+        }
+        
+    </style>
 </head>
 <body>
    <!--1.상단부분-->
    <header>
        <!--타이틀로고-->
-       <h1 class="tit">
+       <h1 class="tit rbx">
            <span class="bld">구르미그린달빛로고</span>
        </h1>
    </header>
