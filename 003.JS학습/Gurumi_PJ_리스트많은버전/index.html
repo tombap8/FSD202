@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Gurumi PJ</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*보이는화면기준*/
+            
+        }
+
+        body {
+            background: url(images/bg-main.jpg) no-repeat top/cover;
+        }
+
+        /*공통class*/
+        /*IR(Image Replacement)-웹접근성*/
+        .bld {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /*비율유지class-정사각형비율(1:1)*/
+        .rbx::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+            /*부모요소의 가로크기에 대한 패딩탑%*/
+            /*높이값이 없는 부모요소에 높이값을 만들어줌!*/
+        }
+
+
+        /*1.타이틀*/
+        .tit {
+            width: 15%;
+            /*비율유지패딩탑을 사용하려면 height가 없어야함!*/
+            margin: 50px auto;
+            padding: 0;
+            background: url(images/img-pd.jpg) no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50%;
+            /*원*/
+            box-shadow: -15px 0 30px #555 inset;
+            /*inset은 내부그림자*/
+        }
+
+        /*2.갤러리박스*/
+        .gbox {
+            position: relative;
+            /*부모자격*/
+            width: 20%;
+            /*비율유지하려고 height안씀!*/
+            margin: 0 auto;
+            /*outline: 2px solid red;*/
+        }
+
+        /*3.갤러리 이미지*/
+        .gbox img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 6px 6px 5px #333;
+            /*트랜지션:속시이지*/
+            transition: all .4s ease-in-out;
+        }
+
+        .gbox img {
+            top: -40%;
+            left: 310%;
+            transform: scale(.7);
+            opacity: 0;
+        }
+        /*개별이미지 설정*/
+        /*(1)왼쪽끝*/
+        .gbox img:nth-child(1) {
+            top: -40%;
+            left: -210%;
+            transform: scale(.7);
+            opacity: 0;
+        }
+
+        /*(2)왼쪽옆*/
+        .gbox img:nth-child(2) {
+            top: -20%;
+            left: -110%;
+            transform: scale(.9);
+            opacity: 1;
+            /*CSS필터*/
+            filter: grayscale(50%) blur(1px);
+        }
+
+        /*
+            [CSS필터 속성 알아보기]
+            -> https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=none
+        */
+
+        /*(3)중앙*/
+        .gbox img:nth-child(3) {
+            top: 0;
+            left: 0;
+            transform: scale(1);
+            opacity: 1;
+            filter: saturate(1.5);
+            /*채도(satureate)를 기본(1)보다 높임!*/
+        }
+
+        /*(4)오른쪽옆*/
+        .gbox img:nth-child(4) {
+            top: -20%;
+            left: 110%;
+            transform: scale(.9);
+            opacity: 1;
+            /*CSS필터*/
+            filter: grayscale(50%) blur(1px);
+        }
+
+        /*(5)오른쪽끝*/
+        .gbox img:nth-child(5) {
+            top: -40%;
+            left: 210%;
+            transform: scale(.7);
+            opacity: 0;
+        }
+
+        /*4.이동버튼 셋팅*/
+        .abtn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로중앙이동*/
+            width: 4%;
+        }
+
+        /*버튼이미지*/
+        .abtn img {
+            width: 100%;
+            /*높이값은 자동조정*/
+            border: 0;
+            /*이미지링크시 보더생김 방지!*/
+        }
+
+        /*왼쪽버튼*/
+        .lb {
+            left: 10%;
+        }
+
+        /*오른쪽버튼*/
+        .rb {
+            right: 10%;
+        }
+    </style>
+    <script>
+        //////// 로드구역 //////////////////////////////////////////
+        // addEventListener(이벤트명,함수) - JS내장함수
+        // "DOMContentLoaded" 는 
+        // html만 모두 로딩되면 발생하는 이벤트명
+        ///////////////////////////////////////////////////////////
+        window.addEventListener("DOMContentLoaded",
+            function() {
+
+                // 로드구역확인!
+                console.log("로딩완료!");
+
+                /////////////////////////////////////////////////
+                // 구현내용: 이동버튼 클릭시 이미지 이동하여 변경하기
+                // 이벤트 종류: click
+                // 이벤트 대상: .abtn
+                // 변경 대상: .gbox, .gbox img
+                /////////////////////////////////////////////////
+
+                // 이벤트 대상
+                var abtn = document.querySelectorAll('.abtn');
+
+                // 변경 대상
+                var gbox = document.querySelector('.gbox');
+
+                ////////////////////////////////////
+                // 왼쪽버튼 클릭시 함수호출(전달값0)
+                abtn[0].onclick = function() {
+
+                    // 함수호출확인!
+                    //console.log("나,왼쪽!");
+
+                    // 이미지변경함수 호출!
+                    chgImg(0); //전달값0
+
+                    // a태그 기본이동 막기
+                    return false;
+
+
+                }; /////// click함수 ////////////////
+
+
+                ////////////////////////////////////
+                // 오른쪽버튼 클릭시 함수호출(전달값1)
+                abtn[1].onclick = function() {
+
+                    // 함수호출확인!
+                    //console.log("나,오른쪽!");
+
+                    // 이미지변경함수 호출!
+                    chgImg(1); //전달값1
+
+                    // a태그 기본이동 막기
+                    return false;
+
+
+                }; /////// click함수 ////////////////
+
+
+
+                /*/////////////////////////////////////////////////////
+                    함수명: chgImg
+                    기능: 이미지를 이동하여 이미지 순서를 변경한다!
+                */ /////////////////////////////////////////////////////
+                // 익명함수가 변수에 할당된 함수임!!!! ////////////////////
+
+                // 광클금지상태변수 ///////////////
+                var prot = 0; //0-허용,1-막기
+
+                var chgImg = function(dir) { // dir - 방향(0-왼쪽,1-오른쪽)
+
+                    console.log("광클상태값1 :" + prot);
+
+                    // 0.광클금지 ////////////////////////////////////
+                    
+                    // (1) if문으로 상태값 막기!
+                    if (prot) return false; //돌아가!
+                    // prot===1 이면 돌아가!
+                    
+                    // (2) 상태값 막기(1)로 변경
+                    prot = 1; //상태값 1로 변경! 잠금상태!
+                    console.log("광클상태값2 :" + prot);
+                    
+                    // (3) 작동시간 후에 광클상태값을 0으로 풀어주기
+                    setTimeout(function() {
+                        prot = 0;//상태풀기
+                        console.log("광클상태값3 :"+prot);
+                    }, 400);
+                    // setTimeout(함수,시간) - 설정시간 후 한번 함수호출!
+                    // 시간이 400이면 0.4초이므로 이미지가 넘어가는 
+                    // 트랜지션 시간인 0.4초간 광클을 막아준다!
+                    /////////////////////////////////////////////////
+
+
+                    // 1. 함수호출 및 전달값 확인
+                    console.log("나야나!" + dir);
+
+                    // 2. 변경된 img리스트 읽어오기
+                    var ilist = gbox.querySelectorAll("img");
+                    // 첫번째 이미지
+                    var fele = ilist.item(0);
+                    // 마지막 이미지(끝번호는 전체길이-1)
+                    var lele = ilist.item(ilist.length - 1);
+
+                    // 3. 오른쪽버튼 클릭시 맨앞요소 맨뒤로 이동하기
+                    if (dir) { // 1이면 true
+                        gbox.appendChild(fele);
+                    } ///// if ///////////////////
+                    // 4. 왼쪽버튼 클릭시 맨뒤요소 맨앞으로 이동하기
+                    else { //insertBefore(넣을놈,넣을놈전놈)
+                        gbox.insertBefore(lele, fele);
+                    } ///// else ////////////////////
+
+
+                }; ///////// chgImg 함수 ////////////////////////////////
+                ///////////////////////////////////////////////////////
+                /*
+                [버튼을 동반한 배너형 컨텐츠에서 다루는 4가지 중요분야]
+                1. 광클금지 : 
+                    - 버튼클릭을 빨리하여 기존 기능이 망가져 보이는 것을 막음
+                2. 자동넘김 :
+                    - 일정시간 간격으로 배너가 넘어감
+                3. 버튼클릭시 자동넘김 지우기 :
+                    - 사용자가 버튼을 조작하는 순간 자동넘김 기능 지우기
+                4. 사용자 조작이 끝난 후 다시 자동넘기기 :
+                    - 버튼 마지막 클릭이 끝난 후 자동넘김 셋팅 하나만 남기기
+                
+                */
+
+
+
+
+
+            }); //////////// 로드구역 ///////////////////////////////////
+        ///////////////////////////////////////////////////////////
+    </script>
+</head>
+
+<body>
+    <!--
+      [구르미 갤러리의 포인트]
+      1. JS 잘라서 태그 이동하기
+      2. 비율유지박스 적용하기
+      3. 박스나 이미지의 %로 크기, 위치잡기
+  -->
+    <!--1.상단부분-->
+    <header>
+        <!--타이틀로고-->
+        <h1 class="tit rbx">
+            <span class="bld">구르미그린달빛로고</span>
+        </h1>
+    </header>
+    <!--2.메인부분-->
+    <main>
+        <!--갤러리박스-->
+        <div class="gbox rbx">
+            <img src="images/cast01.jpg" alt="구르미">
+            <img src="images/cast02.jpg" alt="구르미">
+            <img src="images/cast03.jpg" alt="구르미">
+            <img src="images/cast04.jpg" alt="구르미">
+            <img src="images/cast05.jpg" alt="구르미">
+            <img src="images/ala1.jpg" alt="구르미">
+            <img src="images/ala2.jpg" alt="구르미">
+            <img src="images/ala3.jpg" alt="구르미">
+            <img src="images/ala4.jpg" alt="구르미">
+        </div>
+        <!--왼쪽이동버튼-->
+        <a href="" class="abtn lb">
+            <img src="images/left_btn.png" alt="왼쪽버튼">
+        </a>
+        <!--오른쪽이동버튼-->
+        <a href="" class="abtn rb">
+            <img src="images/right_btn.png" alt="오른쪽버튼">
+        </a>
+    </main>
+    <!--3하단부분-->
+    <footer></footer>
+
+
+
+</body></html>
