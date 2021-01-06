@@ -1,0 +1,7 @@
+@charset "utf-8";
+/*VOGUE PJ 메인 페이지 CSS - main.css */
+
+/*공통외부css*/
+@import url(core.css);
+@import url(grid_bg.css);
+@import url(grid_set.css);
