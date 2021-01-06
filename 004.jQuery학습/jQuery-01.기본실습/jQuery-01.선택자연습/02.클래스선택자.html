@@ -11,6 +11,18 @@
 			// 글자크기는 52px로 변경하시오.
 			// 단, transition 을 "all .6s"로 설정하여 애니메이션 되게 하시오.
 			
+            $(".group").click(function(){
+                
+                console.log("그룹변경!");
+                
+                // 변경대상: .group -> 나 자신! this키워드 사용!
+                $(this).css({
+                    backgroundColor:"lime",
+                    fontSize:"52px",
+                    transition:"all .6s"
+                });/////// css /////////
+                
+            });/////// click 함수 ///////////
 			
 			
 			
