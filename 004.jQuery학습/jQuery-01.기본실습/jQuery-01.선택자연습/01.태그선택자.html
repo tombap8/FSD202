@@ -4,8 +4,76 @@
 <meta charset="utf-8">
 <title> 태그 선택자  </title>
 <!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-	<script>
+<!--코딩구역 위에 제이쿼리 라이브러리 불러오기 중요!!!-->
+<script src="jquery-3.5.1.min.js"></script>
+    
+       	<script>
+        /*    
+        1. 제이쿼리란?
+            
+            - 자바스크립트 라이브러리 중 하나로 보다 쉽게 
+        자바스크립트를 코딩할 수 있도록 많은 양의 코딩을
+        줄여주며 직관적인 사용을 가능케 해주는 기능들을
+        구현한 함수의 집합체!
+    
+        2. 제이쿼리를 사용하기 위한 기본
+        
+        1) jQuery 라이브러리를 제이쿼리 사이트에서 다운로드 받는다. 또는 CDN방식으로 파일을 가져온다.
+        (CDN-Content Delivery Network:공개된 웹에 올려져 있는
+        라이브러리를 링크방식으로 가져오는것)
+        
+        -> jQuery 사이트 => http://jquery.com
+        
+        -> 다운로드 하면 2가지 버전을 볼 수 있다
+        -압축버전: compressed version(배포용:production)
+        -비압축버전: uncompressed version(개발용:development)
+        -> 위 두번전은 용량차이가 있다. 압축버전이 비압축버전에 비해 용량이 1/3정도임
+        -> 압축버전은 파일명에 min이라는 표시를 함
+        (jquery-3.5.1.min.js)
+        
+        -> 제이쿼리는 MIT 라이센스다!
+        (Released under the MIT license)
+        Muroo Imni Ta!-> 무료임!
+        (원래 기원은 MIT공대에서 무료 소스 개념에서 시작함!)
+        
+        2) 제이쿼리 라이브러리를 html페이지 코딩구역 상단에
+        불러와야 한다!(도서관이 있어야 가서 책을 빌리지!)
+            
+        ※ 코딩할 JS구역 위에 제이쿼리를 불러와야한다!
+            만약 아래쪽에서 부르면 호출되지 않는다!
+            (이유는 제이쿼리는 할당형 함수로 되어있음)
+        
+        3) 제이쿼리 시작코드 블록으로 제이쿼리를 감싸준다!
+            -> JS에서 로드구역으로 html태그가 모두 로딩후
+            실행하는 구역으로 설정한 것처럼 제이쿼리도 
+            이런 로딩구역이 있음!
+            -> DOMContentLoaded 이벤트를 사용하것과 같음
+                
+            
+        [ 제이쿼리 로드구역 만들기 ]
+            
+        1. 오리지날 함수호출
+            
+            jQuery(document).ready(function(){
+                실행코드...
+            });
+        
+        2. jQuery 함수명 대신 $를 사용함
+        
+            $(document).ready(function(){
+                실행코드
+            });
+        
+        3. document와 ready함수를 모두 생략가능!
+                        
+            $(function(){
+                실행코드
+            });
+        */
+        
+        
+        
+        
 	
 	$(document).ready(function(){
 		// 미션: header태그를 클릭하면 큰제목 배경색을 노란색으로 변경하시오.
