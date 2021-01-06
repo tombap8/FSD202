@@ -6,6 +6,18 @@ font-family: 'Play', sans-serif;
 font-family: 'Sunflower', sans-serif;
 */
 
+/*공통class*/
+/*속박스*/
+.inbox{
+    width: 1200px;
+    max-width: 100%;
+    /*1200px보다 작아지면 최대 100%유지*/
+    margin: 0 auto;
+    /*가로중앙정렬*/
+    outline: 2px dashed red;
+}
+
+
 ul,ol{
   margin: 0;
   padding: 0;
