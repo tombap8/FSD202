@@ -9,11 +9,6 @@
     overflow: hidden;
 }
 
-* {
-    box-sizing: border-box;
-    /*크기유*/
-}
-
 
 /* width % 크기 셋팅 */
 .col-1 {
@@ -74,12 +69,9 @@
     float: left;
     /*옆으로 흐르기*/
     padding: 10px;
-    height: 100%;
-    /*파티션박스에 높이값을 px로 주지 않는 경우는
-    한줄로 레이아웃 구성시 부모박스에 맞춤
-    구체적인 px높이값은 부모박스(.inbox)에 줌!
-    비율유지박스는 예외!*/
-    /*outline: 2px dotted blue;*/
+    box-sizing: border-box;
+    /*크기유지-보더,패딩 내부에 생김*/
+    outline: 2px dotted blue;
 }
 
 /*float해제를 위한 class*/
