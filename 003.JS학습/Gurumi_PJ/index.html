@@ -229,7 +229,7 @@
 
                 var chgImg = function(dir) { // dir - 방향(0-왼쪽,1-오른쪽)
 
-                    console.log("광클상태값1 :" + prot);
+                    //console.log("광클상태값1 :" + prot);
 
                     // 0.광클금지 ////////////////////////////////////
 
@@ -239,12 +239,12 @@
 
                     // (2) 상태값 막기(1)로 변경
                     prot = 1; //상태값 1로 변경! 잠금상태!
-                    console.log("광클상태값2 :" + prot);
+                    //console.log("광클상태값2 :" + prot);
 
                     // (3) 작동시간 후에 광클상태값을 0으로 풀어주기
                     setTimeout(function() {
                         prot = 0; //상태풀기
-                        console.log("광클상태값3 :" + prot);
+                        //console.log("광클상태값3 :" + prot);
                     }, 400);
                     // setTimeout(함수,시간) - 설정시간 후 한번 함수호출!
                     // 시간이 400이면 0.4초이므로 이미지가 넘어가는 
@@ -253,7 +253,7 @@
 
 
                     // 1. 함수호출 및 전달값 확인
-                    console.log("나야나!" + dir);
+                    //console.log("나야나!" + dir);
 
                     // 2. 변경된 img리스트 읽어오기
                     var ilist = gbox.querySelectorAll("img");
