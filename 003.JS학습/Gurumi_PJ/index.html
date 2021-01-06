@@ -295,6 +295,8 @@
             /////////////////////////////////////////////////
             var autoCall = function(){
                 
+                console.log("자동호출작동!");
+                
                 autoI = setInterval(function(){
                     chgImg(1);//오른쪽버튼 클릭이동과 동일함!
                 },3000);
@@ -315,6 +317,8 @@
             var autoT;//타임아웃용변수
             //////////////////////////////////////////////////////
             var clearAuto = function(){
+                
+                console.log("자동호출지우기!");
                 
                 // 인터발함수 지우기
                 clearInterval(autoI);
