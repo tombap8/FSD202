@@ -25,8 +25,24 @@
                     }); ///// css /////////////
 
                 // 2. 아이디가 main인 요소의 글자를 "공유"라고 쓰고 배경색은 파란색, 글자색은 흰색, 테두리는 3px 노란색, 글자크기는 52px로 변경하시오.
+                $("#main").text("공유")
+                .css({
+                    backgroundColor:"blue",
+                    color:"#fff",
+                    border:"3px solid yellow",
+                    fontSize:"52px",
+                    transition:"all .8s 1s"
+                });////// css //////
 
                 // 3. 아이디가 total인 요소의 글자를 "싸랑해요~!"라고 쓰고 배경색은 검은색, 글자색은 빨간색, 테두리는 2px 보라색, 글자크기는 152px로 변경하시오.
+                $("#total").text("싸랑해요~!")
+                .css({
+                    backgroundColor: "black",
+                    color:"red",
+                    border:"2px solid purple",
+                    fontSize:"152px",
+                    transition:"all .8s 2s"
+                });///// css ///////
 
             }); ////////// click 함수 //////////
 
