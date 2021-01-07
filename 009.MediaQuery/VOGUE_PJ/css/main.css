@@ -11,6 +11,21 @@
 .t1{
     height: 100px;
 }
+/*로고*/
+#logo{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+/*로고이미지*/
+#logo img{
+    max-width: 100%;
+    /*이미지크기보다 싸고 있는 박스가 작아지면 박스크기에 100% 맞춘다!*/
+}
+
+
+
 /***********2.배너영역**************/
 .b1{
     height: 100%;
