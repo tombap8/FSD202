@@ -30,7 +30,7 @@ font-family: 'Sunflower', sans-serif;
 }
 /*비율변경 class*/
 .rbx2::before{
-    padding-top: 55%;
+    padding-top: 50%;
 }
 
 /*비율유지속박스*/
