@@ -1,14 +1,6 @@
 @charset "utf-8";
 /*grid_set.css*/
 
-.bld {
-    /*IR(Image Replacement) class*/
-    display: block;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
 
 /* width % 크기 셋팅 */
 .col-1 {

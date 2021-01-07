@@ -3,6 +3,7 @@
 
 /*공통외부css*/
 @import url(core.css);
+@import url(reset.css);
 @import url(grid_bg.css);
 @import url(grid_set.css);
 
