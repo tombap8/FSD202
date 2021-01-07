@@ -11,6 +11,20 @@ $(document).ready(function(e) {
 	// 클릭된 것만 글자를 나야나~! 라고 바꾸고
 	// 글자크기를 72px 빨간색 글자로 트랜지션 주시오.
 	// transition: all .4s
+    
+    $("p,#nav li").click(function(){
+        //console.log("준비!");
+        
+        // 클릭된 나자신은? this 키워드!
+        $(this).text("나야나~!!!")
+        .css({
+            fontSize:"72px",
+            color:"red",
+            transition:"all .4s"
+        });////// css ////////
+        
+        
+    });/////// click ////////////
 	
 	
 	
@@ -30,6 +44,24 @@ $(document).ready(function(e) {
 
  <nav>
   <ul id="nav">
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
+   <li>One</li>
+   <li>Two</li>
+   <li>Three</li>
    <li>One</li>
    <li>Two</li>
    <li>Three</li>
