@@ -44,6 +44,12 @@ font-family: 'Sunflower', sans-serif;
     right: 0;
 }
 
+/*부모자격 class*/
+.prt{
+    position: relative;
+    /*부모자격*/
+}
+
 
 ul,ol{
   margin: 0;

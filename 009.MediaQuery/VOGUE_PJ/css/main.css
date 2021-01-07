@@ -11,7 +11,7 @@
 .t1{
     height: 100px;
 }
-/*로고*/
+/*1-1.로고*/
 #logo{
     position: relative;
     top: 50%;
@@ -22,6 +22,13 @@
 #logo img{
     max-width: 100%;
     /*이미지크기보다 싸고 있는 박스가 작아지면 박스크기에 100% 맞춘다!*/
+}
+/*1-2.GNB메뉴*/
+.gnb{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    /*나의부모? 싸고있는 파티션박스*/
 }
 
 
