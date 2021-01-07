@@ -6,7 +6,7 @@ font-family: 'Play', sans-serif;
 font-family: 'Sunflower', sans-serif;
 */
 
-/*공통class*/
+/**************공통class********************/
 /*속박스*/
 .inbox{
     width: 1200px;
@@ -28,6 +28,11 @@ font-family: 'Sunflower', sans-serif;
     padding-top: 45%;
     /*자식요소의 패딩탑값 %는 부모의 가로크기를 기준한다!*/
 }
+/*비율변경 class*/
+.rbx2::before{
+    padding-top: 55%;
+}
+
 /*비율유지속박스*/
 /*비율유지패딩탑이 본문요소를 밀어내기때문에 이것을 감싸서
 비율유지 박스 내부에 있도록 해주는 장치다!*/
