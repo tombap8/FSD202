@@ -30,6 +30,19 @@
     right: 10px;
     /*나의부모? 싸고있는 파티션박스(prt클래스부여!)*/
 }
+.gnb li{
+    padding: 0 13px;
+    font-family: 'Play';
+    font-size: 1.25rem;
+    /*rem계산: 20px/16px=1.25rem*/
+    font-weight: bold;
+}
+/*오버시 글자색*/
+.gnb a:hover{
+    color: #f00;
+    text-decoration: overline;
+}
+
 
 
 
