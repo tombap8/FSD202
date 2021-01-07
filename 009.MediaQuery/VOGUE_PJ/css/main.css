@@ -104,6 +104,46 @@
     width: 100%;
     height: 100%;
 }
+#news li{
+    position: relative;
+    /*부모자격*/
+    width: 100%;
+    height: 50%;
+}
+/*사이간격 미세조정*/
+#news li:first-child{
+    padding-bottom: 5px;
+}
+
+/*뉴스이미지*/
+#news img{
+    width: 100%;
+    height: 100%;
+}
+/*기사제목박스*/
+.atit{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*부모? #news li*/
+    color: #fff;
+    font: 1.2rem/1.5rem 'Sunflower';
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    /*넘치는 글자 말줄임 표시하기*/
+    /*1.넘치는 요소 숨기기*/
+    overflow: hidden;
+    /*2.줄바꿈방지*/
+    white-space: nowrap;
+    /*4.박스가로크기를 지정해야 숨겨진다!*/
+    width: 100%;
+    /*5.말줄임표-입술에 손대며 말하지마...!*/
+    text-overflow: ellipsis;
+    
+    
+    
+}
 
 
 
