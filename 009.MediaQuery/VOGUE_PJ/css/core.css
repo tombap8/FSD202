@@ -25,7 +25,7 @@ font-family: 'Sunflower', sans-serif;
 .rbx::before{
     content: "";
     display: block;
-    padding-top: 45%;
+    padding-top: 38%;
     /*자식요소의 패딩탑값 %는 부모의 가로크기를 기준한다!*/
 }
 /*비율변경 class*/
