@@ -17,6 +17,28 @@ font-family: 'Sunflower', sans-serif;
     outline: 2px dashed red;
 }
 
+/*비율유지박스*/
+.rbx{
+    position: relative;
+    /*비율유지속박스때문에 부모자격을 줘야한다!*/
+}
+.rbx::before{
+    content: "";
+    display: block;
+    padding-top: 45%;
+    /*자식요소의 패딩탑값 %는 부모의 가로크기를 기준한다!*/
+}
+/*비율유지속박스*/
+/*비율유지패딩탑이 본문요소를 밀어내기때문에 이것을 감싸서
+비율유지 박스 내부에 있도록 해주는 장치다!*/
+.ibx{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 ul,ol{
   margin: 0;
