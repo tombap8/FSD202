@@ -111,9 +111,18 @@
     height: 50%;
     box-sizing: border-box;
 }
+
 /*사이간격 미세조정*/
 #news li:first-child{
     padding-bottom: 5px;
+}
+#news li:first-child .atit{
+    bottom: 5px;
+    /*기존값은 0인데 5px떨어지게함!*/
+}
+#news li:last-child{
+    padding-top: 5px;
+    /*사이간격을 옆의 mban과 맞춤!*/
 }
 
 /*뉴스이미지*/
