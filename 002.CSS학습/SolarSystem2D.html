@@ -32,7 +32,26 @@
             left: 0;
             width: 250px;
             height: 250px;
+            overflow: hidden;
+            /*커지는 태양 숨기기*/
+            border-radius: 50%;/*원*/
         }
+        #sun img{
+            width: 100%;
+            height: 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: flame 40s linear infinite alternate;
+        }
+        
+        /*태양이 이글거리는 느낌애니*/
+        @keyframes flame{
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(1.5);
+            }
+        }/*키프레임*/
     
     
     </style>
