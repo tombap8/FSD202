@@ -12,6 +12,8 @@
         }
         body{
             background: url(images/space.jpg) no-repeat 0/cover;
+            overflow: hidden;
+            /*스크롤 없앰*/
         }
         
         /*태양계박스*/
@@ -88,9 +90,9 @@
             height: 40px;
             background: url(images/moon.png) no-repeat 0/100% 100%;
             /*애니메이션:이시이지반방마*/
-            animation: moon 10s linear infinite;
+            animation: moon 6s linear infinite;
         }
-        /*목성회전키프레임*/
+        /*달회전키프레임*/
         @keyframes moon{
             from{
                 transform: rotate(0deg) translateX(80px) rotate(0deg);
