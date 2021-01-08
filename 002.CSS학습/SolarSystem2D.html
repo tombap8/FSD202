@@ -78,7 +78,48 @@
                 transform: rotate(360deg) translateX(-250px) rotate(-360deg);
             }
         }/*키프레임*/
+        
+        /*목성*/
+        #jupiter{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background: url(images/jupiter.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: jupiter 15s linear infinite;
+        }
+        /*목성회전키프레임*/
+        @keyframes jupiter{
+            from{
+                transform: rotate(0deg) translateY(400px) rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg) translateY(400px) rotate(-360deg);
+            }
+        }/*키프레임*/
     
+        /*명왕성*/
+        #pluto{
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            width: 50px;
+            height: 50px;
+            background: url(images/pluto.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: pluto 20s linear infinite;
+        }
+        /*명왕성회전키프레임*/
+        @keyframes pluto{
+            from{
+                transform: rotate(0deg) translateX(550px) rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg) translateX(550px) rotate(-360deg);
+            }
+        }/*키프레임*/
     
     </style>
 </head>
