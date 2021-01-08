@@ -68,12 +68,14 @@
             animation: earth 10s linear infinite;
         }
         /*지구회전 키프레임*/
+        /*rotate를 뒤에 한번 더 써서 반대방향으로 설정하면 지구가 
+        정립상으로 주변을 회전한다!*/
         @keyframes earth{
             from{
-                transform: rotate(0deg);
+                transform: rotate(0deg) translateX(-250px) rotate(0deg);
             }
             to{
-                transform: rotate(360deg);
+                transform: rotate(360deg) translateX(-250px) rotate(-360deg);
             }
         }/*키프레임*/
     
