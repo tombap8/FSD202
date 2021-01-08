@@ -198,15 +198,38 @@
         }/*키프레임*/
     
     </style>
+    <script>
+    /*////////////////////////////////////////////////////////////
+        함수명: scaleView
+        기능: solar system 부모박스의 크기를 transform으로 축소,확대한다
+    */////////////////////////////////////////////////////////////
+    function scaleView(val){// val-축소확대값
+        
+        console.log("축소확대:"+val);
+        
+        // 1.변경대상: #solar
+        var tg = document.querySelector('#solar');
+        
+        // 2.변경내용: style의 transform의 scale을 변경한다!
+        // 단, 기존의 중앙이동을 살려놔야함! translate(-50%,-50%)
+        tg.style.transform = "translate(-50%,-50%) scale("+val+")";
+        
+        
+    } ////// scaleView 함수 /////////////////////////////
+    /////////////////////////////////////////////////
+    /////////////////////////////////////////////////
+    
+    
+    </script>
 </head>
 <body>
   <!--타이틀-->
     <h1 class="tit">Solar System</h1>
     <!--배율버튼-->
     <h2 class="tit tit2">
-        <a href="">X 0.5</a> | 
-        <a href="" class="on">X 1</a> | 
-        <a href="">X 1.5</a> 
+        <a href="" onclick="scaleView(0.5);return false;">X 0.5</a> | 
+        <a href="" onclick="scaleView(1);return false;" class="on">X 1</a> | 
+        <a href="" onclick="scaleView(1.5);return false;">X 1.5</a> 
     </h2>
     
    <!--태양계박스-->
