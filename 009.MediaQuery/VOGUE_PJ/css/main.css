@@ -172,6 +172,38 @@
     
 }
 
+/*3-2.메뉴배너*/
+#mban{
+    width: 100%;
+    height: 100%;
+}
+#mban li{
+    width: 33.333%;
+    /*3등분*/
+    height: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    
+    /*배경공통*/
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+/*각 li에 배경설정*/
+#mban li:nth-child(1){
+    background-image: url(../images/nars_3.jpg);
+}
+#mban li:nth-child(2){
+    background-image: url(../images/jeong5.jpg);
+}
+#mban li:nth-child(3){
+    background-image: url(../images/nars4.jpg);
+}
+#mban li:nth-child(4){
+    background-image: url(../images/tommy.png);
+}
+
 
 
 
