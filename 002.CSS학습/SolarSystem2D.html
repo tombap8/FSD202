@@ -18,6 +18,32 @@
             /*스크롤 없앰*/
         }
         
+        /*타이틀*/
+        .tit{
+            position: relative;
+            z-index: 1;
+            /*z-index는 포지션이 static이 아니어야 적용된다!*/
+            text-align: center;
+            font-family: 'Big Shoulders Stencil Text', cursive;
+            color: #fff;
+            font-size: 80px;
+            margin: 0;
+            padding: 20px;
+        }
+        /*축소확대버튼*/
+        .tit2{
+            padding: 0;
+            font-size: 20px;
+        }
+        .tit2 a{
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+        .tit2 a:hover{
+            color: #0ff;
+        }
+        
         /*태양계박스*/
         #solar{
             position: absolute;
@@ -171,6 +197,12 @@
 <body>
   <!--타이틀-->
     <h1 class="tit">Solar System</h1>
+    <!--배율버튼-->
+    <h2 class="tit tit2">
+        <a href="">X 1</a> | 
+        <a href="">X 0.5</a> | 
+        <a href="">X 2</a> 
+    </h2>
     
    <!--태양계박스-->
     <div id="solar">
