@@ -37,7 +37,7 @@
             /*커지는 태양 숨기기*/
             border-radius: 50%;/*원*/
             box-shadow: 0 0 100px 40px orange;
-            /*box-shadow: x축 y축 경계선흐림 그림자크기 색;*/
+            /*box-shadow: x축 y축 경계선흐림(blur) 그림자크기(spread) 색;*/
         }
         #sun img{
             width: 100%;
@@ -53,6 +53,27 @@
             }
             to{
                 transform: scale(1.5);
+            }
+        }/*키프레임*/
+        
+        /*지구*/
+        #earth{
+            position: absolute;
+            top: 85px;
+            left: 85px;
+            width: 80px;
+            height: 80px;
+            background: url(images/earth.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: earth 10s linear infinite;
+        }
+        /*지구회전 키프레임*/
+        @keyframes earth{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
             }
         }/*키프레임*/
     
