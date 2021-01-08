@@ -235,10 +235,31 @@
     /*글자그림자4개로 테두리만들기*/
 }
 
-
-
-
 /***********4.하단영역***********/
 .i1{
     height: 275px;
 }
+
+#info{
+    position: relative;
+    /*부모자격*/
+    background: #000 url(../images/vogue2.png) no-repeat center/313px;
+}
+
+/*주소박스*/
+#info address{
+    position: absolute;
+    /*부모? #info*/
+    bottom: 35px;
+    color: #fff;
+    font: .8rem 'Play';
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
