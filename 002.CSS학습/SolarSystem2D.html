@@ -65,7 +65,7 @@
             height: 80px;
             background: url(images/earth.png) no-repeat 0/100% 100%;
             /*애니메이션:이시이지반방마*/
-            animation: earth 10s linear infinite;
+            animation: earth 20s linear infinite;
         }
         /*지구회전 키프레임*/
         /*rotate를 뒤에 한번 더 써서 반대방향으로 설정하면 지구가 
@@ -79,6 +79,26 @@
             }
         }/*키프레임*/
         
+        /*달*/
+        #moon{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: url(images/moon.png) no-repeat 0/100% 100%;
+            /*애니메이션:이시이지반방마*/
+            animation: moon 10s linear infinite;
+        }
+        /*목성회전키프레임*/
+        @keyframes moon{
+            from{
+                transform: rotate(0deg) translateX(80px) rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg) translateX(80px) rotate(-360deg);
+            }
+        }/*키프레임*/
         /*목성*/
         #jupiter{
             position: absolute;
@@ -88,7 +108,7 @@
             height: 150px;
             background: url(images/jupiter.png) no-repeat 0/100% 100%;
             /*애니메이션:이시이지반방마*/
-            animation: jupiter 15s linear infinite;
+            animation: jupiter 35s linear infinite;
         }
         /*목성회전키프레임*/
         @keyframes jupiter{
@@ -97,6 +117,27 @@
             }
             to{
                 transform: rotate(360deg) translateY(400px) rotate(-360deg);
+            }
+        }/*키프레임*/
+        
+        /*토성*/
+        #saturn{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background: url(images/saturn.png) no-repeat 0/100% 60%;
+            /*애니메이션:이시이지반방마*/
+            animation: saturn 35s linear infinite;
+        }
+        /*토성회전키프레임*/
+        @keyframes saturn{
+            from{
+                transform: rotate(0deg) translateY(-450px) rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg) translateY(-450px) rotate(-360deg);
             }
         }/*키프레임*/
     
@@ -109,15 +150,15 @@
             height: 50px;
             background: url(images/pluto.png) no-repeat 0/100% 100%;
             /*애니메이션:이시이지반방마*/
-            animation: pluto 20s linear infinite;
+            animation: pluto 40s linear infinite;
         }
         /*명왕성회전키프레임*/
         @keyframes pluto{
             from{
-                transform: rotate(0deg) translateX(550px) rotate(0deg);
+                transform: rotate(0deg) translateX(650px) rotate(0deg);
             }
             to{
-                transform: rotate(360deg) translateX(550px) rotate(-360deg);
+                transform: rotate(360deg) translateX(650px) rotate(-360deg);
             }
         }/*키프레임*/
     
@@ -131,9 +172,13 @@
             <img src="images/sun.png" alt="sun">
         </div>
         <!--지구-->
-        <div id="earth"></div>
+        <div id="earth">
+            <div id="moon"></div>
+        </div>
         <!--목성-->
         <div id="jupiter"></div>
+        <!--토성-->
+        <div id="saturn"></div>
         <!--명왕성-->
         <div id="pluto"></div>
     </div>
