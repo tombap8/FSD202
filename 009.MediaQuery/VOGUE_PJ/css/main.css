@@ -130,6 +130,7 @@
     font: 1.2rem/1.5rem 'Sunflower';
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;/*패딩포함*/
     
     /*******************************/
     /* [ 넘치는 글자 말줄임 표시하기 ] */
