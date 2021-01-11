@@ -7,7 +7,7 @@
     <script src="jquery-1.7.2.min.js"></script>
     <script>
         $(document).ready(function(e) {
-            //미션: li중 하나를 클릭하면  그 뒤의 형제요소의 li들이 모두 width: 500px, height: 300px로 변경되고 배경이미지를 넣으시오.(배경이미지는 웹경로로 넣고 트랜지션 설정도 하시오.)
+            //미션: li중 하나를 클릭하면  그 뒤의 형제요소의 li들이 모두 width: 300px, height: 500px로 변경되고 배경이미지를 넣으시오.(배경이미지는 웹경로로 넣고 트랜지션 설정도 하시오.)
 
             // 초기설정(트랜지션때문!)
             $("li")
@@ -19,10 +19,10 @@
 
                     console.log("나클릭!");
                     $("~li",this).css({
-                        width:"500px",
-                        height:"300px",
+                        width:"300px",
+                        height:"500px",
                         background:
-                        "url() no-repeat 0/cover",
+                        "url(https://images-na.ssl-images-amazon.com/images/I/61Fm%2BN%2BNncL._AC_SY679_.jpg) no-repeat 0/cover",
                         transition:"all 2s"
                     });/////// css ////////
 
