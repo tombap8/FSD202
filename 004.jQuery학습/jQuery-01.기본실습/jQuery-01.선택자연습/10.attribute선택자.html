@@ -54,13 +54,20 @@ $(document).ready(function(e) {
         $("img[src!='sample2.jpg']").css({
             border:"5px solid green"
         });//////////// css /////////////////
-        
-        
-        
 	
 		// 6. a태그 중 class 속성이 있기만 하면 선택하여 글자크기를 28px로 변경하시오.
+        // 힌트: 대괄호에 속성명만 쓰면 그 속성이 있는 요소를 선택함
+        $("a[class]").css({
+            fontSize:"28px"
+        });/////// css ////////
 	
 		// 7. 모든 태그 중에서 src속성과 alt속성을 동시에 가지고 있는것을 선택하여 border값을 10px ridge purple 로 설정하시오.
+        
+        // 힌트: 대괄호에 속성명만 쓰면 문서 전체에서 해당속성이 있는 요소를 찾고 만약 대괄호를 이어서 다른 속성을 쓰면 속성이 여러개 있는 요소를 찾는다
+        
+        $("[src][alt]").css({
+            border:"10px ridge purple"
+        });//////// css //////////////
 		
 		
 		
