@@ -15,7 +15,9 @@
                 console.log("나클릭!");
                 
                 //$("#container>p")
-                $("p",this)
+                $(">p",this) //this 키워드를 사용한 선택법
+                // $(선택자,this) 
+                // -> 선택자에 (>)를 쓰면 직계자식
                 .css({
                     backgroundColor:"yellow",
                     color:"green",
