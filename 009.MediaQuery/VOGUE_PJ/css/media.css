@@ -71,7 +71,7 @@
         width: 100%;
     }
 
-    
+
     /*6. .gnb를 오른쪽 기준을 없애고 왼쪽에서 중앙으로 이동*/
     .gnb {
         right: auto;
@@ -85,3 +85,42 @@
 }
 
 /*1100px 이하 미디어쿼리*/
+
+
+
+/*1024px 이하 사이즈*/
+@media only screen and (max-width:1024px) {
+
+    /*1. .gnb 없애기*/
+    .gnb {
+        display: none;
+    }
+
+    /*2. 햄버거,검색버튼 보이기*/
+    #ham,
+    #magni {
+        display: block;
+    }
+
+    /*3. 상단영역 높이값(.t1) 120px로 변경*/
+    .t1 {
+        height: 120px;
+    }
+
+    /*4. 로고파티션 박스 가로크기변경(이미지크기 변경위해)*/
+    .logo {
+        width: 26%;
+    }
+
+    /*5. 컨텐츠영역 메뉴로고 한줄에 2개씩오게하기*/
+    #mban li,
+    #mban li:last-child {
+        width: 50%;
+    }
+
+
+
+
+}
+
+/*1024px 이하 미디어쿼리*/

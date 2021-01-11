@@ -55,7 +55,7 @@
     top: 50%;
     left: 3%;
     /*부모는?*/
-    transform: translateY(-50%);
+    transform: translateY(-50%) scaleX(1.5);
     
     width: 75px;
     height: 50px;
@@ -63,6 +63,7 @@
     border: none;
     font: 48px arial;
     
+    display: none;/*처음에 안보임*/
 }
 
 /*1-4. 검색버튼*/
@@ -79,6 +80,13 @@
     background-position: -200px 0;
     border: 0;
     
+    display: none;/*처음에 안보임*/
+    
+}
+
+/*햄버거, 검색버튼 포커스 아웃라인 없애기*/
+#ham:focus, #magni:focus{
+    outline: none;
 }
 
 
