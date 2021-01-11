@@ -6,8 +6,33 @@
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script>
-$(document).ready(function(e) {
-    // 미션: #first를 클릭하면 다음에 있는 형제요소인 li의 글자가 42px로 커지면서 margin-left값이 50px로 변경되게 하시오. 트랜지션 설정도 하시오.
+$(function() {
+    // 미션: .first를 클릭하면 다음에 있는 형제요소인 li의 글자가 42px로 커지면서 margin-left값이 50px로 변경되게 하시오. 트랜지션 설정도 하시오.
+    
+    $(".first").click(function(){
+        
+        console.log("나클릭!");
+        // $(선택자,this) -> this키워드 활용 하위선택하기!
+        $("+li",this) // 클릭요소 다음 형제 li선택
+        .css({
+            fontSize:"42px",
+            marginLeft:"50px",
+            transition:
+            "font-size .5s, margin-left .5s .5s" 
+            // 속시이지
+        });//////// css /////////
+        
+    });///////// click //////////////
+    
+    
+    /*JS코드와 비교!:
+    var tg = document.querySelectorAll('.first');
+    for(var x of tg){
+        x.onclick = function(){
+            console.log("나나나나!");
+        };
+    }*/
+    
 	
 	
 	
