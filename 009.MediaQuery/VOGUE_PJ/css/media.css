@@ -153,9 +153,10 @@
     }
 
     /*5. 컨텐츠 영역의 col-로 된 파티션 class의 
-    width값을 100%로 변경*/
+    width값을 100%로 변경+패딩없애기*/
     .cont [class*="col-"] {
         width: 100%;
+        padding: 0;
     }
 
     /*6. 컨텐츠 영역의 비율유지설정을 없앤다!*/
@@ -169,11 +170,34 @@
         position: static;
     }
 
-    /*8. 메뉴배너의 li 가로크기를 100%로 변경, 높이값 설정*/
+    /*8. 메뉴배너의 li 가로크기를 100%로 변경, 
+    높이값 설정+패딩없애기*/
     #mban li,
     #mban li:last-child {
         width: 100%;
         height: 260px;
+        padding: 0;
+    }
+    
+    /*9. 배너 비율변경하기*/
+    .rbx::before{
+        padding-top: 58%;
+    }
+    
+    /*10. 전체 배경색 검정*/
+    body{
+        background-color: #000;
+    }
+    
+    /*11. 상단영역 배경 흰색*/
+    .top{
+        background-color: #fff;
+    }
+    
+    /*12. 패딩없애기*/
+    #news li:first-child,
+    #news li:last-child{
+        padding: 0;
     }
 
 
