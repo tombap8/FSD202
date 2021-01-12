@@ -124,3 +124,38 @@
 }
 
 /*1024px 이하 미디어쿼리*/
+
+
+
+/*500px 이하 사이즈*/
+@media only screen and (max-width:500px) {
+
+    /*1.글자크기변경*/
+    html{
+        font-size: 16px;
+    }
+    
+    /*2.모바일사이즈 가로스크롤 없애기*/
+    html,body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /*3.상단영역 높이 변경*/
+    .t1{
+        height: 60px;
+    }
+    
+    /*4.로고 박스 가로크기 변경(로고크기변경)*/
+    .logo{
+        width: 35%;
+    }
+
+} /*500px 이하 미디어쿼리*/
+
+
+
+
+
+
+
