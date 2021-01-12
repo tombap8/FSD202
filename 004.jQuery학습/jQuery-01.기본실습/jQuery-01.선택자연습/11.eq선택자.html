@@ -1,85 +1,99 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>  eq 선택자 </title>
-<!-- jQuery library -->
-<style>
-	html,body{
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-<script src="jquery-1.7.2.min.js"></script>
-<script>
-$(document).ready(function(e) {
-	
-	// 1차 미션: .nav1 아래 li를 클릭시 클릭된 li의 글자크기를 5px씩 커지게 하시오. 동시에 글자색을 무지개색 순서로 차례로 변경되게 하시오.
-    
-    // 무지개색상명
-    var fcolor = ["red","orange","yellow","green","blue","indigo","purple"];
-    
-    // 무지개색 순번
-    var fnum = 0;
-    
-    // 변경,이벤트 대상 : .nav1 li
-    $(".nav1 li")
-    .css({
-        fontSize:"42px",
-        textShadow:"0 0 10px #333",
-        cursor:"pointer",//손가락모양
-        width:"300px",
-        whiteSpace:"nowrap" //줄바꿈방지
-    }) ///// css /////////
-    .click(function(){
-       console.log("나야나!"); 
-    });///////// click ////////////
-	
-	
-	//// 2차미션 : 선택박스의 선택을 변경하는 순간 선택된 이름의 배경색을 무지개색 순번으로 변경하시오. 동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오.
-	
-	
-	
-});//jQuery실행구역
-</script>
+    <meta charset="utf-8">
+    <title> eq 선택자 </title>
+    <!-- jQuery library -->
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(document).ready(function(e) {
+
+            // 1차 미션: .nav1 아래 li를 클릭시 클릭된 li의 글자크기를 5px씩 커지게 하시오. 동시에 글자색을 무지개색 순서로 차례로 변경되게 하시오.
+
+            // 무지개색상명
+            var fcolor = ["red", "orange", "yellow", "green", "blue", "indigo", "purple"];
+
+            // 무지개색 순번
+            var fnum = 0;
+
+            // 변경,이벤트 대상 : .nav1 li
+            $(".nav1 li")
+                .css({
+                    fontSize: "42px",
+                    textShadow: "0 0 10px #333",
+                    cursor: "pointer", //손가락모양
+                    width: "300px",
+                    whiteSpace: "nowrap" //줄바꿈방지
+                }) ///// css /////////
+                .click(function() {
+                    console.log("나야나!"+fnum);
+
+                    // 클릭된 나자신은? this
+                    // += 대입연산자로 기존크기에 더함
+                    $(this).css({
+                        fontSize: "+=5px",
+                        color: fcolor[fnum]
+                    }); ///// css ///////////
+
+                    //무지개색 순번 증가하기
+                    fnum++; //1씩증가
+                    if (fnum === 7) fnum = 0; //한계값
+
+
+                }); ///////// click ////////////
+
+
+            //// 2차미션 : 선택박스의 선택을 변경하는 순간 선택된 이름의 배경색을 무지개색 순번으로 변경하시오. 동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오.
+
+
+
+        }); //jQuery실행구역
+    </script>
 
 </head>
+
 <body>
 
-<div id="container">
-	<select id="selnum">
-		 <option value="tt">이름을 선택하세요</option>
-		 <option value="0">김수현</option>
-		 <option value="1">정우성</option>
-		 <option value="2">유아인</option>
-		 <option value="3">아이유</option>
-		 <option value="4">박보검</option>
-		 <option value="5">송중기</option>
-		 <option value="6">김혜수</option>
-		 <option value="7">전지현</option>
-		 <option value="8">손예진</option>
-	</select>
+    <div id="container">
+        <select id="selnum">
+            <option value="tt">이름을 선택하세요</option>
+            <option value="0">김수현</option>
+            <option value="1">정우성</option>
+            <option value="2">유아인</option>
+            <option value="3">아이유</option>
+            <option value="4">박보검</option>
+            <option value="5">송중기</option>
+            <option value="6">김혜수</option>
+            <option value="7">전지현</option>
+            <option value="8">손예진</option>
+        </select>
 
-   <ul class="nav1">
-     <li>김수현</li>
-     <li>정우성</li>
-     <li>유아인</li>
-     <li>아이유</li>
-     <li>박보검</li>
-     <li>송중기</li>
-     <li>김혜수</li>
-     <li>전지현</li>
-     <li>손예진</li>
-   </ul>
+        <ul class="nav1">
+            <li>김수현</li>
+            <li>정우성</li>
+            <li>유아인</li>
+            <li>아이유</li>
+            <li>박보검</li>
+            <li>송중기</li>
+            <li>김혜수</li>
+            <li>전지현</li>
+            <li>손예진</li>
+        </ul>
 
-</div>
+    </div>
 
-<!---------- jQuery code Start ---------->
-<script>
+    <!---------- jQuery code Start ---------->
+    <script>
 
-  
-</script>
-</body>
-</html>
+
+    </script>
+</body></html>
