@@ -53,6 +53,36 @@
 
 
             //// 2차미션 : 선택박스의 선택을 변경하는 순간 선택된 이름의 배경색을 무지개색 순번으로 변경하시오. 동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오.
+            
+            // 변경, 이벤트 대상: #selnum
+            $("#selnum")
+            .css({
+                fontSize:"42px",
+                height:"60px"
+            }) ///// css ////////
+            // 선택박스의 선택변경시 발생이벤트는 change
+            // change(함수) - 제이쿼리 메서드
+            .change(function(){
+                
+                // 선택된 option의 value값 읽어오기
+                var optval = $(this).val();
+                // this키워드로 val() 값을 가져오는 메서드를 사용
+                console.log("바뀌나?"+optval);
+                
+                // 선택된 순번(optval)의 li의 배경색을 무지개순번으로 넣기
+                // 변경대상: .nav1 li
+                // [ eq선택자 ]
+                // -> :eq(순번) - 순번은 0번부터 센다!
+                $(".nav1 li:eq("+optval+")").css({
+                    backgroundColor:fcolor[fnum]
+                });////// css ///////////
+                
+                // 무지개순번증가
+                fnum++;//1씩증가
+                if(fnum === 7) fnum = 0;//한계값
+                
+                
+            }); ////// change ///////////
 
 
 
