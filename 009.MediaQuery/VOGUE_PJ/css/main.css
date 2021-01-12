@@ -89,6 +89,23 @@
     outline: none;
 }
 
+/**********모바일 메뉴박스************/
+/*전체부모박스*/
+.mognb{
+    background-color: #fff;
+}
+.mognb *{
+    box-sizing: border-box;
+}
+
+/*모바일 네비박스*/
+#mognb{
+    padding: 30px;
+}
+#mognb li{
+    width: 100%;
+    padding: 4px 0;
+}
 
 
 
