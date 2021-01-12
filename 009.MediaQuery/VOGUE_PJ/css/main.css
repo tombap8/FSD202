@@ -93,6 +93,7 @@
 /*전체부모박스*/
 .mognb{
     background-color: #fff;
+    display: none;/*처음에 안보임*/
 }
 .mognb *{
     box-sizing: border-box;
