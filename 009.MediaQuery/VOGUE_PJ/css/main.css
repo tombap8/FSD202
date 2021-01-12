@@ -195,6 +195,51 @@
     line-height: 30px;
 }
 
+/***********모바일 검색박스***********/
+.mos{
+    padding: 15px 30px;
+    background-color: #fff;
+}
+/*검색속박스*/
+.mwrap{
+    position: relative;
+    width: 100%;
+    height: 35px;
+    background: #000;
+}
+/*검색입력창*/
+#search{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 50px;
+    bottom: 9px;
+    /*사방으로 당겨서 크기만들기*/
+}
+#search input{
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+/*
+    input 박스는 일반 div박스와 다르기 때문에
+    겉박스를 하나 만들어서 채우기형식으로 디자인한다!
+*/
+
+/*검색버튼*/
+#sbtn{
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url(../images/ico.png);
+    background-repeat: no-repeat;
+    background-position: -240px 0;
+    border: none;
+}
+
 
 
 /***********2.배너영역**************/
