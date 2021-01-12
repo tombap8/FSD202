@@ -90,10 +90,19 @@
 }
 
 /**********모바일 메뉴박스************/
+/*전체보여주기박스*/
+.moshow{
+    height: 0;
+    overflow: hidden;
+    /*JS에서 본 박스의 높이값을 속의
+    모든 요소를 싸고 있는 .mognb박스의
+    높이값만 구해와서 설정해 주면 된다!*/
+    /*쉽게 유동적인 높이값을 구하기위해!*/
+    transition: height .8s ease-out;
+}
 /*전체부모박스*/
 .mognb{
     background-color: #fff;
-    display: none;/*처음에 안보임*/
 }
 .mognb *{
     box-sizing: border-box;
@@ -199,6 +208,7 @@
 .mos{
     padding: 15px 30px;
     background-color: #fff;
+    display: none;
 }
 /*검색속박스*/
 .mwrap{
