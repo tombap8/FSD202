@@ -199,6 +199,33 @@
     #news li:last-child{
         padding: 0;
     }
+    
+    /*13. 햄버거버튼 변경*/
+    #ham{
+        left: 0;
+        font-size: 30px;
+    }
+    
+    /*14. 뉴스글자조정*/
+    .atit{
+        height: 5.4rem;
+        padding: 21px;
+    }
+    
+    /*15. 하단 배경로고*/
+    #info{
+        height: 220px;
+        background-position: center 37px;
+        background-size: 240px;
+        overflow: hidden;
+    }
+    /*16. 하단주소*/
+    #info address{
+        bottom: 13px;
+        padding: 22px;
+        box-sizing: border-box;
+    }
+    
 
 
 }
