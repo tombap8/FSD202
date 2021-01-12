@@ -179,6 +179,20 @@
     line-height: 40px;
     font-weight: bold;
 }
+/*하단링크박스*/
+.moblink{
+    padding: 0 0 50px 30px;
+    /*padding: 위 오른쪽 아래 왼쪽*/
+}
+.moblink li{
+    width: 100%;
+    /*한줄에 li하나만 오게함*/
+}
+.moblink a{
+    color: #333;
+    font-size: 15px;
+    line-height: 30px;
+}
 
 
 
