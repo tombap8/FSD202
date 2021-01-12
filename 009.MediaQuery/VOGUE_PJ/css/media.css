@@ -178,54 +178,56 @@
         height: 260px;
         padding: 0;
     }
-    
+
     /*9. 배너 비율변경하기*/
-    .rbx::before{
+    .rbx::before {
         padding-top: 58%;
     }
-    
+
     /*10. 전체 배경색 검정*/
-    body{
+    body {
         background-color: #000;
     }
-    
+
     /*11. 상단영역 배경 흰색*/
-    .top{
+    .top {
         background-color: #fff;
     }
-    
+
     /*12. 패딩없애기*/
     #news li:first-child,
-    #news li:last-child{
+    #news li:last-child {
         padding: 0;
     }
-    
+
     /*13. 햄버거버튼 변경*/
-    #ham{
+    #ham {
         left: 0;
         font-size: 30px;
     }
-    
+
     /*14. 뉴스글자조정*/
-    .atit{
-        height: 5.4rem;
+    .atit {
+        height: 5.5rem;
+        line-height: 2rem;
         padding: 21px;
     }
-    
+
     /*15. 하단 배경로고*/
-    #info{
+    #info {
         height: 220px;
         background-position: center 37px;
         background-size: 240px;
         overflow: hidden;
     }
+
     /*16. 하단주소*/
-    #info address{
+    #info address {
         bottom: 13px;
         padding: 22px;
         box-sizing: border-box;
     }
-    
+
 
 
 }
