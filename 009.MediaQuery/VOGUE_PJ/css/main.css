@@ -153,6 +153,33 @@
     height: 100%;
 }
 
+/*매거진박스*/
+.magbox{
+    padding: 30px;
+    padding-bottom: 10px;
+}
+/*매거진이미지*/
+.mag{
+    width: 100%;
+}
+/*매거진 메시지*/
+.magbox figcaption{
+    font-size: 11px;
+    /*최소글자크기는 9px*/
+    line-height: 35px;
+    color: #555;
+}
+/*정기구독버튼*/
+.magbtn{
+    width: 100%;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
 
 
 /***********2.배너영역**************/
