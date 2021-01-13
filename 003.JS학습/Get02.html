@@ -88,6 +88,16 @@
             
             console.log("로딩완료!");
             
+            // 타이틀요소
+            var tit = document.querySelector("#title");
+            
+            // 1. 타이틀 넣기
+            tit.innerText = pm;
+            
+            // 2. 배경색 넣기 (scolor객체에 샵명과 연결!)
+            tit.style.backgroundColor = scolor[pm];
+            
+            
         });////////// 로드구역 /////////////////////////
         ///////////////////////////////////////////////
         
