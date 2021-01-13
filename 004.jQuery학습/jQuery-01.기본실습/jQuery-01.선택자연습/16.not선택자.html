@@ -23,6 +23,13 @@ $(document).ready(function(e) {
             transition:"all .8s"
         });////// css ////////
         
+        // 선택된 li이외의 나머지는?
+        // 선택된 순번이 아닌것으로 구한다!
+        // :not(:eq(n))
+        var idx = $(this).index();
+        // index() 메서드 - 선택요소의 형제중 순번을 리턴함
+        console.log("클릭된 li의 순번:"+idx);
+        
     });///////// click ///////////
     
     
