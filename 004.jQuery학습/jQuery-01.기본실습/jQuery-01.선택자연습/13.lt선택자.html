@@ -7,8 +7,16 @@
 <script src="jquery-1.7.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+    // :lt(n) less than ~ : ~보다 작은
+    // n은 0부터
+    // 사용법 -> $("선택자:lt(n)")
+    
 	
 	// 미션: li의 5번째보다 작은 li의 글자를 42px, green색으로 글자색을 변경하시오.
+    $("li:lt(4)").css({
+        fontSize:"42px",
+        color:"green"
+    });//////// css //////////
 	
 	
 	
