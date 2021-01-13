@@ -28,10 +28,16 @@
                 //애니메이션 시키시오.
                 //(초기높이값을 40px로 설정)
                 
-                $("li:even").css({
+                $("li:nth-child(even)").css({
                     backgroundImage:"url(sample1.jpg)",
                     height:"200px",
                     transition:"all .8s"
+                });///// css ///////
+                
+                $("li:nth-child(odd)").css({
+                    backgroundImage:"url(sample2.jpg)",
+                    height:"200px",
+                    transition:"all .8s .8s"
                 });///// css ///////
                 
                 
