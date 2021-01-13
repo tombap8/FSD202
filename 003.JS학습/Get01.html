@@ -88,6 +88,18 @@
             var tg = document.querySelectorAll("#gnb a");
             console.log("a의개수:"+tg.length);
             
+            // 모든 a요소에 onclick 셋팅하기!
+            // 개수만큼 for문 돌리기(for of문)
+            //for(var i=0; i<tg.length; i++){}
+            for(var x of tg){
+                x.onclick = function(){
+                    // 나자신 this
+                    var txt = this.innerText;
+                    console.log("a요소 글자:"+txt);
+                    
+                };//// click함수 /////
+            }/// for of문 //////////////
+            
             
             
             
