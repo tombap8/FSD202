@@ -7,7 +7,26 @@
 <script src="jquery-1.7.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+    /*
+    :not 선택자 (선택한 요소만 빼고 나머지 선택)
+    - 제이쿼리 전용
+    */
+    
 	// 미션: li클릭하면 클릭된 것은 "왕" 이라고 글자를 변경하고 글자크기를 72px로 , 글자색은 빨간색으로 변경과 동시에 나머지 li는 사라지게 하시오.
+    
+    $("li").click(function(){
+        
+        $(this).text("왕")
+        .css({
+            fontSize:"72px",
+            color:"red",
+            transition:"all .8s"
+        });////// css ////////
+        
+    });///////// click ///////////
+    
+    
+    
 	
 });//jQuery실행구역
 </script>
