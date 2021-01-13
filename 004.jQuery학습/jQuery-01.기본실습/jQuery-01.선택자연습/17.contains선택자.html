@@ -27,7 +27,13 @@ $(function() {
 	//2.    사라진 후 "apple"이라는 단어는 "사과"로, "grape"이라는 단어는 "포도"라고 글자를 변경 후
 	// 3. 1초간 애니메이션으로 나타나게 하시오.
     
-	
+	$("li:contains('ap')")
+    .delay(2000) // 2초후
+     //1초간 사라짐
+    .hide(1000,function(){//애니후 실행(콜백함수)
+        $("li:contains('apple')").text("사과").show(1000);
+        $("li:contains('grape')").text("포도").show(1000);
+    });///// hide //////////
 	
     
 	
