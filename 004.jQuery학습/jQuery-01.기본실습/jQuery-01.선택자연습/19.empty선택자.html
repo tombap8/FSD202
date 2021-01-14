@@ -17,11 +17,26 @@
             $("#container").click(function() {
                 //   body가 10초간 서서히 검은색이 되고....
                 $("body").animate({
-                    backgroundColor:"#000"
-                },10000);
-                // 10초 후 5초간 빈요소에 글자가 9px빨간색으로 무섭지? 라는 글자로 서서히 24px까지 커지다가
-                // 0.5초간 72px로 갑자기 커진다!
+                    backgroundColor: "#000"
+                }, 10000, function() {//애니후
 
+                    // 10초 후 5초간 빈요소에 글자가 9px빨간색으로 무섭지? 라는 글자로 서서히 24px까지 커지다가
+                    $("li:empty")
+                    .text("무섭지?")
+                    .css({
+                        fontSize:"9px",
+                        color:"red",
+                        fontFamily:"궁서체"
+                    })
+                    .animate({
+                        fontSize:"24px"
+                    },5000)
+                    // 0.5초간 72px로 갑자기 커진다!
+                    .animate({
+                        fontSize:"72px"
+                    },500);//// animate ////
+
+                }); ///// animate ///////
             }); ///// click //////////////////
 
 
