@@ -6,12 +6,16 @@ $(function(){/// jQB /////////////////////////
     
     // 상단영역 링크 클릭시 페이지 이동하기
     // click 이벤트 대상: #top a
-    $("#top a").click(function(멍멍){
+    $("#top a").click(function(e){
         // e는 이벤트발생할때 함수내부로 전달하는
         // 이벤트 관련 전달변수
-        멍멍.preventDefault();
+        e.preventDefault();
         // 기본기능 막기코드
         // a태그 같은 경우 이동속성을 막아준다!
+        
+        // 1. a태그의 글자읽어오기
+        var txt = $(this).text();
+        console.log("텍스트:"+txt);
         
         
         
