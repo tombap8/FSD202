@@ -27,30 +27,6 @@ $(function () { /// jQB /////////////////////////
             case "Home":
                 url = "index.html";
                 break;
-            case "디바이스":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "스마트폰":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "태블릿PC":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "노트북":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "패션":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "가방":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "시계":
-                url = "item.html?inm=" + escape(txt);
-                break;
-            case "구두":
-                url = "item.html?inm=" + escape(txt);
-                break;
             case "프로필":
                 url = "profile.html";
                 break;
@@ -67,15 +43,30 @@ $(function () { /// jQB /////////////////////////
                 url = "location.html";
                 break;
             case "트위터":
-                url = "index.html";
+                url = "https://twitter.com/tomhanks";
                 break;
             case "인스타그램":
-                url = "index.html";
+                url = "https://www.instagram.com/accounts/login/?next=/tomhanks/";
                 break;
             case "페이스북":
-                url = "index.html";
+                url = "https://www.facebook.com/TomHanks";
                 break;
+            default://아이템 페이지는 모두 default에서 처리!
+                url = "item.html?inm=" + escape(txt);
         } ///// switch case //////////
+        
+        console.log("url:"+url);
+        
+        // url로 페이지 이동하기!
+        
+        // sns는 새창으로 열기!
+        if(txt == "트위터" || 
+           txt == "인스타그램" || 
+           txt == "페이스북") 
+            window.open().location.href = url;
+        // 동일 시스템 페이지는 같은 창에서 열기!
+        else 
+            location.href = url;
 
 
 
