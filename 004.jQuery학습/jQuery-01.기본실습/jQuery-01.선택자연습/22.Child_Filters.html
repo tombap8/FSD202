@@ -22,13 +22,23 @@
                 });////// css ///////////
                 // (참고로 n은 0부터 대입된다)
             }); /////// click ////////////////
-
+            
+            /*
+                :nth-child(2n+1) 
+                위와 같은 수식표현법은 css 기본문법에서 지원한다!
+                -제이쿼리 전용아님!
+            */
 
 
 
 
         }); //jQuery실행구역
     </script>
+    <style>
+        li:nth-child(2n+1){
+            background: yellow;
+        }
+    </style>
 </head>
 
 <body>
