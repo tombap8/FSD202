@@ -6,6 +6,10 @@
     <!-- jQuery library -->
     <script src="jquery-1.7.2.min.js"></script>
     <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <!--
+        jQuery UI는 jQuery를 가지고 추가 개발한 공식 플러그인이다!
+        - 색상 애니메이션, 이징효과 등 포함됨
+    -->
 
     <script>
         $(document).ready(function(e) {
@@ -37,7 +41,16 @@
                         $(this).text("내가 이러니 바나나 안바나나")
                         // 4. 0.5초 동안 나타나게하고
                         .show(500)
+                        .css({// 글자가 잘 안보여서 글자그림자추가
+                            textShadow:"1px 1px 1px #333",
+                            whiteSpace:"nowrap"//줄바꿈방지
+                        })
                         // 5. 글자크기를 72px , 글자색 노란색, 글자그림자를  애니메이션으로 주고
+                        .animate({
+                            fontSize:"72px",
+                            color:"yellow"
+                            //참고: 색상애니는 jQuery UI가 있어야함
+                        },2000)
                         // 6. 그 후 바나나 배경으로 body 준다!!!
                     }); ///// hide ////////
 
