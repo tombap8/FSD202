@@ -50,8 +50,13 @@
                             fontSize:"72px",
                             color:"yellow"
                             //참고: 색상애니는 jQuery UI가 있어야함
-                        },2000)
-                        // 6. 그 후 바나나 배경으로 body 준다!!!
+                        },2000,function(){
+                            // 6. 그 후 바나나 배경으로 body에 준다!!!
+                            $("body").css({
+                                backgroundImage:"url()"
+                            });////// css //////
+                        });//// animate //////////
+                        
                     }); ///// hide ////////
 
 
