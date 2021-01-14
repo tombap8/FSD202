@@ -11,10 +11,22 @@ $(function(){ // jQB ////////////
     // 변경해 준다!
     $("#ham").click(function(){
         
-        // 높이값읽어오기
-        var hv = $(".mognb").height();
-        console.log("현재높이값:"+hv);
+        // 상태구분하기: .moshow가 높이값 0일때와 아닐때
+        var sts = $(".moshow").height();
+        //console.log("메뉴박스높이값:"+sts);
         
+        // 높이값 설정하기
+        var hv = 0;//기본값 0
+        // 만약 아래 if문에 해당안되면 높이값은 0이다!
+        
+        if(sts===0){ // 높이값0이므로 열어줘야함!
+            hv = $(".mognb").height();
+        } ///// if ////////////////////////
+        
+        // height() 메서드는 선택요소의 높이값을 리턴함
+        //console.log("현재높이값:"+hv);
+        
+        // 높이값 변경하기
         $(".moshow").css({
             height: hv+"px"
         });///// css ////////
