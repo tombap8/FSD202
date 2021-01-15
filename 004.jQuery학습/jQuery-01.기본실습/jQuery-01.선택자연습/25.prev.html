@@ -6,12 +6,30 @@
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script src="jquery-ui-1.8.23.custom.min.js"></script>
+<!--색상애니메이션은 jQuery UI가 필요하다!-->
 <script>
 $(document).ready(function(e) {
-	
+    /*
+    prev() - 선택요소의 이전형제요소를 선택함!
+    prevAll() - 이전형제요소 전부를 선택함
+	*/
+    
 	// 미션: 마지막 p태그를 클릭하면 0.5초 간격으로 이전 형제요소의 배경색을 차례로 넣으시오.
-	// animate() 사용.
+	// animate({CSS설정},시간,이징,함수) 사용.
 	// first(), last() 사용
+    
+    $("#container>p").last().click(function(){
+        console.log("나야나!");
+        $(this) // 클릭된 마지막 p태그
+        .animate({
+            backgroundColor:"red"
+        },500)
+        .prev() // 이전p태그
+        .animate({
+            backgroundColor:"green"
+        },500)
+        
+    });//////// click //////////////////
 	
 	
 });//jQuery실행구역

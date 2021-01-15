@@ -7,8 +7,19 @@
 <script src="jquery-1.7.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+    //$(선택자).find(선택요소)
+    //-> 선택자 하위요소 중 자손요소를 모두 찾음
+    
 	
 	// 미션: #container를 클릭하면 p태그를 모두 찾아서 배경 이미지를 넣으시오.
+    $("#container").click(function(){
+        
+        $(this).find("p")
+        .css({
+            background:"url(https://pds.joins.com/news/component/htmlphoto_mmdata/202003/18/401a82b8-e3ab-4b04-89e9-c96a96c6c984.jpg) no-repeat 0/cover"
+        });///////////// css ///////////
+        
+    });/////// click /////////////////
 	
 	
 });//jQuery실행구역
