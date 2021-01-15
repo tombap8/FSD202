@@ -19,15 +19,27 @@ $(document).ready(function(e) {
 	// first(), last() 사용
     
     $("#container>p").last().click(function(){
-        console.log("나야나!");
+        //console.log("나야나!");
         $(this) // 클릭된 마지막 p태그
         .animate({
             backgroundColor:"red"
         },500)
         .prev() // 이전p태그
+        .delay(500) // 0.5초 지연
         .animate({
             backgroundColor:"green"
         },500)
+        .prev() // 이전p태그
+        .delay(1000) // 1초 지연
+        .animate({
+            backgroundColor:"yellow"
+        },500)
+        .prev() // 이전 div태그
+        .find("p") // 자식 p태그
+        .delay(1500) //1.5초 지연
+        .animate({
+            backgroundColor:"lime"
+        },500);////// animate ///////
         
     });//////// click //////////////////
 	
