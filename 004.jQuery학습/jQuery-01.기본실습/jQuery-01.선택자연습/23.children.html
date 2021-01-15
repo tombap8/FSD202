@@ -7,9 +7,33 @@
 <script src="jquery-1.7.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+    /*
+    [ 탐색기능(Traversing) ]
+    - 선택자 필터링이 끝난 후 내부에서 다시 한번 선택할 수
+    있는 기능을 가진 메서드
+    
+    - 사용법: $(선택자).트레버싱메서드()
+    예) $("#cont>li").eq(5).parent().find("span")
+    
+    1. children(선택요소)
+    -> 선택요소의 직계자식요소를 선택하는 트레버싱 메서드
+    */
+    
 	
-	// 미션: #container를 클릭하면 직계자식인 p태그를 찾아서 배경색을 노란색으로 바꾸고 동시에
-	// 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
+	
+	
+    
+    $("#container").click(function(){
+        // 미션: #container를 클릭하면 직계자식인 p태그를 찾아서 배경색을 노란색으로 바꾸고 동시에
+        $(this).children("p")
+        .css({
+            backgroundColor:"yellow"
+        });///////// css ////////////
+        
+        // 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
+        
+    });////// click //////////////////
+    
 	
 	
 });//jQuery실행구역
