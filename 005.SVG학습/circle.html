@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <title>SVG - Circle Animation</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
         }
-        body{
+
+        body {
             background-image: linear-gradient(to bottom, #b6ffe3, #cafa5e, #e7b9ff);
         }
-        
-        ul.box{
+
+        ul.box {
             margin: 0;
             padding: 0;
             list-style: none;
             width: 100%;
             height: 100%;
         }
-        .box::after{
+
+        .box::after {
             content: "";
             display: block;
-            clear: both;/*float해제*/
+            clear: both;
+            /*float해제*/
         }
-        .box li{
+
+        .box li {
             float: left;
             width: 50%;
             height: 50%;
             outline: 1px dotted blue;
         }
+
         /*버튼박스*/
-        .btns{
+        .btns {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
@@ -45,17 +51,19 @@
             background: url(images/img2.jpg) no-repeat 0/cover;
             border-radius: 50%;
         }
+
         /*svg 설정*/
-        .btns>svg{
+        .btns>svg {
             /*svg는 보통 가로,세로 크기를 주는 것으로 시작!
             svg 가 벡터 그래픽의 스테이지임!*/
             width: 100%;
             height: 100%;
         }
+
         /*
             circle설정 - 속성들이 일러스트레이터 속성과 매우유사함!
         */
-        .c1{
+        .c1 {
             fill: transparent;
             /*채우기속성(기본색은 검정)*/
             /*transparent는 투명, none은 설정없음*/
@@ -65,7 +73,7 @@
             /*선두께 안쓰면 1px, 단위안쓰면 px단위임*/
             stroke-linecap: round;
             /*선끝처리(round둥글게,butt네모,sqare네모)*/
-            
+
             stroke-dasharray: 300%;
             /*
                 stroke-dasharray
@@ -97,26 +105,32 @@
                 트랜지션 또는 애니메이션 키프레임 설정을 하면
                 선그리기 애니메이션이 완성된다!
             */
-            
+
             /*트랜지션 설정으로 선 애니메이션하기*/
             transition: stroke-dashoffset .7s ease-in-out;
         }
-        
+
         /*svg 에 마우스 오버시 옵셋 처음값으로!*/
-        .c1:hover{
+        .c1:hover {
             stroke-dashoffset: 0;
         }
-        
+
         /*두번째 변경하기*/
-        .c2{
+        .c2 {
             stroke: #0ff;
             stroke-dasharray: 20;
         }
         
+        /*세번째 변경하기(그라데이션 호출!)*/
+        .c3{
+            stroke: url(#grad1);
+        }
+        
     </style>
 </head>
+
 <body>
-   <!--4등분박스-->
+    <!--4등분박스-->
     <ul class="box">
         <li>
             <div class="btns">
@@ -124,7 +138,7 @@
                     <circle class="c1" cx="100" cy="100" r="95" transform="rotate(-90,100,100)"></circle>
                 </svg>
             </div>
-            
+
         </li>
         <li>
             <div class="btns">
@@ -132,9 +146,31 @@
                     <circle class="c1 c2" cx="100" cy="100" r="95" transform="rotate(-90,100,100)"></circle>
                 </svg>
             </div>
-            
+
         </li>
-        <li></li>
+        <li>
+            <div class="btns">
+                <svg>
+                   <!--선에 그라데이션 주기-->
+                    <defs>
+                       <!--defs : 요소에 효과를 정의함-->
+                       <!--linearGradient : 선형그라데이션-->
+                       <!--id를 주고 circle에서 stroke속성에 
+                       url(#아이디명) 으로 호출(면에 주려면 fill)-->
+                       <!--x1,y1하나의점에서 x2,y2또 하나의 점 방향으로 그라데이션이 들어간다는 의미-->
+                       <!--stop: 색상지정 offset은 색상지점-->
+                       <!--stop-color는 실제 색넣기-->
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#57ff78"/>
+                            <stop offset="50%" stop-color="#29ceff"/>
+                            <stop offset="100%" stop-color="#ff79fa"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="c1 c3" cx="100" cy="100" r="95" transform="rotate(-90,100,100)"></circle>
+                </svg>
+            </div>
+
+        </li>
         <li></li>
     </ul>
     <!--
@@ -151,11 +187,10 @@
      따라서 circle 내부 속성으로 별도처리해야함!
      (각도는 시계방향이 양수, 반시계가 음수)
     -->
-    
-    
-    
-    
-    
-    
-</body>
-</html>
+
+
+
+
+
+
+</body></html>
