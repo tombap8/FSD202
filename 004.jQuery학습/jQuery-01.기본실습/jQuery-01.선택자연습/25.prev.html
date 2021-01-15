@@ -50,8 +50,15 @@ $(document).ready(function(e) {
     // 변경 애니메이션 하시오!
     // prevAll() 사용!
     $("#container>div").last().find("p").last()
-    .click({
+    .click(function(){
         console.log("나두야!");
+        $(this)
+        .prevAll()
+        .animate({
+            backgroundColor:"yellow",
+            width:"200px",
+            height:"200px"
+        },1000);//// animate /////
     });//////////// click /////////////////
 	
 	
