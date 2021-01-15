@@ -42,6 +42,17 @@ $(document).ready(function(e) {
         },500);////// animate ///////
         
     });//////// click //////////////////
+    
+    // 추가미션:
+    ///#container 아래 마지막 div의 마지막 p태그를
+    // 클릭하면 p태그 이전 형제 p태그 모두 배경색을
+    // yellow로 변경하고 크기는 가로 ,세로 200px로
+    // 변경 애니메이션 하시오!
+    // prevAll() 사용!
+    $("#container>div").last().find("p").last()
+    .click({
+        console.log("나두야!");
+    });//////////// click /////////////////
 	
 	
 });//jQuery실행구역
