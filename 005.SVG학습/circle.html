@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG - Circle Animation</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background-image: linear-gradient(to bottom, #b6ffe3, #cafa5e, #e7b9ff);
+        }
+        
+        ul.box{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            height: 100%;
+        }
+        .box::after{
+            content: "";
+            display: block;
+            clear: both;/*float해제*/
+        }
+        .box li{
+            float: left;
+            width: 50%;
+            height: 50%;
+            outline: 1px dotted blue;
+        }
+        /*버튼박스*/
+        .btns{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로중앙이동*/
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            /*가로중앙*/
+            background: url(images/img2.jpg) no-repeat 0/cover;
+            border-radius: 50%;
+        }
+        /*svg 설정*/
+        .btns>svg{
+            /*svg는 보통 가로,세로 크기를 주는 것으로 시작!
+            svg 가 벡터 그래픽의 스테이지임!*/
+            width: 100%;
+            height: 100%;
+        }
+        /*
+            circle설정 - 속성들이 일러스트레이터 속성과 매우유사함!
+        */
+        .c1{
+            fill: transparent;
+            /*채우기속성(기본색은 검정)*/
+            /*transparent는 투명, none은 설정없음*/
+            stroke: yellow;
+            /*선색(안쓰면 안나옴)*/
+            stroke-width: 10;
+            /*선두께 안쓰면 1px, 단위안쓰면 px단위임*/
+        }
+        
+    </style>
+</head>
+<body>
+   <!--4등분박스-->
+    <ul class="box">
+        <li>
+            <div class="btns">
+                <svg>
+                    <circle class="c1" cx="100" cy="100" r="95"></circle>
+                </svg>
+            </div>
+            
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+</html>
