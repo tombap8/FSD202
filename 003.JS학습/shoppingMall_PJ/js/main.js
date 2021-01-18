@@ -15,11 +15,25 @@ window.addEventListener("DOMContentLoaded",
         // 왼쪽버튼
         btn[0].onclick = function () {
             console.log("왼쪽이양!");
+            
+            //이동함수 호출
+            goSlide(0);
+            
+            // a태그 기본이동 막기!
+            return false;
+            
         }; ///// click /////////////////////
 
         // 오른쪽버튼
         btn[1].onclick = function () {
             console.log("오른쪽이양!");
+            
+            //이동함수 호출
+            goSlide(1);
+            
+            // a태그 기본이동 막기!
+            return false;
+            
         }; ////// click ////////////////////
 
 
@@ -27,7 +41,14 @@ window.addEventListener("DOMContentLoaded",
             함수명: goSlide
             기능: 슬라이드가 넘어가도록 기능구현함
         */ ////////////////////////////////////////////
-        var goSlide = function () {};
+        var goSlide = function (dir) {
+            
+            console.log("방향구분:"+dir);
+            
+        };////// goSlide함수 ///////////////////////////
+        ///////////////////////////////////////////////
+    
+    
 
         /*////////////////////////////////////////////
             함수명: autoSlide
