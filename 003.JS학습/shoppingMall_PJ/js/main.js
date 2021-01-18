@@ -36,7 +36,8 @@ window.addEventListener("DOMContentLoaded",
             
         }; ////// click ////////////////////
 
-
+        // 슬라이드번호 /////////////
+        var snum = 0;//첫페이지는 0
         /*////////////////////////////////////////////
             함수명: goSlide
             기능: 슬라이드가 넘어가도록 기능구현함
@@ -44,6 +45,24 @@ window.addEventListener("DOMContentLoaded",
         var goSlide = function (dir) {
             
             console.log("방향구분:"+dir);
+            
+            // 버튼별 슬라이드번호 증감!
+            if(dir){// dir이 1일때 true : 오른쪽버튼
+                snum++;//1씩증가
+                if(snum===5) snum = 0;//한계수
+            } /////// if ///////////////////////
+            else{// dir이 0일때 : 왼쪽버튼
+                snum--;//1씩감소
+                if(snum<0) snum = 4;//한계수
+            } /////// else ///////////////////////
+            
+            console.log("슬라이드번호:"+snum);
+            
+            
+            // 슬라이드 이동하기
+            var tg = document.querySelector('#slide');
+            tg.style.left = (-100*snum)+"%";
+            tg.style.transition = "left .8s ease-out";
             
         };////// goSlide함수 ///////////////////////////
         ///////////////////////////////////////////////
