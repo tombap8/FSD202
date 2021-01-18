@@ -116,8 +116,12 @@ $(function(){
     // 2. 제목넣기 : item[pm]["제목"]
     tit.text(item[pm]["제목"]);
     
+    // 3. 이미지 넣기 : item[pm]["이미지"]
+    // attr(속성명,속성값) - 제이쿼리용 속성셋팅 메서드
+    img.attr("src","images/"+item[pm]["이미지"]);  
     
-    
+    // 4. 설명 넣기 : item[pm]["설명"]
+    txt.text(item[pm]["설명"]);
     
     
     
