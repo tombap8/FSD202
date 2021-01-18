@@ -5,6 +5,13 @@ window.addEventListener("DOMContentLoaded",
     function () {
         console.log("로딩완료!");
     
+    // 이동버튼 클릭시 슬라이드 넘기기 /////
+    // 클릭 이벤트 대상: .abtn
+    
+    // 이동버튼
+    var btn = document.querySelectorAll('.abtn');
+    console.log("버튼개수:"+btn.length);
+    
     
     /*////////////////////////////////////////////
         함수명: goSlide
