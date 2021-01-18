@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded",
             
             console.log("방향구분:"+dir);
             
-            // 버튼별 슬라이드번호 증감!
+            // 1. 버튼별 슬라이드번호 증감!
             if(dir){// dir이 1일때 true : 오른쪽버튼
                 snum++;//1씩증가
                 if(snum===5) snum = 0;//한계수
@@ -59,10 +59,24 @@ window.addEventListener("DOMContentLoaded",
             console.log("슬라이드번호:"+snum);
             
             
-            // 슬라이드 이동하기
+            // 2.슬라이드 이동하기
             var tg = document.querySelector('#slide');
             tg.style.left = (-100*snum)+"%";
             tg.style.transition = "left .8s ease-out";
+            
+            // 3.블릿변경하기
+            // 원리: 슬라이드 순번과 같은 순서의 블릿li에 
+            // class="on"을 줘서 회색이미지가 보이도록 한다!
+            // 블릿박스 : .indic li
+            var indic = document.querySelectorAll('.indic li');
+            
+            // 블릿 li에 class초기화(모두지우기)
+            for(var x of indic){
+                x.classList.remove("on");
+            } ///// for of문 /////////////
+            
+            // 슬라이드 순번과 같은 블릿 li에 class 넣기
+            indic[snum].classList.add("on");
             
         };////// goSlide함수 ///////////////////////////
         ///////////////////////////////////////////////
