@@ -119,6 +119,8 @@ $(function(){
     // 3. 이미지 넣기 : item[pm]["이미지"]
     // attr(속성명,속성값) - 제이쿼리용 속성셋팅 메서드
     img.attr("src","images/"+item[pm]["이미지"]);  
+    // 만약 "태블릿PC"이면 이미지 width를 70%로 조정함!
+    if(pm==="태블릿PC") img.css({width:"70%"});
     
     // 4. 설명 넣기 : item[pm]["설명"]
     txt.text(item[pm]["설명"]);
