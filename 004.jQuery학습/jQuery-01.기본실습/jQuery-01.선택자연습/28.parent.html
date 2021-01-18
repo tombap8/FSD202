@@ -1,49 +1,102 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title> parent </title>
-<!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-<script>
-$(document).ready(function(e) {
-	
-	// 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
-	
-	// parents(요소명) -> 부모들 중 특정 부모를 선택함!
-	// 미션: a를 클릭하면 부모들 중 p태그는 배경색을 노란색, div태그는 배경색을 녹색으로 지정하시오.
-	
-	
-	
-});//jQuery실행구역
-</script>
+    <meta charset="utf-8">
+    <title> parent </title>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            /*
+            parent() 메서드 - 선택요소를 싸고있는 요소를 선택함(그게 부모임!)
+            비교) :parent 필터는 내용이 있는요소를 선택함(많이다름!)
+            */
 
-<style>
-  div, p, a {float:left;margin:10px; background-color:#FFF; display:block;}
-  div#sub { width:180px; height:180px; border:#000 thin solid;}
-  p { width:150px; height:150px; border:#000 thin solid;}
-  a { width:130px; height:100px; border:#000 thin solid;}
-</style>
+            // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
+            $("p").click(function() {
+
+                $(this).parent() // 싸고 있는 부모로 올라감!
+                    .animate({
+                        backgroundColor: "red"
+                    }, 500);
+
+            }); ////// click /////////////
+
+
+            // parents(요소명) -> 부모들 중 특정 부모를 선택함!
+            // 미션: a를 클릭하면 부모들 중 p태그는 배경색을 노란색, div태그는 배경색을 녹색으로 지정하시오.
+            $("a").click(function(){
+                
+                // 조상들 중 p태그
+                $(this).parents("p")
+                .animate({
+                    backgroundColor:"yellow"
+                },500);
+                
+                // 조상들 중 #sub인 것
+                $(this).parents("#sub")
+                .animate({
+                    backgroundColor:"green"
+                },500);
+                
+                
+            });//////// click ////////////
+            
+
+
+
+        }); //jQuery실행구역
+    </script>
+
+    <style>
+        div,
+        p,
+        a {
+            float: left;
+            margin: 10px;
+            background-color: #FFF;
+            display: block;
+        }
+
+        div#sub {
+            width: 180px;
+            height: 180px;
+            border: #000 thin solid;
+        }
+
+        p {
+            width: 150px;
+            height: 150px;
+            border: #000 thin solid;
+        }
+
+        a {
+            width: 130px;
+            height: 100px;
+            border: #000 thin solid;
+        }
+    </style>
 </head>
+
 <body>
-<div id="container">
+    <div id="container">
 
-    <div id = "sub">
-      <p>div p
-		<a href="#">
-		  	div p a
-		  </a>
-		</p>
+        <div id="sub">
+            <p>div p
+                <a href="#">
+                    div p a
+                </a>
+            </p>
+        </div>
+        <p id="part1">p</p>
+        <p>p</p>
+        <p>p</p>
+
     </div>
-    <p id="part1">p</p>
-    <p>p</p>
-    <p>p</p>
+    <!---------- jQuery code Start ---------->
+    <script>
 
-</div>
-<!---------- jQuery code Start ---------->
-<script>
+    </script>
 
-</script>
-
-</body>
-</html>
+</body></html>
