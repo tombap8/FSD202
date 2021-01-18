@@ -2,14 +2,35 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title> Traversal- siblings </title>
+<title> Traversing- siblings </title>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
 <script>
 $(document).ready(function(e) {
+    /*
+    siblings() 메서드
+    - 선택요소를 제외한 나머지 형제요소를 선택함
+    
+    siblings(필터) 메서드
+    - 필터에 특정요소나 요소명을 쓰면 다른형제요소 중 특정 요소만 선택함
+    */
 	
 	// 미션: 미니언즈 이미지 300개를 셋팅하고 미니언즈 중 하나를 클릭하면 클릭된 이미지만 width를 200px로 변경, 나머지는 모두 50px로 변경되도록 애니메이션 하시오.
 
+    // 전체박스
+    var tg = $("#container");
+    
+    // 요소 추가 제이쿼리 메서드
+    // append(추가요소)
+    
+    // 미니언즈 300개 셋팅하기
+    //for(시;한;증){}
+    for(var i=0;i<300;i++){
+        tg.append('<img src="mini.jpg" alt="미니언즈">');
+    } ////// for문 ///////////
+    
+    // 미니언즈 이미지 가로크기변경
+    tg.find("img").css({width:"100px"});
 	
 	
 });//jQuery실행구역
