@@ -1,70 +1,89 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title> append()활용  </title>
-<!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-	<script>
-        
-        
-	$(function(){// jQB //////////////////////////
-		// 미션: 추가버튼을 클릭하면 이미지가 랜덤하게 #container에 추가되게하시오.
-        // 랜덤수 임시변수
-        var temp = 0;//대상외의 수를 처음에 셋팅
-        
-        $("#append").click(function(){
-            
-            // 랜덤수 만들기
-            // 1~5사이의 수
-            var rdn = Math.ceil(Math.random()*5);
-            console.log("랜덤수:"+rdn);
-            
-            // 랜덤수 체크(같은수 연속안나오게)
-            while(rdn===temp){
-               rdn = Math.ceil(Math.random()*5); 
-                console.log("다시랜덤수:"+rdn);
-            }///// while ///////////////////////
-            
-            // 임시변수에 확정된 랜덤수저장(다음번에 비교함!)
-            temp = rdn;
-            
-            
-            $("#container").append('<img src="th_pic'+rdn+'.jpg" alt="이미지">');
-        });//////// click ///////////////
-	
-	
-		
-		
-	});/// jQB ////////////////////////////////////
-	//////////////////////////////////////////////
-	
-	
-	</script>
-	
-	
-	
-	
-<style>
-  div {border:#00F solid 1px;}
-</style>
+    <meta charset="utf-8">
+    <title> append()활용 </title>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function() { // jQB //////////////////////////
+            // 미션: 추가버튼을 클릭하면 이미지가 랜덤하게 #container에 추가되게하시오.
+            // 랜덤수 임시변수
+            var temp = 0; //대상외의 수를 처음에 셋팅
+
+            $("#append").click(function() {
+
+                // 랜덤수 만들기
+                // 1~5사이의 수
+                var rdn = Math.ceil(Math.random() * 5);
+                console.log("랜덤수:" + rdn);
+
+                // 랜덤수 체크(같은수 연속안나오게)
+                while (rdn === temp) {
+                    rdn = Math.ceil(Math.random() * 5);
+                    console.log("다시랜덤수:" + rdn);
+                } ///// while ///////////////////////
+
+                // 임시변수에 확정된 랜덤수저장(다음번에 비교함!)
+                temp = rdn;
+
+
+                $("#container").append('<img src="th_pic' + rdn + '.jpg" alt="이미지">');
+            }); //////// click ///////////////
+
+
+            /// 자동 버튼 클릭시 인터발 함수 작동하기!
+            var autoI; //인터발용변수
+
+            $("#auto").click(function() {
+
+                // 변수에 담고(지우려고) 인터발설정
+                if (!autoI) { ///할당안되었을때(false일때)
+                    console.log("인터발실행!");
+                    
+                    autoI = setInterval(function() {
+                        // 이미구현된 #append클릭함수가
+                        // 실행되도록 이벤트 트리거처리함!
+                        // $(선택자).trigger(이벤트명)
+                        // -> 선택요소에 이벤트가 발생함!
+
+                        $("#append").trigger("click");
+                    }, 200);
+
+                } //// if ////////////////////
+            }); //////// click ////////////
+
+
+
+
+        }); /// jQB ////////////////////////////////////
+        //////////////////////////////////////////////
+    </script>
+
+
+
+
+    <style>
+        div {
+            border: #00F solid 1px;
+        }
+    </style>
 </head>
- 
+
 <body>
 
-<button id ="append"  title="append">추가</button>
-<button id="auto">자동</button>
-<button id="stop">멈춤</button>
+    <button id="append" title="append">추가</button>
+    <button id="auto">자동</button>
+    <button id="stop">멈춤</button>
 
-<div id="container"></div>
-
-	
-<!---------- jQuery code Start ---------->
-<script>
-          
+    <div id="container"></div>
 
 
-</script>
+    <!---------- jQuery code Start ---------->
+    <script>
 
-</body>
-</html>
+
+
+    </script>
+
+</body></html>
