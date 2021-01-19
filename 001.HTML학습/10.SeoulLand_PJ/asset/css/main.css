@@ -169,7 +169,7 @@ body::before{
     margin: 0 auto;
     overflow: hidden;
     /*넘치는 자식요소 숨기기*/
-    outline: 2px dotted blue;
+    /*outline: 2px dotted blue;*/
 }
 /*할인배너 이동할 ul*/
 .halban ul{
@@ -185,6 +185,12 @@ body::before{
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
 }
+
+/*첫번째 li는 보더색 빨간색*/
+.halban li:first-child{
+    border-color: red;
+}
+
 /*배너이미지는 li에 맞춤*/
 .halban li img{
     width: 100%;
