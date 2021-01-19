@@ -207,7 +207,7 @@ body::before{
     width: 21px;
     height: 11px;
     vertical-align: 5px;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
 }
 /*마우스오버시 배경이동*/
 .halbtn a:hover{
