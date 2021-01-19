@@ -48,15 +48,55 @@
         2. 화면의 비율이 가로, 세로로 다변화할때 판단하기 어려움
         3. 요소간 상대적인 디자인이 아닐 경우 어려움이 있음
         */
-    
-    
-    
-    
-    
+    /*박스공통*/
+        .vp{
+            padding: 50px 0;
+            text-align: center;
+            margin: 0 auto;
+            border: 5px dotted blue;
+        }
+        
+        /*vw단위 - 보이는 화면 가로폭기준*/
+        .vp1{
+            width: 50vw;
+            font-size: 10vw;
+        }
+        
+        /*vh단위 - 보이는 화면 세로폭기준*/
+        .vp2{
+            width: 50vh;
+            font-size: 10vh;
+        }
+        
+        /*vmax단위 - 보이는 화면 가로폭,세로폭 중 큰것 기준*/
+        .vp3{
+            width: 50vmax;
+            font-size: 10vmax;
+        }
+        
+        /*vmin단위 - 보이는 화면 가로폭,세로폭 중 작은 것 기준*/
+        .vp4{
+            width: 50vmin;
+            font-size: 10vmin;
+        }
+        
+        /*vmax,vmin은 가로폭 또는 세로폭이 너무 작거나 커질때 크기를 유지하고자할때 사용한다!*/
+        
     </style>
 </head>
 <body>
-   
+   <div class="vp vp1">
+       I am vw!
+   </div>
+   <div class="vp vp2">
+       I am vh!
+   </div>
+   <div class="vp vp3">
+       I am vmax!
+   </div>
+   <div class="vp vp4">
+       I am vmin!
+   </div>
    
    
    
