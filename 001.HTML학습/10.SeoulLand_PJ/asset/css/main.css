@@ -156,6 +156,12 @@ body::before{
 .tit b{
     color: #ff4e00;
 }
+/*더보기버튼*/
+.more{
+    float: right;
+    margin-right: 5px;
+    margin-top: -2px;
+}
 
 
 
