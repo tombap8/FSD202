@@ -10,6 +10,9 @@
         
 	$(function(){// jQB //////////////////////////
 		// 미션: 추가버튼을 클릭하면 이미지가 랜덤하게 #container에 추가되게하시오.
+        // 랜덤수 임시변수
+        var temp = 0;//대상외의 수를 처음에 셋팅
+        
         $("#append").click(function(){
             
             // 랜덤수 만들기
@@ -17,8 +20,17 @@
             var rdn = Math.ceil(Math.random()*5);
             console.log("랜덤수:"+rdn);
             
+            // 랜덤수 체크(같은수 연속안나오게)
+            while(rdn===temp){
+               rdn = Math.ceil(Math.random()*5); 
+                console.log("다시랜덤수:"+rdn);
+            }///// while ///////////////////////
             
-            $("#container").append('<img src="th_pic1.jpg" alt="이미지">');
+            // 임시변수에 확정된 랜덤수저장(다음번에 비교함!)
+            temp = rdn;
+            
+            
+            $("#container").append('<img src="th_pic'+rdn+'.jpg" alt="이미지">');
         });//////// click ///////////////
 	
 	
