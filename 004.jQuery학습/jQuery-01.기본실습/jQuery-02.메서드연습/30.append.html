@@ -22,6 +22,14 @@
                 $("#container")
                     .append("<p>내가 좋아하는 배우는 김수현입니다!</p>");
             }); //////// click /////////////
+            
+            // 맨뒤로가 버튼을 클릭하면 첫번째 p요소를 선택하여
+            // 맨뒤로 이동시킨다!
+            var cont = $("#container");
+            
+            $("#btngo").click(function(){
+                cont.append(cont.find("p").first());
+            });/////// click ///////////////
 
 
 
