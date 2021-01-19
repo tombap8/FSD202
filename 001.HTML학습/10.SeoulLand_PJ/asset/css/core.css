@@ -35,6 +35,15 @@ body {
     overflow: hidden;
 }
 
+/*부모자격 부여 class*/
+.prt{
+    position: relative;
+}
+
+
+
+
+
 
 
 

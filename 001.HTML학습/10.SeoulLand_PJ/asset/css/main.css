@@ -118,6 +118,44 @@ body::before{
     background-position: 0 -49px;
 }
 
+/*블릿버튼*/
+.indic{
+    position: absolute;
+    /*부모는?  싸고있는 파티션박스(.prt줌)*/
+    bottom: 13px;
+    right: 27px;
+    z-index: 2;
+    /*포지션있어야적용!*/
+}
+
+/*사이드배너 영역*/
+#sideBan{
+    position: relative;
+    z-index: 2;
+    /*z-index는 포지션이 겹칠 수 있어야 적용된다!*/
+    padding: 0;
+    padding-left: 10px;
+}
+/*사이드배너 박스*/
+.sideBan{
+    width: 136px;
+    height: 410px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/*1.타이틀*/
+.sideBan h2{
+    padding: 7px 0 6px 10px;
+    /*패딩: 위 오른 아래 왼*/
+}
+/*타이틀글자-할인배너, 컨텐츠타이틀 공통*/
+.tit{
+    font-family: Nanum;
+    color: #222;
+}
+/*타이틀 뒷글자색*/
+.tit b{
+    color: #ff4e00;
+}
 
 
 
