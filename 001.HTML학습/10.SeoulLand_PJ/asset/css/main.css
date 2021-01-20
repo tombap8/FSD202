@@ -269,6 +269,35 @@ body::before {
 .tpart .more{
     margin-right: -1px;
 }
+/*1-2.운영시간박스*/
+.time{
+    width: 140px;
+    height: 65px;
+    background: url(../images/timebg.png) no-repeat;
+    text-align: center;
+    margin-top: 5px;
+    letter-spacing: -1px
+}
+/*날짜*/
+.today{
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 16px 0 5px 0;
+}
+/*날짜숫자*/
+.today strong{
+    font-size: 21px;
+    color: #ff0;
+    font-family: arial;
+}
+/*개장시간*/
+.timesec{
+    color: #000;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: arial;
+}
 
 
 
