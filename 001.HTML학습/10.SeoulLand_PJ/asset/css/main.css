@@ -10,11 +10,12 @@
 @import url(common.css);
 
 /*메인페이지 전체 디자인보기*/
-body{
+body {
     position: relative;
     /*가상요소의 부모*/
 }
-body::before{
+
+body::before {
     content: "";
     display: block;
     position: absolute;
@@ -31,17 +32,20 @@ body::before{
 
 /*********** 2.배너영역 **************/
 /*배너영역 파티션높이*/
-.b1{
-   height: 419px;
+.b1 {
+    height: 419px;
 }
+
 /*배너 겉박스*/
-#ban{
+#ban {
     position: relative;
     /*부모자격*/
 }
+
 /*배너슬라이드*/
 /*ul,li모두 absolute로 겹치게!*/
-.slider, .slider li{
+.slider,
+.slider li {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,15 +54,16 @@ body::before{
 }
 
 /*슬라이드 리스트 공통*/
-.slider li{
+.slider li {
     opacity: 0;
-    
+
     /*트랜지션:속시이지*/
     transition: opacity .8s ease-in-out;
 }
+
 /*보이는 리스트 class*/
 /*on이라는 클래스를 설정한 li 디자인*/
-.slider li.on{
+.slider li.on {
     opacity: 1;
     z-index: 1;
     /*현재 보이는 슬라이드가 맨위로 오게함!
@@ -67,59 +72,68 @@ body::before{
 
 
 /*슬라이드 개별셋팅*/
-.slider li:nth-child(1){
+.slider li:nth-child(1) {
     background: url(../images/ban00.jpg) no-repeat center;
 }
-.slider li:nth-child(2){
+
+.slider li:nth-child(2) {
     background: url(../images/ban01.jpg) no-repeat center;
 }
-.slider li:nth-child(3){
+
+.slider li:nth-child(3) {
     background: url(../images/ban02.jpg) no-repeat center;
 }
-.slider li:nth-child(4){
+
+.slider li:nth-child(4) {
     background: url(../images/ban03.jpg) no-repeat center;
 }
-.slider li:nth-child(5){
+
+.slider li:nth-child(5) {
     background: url(../images/ban04.jpg) no-repeat center;
 }
-.slider li:nth-child(6){
+
+.slider li:nth-child(6) {
     background: url(../images/ban05.jpg) no-repeat center;
 }
 
 /*배너 중앙속박스*/
-.ban{
+.ban {
     position: relative;
     /*부모자격*/
 }
 
 /*배너이동버튼*/
-.abtn{
+.abtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     /*세로중앙이동*/
     width: 25px;
     height: 49px;
-    z-index: 2;/*배너리스트보다 위에 옴!*/
+    z-index: 2;
+    /*배너리스트보다 위에 옴!*/
     /*outline: 2px solid red;*/
 }
+
 /*왼쪽이동버튼*/
-.lb{
+.lb {
     left: -25px;
     background: url(../images/btn_shop_bn_left.png) no-repeat;
 }
+
 /*오른쪽이동버튼*/
-.rb{
+.rb {
     right: -25px;
     background: url(../images/btn_shop_bn_right.png) no-repeat;
 }
+
 /*이동버튼 공통 마우스 오버시 배경이미지 위치변경하기*/
-.abtn:hover{
+.abtn:hover {
     background-position: 0 -49px;
 }
 
 /*블릿버튼*/
-.indic{
+.indic {
     position: absolute;
     /*부모는?  싸고있는 파티션박스(.prt줌)*/
     bottom: 13px;
@@ -129,41 +143,47 @@ body::before{
 }
 
 /*사이드배너 영역*/
-#sideBan{
+#sideBan {
     position: relative;
     z-index: 2;
     /*z-index는 포지션이 겹칠 수 있어야 적용된다!*/
     padding: 0;
     padding-left: 10px;
 }
+
 /*사이드배너 박스*/
-.sideBan{
+.sideBan {
     width: 136px;
     height: 410px;
     background-color: rgba(255, 255, 255, 0.8);
 }
+
 /*1.타이틀*/
-.sideBan h2{
+.sideBan h2 {
     padding: 7px 0 6px 10px;
     /*패딩: 위 오른 아래 왼*/
 }
+
 /*타이틀글자-할인배너, 컨텐츠타이틀 공통*/
-.tit{
+.tit {
     font-family: Nanum;
     color: #222;
 }
+
 /*타이틀 뒷글자색*/
-.tit b{
+.tit b {
     color: #ff4e00;
 }
+
 /*더보기버튼*/
-.more{
+.more {
     float: right;
     margin-right: 5px;
     margin-top: -2px;
 }
+
 /*2.할인배너박스*/
-.halban{
+.halban {
     width: 116px;
     height: 356px;
     margin: 0 auto;
@@ -171,14 +191,15 @@ body::before{
     /*넘치는 자식요소 숨기기*/
     /*outline: 2px dotted blue;*/
 }
+
 /*할인배너 이동할 ul*/
-.halban ul{
+.halban ul {
     position: relative;
     top: 0;
 }
 
 /*배너 하나당 크기 정하기*/
-.halban li{
+.halban li {
     width: 116px;
     height: 81px;
     margin-bottom: 11px;
@@ -187,21 +208,23 @@ body::before{
 }
 
 /*첫번째 li는 보더색 빨간색*/
-.halban li:first-child{
+.halban li:first-child {
     border-color: red;
 }
 
 /*배너이미지는 li에 맞춤*/
-.halban li img{
+.halban li img {
     width: 100%;
     height: 100%;
 }
+
 /*3.이동버튼*/
-.halbtn{
+.halbtn {
     text-align: center;
     /*inline-block도 텍스트 중앙이 적용된다!*/
 }
-.halbtn a{
+
+.halbtn a {
     display: inline-block;
     /*한줄에 오면서 크기디자인 적용위해!*/
     width: 21px;
@@ -209,16 +232,19 @@ body::before{
     vertical-align: 5px;
     /*outline: 1px solid red;*/
 }
+
 /*마우스오버시 배경이동*/
-.halbtn a:hover{
+.halbtn a:hover {
     background-position: 0 -11px;
 }
+
 /*위로버튼*/
-.upb{
+.upb {
     background: url(../images/btn_up.png) no-repeat;
 }
+
 /*아래로버튼*/
-.dwb{
+.dwb {
     background: url(../images/btn_down.png) no-repeat;
 }
 
@@ -228,9 +254,23 @@ body::before{
 
 /*********** 3.컨텐츠영역 **************/
 /*컨텐츠영역 파티션높이*/
-.c1{
-   height: 256px;
+.c1 {
+    height: 256px;
+    /*컨텐츠영역 패딩조정*/
+    padding: 10px;
 }
+
+/*1.운영시간 파트*/
+/*1-1.타이틀*/
+.tpart h2 {
+    padding-top: 12px;
+}
+/*더보기 버튼 조정*/
+.tpart .more{
+    margin-right: -1px;
+}
+
+
 
 
 
