@@ -22,6 +22,16 @@
         
 		
 		// 미션: 풍선 이미지를 클릭하면 이미지가 터지는 이미지로 변경 후 이미지 태그를 제거하시오.
+        $(".container img").css({
+            width: "200px",
+            height: "260px"
+        }) ////// css ///////
+        .click(function(){
+           //1. 이미지를 터지는 이미지로 변경
+            $(this).attr("src","balloon-burst.jpg")
+            
+        });///// click ///////////
+        
 				
 		
 		
