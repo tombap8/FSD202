@@ -7,8 +7,37 @@
 <script src="jquery-1.7.2.min.js"></script>
 	<script>
 	$(function(){// jQB /////////////////////////////
+        /*
+        prepend() 메서드
+        - 선택요소 내부에 자식요소로 맨앞에 추가 또는 기존 요소를 선택하면 맨 앞으로 이동함
+        
+        비교) JS내장함수 : insertBefore(넣을놈,넣을놈전놈)
+        */
 		
 		//미션: p태그의 글자를 클릭하면 #pic 요소의 내부에 자식요소로 웹 경로 이미지가 번갈아서 앞쪽에 추가되게하시오.
+        
+        // 웹 이미지 주소 배열에 넣기
+        var imgs = [
+            "https://upload.wikimedia.org/wikipedia/commons/4/41/Gong_Yoo_%28Sep_2016%29.png",
+            "https://image.ytn.co.kr/general/jpg/2020/0829/202008291352556522_d.jpg"
+        ];/// 배열 ////
+        
+        // 배열순번변수
+        var seq = 0;
+        
+        $("p").click(function(){
+            // 이미지넣기
+            $("#pic")
+                .prepend('<img src="'+imgs[seq]+'" alt="이미지">');
+            
+            // 이미지순번 번갈아 변경
+            // 비?집:놀이동산;(조건연산자/삼항연산자)
+            seq === 0 ? seq = 1 : seq = 0;
+            
+            // 이미지 크기조정
+            $("#pic img").css({width:"100px"});
+            
+        });////////// click /////////////
 	
 		
 		
