@@ -303,6 +303,25 @@ body::before {
     width: 140px;
 }
 
+/*2. 다이나믹 서울랜드*/
+/*2-1.타이틀*/
+.dpart h2{
+    padding-top: 12px;
+    padding-bottom: 7px;
+    margin-left: -2px;
+    border-bottom: 1px solid #ccc;
+}
+/*2-2.유튜브박스*/
+.ubox{
+    width: 220px;
+    height: 165px;
+}
+.ubox iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 
 
 
