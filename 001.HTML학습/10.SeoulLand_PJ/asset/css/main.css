@@ -298,7 +298,10 @@ body::before {
     font-weight: bold;
     font-family: arial;
 }
-
+/*가이드박스*/
+.guide{
+    width: 140px;
+}
 
 
 
