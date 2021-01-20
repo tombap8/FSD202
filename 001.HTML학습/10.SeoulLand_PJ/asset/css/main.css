@@ -376,6 +376,12 @@ body::before {
     line-height: 21px;
 }
 
+/*3-3.FAQ박스*/
+.faq{
+    width: 220px;
+    margin-top: 18px;
+    margin-left: -2px;
+}
 
 
 
