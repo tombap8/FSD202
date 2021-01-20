@@ -6,8 +6,34 @@
 <script src="jquery-1.7.2.min.js"></script>
 	<script>
 	$(document).ready(function(){
+      /*  
+      html() 메서드
+        - html 선택요소 내부에 자손요소를 삽입하거나 
+            읽어올때 사용
+      html(요소) -> 요소삽입, html() -> 태그읽어오기
+        - JS의 innerHTML 과 유사함
+       */ 
+        
 		
-		//미션: #main 을 클릭하면 두번째 p태그 내부에 img태그를 5개 만들고 css설정을 absolute로 하여 차례대로 left이동 애니메이션을 하시오.
+		//미션: #main의 첫번째 p태그를 클릭하면 두번째 p태그 내부에 img태그를 5개 만들고 css설정을 absolute로 하여 차례대로 left이동 애니메이션을 하시오.
+        $("#main p").first().click(function(){
+            console.log("나야나!");
+            
+            $(this) // 나자신-> 첫번째 p태그
+            .next() // 두번째 p태그(주인공!)
+            // 주인공 내부에 html 이미지 5개 넣기!
+            .html('<img src="pic1.jpg" alt="이미지"><img src="pic2.jpg" alt="이미지"><img src="pic3.jpg" alt="이미지"><img src="pic4.jpg" alt="이미지"><img src="pic5.jpg" alt="이미지">')
+            .find("img") // 이미지 5개로 주인공변경!
+            // 5개이미지 모두 css변경하기!
+            .css({
+                position:"absolute",
+                left: "0"
+            })
+            
+            
+            
+            
+        });/////////// click /////////////////
 		
 	
 		
@@ -27,7 +53,7 @@
  
  <div id = "main">
    <p>여기를 클릭하시면 이미지가 나와요!</p>
-   <p><img src="pic1.jpg" alt="이미지"/></p>
+   <p><img src="pic1.jpg" alt="이미지"></p>
  </div>
 
 <script>
