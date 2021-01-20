@@ -65,6 +65,13 @@
             .parent().find("img:even") //짝수(0부터)
             .delay(2000) //위의 총액션 시간 2초를 기다림!
             .animate({top:"200px"},500) //액션!
+            .parent().find("img:odd") //홀수이미지만 선택
+            .eq(0) // 첫번째 홀수 이미지
+            .delay(2000) // 2초후
+            .animate({top:"-50px"},500) //액션
+            .parent().find("img:odd").eq(1) //두번째 홀수
+            .delay(2000) // 2초후
+            .animate({top:"50px"},500); //액션! (전체끝!)
             
             
             
