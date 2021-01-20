@@ -346,3 +346,37 @@ body::before {
     margin-right: 0;
     margin-top: 0;
 }
+
+/*3-2.뉴스리스트*/
+.nlist{
+    width: 100%;
+    margin-top: 8px;
+    outline: 1px solid blue;
+/*    background-color: #fff;*/
+}
+.nlist li{
+    /*넘치는 글자 숨기기 설정-한줄*/
+    /*1.가로크기설정*/
+    width: 100%;
+    /*2.줄바꿈방지*/
+    white-space: nowrap;
+    /*3.넘치는 자식요소 숨기기*/
+    overflow: hidden;
+    /*4.글자 말줄임표 설정*/
+    text-overflow: ellipsis;
+}
+/*가상요소로 아이콘 넣기*/
+.nlist li::before{
+    content: url(../images/ico_news.png);
+    vertical-align: -3px;
+}
+/*뉴스 a링크*/
+.nlist a{
+    color: #555;
+    line-height: 21px;
+}
+
+
+
+
+
