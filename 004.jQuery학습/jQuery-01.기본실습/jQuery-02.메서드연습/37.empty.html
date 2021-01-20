@@ -1,42 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title> empty  </title>
-<script src="jquery-1.7.2.min.js"></script>
-<script src="jquery-ui-1.8.23.custom.min.js"></script>
-	<script>
-		$(function(){/// jQB ///
-			
-			
-			// 미션: .container의 p태그를 클릭하면
-			// 클릭된 p태그의 문자를 지우고
-			// 각각 순서대로 아래와 같은 글로 변경한다.
-			
-			// "자바스크립트는"
-			// "무지 많이 복잡하게 쓰고"
-			// "적게 일한다."
-			
-			
-			
-		});//// jQB ////////////////////////////
-	
-	
-	</script>
-	
-	
-	
+    <meta charset="utf-8">
+    <title> empty </title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script>
+        $(function() { /// jQB ///
+            /*
+            empty() 메서드
+            - 선택요소의 text를 지우는 메서드
+			*/
+
+            // 미션: .container의 p태그를 클릭하면
+            // 클릭된 p태그의 문자를 지우고
+            // 각각 순서대로 아래와 같은 글로 변경한다.
+
+            // "자바스크립트는"
+            // "무지 많이 복잡하게 쓰고"
+            // "적게 일한다."
+
+            // 순번에 맞는 텍스트 배열저장
+            var txt = [
+                "자바스크립트는",
+                "무지 많이 복잡하게 쓰고",
+                "적게 일한다."
+            ];
+            // 순번에 맞는 색상 배열저장
+            var color = ["red","blue","green"];
+            
+            // p태그 클릭설정
+            $(".container p")
+            .css({
+                fontSize:"54px",
+                height:"60px"
+            })
+            .click(function(){
+                // 클릭된 p태그의 순번 알아오기
+                // index() 메서드사용
+                var idx = $(this).index();
+                console.log("순번:"+idx);
+                
+                //1. 내용비우기
+                $(this).empty()
+                .css({opacity:"0"}) //투명하게설정
+                .text(txt[idx]) //해당순번의 배열내용 넣기
+                .delay(500)
+                .animate({
+                    opacity: "1",
+                    color: color[idx] //해당순번의 색상넣기
+                },800);//// animate ////
+                
+                
+                
+            });///// click ///////
+
+
+
+        }); //// jQB ////////////////////////////
+    </script>
+
+
+
 </head>
 
 <body>
 
 
-<div class="container">
-	<p>jQuery</p>
-	<p>write less</p>
-   	<p>do more</p>
-</div>
-  
-</body>
-</html>
+    <div class="container">
+        <p>jQuery</p>
+        <p>write less</p>
+        <p>do more</p>
+    </div>
+
+</body></html>
 
