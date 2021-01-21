@@ -264,6 +264,7 @@ body::before {
 /*1-1.타이틀*/
 .tpart h2 {
     padding-top: 12px;
+    margin-left: -2px;
 }
 
 /*더보기 버튼 조정*/
@@ -335,7 +336,7 @@ body::before {
 /*3.뉴스와 공지*/
 /*3-1.타이틀*/
 .npart h2 {
-    padding-top: 10px;
+    padding-top: 12px;
     padding-bottom: 7px;
     font-size: 13px;
     border-bottom: 1px solid #ccc;
@@ -344,7 +345,6 @@ body::before {
 /*더보기조정*/
 .npart .more {
     margin-right: 0;
-    margin-top: 0;
 }
 
 /*3-2.뉴스리스트*/
@@ -379,7 +379,7 @@ body::before {
 /*3-3.FAQ박스*/
 .faq{
     width: 220px;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: -2px;
 }
 
