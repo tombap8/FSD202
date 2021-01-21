@@ -447,16 +447,24 @@ body::before {
 }
 /*블로그*/
 .tabCont li:nth-child(2){
-    background-color: #acbfff;
+    /*background-color: #acbfff;*/
 }
 /*트위터*/
 .tabCont li:nth-child(3){
-    background-color: #fff5ac;
+    /*background-color: #fff5ac;*/
+    overflow-y: scroll;
 }
 /*인스타그램*/
 .tabCont li:nth-child(4){
-    background-color: #acffbf;
+    /*background-color: #acffbf;*/
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+/*인스타 아이프레임*/
+.tabCont li:nth-child(4) iframe{
+    
+}
+
 
 /*선택된 탭 내용 li만 보이는 클래스 "on"*/
 .tabCont li.on{
