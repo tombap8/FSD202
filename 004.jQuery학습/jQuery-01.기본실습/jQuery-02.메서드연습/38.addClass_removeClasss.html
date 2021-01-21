@@ -30,6 +30,8 @@
 
             // 미션: img태그를 클릭하면 img의 class를 랜덤으로 변경하시오.(type1~type5 의 class중 하나)
             
+            var temp = 0;//랜덤수 임시저장
+            
             $("img").click(function(){
                 
                 // 랜덤수 만들기
@@ -37,11 +39,31 @@
                 var rdn = Math.ceil(Math.random()*5);
                 console.log("랜덤수:"+rdn);
                 
+                // 중복 랜덤방지
+                while(rdn === temp){
+                    rdn = Math.ceil(Math.random()*5);
+                    console.log("랜덤다시:"+rdn);
+                }///// while 문 ////////////
+                
+                // 확정된 랜덤수 임시변수에 넣기(다음에 사용!)
+                temp = rdn;
+                
                 // 클래스 넣기
-                $(this).addClass("type1");
+                $(this)
+                    .removeClass()//모든class지우기
+                    .addClass("type"+rdn);//랜덤class넣기
                 
                 
             });//////// click ///////////
+            
+            
+            /// #my 이미지를 클릭하면 .pos클래스 넣고 빼기
+            // toggleClass()를 사용!
+            $(".my").click(function(){
+                // class 토글기능
+                $(this).toggleClass("pos");
+                // .pos가 있으면 빼고 없으면 넣는다!
+            });////////// click /////////////
 
 
 
@@ -76,6 +98,16 @@
         img.type5 {
             background-image: linear-gradient(45deg,#ff5252,#fff842);
         }
+        
+        .my{
+            position: absolute;
+            top: 30%;
+            left: 0;
+            transition: left 2s ease-in-out;
+        }
+        .pos{
+            left: 70%;
+        }
 
     </style>
 </head>
@@ -84,6 +116,10 @@
     <img src="th1.jpg" alt="">
     <img src="th2.jpg" alt="">
     <img src="th3.jpg" alt="">
+    
+    <div class="my">
+        <img src="th1.jpg" alt="">
+    </div>
 
     <!---------- jQuery code Start ---------->
 
