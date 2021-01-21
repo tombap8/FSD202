@@ -420,6 +420,48 @@ body::before {
     background-color: #f0f0f0;
 }
 
+/*선택된 탭메뉴에 클래스 "on"으로 설정하기*/
+.tabTit li.on{
+    border-bottom: none;
+}
+.tabTit li.on a{
+    color: #3345a9;
+    background-color: #fff;
+}
+
+/*탭메뉴 내용박스*/
+.tabCont{
+    width: 100%;
+    height: 165px;
+}
+/*li공통*/
+.tabCont li{
+    width: 100%;
+    height: 100%;
+    display: none;/*모두안보임*/
+}
+
+/*페이스북*/
+.tabCont li:nth-child(1){
+    background-color: #ffacac;
+}
+/*블로그*/
+.tabCont li:nth-child(2){
+    background-color: #acbfff;
+}
+/*트위터*/
+.tabCont li:nth-child(3){
+    background-color: #fff5ac;
+}
+/*인스타그램*/
+.tabCont li:nth-child(4){
+    background-color: #acffbf;
+}
+
+/*선택된 탭 내용 li만 보이는 클래스 "on"*/
+.tabCont li.on{
+    display: block;
+}
 
 
 
