@@ -29,6 +29,19 @@
 			*/
 
             // 미션: img태그를 클릭하면 img의 class를 랜덤으로 변경하시오.(type1~type5 의 class중 하나)
+            
+            $("img").click(function(){
+                
+                // 랜덤수 만들기
+                // 1~5 사이의 수
+                var rdn = Math.ceil(Math.random()*5);
+                console.log("랜덤수:"+rdn);
+                
+                // 클래스 넣기
+                $(this).addClass("type1");
+                
+                
+            });//////// click ///////////
 
 
 
