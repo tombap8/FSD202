@@ -443,7 +443,7 @@ body::before {
 
 /*페이스북*/
 .tabCont li:nth-child(1){
-    background-color: #ffacac;
+    /*background-color: #ffacac;*/
 }
 /*블로그*/
 .tabCont li:nth-child(2){
