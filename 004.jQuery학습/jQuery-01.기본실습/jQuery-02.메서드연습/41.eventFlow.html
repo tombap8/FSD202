@@ -12,31 +12,58 @@
 		
 		//대한민국전체
 		$("body").click(function(){ 
-			
+			$(this).css({backgroundColor:"blue"});
 		});///// click ////////////
 		
 		//친척네집
 		$("div").click(function(e){
-			
+            e.stopPropagation();
+			$(this).css({backgroundColor:"green"});
 		});///// click ////////////
 		
 		//엄마집
 		$("p").click(function(e){
-			
+			$(this).css({backgroundColor:"yellow"});
+            return false;//JS로 막기(위치중요!!!)
 		});///// click ////////////
 		
 		//아들방
 		$("a").click(function(e){
-			
+            e.stopPropagation();
+			$(this).css({backgroundColor:"red"});
 		});///// click ////////////
 		
-		/*
+        
+        /*
+		[ 이벤트 흐름 ]
+        
+        1. 캡쳐단계 : 최상위 부모요소로 부터 말단요소까지 내려감
+        
+        2. target단계: 현재 이벤트가 발생하는 요소
+        
+        3. bubling 단계: target 에서 부터 최상위 부모까지 이벤트가
+        전달되는 현상(주의사항: 같은 종류의 이벤트가 전달된다!)
+        
+		4. 이벤트 버블링 차단:
+        
+            (1) jQuery 기법
+            - e.stopPropagation() 메서드 사용
+            - 코드 사용위치는 어디나 가능
+            - 주의: 익명함수의 파라미터 전달 변수 e를 반드시
+            사용해야 막을 수 있음!
+                
+            e는 이벤트발생시 생기는 정보 및 이벤트 관련 메서드
+            를 사용할 수 있도록 하는 전달변수의 역할을 한다!
+
+            변수명은 e  또는 evt 를 많이쓰며 다른이름을 사용해도
+            가능하다!
+
+            (2) JS 기법:
+            - return false 를 코드 최하단에 사용함!
 		
+            ※ 개발현장에서 "이벤트 버블링" 또는 "버블링" 이라고
+            말할때 잘 알고 있어야한다!!!
 		*/
-		
-		
-		
-		
 		
 		
 	});///////// jQB //////////////
