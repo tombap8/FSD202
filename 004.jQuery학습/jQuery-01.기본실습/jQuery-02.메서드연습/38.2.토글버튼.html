@@ -7,13 +7,59 @@
     <script>
     $(function(){ /// jQB ///////////////////
         
+        $(".ham").click(function(){
+            $(this).toggleClass("on");
+            //이미 셋팅된 class "on"을 
+            //있으면 지우고 없으면 넣는다!
+        });////// click ////////////
         
         
     });///////// jQB ////////////////////////
     
     </script>
     <style>
+        .ham{
+            position: relative;
+            /*부모자격*/
+            width: 60px;
+            height: 40px;
+            /*outline: 1px solid red;*/
+        }
+        .ham span{
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background-color: #000;
+            /*트랜지션*/
+            transition: all .4s;
+        }
+        .ham span:nth-child(1){
+            top: 0;
+        }
+        .ham span:nth-child(2){
+            top: 15px;
+            left: 0;
+        }
+        .ham span:nth-child(3){
+            top: 30px;
+        }
         
+        /*.ham에 class="on"을 줄경우 span변경하기*/
+        /*첫번째 span 막대 : 중앙이동하여 회전함*/
+        .ham.on span:nth-child(1){
+            top: 15px;
+            transform: rotate(45deg);
+        }
+        /*가운데 span 막대 : 중앙에서 사라짐*/
+        .ham.on span:nth-child(2){
+            width: 0%;
+            left: 50%;
+        }        
+        /*마지막째 span 막대 : 중앙이동하여 회전함*/
+        .ham.on span:nth-child(3){
+            top: 15px;
+            transform: rotate(-45deg);
+        }
     
     </style>
 </head>
