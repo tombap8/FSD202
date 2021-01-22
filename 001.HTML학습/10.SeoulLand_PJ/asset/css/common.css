@@ -292,6 +292,30 @@
     color: #222;
 }
 
+/*sns링크*/
+.snsico{
+    margin-left: 34px;
+}
+.snsico li{
+    width: 39px;
+    height: 34px;
+    background: url(../images/ico_sns.png) no-repeat;
+    outline: 1px solid blue;
+}
+/*개별위치변경(Sprites)*/
+.snsico li:nth-child(2){/*카스*/
+    background-position: -39px 0;
+}
+.snsico li:nth-child(3){/*인스타*/
+    background-position: -78px 0;
+}
+.snsico li:nth-child(4){/*블로그*/
+    background-position: -117px 0;
+}
+.snsico li:nth-child(5){/*유튜브*/
+    background-position: -156px 0;
+}
+
 /*하단영역 둘째줄 파티션 높이*/
 .i2 {
     height: 96px;
