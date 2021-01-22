@@ -24,7 +24,7 @@ body {
     /*설정된 width보다 작아질때 화면에 꽉참*/
     margin: 0 auto;
     /*가로중앙*/
-    outline: 2px dashed blue;
+    /*outline: 2px dashed blue;*/
 }
 
 /*IR배경이미지설명*/

@@ -129,7 +129,7 @@
     /*트랜지션:속시이지*/
     
     background-color: #fff;
-    outline: 5px dotted blue;
+    /*outline: 5px dotted blue;*/
 }
 /*.gnb에 마우스 오버시 높이값 변경하여 하위메뉴 보이기*/
 .gnb:hover{
@@ -262,6 +262,21 @@
 
 
 /*********4.하단영역***********/
+#info{
+    position: relative;
+}
+/*가상요소로 하단 바 만들기*/
+#info::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 33px;
+    background-color: #e2e2e2;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    z-index: -1;/*포지션이 없는 요소보다 아래위치*/
+    
+}
 
 /*하단영역 첫째줄 파티션 높이*/
 .i1 {
@@ -332,6 +347,7 @@
 }
 
 /*하단영역 둘째줄 파티션 높이*/
+
 .i2 {
     height: 96px;
 }

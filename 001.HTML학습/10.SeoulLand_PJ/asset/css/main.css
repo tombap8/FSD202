@@ -15,20 +15,20 @@ body {
     /*가상요소의 부모*/
 }
 
-body::before {
+/*body::before {
     content: "";
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    /*크기는 부모를 기준함
-    (body에 relative가 없으면 보이는 화면기준)*/
+    크기는 부모를 기준함
+    (body에 relative가 없으면 보이는 화면기준)
     background-image: url(../images/SeoulLand_main.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     z-index: -1;
     opacity: .5;
-}
+}*/
 
 /*********** 2.배너영역 **************/
 /*배너영역 파티션높이*/
