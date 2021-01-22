@@ -28,7 +28,8 @@
                     $("div").slideDown(400);
                 },
                 function() { // out
-                    $("div").slideUp(400);
+                    $("div").stop().slideUp(400);
+                    // stop() 메서드로 애니메이션 큐정리하기!
                 }); /// hover /////////
 
 
