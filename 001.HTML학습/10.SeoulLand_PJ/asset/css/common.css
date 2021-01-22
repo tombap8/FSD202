@@ -335,3 +335,36 @@
 .i2 {
     height: 96px;
 }
+/*하단로고*/
+.blogo{
+    margin-top: 8px;
+    margin-left: -6px;
+}
+/*회사주소*/
+.addr{
+    display: inline-block;
+    width: 600px;
+    margin-left: 35px;
+    /*address기본값 변경*/
+    font: normal bold 10px/14px Nanum;
+    /*font: 스타일 두께 크기/줄간격 글자체;
+    font: 스두크/줄체;*/
+    letter-spacing: -1px;
+}
+/*바기준 간격주기*/
+.addr span{
+    margin: 0 5px;
+}
+/*카피라이터*/
+.copy{
+    display: block;
+    font-family: arial;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+
+
+
+
+
