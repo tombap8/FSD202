@@ -268,6 +268,29 @@
     height: 34px;
     padding: 0;
 }
+/*정보링크*/
+.link{
+    margin-top: 10px;
+    margin-left: 9px;
+}
+.link li{
+    font: bold 10px/14px Nanum;
+}
+/*가상요소로 사이점찍기-앞에 li가 있는 형제 li요소만 선택*/
+.link li+li::before{
+    content: "·";/*(ㄱ한자)특수문자*/
+    font-size: 22px;
+    vertical-align: -4px;
+    padding: 0 8px;
+}
+/*정보링크 글자색*/
+.link li a{
+    color: #888;
+}
+/*강조글자색*/
+.link li a.em{
+    color: #222;
+}
 
 /*하단영역 둘째줄 파티션 높이*/
 .i2 {
