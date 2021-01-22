@@ -364,6 +364,22 @@
     line-height: 22px;
 }
 
+/*패밀리사이트 링크박스*/
+#fslink {
+    width: 162px;
+    height: 19px;
+    font-family: arial;
+    font-size: 11px;
+    color: #979797;
+    border: 1px solid #a8a8a8;
+    padding-left: 4px;
+    transform: translate(2px, -2px);
+    /*다른요소에 영향없이 현재위치에서 살짝위치조정!*/
+    box-shadow: 1px 1px 8px #d1d1d1 inset;
+    margin-top: 8px;
+    margin-left: -30px;
+}
+
 
 
 
