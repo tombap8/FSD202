@@ -15,12 +15,12 @@ window.addEventListener("DOMContentLoaded",
         // 왼쪽버튼
         btn[0].onclick = function () {
             console.log("왼쪽이양!");
-            
+
             // 자동넘김지우기
             clearAuto();
 
             //이동함수 호출
-            goSlide(0,0);
+            goSlide(0, 0);
 
             // a태그 기본이동 막기!
             return false;
@@ -30,35 +30,46 @@ window.addEventListener("DOMContentLoaded",
         // 오른쪽버튼
         btn[1].onclick = function () {
             console.log("오른쪽이양!");
-            
+
             // 자동넘김지우기
             clearAuto();
 
 
             //이동함수 호출
-            goSlide(1,0);
+            goSlide(1, 0);
 
             // a태그 기본이동 막기!
             return false;
 
         }; ////// click ////////////////////
-    
-    /// 블릿버튼 클릭 셋팅하기! //////////
-    var indic = document.querySelectorAll('.indic li');
-    console.log("블릿개수:"+indic.length);
-    
-    // 블릿 click이벤트 설정하기
-    //for(시;한;증){}
-    for(var i=0;i<indic.length;i++){
-        
-    }/////// for문 //////////////////
-    
-    
-    
-    
-    
-    
-    
+
+        /// 블릿버튼 클릭 셋팅하기! //////////
+        var indic = document.querySelectorAll('.indic li');
+        console.log("블릿개수:" + indic.length);
+
+        // 블릿 click이벤트 설정하기
+        //for(시;한;증){}
+        //지역변수 선언을 var로 하지 않고 let으로 하면
+        //for문 내부에 있는 익명함수 내부로 i값이 전달된다!
+        //let 영역 변수라고 함!(별도의 설명 예정!)
+        for (let i = 0; i < indic.length; i++) {
+            
+            indic[i].onclick = function(){
+                console.log("순번:"+i);
+                //슬라이드 이동함수 호출하기
+                // goSlide(dir,seq)
+                // 전달변수 dir은 2번(블릿이니까), seq는 순번
+                goSlide(2,i);
+            };///// click ///////////////
+            
+        } /////// for문 /////////////////////////
+
+
+
+
+
+
+
 
         // 슬라이드번호 /////////////
         var snum = 0; //첫페이지는 0
@@ -66,7 +77,7 @@ window.addEventListener("DOMContentLoaded",
             함수명: goSlide
             기능: 슬라이드가 넘어가도록 기능구현함
         */ ////////////////////////////////////////////
-        var goSlide = function (dir,seq) {
+        var goSlide = function (dir, seq) {
             // dir - 방향(0-왼쪽,1-오른쪽,2-블릿)
             // seq - 순번(0~4), 블릿이 아니라면 0번 넘기기
 
@@ -117,7 +128,7 @@ window.addEventListener("DOMContentLoaded",
         */ ////////////////////////////////////////////
         var autoSlide = function () {
             autoI = setInterval(function () {
-                goSlide(1,0);
+                goSlide(1, 0);
             }, 3000);
         }; ////// autoSlide함수 //////////////////////
         //////////////////////////////////////////////
@@ -133,15 +144,15 @@ window.addEventListener("DOMContentLoaded",
             기능: 자동넘김 지우기함수(클리어인터발함수)
         */ ////////////////////////////////////////////
         var clearAuto = function () {
-            
+
             // 자동넘김 할당된 변수를 지운다(autoI)
             clearInterval(autoI);
             // 타임아웃 실행쓰나미 방지용 타임아웃 지우기를 꼭한다!
             clearTimeout(autoT);
-            
+
             // 안건드리면 5초후 다시 자동호출하기!
             // 매번 호출될때 위에서 지우므로 단 하나만 남아있음!
-            autoT = setTimeout(autoSlide,5000);
+            autoT = setTimeout(autoSlide, 5000);
 
         }; ////// clearAuto함수 /////////////////////////
         ///////////////////////////////////////////////
