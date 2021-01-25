@@ -56,6 +56,10 @@ window.addEventListener("DOMContentLoaded",
             
             indic[i].onclick = function(){
                 console.log("순번:"+i);
+                
+                // 자동호출지우기
+                clearAuto();
+                
                 //슬라이드 이동함수 호출하기
                 // goSlide(dir,seq)
                 // 전달변수 dir은 2번(블릿이니까), seq는 순번
@@ -63,11 +67,6 @@ window.addEventListener("DOMContentLoaded",
             };///// click ///////////////
             
         } /////// for문 /////////////////////////
-
-
-
-
-
 
 
 
@@ -84,14 +83,17 @@ window.addEventListener("DOMContentLoaded",
             console.log("방향구분:" + dir);
 
             // 1. 버튼별 슬라이드번호 증감!
-            if (dir) { // dir이 1일때 true : 오른쪽버튼
+            if (dir===1) { // dir이 1일때 true : 오른쪽버튼
                 snum++; //1씩증가
                 if (snum === 5) snum = 0; //한계수
             } /////// if ///////////////////////
-            else { // dir이 0일때 : 왼쪽버튼
+            else if(dir===0){ // dir이 0일때 : 왼쪽버튼
                 snum--; //1씩감소
                 if (snum < 0) snum = 4; //한계수
-            } /////// else ///////////////////////
+            } /////// else if///////////////////////
+            else if(dir===2){ // dir이 2일때 : 블릿클릭시
+                snum = seq;//블릿순번을 슬라이드 순번과 일치!
+            } /////// else if //////////////////////
 
             console.log("슬라이드번호:" + snum);
 
