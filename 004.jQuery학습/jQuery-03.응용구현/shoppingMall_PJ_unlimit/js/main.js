@@ -49,6 +49,16 @@ $(function () { /// jQB ////////////////////////
             left:"0"
         },800);
         
+        //4. 블릿변경하기
+        snum--;//전역변수 1감소
+        if(snum===-1) snum=4;//한계값
+        //전역변수 순번에 맞게 블릿변경하기
+        // 해당순번의 li는 class="on"넣고
+        // eq(순번)
+        $(".indic li").eq(snum).addClass("on")
+        // 다른 형제요소 li들은 on빼기
+        .siblings().removeClass("on");
+        
     });//////// click ////////////////
 
 
