@@ -6,10 +6,13 @@ $(function () { /// jQB ////////////////////////
     // 슬라이드 순번
     var snum = 0;
     
+    // 슬라이드 요소
+    var sld = $("#slide");
+    
     // 오른쪽버튼 클릭시 슬라이드 이동하기 //
     $(".ab2").click(function () {
         
-        $("#slide").animate({
+        sld.animate({
             left: "-100%"
         }, 800, function () { //애니후
 
@@ -31,11 +34,22 @@ $(function () { /// jQB ////////////////////////
         // 다른 형제요소 li들은 on빼기
         .siblings().removeClass("on");
 
-
-
     }); /////// click //////////////
 
 
+    // 왼쪽버튼 클릭시 슬라이드 이동하기 ///
+    $(".ab1").click(function(){
+        
+        // 1. 맨뒤의 슬라이드 li를 맨앞으로 가져온다
+        sld.prepend(sld.find("li").last())
+        // 2. 동시에 left값을 -100%로 앞공간 확보!
+        .css({left:"-100%"})
+        // 3. 애니메이션으로 left:0 으로 등장!
+        .animate({
+            left:"0"
+        },800);
+        
+    });//////// click ////////////////
 
 
 
