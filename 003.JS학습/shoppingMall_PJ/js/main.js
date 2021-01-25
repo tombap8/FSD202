@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded",
             clearAuto();
 
             //이동함수 호출
-            goSlide(0);
+            goSlide(0,0);
 
             // a태그 기본이동 막기!
             return false;
@@ -36,12 +36,29 @@ window.addEventListener("DOMContentLoaded",
 
 
             //이동함수 호출
-            goSlide(1);
+            goSlide(1,0);
 
             // a태그 기본이동 막기!
             return false;
 
         }; ////// click ////////////////////
+    
+    /// 블릿버튼 클릭 셋팅하기! //////////
+    var indic = document.querySelectorAll('.indic li');
+    console.log("블릿개수:"+indic.length);
+    
+    // 블릿 click이벤트 설정하기
+    //for(시;한;증){}
+    for(var i=0;i<indic.length;i++){
+        
+    }/////// for문 //////////////////
+    
+    
+    
+    
+    
+    
+    
 
         // 슬라이드번호 /////////////
         var snum = 0; //첫페이지는 0
@@ -49,7 +66,9 @@ window.addEventListener("DOMContentLoaded",
             함수명: goSlide
             기능: 슬라이드가 넘어가도록 기능구현함
         */ ////////////////////////////////////////////
-        var goSlide = function (dir) {
+        var goSlide = function (dir,seq) {
+            // dir - 방향(0-왼쪽,1-오른쪽,2-블릿)
+            // seq - 순번(0~4), 블릿이 아니라면 0번 넘기기
 
             console.log("방향구분:" + dir);
 
@@ -75,7 +94,7 @@ window.addEventListener("DOMContentLoaded",
             // 원리: 슬라이드 순번과 같은 순서의 블릿li에 
             // class="on"을 줘서 회색이미지가 보이도록 한다!
             // 블릿박스 : .indic li
-            var indic = document.querySelectorAll('.indic li');
+            // 바깥쪽에 indic변수에 블릿요소 선택함!
 
             // 블릿 li에 class초기화(모두지우기)
             for (var x of indic) {
@@ -98,7 +117,7 @@ window.addEventListener("DOMContentLoaded",
         */ ////////////////////////////////////////////
         var autoSlide = function () {
             autoI = setInterval(function () {
-                goSlide(1);
+                goSlide(1,0);
             }, 3000);
         }; ////// autoSlide함수 //////////////////////
         //////////////////////////////////////////////
