@@ -1,49 +1,73 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title> animate()를 활용한 가로slide  </title>
-<!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-	<script>
-	$(function(){/// jQB ////
-		
-	// 미션: 버튼 이름에 맞게 애니메이션 하시오.
-		//(단, 가로방향으로 숨기고 보이게 하시오.)
-		
-		
-	});///// jQB ///////////////////////////////
-	
-	
-	
-	
-	
-	
-	</script>
-	
-	
-	
-	
-<style>
- div{ overflow:hidden; width:300px; display:inline;}
-</style>
+    <meta charset="utf-8">
+    <title> animate()를 활용한 가로slide </title>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function() { /// jQB ////
+            /*
+            animate({CSS설정},시간,이징,함수)
+            
+            - 복합적인 CSS변경에 따른 애니메이션을 구현해주는 메서드
+            - 주의사항: 적용할 요소에 CSS설정에 transition이 없어야 한다!
+            - 유의사항: CSS설정값을 모두 셋팅해야함!
+                예컨데 부모요소에 overflow:hidden으로 숨겨야 할 경우
+                이 설정 있어야한다.(slideUp/Down과 다름!)
+            - 특징: 애니메이션이 진행되는 동안 임시로 overflow:hidden처리
+            를 하여 애니메이션을 진행함.
+            */
+
+
+            // 미션: 버튼 이름에 맞게 애니메이션 하시오.
+            //(단, 가로방향으로 숨기고 보이게 하시오.)
+            
+            // 감추기버튼 클릭시 div의 width:0 만들기
+            $("#hide").click(function(){
+                $("div").animate({
+                    width:"0"
+                },1000);
+            });/////////// click //////////////
+            
+            $("#show").click(function(){
+                $("div").animate({
+                    width:"300px"
+                },1000);
+            });/////////// click //////////////
+            
+
+
+        }); ///// jQB ///////////////////////////////
+    </script>
+
+
+
+
+    <style>
+        div {
+            width: 300px;
+            overflow: hidden;
+            /*자식요소 숨기기설정 필수!*/
+        }
+    </style>
 </head>
+
 <body>
 
-<div>
-	<img src="sample1.jpg" alt="" width="300" height="307"/>
-</div>
+    <div>
+        <img src="sample1.jpg" alt="이미지">
+    </div>
 
 
-<button id ="hide">slide감추기</button>
-<button id ="show">slide보이기</button>
+    <button id="hide">slide감추기</button>
+    <button id="show">slide보이기</button>
 
-<!---------- jQuery code Start ---------->
-<script>
+    <!---------- jQuery code Start ---------->
+    <script>
 
 
 
-</script>
+    </script>
 
-</body>
-</html>
+</body></html>
