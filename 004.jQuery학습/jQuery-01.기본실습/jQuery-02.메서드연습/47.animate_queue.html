@@ -1,65 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title> animate_queue  </title>
-<script src="jquery-1.7.2.min.js"></script>
-<script src="jquery-ui-1.8.23.custom.min.js"></script>
-	<script>
-		$(document).ready(function(){// jQB///
-			/*
+    <meta charset="utf-8">
+    <title> animate_queue </title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script>
+        $(document).ready(function() { // jQB///
+            /*
 			큐(Queue)란?
-			
+                
+            - 애니메이션과 같은 실행코드를 메모리에 적재하여 실행을
+            유지할 수 있도록 관리하는 메모리 영역을 큐(Queue)라고함
+            - 한 사람에게 여러가지 일을 시키면 순서대로 실행함과 같음
 			*/
-			
-			// 미션: 클래스가 run인 버튼을 클릭하면 아이디가 box인 요소를 아래의 순서로 애니메이션 하시오.
-			// 1. 현재위치로부터 left: 400px 이동, 배경색은 red로 (2초간)
-			// 2. 현재위치로부터 top: 200px 이동, 배경색은 yellow로 (2초간)
-			// 3. 현재위치로부터 top: -100px, left: -100px 이동, 배경색을 green(2초간)
-			// 4. 현재위치로부터  top: -50px, left: -50px 이동, width: 200px, height: 200px, 배경색을 lime(2초간)
-			// 5. 배경이미지를 박스에 넣고
-			// 6. 2초후에 0.5초간 slideUp하여 사라짐.
-			
-			// 이벤트(click) 대상선정 : .run
-		
-			
-			
-			
-			
-			
-			
-		});/// jQB ///////////////////////////////
-		
-		
-		
-		
-		
-	
-	</script>
-	
-	
-	
-	
-<style type="text/css">
 
-div {
-	background: #6699FF;
-	height: 100px;
-	width: 100px;
-	position: relative;
-}
-</style>
+
+            // 미션: 클래스가 run인 버튼을 클릭하면 아이디가 box인 요소를 아래의 순서로 애니메이션 하시오.
+
+
+            // 이벤트(click) 대상선정 : .run
+            $(".run").click(function() {
+
+                $("#box") // 주인공!
+
+                    // 1. 현재위치로부터 left: 400px 이동, 배경색은 red로 (2초간)
+                    // 현재위치로부터
+                    // -> 기존값에 더하기 또는 빼기(+=/-= 대입연산자사용)
+                    .animate({
+                        left: "+=400px",
+                        backgroundColor: "red"
+                    }, 2000)
+                    // 2. 현재위치로부터 top: 200px 이동, 배경색은 yellow로 (2초간)
+                    .animate({
+                        top: "+=200px",
+                        backgroundColor: "yellow"
+                    }, 2000)
+
+                    // 3. 현재위치로부터 top: -100px, left: -100px 이동, 배경색을 green(2초간)
+                    .animate({
+                        top: "-=100px",
+                        left: "-=100px",
+                        backgroundColor: "green"
+                    }, 2000)
+
+                    // 4. 현재위치로부터  top: -50px, left: -50px 이동, width: 200px, height: 200px, 배경색을 lime(2초간)
+                    .animate({
+                        top: "-=50px",
+                        left: "-=50px",
+                        width: "200px",
+                        height: "200px",
+                        backgroundColor: "lime"
+                    }, 2000, function() { // 애니후 실행!
+                        // css 배경이미지는 애니메이션 요소가 아니고
+                        // 바깥에 코딩하면 바로실행되므로 여기에 코딩!
+                        $(this)
+                            // 5. 배경이미지를 박스에 넣고
+                            .css({
+                                background: "url(https://lh3.googleusercontent.com/proxy/CjOC4KEaCs1jn8Ot7S5PZ1Xe6FCo-xRsM3bgUtUF6Hm-vBzt1gyaNa8DA8WGz87N24gqBYPNOLJOTrppRlW_wMPze-zPP6ctgoFvI43f_Q89beqXw9G-ynb-hrwqoh4) no-repeat center/cover"
+                            });//// css ////////
+                    }) //// animate ///////////////
+                // 6. 2초후에 0.5초간 slideUp하여 사라짐.
+                .delay(2000).slideUp(500,function(){
+                    // slideUp끝난후 style속성을 지워서 초기화!
+                    $(this).attr("style","");
+                });////// slideUp ////////////////////////
+
+
+
+            }); ///////// click ///////////////
+
+
+
+
+
+
+
+        }); /// jQB ///////////////////////////////
+    </script>
+
+
+
+
+    <style type="text/css">
+        div {
+            background: #6699FF;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+    </style>
 </head>
 
 <body>
-<p><a href="#" class="run">animate</a></p>
-<div id="box"></div>
+    <p><a href="#" class="run">animate</a></p>
+    <div id="box"></div>
 
 
-<!---------- jQuery code Start ---------->
-<script>
+    <!---------- jQuery code Start ---------->
+    <script>
 
 
-</script>
-</body>
-</html>
+    </script>
+</body></html>
