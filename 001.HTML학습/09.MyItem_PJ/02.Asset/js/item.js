@@ -125,6 +125,27 @@ $(function(){
     // 4. 설명 넣기 : item[pm]["설명"]
     txt.text(item[pm]["설명"]);
     
+    // 5. 이미지박스, 설명박스 등장하기!
+    // 오른쪽박스
+    var rbox = $(".tcont");
+    // 왼쪽박스
+    var lbox = $(".timg");
+    
+    // 위치이동 /////////
+    // 오른쪽이동
+    rbox.css({
+        left:"50%",
+        transform:"translateX(0)",
+        opacity: 1,
+        transition:"all .4s ease-in-out .5s"
+    });
+    // 왼쪽이동
+    lbox.css({
+        left:"0%",
+        transform:"translateX(0)",
+        opacity: 1,
+        transition:"all .4s ease-in-out .5s"
+    });
     
     
 });///// jQB //////////////////////////////////
