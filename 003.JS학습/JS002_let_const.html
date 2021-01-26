@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>변수 let / 상수 const</title>
+    <script>
+    
+        var seoul = "서울";
+        var jeju = "제주도";
+        let toktok = "카톡";
+        let sport = "축구";
+    
+       //JS에서 중괄호{}는 코드구역을 나타낸다
+        {
+            var seoul = "강동구";
+            let jeju = "마라도";
+            let toktok = "라인";
+            //var sport = "배구";
+            human = "원시인";
+            
+            console.log("지역서울:"+seoul);
+            console.log("지역제주:"+jeju);
+            console.log("지역톡톡:"+toktok);
+            console.log("지역스포츠:"+sport);
+        }
+    
+        console.log("전역서울:"+seoul);
+        console.log("전역제주:"+jeju);
+        console.log("전역톡톡:"+toktok);
+        console.log("전역스포츠:"+sport);
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
