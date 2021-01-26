@@ -9,7 +9,7 @@
 <script src="jquery-ui-1.8.23.custom.min.js"></script>
 	<script>
 	$(function(){/// jQB ///
-		
+		/*
 		이징(easing) 효과란?
         
         - 애니메이션 시작과 끝에 가속도를 변경해 주는 옵션
@@ -21,12 +21,27 @@
         - 이징을 쉽게 보는 참조사이트 : easings.net
         - 제이쿼리 UI 사이트 이징 : https://jqueryui.com/easing/
 		
-		
+        [ jQuery UI 란? ]
+        - 이징, 색상애니메이션, 탭버튼, 드래그 앤 드롭 등 추가 기능을
+        쉽게 사용할 수 있도록 jQuery 개발팀에서 개발한 플러그인!
+        - jQuery UI 사이트에서 다운로드함!
+        -> https://jqueryui.com
+		*/
 		
 		//기능구현: 버튼을 클릭할때 버튼의 text의 이징명으로 slideUp, slideDown 애니메이션을 지정하시오.
 		
 		//이벤트(click)  대상선정: button
-	
+	   $("button").click(function(){
+           
+           // 이징명
+           let easing = $(this).text();
+           console.log("이징명:"+easing);
+           
+           // 대상박스 닫았다 열었다하기!
+           $("#box").slideUp(800,easing)
+           .slideDown(800,easing);
+           
+       });/////// click /////////////
 		
 		
 		
@@ -56,15 +71,46 @@
 </div>
 
 
-<button>easeOutQuart</button>
-<button>easeInOutElastic</button>
-<button>easeOutBack</button>
-<button>easeOutBounce</button><br>
+<button>easeInSine</button>
+<button>easeOutSine</button>
+<button>easeInOutSine</button> <br>
 
-<button>easeInOutExpo</button>
-<button>easeInOutSine</button>
+<button>easeInQuad</button>
+<button>easeOutQuad</button>
+<button>easeInOutQuad</button> <br>
+
+<button>easeInCubic</button>
 <button>easeOutCubic</button>
+<button>easeInOutCubic</button> <br>
+
+<button>easeInQuart</button>
+<button>easeOutQuart</button>
+<button>easeInOutQuart</button> <br>
+
+<button>easeInQuint</button>
+<button>easeOutQuint</button>
+<button>easeInOutQuint</button> <br>
+
+<button>easeInExpo</button>
+<button>easeOutExpo</button>
+<button>easeInOutExpo</button> <br>
+
+<button>easeInCirc</button>
 <button>easeOutCirc</button>
+<button>easeInOutCirc</button> <br>
+
+<button>easeInBack</button>
+<button>easeOutBack</button>
+<button>easeInOutBack</button> <br>
+
+<button>easeInElastic</button>
+<button>easeOutElastic</button>
+<button>easeInOutElastic</button> <br>
+
+<button>easeInBounce</button>
+<button>easeOutBounce</button>
+<button>easeInOutBounce</button> <br>
+
 <!---------- jQuery code Start ---------->
 <script>
 
