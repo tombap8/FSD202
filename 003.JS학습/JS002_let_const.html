@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <title>변수 let / 상수 const</title>
     <script>
+        /*
+        [ var ]
+        1. 전역, 지역 모두 따로 사용가능
+        2. 전역 변수를 지역에서 같은 이름으로 선언하면
+            전역변수가 다시 선언되어 덮어써진다
+        3. 지역에서 var 선언없이 변수를 만들어 할당하면
+            자동으로 전역변수로 선언된다
+        4. 변수를 선언없이 할당 후 아래에서 선언할 수 있다
+            (호이스팅~!)
+        
+        [ let ] : 블록영역변수
+        1. var 전역변수를 지역에서 같은 이름의 let 선언
+            할 수 있다. 서로 따로 관리된다! 별개의 변수다!
+        2. let 전역변수를 지역에서 같은 이름으로 let 선언
+            할 수 있다
+        3. let 전역변수는 지역에서 같은 이름으로 var 선언
+            할 수 없다!
+        4. let 변수 선언은 반드시 할당 전에 해야한다!
+             (철저한 순서 준수!)
+        5. for문에서 익명함수를 셋팅할때 익명함수 내부로
+            변수를 전달할 수 있다
+            (반면 var는 변수전달이 불가! 총개수가 전달됨)
+        
+        */
+        
     
         var seoul = "서울";
         var jeju = "제주도";
@@ -22,17 +47,56 @@
             console.log("지역제주:"+jeju);
             console.log("지역톡톡:"+toktok);
             console.log("지역스포츠:"+sport);
+            console.log("지역사람:"+human);
         }
     
         console.log("전역서울:"+seoul);
         console.log("전역제주:"+jeju);
         console.log("전역톡톡:"+toktok);
         console.log("전역스포츠:"+sport);
-    
+        console.log("전역사람:"+human);
+        
+        cat = "고양이";
+        console.log("cat:"+cat);
+        var cat;//선언을 할당 아래에서 가능한가? OK
+        // 이와 같은 것을 호이스팅(hoisting)이라고 함!
+        
+//        dog = "강아지";
+//        console.log("dog:"+dog);
+//        let dog;// let으로 선언을 아래에서 가능한가?
+            // let선언 전에 변수를 사용할 수 없다!
+        
+    window.addEventListener("load",function(){
+        
+        var varrr = document.querySelectorAll('.varrr');
+        
+        for(var i=0; i<varrr.length; i++){
+            
+            varrr[i].onclick = function(){
+                
+                console.log("전달숫자:"+i);
+                
+            };///////// click ////////////
+            
+        }///// for문 //////////////////////
+        
+    });///////// load구역 ///////////////////////
     
     </script>
 </head>
 <body>
+    <button class="varrr">var 테스트1</button>
+    <button class="varrr">var 테스트2</button>
+    <button class="varrr">var 테스트3</button>
+    <button class="varrr">var 테스트4</button> <br>
+    
+    <button class="lettt">let 테스트1</button>
+    <button class="lettt">let 테스트2</button>
+    <button class="lettt">let 테스트3</button>
+    <button class="lettt">let 테스트4</button>
+   
+   
+   
     
 </body>
 </html>
