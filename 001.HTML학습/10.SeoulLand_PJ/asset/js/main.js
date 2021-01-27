@@ -57,7 +57,7 @@ $(function () { /// jQB ///////////////////////////
     $(".indic a").click(function (e) {
 
         e.preventDefault(); // 기본기능막기
-        
+
         // 자동넘김지우기
         clearAuto();
 
@@ -80,6 +80,31 @@ $(function () { /// jQB ///////////////////////////
 
 
     }); ///////// click ///////////////////
+
+
+    //// 할인 배너 이동하기 //////////
+    // 클릭이벤트 대상: .upb , .dwb
+    // 변경 대상: .halban ul
+    let hban = $(".halban ul");
+    ///////////////////////////////    
+    // 위로 이동버튼 클릭시
+    $(".dwb").click(function (e) {
+
+        e.preventDefault(); //기본이동막기
+
+        // 1. 대상이동하기: top값을 하나의 높이만큼이동함
+        hban.animate({
+                top: "-92px"
+            }, 300, "easeOutExpo",
+            function () { //애니후
+                // 맨앞li 맨뒤로 보내기(동시에 top값 0)
+                $(this).append(hban.find("li").first())
+                .css({top: "0"});
+            
+            }); /// animate /////
+
+
+    }); ////// click ////////////////
 
 
 
@@ -108,30 +133,30 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // (1)왼쪽버튼 /////////////////
     abtn[0].onclick = function () {
-        
+
         // 자동넘김지우기
         clearAuto();
-        
+
         // 이동함수호출
         goSlide(0);
-        
+
         // a요소 클릭시 이동속성 없애기!
         return false;
-        
+
     }; /////// click함수 ///////////
 
     // (2)오른쪽버튼 ///////////////
     abtn[1].onclick = function () {
-        
+
         // 자동넘김지우기
         clearAuto();
-        
+
         // 이동함수호출
         goSlide(1);
-        
+
         // a요소 클릭시 이동속성 없애기!
         return false;
-        
+
     }; /////// click함수 ///////////
 
 
@@ -265,7 +290,7 @@ var autoI;
 */ ////////////////////////////////////////////
 var autoSlide = function () {
     autoI = setInterval(function () {
-        goSlide(1);//오른쪽방향 넘기기
+        goSlide(1); //오른쪽방향 넘기기
     }, 3000);
 }; ////// autoSlide함수 //////////////////////
 //////////////////////////////////////////////

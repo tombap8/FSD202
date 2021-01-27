@@ -201,21 +201,24 @@ body {
 /*배너 하나당 크기 정하기*/
 .halban li {
     width: 116px;
-    height: 81px;
-    margin-bottom: 11px;
-    border: 1px solid #d7d7d7;
+    height: 92px;
+    /*기존 마진버텀 11px포함*/
     box-sizing: border-box;
 }
 
-/*첫번째 li는 보더색 빨간색*/
-.halban li:first-child {
+/*첫번째 li의 이미지 보더색 빨간색*/
+.halban li:first-child img{
     border-color: red;
 }
 
 /*배너이미지는 li에 맞춤*/
 .halban li img {
     width: 100%;
-    height: 100%;
+    height: 81px;
+    border: 1px solid #d7d7d7;
+    /*보더 이미지로 옮김*/
+    box-sizing: border-box;
+    /*보더 포함박스로 변경!*/
 }
 
 /*3.이동버튼*/
