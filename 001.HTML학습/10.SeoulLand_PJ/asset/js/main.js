@@ -49,6 +49,35 @@ $(function () { /// jQB ///////////////////////////
 
 
     }); ///////// click /////////////////
+    
+    
+    ///// 배너 블릿버튼 클릭시 배너 이동하기 /////
+    // 클릭이벤트 대상 : .indic a
+    // 변경대상: .slider li
+    $(".indic a").click(function(e){
+        
+        e.preventDefault();// 기본기능막기
+        
+        // 1. 클릭된 a요소의 부모li의 순번 구하기
+        let idx = $(this).parent().index();
+        console.log("클릭된블릿순번:"+idx);
+        
+        // 2. 블릿순번과 동일한 순번의 배너슬라이드에 클래스 "on"넣기
+        $(".slider li").eq(idx).addClass("on")
+        .siblings().removeClass("on");
+        
+        // 3. 블릿변경하기 ////
+        $("img",this)//주인공!
+        .attr("src", "images/ico_pm_55_on.png")
+        .parents("li").siblings().find("img")
+        .attr("src", "images/ico_pm_55_off.png");
+        
+        // 4. 블릿 순번을 전역변수 슬라이드 순번(bseq)과 일치시키기!
+        bseq = idx;// 매우중요함!!!!!!
+        
+        
+    });///////// click ///////////////////
+    
 
 
 
@@ -203,9 +232,6 @@ function goSlide(gubun) { //gubun(왼쪽:0,오른쪽:1)
         .attr("src", "images/ico_pm_55_on.png")
         .parents("li").siblings().find("img")
         .attr("src", "images/ico_pm_55_off.png");
-
-
-
 
 
 
