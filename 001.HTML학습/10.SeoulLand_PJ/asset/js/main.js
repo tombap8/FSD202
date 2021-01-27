@@ -13,6 +13,11 @@ $(function () { /// jQB ///////////////////////////
     
     console.log("날짜:"+month+"/"+date+"/"+day);
     
+    // 날짜 화면 출력: 월,일,요일순
+    $(".month").text(month);
+    $(".date").text(date);
+    $(".day").text(day);
+    
     
     
 
