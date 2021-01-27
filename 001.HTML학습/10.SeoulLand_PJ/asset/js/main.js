@@ -95,7 +95,7 @@ $(function () { /// jQB ///////////////////////////
         // 1. 대상이동하기: top값을 하나의 높이만큼이동함
         hban.animate({
                 top: "-92px"
-            }, 400, "easeOutExpo",
+            }, 400, "easeOutCubic",
             function () { //애니후
                 // 맨앞li 맨뒤로 보내기(동시에 top값 0)
                 $(this).append(hban.find("li").first())
