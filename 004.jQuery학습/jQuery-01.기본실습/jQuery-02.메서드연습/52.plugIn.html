@@ -4,10 +4,15 @@
 <meta charset="utf-8">
 <title> plugIn </title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.myplugin-1.2.js"></script>
+<!--내가만든 플러그인을 제이쿼리 라이브러리 아래에 불러온다-->
 	<script>
 	$(function(){//// jQB ////////////////////////
 		$("h1").click(function(){
-			
+			// myAction(배경색,왼쪽마진,시간)
+            $(this).myAction("orange",400,3000);
+            
+            
 		});////// click //////////////////
 		
 		$("div").click(function(){
