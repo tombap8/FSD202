@@ -39,8 +39,18 @@
                 $("#caption").text(itxt);
                 
                 //6. 박스의 높이값 구하기(높이값 만큼 top값 설정)
-                let cH = $("#caption").height();
+                let cH = $("#caption").innerHeight();
                 console.log("높이값:"+cH);
+                /*
+                [ 선택요소의 높이값 구하는 메서드 ]
+                1) height() -> 순수높이값(패딩,보더 제외한 높이)
+                2) innerHeight() -> 패딩을 포함한 내부높이값
+                3) outerHeight() -> 보더(마진)포함 총 높이값
+                    outerHeight(true) -> 마진까지 포함된 높이값
+                    
+                ※ width 도 동일함!
+                    - width(), innerWidth(), outerWidth()
+                */
                 
                 //7. 설명박스 높이값 만큼 위로 올라오기 애니메이션
                 $("#caption").animate({
@@ -87,7 +97,7 @@
             height: 280px;
             padding: 5px;
             margin-left: 110px;
-/*            overflow: hidden;*/
+            overflow: hidden;
 
         }
 
