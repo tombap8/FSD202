@@ -86,11 +86,21 @@ $(function () { /// jQB ///////////////////////////
     // 클릭이벤트 대상: .upb , .dwb
     // 변경 대상: .halban ul
     let hban = $(".halban ul");
+    // 광클금지변수
+    let prot = 0; //0-허용,1-불허용
     ///////////////////////////////    
     // 위로 이동버튼 클릭시
     $(".dwb").click(function (e) {
 
         e.preventDefault(); //기본이동막기
+
+        /// 광클금지 /////////////////////////
+        if (prot) return false; //1이면 돌아가
+        prot = 1; //1로만들어 잠금!
+        setTimeout(function () {
+            prot = 0;
+        }, 400);//0.4초후에 해제!
+        ////////////////////////////////////
 
         // 1. 대상이동하기: top값을 하나의 높이만큼이동함
         hban.animate({
@@ -99,36 +109,42 @@ $(function () { /// jQB ///////////////////////////
             function () { //애니후
                 // 맨앞li 맨뒤로 보내기(동시에 top값 0)
                 $(this).append(hban.find("li").first())
-                .css({top: "0"});
-            
+                    .css({
+                        top: "0"
+                    });
+
             }); /// animate /////
 
 
     }); ////// click ////////////////
-    
+
     // 아래로 이동버튼 클릭시 ///
-    $(".upb").click(function(e){
-        
-        e.preventDefault();//기본이동막기
-        
+    $(".upb").click(function (e) {
+
+        e.preventDefault(); //기본이동막기
+
+        /// 광클금지 /////////////////////////
+        if (prot) return false; //1이면 돌아가
+        prot = 1; //1로만들어 잠금!
+        setTimeout(function () {
+            prot = 0;
+        }, 400);//0.4초후에 해제!
+        ////////////////////////////////////
+
         // 1. 먼저 맨뒤 li를 맨앞으로 이동과 동시에
         // top값을 -92px 즉, li하나가 위에 나가있는 위치로 변경!
         hban.prepend(hban.find("li").last())
-        .css({top:"-92px"})
-        // 2. top값을 0으로 애니메이션 하기
-        .animate({
-            top:"0"
-        },400,"easeOutCubic");//// animate ///
-        
-        
-        
-        
-        
-        
-        
-        
-    });///////////// click //////////////
-    
+            .css({
+                top: "-92px"
+            })
+            // 2. top값을 0으로 애니메이션 하기
+            .animate({
+                top: "0"
+            }, 400, "easeOutCubic"); //// animate ///
+
+
+    }); ///////////// click //////////////
+
 
 
 
