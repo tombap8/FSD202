@@ -1,25 +1,25 @@
 // 서울랜드 메인페이지 JS - main.js //
 
 $(function () { /// jQB ///////////////////////////
-    
+
     /////// 메인 페이지 오늘 날짜넣기 /////////
     let today = new Date();
-    let month = today.getMonth()+1;//월순번+1=월숫자
-    let date = today.getDate();//날짜
-    let day = today.getDay();//요일순번
-    let week = ["일","월","화","수","목","금","토"];
+    let month = today.getMonth() + 1; //월순번+1=월숫자
+    let date = today.getDate(); //날짜
+    let day = today.getDay(); //요일순번
+    let week = ["일", "월", "화", "수", "목", "금", "토"];
     // 요일변경하기
     day = week[day];
-    
-    console.log("날짜:"+month+"/"+date+"/"+day);
-    
+
+    console.log("날짜:" + month + "/" + date + "/" + day);
+
     // 날짜 화면 출력: 월,일,요일순
     $(".month").text(month);
     $(".date").text(date);
     $(".day").text(day);
-    
-    
-    
+
+
+
 
     //////////////////////////////////////////////////
     ///// 탭메뉴 클릭시 해당 컨텐츠 보이기 ////////////////
@@ -195,6 +195,17 @@ function goSlide(gubun) { //gubun(왼쪽:0,오른쪽:1)
     하는 단순 전환 기능을 한가지 버튼할때 토글버튼이라고
     흔히 부른다!
     */
+
+    ////// 블릿 버튼 순번에 맞게 변경하기 /////
+    // 변경대상: .indic img
+    // 변경순번: 이미 bseq변수에 순번이 들어와 있다!!!
+    $(".indic img").eq(bseq)
+        .attr("src", "images/ico_pm_55_on.png")
+        .parents("li").siblings().find("img")
+        .attr("src", "images/ico_pm_55_off.png");
+
+
+
 
 
 
