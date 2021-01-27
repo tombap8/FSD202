@@ -114,7 +114,11 @@ $(function () { /// jQB ///////////////////////////
         // 1. 먼저 맨뒤 li를 맨앞으로 이동과 동시에
         // top값을 -92px 즉, li하나가 위에 나가있는 위치로 변경!
         hban.prepend(hban.find("li").last())
-        .css({top:"-92px"});
+        .css({top:"-92px"})
+        // 2. top값을 0으로 애니메이션 하기
+        .animate({
+            top:"0"
+        },400,"easeOutCubic");//// animate ///
         
         
         
