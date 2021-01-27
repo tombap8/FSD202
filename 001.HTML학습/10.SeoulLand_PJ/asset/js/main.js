@@ -49,35 +49,38 @@ $(function () { /// jQB ///////////////////////////
 
 
     }); ///////// click /////////////////
-    
-    
+
+
     ///// 배너 블릿버튼 클릭시 배너 이동하기 /////
     // 클릭이벤트 대상 : .indic a
     // 변경대상: .slider li
-    $(".indic a").click(function(e){
+    $(".indic a").click(function (e) {
+
+        e.preventDefault(); // 기본기능막기
         
-        e.preventDefault();// 기본기능막기
-        
+        // 자동넘김지우기
+        clearAuto();
+
         // 1. 클릭된 a요소의 부모li의 순번 구하기
         let idx = $(this).parent().index();
-        console.log("클릭된블릿순번:"+idx);
-        
+        console.log("클릭된블릿순번:" + idx);
+
         // 2. 블릿순번과 동일한 순번의 배너슬라이드에 클래스 "on"넣기
         $(".slider li").eq(idx).addClass("on")
-        .siblings().removeClass("on");
-        
+            .siblings().removeClass("on");
+
         // 3. 블릿변경하기 ////
-        $("img",this)//주인공!
-        .attr("src", "images/ico_pm_55_on.png")
-        .parents("li").siblings().find("img")
-        .attr("src", "images/ico_pm_55_off.png");
-        
+        $("img", this) //주인공!
+            .attr("src", "images/ico_pm_55_on.png")
+            .parents("li").siblings().find("img")
+            .attr("src", "images/ico_pm_55_off.png");
+
         // 4. 블릿 순번을 전역변수 슬라이드 순번(bseq)과 일치시키기!
-        bseq = idx;// 매우중요함!!!!!!
-        
-        
-    });///////// click ///////////////////
-    
+        bseq = idx; // 매우중요함!!!!!!
+
+
+    }); ///////// click ///////////////////
+
 
 
 
@@ -105,18 +108,30 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // (1)왼쪽버튼 /////////////////
     abtn[0].onclick = function () {
+        
+        // 자동넘김지우기
+        clearAuto();
+        
         // 이동함수호출
         goSlide(0);
+        
         // a요소 클릭시 이동속성 없애기!
         return false;
+        
     }; /////// click함수 ///////////
 
     // (2)오른쪽버튼 ///////////////
     abtn[1].onclick = function () {
+        
+        // 자동넘김지우기
+        clearAuto();
+        
         // 이동함수호출
         goSlide(1);
+        
         // a요소 클릭시 이동속성 없애기!
         return false;
+        
     }; /////// click함수 ///////////
 
 
@@ -238,3 +253,43 @@ function goSlide(gubun) { //gubun(왼쪽:0,오른쪽:1)
 } ////// goSlide 함수 /////////////////////////////
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
+
+
+
+
+// 인터발함수(지우기위해 만든변수)
+var autoI;
+/*////////////////////////////////////////////
+    함수명: autoSlide
+    기능: 자동넘기기 셋팅함수(인터발함수)
+*/ ////////////////////////////////////////////
+var autoSlide = function () {
+    autoI = setInterval(function () {
+        goSlide(1);//오른쪽방향 넘기기
+    }, 3000);
+}; ////// autoSlide함수 //////////////////////
+//////////////////////////////////////////////
+
+// 할당형함수 아래에서 처음 호출해야함!
+autoSlide(); //최초호출!
+
+
+// 타임아웃변수(쓰나미방지용 지우기변수)
+var autoT;
+/*////////////////////////////////////////////
+    함수명: clearAuto
+    기능: 자동넘김 지우기함수(클리어인터발함수)
+*/ ////////////////////////////////////////////
+var clearAuto = function () {
+
+    // 자동넘김 할당된 변수를 지운다(autoI)
+    clearInterval(autoI);
+    // 타임아웃 실행쓰나미 방지용 타임아웃 지우기를 꼭한다!
+    clearTimeout(autoT);
+
+    // 안건드리면 5초후 다시 자동호출하기!
+    // 매번 호출될때 위에서 지우므로 단 하나만 남아있음!
+    autoT = setTimeout(autoSlide, 5000);
+
+}; ////// clearAuto함수 /////////////////////////
+///////////////////////////////////////////////
