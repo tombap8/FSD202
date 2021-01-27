@@ -4,6 +4,35 @@
 <meta charset="utf-8">
 <title> Sliding Captions 갤러리 </title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script>
+    $(function(){ /// jQB //////////////////////
+        
+        // 설명글 숨기기
+        $(".thumbs em").hide();
+        
+        //// click 이벤트 대상: .thumbs a
+        /// 변경대상: #largeImg img
+        $(".thumbs a").click(function(e){
+            // a요소 기본 이동기능 막기!
+            e.preventDefault();
+            
+            // 1. 클릭된 a요소의 href값을 읽어오기
+            let isrc = $(this).attr("href");
+            console.log("경로:"+isrc);
+            
+            // 2. 큰 이미지의 src속성을 isrc값으로 변경
+            $("#largeImg img").attr("src",isrc);
+            
+        });////////// click ///////////////
+        
+        
+        
+        
+        
+        
+    });///////////// jQB //////////////////////
+    
+    </script>
 <style type="text/css">
 
 
