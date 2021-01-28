@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>One Page Scroll</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;/*화면기준*/
+        }
+        /*공통셋팅*/
+        a{
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 0 0 2px #777;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li{
+            float: left;
+        }
+        img{
+            border: none;
+            /*이미지 링크시 테두리없앰*/
+        }
+        h1,h2,h3{
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        
+        /*공통 class*/
+        
+        /*페이지 공통 class*/
+        .page{
+            width: 100%;
+            height: 100%;
+        }
+        /*IR(배경이미지 설명 숨기기)*/
+        .bld{
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        /*중앙박스*/
+        .ibx{
+            position: relative;
+            /*부모자격*/
+            width: 1920px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /*상단영역*/
+        .top{
+            position: fixed;
+            /*상단고정*/
+            width: 100%;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #top{
+            height: 80px;
+            outline: 1px solid lime;
+        }
+        
+        /*개별페이지 셋팅*/
+        #pg1{
+            background: url(images/pic1.png) no-repeat top/cover;
+        }
+        #pg2{
+            background: url(images/pic2.png) no-repeat top/cover;
+        }
+        #pg3{
+            background: url(images/pic3.png) no-repeat top/cover;
+        }
+        #pg4{
+            background: url(images/pic4.png) no-repeat top/cover;
+        }
+        #pg5{
+            background: url(images/pic5.png) no-repeat top/cover;
+        }
+        #pg6{
+            background: url(images/pic6.png) no-repeat top/cover;
+        }
+        #pg7{
+            background: url(images/pic7.png) no-repeat top/cover;
+        }
+        
+    </style>
+</head>
+<body>
+  <!--1. 상단영역-->
+   <div class="top">
+       <header id="top" class="ibx"></header>
+   </div>
+   
+   <!--2. 페이지 영역-->
+   <section id="pg1" class="page"></section>
+   <section id="pg2" class="page"></section>
+   <section id="pg3" class="page"></section>
+   <section id="pg4" class="page"></section>
+   <section id="pg5" class="page"></section>
+   <section id="pg6" class="page"></section>
+   <section id="pg7" class="page"></section>
+   
+   
+   
+   
+    
+</body>
+</html>
