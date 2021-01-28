@@ -234,9 +234,9 @@
             // a요소에 href="#아이디명" 하면 바로이동은 가능
             // 그러나 스크롤 애니메이션은 되지 않는다!!!
             // 제이쿼리에서 이것을 해주자!
-            // 클릭 이벤트 대상: .gnb a
+            // 클릭 이벤트 대상: .gnb a 동시에 .bnav a
             ///////////////////////////////////////////
-            $(".gnb a").click(function(e) {
+            $(".gnb a,.bnav a").click(function(e) {
 
                 e.preventDefault(); //a이동막기!
 
@@ -269,8 +269,19 @@
                 // 적용되어 마우스 오버시와 동일 디자인이 유지된다
                 // 이것을 하는 이유는 현재 페이지가 무엇인지
                 // 표시하기 위함이다!
-                // this 나자신에서 위로 올라가 li를 선택함!
-                $(this).parent().addClass("on")
+                
+                // 두개의 네비게이션을 동시에 변경하기
+                
+                // 클릭된 순번 알아내기(클릭된 a의 부모 li순번)
+                let idx = $(this).parent().index();
+                console.log("클릭순번:"+idx);
+                
+                // GNB네비게이션 클래스 넣기
+                $(".gnb li").eq(idx).addClass("on")
+                    .siblings().removeClass("on");
+                
+                // 블릿네비게이션 클래스 넣기
+                $(".bnav li").eq(idx).addClass("on")
                     .siblings().removeClass("on");
 
 
