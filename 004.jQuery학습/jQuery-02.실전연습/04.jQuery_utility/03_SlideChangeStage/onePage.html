@@ -202,9 +202,18 @@
                 // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
                 // 스크롤 이동대상: html,body 
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
-                $("html,body").animate({
+                $("html,body").stop().animate({
                     scrollTop: pgpos + "px"
-                }, 800,"easeOutQuad");///// animate /////
+                }, 1200,"easeInOutQuint");///// animate /////
+                // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
+                // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
+                
+                // 4. GNB 메뉴에 class="on"넣어 선택된 메뉴표시
+                // this 나자신에서 위로 올라가 li를 선택함!
+                $(this).parent().addClass("on")
+                .siblings().removeClass("on");
+                
+                
                 
             });///////// click //////////////
             
