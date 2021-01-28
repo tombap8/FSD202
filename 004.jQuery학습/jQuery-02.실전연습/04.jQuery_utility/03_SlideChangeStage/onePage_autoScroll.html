@@ -22,13 +22,13 @@
             text-shadow: 0 0 2px #777;
         }
 
-        ul {
+        ul,ol {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        ul::after {
+        ul::after,ol::after {
             content: "";
             display: block;
             clear: both;
@@ -138,6 +138,15 @@
         .gnb li:hover,
         .gnb li.on {
             transform: scale(1.1);
+        }
+        
+        /*블릿 네비게이션*/
+        .bnav{
+            position: fixed;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
         }
 
 
