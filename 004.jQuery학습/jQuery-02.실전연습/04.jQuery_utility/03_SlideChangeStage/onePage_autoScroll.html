@@ -148,6 +148,49 @@
             transform: translateY(-50%);
             width: 15px;
         }
+        /*블릿모양*/
+        .bnav li{
+            position: relative;
+            /*span의 부모자격*/
+            width: 15px;
+            height: 15px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin: 6px 0;
+            box-shadow: 0 0 2px #999;
+        }
+        /*블릿글자*/
+        .bnav span{
+            position: absolute;
+            top: -50%;
+            right: 200%;
+            font: bold .9rem "맑은 고딕", Verdana;
+            white-space: nowrap;/*줄바꿈방지*/
+            text-shadow: 1px 0 #000,-1px 0 #000,
+                0 1px #000, 0 -1px #000;
+            /*그림자로 글자 테두리주기*/
+            display: none;
+            /*글자숨기기*/
+        }
+        /*블릿 a링크*/
+        .bnav a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        /*마우스 오버시 글자보이기*/
+        /*동시에 class="on"이면 글자보이기*/
+        .bnav li:hover span,
+        .bnav li.on span{
+            display: block;
+        }
+        /*선택메뉴(class="on") 배경색넣고 조금크게하기*/
+        .bnav li.on{
+            background-color: #EC686A;
+            transform: scale(1.15);
+        }
+        
 
 
 
