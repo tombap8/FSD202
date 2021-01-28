@@ -41,7 +41,11 @@ $(function(){ ///// jQB /////////////////
     
     ///// 자동스크롤 구현 ////////////////
     // 이벤트를 띄어쓰기로 여러개 쓸 수 있음!
-    $(document).on("mousewheel DOMMouseScroll",function(){
+    $(document).on("mousewheel DOMMouseScroll",function(e){
+        
+        //e.preventDefault();<- 이걸 쓰면 에러가남!!!
+        // document, body, window 객체는 막을 수 없다!
+        // 여기서는 body에 overflow:hidden으로 대체함!(스크롤막기!)
         
         console.log("스크롤중~!");
         
