@@ -47,7 +47,7 @@ $(function () { ///// jQB /////////////////
         // document, body, window 객체는 막을 수 없다!
         // 여기서는 body에 overflow:hidden으로 대체함!(스크롤막기!)
 
-        console.log("스크롤중~!");
+        //console.log("스크롤중~!");
 
         // 1. 마우스휠 방향 알아내기
         e = window.event || e;
@@ -64,7 +64,7 @@ $(function () { ///// jQB /////////////////
         let delta = e.detail ? e.detail : e.wheelDelta;
         // 변수에 유효한 설정이 적용되어 할당됨!
 
-        console.log("휠정보:" + delta);
+        //console.log("휠정보:" + delta);
 
         // 2. 마우스휠 방향에 따라 페이지 번호 증감!
         if (delta < 0) { // -120 아랫방향 스크롤(다음페이지)
