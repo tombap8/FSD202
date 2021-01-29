@@ -49,6 +49,23 @@ $(function () { ///// jQB /////////////////
 
         //console.log("스크롤중~!");
 
+        // 광스크롤 막기 /////////////////////////////
+        if (psts === 1) return true;
+        // return false 하면 에러남! 왜? document니까!법이 바뀜!
+        // return true 돌아가되 기능은 켜놓고 가(스크롤되게해!)
+        // 우리는 이미 overflow:hidden 으로 스크롤막아서 상관없음!
+        psts = 1; //잠금!
+        setTimeout(function () {
+            psts = 0;
+        }, 1200); /// setTimeout ////
+        ///////////////////////////////////////////
+
+
+
+
+
+
+
         // 1. 마우스휠 방향 알아내기
         e = window.event || e;
         // 이벤트 전달값이 window 오리지널 이벤트가 사용가능하면
@@ -76,26 +93,36 @@ $(function () { ///// jQB /////////////////
             if (pno < 0) pno = 0; //첫번호고정!
         } /////////// else //////////////////////////////////
 
-        console.log("페이지번호:"+pno);
-        
+        //console.log("페이지번호:"+pno);
+
         // 3. 이동할 페이지(.page)의 위치값 알아내기
         // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!
         let pgpos = $(".page").eq(pno).offset().top;
         // offset().top은 현재 선택요소의 top위치값을 숫자로 리턴함!
-        
-        console.log("이동위치:"+pgpos);
-        
+
+        //console.log("이동위치:"+pgpos);
+
         // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
         $("html,body").stop().animate({
             scrollTop: pgpos + "px"
-        }, 1200, "easeInOutQuint");/// animate ///
-        
-        
+        }, 1200, "easeInOutQuint"); /// animate ///
+
+
+        // 5. 메뉴변경하기 - 페이지 순번과 동일함!
+        // GNB네비게이션 클래스 넣기
+        $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+        // 블릿네비게이션 클래스 넣기
+        $(".bnav li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
 
 
 
     }); //////// mousewheel ///////////////////////////////
     //////////////////////////////////////////////////////
+
 
 
 
