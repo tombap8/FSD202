@@ -52,11 +52,20 @@
         }
 
         /*공통 class*/
+        
+        /*전체 페이지 부모(가로 스크롤 박스역할)*/
+        .wrap{
+            width: 700%;
+            /*7개페이지크기*/
+            height: 100%;
+        }
 
         /*페이지 공통 class*/
         .page {
-            width: 100%;
+            width: 14.285%;
+            /*부모박스를 7등분함!*/
             height: 100%;
+            float: left;/*옆으로 흐르게*/
             /*
                 width: 100vw;
                 height: 100vh;
@@ -247,19 +256,19 @@
                 let pid = $(this).attr("href");
                 console.log("아이디:" + pid);
 
-                // 2. 이동할 아이디요소 위치의 top값 구하기
+                // 2. 이동할 아이디요소 위치의 left값 구하기
                 // - 실제로 스크롤 이동을 위한 값
-                let pgpos = $(pid).offset().top;
+                let pgpos = $(pid).offset().left;
                 // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
                 // - top, left, width, height 등을 알 수 있음
                 console.log("위치값:" + pgpos);
 
                 // 3. 스크롤 애니메이션으로 페이지이동하기
-                // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
+                // scrollLeft 속성은 가로 스크롤위치값(제이쿼리용!)
                 // 스크롤 이동대상: html,body 
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
                 $("html,body").stop().animate({
-                    scrollTop: pgpos + "px"
+                    scrollLeft: pgpos + "px"
                 }, 1200, "easeInOutQuint"); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
@@ -330,13 +339,15 @@
     </div>
 
     <!--2. 페이지 영역-->
-    <section id="pg1" class="page"></section>
-    <section id="pg2" class="page"></section>
-    <section id="pg3" class="page"></section>
-    <section id="pg4" class="page"></section>
-    <section id="pg5" class="page"></section>
-    <section id="pg6" class="page"></section>
-    <section id="pg7" class="page"></section>
+    <div class="wrap">
+        <section id="pg1" class="page"></section>
+        <section id="pg2" class="page"></section>
+        <section id="pg3" class="page"></section>
+        <section id="pg4" class="page"></section>
+        <section id="pg5" class="page"></section>
+        <section id="pg6" class="page"></section>
+        <section id="pg7" class="page"></section>
+    </div>
 
     <!--3. 블릿 네비게이션-->
     <ol class="bnav">
