@@ -126,6 +126,11 @@
             stroke: url(#grad1);
         }
         
+        /*타원박스*/
+        .btns2{
+            width: 100px;
+        }
+        
     </style>
 </head>
 
@@ -171,13 +176,21 @@
             </div>
 
         </li>
-        <li></li>
+        <!--타원넣기-->
+        <li>
+            <div class="btns btns2">
+                <svg>
+                    <ellipse class="c1 c4" cx="50" cy="100" rx="95" ry="45" transform="rotate(-90,50,100)"></ellipse>
+                </svg>
+            </div>
+        </li>
     </ul>
     <!--
     svg 태그 : svg 이미지를 그리는 공간
     (Scalable Vector Graphic: 확대를 해도 깨지지 않는 이미지)
     
-    하위 요소 중 원 그리기 : circle
+    [ 하위 요소 중 원 그리기 : circle ]
+    
     - cx : 중심원 x 좌표(center x) 단위는 안쓰면 px
     - cy : 중심원 y 좌표(center y) 단위는 안쓰면 px
     - r : 반지름(radius)
@@ -186,7 +199,16 @@
      svg 내부 속성이므로 적용되지 않는다!
      따라서 circle 내부 속성으로 별도처리해야함!
      (각도는 시계방향이 양수, 반시계가 음수)
-    -->
+     
+    [ 하위 요소 중 타원 그리기 : ellipse ]
+    
+    - cx : 중심원 x 좌표(center x) 단위는 안쓰면 px
+    - cy : 중심원 y 좌표(center y) 단위는 안쓰면 px
+    - rx : x축 반지름(radius)
+    - ry : y축 반지름(radius)
+     
+    --> 
+    
 
 
 
