@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SVG - Circle Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
     <style>
         html,
         body {
@@ -35,7 +36,7 @@
             float: left;
             width: 50%;
             height: 50%;
-            outline: 1px dotted blue;
+            /*outline: 1px dotted blue;*/
         }
 
         /*버튼박스*/
@@ -131,6 +132,18 @@
             width: 100px;
         }
         
+        /*svg text  박스*/
+        .svgtxt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 150px;
+/*            outline: 2px solid red;*/
+            font-family: 'Piedra', cursive;
+        }
+        
     </style>
 </head>
 
@@ -209,6 +222,39 @@
      
     --> 
     
+    <!--svg text-->
+    <div class="svgtxt">
+        <svg>
+            <defs>
+                <!--defs요소에 효과를 정의함-->
+                <!--linearGradient 선형그라데이션-->
+                <!--id를 주고 circle에서 stroke속성에 url(#아이디명) 으로 호출!-->
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#fc0000" />
+                    <stop offset="30%" stop-color="#00ffe2" />
+                    <stop offset="60%" stop-color="#0076ff" />
+                    <stop offset="100%" stop-color="#ff00d8" />
+                </linearGradient>
+            </defs>
+            <text fill="url(#grad3)">
+                <tspan font-size="30" x="80" y="30">Your</tspan>
+                <tspan font-size="65" x="18" dy="60">Choice</tspan>
+                <tspan font-size="47" x="22" dy="45">Goooood</tspan>
+                <tspan font-size="20" x="135" y="40" fill="red">MOM's</tspan>
+            </text>
+        </svg>
+    </div>
+    
+     <!--
+        svg - text 요소 : 벡터 글자를 그리는 요소
+        - font-size : 글자크기속성
+        - x : x축위치
+        - y : y축위치
+        - dy : 위줄아래서 부터의 y축위치
+        -> 글자가 여러줄일때는 tspan요소를 사용함
+    -->
+
+
 
 
 
