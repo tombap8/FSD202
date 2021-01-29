@@ -77,6 +77,20 @@ $(function () { ///// jQB /////////////////
         } /////////// else //////////////////////////////////
 
         console.log("페이지번호:"+pno);
+        
+        // 3. 이동할 페이지(.page)의 위치값 알아내기
+        // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!
+        let pgpos = $(".page").eq(pno).offset().top;
+        // offset().top은 현재 선택요소의 top위치값을 숫자로 리턴함!
+        
+        console.log("이동위치:"+pgpos);
+        
+        // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
+        $("html,body").stop().animate({
+            scrollTop: pgpos + "px"
+        }, 1200, "easeInOutQuint");/// animate ///
+        
+        
 
 
 
