@@ -75,7 +75,15 @@ $(function () { ///// jQB /////////////////
         let delta = e.detail ? e.detail : e.wheelDelta;
         // 변수에 유효한 설정이 적용되어 할당됨!
 
-        //console.log("휠정보:" + delta);
+        console.log("휠정보:" + delta);
+        
+        ///// 파이어폭스 일때 델타값 방향 반대로 하기!//////
+        // JS 내장함수 test()를 이용하여
+        // navigator.userAgent - 현재 브라우저 정보읽어옴!
+        // "Firefox"라는 정보가 있으면 test() 에서 true값 리턴함!
+        // 그래서 if문 안으로 들어가서 처리함(부호반대로!)
+        console.log("브라우저정보:"+navigator.userAgent);
+        
 
         // 2. 마우스휠 방향에 따라 페이지 번호 증감!
         if (delta < 0) { // -120 아랫방향 스크롤(다음페이지)
