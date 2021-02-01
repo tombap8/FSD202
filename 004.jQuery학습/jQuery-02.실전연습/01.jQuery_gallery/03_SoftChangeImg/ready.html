@@ -38,8 +38,8 @@
                 function(){ // over : 인터발지우기
                     clearInterval(autoI);
                 },
-                function(){ // out : 다시 인터발
-                    
+                function(){ // out : 다시 인터발호출!
+                    autoI = setInterval(chgImg,3000);
                 });////// hover /////////
             
             
