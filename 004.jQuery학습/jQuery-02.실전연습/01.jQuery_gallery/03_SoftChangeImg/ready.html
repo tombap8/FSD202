@@ -4,6 +4,54 @@
     <meta charset="utf-8">
     <title> fadeInOut 갤러리 </title>
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script>
+    
+        $(function(){ // jQB ///////////////////
+            
+            // 인터발변수
+            let autoI;
+            
+            // 이미지순번
+            let iseq=0;
+            
+            // 이미지 넘김함수
+            let chgImg = function(){
+                 
+                // 순번증가
+                iseq++;
+                if(iseq===3)iseq=0;//한계수
+                
+                // 변경대상: .fadeShow img
+                $(".fadeShow img").eq(iseq).addClass("on")
+                .siblings().removeClass("on");
+                
+            };///// chgImg 함수 ////////
+            
+            // setInterval(함수,시간)
+            autoI = setInterval(chgImg,3000);
+            
+            // 마우스 오버시 멈춤/ 아웃시 다시 call
+            
+            // hover(함수1,함수2)
+            // 대상: .fadeShow
+            $(".fadeShow").hover(
+                function(){ // over : 인터발지우기
+                    clearInterval(autoI);
+                },
+                function(){ // out : 다시 인터발
+                    
+                });////// hover /////////
+            
+            
+            
+            
+            
+            
+            
+            
+        });//////////// jQB ////////////////////
+    
+    </script>
     <style>
         body {
             margin: 20px auto;
