@@ -58,6 +58,14 @@ $(function () { ///// jQB /////////////////
             transform:"translate(-50%,-50%) scale(0) rotate(1000deg)"
         });//////// css ////////////////
         
+        // 7. 탐정홍길동 : x축 스케일 늘려놓는다.투명도0
+        // (원래크기와 투명도로 복귀예정)
+        $("#pg7 .minfo").css({
+            transform:"translate(-50%,-50%) scaleX(10)",
+            opacity: 0
+        });///////// css ////////////////
+        
+        
 
 
     }; /////// init함수 ////////////////////
@@ -124,10 +132,19 @@ $(function () { ///// jQB /////////////////
             // 중앙에서 원형회전하며 스케일 원래크기로 복귀!
             $("#pg6 .minfo").css({
                 transform:"translate(-50%,-50%) scale(1) rotate(0deg)",
-                transition: "all 1s ease-out"
+                transition: "all 1s cubic-bezier(0.76, 0.16, 0.15, 1.03)"
             });//////// css ////////////////
             
         }////// else if ///////////////////
+        // 7. 탐정홍길동
+        else if(pno===6){
+            // x축 스케일 복귀 및 투명도 1
+            $("#pg7 .minfo").css({
+                transform:"translate(-50%,-50%) scaleX(1)",
+                opacity: 1,
+                transition:"all 2s ease-out"
+            });///////// css ////////////////
+        }/////// else if /////////////////
         
         
 
