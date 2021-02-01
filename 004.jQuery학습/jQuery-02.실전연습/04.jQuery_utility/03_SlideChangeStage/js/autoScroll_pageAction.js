@@ -9,14 +9,18 @@ let pno = 0;
 const totnum = 7;
 // 광스크롤 막기(0-허용,1-불허용)
 let psts = 0;
+// 초기화 함수
+let init;
+// 페이지액션 함수
+let pageAction;
 /////////////////////////////////////
 
 $(function () { ///// jQB /////////////////
 
     ///////////////////////////////////////
-    // 함수명: init
+    // 함수명: init(전역변수 구역에 선언!)
     // 기능: 각 페이지액션 대상 요소 초기화
-    let init = function () {
+    init = function () {
 
         // 1. 아수라 : 오른쪽 바깥으로 나가있음!
         $("#pg1 .minfo").css({
@@ -33,9 +37,9 @@ $(function () { ///// jQB /////////////////
     init();
 
     ///////////////////////////////////////
-    // 함수명: pageAction
+    // 함수명: pageAction(전역변수 구역에 선언!)
     // 기능: 각 페이지 도착시 요소 등장액션수행
-    let pageAction = function () {
+    pageAction = function () {
 
         // 각 페이지번호에 맞게 액션을 수행한다!
 
@@ -181,7 +185,7 @@ $(function () { ///// jQB /////////////////
         $("html,body").stop().animate({
                 scrollTop: pgpos + "px"
             }, 1200, "easeInOutQuint",
-            function () { // 페이지 이동후 페이지액션!
+            function () { // 이동 후 페이지액션!
                 pageAction();
             }); /// animate ///
 

@@ -309,9 +309,9 @@
                 $("html,body").stop().animate({
                         scrollTop: pgpos + "px"
                     }, 1200, "easeInOutQuint",
-                    function() { // 페이지 이동후 페이지액션!
-                        pageAction();
-                    }); ///// animate /////
+                    function() { //이동 후 애니메이션
+                    pageAction();
+                }); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
 
