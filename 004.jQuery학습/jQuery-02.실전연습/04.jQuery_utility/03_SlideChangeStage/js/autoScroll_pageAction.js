@@ -142,7 +142,7 @@ $(function () { ///// jQB /////////////////
             $("#pg7 .minfo").css({
                 transform:"translate(-50%,-50%) scaleX(1)",
                 opacity: 1,
-                transition:"all 2s ease-out"
+                transition:"all 2s cubic-bezier(0.38, -0.04, 0.84, 0.38)"
             });///////// css ////////////////
         }/////// else if /////////////////
         
