@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>One Page Scroll - Auto Scroll Page Action</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <!--CDN방식으로 웹폰트 불러오기-->
     <style>
         html,
         body {
@@ -22,13 +24,15 @@
             text-shadow: 0 0 2px #777;
         }
 
-        ul,ol {
+        ul,
+        ol {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        ul::after,ol::after {
+        ul::after,
+        ol::after {
             content: "";
             display: block;
             clear: both;
@@ -55,6 +59,8 @@
 
         /*페이지 공통 class*/
         .page {
+            position: relative;
+            /*부모자격*/
             width: 100%;
             height: 100%;
             /*
@@ -139,17 +145,18 @@
         .gnb li.on {
             transform: scale(1.1);
         }
-        
+
         /*블릿 네비게이션*/
-        .bnav{
+        .bnav {
             position: fixed;
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
             width: 15px;
         }
+
         /*블릿모양*/
-        .bnav li{
+        .bnav li {
             position: relative;
             /*span의 부모자격*/
             width: 15px;
@@ -160,37 +167,42 @@
             margin: 6px 0;
             box-shadow: 0 0 2px #999;
         }
+
         /*블릿글자*/
-        .bnav span{
+        .bnav span {
             position: absolute;
             top: -50%;
             right: 200%;
             font: bold .9rem "맑은 고딕", Verdana;
-            white-space: nowrap;/*줄바꿈방지*/
-            text-shadow: 1px 0 #000,-1px 0 #000,
+            white-space: nowrap;
+            /*줄바꿈방지*/
+            text-shadow: 1px 0 #000, -1px 0 #000,
                 0 1px #000, 0 -1px #000;
             /*그림자로 글자 테두리주기*/
             display: none;
             /*글자숨기기*/
         }
+
         /*블릿 a링크*/
-        .bnav a{
+        .bnav a {
             display: block;
             width: 100%;
             height: 100%;
         }
+
         /*마우스 오버시 글자보이기*/
         /*동시에 class="on"이면 글자보이기*/
         .bnav li:hover span,
-        .bnav li.on span{
+        .bnav li.on span {
             display: block;
         }
+
         /*선택메뉴(class="on") 배경색넣고 조금크게하기*/
-        .bnav li.on{
+        .bnav li.on {
             background-color: #EC686A;
             transform: scale(1.15);
         }
-        
+
 
 
 
@@ -223,6 +235,41 @@
         #pg7 {
             background: url(images/pic7.png) no-repeat top/cover;
         }
+        
+        /*각 페이지 영화소개 박스*/
+        .minfo{
+            position: absolute;
+            /*나의부모? .page*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /*정중앙이동*/
+            width: 380px;
+            color: #fff;
+            padding: 15px;
+            white-space: nowrap;
+            /*줄바꿈방지*/
+            background-color: rgba(0, 0, 0, 0.7);
+            font-family: 'Cute Font';
+            /*웹폰트*/
+        }
+        /*영화제목*/
+        .minfo>h1{
+            font-size: 44px;
+            padding: 5px;
+            text-align: center;
+        }
+        /*아수라한자 처리*/
+        .minfo>h1>span{
+            font-size: 28px;
+        }
+        /*영화정보*/
+        .minfo>h3{
+            font-size: 28px;
+            padding: 3px;
+        }
+        
+        
     </style>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -230,7 +277,7 @@
     <script>
         $(function() { /// jQB ///////////////////////
 
-            
+
             ///////////////////////////////////////////
             /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
             // a요소에 href="#아이디명" 하면 바로이동은 가능
@@ -245,14 +292,14 @@
                 // 1. a요소의 href값 가져오기
                 // - 셋팅된 id값으로 위치이동할 것임!
                 let pid = $(this).attr("href");
-                console.log("아이디:" + pid);
+                //console.log("아이디:" + pid);
 
                 // 2. 이동할 아이디요소 위치의 top값 구하기
                 // - 실제로 스크롤 이동을 위한 값
                 let pgpos = $(pid).offset().top;
                 // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
                 // - top, left, width, height 등을 알 수 있음
-                console.log("위치값:" + pgpos);
+                //console.log("위치값:" + pgpos);
 
                 // 3. 스크롤 애니메이션으로 페이지이동하기
                 // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
@@ -271,23 +318,23 @@
                 // 적용되어 마우스 오버시와 동일 디자인이 유지된다
                 // 이것을 하는 이유는 현재 페이지가 무엇인지
                 // 표시하기 위함이다!
-                
+
                 // 두개의 네비게이션을 동시에 변경하기
-                
+
                 // 클릭된 순번 알아내기(클릭된 a의 부모 li순번)
                 let idx = $(this).parent().index();
-                console.log("클릭순번:"+idx);
-                
+                //console.log("클릭순번:"+idx);
+
                 // GNB네비게이션 클래스 넣기
                 $(".gnb li").eq(idx).addClass("on")
                     .siblings().removeClass("on");
-                
+
                 // 블릿네비게이션 클래스 넣기
                 $(".bnav li").eq(idx).addClass("on")
                     .siblings().removeClass("on");
-                
+
                 /// 스크롤 페이지 전역변수에 순번반영해야함!!!
-                pno = idx;/// 매우중요!!!!!!
+                pno = idx; /// 매우중요!!!!!!
 
             }); ///////// click //////////////
 
@@ -330,13 +377,62 @@
     </div>
 
     <!--2. 페이지 영역-->
-    <section id="pg1" class="page"></section>
-    <section id="pg2" class="page"></section>
-    <section id="pg3" class="page"></section>
-    <section id="pg4" class="page"></section>
-    <section id="pg5" class="page"></section>
-    <section id="pg6" class="page"></section>
-    <section id="pg7" class="page"></section>
+    <section id="pg1" class="page">
+        <article class="minfo">
+            <h1>아수라(<span>阿修羅</span>)</h1>
+            <h3>감독:김성수</h3>
+            <h3>배우:정우성, 황정민</h3>
+            <h3>개봉일: 2016년 9월 28일</h3>
+        </article>
+    </section>
+    <section id="pg2" class="page">
+        <article class="minfo">
+            <h1>고산자, 대동여지도</h1>
+            <h3>감독:강우석</h3>
+            <h3>배우:차승원, 유준상</h3>
+            <h3>개봉일: 2016년 9월 7일</h3>
+        </article>
+    </section>
+    <section id="pg3" class="page">
+        <article class="minfo">
+            <h1>인천상륙작전</h1>
+            <h3>감독:이재한</h3>
+            <h3>배우:이정재, 이범수, 리암니슨</h3>
+            <h3>개봉일: 2016년 7월 27일</h3>
+        </article>
+    </section>
+    <section id="pg4" class="page">
+        <article class="minfo">
+            <h1>봉이 김선달</h1>
+            <h3>감독:박대민</h3>
+            <h3>배우:유승호</h3>
+            <h3>개봉일: 2016년 7월 6일</h3>
+        </article>
+    </section>
+    <section id="pg5" class="page">
+        <article class="minfo">
+            <h1>비밀은 없다</h1>
+            <h3>감독:이경미</h3>
+            <h3>배우:손예진, 김주혁</h3>
+            <h3>개봉일: 2016년 6월 23일</h3>
+        </article>
+    </section>
+    <section id="pg6" class="page">
+        <article class="minfo">
+            <h1>아가씨</h1>
+            <h3>감독:박찬욱</h3>
+            <h3>배우:김민희, 하정우</h3>
+            <h3>개봉일: 2016년 6월 1일</h3>
+        </article>
+    </section>
+    <section id="pg7" class="page">
+        <article class="minfo">
+            <h1>홍길동</h1>
+            <h3>감독:조성희</h3>
+            <h3>배우:이제훈, 김성균</h3>
+            <h3>개봉일: 2016년 5월 4일</h3>
+        </article>
+    </section>
 
     <!--3. 블릿 네비게이션-->
     <ol class="bnav">
