@@ -84,6 +84,19 @@ $(function () { ///// jQB /////////////////
             }, 500, "easeOutBack")
             
         } //// else if ///////////////
+        // 4. 봉이 김선달
+        else if(pno===3){
+            // 중앙에서 스케일이 원래 크기로 애니메이션됨
+            $("#pg4 .minfo").css({
+                transform: "translate(-50%,-50%) scale(1)",
+                transition: "all 2s ease-out"
+            });///// css ////////////
+            // transform 애니메이션은 transition으로!!!!
+            
+            
+        }///// else if ////////////////
+        
+        
 
     }; /////// pageAction함수 //////////////
 
