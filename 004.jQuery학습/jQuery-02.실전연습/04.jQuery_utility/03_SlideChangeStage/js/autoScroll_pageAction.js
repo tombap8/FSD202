@@ -44,6 +44,13 @@ $(function () { ///// jQB /////////////////
         $("#pg4 .minfo").css({
             transform: "translate(-50%,-50%) scale(0)"
         });///// css ////////////
+        
+        // 5. 비밀은 없다 : y축으로 180도 뒤집어 놓고 투명하게설정
+        // (원래 각도로 뒤집으며 투명도 1로 보이게 애니메이션 예정)
+        $("#pg5 .minfo").css({
+            transform: "translate(-50%,-50%) rotateY(180deg)",
+            opacity: 0
+        }); ////// css ////////////////////
 
 
     }; /////// init함수 ////////////////////
@@ -95,6 +102,15 @@ $(function () { ///// jQB /////////////////
             
             
         }///// else if ////////////////
+        //5. 비밀은 없다
+        else if(pno === 4){
+            // y축으로 원래각도인 0으로 돌아오고, 투명도 1로 복귀애니
+            $("#pg5 .minfo").css({
+                transform: "translate(-50%,-50%) rotateY(0deg)",
+                opacity: 1,
+                transition: "all 1s ease-out"
+            }); ////// css ////////////////////
+        }/////// else if //////////////////
         
         
 
