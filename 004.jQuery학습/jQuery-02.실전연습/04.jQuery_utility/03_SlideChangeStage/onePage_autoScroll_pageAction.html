@@ -235,14 +235,14 @@
         #pg7 {
             background: url(images/pic7.png) no-repeat top/cover;
         }
-        
+
         /*각 페이지 영화소개 박스*/
-        .minfo{
+        .minfo {
             position: absolute;
             /*나의부모? .page*/
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             /*정중앙이동*/
             width: 380px;
             color: #fff;
@@ -253,23 +253,24 @@
             font-family: 'Cute Font';
             /*웹폰트*/
         }
+
         /*영화제목*/
-        .minfo>h1{
+        .minfo>h1 {
             font-size: 44px;
             padding: 5px;
             text-align: center;
         }
+
         /*아수라한자 처리*/
-        .minfo>h1>span{
+        .minfo>h1>span {
             font-size: 28px;
         }
+
         /*영화정보*/
-        .minfo>h3{
+        .minfo>h3 {
             font-size: 28px;
             padding: 3px;
         }
-        
-        
     </style>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -306,8 +307,11 @@
                 // 스크롤 이동대상: html,body 
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
                 $("html,body").stop().animate({
-                    scrollTop: pgpos + "px"
-                }, 1200, "easeInOutQuint"); ///// animate /////
+                        scrollTop: pgpos + "px"
+                    }, 1200, "easeInOutQuint",
+                    function() { // 페이지 이동후 페이지액션!
+                        pageAction();
+                    }); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
 

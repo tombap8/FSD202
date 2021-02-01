@@ -22,9 +22,9 @@ $(function () { ///// jQB /////////////////
         $("#pg1 .minfo").css({
             left: "150%"
         }); //////// css ////////
-        
+
         // 2. 고산자 : 처음에 안보임!(fadeIn사용예정!)
-        $("#pg2 .minfo").hide();//display:none 만들기!
+        $("#pg2 .minfo").hide(); //display:none 만들기!
 
 
     }; /////// init함수 ////////////////////
@@ -44,15 +44,22 @@ $(function () { ///// jQB /////////////////
 
             // 오른쪽에서 중앙으로 날아오기(거미줄에 걸리는 것처럼!)
             $("#pg1 .minfo")
-            .delay(1000)
-            .animate({
-                left: "50%"
-            }, 1000,"easeOutElastic"); //////// css ////////
+                .delay(1000)
+                .animate({
+                    left: "50%"
+                }, 1000, "easeOutElastic"); //////// css ////////
 
         } ///// if ////////////////////
+        // 2. 고산자
+        else if (pno === 1) {
+
+            // 페이드인 효과로 나타나기
+            $("#pg2 .minfo").fadeIn(800);
+
+        } //// else if ////////////////
 
     }; /////// pageAction함수 //////////////
-    
+
     // pageAction함수 최초호출!
     pageAction();
 
@@ -172,8 +179,11 @@ $(function () { ///// jQB /////////////////
 
         // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
         $("html,body").stop().animate({
-            scrollTop: pgpos + "px"
-        }, 1200, "easeInOutQuint"); /// animate ///
+                scrollTop: pgpos + "px"
+            }, 1200, "easeInOutQuint",
+            function () { // 페이지 이동후 페이지액션!
+                pageAction();
+            }); /// animate ///
 
 
         // 5. 메뉴변경하기 - 페이지 순번과 동일함!
