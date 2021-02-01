@@ -51,6 +51,13 @@ $(function () { ///// jQB /////////////////
             transform: "translate(-50%,-50%) rotateY(180deg)",
             opacity: 0
         }); ////// css ////////////////////
+        
+        // 6. 아가씨 : 중앙에서 스케일 0 , 평면회전시켜놓는다!
+        // (원래크기와 각도로 복귀 애니메이션 예정)
+        $("#pg6 .minfo").css({
+            transform:"translate(-50%,-50%) scale(0) rotate(1000deg)"
+        });//////// css ////////////////
+        
 
 
     }; /////// init함수 ////////////////////
@@ -111,6 +118,16 @@ $(function () { ///// jQB /////////////////
                 transition: "all 1s ease-out"
             }); ////// css ////////////////////
         }/////// else if //////////////////
+        // 6. 아가씨
+        else if(pno===5){
+            
+            // 중앙에서 원형회전하며 스케일 원래크기로 복귀!
+            $("#pg6 .minfo").css({
+                transform:"translate(-50%,-50%) scale(1) rotate(0deg)",
+                transition: "all 1s ease-out"
+            });//////// css ////////////////
+            
+        }////// else if ///////////////////
         
         
 
