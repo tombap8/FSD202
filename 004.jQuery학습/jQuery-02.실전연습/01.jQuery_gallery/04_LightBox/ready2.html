@@ -7,20 +7,8 @@
     <link rel="stylesheet" href="css/lightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.7.2.js"></script>
-    <script src="js/lightbox.min.js"></script>
     <script>
-        $(function() { /// jQB /////////////////////
-
-            // 라잇박스 플러그인 호출하기!
-            // 대상: .view
-            $(".view").lightBox({
-                overlayBgColor: "navy", // 배경색 변경
-                overlayOpacity: 0.8, // 배경투명도
-                containerResizeSpeed: 500 
-                // 이미지 리사이즈속도(1/1000초)
-            });///// lightBox ////////////////
-
-        }); ///////// jQB //////////////////////////
+        
     </script>
 
 
@@ -59,7 +47,7 @@
                         - title 속성은 이미지 설명
                     -->
 
-                    <p><a href="images/robot.jpg" title="첫번째 이미지양~!" class="view"><img src="images/img1.jpg" width="110" height="74" border="0" alt="" class="pic_right" /></a> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <p><a href="images/robot.jpg" data-title="첫번째 이미지양~!" class="view"><img src="images/img1.jpg" width="110" height="74" border="0" alt="" class="pic_right" /></a> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                 </div>
 
                 <div class="article">
@@ -95,4 +83,5 @@
         </div>
     </div>
 
+    <script src="js/lightbox.min.js"></script>
 </body></html>
