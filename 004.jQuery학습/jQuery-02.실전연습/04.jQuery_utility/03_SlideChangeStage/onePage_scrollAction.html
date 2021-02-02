@@ -225,10 +225,13 @@
             let scAct = $(".scAct");
             // 스크롤 대상 만큼 돌면서 셋팅!
             // each(function(idx,ele){구현코드})
-            // idx-요소순번, ele-요소자신
+            // idx-요소순번, ele-요소자신(this키워드와 동일)
             scAct.each(function(idx,ele){
                 
-                console.log("요소순번:"+idx);
+                // 각 요소의 위치셋팅
+                scpos[idx] = $(this).offset().top;
+                
+                console.log("위치값:"+scpos[idx]);
                 
             });/////// each /////////////////
             
@@ -330,7 +333,7 @@
         <img src="images/m2.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg3" class="page">
-        <img src="images/m3.jpg" alt="장면" class="pic">
+        <img src="images/m3.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg4" class="page">
         <img src="images/m4.jpg" alt="장면" class="pic">
