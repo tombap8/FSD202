@@ -34,6 +34,19 @@
     margin-left: 5px;
     margin-right: 18px;
 }
+/*회원가입박스*/
+#meminfo{
+    width: 700px;
+    height: 464px;
+    margin: 20px auto 80px;
+    /*마진 3개쓰면 위 양쪽 아래순*/
+    
+    border: 2px solid #737373;
+    border-radius: 10px;
+    padding: 30px 51px;
+    box-sizing: border-box;
+    /*마진,패딩포함박스*/
+}
 
 
 
