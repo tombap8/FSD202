@@ -47,6 +47,44 @@
     box-sizing: border-box;
     /*마진,패딩포함박스*/
 }
+/*리스트 ul*/
+#meminfo ul{
+    width: 100%;
+    height: 100%;
+    font-size: 1.25rem;/*20px*/
+    font-weight: bold;
+    color: #373737;
+}
+/*리스트 li*/
+#meminfo ul li{
+    width: 100%;
+    /*한줄에 하나씩!*/
+    height: 50px;
+    line-height: 50px;
+    outline: 1px solid red;
+}
+/*라벨공통*/
+#meminfo label{
+    display: inline-block;
+    /*크기도 적용되고 한줄오고~굿!*/
+    width: 200px;
+}
+/*입력박스 공통*/
+#meminfo input[type=text],
+#meminfo input[type=password]{
+    width: 340px;
+    height: 36px;
+    font-size: 1.124rem;/*18px*/
+    border: 1px solid #737373;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+/*라디오버튼*/
+#meminfo input[type=radio]{
+    width: 20px;
+    height: 20px;
+    vertical-align: -4px;
+}
 
 
 
