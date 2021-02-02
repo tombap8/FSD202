@@ -241,7 +241,7 @@
 
 
             // 범위를 위한 변수
-            let gap = $(window).height() / 2;
+            let gap = $(window).height() / 2 + 100;
             console.log("윈도우높이절반:" + gap);
 
             ////////////////////////////////////
@@ -256,21 +256,33 @@
 
                 // 페이지 액션 (등장시작값은 윈도우절반크기를뺌)
                 if (sct > scpos[seq] - gap &&
-                    sct < scpos[seq] &&
-                    exsts[seq] === 0) {
+                    sct < scpos[seq]) {
 
-                    exsts[seq] = 1; //실행잠금!
+                    /// 한번만 실행! ////
+                    if (exsts[seq] === 0) {
+                        
+                        exsts[seq] = 1; //실행잠금!
 
-                    console.log((seq + 1) + "번실행!");
+                        console.log((seq + 1) + "번실행!");
 
-                    // 대상요소 등장하기!
-                    scAct.eq(seq).css({
-                        opacity: 1,
-                        top: "50%"
-                    }); ////// css ///////
+                        // 대상요소 등장하기!
+                        scAct.eq(seq).css({
+                            opacity: 1,
+                            top: "50%"
+                        }); ////// css ///////
+                        
+                    } ////// 한번만 실행 if문 /////
+                    
+                    
+                    //// 메뉴 표시 클래스 변경하기 /////
+                    $(".gnb li").eq(seq).addClass("on")
+                        .siblings().removeClass("on");
 
 
                 } /////// if //////////////////
+
+
+
 
             }; /////// showit ///////////////
             ////////////////////////////////
