@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>One Page Scroll</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*화면기준*/
+            overflow: hidden;
+            /*스크롤바 없애기(스크롤안됨!)*/
+        }
+
+        /*공통셋팅*/
+        a {
+            text-decoration: none;
+            color: #fff;
+            text-shadow: 0 0 2px #777;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li {
+            float: left;
+        }
+
+        img {
+            border: none;
+            /*이미지 링크시 테두리없앰*/
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+
+        /*공통 class*/
+
+        /*페이지 공통 class*/
+        .page {
+            width: 100%;
+            height: 100%;
+            /*
+                width: 100vw;
+                height: 100vh;
+                보이는 화면 기준의 뷰포트단위를 쓰면
+                body의 height 100% 가 필요없다!
+                단, vw단위는 스크롤바 트랙까지 포함한
+                화면 전체를 기준하므로
+                데이스크 탑에서는 100%를 쓰는게 좋다!
+                (가로스크롤바가 생기기때문!)
+            */
+        }
+
+        /*IR(배경이미지 설명 숨기기)*/
+        .bld {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /*중앙박스*/
+        .ibx {
+            position: relative;
+            /*부모자격*/
+            width: 1920px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /*상단영역*/
+        .top {
+            position: fixed;
+            /*상단고정*/
+            width: 100%;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        #top {
+            height: 80px;
+            /*outline: 1px solid lime;*/
+        }
+
+        /*로고*/
+        #logo {
+            width: 250px;
+            height: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #logo img {
+            width: 100%;
+            margin-top: -24px;
+        }
+
+        /*GNB메뉴*/
+        .gnb {
+            position: absolute;
+            /*부모는? #top*/
+            top: 40px;
+            right: 2%;
+        }
+
+        .gnb li {
+            margin: 0 7px;
+        }
+
+        /*마우스오버시 a요소변경*/
+        /*동시에 선택된 메뉴 클래스 on*/
+        .gnb a:hover,
+        .gnb li.on a {
+            color: lime;
+            text-decoration: overline;
+        }
+
+        /*마우스오버시 li변경*/
+        /*동시에 선택된 메뉴 클래스 on*/
+        .gnb li:hover,
+        .gnb li.on {
+            transform: scale(1.1);
+        }
+
+
+
+
+        /*개별페이지 셋팅*/
+        #pg1 {
+            background: url(images/pic1.png) no-repeat top/cover;
+        }
+
+        #pg2 {
+            background: url(images/pic2.png) no-repeat top/cover;
+        }
+
+        #pg3 {
+            background: url(images/pic3.png) no-repeat top/cover;
+        }
+
+        #pg4 {
+            background: url(images/pic4.png) no-repeat top/cover;
+        }
+
+        #pg5 {
+            background: url(images/pic5.png) no-repeat top/cover;
+        }
+
+        #pg6 {
+            background: url(images/pic6.png) no-repeat top/cover;
+        }
+
+        #pg7 {
+            background: url(images/pic7.png) no-repeat top/cover;
+        }
+    </style>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){ /// jQB ///////////////////////
+            
+            ///////////////////////////////////////////
+            /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
+            // a요소에 href="#아이디명" 하면 바로이동은 가능
+            // 그러나 스크롤 애니메이션은 되지 않는다!!!
+            // 제이쿼리에서 이것을 해주자!
+            // 클릭 이벤트 대상: .gnb a
+            ///////////////////////////////////////////
+            $(".gnb a").click(function(e){
+                
+                e.preventDefault();//a이동막기!
+                
+                // 1. a요소의 href값 가져오기
+                // - 셋팅된 id값으로 위치이동할 것임!
+                let pid = $(this).attr("href");
+                console.log("아이디:"+pid);
+                
+                // 2. 이동할 아이디요소 위치의 top값 구하기
+                // - 실제로 스크롤 이동을 위한 값
+                let pgpos = $(pid).offset().top;
+                // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
+                // - top, left, width, height 등을 알 수 있음
+                console.log("위치값:"+pgpos);
+                
+                // 3. 스크롤 애니메이션으로 페이지이동하기
+                // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
+                // 스크롤 이동대상: html,body 
+                // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
+                $("html,body").stop().animate({
+                    scrollTop: pgpos + "px"
+                }, 1200,"easeInOutQuint");///// animate /////
+                // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
+                // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
+                
+                // 4. GNB메뉴의 a요소 클릭했을때 클릭된
+                // a요소의 li에 class를 "on"으로 넣으면
+                // 이미 셋팅된 CSS의 디자인이 적용되어
+                // 라임색 윗줄의 크기가 조금 커진 디자인이
+                // 적용되어 마우스 오버시와 동일 디자인이 유지된다
+                // 이것을 하는 이유는 현재 페이지가 무엇인지
+                // 표시하기 위함이다!
+                // this 나자신에서 위로 올라가 li를 선택함!
+                $(this).parent().addClass("on")
+                .siblings().removeClass("on");
+                
+                
+                
+            });///////// click //////////////
+            
+            
+            
+        });///////////// jQB ////////////////////////
+    </script>
+</head>
+
+<body>
+    <!--1. 상단영역-->
+    <div class="top">
+        <header id="top" class="ibx">
+            <!--로고-->
+            <h1 id="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="메가박스로고">
+                </a>
+            </h1>
+            <!--GNB메뉴-->
+            <!--
+               a 요소의 href값으로 "#아이디명" 을 사용하면
+               같은 페이지안의 해당 아이디 위치로 바로 이동한다!
+               (a태그의 기본 기능!!!)
+           -->
+            <nav class="gnb">
+                <ul>
+                    <li class="on">
+                        <a href="#pg1">아수라</a></li>
+                    <li><a href="#pg2">고산자</a></li>
+                    <li><a href="#pg3">인천상륙작전</a></li>
+                    <li><a href="#pg4">봉이김선달</a></li>
+                    <li><a href="#pg5">비밀은없다</a></li>
+                    <li><a href="#pg6">아가씨</a></li>
+                    <li><a href="#pg7">탐정홍길동</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!--2. 페이지 영역-->
+    <section id="pg1" class="page"></section>
+    <section id="pg2" class="page"></section>
+    <section id="pg3" class="page"></section>
+    <section id="pg4" class="page"></section>
+    <section id="pg5" class="page"></section>
+    <section id="pg6" class="page"></section>
+    <section id="pg7" class="page"></section>
+
+
+
+
+
+</body></html>
