@@ -239,6 +239,29 @@
             }); /////// each /////////////////
             /////////////////////////////////////////////////
             
+            let showit = function(stp,seq){
+                console.log("요기:"+stp+"/"+seq);
+                
+                 if(stp > scpos[seq]-400 &&
+                  stp < scpos[seq] &&
+                  exsts[seq]===0){
+                    
+                    exsts[seq] = 1;//실행잠금!
+                    
+                    console.log("1번실행!");
+                    
+                    // 대상요소 등장하기!
+                    scAct.eq(seq).css({
+                        opacity: 1,
+                        top:"50%"
+                    });////// css ///////
+                    
+                    
+                }/////// if //////////////////
+                
+            };
+            
+            
             ///// 스크롤 이벤트 함수 구현하기 /////////////
             /// 페이지 전체 스크롤은 window 객체로!
             
@@ -258,23 +281,10 @@
                 // if(scTop > 시작위치 && scTop < 끝위치 && 실행여부)
                 
                 // 1페이지 액션
-                if(scTop > scpos[0]-400 &&
-                  scTop < scpos[0] &&
-                  exsts[0]===0){
-                    
-                    exsts[0] = 1;//실행잠금!
-                    
-                    console.log("1번실행!");
-                    
-                    // 대상요소 등장하기!
-                    scAct.eq(0).css({
-                        opacity: 1,
-                        top:"50%"
-                    });////// css ///////
-                    
-                    
-                }/////// if //////////////////
-                
+               for(var i=0;i<scAct.length;i++){
+                   showit(scTop,i);
+                   console.log("여기");
+               };
                 
                 
             });//////// scroll //////////////////////////
