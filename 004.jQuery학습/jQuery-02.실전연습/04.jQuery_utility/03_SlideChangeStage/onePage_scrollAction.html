@@ -187,7 +187,12 @@
             border-radius: 10px;
         }
         
-        /**/
+        /*등장액션 클래스*/
+        .scAct{
+            opacity: 0;
+            top: 60%;
+            transition: all 1s ease-out;
+        }
         
         
     </style>
@@ -204,13 +209,29 @@
             4. 전체 스크롤일 경우 window객체를 선택하여 구현하고
             만일 별개의 박스에 스크롤바를 제어할 경우에는 그 요소를
             선택하여 구현한다
-            */
+            5. 등장액션을 위한 사전 css 클래스를 셋업한다!
+                (예컨데 투명하고 약간 아래쪽에 내려가 있다가 등장할때 다시 서서히 보이면서 원래 위치로 올라오는 셋팅!)
+           */ 
             
             /////// 스크롤 관련 변수 설정 /////
             // 1. 스크롤 등장 요소 위치값 설정
             let scpos = [];//배열변수
             // 2. 스크롤 등장 요소 실행여부
             let exsts = [];//배열변수
+            ////////////////////////////////
+            
+            // 위치값 셋팅하기 ////////
+            // 스크롤 대상 클래스: .scAct
+            let scAct = $(".scAct");
+            // 스크롤 대상 만큼 돌면서 셋팅!
+            // each(function(idx,ele){구현코드})
+            // idx-요소순번, ele-요소자신
+            scAct.each(function(idx,ele){
+                
+                console.log("요소순번:"+idx);
+                
+            });/////// each /////////////////
+            
             
             
             
@@ -303,10 +324,10 @@
 
     <!--2. 페이지 영역-->
     <section id="pg1" class="page">
-        <img src="images/m1.jpg" alt="장면" class="pic">
+        <img src="images/m1.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg2" class="page">
-        <img src="images/m2.jpg" alt="장면" class="pic">
+        <img src="images/m2.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg3" class="page">
         <img src="images/m3.jpg" alt="장면" class="pic">
