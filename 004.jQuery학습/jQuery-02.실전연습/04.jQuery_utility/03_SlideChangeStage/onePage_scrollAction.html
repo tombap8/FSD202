@@ -338,6 +338,9 @@
             $(".gnb a").click(function(e) {
 
                 e.preventDefault(); //a이동막기!
+                
+                // 스크롤 메뉴변경막기!(언제풀어줘? 이동후에!)
+                mchg = 0;
 
                 // 1. a요소의 href값 가져오기
                 // - 셋팅된 id값으로 위치이동할 것임!
@@ -357,7 +360,12 @@
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
                 $("html,body").stop().animate({
                     scrollTop: pgpos + "px"
-                }, 1200, "easeInOutQuint"); ///// animate /////
+                }, 1200, "easeInOutQuint",function(){//이동후
+                    
+                    // 스크롤 메뉴변경막기 해제
+                    mchg = 1;
+                    
+                }); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
 
