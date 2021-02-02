@@ -173,33 +173,32 @@
         #pg7 {
             background: url(images/pic7.png) no-repeat top/cover;
         }
-        
-        
+
+
         /*각 페이지 공통 등장이미지*/
-        .pic{
+        .pic {
             position: absolute;
             /*부모? .page*/
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-            width: 50%;/*이미지의 height는 자동*/
+            transform: translate(-50%, -50%);
+            width: 50%;
+            /*이미지의 height는 자동*/
             box-shadow: 0 0 20px #fff;
             border-radius: 10px;
         }
-        
+
         /*등장액션 클래스*/
-        .scAct{
+        .scAct {
             opacity: 0;
             top: 60%;
             transition: all 1s ease-out;
         }
-        
-        
     </style>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script>
-        $(function(){ /// jQB ///////////////////////
+        $(function() { /// jQB ///////////////////////
             /*
             [ 스크롤 이벤트 처리구역 설정하기 ]
             1. 스크롤 이벤트는 스크롤바가 움직일때 발생한다
@@ -211,35 +210,40 @@
             선택하여 구현한다
             5. 등장액션을 위한 사전 css 클래스를 셋업한다!
                 (예컨데 투명하고 약간 아래쪽에 내려가 있다가 등장할때 다시 서서히 보이면서 원래 위치로 올라오는 셋팅!)
-           */ 
-            
+           */
+
             /////// 스크롤 관련 변수 설정 /////
             // 1. 스크롤 등장 요소 위치값 설정
-            let scpos = [];//배열변수
+            let scpos = []; //배열변수
             // 2. 스크롤 등장 요소 실행여부
-            let exsts = [];//배열변수
+            let exsts = []; //배열변수(실행전:0,실행후:1)
             ////////////////////////////////
-            
-            // 위치값 셋팅하기 ////////
+
+            //////////////////////////////////////////////
+            ////////// [ 위치값 셋팅하기 ] /////////////////
             // 스크롤 대상 클래스: .scAct
             let scAct = $(".scAct");
             // 스크롤 대상 만큼 돌면서 셋팅!
             // each(function(idx,ele){구현코드})
             // idx-요소순번, ele-요소자신(this키워드와 동일)
-            scAct.each(function(idx,ele){
-                
-                // 각 요소의 위치셋팅
+            scAct.each(function(idx, ele) {
+
+                // 1.각 요소의 위치셋팅
                 scpos[idx] = $(this).offset().top;
+
+                // 2. 각 요소별 실행여부 셋팅(처음에 0으로 셋팅)
+                exsts[idx] = 0;
+
+                console.log("위치값:" + scpos[idx] + "/" + exsts[idx]);
                 
-                console.log("위치값:"+scpos[idx]);
-                
-            });/////// each /////////////////
-            
-            
-            
-            
-            
-            
+            }); /////// each /////////////////
+            /////////////////////////////////////////////////
+
+
+
+
+
+
             ///////////////////////////////////////////
             /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
             // a요소에 href="#아이디명" 하면 바로이동은 가능
@@ -247,32 +251,32 @@
             // 제이쿼리에서 이것을 해주자!
             // 클릭 이벤트 대상: .gnb a
             ///////////////////////////////////////////
-            $(".gnb a").click(function(e){
-                
-                e.preventDefault();//a이동막기!
-                
+            $(".gnb a").click(function(e) {
+
+                e.preventDefault(); //a이동막기!
+
                 // 1. a요소의 href값 가져오기
                 // - 셋팅된 id값으로 위치이동할 것임!
                 let pid = $(this).attr("href");
-                console.log("아이디:"+pid);
-                
+                console.log("아이디:" + pid);
+
                 // 2. 이동할 아이디요소 위치의 top값 구하기
                 // - 실제로 스크롤 이동을 위한 값
                 let pgpos = $(pid).offset().top;
                 // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
                 // - top, left, width, height 등을 알 수 있음
-                console.log("위치값:"+pgpos);
-                
+                console.log("위치값:" + pgpos);
+
                 // 3. 스크롤 애니메이션으로 페이지이동하기
                 // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
                 // 스크롤 이동대상: html,body 
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
                 $("html,body").stop().animate({
                     scrollTop: pgpos + "px"
-                }, 1200,"easeInOutQuint");///// animate /////
+                }, 1200, "easeInOutQuint"); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
-                
+
                 // 4. GNB메뉴의 a요소 클릭했을때 클릭된
                 // a요소의 li에 class를 "on"으로 넣으면
                 // 이미 셋팅된 CSS의 디자인이 적용되어
@@ -282,15 +286,15 @@
                 // 표시하기 위함이다!
                 // this 나자신에서 위로 올라가 li를 선택함!
                 $(this).parent().addClass("on")
-                .siblings().removeClass("on");
-                
-                
-                
-            });///////// click //////////////
-            
-            
-            
-        });///////////// jQB ////////////////////////
+                    .siblings().removeClass("on");
+
+
+
+            }); ///////// click //////////////
+
+
+
+        }); ///////////// jQB ////////////////////////
     </script>
 </head>
 
@@ -313,7 +317,8 @@
             <nav class="gnb">
                 <ul>
                     <li class="on">
-                        <a href="#pg1">아수라</a></li>
+                        <a href="#pg1">아수라</a>
+                    </li>
                     <li><a href="#pg2">고산자</a></li>
                     <li><a href="#pg3">인천상륙작전</a></li>
                     <li><a href="#pg4">봉이김선달</a></li>
@@ -336,16 +341,16 @@
         <img src="images/m3.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg4" class="page">
-        <img src="images/m4.jpg" alt="장면" class="pic">
+        <img src="images/m4.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg5" class="page">
-        <img src="images/m5.jpg" alt="장면" class="pic">
+        <img src="images/m5.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg6" class="page">
-        <img src="images/m6.jpg" alt="장면" class="pic">
+        <img src="images/m6.jpg" alt="장면" class="pic scAct">
     </section>
     <section id="pg7" class="page">
-        <img src="images/m7.jpg" alt="장면" class="pic">
+        <img src="images/m7.jpg" alt="장면" class="pic scAct">
     </section>
 
 
