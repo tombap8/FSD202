@@ -71,6 +71,68 @@
             background: url(images/Lotte/m05_bg.jpg) no-repeat center/cover;
         }
         
+        /*중앙타이틀 공통*/
+        .tit{
+            /*flex box설정*/
+            display: flex;
+            
+            /*일반설정*/
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            /*가로중앙이동*/
+            width: 500px;
+            height: 100px;
+            border: 5px double #fff;
+        }
+        /*타이틀 하위 li*/
+        .tit>li{
+            width: 50px;
+            height: 50px;
+            /*flex-basis: 50px; 
+            flex-basis는 width설정과 같다!*/
+            border: 3px solid #fff;
+            border-radius: 50%;
+            background-color: #f00;
+            font: bold 14px/50px Verdana;
+            color: #fff;
+            text-align: center;
+            /*
+            flex하위 요소는 크기 설정이
+            없을 경우 width는 내용만큼
+            height는 부모높이 채우기함(100%)
+            */
+        }
+        
+        /*타이틀1*/
+        .t1{
+            /*flex옵션*/
+            justify-content: space-around;
+            /*
+            justify-content 속성
+            - 수평정렬속성
+            1) flex-start : 왼쪽끝(기본값)
+            2) flex-end : 오른쪽끝
+            3) center : 중앙
+            4) space-around : 아이템요소 양쪽에 같은 같격을 줌(마진과 유사)
+            5) space-between : 아이템요소 사이간격을 일정하게
+            6) space-evenly : 아이템요소 양쪽과 사이가 모두 일정간격유지
+            (ie미지원 - but 엣지 최신버전은 지원함)
+            */  
+            
+            align-items: center;
+            
+            
+            
+        }
+        
+        
+        /*타이틀2*/
+        .t2{
+            top: 20%;
+        }
+        
         
         
     </style>
