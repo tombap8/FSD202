@@ -135,3 +135,25 @@ select:focus {
     margin-top: 5px;
     margin-right: 40px;
 }
+
+/*메시지출력*/
+.msg{
+    display: block;
+    width: 100px;
+    height: 15px;
+    line-height: 12px;
+    font-size: 9px;
+    color: #f00;
+    white-space: nowrap;
+    /*줄바꿈방지*/
+    margin-top: -12px;
+}
+
+
+
+
+
+
+
+
+
