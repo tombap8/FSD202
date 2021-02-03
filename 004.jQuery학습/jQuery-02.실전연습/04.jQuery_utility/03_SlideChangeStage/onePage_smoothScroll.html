@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
-    <title>One Page Scroll Action</title>
+    <title>One Page Scroll Action - Smooth Scroll</title>
     <style>
         html,
         body {
@@ -195,17 +194,17 @@
             top: 60%;
             transition: all 1s ease-out;
         }
-
     </style>
+    <script src="js/smoothScroll20.js"></script>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/smoothScroll20.js"></script>
     <script>
+        
+        /// 부드러운 스크롤 호출!
+        startSS();
+        
+        
         $(function() { /// jQB ///////////////////////
-            // 부드러운 스크롤 함수 호출!
-            startSS();
-
-
             /*
             [ 스크롤 이벤트 처리구역 설정하기 ]
             1. 스크롤 이벤트는 스크롤바가 움직일때 발생한다
@@ -285,11 +284,11 @@
 
 
                     //// 메뉴 표시 클래스 변경하기 /////
-                    if (mchg) { // 허용상태일때만 변경!
-
+                    if (mchg) {// 허용상태일때만 변경!
+                        
                         $(".gnb li").eq(seq).addClass("on")
                             .siblings().removeClass("on");
-
+                        
                     } ////// if /////////////////////
 
 
@@ -345,7 +344,7 @@
             $(".gnb a").click(function(e) {
 
                 e.preventDefault(); //a이동막기!
-
+                
                 // 스크롤 메뉴변경막기!(언제풀어줘? 이동후에!)
                 mchg = 0;
 
@@ -367,13 +366,11 @@
                 // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
                 $("html,body").stop().animate({
                     scrollTop: pgpos + "px"
-                }, 1200, "easeInOutQuint", function() { //이동후
-
+                }, 1200, "easeInOutQuint",function(){//이동후
+                    
                     // 스크롤 메뉴변경막기 해제
                     mchg = 1;
                     
-                    pos = pgpos;
-
                 }); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
                 // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
@@ -396,7 +393,6 @@
 
 
         }); ///////////// jQB ////////////////////////
-
     </script>
 </head>
 
@@ -459,6 +455,4 @@
 
 
 
-</body>
-
-</html>
+</body></html>
