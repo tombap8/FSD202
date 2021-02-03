@@ -12,6 +12,65 @@
         body{
             background-color: #8CC63E;
         }
+        /*공통class*/
+        .bld{/*IR(배경이미지 설명)-웹접근성=평등의원칙*/
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        /*
+            웹폰트체
+            font-family: 'Gloria Hallelujah', cursive;
+            font-family: 'ZCOOL KuaiLe', cursive;
+        */
+        /*1.타이틀*/
+        .mtit{
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            /*가로중앙이동*/
+            font-size: 52px;
+            font-family: 'Gloria Hallelujah', cursive;
+            color: #fff;
+            z-index: 1;/*맨위*/
+        }
+        /*2.메뉴*/
+        .gnb{
+            position: absolute;
+            top: 10%;
+            left: 50px;
+            z-index: 1;
+        }
+        .gnb ul{
+            list-style: none;
+        }
+        /*a요소 디자인*/
+        .gnb a{
+            color: #fff;
+            text-decoration: none;
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-size: 32px;
+            line-height: 3;
+            /*단위없는 숫자는 배수(기준은 글자크기)*/
+        }
+        /*마우스 오버시*/
+        .gnb a:hover{
+            color: #f00;
+            text-decoration: line-through;
+        }
+        
+        /*3.TV셋*/
+        .tvset{
+            position: relative;
+            /*부모자격*/
+            width: 1280px;
+            height: 720px;
+            background: url(images/tvset.png) no-repeat;
+            margin: 0 auto;
+        }
+        
     
     </style>
 </head>
@@ -29,7 +88,9 @@
     </nav>
     <!--3. TV박스-->
     <section class="tvset">
-        
+        <div class="screen">
+            
+        </div>
     </section>
    
     
