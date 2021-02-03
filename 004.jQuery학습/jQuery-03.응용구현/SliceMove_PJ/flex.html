@@ -36,6 +36,14 @@
             - 자식요소의 flex:1 설정하면 등분할 된다!
             */
             
+            flex-direction: row;
+            /*
+            flex-direction 속성은 진행방향과 순서를 설정함
+            1) row: 좌->우(기본값)
+            2) row-reverse: 우->좌
+            3) column: 위->아래
+            4) column-reverse: 아래->위
+            */
             
             width: 100%;
             height: 100%;
@@ -43,8 +51,26 @@
         /*파티션 li공통*/
         #wrap>ul>li{
             flex: 1;
-            outline: 1px dotted red;
+            /*outline: 1px dotted red;*/
         }
+        
+        /*각 파티션 li*/
+        #wrap>ul>li:nth-child(1){
+            background: url(images/Lotte/m01_bg.jpg) no-repeat center/cover;
+        }
+        #wrap>ul>li:nth-child(2){
+            background: url(images/Lotte/m02_bg.jpg) no-repeat center/cover;
+        }
+        #wrap>ul>li:nth-child(3){
+            background: url(images/Lotte/m03_bg.jpg) no-repeat center/cover;
+        }
+        #wrap>ul>li:nth-child(4){
+            background: url(images/Lotte/m04_bg.jpg) no-repeat center/cover;
+        }
+        #wrap>ul>li:nth-child(5){
+            background: url(images/Lotte/m05_bg.jpg) no-repeat center/cover;
+        }
+        
         
         
     </style>
