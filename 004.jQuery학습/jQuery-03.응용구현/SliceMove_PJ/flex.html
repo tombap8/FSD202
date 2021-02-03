@@ -196,7 +196,8 @@
             /*수평간격일정*/
             justify-content: space-around;
             /*여러줄일때 수직간격은???????*/
-            align-content: center;
+            /*aling-item은 한줄일때임!!!!*/
+            align-content: space-between;
             /*
             align-content 속성
             - 수직정렬속성(여러줄일때!!!)
@@ -224,6 +225,38 @@
                 박스가 아이템 크기보다 작아지면 자동으로 가로크기를
                 줄여준다!
             */
+        }
+        .t5 li{
+            margin: 0 3%;
+            /*마진을 줘서 한줄에 오는 개수를 
+            인위적으로 조정할 수 있다!*/
+        }
+        
+        /*flex-wrap으로 여러줄 올때 특정 라인을
+        아래로 내리는 방법*/
+        /*
+            아이템 요소에 %설정을 하면 되지만
+            특정크기를 가진 아이템 요소일 경우엔
+            불가능하다!
+        
+            [특정요소로 부터 줄바꿈하기 응용]
+            - 마진으로 조정하지 않고 적용하는법
+            - 줄바꿈할 요소 앞 요소를 width를
+                100%로 적용
+                flex-basis: 100%
+            - 줄바꿈요소는 디자인상 보이지 않게
+                처리함(경우에 따라 코딩다름)
+        */
+        .t6{
+            top: 87%;
+            height: auto;
+            flex-wrap: wrap;
+            justify-content: space-between
+        }
+        .t6 li.brk{
+            flex-basis: 100%;
+            height: 0;
+            border: none;
         }
         
         
@@ -293,6 +326,21 @@
             <li>R</li>
             <li>L</li>
             <li>D</li>
+        </ol>
+        
+        <!--타이틀박스6-->
+        <ol class="tit t6">            
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li class="brk"></li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li> 
         </ol>
         
         
