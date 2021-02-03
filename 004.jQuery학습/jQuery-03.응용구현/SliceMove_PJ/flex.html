@@ -176,6 +176,54 @@
         /*.t4의 마지막 li를 맨 아래로 보내기*/
         .t4 li:last-child{
             margin-top: auto;
+            /*참고로 세로 중앙보내기는
+            margin: auto 0; 이다!*/
+        }
+        
+        /*flex 여러줄 설정하기*/
+        .t5{
+            top: 50%;
+            height: 300px;
+            
+            /*flex 랩핑!!!!!*/
+            flex-wrap: wrap;
+            /*
+                flex-wrap 속성
+                - 박스보다 아이템요소가 많을때
+                아랫줄로 줄바꿈하려면 wrap로 설정한다!
+                기본값은 nowrap(안쌈)
+            */
+            /*수평간격일정*/
+            justify-content: space-around;
+            /*여러줄일때 수직간격은???????*/
+            align-content: center;
+            /*
+            align-content 속성
+            - 수직정렬속성(여러줄일때!!!)
+            1) flex-start : 맨위
+            2) flex-end : 맨아래
+            3) center : 중앙
+            4) space-around : 아이템요소 상하에 같은 같격을 줌(마진과 유사)-기본값
+            5) space-between : 아이템요소 상하사이간격을 일정하게
+            6) space-evenly : 아이템요소 상하 사이가 모두 일정간격유지(ie미지원 - but 엣지 최신버전은 지원함)
+            
+            */
+            
+            
+            
+            
+            /*
+                flex 설정된 자식 아이템요소는
+                사이즈를 지정했더라도 부모박스 사이즈가 작아지면
+                자동 등분할로 크기를 줄이며 한줄에 온다!
+                이유는?
+                자식요소의 flex속성을 설정하지 않으면
+                flex: initial; 기본설정인데
+                flex: 0 1 auto; 설정과 같다
+                즉, 두번째 설정숫자는 flex-shrink:1 이므로
+                박스가 아이템 크기보다 작아지면 자동으로 가로크기를
+                줄여준다!
+            */
         }
         
         
@@ -221,6 +269,30 @@
         <ol class="tit t4">
             <li>W</li>
             <li>O</li>
+        </ol>
+        
+        <!--타이틀박스5-->
+        <ol class="tit t5">            
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>           
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
         </ol>
         
         
