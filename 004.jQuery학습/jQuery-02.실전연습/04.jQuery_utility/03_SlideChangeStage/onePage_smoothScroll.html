@@ -200,7 +200,7 @@
     <script src="js/jquery-ui.min.js"></script>
     <script>
         
-        /// 부드러운 스크롤 호출!
+        /// 부드러운 스크롤 호출!(제이쿼리 아님!)
         startSS();
         
         
@@ -359,6 +359,9 @@
                 // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
                 // - top, left, width, height 등을 알 수 있음
                 console.log("위치값:" + pgpos);
+                
+                // 부드러운 스크롤의 스크롤 위치값에 일치해야함!
+                pos = pgpos;//이동위치를 부드러운 스크롤에 알린다!
 
                 // 3. 스크롤 애니메이션으로 페이지이동하기
                 // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
