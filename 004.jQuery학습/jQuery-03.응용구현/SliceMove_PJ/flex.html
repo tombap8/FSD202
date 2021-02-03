@@ -154,6 +154,30 @@
             line-height: 30px;
         }
         
+        /*타이틀박스3*/
+        .t3{
+            top: 35%;
+            align-items: center;
+        }
+        /*마지막 li오른쪽 끝으로 보내기!*/
+        .t3>li:last-child{
+            margin-left: auto;
+        }
+        
+        .t4{
+            /*flex옵션*/
+            flex-direction: column;
+            align-items: center;
+            
+            left: 10%;
+            width: 150px;
+            height: 600px;
+        }
+        /*.t4의 마지막 li를 맨 아래로 보내기*/
+        .t4 li:last-child{
+            margin-top: auto;
+        }
+        
         
         
     </style>
@@ -186,6 +210,17 @@
             <li>R</li>
             <li>L</li>
             <li>D</li>
+        </ol>
+        
+        <!--타이틀박스3-->
+        <ol class="tit t3">
+            <li>W</li>
+            <li>O</li>
+        </ol>
+        <!--타이틀박스4-->
+        <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
         </ol>
         
         
