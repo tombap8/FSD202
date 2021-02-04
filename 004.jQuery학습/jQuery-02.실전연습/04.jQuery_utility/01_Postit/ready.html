@@ -32,10 +32,24 @@
         // dragstop 이벤트: 드래그가 끝나면 발생하는 이벤트
         // on(이벤트명,함수) 메서드 사용!
         $(".draggable").on("dragstop",function(){
-            console.log("드래그끝!");
+            //console.log("드래그끝!");
             // 배경이미지변경 클래스제거하기(.invert)
             $(this).removeClass("invert");
         });////////// dragstop ///////////////
+        
+        
+        /////// 드롭할때 발생하는 이벤트 처리 /////////
+        /// droppable() 메서드 : 드롭되는 요소처리 ///
+        /// 이벤트 대상: #dropshow
+        $("#dropshow").droppable({
+            
+            drop: function(event, ui){
+                // event - 이벤트전달값, ui-드롭관련객체
+                console.log("나,빠졌다~!");
+                
+            }///// drop 이벤트함수 /////////
+            
+        });////// droppable ///////////////////////
         
         
         
