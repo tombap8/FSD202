@@ -192,7 +192,17 @@
             width: 118px;
             height: 118px;
             background-image: url(images/spAni02.png);
-            outline: 2px solid blue;
+            
+            /*애니메이션 호출*/
+            animation: spani3X 1s steps(6) infinite,
+                spani3Y 3s steps(3) infinite;
+            
+            /*
+                x축이동 : steps(장면수)
+                y축이동 : steps(줄수)
+            */
+            
+            /*outline: 2px solid blue;*/
         }
         
         /*
@@ -223,6 +233,31 @@
             to{
                 background-position-y: -355px;
                 /*배경이미지의 height크기를 써준다!(방향은 마이너스)*/
+            }
+        }/*키프레임*/
+        
+        /*웃는여자*/
+        .spani4{
+            position: absolute;
+            top: 10%;
+            right: 20px;
+            width: 256px;
+            height: 407px;
+            background-image: url(images/girl_frames.png);
+            border: 20px ridge #a85f15;
+        }
+        
+        /*웃는여자 X축 키프레임*/
+        @keyframes spani4X{
+            to{
+                background-position-x: -1280px;
+            }
+        }/*키프레임*/
+        
+        /*웃는여자 Y축 키프레임*/
+        @keyframes spani4Y{
+            to{
+                background-position-y: -1222px;
             }
         }/*키프레임*/
         
@@ -260,6 +295,12 @@
             </div>
         </div>
     </section>
+    
+    <!--추가애니-->
+    <div class="spani4">
+        <span class="bld">웃는여자</span>
+    </div>
+    
 
 
 </body></html>
