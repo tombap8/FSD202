@@ -14,18 +14,47 @@
             height: 160px;
             padding: 10px 0px 0px 20px;
             background: url(post.png) no-repeat;
+            font-size: 14px;
+        }
+        div.draggable img{
+            width: 130px;
+            height: 80px;
         }
 
         div.invert {
             background: url(post2.png) no-repeat;
         }
+        
+        /*드롭박스*/
+        #dropshow{
+            width: 500px;
+            height: 400px;
+            text-align: center;
+            background: url(addimg/effect2.jpg) no-repeat center/cover;
+            font: bold 36px/400px "맑은 고딕", "굴림";
+            color: #f00;
+            text-shadow: 1px 0 #fff, -1px 0 #fff, 
+                0 1px #fff, 0 -1px #fff;
+            /*글자그림자를 이용한 글자테두리*/
+            margin: 50px auto;
+        }
+        
+        /*드래그 요소 박스*/
+        .dbox{
+            width: 720px;
+            height: 170px;
+            margin: 0 auto;
+            border: 2px dashed blue;
+        }
+        
+        
     </style>
 
 </head>
 
 <body>
     <!--드롭할 박스-->
-    <div id="dropshow"></div>
+    <div id="dropshow">여기에 드롭하세요~~!</div>
     
     <!--드래그할 포스트잍 박스들-->
     <div class="dbox">
