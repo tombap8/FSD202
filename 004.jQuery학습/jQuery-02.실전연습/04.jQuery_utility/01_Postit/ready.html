@@ -102,7 +102,32 @@
                     font:"bold 48px Verdana",
                     color:"#fff",
                     textShadow:"0 0 5px #777"
-                })
+                }) /////////// css ////////////
+                .click(function(){
+                    
+                    // #mbox닫기
+                    // slideUp으로 display:none이돼도
+                    // 유튜브 동영상이 계속 play되므로 지워야함!
+                    $("#mbox").slideUp(1000,function(){
+                        
+                        /// 닫은 후 액션들 ///
+                        
+                        // 1. 자기자신 없애기
+                        $(this).remove();
+                        
+                        // 2. 드롭된요소 다시 보이기
+                        // 동시에 자기위치로 돌아가기
+                        // relative요소이므로 top:0, left:0임!
+                        ui.draggable.show()
+                        .css({
+                            top:"0",
+                            left:"0"
+                        });//////// css //////
+                        
+                        
+                    });////// slideUp 함수 /////////
+                    
+                });///////// click //////////////
                 
                 
                 
