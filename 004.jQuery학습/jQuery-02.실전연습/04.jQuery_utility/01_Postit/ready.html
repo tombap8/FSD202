@@ -45,7 +45,28 @@
             
             drop: function(event, ui){
                 // event - 이벤트전달값, ui-드롭관련객체
-                console.log("나,빠졌다~!");
+                //console.log("나,빠졌다~!");
+                
+                // 1. 드롭된 요소의 이미지 src를 읽어옴
+                // 드롭된 요소 -> ui.draggable
+                let isrc = ui.draggable
+                .find("img").attr("src");
+                //console.log("이미지경로:"+isrc);
+                
+                //2. 드롭영역의 배경이미지 변경하기
+                // $(this) === $("#dropshow")
+                $(this).css({
+                    backgroundImage:"url("+isrc+")"
+                });//// css /////////////////
+                
+                //3. 드롭된 요소의 자식 p태그의 글자 읽어오기
+                let dtxt = ui.draggable.find("p").text();
+                //console.log("글자:"+dtxt);
+                
+                //4. 드롭영역에 글자넣기
+                $(this).text(dtxt+" 당첨~!!!");
+                
+                
                 
             }///// drop 이벤트함수 /////////
             
