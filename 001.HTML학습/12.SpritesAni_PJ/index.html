@@ -157,6 +157,35 @@
         - x축 이동일 경우 x축 포지션값만 변경하고
         - y축 이동일 경우 y축 포지션값만 변경한다!
         */
+        
+        /*3-2.손흔드는 꼬마*/
+        .spani2{
+            position: absolute;
+            /*부모? .screen*/
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 72px;
+            background-image: url(images/spAni01.png);
+            
+            /*애니메이션:이름 시간 steps(n) infinite*/
+            animation: spani2 1s steps(10) infinite;
+            
+            /*outline: 2px solid blue;*/
+        }
+        /*꼬마 키프레임*/
+        @keyframes spani2{
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -500px 0;
+                /*중요! x축이동의 크기는 이미지 가로크기임!*/
+            }
+        }/*키프레임/
+        
+        
+        
     </style>
 </head>
 
