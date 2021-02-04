@@ -53,18 +53,26 @@
                 .find("img").attr("src");
                 //console.log("이미지경로:"+isrc);
                 
-                //2. 드롭영역의 배경이미지 변경하기
+                // 2. 드롭영역의 배경이미지 변경하기
                 // $(this) === $("#dropshow")
                 $(this).css({
                     backgroundImage:"url("+isrc+")"
                 });//// css /////////////////
                 
-                //3. 드롭된 요소의 자식 p태그의 글자 읽어오기
+                // 3. 드롭된 요소의 자식 p태그의 글자 읽어오기
                 let dtxt = ui.draggable.find("p").text();
                 //console.log("글자:"+dtxt);
                 
-                //4. 드롭영역에 글자넣기
+                // 4. 드롭영역에 글자넣기
                 $(this).text(dtxt+" 당첨~!!!");
+                
+                // 5. 드롭된 요소 사라지게 하기
+                ui.draggable.hide();
+                
+                // 6. 유튜브 동영상 박스 넣기
+                $("body").append(
+                    '<div id="mbox"><a href="#">×</a></div>'
+                );
                 
                 
                 
