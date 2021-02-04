@@ -119,8 +119,7 @@
             background-size: auto 176px;
             
             /*애니메이션:이시이지반방마*/
-            animation: spani1 10s;
-            
+            animation: spani1 1s steps(8) infinite;
             
             outline: 2px solid red;
         }
@@ -130,12 +129,14 @@
                 background-position: 0 0;
             }
             to{
-                background-position: -698px 0;
+                background-position: -797px 0;
+                /*중요!!! 이동값에 전체이미지 길이값을 쓴다!!!*/
             }
         }/*키프레임*/
         /*
         [ 스프라이츠를 이용한 장면 넘기기 애니를 하려면? ]
         1. 배경이미지의 전체 길이를 알아야 한다!
+        -> 왜? 이동셋팅시에 가로 이동일 경우 전체 길이값을 써야함!
         
         전체길이 / 장면개수 = 하나당 이동길이
         비례식으로....
