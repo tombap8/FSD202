@@ -109,6 +109,52 @@
             }
         }/*키프레임*/
         
+        
+        /*3-1.걷는소년존*/
+        .spani1{
+            width: 100px;
+            height: 176px;
+            margin: 23px auto;
+            background-image: url(images/spAni03.png);
+            background-size: auto 176px;
+            
+            /*애니메이션:이시이지반방마*/
+            animation: spani1 10s;
+            
+            
+            outline: 2px solid red;
+        }
+        /*걷는소년존 키프레임*/
+        @keyframes spani1{
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -698px 0;
+            }
+        }/*키프레임*/
+        /*
+        [ 스프라이츠를 이용한 장면 넘기기 애니를 하려면? ]
+        1. 배경이미지의 전체 길이를 알아야 한다!
+        
+        전체길이 / 장면개수 = 하나당 이동길이
+        비례식으로....
+        
+        가로 : 세로 = 1472 : 325 = x : 176
+        x = 1472 * 176 / 325
+        x = 797.14
+        
+        전체 8개의 장면이므로 한장면당 약 100px(99.625px)로 정해진다~!
+        
+        [ 호출시 스프라이츠 애니 장면별 찍는 steps를 정함! ]
+        - 장면을 찍을때는 이징(가속도)을 불필요!!!
+        
+        animation: 이름 시간 steps(장면개수) infinite;
+        
+        [ 주의사항 ]  
+        - x축 이동일 경우 x축 포지션값만 변경하고
+        - y축 이동일 경우 y축 포지션값만 변경한다!
+        */
     </style>
 </head>
 
@@ -127,14 +173,12 @@
     <!--3. TV박스-->
     <section class="tvset">
         <div class="screen">
-            <!--1.걷는소년-->
+            <!--3-1.걷는소년-->
             <div class="spani1">
                 <span class="bld">걷는소년존</span>
             </div>
         </div>
     </section>
-
-
 
 
 </body></html>
