@@ -4,8 +4,28 @@
     <meta charset="utf-8">
 
     <title>drag and drop 기능</title>
-    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+    $(function(){ /// jQB ////////////////////////
+        
+        //// 드래그 기능 적용하기 ////////
+        //jQuery UI를 jQuery 라이브러리 아래에 불러온다!
+        //드래그 & 드롭 기능은 jQuery UI에 포함된 기능임
+        //사용법: $(선택자).draggable();
+        $(".draggable").draggable({
+            cursor: "move", // 커서모양을 "이동중"표시로 변경
+            stack: ".draggable", //드래그 대상 상위처리(선택요소명)
+            opacity: 0.7 // 이동 중 투명도 설정
+        });// draggable //////////////
+        
+        
+    });////////// jQB ////////////////////////////
+    
+    
+    
+    
+    </script>
 
     <style>
         div.draggable {
