@@ -1,58 +1,57 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>drag and drop 기능</title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="jquery-ui.min.js"></script>
+    <title>drag and drop 기능</title>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
 
-<style>
+    <style>
+        div.draggable {
+            float: left;
+            width: 160px;
+            height: 160px;
+            padding: 10px 0px 0px 20px;
+            background: url(post.png) no-repeat;
+        }
 
-div.draggable {
-	float:left;
-	width: 160px;
-	height: 160px;
-	padding:10px 0px 0px 20px;
-	background:url(post.png) no-repeat;
-}
-
-div.invert {  background:url(post2.png) no-repeat;}
-
-
-</style>
+        div.invert {
+            background: url(post2.png) no-repeat;
+        }
+    </style>
 
 </head>
 
 <body>
+    <!--드롭할 박스-->
+    <div id="dropshow"></div>
+    
+    <!--드래그할 포스트잍 박스들-->
+    <div class="dbox">
+        <div class="draggable">
+            <p>쇼핑몰 자유이용권</p>
+            <img src="addimg/gm.jpg" alt="쥐마켓">
+        </div>
+        <div class="draggable">
+            <p>롯떼월들 자유이용권</p>
+            <img src="addimg/lottee.jpg" alt="롯떼월드">
+        </div>
+        <div class="draggable">
+            <p>큐챠 자유이용권</p>
+            <img src="addimg/coocha.jpg" alt="큐챠">
+        </div>
+        <div class="draggable">
+            <p>해외여행 자유이용권</p>
+            <img src="addimg/effect1.jpg" alt="허나투어">
+        </div>
+        
+        
+    </div>
 
 
 
-
-<div class="draggable">
-	<p>title</p>
-</div>
-
-<div  class="draggable">
-	<p>Lorem ipsum dolor <br /> sit amet, consecteturlit. Aenean</p>    
-</div>
-
-<div  class="draggable">
-	<p>Drag me around</p>
-</div>
-
-<div id ="gg" class="draggable">
-	<p>Drag me around</p>
-	<img src="img/effect1.jpg" width="130" height="80" />
-</div>
-
-<script>
-
-
- 
-</script>
-</body>
-</html>
+</body></html>
 
 
 
