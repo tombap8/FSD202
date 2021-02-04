@@ -28,6 +28,17 @@
             $(this).addClass("invert");
         });///////// dragstart ////////////////////
         
+        // 2. 드래그가 끝나면 배경이미지 class 제거하기
+        // dragstop 이벤트: 드래그가 끝나면 발생하는 이벤트
+        // on(이벤트명,함수) 메서드 사용!
+        $(".draggable").on("dragstop",function(){
+            console.log("드래그끝!");
+            // 배경이미지변경 클래스제거하기(.invert)
+            $(this).removeClass("invert");
+        });////////// dragstop ///////////////
+        
+        
+        
         
     });////////// jQB ////////////////////////////
     
