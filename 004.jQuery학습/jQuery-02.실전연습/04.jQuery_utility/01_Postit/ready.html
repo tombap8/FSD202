@@ -19,6 +19,15 @@
             opacity: 0.7 // 이동 중 투명도 설정
         });// draggable //////////////
         
+        // 1. 드래그가 시작되면 배경이미지 class로 변경하기
+        // dragstart 이벤트: 드래그가 시작되면 발생하는 이벤트
+        // on(이벤트명,함수) 메서드 사용!
+        $(".draggable").on("dragstart",function(){
+            //console.log("드래그시작!");
+            // 배경이미지변경 클래스넣기(.invert)
+            $(this).addClass("invert");
+        });///////// dragstart ////////////////////
+        
         
     });////////// jQB ////////////////////////////
     
