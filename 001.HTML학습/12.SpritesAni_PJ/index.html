@@ -112,6 +112,8 @@
         
         /*3-1.걷는소년존*/
         .spani1{
+            position: relative;
+            /*마우스 오버시 z-index 적용위해 relative줌!*/
             width: 100px;
             height: 176px;
             margin: 23px auto;
@@ -276,8 +278,56 @@
             transform: scale(3);
             animation-play-state: paused;
             /*애니메이션 멈추기(paused) / 애니메이션 지속(running)*/
+            z-index: 1;
+        }
+        /*웃는여자용*/
+        .big2:hover{
+            transform: scale(.7);
         }
         
+        
+        /*흐르는 자막*/
+        .fcap{
+            position: absolute;
+            /*부모? .screen*/
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
+            /*outline: 2px solid red;*/
+        }
+        /*움직일박스*/
+        .fcap ol{
+            position: relative;
+            left: 0;/*이동할 속성*/
+            
+            /*플렉스 셋팅!*/
+            display: flex;
+            justify-content: space-around;
+            
+            width: 200%;
+            font: bold 14px/20px Verdana;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            
+            /*애니메이션*/
+            animation: fcap 3s linear infinite;
+            
+            /*outline: 2px dotted blue;*/
+            /*기본리셋*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        /*흐르는 글자 키프레임*/
+        @keyframes fcap{
+            to{
+                left: -100%;
+            }
+        }/*키프레임*/
         
     </style>
 </head>
@@ -309,11 +359,26 @@
             <div class="spani3 big">
                 <span class="bld">몬스터</span>
             </div>
+            
+            <!--3-4.흐르는 자막-->
+            <div class="fcap">
+                <ol>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                    <li>John's TV</li>
+                </ol>
+            </div>
+            
         </div>
     </section>
     
     <!--추가애니-->
-    <div class="spani4">
+    <div class="spani4 big big2">
         <span class="bld">웃는여자</span>
     </div>
     
