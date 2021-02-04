@@ -268,6 +268,16 @@
         }/*키프레임*/
         
         
+        /*확대애니메이션 class*/
+        .big{
+            transition: .8s;
+        }
+        .big:hover{
+            transform: scale(3);
+            animation-play-state: paused;
+            /*애니메이션 멈추기(paused) / 애니메이션 지속(running)*/
+        }
+        
         
     </style>
 </head>
@@ -288,15 +298,15 @@
     <section class="tvset">
         <div class="screen">
             <!--3-1.걷는소년-->
-            <div class="spani1">
+            <div class="spani1 big">
                 <span class="bld">걷는소년존</span>
             </div>
             <!--3-2.꼬마-->
-            <div class="spani2">
+            <div class="spani2 big">
                 <span class="bld">손흔드는 꼬마</span>
             </div>
             <!--3-3.몬스터-->
-            <div class="spani3">
+            <div class="spani3 big">
                 <span class="bld">몬스터</span>
             </div>
         </div>
