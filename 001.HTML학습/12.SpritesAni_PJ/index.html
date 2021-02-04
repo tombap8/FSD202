@@ -121,7 +121,7 @@
             /*애니메이션:이시이지반방마*/
             animation: spani1 1s steps(8) infinite;
             
-            outline: 2px solid red;
+            /*outline: 2px solid red;*/
         }
         /*걷는소년존 키프레임*/
         @keyframes spani1{
@@ -138,6 +138,7 @@
         1. 배경이미지의 전체 길이를 알아야 한다!
         -> 왜? 이동셋팅시에 가로 이동일 경우 전체 길이값을 써야함!
         
+        [기존 이미지를 크기변경할 경우 비율유지되는 이미지 크기구하기]
         전체길이 / 장면개수 = 하나당 이동길이
         비례식으로....
         
@@ -177,6 +178,10 @@
             <!--3-1.걷는소년-->
             <div class="spani1">
                 <span class="bld">걷는소년존</span>
+            </div>
+            <!--3-2.꼬마-->
+            <div class="spani2">
+                <span class="bld">손흔드는 꼬마</span>
             </div>
         </div>
     </section>
