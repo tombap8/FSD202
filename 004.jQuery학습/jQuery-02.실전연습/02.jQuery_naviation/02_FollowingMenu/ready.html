@@ -64,8 +64,21 @@
             
             // 메뉴 클릭시 페이지 이동하기
             $("#menu li").click(function(){
+                
                 let idx = $(this).index();//li순번
                 console.log("순번:"+idx);
+                
+                let url;//이동주소
+                switch(idx){
+                    case 0: url="http://www.naver.com";break;
+                    case 1: url="http://www.google.com";break;
+                    case 2: url="http://www.daum.net";break;
+                }//// switch case //////
+                
+                // 페이지 새창열고 사이트 이동하기 //
+                // window.open() 새창열기
+                // location.href = 주소 -> 페이지이동
+                window.open().location.href = url;
                 
             });//////// click //////////////
 
