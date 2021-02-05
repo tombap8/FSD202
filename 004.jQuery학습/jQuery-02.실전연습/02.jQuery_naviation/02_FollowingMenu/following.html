@@ -9,7 +9,11 @@
     $(function(){ /// jQB //////////////////
         
         // 포인터가 움직일 영역: window
-        $(window).mousemove(function(){
+        $(window).mousemove(function(e){//e-이벤트전달변수
+            
+            let posX = e.pageX;
+            let posY = e.pageY;
+            console.log("x:y="+posX+":"+posY);
             
         });///////// mousemove //////////
         
