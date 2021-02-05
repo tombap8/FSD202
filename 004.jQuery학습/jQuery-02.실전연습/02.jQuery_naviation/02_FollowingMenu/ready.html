@@ -22,17 +22,33 @@
                 //e.pageY -> y축 좌표값(단위없는 px값) 리턴
                 console.log("x좌표:" + e.pageX);
                 console.log("y좌표:" + e.pageY);
-                
-                // Y축값
-                let posY = e.pageY;
-                
+
+                // Y축값(#home박스의 높이값의 절반인 100을 뺀다!)
+                let posY = e.pageY - 100;
+
                 // 컨테이너 박스 움직이기
                 $("#container").css({
                     top: posY + "px"
-                });////// css ////////////
-                
+                }); ////// css ////////////
 
             }); /////////// mousemove ////////////////
+
+            // #home을 클릭하면 #menu의 left값을 변경하여 나오게하기
+
+            // left값 변수
+            let mval = 50;
+
+            $("#home").click(function() {
+
+                $("#menu").animate({
+                    left: mval + "px"
+                }, 500); /// animate ///
+
+                // 비?집:놀이동산; (조건연산자)
+                mval === 50 ? mval = -600 : mval = 50;
+
+            }); //////// click ////////////
+
 
 
 
