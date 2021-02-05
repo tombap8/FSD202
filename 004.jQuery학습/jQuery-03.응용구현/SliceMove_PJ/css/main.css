@@ -55,7 +55,23 @@ h1,h2,h3,h4,h5,h6{
 
 /*1.크롬*/
 .wrap>ul>li:nth-child(1){
-    
+    background-color: #f2b635;
+}
+/*2.파폭*/
+.wrap>ul>li:nth-child(2){
+    background-color: #f19a2a;
+}
+/*3.익스*/
+.wrap>ul>li:nth-child(3){
+    background-color: #00caff;
+}
+/*4.사파리*/
+.wrap>ul>li:nth-child(4){
+    background-color: #00a0e6;
+}
+/*5.오페라*/
+.wrap>ul>li:nth-child(5){
+    background-color: #f25648;
 }
 
 
