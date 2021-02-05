@@ -1,62 +1,86 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>어디서나 펼쳐지는 내비게이션</title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-<script>
-    /*
-    mousemove 이벤트
-    - 선택영역 내부에 마우스 포인터가 움직일때 마다 발생하는 이벤트
-    - 제이쿼리 사용 메서드 : mousemove()
-    */
-    
-    
-    
+    <title>어디서나 펼쳐지는 내비게이션</title>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function() { /// jQB ///////////////////
+
+            /*
+                mousemove 이벤트
+                - 선택영역 내부에 마우스 포인터가 움직일때 마다 
+                    발생하는 이벤트
+                - 제이쿼리 사용 메서드 : mousemove()
+            */
+
+            // 마우스 무브 이벤트 대상: #home
+            $("#home").mousemove(function(e) { // e-이벤트전달값
+                // 마우스 포인터 위치 알아내기
+                //e.pageX -> x축 좌표값(단위없는 px값) 리턴
+                //e.pageY -> y축 좌표값(단위없는 px값) 리턴
+                console.log("x좌표:" + e.pageX);
+                console.log("y좌표:" + e.pageY);
+                
+                // Y축값
+                let posY = e.pageY;
+                
+                // 컨테이너 박스 움직이기
+                $("#container").css({
+                    top: posY + "px"
+                });////// css ////////////
+                
+
+            }); /////////// mousemove ////////////////
+
+
+
+
+        }); //// jQB ///////////////////////////
     </script>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-*{	margin:0; padding:0;	}
+        div#container {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 600px;
+            height: 200px;
+        }
 
-div#container {
-	position:relative;
-	top:0px;
-	left:0px;
-	width:600px;
-	height:200px;
-}
-				
-div#home {
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:50px;
-	height:200px;
-	background:#FF9999;
-	z-index:2;
-}
-		   
-ul { 
-	position:absolute;
-	top:0px;
-	left:-600px;
-	width:600px; 
-	height:200px;
-	list-style:none;
-	z-index:1;
-}
-	 
-ul li {
-	width:200px;
-	height:200px;
-	float:left;
-	opacity:0.7;
-}
+        div#home {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 200px;
+            background: #FF9999;
+            z-index: 2;
+        }
 
+        ul {
+            position: absolute;
+            top: 0px;
+            left: -600px;
+            width: 600px;
+            height: 200px;
+            list-style: none;
+            z-index: 1;
+        }
 
-</style>
+        ul li {
+            width: 200px;
+            height: 200px;
+            float: left;
+            opacity: 0.7;
+        }
+    </style>
 
 </head>
 
@@ -64,16 +88,15 @@ ul li {
 
 
 
-<div id="container">
-	<div id = "home">HOME </div>
-  
-	<ul id ="menu">     
-		<li><img src="th_bg1.jpg" /></li>
-		<li><img src="th_bg2.jpg" /></li>
-		<li><img src="th_bg3.jpg" /></li>
-	</ul>
-</div>
+    <div id="container">
+        <div id="home">HOME </div>
+
+        <ul id="menu">
+            <li><img src="th_bg1.jpg" /></li>
+            <li><img src="th_bg2.jpg" /></li>
+            <li><img src="th_bg3.jpg" /></li>
+        </ul>
+    </div>
 
 
-</body>
-</html>
+</body></html>
