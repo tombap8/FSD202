@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*브라우저 다운로드 사이트 메인 CSS - main.css*/
+
+/*공통 CSS*/
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    overflow: hidden;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+/*IR*/
+.bld{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/******** 개별디자인 **********/
+/*컨텐츠 전체박스*/
+.wrap{
+    position: relative;
+    left: 0;/*메뉴때문에 이동할 기준값!*/
+    width: 100%;
+    height: 100%;
+}
+.wrap>ul{
+    /*플렉스 박스!*/
+    display: flex;
+    overflow: hidden;
+    transition: all .3s ease-out;
+}
+/*파티션 박스*/
+.wrap>ul>li{
+    flex: 1;/*등분할!*/
+    overflow: hidden;
+}
+
+/*1.크롬*/
+.wrap>ul>li:nth-child(1){
+    
+}
+
+
+
+
+
+
+
