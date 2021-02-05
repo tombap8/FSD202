@@ -6,84 +6,146 @@
     <script src="jquery-1.7.2.min.js"></script>
     <script src="jquery-ui.min.js"></script>
     <script>
-    $(function(){ /// jQB //////////////////
-        
-        // 포인터가 움직일 영역: window
-        $(window).mousemove(function(e){//e-이벤트전달변수
-            
-            let posX = e.pageX;
-            let posY = e.pageY;
-            console.log("x:y="+posX+":"+posY);
-            
-        });///////// mousemove //////////
-        
-        
-        
-        
-    });////////// jQB //////////////////////
+        $(function() { /// jQB //////////////////
+
+            // 커서이미지
+            let myc = $("#myc");
+
+            // 포인터가 움직일 영역: window
+            $(window).mousemove(function(e) { //e-이벤트전달변수
+
+                // 마우스포인터 위치값
+                let posX = e.pageX + 5; //아래쪽 클릭위해 약간이동!
+                let posY = e.pageY;
+                //console.log("x:y="+posX+":"+posY);
+
+                // 마우스포인터 위치에 이미지를 이동시킨다!
+                // 대상: #myc
+                myc.css({
+                    top: posY + "px",
+                    left: posX + "px"
+                }); ///// css /////////
+
+            }); ///////// mousemove //////////
+
+            // window에 마우스가 들어오면 커서보이고 나가면 숨기기!
+            $(window).hover(
+                function() { // over
+                    myc.show();
+                },
+                function() { // out
+                    myc.hide();
+                }); ///// hover ///////////
+
+            // .stn>div 각 4개의 영역마다 마우스 오버시
+            // 커서 이미지 변경하기!
+            // mouseenter 이벤트 : 요소의 경계선 안으로 들어갈때 발생
+            // 참고) mouseleave 이벤트 : 요소의 경계선 밖으로 나갈때
+            $(".stn>div").mouseenter(function() {
+
+                // 마우스 엔터 요소(div)의 순번
+                let idx = $(this).index();
+                //console.log("순번:"+idx);
+
+                // 커서이미지 경로
+                let isrc;
+
+                // 영역별 이미지 넣기
+                switch (idx) {
+                    case 0:
+                        isrc = "images/13148a1.gif";
+                        break;
+                    case 1:
+                        isrc = "images/strtail.gif";
+                        break;
+                    case 2:
+                        isrc = "images/Tail2.gif-c200.gif";
+                        break;
+                    case 3:
+                        isrc = "images/yoshi-cursor.gif";
+                        break;
+                } /// switch case ////////
+
+                // 커서이미지 변경하기
+                myc.attr("src",isrc);
+
+
+            }); //////// mouseenter ///////////////
+
+
+
+
+        }); ////////// jQB //////////////////////
     </script>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            cursor: none;
+            /*커서모양없애기*/
         }
-        .stn{
+
+        .stn {
             display: flex;
             flex-wrap: wrap;
             /*사이즈 넘치면 아랫줄로 변경설정*/
             width: 100%;
             height: 100%;
         }
-        .stn>div{
+
+        .stn>div {
             flex: 50%;
             /*구체적인 단위의 수치를 쓰면 flex-basis로 셋팅된다!
             width셋팅과 동일하다!*/
             height: 50%;
             /*outline: 2px dashed red;*/
         }
-        
+
         /*각 영역에 배경넣기*/
-        .stn>div:nth-child(1){
+        .stn>div:nth-child(1) {
             background: url(bg1.JPG) no-repeat 0/cover;
         }
-        .stn>div:nth-child(2){
+
+        .stn>div:nth-child(2) {
             background: url(bg2.JPG) no-repeat 0/cover;
         }
-        .stn>div:nth-child(3){
+
+        .stn>div:nth-child(3) {
             background: url(bg3.JPG) no-repeat 0/cover;
         }
-        .stn>div:nth-child(4){
+
+        .stn>div:nth-child(4) {
             background: url(bg1.JPG) no-repeat 0/cover;
         }
-        
+
         /*마우스 포인터 이미지*/
-        #myc{
+        #myc {
             position: absolute;
             top: 0;
             left: 0;
             width: 50px;
-            z-index: 9999;/*맨위*/
+            z-index: 9999;
+            /*맨위*/
+            display: none;
         }
-        
-        
-        
     </style>
 </head>
+
 <body>
-  <div class="stn">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-  </div>
-   
-   <!--따라다닐 커서 이미지-->
+    <div class="stn">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!--따라다닐 커서 이미지-->
     <img src="images/13148a1.gif" alt="마우스포인터" id="myc">
-   
-   
-    
-</body>
-</html>
+
+
+
+</body></html>
