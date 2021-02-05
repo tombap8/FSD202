@@ -43,13 +43,14 @@ h1,h2,h3,h4,h5,h6{
 .wrap>ul{
     /*플렉스 박스!*/
     display: flex;
-    overflow: hidden;
-    transition: all .3s ease-out;
+    width: 100%;
+    height: 100%;
 }
 /*파티션 박스*/
 .wrap>ul>li{
     flex: 1;/*등분할!*/
     overflow: hidden;
+    transition: all .3s ease-out;
 }
 
 /*1.크롬*/
