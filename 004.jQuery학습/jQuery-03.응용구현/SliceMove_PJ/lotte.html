@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <title>Flex Display</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;/*보이는 화면기준*/
+            height: 100%;
+            /*보이는 화면기준*/
         }
-        ul,ol{
+
+        ul,
+        ol {
             margin: 0;
             padding: 0;
             list-style: none;
         }
+
         /*전체부모*/
-        #wrap{
+        #wrap {
             width: 100%;
             height: 100%;
         }
-        
+
         /*ul 파티션 부모박스*/
-        #wrap>ul{
+        #wrap>ul {
             display: flex;
             /*
             [ flex 란? ]
@@ -35,7 +40,7 @@
             - 옆으로 흐르게할 부모요소에 display를 flex로 설정함
             - 자식요소의 flex:1 설정하면 등분할 된다!
             */
-            
+
             flex-direction: row;
             /*
             flex-direction 속성은 진행방향과 순서를 설정함
@@ -44,38 +49,66 @@
             3) column: 위->아래
             4) column-reverse: 아래->위
             */
-            
+
             width: 100%;
             height: 100%;
         }
+
         /*파티션 li공통*/
-        #wrap>ul>li{
+        #wrap>ul>li {
+            position: relative;
+            /*부모자격*/
             flex: 1;
             /*outline: 1px dotted red;*/
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
         }
-        
+
         /*각 파티션 li*/
-        #wrap>ul>li:nth-child(1){
+        #wrap>ul>li:nth-child(1) {
             background: url(images/Lotte/m01_bg.jpg) no-repeat center/cover;
         }
-        #wrap>ul>li:nth-child(2){
+
+        #wrap>ul>li:nth-child(2) {
             background: url(images/Lotte/m02_bg.jpg) no-repeat center/cover;
         }
-        #wrap>ul>li:nth-child(3){
+
+        #wrap>ul>li:nth-child(3) {
             background: url(images/Lotte/m03_bg.jpg) no-repeat center/cover;
         }
-        #wrap>ul>li:nth-child(4){
+
+        #wrap>ul>li:nth-child(4) {
             background: url(images/Lotte/m04_bg.jpg) no-repeat center/cover;
         }
-        #wrap>ul>li:nth-child(5){
+
+        #wrap>ul>li:nth-child(5) {
             background: url(images/Lotte/m05_bg.jpg) no-repeat center/cover;
         }
+
+        /*타이틀 이미지*/
+        #wrap>ul>li>img {
+            position: absolute;
+            /*부모? li*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*정중앙이동*/
+            width: 70%;
+        }
+        /*박스별로고 공통*/
+        #wrap>ul>li>img:last-child {
+            top: 80%;
+            width: auto;
+        }
         
+        
+
+
         /*중앙타이틀 공통*/
-        .tit{
+        .tit {
             /*flex box설정*/
             display: flex;
-            
+
             /*일반설정*/
             position: absolute;
             top: 5%;
@@ -86,8 +119,9 @@
             height: 100px;
             border: 5px double #fff;
         }
+
         /*타이틀 하위 li*/
-        .tit>li{
+        .tit>li {
             width: 50px;
             height: 50px;
             /*flex-basis: 50px; 
@@ -104,9 +138,9 @@
             height는 부모높이 채우기함(100%)
             */
         }
-        
+
         /*타이틀1*/
-        .t1{
+        .t1 {
             /*flex옵션*/
             justify-content: space-evenly;
             /*
@@ -119,8 +153,8 @@
             5) space-between : 아이템요소 사이간격을 일정하게
             6) space-evenly : 아이템요소 양쪽과 사이가 모두 일정간격유지
             (ie미지원 - but 엣지 최신버전은 지원함)
-            */  
-            
+            */
+
             align-items: center;
             /*
             align-items 속성
@@ -135,44 +169,47 @@
                     글자 아래쪽 기준선으로 정렬됨
                 (글자의 line-height를 변경해 보면됨!)
             */
-            
-            
+
+
         }
-        
-        
+
+
         /*타이틀2*/
-        .t2{
+        .t2 {
             top: 20%;
             justify-content: space-evenly;
             align-items: center;
         }
-        
-        
-        
     </style>
 </head>
+
 <body>
-   <!--전체부모박스-->
+    <!--전체부모박스-->
     <div id="wrap">
-       <!--파티션 박스-->
+        <!--파티션 박스-->
         <ul>
             <li>
                 <img src="images/Lotte/m01_txtbox.png" alt="타이틀">
+                <img src="images/Lotte/m01_logo1.png" alt="로고">
             </li>
             <li>
                 <img src="images/Lotte/m02_txtbox.png" alt="타이틀">
+                <img src="images/Lotte/m02_logo.png" alt="로고">
             </li>
             <li>
                 <img src="images/Lotte/m03_txtbox.png" alt="타이틀">
+                <img src="images/Lotte/m03_logo.png" alt="로고">
             </li>
             <li>
                 <img src="images/Lotte/m04_txtbox.png" alt="타이틀">
+                <img src="images/Lotte/m04_logo.png" alt="로고">
             </li>
             <li>
-               <img src="images/Lotte/m05_txtbox.png" alt="타이틀"> 
+                <img src="images/Lotte/m05_txtbox.png" alt="타이틀">
+                <img src="images/Lotte/m05_logo.png" alt="로고">
             </li>
         </ul>
-        
+
         <!--타이틀박스1-->
         <ol class="tit t1">
             <li>L</li>
@@ -181,7 +218,7 @@
             <li>T</li>
             <li>E</li>
         </ol>
-        
+
         <!--타이틀박스2-->
         <ol class="tit t2">
             <li>W</li>
@@ -190,17 +227,16 @@
             <li>L</li>
             <li>D</li>
         </ol>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
     </div>
-    
-    
-    
-    
-    
-</body>
-</html>
+
+
+
+
+
+</body></html>
