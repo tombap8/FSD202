@@ -2,15 +2,17 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex Display</title>
     <style>
         html,
         body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             /*보이는 화면기준*/
+            overflow: hidden;
         }
 
         ul,
@@ -24,6 +26,7 @@
         #wrap {
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
 
         /*ul 파티션 부모박스*/
@@ -220,6 +223,47 @@
             margin-top: 7px;
             display: inline-block;
         }
+        
+        /*모바일 미디어쿼리*/
+        @media only screen and (max-width:500px){
+            
+            /*타이틀 가로크기 자동*/
+            .tit{
+                width: 50%;
+                height: 50px;
+                top: 0;
+                left: 0;
+                transform: none;
+                background-color: #fff;
+                border: none;
+            }
+            .t2{
+                left: 50%;
+            }
+            .tit li{
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+            #wrap{
+                padding: 50px 0;
+                box-sizing: border-box;
+            }
+            
+            /*flex 배치변경하기*/
+            #wrap>ul{
+                flex-direction: column;
+            }
+            #wrap>ul>li>img:first-child{
+                width: auto;
+                height: 100%;
+            }
+            
+            
+        }/*모바일 미디어쿼리*/
+        
+        
+        
     </style>
 </head>
 
