@@ -58,11 +58,35 @@
         #wrap>ul>li {
             position: relative;
             /*부모자격*/
-            flex: 1;
+            flex: 1;/*flex-grow:1*/
+            /*
+                부모요소가 display:flex 일때
+                자식요소에 flex:1  이라고 쓰면
+                flex : 1 1 0
+                원래는 3가지가 셋팅된다! 순서는
+                flex : flex-grow flex-shrink flex-basis
+                -> 숫자를 하나만 쓰면 flex-grow가 셋팅된다!
+            */
             /*outline: 1px dotted red;*/
             overflow: hidden;
             /*넘치는 자식요소 숨기기*/
+            
+            /*트랜지션:속시이지*/
+            transition: all .4s ease-in-out;
         }
+        
+        /*파티션 영역에 마우스 오버시 넓어지기*/
+        #wrap>ul>li:hover {
+            flex: 1.4;
+            /*
+                마우스 오버시 flex 공통설정값인 1보다 큰값을 쓰면
+                나머지 요소들 보다 몇배 커짐을 의미한다!
+                1보다 작은 값을 쓰면(예컨데 0.5) 나머지 요소들 보다
+                작아짐을 의미한다! 
+            */
+        }
+        
+        
 
         /*각 파티션 li*/
         #wrap>ul>li:nth-child(1) {
@@ -94,6 +118,7 @@
             transform: translate(-50%, -50%);
             /*정중앙이동*/
             width: 70%;
+            max-width: 250px;
         }
         /*박스별로고 공통*/
         #wrap>ul>li>img:last-child {
@@ -180,6 +205,21 @@
             justify-content: space-evenly;
             align-items: center;
         }
+        
+        /*하단로고바*/
+        .binfo{            
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #da041c;
+            text-align: center;
+            z-index: 1000;
+        }
+        .binfo span{
+            margin-top: 7px;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -194,7 +234,7 @@
             </li>
             <li>
                 <img src="images/Lotte/m02_txtbox.png" alt="타이틀">
-                <img src="images/Lotte/m02_logo.png" alt="로고">
+                <img src="images/Lotte/m04_logo.png" alt="로고">
             </li>
             <li>
                 <img src="images/Lotte/m03_txtbox.png" alt="타이틀">
@@ -202,11 +242,11 @@
             </li>
             <li>
                 <img src="images/Lotte/m04_txtbox.png" alt="타이틀">
-                <img src="images/Lotte/m04_logo.png" alt="로고">
+                <img src="images/Lotte/m05_logo.png" alt="로고">
             </li>
             <li>
                 <img src="images/Lotte/m05_txtbox.png" alt="타이틀">
-                <img src="images/Lotte/m05_logo.png" alt="로고">
+                <img src="images/Lotte/m02_logo.png" alt="로고">
             </li>
         </ul>
 
@@ -228,7 +268,12 @@
             <li>D</li>
         </ol>
 
-
+        <!--하단로고바-->
+        <footer class="binfo">
+            <span>
+                <img src="images/Lotte/lotte_logo.gif" alt="로고">
+            </span>
+        </footer>
 
 
 
