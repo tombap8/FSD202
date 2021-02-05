@@ -8,6 +8,12 @@
     <script>
     $(function(){ /// jQB //////////////////
         
+        // 포인터가 움직일 영역: window
+        $(window).mousemove(function(){
+            
+        });///////// mousemove //////////
+        
+        
         
         
     });////////// jQB //////////////////////
@@ -18,6 +24,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
         .stn{
             display: flex;
@@ -48,6 +55,16 @@
             background: url(bg1.JPG) no-repeat 0/cover;
         }
         
+        /*마우스 포인터 이미지*/
+        #myc{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            z-index: 9999;/*맨위*/
+        }
+        
+        
         
     </style>
 </head>
@@ -59,7 +76,8 @@
       <div></div>
   </div>
    
-   
+   <!--따라다닐 커서 이미지-->
+    <img src="images/13148a1.gif" alt="마우스포인터" id="myc">
    
    
     
