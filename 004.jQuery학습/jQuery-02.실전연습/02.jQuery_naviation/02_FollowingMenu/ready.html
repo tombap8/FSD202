@@ -5,36 +5,46 @@
 
 <title>어디서나 펼쳐지는 내비게이션</title>
 <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script>
+    /*
+    mousemove 이벤트
+    - 선택영역 내부에 마우스 포인터가 움직일때 마다 발생하는 이벤트
+    - 제이쿼리 사용 메서드 : mousemove()
+    */
+    
+    
+    
+    </script>
 
 <style>
 
 *{	margin:0; padding:0;	}
 
 div#container {
+	position:relative;
+	top:0px;
+	left:0px;
 	width:600px;
 	height:200px;
-	left:0px;
-	top:0px;
-	position:relative;
 }
 				
 div#home {
+	position:absolute;
+	top:0px;
+	left:0px;
 	width:50px;
 	height:200px;
 	background:#FF9999;
-	left:0px;
-	top:0px;
-	position:absolute;
 	z-index:2;
 }
 		   
 ul { 
+	position:absolute;
+	top:0px;
+	left:-600px;
 	width:600px; 
 	height:200px;
 	list-style:none;
-	left:-600px;
-	top:0px;
-	position:absolute;
 	z-index:1;
 }
 	 
