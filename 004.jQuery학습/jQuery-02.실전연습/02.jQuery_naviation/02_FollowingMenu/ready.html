@@ -20,8 +20,8 @@
                 // 마우스 포인터 위치 알아내기
                 //e.pageX -> x축 좌표값(단위없는 px값) 리턴
                 //e.pageY -> y축 좌표값(단위없는 px값) 리턴
-                console.log("x좌표:" + e.pageX);
-                console.log("y좌표:" + e.pageY);
+                //console.log("x좌표:" + e.pageX);
+                //console.log("y좌표:" + e.pageY);
 
                 // Y축값(#home박스의 높이값의 절반인 100을 뺀다!)
                 let posY = e.pageY - 100;
@@ -40,14 +40,34 @@
 
             $("#home").click(function() {
 
-                $("#menu").animate({
+                $("#menu").stop().animate({
                     left: mval + "px"
                 }, 500); /// animate ///
+                //stop()으로 큐에 쌓인 애니메이션 지우기
 
                 // 비?집:놀이동산; (조건연산자)
                 mval === 50 ? mval = -600 : mval = 50;
 
             }); //////// click ////////////
+
+            // #menu의 li에 마우스 오버시 opacity값을 1로 변경
+            // 아웃시에는 다시 0.7로 복귀
+            // hover(함수1,함수2)
+            // fadeTo(시간,오파,이징,함수)
+            $("#menu li").hover(
+                function() { // over
+                    $(this).stop().fadeTo(300,1);
+                },
+                function() { // out
+                    $(this).stop().fadeTo(300,0.7);
+                }); ///// hover ///////////
+            
+            // 메뉴 클릭시 페이지 이동하기
+            $("#menu li").click(function(){
+                let idx = $(this).index();//li순번
+                console.log("순번:"+idx);
+                
+            });//////// click //////////////
 
 
 
