@@ -78,6 +78,7 @@ h1,h2,h3,h4,h5,h6{
 .wrap>ul>li:hover{
     flex: 2;/*2배크게~!*/
     /*그라데이션 배경색넣기(원형: 반투명흰색->투명흰색)*/
+    /*closest-side at 50% 50% 중심에서 바깥쪽 경계선 안쪽*/
     background-image: radial-gradient(closest-side at 50% 50%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
 }
 
