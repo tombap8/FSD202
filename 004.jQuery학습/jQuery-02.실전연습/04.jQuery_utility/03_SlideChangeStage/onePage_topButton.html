@@ -378,13 +378,13 @@
             /////////////////////////////////////////////
             
             //탑버튼 클릭시 최상단으로 이동하기 ///
-            tbtn.click(function(){
+            tbtn.click(function(e){
                 
                 //1. 스크롤상태값 변경하기
                 mchg = 0;//잠금
                 
-                //2. 부드러운 스크롤 위치값 일치
-                pos = 0;
+                //2. 부드러운 스크롤 위치값 일치하기
+                pos = scTop;
                 
                 //3. 메뉴첫번째로 변경하기
                  $(".gnb li").first().addClass("on")
@@ -394,6 +394,7 @@
                 $("html,body").stop().animate({
                     scrollTop :"0"
                 }, 1200, "easeInOutQuint",function(){
+                    pos = 0;//부드러운 스크롤 위치값 변경
                     mchg = 1;//해제
                 });//// animate /////////
                 
