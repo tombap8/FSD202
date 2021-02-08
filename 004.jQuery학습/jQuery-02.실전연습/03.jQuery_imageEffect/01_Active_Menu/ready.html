@@ -26,13 +26,13 @@
         // 메뉴에 마우스 아웃시 height:30px, margin-left: 0px
         $("#navigation a").hover(
             function() { // over
-                $(this).animate({
+                $(this).stop().animate({
                     height:"120px",
                     marginLeft:"15px"
                 },200);/// animate ///
             },
             function() { // out
-                $(this).animate({
+                $(this).stop().animate({
                     height:"30px",
                     marginLeft:"0px"
                 },200);/// animate ///
