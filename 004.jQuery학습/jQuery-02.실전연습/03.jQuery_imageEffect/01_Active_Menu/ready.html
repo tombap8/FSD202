@@ -5,6 +5,26 @@
 <title>역동적 오버효과</title>
 <!-- jQuery library -->
 <script src="jquery-1.7.2.min.js"></script>
+<script>
+    $(function(){ /// jQB //////////////////
+        // 각 메뉴 박스의 배경 이미지 셋팅하기
+        // for문을 쓰지 않고 each()메서드 사용!
+        $("#navigation a").each(function(idx,ele){
+            // idx-순번, ele-요소자신(this)
+            // 각 a요소의 data-img 속성 읽어오기
+            let isrc = $(ele).attr("data-img");
+            //console.log("이미지경로:"+isrc);
+            
+            // 배경셋팅
+            $(ele).css({
+                background:"url("+isrc+") no-repeat"
+            });///// css //////
+            
+        });///////// each ///////////////
+        
+        
+    });////////// jQB //////////////////////
+    </script>
 <style>
 
 body {
@@ -35,10 +55,14 @@ ul#navigation li a:hover {	color: #ffff66;	}
 <body>
 
 <ul id="navigation">         
-    <li><a href="#" data-img="bg1.jpg">Menu 1</a></li>  
-    <li><a href="#" data-img="bg2.jpg">Menu 2</a></li>  
-    <li><a href="#" data-img="bg3.jpg">Menu 3</a></li>  
-    <li><a href="#" data-img="bg4.jpg">Menu 4</a></li>   
+    <li>
+    <a href="#" data-img="bg1.jpg">Menu 1</a></li>  
+    <li>
+    <a href="#" data-img="bg2.jpg">Menu 2</a></li>  
+    <li>
+    <a href="#" data-img="bg3.jpg">Menu 3</a></li>  
+    <li>
+    <a href="#" data-img="bg4.jpg">Menu 4</a></li>   
 </ul>  
     
 
