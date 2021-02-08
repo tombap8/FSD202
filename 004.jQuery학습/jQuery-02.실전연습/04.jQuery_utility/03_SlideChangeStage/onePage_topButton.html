@@ -194,9 +194,9 @@
             top: 60%;
             transition: all 1s ease-out;
         }
-        
+
         /*위로 이동버튼*/
-        #tbtn{
+        #tbtn {
             position: absolute;
             top: 70%;
             right: 100px;
@@ -205,17 +205,18 @@
             border: none;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;/*손가락모양*/
+            cursor: pointer;
+            /*손가락모양*/
             font: bold 20px Verdana;
             color: #f00;
+            display: none;
+            /*처음에 안보임*/
         }
+
         /*크롬 포커스 아웃라인 없애기*/
-        #tbtn:focus{
+        #tbtn:focus {
             outline: none;
         }
-        
-        
-        
     </style>
     <script src="js/smoothScroll20.js"></script>
     <script src="js/jquery-1.7.2.min.js"></script>
@@ -329,6 +330,8 @@
 
             // 스크롤 탑값 변수
             let scTop;
+            // 탑버튼 위치값 px로 변환(70%위치값)
+            let tbpos = $(window).height() * 0.7;
 
             $(window).scroll(function() {
 
@@ -344,6 +347,32 @@
                 for (var i = 0; i < scAct.length; i++) {
                     showit(scTop, i);
                 } /////// for문 //////////////////
+
+
+                //// 탑 이동버튼 위치 변경하기(애니메이션)
+                //// 현재 탑버튼위치값 + 스크롤 위치값
+                // 기준: 200px 보다 크면 탑버튼 보이기 작으면 숨기기
+
+                // 1. 스크롤위치가 200px 미만일때
+                if (scTop < 200) {
+
+                    $("#tbtn").hide().css({
+                        top: tbpos + "px"
+                    }); //// css /////////
+
+                } //////// if ////////////
+                // 2. 스크롤위치가 200px 이상일때
+                // 위치이동은 기본 70% 위치값 + 스크롤 위치값
+                else {
+
+                    $("#tbtn").show()
+                        .stop().animate({
+                            top: (tbpos + scTop) + "px"
+                        }, 400, "easeOutCirc");
+
+
+                } ///////// else /////////
+
 
 
 
