@@ -332,6 +332,8 @@
             let scTop;
             // 탑버튼 위치값 px로 변환(70%위치값)
             let tbpos = $(window).height() * 0.7;
+            // 탑버튼
+            let tbtn = $("#tbtn");
 
             $(window).scroll(function() {
 
@@ -356,7 +358,7 @@
                 // 1. 스크롤위치가 200px 미만일때
                 if (scTop < 200) {
 
-                    $("#tbtn").hide().css({
+                    tbtn.hide().css({
                         top: tbpos + "px"
                     }); //// css /////////
 
@@ -364,20 +366,38 @@
                 // 2. 스크롤위치가 200px 이상일때
                 // 위치이동은 기본 70% 위치값 + 스크롤 위치값
                 else {
-
-                    $("#tbtn").show()
+                    
+                    tbtn.show()
                         .stop().animate({
                             top: (tbpos + scTop) + "px"
                         }, 400, "easeOutCirc");
-
-
+                    
                 } ///////// else /////////
-
-
-
 
             }); //////// scroll //////////////////////////
             /////////////////////////////////////////////
+            
+            //탑버튼 클릭시 최상단으로 이동하기 ///
+            tbtn.click(function(){
+                
+                //1. 스크롤상태값 변경하기
+                mchg = 0;//잠금
+                
+                //2. 부드러운 스크롤 위치값 일치
+                pos = 0;
+                
+                //3. 메뉴첫번째로 변경하기
+                 $(".gnb li").first().addClass("on")
+                    .siblings().removeClass("on");
+                
+                //4. 최상위 이동하기
+                $("html,body").stop().animate({
+                    scrollTop :"0"
+                }, 1200, "easeInOutQuint",function(){
+                    mchg = 1;//해제
+                });//// animate /////////
+                
+            });///////// click ////////////////
 
 
 
