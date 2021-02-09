@@ -15,10 +15,14 @@
     $news1 = '정의용 "한반도 비핵화는 한미 공동목표…조율 문제 없을 것"(종합)';
     $news2 = "'일론 머스크' 한 마디에...비트코인 5천만원 돌파도 눈앞";
     
-    
-    
-    
-    
+    /*
+    위의 데이터를 DB에서 가져와 셋팅했다고 가정하자!
+    출력위치에 아래와 같이 코딩해 준다
+    <?echo 변수?>를 아래와 같이 쉽게 쓴다!
+    <?= 변수?>
+    */
+
+
     ?>
 
 
@@ -27,8 +31,12 @@
 
     <div class="main_component droppable" id="today_main_news" style="width:727px">
         <div class="com_header">
-            <h4 class="tit_h4 tit_main1"><strong>??????????????</strong></h4>
-            <p class="news_info_txt">헤드라인 뉴스와 각 기사묶음 타이틀은 기사 내용을 기반으로 <strong>자동 추출</strong>됩니다.</p>
+            <h4 class="tit_h4 tit_main1">
+                <!--1.제목출력-->
+                <strong><?=$tit?></strong>
+            </h4>
+            <!--2.안내문구 중 일부출력-->
+            <p class="news_info_txt"><?=$tit?>와 각 기사묶음 타이틀은 기사 내용을 기반으로 <strong>자동 추출</strong>됩니다.</p>
         </div>
         <!-- [D] 구형: .com_list.com_list_headline, 이시각주요뉴스:.newsnow, 헤드라인뉴스:.hdline_news -->
         <div class="hdline_news">
@@ -75,7 +83,8 @@
                 <li>
                     <div class="hdline_article_tit">
                         <a href="/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=001&amp;aid=0012194235" class="lnk_hdline_article nclicks('mai.text1', '880000D8_000000000000000012194235', 'airsGParam', '0', 'news_qm_v2.0', 'N0fOBA71P0KDNyEj')">
-                            ???????????
+                            <!--3.뉴스1출력-->
+                            <?= $news1 ?>
                         </a>
                     </div>
                     <div class="hdline_cluster_more">
@@ -92,7 +101,8 @@
                 <li>
                     <div class="hdline_article_tit">
                         <a href="/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=469&amp;aid=0000579113" class="lnk_hdline_article nclicks('mai.text1', '88156f75_000000000000000000579113', 'airsGParam', '0', 'news_qm_v2.0', 'N0fOBA71P0KDNyEj')">
-                            ???????????
+                            <!--4.뉴스2출력-->
+                            <?= $news2 ?>
                         </a>
                     </div>
                     <div class="hdline_cluster_more">
