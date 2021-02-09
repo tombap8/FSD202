@@ -99,28 +99,36 @@
             z-index: 9999;
             background-color: rgba(0, 0, 0, 0.7);
         }
-        
-         /*상단영역 디자인 변경 class*/
-        .newTop{
+
+        /*상단영역 디자인 변경 class*/
+        .newTop {
             height: 40px;
             background-color: rgba(255, 255, 255, 0.9);
         }
-        .newTop #logo{/*로고*/
+
+        .newTop #logo {
+            /*로고*/
             width: 150px;
             height: 40%;
             margin-top: 4px;
             background-color: #000;
         }
-        .newTop .gnb{/*GNB*/
+
+        .newTop .gnb {
+            /*GNB*/
             top: 6px;
         }
-        .newTop .gnb a{/*GNB a링크*/
+
+        .newTop .gnb a {
+            /*GNB a링크*/
             color: #000;
             text-shadow: none;
             font-weight: bold;
         }
+
         .newTop .gnb a:hover,
-        .newTop .gnb li.on a{/*마우스오버시,선택class*/
+        .newTop .gnb li.on a {
+            /*마우스오버시,선택class*/
             text-shadow: 1px 0 #000, -1px 0 #000,
                 0 1px #000, 0 -1px #000;
         }
@@ -362,17 +370,17 @@
             let tbpos = $(window).height() * 0.7;
             // 탑버튼
             let tbtn = $("#tbtn");
-            
+
             ////////////////////////////////////
             // 탑메뉴 변경실행여부 ////////////////
-            let tmsts = 0;//0-실행전,1-실행후
+            let tmsts = 0; //0-실행전,1-실행후
             // 탑메뉴 기준위치값 /////////////////
             let tmpos = $("#pg2").offset().top;
-            console.log("탑메뉴기준위치:"+tmpos);
+            console.log("탑메뉴기준위치:" + tmpos);
             // 탑메뉴 //////////////
             let tmenu = $(".top");
             /////////////////////////////////////
-            
+
 
             $(window).scroll(function() {
 
@@ -403,88 +411,88 @@
                 // 2. 스크롤위치가 200px 이상일때
                 // 위치이동은 기본 70% 위치값 + 스크롤 위치값
                 else {
-                    
+
                     tbtn.show()
                         .stop().animate({
                             top: (tbpos + scTop) + "px"
                         }, 400, "easeOutCirc");
-                    
+
                 } ///////// else /////////
-                
+
                 /////// 탑메뉴 상단에 고정하기 애니메이션 ///////
                 // 고정위치: 2페이지 상단위치를 통과할때 ///////
-                if(scTop > tmpos && tmsts === 0){
+                if (scTop > tmpos && tmsts === 0) {
                     // 한번만 실행하기 위해 상태값 변경!
-                    tmsts = 1;//잠금!(이 조건문은 못들어옴!)
+                    tmsts = 1; //잠금!(이 조건문은 못들어옴!)
                     console.log("탑메뉴등장!");
-                    
+
                     // 1. 탑메뉴(tmenu)에 미리셋팅된 class넣기
                     // 새로운 클래스 : .newTop
                     tmenu.addClass("newTop")
-                    // 2. css 포지션 fixed로 변경하고 위쪽에 숨기기
-                    .css({
-                        position: "fixed",
-                        top: "-40px"
-                    })
-                    // 3. 애니메이션으로 top값을 0으로 하여 등장!
-                    .animate({
-                        top:"0"
-                    },600,"easeOutQuint");
-                    
-                }///////////// if //////////////////
+                        // 2. css 포지션 fixed로 변경하고 위쪽에 숨기기
+                        .css({
+                            position: "fixed",
+                            top: "-40px"
+                        })
+                        // 3. 애니메이션으로 top값을 0으로 하여 등장!
+                        .animate({
+                            top: "0"
+                        }, 600, "easeOutQuint");
+
+                } ///////////// if //////////////////
                 /// 2페이지 위치보다 위일때 원위치로 복귀하기 ////
-                else if(scTop < tmpos && tmsts === 1){
+                else if (scTop < tmpos && tmsts === 1) {
                     // 한번만 실행하기 위해 상태값 변경!
-                    tmsts = 0;//해제!(이 조건문은 못들어옴!)
+                    tmsts = 0; //해제!(이 조건문은 못들어옴!)
                     console.log("탑메뉴원상복귀!");
-                    
+
                     // 1. 애니메이션으로 top값 -40px로 감추기
                     tmenu.animate({
                         top: "-40px"
-                    },600,"easeOutQuint",function(){
+                    }, 600, "easeOutQuint", function() {
                         // 애니후
                         // 2. 원래 포지션 위치 변경하기
                         $(this).css({
-                            position: "absolute",
-                            top:"0"
-                        }) ////// css ///////////
-                        // 3. 추가된 class제거하기
-                        .removeClass("newTop");
-                        
-                        
-                    });//// animate ///////////////
-                    
-                    
-                }//////////// else if //////////////
-                
-                
-                
+                                position: "absolute",
+                                top: "0"
+                            }) ////// css ///////////
+                            // 3. 추가된 class제거하기
+                            .removeClass("newTop");
+
+
+                    }); //// animate ///////////////
+
+
+                } //////////// else if //////////////
+
+
+
 
             }); //////// scroll //////////////////////////
             /////////////////////////////////////////////
-            
+
             //탑버튼 클릭시 최상단으로 이동하기 ///
-            tbtn.click(function(e){
-                
+            tbtn.click(function(e) {
+
                 //1. 스크롤상태값 변경하기
-                mchg = 0;//잠금
-                
+                mchg = 0; //잠금
+
                 //2. 부드러운 스크롤 위치값 일치하기
                 pos = scTop;
-                
+
                 //3. 메뉴첫번째로 변경하기
-                 $(".gnb li").first().addClass("on")
+                $(".gnb li").first().addClass("on")
                     .siblings().removeClass("on");
-                
+
                 //4. 최상위 이동하기
                 $("html,body").stop().animate({
-                    scrollTop :"0"
-                }, 1200, "easeInOutQuint",function(){
-                    pos = 0;//부드러운 스크롤 위치값 변경
-                    mchg = 1;//해제
-                });//// animate /////////
-                
-            });///////// click ////////////////
+                    scrollTop: "0"
+                }, 1200, "easeInOutQuint", function() {
+                    pos = 0; //부드러운 스크롤 위치값 변경
+                    mchg = 1; //해제
+                }); //// animate /////////
+
+            }); ///////// click ////////////////
 
 
 
@@ -505,6 +513,9 @@
                 // 스크롤 메뉴변경막기!(언제풀어줘? 이동후에!)
                 mchg = 0;
 
+                // 부드러운 스크롤 위치값 일치하기
+                pos = scTop;
+
                 // 1. a요소의 href값 가져오기
                 // - 셋팅된 id값으로 위치이동할 것임!
                 let pid = $(this).attr("href");
@@ -517,8 +528,6 @@
                 // - top, left, width, height 등을 알 수 있음
                 //console.log("위치값:" + pgpos);
 
-                // 부드러운 스크롤의 스크롤 위치값에 일치해야함!
-                pos = pgpos; //이동위치를 부드러운 스크롤에 알린다!
 
                 // 3. 스크롤 애니메이션으로 페이지이동하기
                 // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
@@ -530,6 +539,10 @@
 
                     // 스크롤 메뉴변경막기 해제
                     mchg = 1;
+
+                    // 부드러운 스크롤의 스크롤 위치값에 일치해야함!
+                    pos = pgpos;
+                    //이동위치를 부드러운 스크롤에 알린다!
 
                 }); ///// animate /////
                 // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
