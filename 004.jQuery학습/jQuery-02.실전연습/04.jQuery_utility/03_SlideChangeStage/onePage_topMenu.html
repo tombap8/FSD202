@@ -418,6 +418,18 @@
                     tmsts = 1;//잠금!(이 조건문은 못들어옴!)
                     console.log("탑메뉴등장!");
                     
+                    // 1. 탑메뉴(tmenu)에 미리셋팅된 class넣기
+                    // 새로운 클래스 : .newTop
+                    tmenu.addClass("newTop")
+                    // 2. css 포지션 fixed로 변경하고 위쪽에 숨기기
+                    .css({
+                        position: "fixed",
+                        top: "-40px"
+                    })
+                    // 3. 애니메이션으로 top값을 0으로 하여 등장!
+                    .animate({
+                        top:"0"
+                    },600,"easeOutQuint");
                     
                 }///////////// if //////////////////
                 /// 2페이지 위치보다 위일때 원위치로 복귀하기 ////
@@ -425,6 +437,22 @@
                     // 한번만 실행하기 위해 상태값 변경!
                     tmsts = 0;//해제!(이 조건문은 못들어옴!)
                     console.log("탑메뉴원상복귀!");
+                    
+                    // 1. 애니메이션으로 top값 -40px로 감추기
+                    tmenu.animate({
+                        top: "-40px"
+                    },600,"easeOutQuint",function(){
+                        // 애니후
+                        // 2. 원래 포지션 위치 변경하기
+                        $(this).css({
+                            position: "absolute",
+                            top:"0"
+                        }) ////// css ///////////
+                        // 3. 추가된 class제거하기
+                        .removeClass("newTop");
+                        
+                        
+                    });//// animate ///////////////
                     
                     
                 }//////////// else if //////////////
