@@ -67,6 +67,16 @@
                 // offset().left 현재박스의 left값
                 console.log("현재left:"+mpos);
                 
+                // 2. 처음 한계값 체크 후 위치고정하기
+                if(mpos > fpt){
+                    
+                    // 첫번째 한계값에 고정시킴!
+                    move.css({
+                        left: fpt + "px"
+                    });///// css ///////
+                    
+                }////// if /////////////////
+                
                 
                 
                 
