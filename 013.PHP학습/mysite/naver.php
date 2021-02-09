@@ -9,11 +9,38 @@
 
 <body>
     <?php 
+    // PHP코드는 서버에서만 해석되는 프로그래밍 언어다!
+    // 그래서 서버 사이드 스크립트 라고 부른다!
+    // 반면 JS는 클라이언트 사이트 스크립트라고 한다!
+    
+    echo "<h1>echo를 활용한 변수출력!</h1>";
+    
     // 변수에 값을 셋팅한 수 각 영역에 넣어준다!
     
-    $tit = "헤드라인 뉴스";
-    $news1 = '정의용 "한반도 비핵화는 한미 공동목표…조율 문제 없을 것"(종합)';
-    $news2 = "'일론 머스크' 한 마디에...비트코인 5천만원 돌파도 눈앞";
+    // 랜덤수를 이용하여 각 뉴스를 변경함
+    $rdn = rand(0,2);
+    echo "랜덤수:$rdn";
+    // 배열의 순번대신 랜덤변수를 넣어준다~~!
+    
+    
+    
+    
+    // 배열변수를 이용하여 여러 데이터를 셋업한다!
+    // 변수명 = [값들]
+    // 배열의 호출 -> 변수명[순번]
+    
+    $tit = ["헤드라인 뉴스","정치 뉴스","경제 뉴스"];
+    $news1 = [
+        '정의용 "한반도 비핵화는 한미 공동목표…조율 문제 없을 것"(종합)',
+        "文, 코로나로 '집콕' 설 연휴…첼시 지소연 등과 화상통화",
+        '"개장하면 화장실 달려가" 日 언론에 등장한 한국 \'동학개미\''
+        // 홑따옴표 안의 홑따옴표는 역슬래쉬로!(이스케이핑!)
+    ];
+    $news2 = [
+        "'일론 머스크' 한 마디에...비트코인 5천만원 돌파도 눈앞",
+        "국정원 사찰문건 실체 드러날까?…與 “진상규명” 野 “개인정보”",
+        "코로나 특수 역대급 실적에…식품업계, 배당금 줄인상"
+    ];
     
     /*
     위의 데이터를 DB에서 가져와 셋팅했다고 가정하자!
@@ -33,10 +60,10 @@
         <div class="com_header">
             <h4 class="tit_h4 tit_main1">
                 <!--1.제목출력-->
-                <strong><?=$tit?></strong>
+                <strong><?= $tit[$rdn] ?></strong>
             </h4>
             <!--2.안내문구 중 일부출력-->
-            <p class="news_info_txt"><?=$tit?>와 각 기사묶음 타이틀은 기사 내용을 기반으로 <strong>자동 추출</strong>됩니다.</p>
+            <p class="news_info_txt"><?= $tit[$rdn] ?>와 각 기사묶음 타이틀은 기사 내용을 기반으로 <strong>자동 추출</strong>됩니다.</p>
         </div>
         <!-- [D] 구형: .com_list.com_list_headline, 이시각주요뉴스:.newsnow, 헤드라인뉴스:.hdline_news -->
         <div class="hdline_news">
@@ -84,7 +111,7 @@
                     <div class="hdline_article_tit">
                         <a href="/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=001&amp;aid=0012194235" class="lnk_hdline_article nclicks('mai.text1', '880000D8_000000000000000012194235', 'airsGParam', '0', 'news_qm_v2.0', 'N0fOBA71P0KDNyEj')">
                             <!--3.뉴스1출력-->
-                            <?= $news1 ?>
+                            <?= $news1[$rdn] ?>
                         </a>
                     </div>
                     <div class="hdline_cluster_more">
@@ -102,7 +129,7 @@
                     <div class="hdline_article_tit">
                         <a href="/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=469&amp;aid=0000579113" class="lnk_hdline_article nclicks('mai.text1', '88156f75_000000000000000000579113', 'airsGParam', '0', 'news_qm_v2.0', 'N0fOBA71P0KDNyEj')">
                             <!--4.뉴스2출력-->
-                            <?= $news2 ?>
+                            <?= $news2[$rdn] ?>
                         </a>
                     </div>
                     <div class="hdline_cluster_more">
