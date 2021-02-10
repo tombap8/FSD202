@@ -40,9 +40,13 @@ $(function () { /// jQB //////////////////
 
         console.log("블러발생!"+cid+"/값:"+cv);
         
+        /// 메시지 요소
+        let msg = $(this).siblings(".msg");
+        
+        
         /// 0. 빈값일 경우 "필수입력" 메시지 띄우기! /////
         if(cv === ""){
-            $(this).siblings(".msg").text("필수입력");
+            msg.text("필수입력");
             // siblings(요소이름) - 형제요소 중 특정요소
         } ///// if문 : 빈값일때 /////////////////////
         
@@ -52,13 +56,11 @@ $(function () { /// jQB //////////////////
             
             // 유효성 검사결과가 true이면 //////
             if(validReg(cv,cid)){
-                $(this).siblings(".msg")
-                .html('<b style="color:green">훌륭한 아이디네요~!</b>');
+                msg.html('<b style="color:green">훌륭한 아이디네요~!</b>');
             } ///// if문 : 아이디검사결과 true /////
             // 아이디 유효성검사 불통과시 //////
             else{
-                $(this).siblings(".msg")
-                .text("아이디는 6~10자 영문자 또는 숫자");
+                msg.text("아이디는 6~10자 영문자 또는 숫자");
             } ///// else문 : 아이디검사결과 false /////
                         
         } ///// else if문 : 아이디검사 /////////////
@@ -68,12 +70,11 @@ $(function () { /// jQB //////////////////
             
             // 비번검사 결과가 false일때(!NOT 결과가 반대)
             if(!validReg(cv,cid)){
-                $(this).siblings(".msg")
-                .text("특수문자,문자,숫자 포함 형태의 5~15자리");
+                msg.text("특수문자,문자,숫자 포함 형태의 5~15자리");
             } /// if문 : 비번검사 결과가 false일때 /////
             // 비번검사 결과가 true일때
             else{// 출력 메시지 지우기
-                $(this).siblings(".msg").empty();
+                msg.empty();
             } //// else문 : 비번검사결과 true //////
             
         } /////// else if문 : 비밀번호검사 //////////
@@ -83,11 +84,10 @@ $(function () { /// jQB //////////////////
             
             // 비밀번호 입력값과 불일치하면
             if(cv !== $("#mpw").val()){
-                $(this).siblings(".msg")
-                .text("비밀번호가 일치하지 않습니다!");
+                msg.text("비밀번호가 일치하지 않습니다!");
             } ///// if문 : 비밀번호와 확인 값 불일치 //
             else{
-                $(this).siblings(".msg").empty();
+                msg.empty();
             } ///// else문 : 비밀번호와 확인 일치 /////
             
             
@@ -95,7 +95,7 @@ $(function () { /// jQB //////////////////
         
         /// 빈값이 아닐때 메시지 지우기 ///////////////
         else{
-            $(this).siblings(".msg").empty();
+            msg.empty();
             // empty() - 내용지우기
         } //////// else : 빈값이 아닐때 //////////////
         
