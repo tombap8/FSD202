@@ -93,6 +93,10 @@
     
     /// 다시하기 버튼 //////
     echo '<br><button onclick="history.back()">다시하기</button>';
+    // JS의 history.back() 은 이전 페이지로 가기
+    // 브라우저의 이전버튼과 동일한 기능
+    // 원래는 window.history.back()
+    // window는 보통 생략한다~
     
     
     
