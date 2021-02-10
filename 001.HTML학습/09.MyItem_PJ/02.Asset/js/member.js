@@ -46,6 +46,25 @@ $(function () { /// jQB //////////////////
             // siblings(요소이름) - 형제요소 중 특정요소
         } ///// if문 : 빈값일때 /////////////////////
         
+        /// 1. 아이디일때 검사하기 //////////////////
+        else if(cid === "mid"){
+          //console.log("아이디검사:"+validReg(cv,cid));
+            
+            // 유효성 검사결과가 true이면 //////
+            if(validReg(cv,cid)){
+                $(this).siblings(".msg")
+                .html('<b style="color:green">훌륭한 아이디네요~!</b>');
+            } ///// if문 : 아이디검사결과 true /////
+            // 아이디 유효성검사 불통과시 //////
+            else{
+                $(this).siblings(".msg")
+                .text("아이디는 6~10자 영문자 또는 숫자");
+            } ///// else문 : 아이디검사결과 false /////
+            
+            
+            
+        } ///// else if문 : 아이디검사 /////////////
+        
         /// 빈값이 아닐때 메시지 지우기 ///////////////
         else{
             $(this).siblings(".msg").empty();
