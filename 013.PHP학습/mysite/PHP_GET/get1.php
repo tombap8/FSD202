@@ -13,13 +13,12 @@
             document.querySelector('.btn')
             .onclick = function(){
                 
-                location.href = 'get2.php?res='+
+                location.href = 
+                'get2.php?res='+
                 sel.value+
                 "&nm="+
                 sel.options[sel.selectedIndex].text;
                 // 선택된 옵션의 글자읽기
-                
-                
                 
             };////// onclick ///////////////
             
