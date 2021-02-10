@@ -23,10 +23,17 @@ $(function () { /// jQB //////////////////
         
         // 블러가 발생한 요소의 값
         // current value 현재값
-        let cv = $(this).val().trim();
+        let cv;
+        
+        // 아이디나 비밀번호는 모든 공백제거(groSpace함수)
+        // 이름은 앞뒤공백만 제거, 중간공백허용(trim함수)
+        if(cid==="mnm") cv = $(this).val().trim();
+        else cv = groSpace($(this).val());
+        
         // val() -> 선택요소에 입력된 값을 읽어옴
         // val(값) -> 선택요소에 값셋팅
         // trim() -> 문자 앞뒤공백제거
+        // groSpace(값) - 모든공백제거함수(우리가만든것!)
         
         // 공백제거 후 다시넣기
         $(this).val(cv);
