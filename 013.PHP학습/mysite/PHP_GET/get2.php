@@ -74,6 +74,23 @@
         echo '<img src="images/bo.png" alt="보">';
     
     
+    //// 승패 판별하여 메시지 보이기 /////
+    
+    // 1. 비긴경우: 숫자가 같으면 비긴것
+    if($rdn == $_GET["res"])
+        echo "<h1>비겼쓰~! 다시해~!</h1>";
+    // 2. 이긴경우: 내가 이기면된다!
+    elseif($rdn == 1 && $_GET["res"] == 2
+          || $rdn == 2 && $_GET["res"] == 3
+          || $rdn == 3 && $_GET["res"] == 1)
+        echo "<h1>당신이 이겼쓰~!!!!</h1>";
+    // 3. 진경우: 나머지
+    else
+        echo "<h1>당신이 졌따뀨~!!!</h1>";
+    
+    
+    
+    
     /// 다시하기 버튼 //////
     echo '<br><button onclick="history.back()">다시하기</button>';
     
