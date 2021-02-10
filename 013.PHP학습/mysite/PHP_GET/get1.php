@@ -5,13 +5,20 @@
     <title>Get방식을 이용한 가위바위보 게임!</title>
     <script>
         window.addEventListener("load",function(){
+            
+            // 선택박스
+            let sel = document.querySelector('#sel');
+            
             // 버튼 클릭시 결과페이지호출과 값보내기
             document.querySelector('.btn')
             .onclick = function(){
                 
                 location.href = 'get2.php?res='+
-                document.querySelector('#sel').value+
-                "&nm=결과";
+                sel.value+
+                "&nm="+
+                sel.options[sel.selectedIndex].text;
+                // 선택된 옵션의 글자읽기
+                
                 
                 
             };////// onclick ///////////////
