@@ -58,13 +58,30 @@
     elseif($_GET["res"]==3)//보
         echo '<img src="images/bo.png" alt="'.$_GET["nm"].'">';
     
+    // 프로그램에서 랜덤으로 가위바위보를 내도록한다!
+    
+    // 랜덤수만들기(1~3사이수)
+    $rdn = rand(1,3);
+    
+    // 랜덤수 브라우저 콘솔에 찍어보기
+    echo "<script>console.log('랜덤수:$rdn');</script>";
+    
+    if($rdn == 1)
+        echo '<img src="images/ga.png" alt="가위">';
+    elseif($rdn == 2)
+        echo '<img src="images/ba.png" alt="바위">';
+    elseif($rdn == 3)
+        echo '<img src="images/bo.png" alt="보">';
     
     
+    /// 다시하기 버튼 //////
+    echo '<br><button onclick="history.back()">다시하기</button>';
     
     
     
     
     ?>
+    
     
 </body>
 </html>
