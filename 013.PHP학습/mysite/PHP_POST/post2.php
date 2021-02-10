@@ -19,6 +19,8 @@
     <style>
         body{
             background-color: <?=$color?>;
+            /*배경색은 서버에서 읽어온 색상명을 넣어준다
+            이때 php변수가 할당된 아래쪽에 코드가 있어야함*/
             font-size: 24px;
             font-weight: bold;
             text-shadow: 0 0 3px #000;
