@@ -13,18 +13,16 @@ $(function () { /// jQB ///////////////////////
     $(".gnb a,.bnav a").click(function (e) {
 
         e.preventDefault(); //a이동막기!
+        
+        // 1.클릭된 순번 알아내기(클릭된 a의 부모 li순번)
+        // 알아낸 순번을 전역 페이지번호(pno)에 넣기!
+        pno = $(this).parent().index();
+        console.log("클릭순번:" + pno);
 
-        // 1. a요소의 href값 가져오기
-        // - 셋팅된 id값으로 위치이동할 것임!
-        let pid = $(this).attr("href");
-        console.log("아이디:" + pid);
-
-        // 2. 이동할 아이디요소 위치의 top값 구하기
-        // - 실제로 스크롤 이동을 위한 값
-        let pgpos = $(pid).offset().top;
-        // offset() 메서드는 요소의 기본셋팅 정보를 리턴함
-        // - top, left, width, height 등을 알 수 있음
-        console.log("위치값:" + pgpos);
+        
+        // 2.기존 위치값 읽어오기 변경!!!!
+        // 전체윈도우 높이값(winH)에 페이지번호를 곱한다!
+        let pgpos = winH * pno;
 
         // 3. 스크롤 애니메이션으로 페이지이동하기
         // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
@@ -46,20 +44,14 @@ $(function () { /// jQB ///////////////////////
 
         // 두개의 네비게이션을 동시에 변경하기
 
-        // 클릭된 순번 알아내기(클릭된 a의 부모 li순번)
-        let idx = $(this).parent().index();
-        console.log("클릭순번:" + idx);
-
+        
         // GNB네비게이션 클래스 넣기
-        $(".gnb li").eq(idx).addClass("on")
+        $(".gnb li").eq(pno).addClass("on")
             .siblings().removeClass("on");
 
         // 블릿네비게이션 클래스 넣기
-        $(".bnav li").eq(idx).addClass("on")
+        $(".bnav li").eq(pno).addClass("on")
             .siblings().removeClass("on");
-
-        /// 스크롤 페이지 전역변수에 순번반영해야함!!!
-        pno = idx; /// 매우중요!!!!!!
 
     }); ///////// click //////////////
 
