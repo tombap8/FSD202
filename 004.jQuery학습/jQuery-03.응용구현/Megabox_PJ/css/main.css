@@ -228,13 +228,20 @@ h3 {
     left: 50%;
     transform: translate(-50%,-50%);
     width: 32%;
-    background-color: #f00;
+    /*background-color: #f00;*/
 }
 /*스크린비율유지박스*/
 #screen::before{
     content: "";
     display: block;
     padding-top: 55%;
+}
+
+/*동영상*/
+#mv{
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 
