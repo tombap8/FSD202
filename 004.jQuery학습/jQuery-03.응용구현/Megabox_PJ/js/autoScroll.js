@@ -77,7 +77,7 @@ $(function () { ///// jQB /////////////////
         let delta = e.detail ? e.detail : e.wheelDelta;
         // 변수에 유효한 설정이 적용되어 할당됨!
 
-        console.log("휠정보:" + delta);
+        //console.log("휠정보:" + delta);
         
         ///// 파이어폭스 일때 델타값 방향 반대로 하기!//////
         // JS 내장함수 test()를 이용하여
@@ -113,7 +113,7 @@ $(function () { ///// jQB /////////////////
             if (pno < 0) pno = 0; //첫번호고정!
         } /////////// else //////////////////////////////////
 
-        console.log("페이지번호:"+pno);
+        //console.log("페이지번호:"+pno);
 
         // 3. 이동할 페이지(.page)의 위치값 알아내기
         // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!

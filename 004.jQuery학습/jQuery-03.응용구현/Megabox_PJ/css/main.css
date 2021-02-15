@@ -202,7 +202,7 @@ h3 {
 
 /*개별페이지 셋팅*/
 #pg1 {
-    background: url(../images/cover.jpg) no-repeat center/130%;
+    background: #000 url(../images/cover.jpg) no-repeat center/130%;
     /*배경가로크기를 130%로 해서 스크린크기를 비율적으로 셋팅함!
     -스크린박스와 일치하기 위함!*/
 }
@@ -218,3 +218,29 @@ h3 {
 #pg4 {
     background: url(../images/cover4.jpg) no-repeat top/cover;
 }
+
+/****************** 1. 영화메뉴 페이지 ****************************/
+
+/*스크린박스*/
+#screen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 32%;
+    background-color: #f00;
+}
+/*스크린비율유지박스*/
+#screen::before{
+    content: "";
+    display: block;
+    padding-top: 55%;
+}
+
+
+
+
+
+
+
+
