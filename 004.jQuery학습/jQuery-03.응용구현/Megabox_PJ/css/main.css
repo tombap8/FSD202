@@ -202,29 +202,19 @@ h3 {
 
 /*개별페이지 셋팅*/
 #pg1 {
-    background: url(images/pic1.png) no-repeat top/cover;
+    background: url(../images/cover.jpg) no-repeat center/130%;
+    /*배경가로크기를 130%로 해서 스크린크기를 비율적으로 셋팅함!
+    -스크린박스와 일치하기 위함!*/
 }
 
 #pg2 {
-    background: url(images/pic2.png) no-repeat top/cover;
+    background: url(../images/cover2.jpg) no-repeat top/cover;
 }
 
 #pg3 {
-    background: url(images/pic3.png) no-repeat top/cover;
+    background: url(../images/cover3.jpg) no-repeat top/cover;
 }
 
 #pg4 {
-    background: url(images/pic4.png) no-repeat top/cover;
-}
-
-#pg5 {
-    background: url(images/pic5.png) no-repeat top/cover;
-}
-
-#pg6 {
-    background: url(images/pic6.png) no-repeat top/cover;
-}
-
-#pg7 {
-    background: url(images/pic7.png) no-repeat top/cover;
+    background: url(../images/cover4.jpg) no-repeat top/cover;
 }
