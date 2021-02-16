@@ -198,6 +198,10 @@ window.addEventListener("DOMContentLoaded",
 
 $(function () { /// jQB ///////////////////////
     
+    // 동영상요소
+    let mv = $("#mv");
+    
+    
     // 1. 영화포스터 클릭시 영화예고편 보여주기 ////
     // 대상선정: .gbox img
     $(".gbox img").click(function(){
@@ -237,6 +241,22 @@ $(function () { /// jQB ///////////////////////
         
         // 1-2. 동영상 보이게 하고 data-mv 속성값으로 
         //     동영상 정보를 불러온다!
+        
+        // 동영상정보(data-mv:동영상파일명)
+        let mi = $(this).attr("data-mv");
+        console.log("동영상정보:"+mi);
+        
+        // 변경대상: #mv -> 변수 mv에 할당!
+        mv.attr("src","mv/"+mi+".mp4").fadeIn(300);
+        // 동영상 src를 변경한 후 서서히 나타나게함!
+        
+        // 동영상 재생하기
+        mv.get(0).play();
+        
+        // 제이쿼리에서 video태그 요소를 선택하면
+        // 미디어 요소를 위한 컬렉션을 생성하기 때문에
+        // get(0)이라고 별도의 선택 메서드를 써야한다!
+        // play() 메서드는 동영상을 재생하는 기능임!
         
         
         
