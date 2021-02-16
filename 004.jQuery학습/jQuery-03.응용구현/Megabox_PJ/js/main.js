@@ -206,6 +206,22 @@ $(function () { /// jQB ///////////////////////
             transition:"all .6s ease-in-out"
         });///////// css ///////////////////
         
+        // 버튼도 축소이동 애니메이션하기
+        $(".abtn").css({
+            top: "80%",
+            transform:"translateY(-50%) scale(.5)",
+            transition:"all .6s ease-in-out"
+        });///// css ///////////////////////
+        // 버튼위치 세부조정
+        $(".lb").css({
+            left: "20%"
+        }); /// css //////
+        $(".rb").css({
+            right: "20%"
+        }); /// css //////
+        
+        
+        
         
     });//////////// click ////////////////
     
