@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PHP 인클루드 연습</title>
+    <title>PHP 인클루드 연습 - sub1</title>
     <style>
         .box{
             position: relative;
@@ -23,7 +23,7 @@
         .cont{
             height: 400px;
             margin-top: 10px;
-            background: url(images/gong.jpg) no-repeat 0/cover;
+            background: url(images/lee.jpg) no-repeat 0/cover;
         }
         .info{
             height: 200px;
