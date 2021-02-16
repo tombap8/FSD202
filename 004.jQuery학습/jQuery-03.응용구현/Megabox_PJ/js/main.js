@@ -4,6 +4,8 @@
 let autoI;
 // 타임아웃용 전역변수
 let autoT;
+// 포스터상태 전역변수
+let ptsts = 1;//1-허용,0-불허용
 
 //////// 로드구역 ////////////////////////////////
 // addEventListener(이벤트명,함수) - JS내장함수
@@ -36,8 +38,8 @@ window.addEventListener("DOMContentLoaded",
             // 함수호출확인!
             //console.log("나,왼쪽!");
 
-            // 자동호출지우기
-            clearAuto();
+            // 자동호출지우기(포스터 허용상태일때만 호출!)
+            if(ptsts) clearAuto();
 
             // 이미지변경함수 호출!
             chgImg(0); //전달값0
@@ -56,8 +58,8 @@ window.addEventListener("DOMContentLoaded",
             // 함수호출확인!
             //console.log("나,오른쪽!");
 
-            // 자동호출지우기
-            clearAuto();
+            // 자동호출지우기(포스터 허용상태일때만 호출!)
+            if(ptsts) clearAuto();
 
             // 이미지변경함수 호출!
             chgImg(1); //전달값1
@@ -147,7 +149,7 @@ window.addEventListener("DOMContentLoaded",
         /////////////////////////////////////////////////
         var autoCall = function () {
 
-            console.log("자동호출작동!");
+            //console.log("자동호출작동!");
 
             autoI = setInterval(function () {
                 chgImg(1); //오른쪽버튼 클릭이동과 동일함!
@@ -170,7 +172,7 @@ window.addEventListener("DOMContentLoaded",
         //////////////////////////////////////////////////////
         var clearAuto = function () {
 
-            console.log("자동호출지우기!");
+            //console.log("자동호출지우기!");
 
             // 인터발함수 지우기
             clearInterval(autoI);
@@ -204,6 +206,9 @@ $(function () { /// jQB ///////////////////////
         clearInterval(autoI);
         // 0. 포스터 자동타임아웃 지우기!
         clearTimeout(autoT);
+        // 0. 포스터 상태값 변경하기!
+        ptsts = 0;
+        // 이동버튼 클릭시 clearAuto함수 호출제한!
         
         //1-1. 영화포스터 네비 작아지게 하단이동 애니
         // 방법: transform: scale() 사용
