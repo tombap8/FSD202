@@ -4,6 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>PHP 인클루드 연습</title>
+    <style>
+        .box{
+            position: relative;
+            width: 1000px;
+            min-height: 100px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        .top img{
+            height: 100px;
+        }
+        .gnb{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .cont{
+            height: 400px;
+            margin-top: 10px;
+            background: url(images/gong.jpg) no-repeat 0/cover;
+        }
+    </style>
 </head>
 
 <body>
