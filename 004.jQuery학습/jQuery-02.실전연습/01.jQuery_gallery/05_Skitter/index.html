@@ -11,6 +11,34 @@
 <script>
     $(function(){ /// jQB //////////////////
         
+        //스키터(Skitter) 플러그인
+        //- 이미지 갤러리 전환효과 기능의 플러그인
+        $(".box_skitter").skitter({
+            dots: true, //메뉴블릿(false기본값)
+            preview: true, //블릿에 마우스오버시 미리보기
+            label: false, //설명글보기(false-숨기기)
+            controls: true, //진행,멈춤버튼 보이기
+            interval: 1000, //자동넘김 시간간격(1/1000)
+            animation: "cubeRandom" //특정전환효과 지정하기
+            //(이것을 지정하면 한가지 효과만으로 전환된다)
+        });/////// skitter //////////
+        
+        /*
+            스키터 애니메이션 효과명:			
+			cube 
+            cubeRandom block cubeStop 
+            cubeStopRandom cubeHide cubeSize 
+            horizontal showBars showBarsRandom 
+            tube fade fadeFour paralell blind 
+            blindHeight blindWidth directionTop 
+            directionBottom directionRight 
+            directionLeft cubeSpread glassCube 
+            glassBlock circles circlesInside 
+            circlesRotate cubeShow upBars 
+            downBars hideBars swapBars 
+            swapBarsBack swapBlocks cut            
+            */
+        
         
         
     });////////// jQB //////////////////////
@@ -42,7 +70,7 @@ body {
            <a href="http://thiagosf.net"><img src="img/pic1.jpg" class="random" /></a>
 
             <div class="label_text">
-                <p> 설명 </p>
+                <p> 나는 누구일까요? </p>
             </div>
         </li>
         <li>
