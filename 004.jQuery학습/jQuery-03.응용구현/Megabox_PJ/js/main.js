@@ -191,6 +191,26 @@ window.addEventListener("DOMContentLoaded",
 
 
 $(function () { /// jQB ///////////////////////
+    
+    // 1. 영화포스터 클릭시 영화예고편 보여주기 ////
+    // 대상선정: .gbox img
+    $(".gbox img").click(function(){
+        
+        //1-1. 영화포스터 네비 작아지게 하단이동 애니
+        // 방법: transform: scale() 사용
+        // css변경으로 애니메이션을 위해 transition사용
+        // 대상: .gbox
+        $(".gbox").css({
+            top: "80%",
+            transform:"translate(-50%,-50%) scale(.4)",
+            transition:"all .6s ease-in-out"
+        });///////// css ///////////////////
+        
+        
+    });//////////// click ////////////////
+    
+    
+    
 
 
     ///////////////////////////////////////////

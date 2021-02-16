@@ -286,6 +286,7 @@ h3 {
     left: -210%;
     transform: scale(.7);
     opacity: 0;
+    cursor: default;/*일반커서로 변경*/
 }
 
 /*(2)왼쪽옆*/
@@ -324,6 +325,7 @@ h3 {
     left: 210%;
     transform: scale(.7);
     opacity: 0;
+    cursor: default;/*일반커서로 변경*/
 }
 
 /*4.이동버튼 셋팅*/
