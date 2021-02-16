@@ -41,39 +41,23 @@ $(function () { ///// jQB /////////////////
         } ///////////// if /////////////////////////////////
         
 
-        // 2. 마우스휠 방향에 따라 페이지 번호 증감!
+        // 2. 마우스휠 방향에 따라 스크롤 위치값 증감!
         if (delta < 0) { // -120 아랫방향 스크롤(다음페이지)
-            pno++;
-            if (pno === totnum) pno = totnum - 1; //끝번호고정!
+            scno+=120;// 120px씩 증가!
+            if (scno > totsize) scno = totsize; //한계값고정!
         } /////////// if ////////////////////////////////////
         else { // 120 윗방향 스크롤(이전페이지)
-            pno--;
-            if (pno < 0) pno = 0; //첫번호고정!
+            scno-=120;// 120px씩 감소!
+            if (scno < 0) scno = 0; //첫번째 한계값 고정!
         } /////////// else //////////////////////////////////
 
-        console.log("페이지번호:"+pno);
+        console.log("스크롤위치값:"+scno);
 
-        // 3. 이동할 페이지(.page)의 위치값 알아내기
-        // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!
-        let pgpos = $(".page").eq(pno).offset().left;
-        // offset().left 현재 선택요소의 left위치값을 숫자로 리턴함!
-
-        //console.log("이동위치:"+pgpos);
-
-        // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
+        // 3. 실제 이동위치로 스크롤 애니메이션 이동하기
         $("html,body").stop().animate({
-            scrollLeft: pgpos + "px"
-        }, 1200, "easeInOutQuint"); /// animate ///
-
-
-        // 5. 메뉴변경하기 - 페이지 순번과 동일함!
-        // GNB네비게이션 클래스 넣기
-        $(".gnb li").eq(pno).addClass("on")
-            .siblings().removeClass("on");
-
-        // 블릿네비게이션 클래스 넣기
-        $(".bnav li").eq(pno).addClass("on")
-            .siblings().removeClass("on");
+            scrollLeft: scno + "px"
+        }, 2000, "easeOutQuint"); /// animate ///
+        // 이징을 in값을 없애야 처음 스크롤 출발이 경쾌하다!!!
 
 
 
