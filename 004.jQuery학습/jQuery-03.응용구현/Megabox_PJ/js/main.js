@@ -222,6 +222,15 @@ $(function () { /// jQB ///////////////////////
         let pseq = $(this).index();
         console.log("포순:"+pseq);
         
+        // pseq===1 왼쪽포스터일때 왼쪽이동버튼 클릭
+        if(pseq===1) $(".lb").trigger("click");
+        // pseq===3 오른쪽포스터일때 오른쪽이동버튼 클릭
+        else if(pseq===3) $(".rb").trigger("click");
+        // pseq===0, pseq===4 양쪽포스터, 
+        // pseq===2 중앙포스터는 클릭되지 않게함!
+        else return false;//아래쪽코드 실행말고 그냥돌아가!
+        // trigger(이벤트명) -  선택요소에 이벤트발생
+        
         
         
         //1-1. 영화포스터 네비 작아지게 하단이동 애니
