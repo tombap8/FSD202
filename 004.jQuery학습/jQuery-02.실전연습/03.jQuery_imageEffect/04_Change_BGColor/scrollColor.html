@@ -16,12 +16,66 @@
             });///////// each //////////////////
             
             
+            // 색상명
+            let color = ["MediumBlue","MediumPurple","LightGreen","Orchid","RosyBrown"];
+            // 차이수
+            let gap = 500;
+            
+            
+            // 구간체크 함수 /////////////////////////
+            let chkSec = function(seq,scTop){
+                //seq - 순번, scTop - 스크롤위치값
+                
+                let num = 500*(seq+1);
+                // 500,1000, 1500,... 이런순서임!
+                // 그래서 0,1,2 순으로 넘어오는 seq에
+                // 1을 더해서 1,2,3 순으로 만들고
+                // 이것을 500에 곱하여 500,1000,1500 순서로
+                // 만들어 준다!
+                //console.log(num);
+                
+                if(scTop > num && scTop < num+gap){
+                    //console.log("여기");
+                    $("body").css({
+                        backgroundColor: color[seq],
+                        transition: "all .6s"
+                    });///////// css //////////
+                } //////////// if ///////////////////
+                
+            };////// chkSec 함수 //////
+            
+            
+            
+            /// 스크롤시 색상변경하기
+            $(window).scroll(function(){
+                
+                let scTop = $(this).scrollTop();
+                console.log("스위:"+scTop);
+                
+                // 구간체크 함수호출!
+                for(var i=0; i<5; i++){
+                    chkSec(i,scTop);
+                }///// for ////////////////
+                
+                
+                
+            });/////// scroll ////////////
+            
+            
         });////////// jQB //////////////////////
     </script>
     <style>
         h1{
             text-align: center;
             font-size: 5vw;
+        }
+        
+        div{
+            width: 60vw;
+            border: 5px dotted pink;
+            padding: 15px;
+            font-size: 3vw;
+            margin: 20px auto;
         }
         
         
