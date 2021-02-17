@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스크롤시 변경되는 배경색</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){ /// jQB //////////////////
+            
+            let txt = "Mixing entertainment and shopping Streaming services are taking over the entertainment industry, appealing to a young and multicultural audience. As a result of this, a music focused media company such as Fuse needs to innovate in order to scale their offer. Alongside with the great team of Handsome, we came up with a cross-platform SVOD concept that do more than simply entertain people.We bring the focus on the “gear” highlighted in the FuseTV shows, giving the ability to save and shop the items seen in user’s favorite videos."
+            
+            $("div").each(function(idx,ele){
+                // 각 div에 글넣기
+                $(ele).text(txt);
+                
+            });///////// each //////////////////
+            
+            
+        });////////// jQB //////////////////////
+    </script>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 5vw;
+        }
+        
+        
+    </style>
+</head>
+<body>
+   <h1>Scrolling Change BG Color!</h1>
+   
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   
+   
+   
+   
+    
+</body>
+</html>
