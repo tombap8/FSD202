@@ -27,9 +27,17 @@
         $("#colorPicker div").click(function(){
             
             // 대상: body
-            $("body").animate({
-                backgroundColor: $(this).text()
-            },600); //// animate //////
+            $("body").css({
+                backgroundColor: $(this).text(),
+                transition: "all .6s"
+            }); //// css //////
+            
+            // 해시코드가 아닌 색상명일 경우
+            // animate가 안되는 경우가있다(기본색이 아닐경우)
+            // jQuery UI에 등록되지 않았기 때문이다!
+            // 이럴땐 CSS로 처리하면 된다!
+            
+            
             
         });///////// click ////////////////////
         
