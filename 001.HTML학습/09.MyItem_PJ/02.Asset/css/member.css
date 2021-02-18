@@ -148,6 +148,10 @@ select:focus {
     /*줄바꿈방지*/
     margin-top: -12px;
 }
+/*메시지 그린색*/
+.msg b{
+    color: green;
+}
 
 
 
