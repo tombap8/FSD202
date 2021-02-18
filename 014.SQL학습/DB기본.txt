@@ -98,6 +98,21 @@ CREATE TABLE 테이블명(
 기본키(primary key)를 설정해야하며 보통은 자동증가 컬럼을
 기본키로 설정한다!
 
+예시문)
+
+CREATE TABLE `friends`(
+   fnum int NOT null AUTO_INCREMENT,
+    fname varchar(20),
+    ftel char(11),
+    faddr varchar(200),
+    fmsg text(1000),
+    fdate timestamp,
+    PRIMARY KEY (fnum)
+);
+
+
+
+
 [ 데이터형 ]
 1. 숫자형 : int -> 범위(-21억~21억)
 2. 문자형 :
