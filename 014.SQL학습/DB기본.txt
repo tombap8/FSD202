@@ -30,6 +30,10 @@ MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres
 	(Structured Query Language)
 	- 구조화된 질의 언어
 	-> "시퀄" 이라고 읽어주면 좋다!
+	-> DB 쿼리문은 대소문자를 구분하지 않는다!
+	(단, MySQL 어드민에서 코딩할때 자동완성에서는
+	예약어를 대문자로 표기해 주는 데 이것은 
+	구분해서 보라고 하는 것일 뿐이다!)
 	
 [ DB만들기 ]
 1. 새로운... 버튼 클릭 또는 "데이터베이스"탭 클릭
@@ -115,6 +119,31 @@ CREATE TABLE `friends`(
     PRIMARY KEY (fnum)
 );
 
+
+
+[ 데이터형 ]
+1. 숫자형 : int -> 범위(-21억~21억)
+2. 문자형 :
+	1) char(byte개수) -> 정한 크기만큼 공간차지
+	- char 는 character (문자)에서 나온말
+	2) varchar(byte개수) -> 정한 크기보다 적은경우 작아짐
+	-> 공간 절약을 위한 데이터형이어서 많이쓰임!
+	- varchar 는 variable character (변하는 문자) 에서 나온말
+	3) text(byte개수)
+	-> 65,535까지 사용가능
+	-> 예컨데 text(4000) 영문자같은 경우 4000글자지만
+	한글 같은 경우 2byte이므로 2000글자만 들어간다~!
+3. 날짜형: 
+	1) date -> 날짜형식은 YYYY-MM-DD(년-월-일)
+		-> 한계는 "1000-01-01" ~ "9999-12-31"
+	2) datetime -> 날짜형식은 YYYY-MM-DD hh:mm:ss
+				(년-월-일 시:분:초)
+	3) timestamp -> 자동으로 기록되는 날짜시간 형식
+		-> 입력이 별도로 필요없다!
+		-> 날짜형식은 datatime과 동일함!
+
+
+
 [ 테이블 지우기 ]
 -> drop table `테이블명`
 
@@ -149,33 +178,11 @@ MODIFY COLUMN `컬럼명` 데이터형;
 ALTER TABLE `friends`
 MODIFY COLUMN `fname` varchar(100);
 
-[ 데이터형 ]
-1. 숫자형 : int -> 범위(-21억~21억)
-2. 문자형 :
-	1) char(byte개수) -> 정한 크기만큼 공간차지
-	- char 는 character (문자)에서 나온말
-	2) varchar(byte개수) -> 정한 크기보다 적은경우 작아짐
-	-> 공간 절약을 위한 데이터형이어서 많이쓰임!
-	- varchar 는 variable character (변하는 문자) 에서 나온말
-	3) text(byte개수)
-	-> 65,535까지 사용가능
-	-> 예컨데 text(4000) 영문자같은 경우 4000글자지만
-	한글 같은 경우 2byte이므로 2000글자만 들어간다~!
-3. 날짜형: 
-	1) date -> 날짜형식은 YYYY-MM-DD(년-월-일)
-		-> 한계는 "1000-01-01" ~ "9999-12-31"
-	2) datetime -> 날짜형식은 YYYY-MM-DD hh:mm:ss
-				(년-월-일 시:분:초)
-	3) timestamp -> 자동으로 기록되는 날짜시간 형식
-		-> 입력이 별도로 필요없다!
-		-> 날짜형식은 datatime과 동일함!
 
+>>>>>> DML (INSERT INTO, UPDATE, DELETE, SELECT)<<<<
 
-
-
-
-
-
+INSERT INTO `friends`(`fname`,`ftel`,`faddr`,`fmsg`) 
+VALUES ("이도","01011112222","서울시 종로구","세종대왕 화이팅!!!");
 
 
 
