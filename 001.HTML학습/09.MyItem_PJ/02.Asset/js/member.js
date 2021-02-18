@@ -56,7 +56,7 @@ $(function () { /// jQB //////////////////
 
                 // 유효성 검사결과가 true이면 //////
                 if (validReg(cv, cid)) {
-                    msg.html('<b style="color:green">훌륭한 아이디네요~!</b>');
+                    msg.html('<b>훌륭한 아이디네요~!</b>');
                 } ///// if문 : 아이디검사결과 true /////
                 // 아이디 유효성검사 불통과시 //////
                 else {
@@ -156,7 +156,7 @@ $(function () { /// jQB //////////////////
         if(res){ // 통과시
             
             eml1.siblings(".msg")
-                .html('<b style="color:green">적합한 이메일형식입니다!</b>');
+                .html('<b>적합한 이메일형식입니다!</b>');
             
         } ///// if문 - 이메일 통과시 ////////
         else{ // 불통과시
