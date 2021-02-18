@@ -183,7 +183,28 @@ $(function () { /// jQB //////////////////
         // 선택박스 선택값 가져오기
         let seleml_val = $(this).val();
         
-        console.log("이메일:"+eml1_val+"@"+seleml_val);
+        //console.log("이메일:"+eml1_val+"@"+seleml_val);
+        
+        /// 선택옵션별 분기문 ///////////
+        
+        // 1. "선택해주세요"를 선택한 경우
+        if(seleml_val === "init"){ 
+            
+            eml1.siblings(".msg")
+            .text("이메일 옵션선택 필수!");
+            
+        } ///// if문 - init 선택시 /////////
+        
+        // 2. "직접입력"을 선택한 경우
+        else if(seleml_val === "free"){
+            
+            // 입력창 보이기
+            eml2.fadeIn(500);
+            
+        } ///// else if문 - free 선택시 ///////
+        else{ /// 이메일 검사하기 /////////////
+            
+        } //// else문 - 그 밖의 이메일 주소일때 ///////
         
         
         
