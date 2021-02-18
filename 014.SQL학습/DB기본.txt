@@ -42,6 +42,11 @@ MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres
 CREATE DATABASE `디비명` 
 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
+[ DB 문자셋 변경하기 ]
+
+ALTER DATABASE `디비명` 
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 
 [ SQL 은 크게 2가지분류! ]
 
@@ -125,8 +130,24 @@ ADD `컬럼명` 데이터형;
 ALTER TABLE `friends`
 ADD `age` int;
 
+[ 테이블 컬럼 지우기 ]
+
+ALTER TABLE `테이블명`
+DROP COLUMN `컬럼명`;
+
+예시)
+ALTER TABLE `friends`
+DROP COLUMN `age`;
 
 
+[ 테이블 컬럼 수정하기(데이터형) ]
+
+ALTER TABLE `테이블명`
+MODIFY COLUMN `컬럼명` 데이터형;
+
+예시)
+ALTER TABLE `friends`
+MODIFY COLUMN `fname` varchar(100);
 
 [ 데이터형 ]
 1. 숫자형 : int -> 범위(-21억~21억)
