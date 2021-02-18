@@ -126,7 +126,7 @@ $(function () { /// jQB //////////////////
         // 앞쪽 이메일 내용 읽어오기
         let eml1_val = eml1.val();
         
-        console.log("이메일앞주소:"+eml1_val);
+        //console.log("이메일앞주소:"+eml1_val);
         
         // 이메일 뒷주소 셋팅하기~!
         // 구분: #email1이 입력되면 선택박스의 값이 뒷주소
@@ -137,10 +137,14 @@ $(function () { /// jQB //////////////////
         let ev = $(this).attr("id") === "email1" ?
             seleml.val() : eml2.val();
             
-         console.log("이메일뒷주소:"+ev);   
+        //console.log("이메일뒷주소:"+ev);   
         // 조건연산자를 변수에 할당하는 경우
         //    변수 = 조건?실행문1:실행문2;
         // 조건연산자의 결과가 변수에 할당된다!
+        
+        // 이메일 전체 주소 조합하기!!!
+        let comp = eml1_val + "@" + ev;
+        console.log("이멜주소:"+comp);
         
         
         
