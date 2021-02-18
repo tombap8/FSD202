@@ -110,6 +110,21 @@ CREATE TABLE `friends`(
     PRIMARY KEY (fnum)
 );
 
+[ 테이블 지우기 ]
+-> drop table `테이블명`
+
+- 지울때 mysql 어드민 sql모드에서 백틱을 쓰면 
+테이블명 자동완성 지원!
+
+[ 테이블 컬럼 추가하기 ]
+
+ALTER TABLE `테이블명`
+ADD `컬럼명` 데이터형;
+
+예시)
+ALTER TABLE `friends`
+ADD `age` int;
+
 
 
 
