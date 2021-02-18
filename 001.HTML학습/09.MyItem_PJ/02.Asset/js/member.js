@@ -144,7 +144,27 @@ $(function () { /// jQB //////////////////
         
         // 이메일 전체 주소 조합하기!!!
         let comp = eml1_val + "@" + ev;
-        console.log("이멜주소:"+comp);
+        //console.log("이멜주소:"+comp);
+        
+        // 이메일 정규식 검사함수 호출! ///
+        
+        // 검사결과
+        let res = validReg(comp,"eml");
+        //console.log("이멜결과:"+res);
+        
+        // 이메일 검사결과 메시지 찍기 ///
+        if(res){ // 통과시
+            
+            eml1.siblings(".msg")
+                .html('<b style="color:green">적합한 이메일형식입니다!</b>');
+            
+        } ///// if문 - 이메일 통과시 ////////
+        else{ // 불통과시
+            
+            eml1.siblings(".msg")
+                .text("맞지않는 이메일형식입니다");
+            
+        } ///// else문 - 이메일 불통과시 /////////
         
         
         
