@@ -6,14 +6,17 @@
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////
-            
+
             // 애니박스
             let ani = $("#ani");
 
-            // 이미지 셋업하기
+            // 이미지 셋업하기 /////
             for (let i = 0; i < 21; i++) {
-                ani.append('<img src="seq/seq'+i+'.png" alt="장면">');
+                ani.append('<img src="seq/seq' + i + '.png" alt="장면">');
             } //// for문 //////////////////
+            
+            // 이미지 첫장면 보이게하기 
+            ani.find("img").first().show();
 
 
 
@@ -30,7 +33,7 @@
 
         div#ani img {
             position: absolute;
-            /*	display:none; */
+            display: none;
         }
     </style>
 </head>
