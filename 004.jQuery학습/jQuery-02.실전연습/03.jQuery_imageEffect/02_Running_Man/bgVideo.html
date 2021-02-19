@@ -63,6 +63,21 @@
             height: 100%;
             background-color: #000;
         }
+        /*반투명 가림막(가상요소)*/
+        #ani::after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f;
+            opacity: .5;
+        }
+        
+        
+        
         #ani img{
             position: absolute;
             top: 50%;
