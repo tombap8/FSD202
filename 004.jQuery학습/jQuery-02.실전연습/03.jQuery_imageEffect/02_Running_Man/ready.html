@@ -1,34 +1,48 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<title> png 애니메이션 </title>
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <meta charset="utf-8">
+    <title> png 애니메이션 </title>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////
+            
+            // 애니박스
+            let ani = $("#ani");
 
-<style>
-div#ani {
-	width:320px;
-	height:240px;
-	position:relative;
-	background:url(img/bg.jpg); 
-}
- 
-div#ani img{
-	position:absolute;
-	display:none; 
-}
-</style>
+            // 이미지 셋업하기
+            for (let i = 0; i < 21; i++) {
+                ani.append('<img src="seq/seq'+i+'.png" alt="장면">');
+            } //// for문 //////////////////
+
+
+
+
+        }); ////////// jQB //////////////////////
+    </script>
+    <style>
+        div#ani {
+            width: 320px;
+            height: 240px;
+            position: relative;
+            background: url(img/bg.jpg);
+        }
+
+        div#ani img {
+            position: absolute;
+            /*	display:none; */
+        }
+    </style>
 </head>
 
 <body>
 
-<div id ="ani"></div>
+    <div id="ani"></div>
 
 
 
-<!------------------------ jQuery 코드 ----------------------->
-<script>
-  
-</script>
-</body>
-</html>
+    <!------------------------ jQuery 코드 ----------------------->
+    <script>
+
+    </script>
+</body></html>
