@@ -50,7 +50,13 @@
             
         });////////// jQB //////////////////////
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pangolin&family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
+         /*
+        font-family: 'Dancing Script', cursive;
+        font-family: 'Pangolin', cursive;
+        font-family: 'Permanent Marker', cursive;
+        */
         html,body{
             margin: 0;
             padding: 0;
@@ -85,11 +91,33 @@
             display: none;
             width: 100%;
         }
+        
+        /*타이틀*/
+        .tit{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #ff00eb;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: 7vw;
+            white-space: nowrap;/*줄바꿈방지*/
+            text-shadow: 4px 4px 5px #000;
+            font-family: 'Dancing Script', cursive;
+        }
     </style>
 </head>
 <body>
    <!--애니메이션 박스-->
    <div id="ani"></div>
+   
+   <!--타이틀글자-->
+    <h1 class="tit">It's My Style!</h1>
+   
+   
+   
     
 </body>
 </html>
