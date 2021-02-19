@@ -6,7 +6,46 @@
     <script src="jquery-1.7.2.min.js"></script>
     <script>
         $(function(){ /// jQB //////////////////
-            
+            // 애니박스
+            let ani = $("#ani");
+
+            // 이미지 셋업하기 /////
+            for (let i = 0; i < 40; i++) {
+                ani.append('<img src="new_seq/seq' + i + '.jpg" alt="장면">');
+            } //// for문 //////////////////
+
+            // 이미지 첫장면 보이게하기 
+            ani.find("img").first().show();
+
+            //////////////////////////////////
+            // 한장면씩 보이게 하기 /////
+
+            // 장면번호
+            let fnum = 0;
+
+            // 장면 넘기기 함수 //////////////////
+            let nextFrame = function() {
+
+                //장면번호증가
+                fnum++;
+
+                //장면한계설정(끝번호 다음엔 첫번호로!)
+                if (fnum === 40) fnum = 0;
+
+                // 해당장면번호의 이미지를 보이게하기
+                // 나머지는 숨기기!
+                ani.find("img").eq(fnum).show()
+                    .siblings().hide();
+
+            }; //////// nextFrame함수 ////////////
+
+            /// 장면 넘기기함수 인터발 호출! ////
+
+            // 인터발용 변수(지우기용)
+            let autoI;
+
+            // 만약 처음부터 계속 움직게 하려면 바깥에 인터발함수를 셋팅한다!
+            autoI = setInterval(nextFrame, 50);
             
             
         });////////// jQB //////////////////////
