@@ -216,15 +216,26 @@ SELECT * FROM `테이블명` WHERE 컬럼명 = 값
 -> 데이터 중 조건에 맞는 데이터 조회
 
 [ 조건은 WHERE ] -> DELETE (삭제)할때도 매우중요함!
-- 단일조건 WHERE 컬럼명 = 값
-- 다중조건(곱) WHERE 컬럼명 = 값 AND 컬럼명 = 값
-- 다중조건(합) WHERE 컬럼명 = 값 OR 컬럼명 = 값
+- 단일조건 : WHERE 컬럼명 = 값
+- 다중조건(곱) : WHERE 컬럼명 = 값 AND 컬럼명 = 값
+- 다중조건(합) : WHERE 컬럼명 = 값 OR 컬럼명 = 값
+- NOT조건 : WHERE NOT 컬럼명 = 값
+
+-> 위의 여러 조건을 쓸 경우 예시
+    SELECT * FROM `테이블명`
+    WHERE 컬럼명 = 값 AND NOT 컬럼명 = 값 OR 컬럼명 = 값
 
 3. DELETE : 데이터 삭제
 
 DELETE FROM `테이블명` WHERE 조건문
 
+(참고사항: 기존의 데이터를 지울 경우 인텍스 번호는 지워진 
+최종 번호 다음 번호부터 생성된다!-> 유일한 키를 지킴!)
 
+예시)
+DELETE FROM `friends` WHERE `fname` = "이도" AND NOT `fnum`= 4;
+(해석: `friends`테이블로 부터 `fname`이 "이도" 이고 
+`fnum`이 4가 아닌 레코드만 지워라!)
 
 
 
