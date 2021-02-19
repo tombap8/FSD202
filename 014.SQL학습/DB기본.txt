@@ -204,4 +204,33 @@ INSERT INTO `테이블명` (컬럼명들) VALUES (값들);
 INSERT INTO `friends` (`fname`,`ftel`,`faddr`,`fmsg`) 
 VALUES ("이도","01011112222","서울시 종로구","세종대왕 만만세~!!!");
 
+2. SELECT : 데이터 조회하기
+
+SELECT * FROM `테이블명` 
+-> 전체 데이터 조회,전체 컬럼조회
+
+SELECT 컬럼명(들) FROM `테이블명` 
+-> 전체 데이터 조회, 일부컬럼 조회 
+
+SELECT * FROM `테이블명` WHERE 컬럼명 = 값
+-> 데이터 중 조건에 맞는 데이터 조회
+
+[ 조건은 WHERE ] -> DELETE (삭제)할때도 매우중요함!
+- 단일조건 WHERE 컬럼명 = 값
+- 다중조건(곱) WHERE 컬럼명 = 값 AND 컬럼명 = 값
+- 다중조건(합) WHERE 컬럼명 = 값 OR 컬럼명 = 값
+
+3. DELETE : 데이터 삭제
+
+DELETE FROM `테이블명` WHERE 조건문
+
+
+
+
+
+
+
+
+
+
 
