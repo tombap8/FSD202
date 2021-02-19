@@ -119,6 +119,20 @@ CREATE TABLE `friends`(
     PRIMARY KEY (fnum)
 );
 
+-> 백틱(`)을 사용해도 동일하다!
+-> 다만 백틱을 사용하는 목적은 키워드와 같은 이름 등
+해석상 에러가 발생할 수 있는 소지를 미리 막는데 있다!
+
+CREATE TABLE `friends`( 
+    `fnum` int NOT null AUTO_INCREMENT, 
+    `fname` varchar(20), 
+    `ftel` char(11), 
+    `faddr` varchar(200), 
+    `fmsg` text(1000), 
+    `fdate` timestamp, 
+    PRIMARY KEY (`fnum`) 
+);
+
 
 
 [ 데이터형 ]
@@ -181,8 +195,13 @@ MODIFY COLUMN `fname` varchar(100);
 
 >>>>>> DML (INSERT INTO, UPDATE, DELETE, SELECT)<<<<
 
-INSERT INTO `friends`(`fname`,`ftel`,`faddr`,`fmsg`) 
-VALUES ("이도","01011112222","서울시 종로구","세종대왕 화이팅!!!");
+1. INSERT INTO : 데이터 넣기
 
+INSERT INTO `테이블명` (컬럼명들) VALUES (값들);
+
+예시)
+
+INSERT INTO `friends` (`fname`,`ftel`,`faddr`,`fmsg`) 
+VALUES ("이도","01011112222","서울시 종로구","세종대왕 만만세~!!!");
 
 
