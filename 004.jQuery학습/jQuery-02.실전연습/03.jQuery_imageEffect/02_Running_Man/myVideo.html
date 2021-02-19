@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BG Video</title>
+    <title>My Video</title>
     <script src="jquery-1.7.2.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////
@@ -11,7 +11,7 @@
 
             // 이미지 셋업하기 /////
             for (let i = 0; i < 40; i++) {
-                ani.append('<img src="new_seq/seq' + i + '.jpg" alt="장면">');
+                ani.append('<img src="mymv/seq_' + i + '.jpg" alt="장면">');
             } //// for문 //////////////////
 
             // 이미지 첫장면 보이게하기 
@@ -95,12 +95,16 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            background-color: #000;
         }
 
         #ani {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-60%, -77%);
+            width: 423px;
+            height: 273px;
             background-color: #000;
         }
 
@@ -113,8 +117,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #f0f;
-            opacity: .5;
+            background-color: #000;
+            opacity: .2;
         }
 
 
@@ -132,27 +136,45 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-60%, -77%);
+            width: 484px;
+            height: 273px;
             color: #ff00eb;
             margin: 0;
             padding: 0;
             font-weight: bold;
-            font-size: 7vw;
+            font-size: 30px;
             white-space: nowrap;
             /*줄바꿈방지*/
             text-shadow: 4px 4px 5px #000;
             font-family: 'Dancing Script', cursive;
+            text-align: center;
+            line-height: 273px;
+        }
+        
+        #tvset{            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 800px;
+            background: url(img/oldTVON.png) no-repeat center;
         }
     </style>
 </head>
 
 <body>
+   
     <!--애니메이션 박스-->
     <div id="ani"></div>
 
     <!--타이틀글자-->
-    <h1 class="tit">It's My Style!</h1>
+    <h1 class="tit">Speed is My Dream!</h1>
 
+    
+   <!--TV박스-->
+    <div id="tvset"></div>
 
 
 
