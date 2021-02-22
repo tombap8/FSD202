@@ -341,7 +341,15 @@ $(function () { /// jQB //////////////////
             alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
             
             // 로그인 페이지로 이동
-            location.href = "login.html";
+            //location.href = "login.html";
+            location.replace("login.html");
+            /*
+                location.href 는 이전 페이지로 돌아갈 수 있다
+                그런데 민감한 데이터를 입력 후 이전 페이지로 가게 되면
+                비밀번호는 리셋되었지만 나머지정보를 다시 볼 수 있다!
+                이런 경우 location.replace(이동할주소페이지)를 사용하면
+                이전페이지로 갈 수 없다!
+            */
             
         } ///////// if ////////////////
         else { // 불통과시
