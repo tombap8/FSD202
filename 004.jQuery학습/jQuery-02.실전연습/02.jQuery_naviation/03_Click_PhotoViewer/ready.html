@@ -4,7 +4,28 @@
     <meta charset="utf-8">
     <title> 슬라이딩 내비게이션(바네이 메뉴) </title>
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////
 
+            //버튼 클릭시 해당 슬라이드 위치로 이동하기
+            // 이벤트 대상: .btnGroup a
+            // 변경 대상: #viewer
+            $(".btnGroup a").click(function(e){//e-이벤트전달변수
+                
+                // 기본이동 막기
+                e.preventDefault();
+                
+                // 버튼순번 알아내기
+                let idx = $(this).parent().index();//li순번
+                console.log("순번:"+idx);
+                
+            });//////////// click /////////////////
+            
+            
+
+
+        }); ////////// jQB //////////////////////
+    </script>
     <style>
         html,
         body {
@@ -27,7 +48,7 @@
             max-width: 100%;
             /*설정된 width보다 화면이 작아질때 100%로 크기변경*/
             height: 350px;
-            
+
             margin: 0 auto;
             background: #FFF;
             border: #FDF6DD 2px solid;
@@ -55,9 +76,9 @@
             width: 100%;
             height: 100%;
         }
-        
+
         /*슬라이드 개별 li*/
-        #viewer ul li{
+        #viewer ul li {
             /*부모가 display:flex 이므로 
             width는 등분할, height 는 자동 100%채우기가 셋팅됨!*/
         }
