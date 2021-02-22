@@ -258,11 +258,11 @@ $(function () { /// jQB //////////////////
         // 2. "직접입력"을 선택한 경우
         else if (seleml_val === "free") {
 
-            // 입력창 보이기(기존값 지우고 보이게하기!)
-            eml2.val("").fadeIn(500);
+            // 입력창 보이기
+            eml2.fadeIn(500);
 
-            // 기존 출력 메시지 지우기(전체검사시 문제로 주석처리!)
-            //eml1.siblings(".msg").empty();
+            // 기존 출력 메시지 지우기
+            eml1.siblings(".msg").empty();
 
         } ///// else if문 - free 선택시 ///////
         else { /// 이메일 검사하기:직접입력이 아닌 선택일 경우
