@@ -21,7 +21,8 @@
         $(".title").click(function(){
             
             $(this).next() // 서브메뉴
-            .slideDown(300) // 슬라이드 다운하여 보이기!
+            .slideToggle(300) 
+            // 슬라이드 다운/업하여 보이거나 숨기기!
             .parent() // 상위 li
             .siblings() // 다른 li들
             .find(".sub") // 하위 서브메뉴
