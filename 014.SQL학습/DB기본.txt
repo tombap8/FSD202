@@ -133,10 +133,36 @@ CREATE TABLE `friends`(
     PRIMARY KEY (`fnum`) 
 );
 
+추가예시)
+CREATE TABLE `saveMoney`(
+	`idx` int NOT null AUTO_INCREMENT,
+    `name` varchar(50) NOT null,
+    `address` varchar(200),
+    `gender` char(1) NOT null,
+    `birth` date,
+    `time` timestamp,
+    PRIMARY KEY (`idx`)
+);
+
 
 
 [ 데이터형 ]
 1. 숫자형 : int -> 범위(-21억~21억)
+    - 만약 컬럼생성시 int라고만 쓰면 
+    기본 자릿수가 11자리로 잡혀서 int(11)로 표기된다.
+    이는 10자리면 21억개의 숫자 자리수이지만 
+    맨앞에 한자리 0을 넣어주는 것을 기본으로 설계되어서
+    11자리로 표기되는 것이다
+    만약 자릿수를 제한하려면 생성시에
+    int(자릿수)로 만들면 된다!
+    예) int(6) -> 10만자리수 까지
+    
+    - 만약 마이너스 범위(-21억)을 사용하지 않고
+    양수만 쓰고 싶다면 반대범위가 낭비 되므로
+    키워드 unsigned 를 사용하여 양수만 사용하여
+    두배수를 사용할 수 있다~! (21억*2=42억)
+    
+    
 2. 문자형 :
 	1) char(byte개수) -> 정한 크기만큼 공간차지
 	- char 는 character (문자)에서 나온말
@@ -155,6 +181,23 @@ CREATE TABLE `friends`(
 	3) timestamp -> 자동으로 기록되는 날짜시간 형식
 		-> 입력이 별도로 필요없다!
 		-> 날짜형식은 datatime과 동일함!
+        
+4. 키워드:
+    1) not null -> 데이터 빈값 불허용
+    (이 키워드를 안쓰면 널값 허용)
+    -> 널값? 데이터 레코드 입력시 컬럼을 비워놓는것
+    2) AUTO_INCREMENT -> 자동증가(숫자1씩증가)
+    3) unsigned -> 숫자의 음수값 사용안하고
+                양수로 숫자값 사용함
+    4) default -> 데이터 입력안할 경우 기본값 넣기
+        - 실제로 사용시 -> default 기본값
+    5) primary key -> 기본키(유일키포함)
+        -> 사용법: 컬럼 정의시 뒤쪽에 쓰거나
+        맨 아래에서 본 키워드 뒤에 소괄호 안에 키지정
+        예) `idx` int primary key
+            또는
+            primary key (`idx`,`email`)
+        -> 기본키는 여러개를 묶어서 그룹지정가능함
 
 
 
