@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title> 슬라이딩 내비게이션(바네이 메뉴) </title>
-    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////
 
@@ -18,6 +19,14 @@
                 // 버튼순번 알아내기
                 let idx = $(this).parent().index();//li순번
                 console.log("순번:"+idx);
+                
+                // 슬라이드 이동하기
+                // 원리: -100%단위를 기본으로 버튼 순번을 곱하면
+                //      각 슬라이드 이동위치값이 된다!(0,-100,-200,-300)
+                $("#viewer").animate({
+                    left: (-100*idx)+"%"
+                },600,"easeInOutCubic");
+                // 이징 가속도를 주려면 반드시 jQuery UI가 있어야한다!
                 
             });//////////// click /////////////////
             
