@@ -16,17 +16,23 @@
                 // 기본이동 막기
                 e.preventDefault();
                 
-                // 버튼순번 알아내기
+                // 1. 버튼순번 알아내기
                 let idx = $(this).parent().index();//li순번
                 console.log("순번:"+idx);
                 
-                // 슬라이드 이동하기
+                // 2. 슬라이드 이동하기
                 // 원리: -100%단위를 기본으로 버튼 순번을 곱하면
                 //      각 슬라이드 이동위치값이 된다!(0,-100,-200,-300)
                 $("#viewer").animate({
                     left: (-100*idx)+"%"
                 },600,"easeInOutCubic");
                 // 이징 가속도를 주려면 반드시 jQuery UI가 있어야한다!
+                
+                // 3. 블릿버튼 클래스 변경하기
+                // 클릭된 a의 부모 li에 class를 "on"넣고
+                // 나머지 다른 li들은 class의 "on"을 제거한다!
+                $(this).parent().addClass("on")
+                .siblings().removeClass("on");
                 
             });//////////// click /////////////////
             
@@ -131,7 +137,7 @@
         /*동시에! li가 class="on"일 경우 같은 변경*/
         ul#btnGroup li a:hover,
         ul#btnGroup li.on a{
-            background: #CCFF00;
+            background: hotpink;
         }
     </style>
 
