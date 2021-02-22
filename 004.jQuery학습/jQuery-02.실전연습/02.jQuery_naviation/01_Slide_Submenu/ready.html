@@ -10,6 +10,26 @@
         // 대상: .sub
         $(".sub").hide().first().show();
         
+        // 다른방법 선택변경하기
+        //$(".sub").first().show()
+        //.parent().siblings().find(".sub").hide();
+        
+        // 상위메뉴(.title)가 클릭되면
+        // 그 다음요소인 하위메뉴가 slideDown하여 보이고
+        // 나머지 다른 메뉴의 하위메뉴는 slideUp하여 숨기기
+        // 대상: .title
+        $(".title").click(function(){
+            
+            $(this).next() // 서브메뉴
+            .slideDown(300) // 슬라이드 다운하여 보이기!
+            .parent() // 상위 li
+            .siblings() // 다른 li들
+            .find(".sub") // 하위 서브메뉴
+            .slideUp(300); // 슬라이드업 하여 사라짐!
+            
+            
+        });/////////// click ////////////
+        
         
         
         
