@@ -127,7 +127,10 @@
             color: #000;
         }
 
-        ul#btnGroup li a:hover {
+        /*마우스 오버시 블릿 색상변경하기*/
+        /*동시에! li가 class="on"일 경우 같은 변경*/
+        ul#btnGroup li a:hover,
+        ul#btnGroup li.on a{
             background: #CCFF00;
         }
     </style>
@@ -157,7 +160,7 @@
         </div>
 
         <ul id="btnGroup">
-            <li><a href="#">1</a></li>
+            <li class="on"><a href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
