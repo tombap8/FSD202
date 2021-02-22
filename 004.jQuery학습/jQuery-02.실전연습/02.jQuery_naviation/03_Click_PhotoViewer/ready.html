@@ -47,6 +47,8 @@
 
         /*슬라이드 부모 ul*/
         #viewer ul {
+            display: flex;
+            /*플렉스 디스플레이!*/
             margin: 0;
             padding: 0;
             list-style: none;
@@ -56,9 +58,9 @@
         
         /*슬라이드 개별 li*/
         #viewer ul li{
-            
+            /*부모가 display:flex 이므로 
+            width는 등분할, height 는 자동 100%채우기가 셋팅됨!*/
         }
-        
 
         img {
             width: 100%;
@@ -73,10 +75,10 @@
             right: 0;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
         #btnGroup li {
-            float: left;
             width: 16px;
             height: 16px;
             list-style: none;
