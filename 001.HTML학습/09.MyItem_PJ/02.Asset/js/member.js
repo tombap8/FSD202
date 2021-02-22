@@ -317,6 +317,18 @@ $(function () { /// jQB //////////////////
         $("input[type=text][id!=email2],input[type=password]")
         .trigger("blur");
         
+        // 4. 이메일 검사를 위해 선택박스에 change 이벤트 발생시키기
+        seleml.trigger("change");
+        
+        // 5. 이메일 직접입력일때와 아닐때를 구분하여 keyup 이벤트 발생시키기
+        
+        //직접입력일때는 뒷주소에 발생!
+        if(seleml.val()==="free")
+            eml2.trigger("keyup");
+        //직접입력이 아닐때는 앞주소에 발생!
+        else
+            eml1.trigger("keyup");
+        
         
         console.log("통과여부:"+pass);
 
