@@ -8,35 +8,28 @@
     <script>
         $(function() { /// jQB //////////////////
 
-            //버튼 클릭시 해당 슬라이드 위치로 이동하기
-            // 이벤트 대상: #btnGroup a
-            // 변경 대상: #viewer
-            $("#btnGroup a").click(function(e) { //e-이벤트전달변수
+            //// 오른쪽버튼 클릭시 ///////
+            // 이동원리: left를 -100%로 이동 후
+            // 맨앞 li를 잘라서 맨뒤로 이동
+            // 이때 left값을 0으로 초기화!
+            ///////////////////////////////
+            //이벤트대상: .rb
 
-                // 기본이동 막기
-                e.preventDefault();
+            //변경대상: #viewer
+            let sld = $("#viewer");
 
-                // 1. 버튼순번 알아내기
-                let idx = $(this).parent().index(); //li순번
-                console.log("순번:" + idx);
+            $(".rb").click(function() {
 
-                // 2. 슬라이드 이동하기
-                // 원리: -100%단위를 기본으로 버튼 순번을 곱하면
-                //      각 슬라이드 이동위치값이 된다!(0,-100,-200,-300)
-                $("#viewer").animate({
-                    left: (-100 * idx) + "%"
-                }, 600, "easeInOutCubic");
-                // 이징 가속도를 주려면 반드시 jQuery UI가 있어야한다!
+                // 1. left:-100% 이동
+                sld.animate({
+                    left: "-100%"
+                },600);
+                // 2. 맨앞 li 맨뒤로 이동
 
-                // 3. 블릿버튼 클래스 변경하기
-                // 클릭된 a의 부모 li에 class를 "on"넣고
-                // 나머지 다른 li들은 class의 "on"을 제거한다!
-                $(this).parent().addClass("on")
-                    .siblings().removeClass("on");
-
-            }); //////////// click /////////////////
+                // 3. left:0 초기화
 
 
+            }); ////////// click /////////////
 
 
         }); ////////// jQB //////////////////////
@@ -140,17 +133,17 @@
         ul#btnGroup li.on a {
             background-position: 0 -16px;
         }
-        
+
         /*IR설명숨기기*/
-        .bld{
+        .bld {
             display: block;
             width: 0;
             height: 0;
             overflow: hidden;
         }
-        
+
         /*이동버튼*/
-        .abtn{
+        .abtn {
             position: absolute;
             /*부모? #slider*/
             width: 25px;
@@ -159,21 +152,23 @@
             transform: translateY(-50%);
             /*세로방향 정중앙 이동*/
         }
+
         /*마우스 오버시 배경이미지 위치이동*/
-        .abtn:hover{
+        .abtn:hover {
             background-position: 0 -49px;
         }
+
         /*왼쪽버튼*/
-        .lb{
+        .lb {
             left: 5px;
             background: url(image/btn_left.png) no-repeat;
         }
+
         /*오른쪽버튼*/
-        .rb{
+        .rb {
             right: 5px;
             background: url(image/btn_right.png) no-repeat;
         }
-        
     </style>
 
 </head>
@@ -208,21 +203,21 @@
             </li>
             <li>
                 <a href="#">
-                   <span class="bld">블릿</span> 
+                    <span class="bld">블릿</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                   <span class="bld">블릿</span> 
+                    <span class="bld">블릿</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                   <span class="bld">블릿</span> 
+                    <span class="bld">블릿</span>
                 </a>
             </li>
         </ul>
-        
+
         <!--양쪽이동버튼-->
         <a href="#" class="abtn lb"><span class="bld">왼쪽이동버튼</span></a>
         <a href="#" class="abtn rb"><span class="bld">오른쪽이동버튼</span></a>
