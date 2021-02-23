@@ -7,32 +7,32 @@
     <script src="jquery-ui.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////
-            
+
             //슬라이드 순번
             let snum = 0;
             // 블릿요소
             let bbtn = $("#btnGroup li");
-            
+
             // 블릿변경함수 //
-            let chgBlt = function(dir){
+            let chgBlt = function(dir) {
                 // dir - 이동방향(1-오른쪽,0-왼쪽)
-                
-                if(dir){ // 오른쪽버튼
+
+                if (dir) { // 오른쪽버튼
                     snum++;
-                    if(snum===4) snum=0;
-                }/////////// if //////////
-                else{ // 왼쪽버튼
+                    if (snum === 4) snum = 0;
+                } /////////// if //////////
+                else { // 왼쪽버튼
                     snum--;
-                    if(snum===-1) snum=3;
-                }///////// else ///////
-                
+                    if (snum === -1) snum = 3;
+                } ///////// else ///////
+
                 /// 해당 블릿 class="on"넣기
                 bbtn.eq(snum).addClass("on")
-                .siblings().removeClass("on");
-                
-                
-            };////// chgBlt함수 ///////
-            
+                    .siblings().removeClass("on");
+
+
+            }; ////// chgBlt함수 ///////
+
 
             //// 오른쪽버튼 클릭시 ///////
             // 이동원리: left를 -100%로 이동 후
@@ -59,12 +59,12 @@
                         left: "0"
                     });
                 }); ///// animate ////
-                
+
                 // 블릿변경함수 호출
-                chgBlt(1);// 오른쪽은 1
+                chgBlt(1); // 오른쪽은 1
 
             }); ////////// click /////////////
-            
+
             //// 왼쪽버튼 클릭시 /////////
             // 이동원리: 맨뒤li를 맨앞으로 이동한다
             // left값을 -100%로 변경한다
@@ -72,28 +72,28 @@
             /////////////////////////////////
             // 이벤트대상: .lb
             // 변경대상: #viewer (sld변수)
-            
-            $(".lb").click(function(){
-                
+
+            $(".lb").click(function() {
+
                 // 1. 맨뒤 li를 맨앞으로 이동
                 sld.find("ul").prepend(
                     sld.find("ul>li").last()
                 );
                 // 2. left값을 -100%로 변경
                 sld.css({
-                    left: "-100%"
-                })
-                // 3. left값을 0으로 애니메이션
-                .animate({
-                    left: "0"
-                },600);/// animate ///
-                
+                        left: "-100%"
+                    })
+                    // 3. left값을 0으로 애니메이션
+                    .animate({
+                        left: "0"
+                    }, 600); /// animate ///
+
                 // 블릿변경함수 호출
-                chgBlt(0);//왼쪽은 0
-                
-            });//////// click //////////////
-            
-            
+                chgBlt(0); //왼쪽은 0
+
+            }); //////// click //////////////
+
+
             ///// 블릿버튼 클릭하여 슬라이드 이동하기 ///
             // 대상: #btnGroup li a
             // 이동방법: 클릭된 블릿의 순번을 알아내고
@@ -101,28 +101,74 @@
             //          두 순번으 차를 구한다!
             // 이 차만큼 왼쪽와 오른쪽의 이동을 구현한다!
             ////////////////////////////////////////
-            $("#btnGroup li a").click(function(e){
-                
+            $("#btnGroup li a").click(function(e) {
+
                 // 기본이동막기
                 e.preventDefault();
-                
+
                 // 1. 클릭된 블릿 a요소의 부모 li순번
                 let idx = $(this).parent().index();
-                console.log("블릿:"+idx+"/슬라:"+snum);
-                
+                console.log("블릿:" + idx + "/슬라:" + snum);
+
                 // 2. 현재슬라이드 순번(snum)과 차이구하기
                 let diff = idx - snum;
-                console.log("두수차:"+diff);
-                
-                
-            });////////// click ///////////////////////
+                console.log("두수차:" + diff);
+                // 두수의 차에 대한 해석
+                // 양수는 오른쪽버튼과 같은 방향
+                // 음수는 왼쪽버튼과 같은 방향
+                // 차이수는 슬라이드 변경 개수
+
+                // 차이수를 절대값으로 설정!
+                // Math.abs() 숫자를 양수의 절대값 변경
+                let abs = Math.abs(diff);
+                console.log("절대값:" + abs);
+
+                ////////////////////////////////////////
+                /// 두수의 차가 양수 - 오른쪽이동버튼원리 ///
+                if (diff > 0) {
+
+                    // 1. left:(-100*두수차)% 이동
+                    sld.animate({
+                        left: (-100 * abs) + "%"
+                    }, 600, function() {
+
+                        // 이동후 차이수만큼 for문으로 반복작업
+                        // 임시변수에 차이수넣기
+                        let temp = abs;
+
+                        for (let i = 0; i < abs; i++) {
+
+                        } ////// for문 ///////////////
+
+
+                        // 2. 맨앞 li 맨뒤로 이동
+                        $("ul", this).append(
+                            $("ul li", this).first()
+                        );
+                        // 3. left:0 초기화
+                        $(this).css({
+                            left: "0"
+                        });
+                    }); ///// animate ////
+
+                } /////// if //////////////////////////
+
+                ///////////////////////////////////////
+                /// 두수의 차가 음수 - 왼쪽이동버튼원리 ////
+                else if (diff < 0) {
+
+                } ////// else if //////////////////////
+
+
+
+            }); ////////// click ///////////////////////
             ///////////////////////////////////////////
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
 
 
         }); ////////// jQB //////////////////////
