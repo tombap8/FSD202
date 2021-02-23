@@ -383,6 +383,19 @@ CREATE TABLE `order` (
     FOREIGN KEY (`idx`) REFERENCES `member_info`(`idx`)
 );
 
+>>> 데이터 넣기 
+예시)
+INSERT INTO `order` (`idx`,`odcd`,`gnm`)
+VALUES (873,12125899,"구두");
+INSERT INTO `order` (`idx`,`odcd`,`gnm`)
+VALUES (333,34565899,"시계");
+INSERT INTO `order` (`idx`,`odcd`,`gnm`)
+VALUES (474,45123366,"반지");
+INSERT INTO `order` (`idx`,`odcd`,`gnm`)
+VALUES (78,45456687,"스마트폰");
+INSERT INTO `order` (`idx`,`odcd`,`gnm`)
+VALUES (657,78785699,"드레스");
+
 
 
 
