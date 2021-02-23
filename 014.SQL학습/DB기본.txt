@@ -448,6 +448,14 @@ SELECT column_name(s) FROM table2;
 
 ※주의사항: 두 테이블의 스키마 구조가 똑같아야함!
 
+>>>>> ORDER BY <<<<<<<<<
+데이터 선택시 정렬 순서
+1) ORDER BY 컬럼명 DESC - 내림차순
+2) ORDER BY 컬럼명 ASC - 오름차순
+3) 순차적 적용 정렬: 순서대로 첫번째, 두번째, 세번째 기준순
+    ORDER BY 컬럼명 DESC, 컬럼명 ASC, ...
+
+
 
 
 
