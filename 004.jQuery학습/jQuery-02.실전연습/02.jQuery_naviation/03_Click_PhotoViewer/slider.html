@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> 슬라이딩 내비게이션(무한이동슬라이드) </title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////
+
+            //버튼 클릭시 해당 슬라이드 위치로 이동하기
+            // 이벤트 대상: #btnGroup a
+            // 변경 대상: #viewer
+            $("#btnGroup a").click(function(e){//e-이벤트전달변수
+                
+                // 기본이동 막기
+                e.preventDefault();
+                
+                // 1. 버튼순번 알아내기
+                let idx = $(this).parent().index();//li순번
+                console.log("순번:"+idx);
+                
+                // 2. 슬라이드 이동하기
+                // 원리: -100%단위를 기본으로 버튼 순번을 곱하면
+                //      각 슬라이드 이동위치값이 된다!(0,-100,-200,-300)
+                $("#viewer").animate({
+                    left: (-100*idx)+"%"
+                },600,"easeInOutCubic");
+                // 이징 가속도를 주려면 반드시 jQuery UI가 있어야한다!
+                
+                // 3. 블릿버튼 클래스 변경하기
+                // 클릭된 a의 부모 li에 class를 "on"넣고
+                // 나머지 다른 li들은 class의 "on"을 제거한다!
+                $(this).parent().addClass("on")
+                .siblings().removeClass("on");
+                
+            });//////////// click /////////////////
+            
+            
+
+
+        }); ////////// jQB //////////////////////
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05184D;
+        }
+
+        div#slider {
+            position: relative;
+            /*부모자격*/
+            width: 600px;
+            max-width: 100%;
+            /*설정된 width보다 화면이 작아질때 100%로 크기변경*/
+            height: 350px;
+
+            margin: 0 auto;
+            background: #FFF;
+            border: #FDF6DD 2px solid;
+            margin-top: 100px;
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
+        }
+
+        div#viewer {
+            position: relative;
+            left: 0;
+            /*위치이동 초기값*/
+            width: 400%;
+            /*슬라이드가 4장이므로 부모크기의 4배로 설정*/
+            height: 100%;
+        }
+
+        /*슬라이드 부모 ul*/
+        #viewer ul {
+            display: flex;
+            /*플렉스 디스플레이!*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*슬라이드 개별 li*/
+        #viewer ul li {
+            /*부모가 display:flex 이므로 
+            width는 등분할, height 는 자동 100%채우기가 셋팅됨!*/
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /*--------   ul li CSS ------------ */
+        #btnGroup {
+            position: absolute;
+            bottom: 2%;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #btnGroup li {
+            width: 16px;
+            height: 16px;
+            list-style: none;
+            margin-right: 6px;
+            background-color: #60F;
+            cursor: pointer;
+        }
+
+        ul#btnGroup li a {
+            text-decoration: none;
+            text-align: center;
+            background: #FDF6DD;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+        }
+
+        /*마우스 오버시 블릿 색상변경하기*/
+        /*동시에! li가 class="on"일 경우 같은 변경*/
+        ul#btnGroup li a:hover,
+        ul#btnGroup li.on a{
+            background: hotpink;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div id="slider">
+
+        <div id="viewer">
+            <ul>
+                <li>
+                    <a href=""><img id="image1" src="image/slide1.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image2" src="image/slide2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image3" src="image/slide3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image4" src="image/slide4.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <ul id="btnGroup">
+            <li class="on"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+
+    </div>
+
+    <!---------- jQuery code Start ---------->
+    <script>
+
+
+    </script>
+</body></html>
