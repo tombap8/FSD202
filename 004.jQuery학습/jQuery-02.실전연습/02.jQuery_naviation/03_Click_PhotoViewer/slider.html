@@ -234,7 +234,8 @@
             width: 600px;
             max-width: 100%;
             /*설정된 width보다 화면이 작아질때 100%로 크기변경*/
-            height: 350px;
+/*            height: 350px;*/
+            /*비율유지박스는 높이값을 안쓴다! auto임!*/
 
             margin: 0 auto;
             background: #FFF;
@@ -243,9 +244,16 @@
             overflow: hidden;
             /*넘치는 자식요소 숨기기*/
         }
+        /*비율유지 가상요소 넣기*/
+        #slider::before{
+            content: "";
+            display: block;
+            padding-top: 60%;
+        }
 
         div#viewer {
-            position: relative;
+            position: absolute;
+            top: 0;
             left: 0;
             /*위치이동 초기값*/
             width: 400%;
