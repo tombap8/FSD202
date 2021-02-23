@@ -137,23 +137,21 @@
                         let temp = abs;
 
                         for (let i = 0; i < abs; i++) {
-                            
+
                             // left값을 순차적으로 변경하기
                             // 위해 temp값을 1씩감소함!
                             temp--;
-                            
+
                             // 2. 맨앞 li 맨뒤로 이동
                             $("ul", this).append(
                                 $("ul li", this).first()
                             );
                             // 3. left값 순차적 초기화
                             $(this).css({
-                                left: (-100*temp)+"%"
+                                left: (-100 * temp) + "%"
                             });
-                            
+
                         } ////// for문 ///////////////
-
-
 
                     }); ///// animate ////
 
@@ -162,6 +160,34 @@
                 ///////////////////////////////////////
                 /// 두수의 차가 음수 - 왼쪽이동버튼원리 ////
                 else if (diff < 0) {
+
+                    // 차이수만큼 for문으로 반복작업하기
+                    // 반복작업 임시변수
+                    let temp = 0;
+
+                    for (let i = 0; i < abs; i++) {
+                        
+                        // 임시변수 1씩증가!
+                        temp++;
+                        
+                        // 1. 맨뒤 li를 맨앞으로 이동
+                        sld.find("ul").prepend(
+                            sld.find("ul>li").last()
+                        );
+                        // 2. left값을 순차적으로 변경
+                        sld.css({
+                            left: (-100*temp)+"%"
+                        });//// css //////
+
+
+                    } /////// for문 //////////
+
+
+
+                    // 3. left값을 0으로 애니메이션
+                    sld.animate({
+                        left: "0"
+                    }, 600); /// animate ///
 
                 } ////// else if //////////////////////
 
