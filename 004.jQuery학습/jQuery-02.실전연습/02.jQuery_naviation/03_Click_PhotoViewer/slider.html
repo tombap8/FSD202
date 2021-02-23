@@ -11,32 +11,32 @@
             //버튼 클릭시 해당 슬라이드 위치로 이동하기
             // 이벤트 대상: #btnGroup a
             // 변경 대상: #viewer
-            $("#btnGroup a").click(function(e){//e-이벤트전달변수
-                
+            $("#btnGroup a").click(function(e) { //e-이벤트전달변수
+
                 // 기본이동 막기
                 e.preventDefault();
-                
+
                 // 1. 버튼순번 알아내기
-                let idx = $(this).parent().index();//li순번
-                console.log("순번:"+idx);
-                
+                let idx = $(this).parent().index(); //li순번
+                console.log("순번:" + idx);
+
                 // 2. 슬라이드 이동하기
                 // 원리: -100%단위를 기본으로 버튼 순번을 곱하면
                 //      각 슬라이드 이동위치값이 된다!(0,-100,-200,-300)
                 $("#viewer").animate({
-                    left: (-100*idx)+"%"
-                },600,"easeInOutCubic");
+                    left: (-100 * idx) + "%"
+                }, 600, "easeInOutCubic");
                 // 이징 가속도를 주려면 반드시 jQuery UI가 있어야한다!
-                
+
                 // 3. 블릿버튼 클래스 변경하기
                 // 클릭된 a의 부모 li에 class를 "on"넣고
                 // 나머지 다른 li들은 class의 "on"을 제거한다!
                 $(this).parent().addClass("on")
-                .siblings().removeClass("on");
-                
-            });//////////// click /////////////////
-            
-            
+                    .siblings().removeClass("on");
+
+            }); //////////// click /////////////////
+
+
 
 
         }); ////////// jQB //////////////////////
@@ -119,8 +119,8 @@
             height: 16px;
             list-style: none;
             margin-right: 6px;
-            background-color: #60F;
-            cursor: pointer;
+            /*background-color: #60F;
+            cursor: pointer;*/
         }
 
         ul#btnGroup li a {
@@ -131,14 +131,24 @@
             width: 100%;
             height: 100%;
             color: #000;
+            background: url(image/btn.png) no-repeat;
         }
 
-        /*마우스 오버시 블릿 색상변경하기*/
+        /*마우스 오버시 블릿 배경이미지 위치변경하기*/
         /*동시에! li가 class="on"일 경우 같은 변경*/
         ul#btnGroup li a:hover,
-        ul#btnGroup li.on a{
-            background: hotpink;
+        ul#btnGroup li.on a {
+            background-position: 0 -16px;
         }
+        
+        /*IR설명숨기기*/
+        .bld{
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        
     </style>
 
 </head>
@@ -166,11 +176,31 @@
         </div>
 
         <ul id="btnGroup">
-            <li class="on"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
+            <li class="on">
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   <span class="bld">블릿</span> 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   <span class="bld">블릿</span> 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   <span class="bld">블릿</span> 
+                </a>
+            </li>
         </ul>
+        
+        <!--양쪽이동버튼-->
+        <a href="#" class="abtn lb"><span class="bld">왼쪽이동버튼</span></a>
+        <a href="#" class="abtn rb"><span class="bld">오른쪽이동버튼</span></a>
 
     </div>
 
