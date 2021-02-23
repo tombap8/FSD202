@@ -426,7 +426,7 @@ FROM `order`
 INNER JOIN `member_info`
 ON `order`.`idx` = `member_info`.`idx`
 
--> 이너조인 사용코드 : 
+->>>>>> 이너조인 사용코드 : <<<<<<<<<<<<<
 INNER JOIN `조인할테이블명`
 ON `현재테이블명`.`외래키컬럼명` = `조인할테이블명`.`기본키컬럼명`
 
