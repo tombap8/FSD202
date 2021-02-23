@@ -108,7 +108,11 @@
                 
                 // 1. 클릭된 블릿 a요소의 부모 li순번
                 let idx = $(this).parent().index();
-                console.log("블릿순번:"+idx);
+                console.log("블릿:"+idx+"/슬라:"+snum);
+                
+                // 2. 현재슬라이드 순번(snum)과 차이구하기
+                let diff = idx - snum;
+                console.log("두수차:"+diff);
                 
                 
             });////////// click ///////////////////////
