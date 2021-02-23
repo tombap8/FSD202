@@ -7,6 +7,33 @@
     <script src="jquery-ui.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////
+            
+            //슬라이드 순번
+            let snum = 0;
+            // 블릿요소
+            let bbtn = $("#btnGroup li");
+            
+            // 블릿변경함수 //
+            let chgBlt = function(dir){
+                // dir - 이동방향(1-오른쪽,0-왼쪽)
+                
+                if(dir===1){ // 오른쪽버튼
+                    snum++;
+                    if(snum===4) snum=0;
+                }/////////// if //////////
+                else if(dir===0){ // 왼쪽버튼
+                    snum--;
+                    if(snum===-1) snum=3;
+                }///////// else if ///////
+                
+                /// 해당 블릿 class="on"넣기
+                bbtn.eq(snum).addClass("on")
+                .siblings().removeClass("on");
+                
+                
+                
+            };////// chgBlt함수 ///////
+            
 
             //// 오른쪽버튼 클릭시 ///////
             // 이동원리: left를 -100%로 이동 후
