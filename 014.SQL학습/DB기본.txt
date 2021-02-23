@@ -267,6 +267,18 @@ SELECT COUNT(*) FROM `테이블명`
 <<<< 검색에 사용되는 select >>>>>>>
 -> LIKE 키워드!
 
+예시1)
+SELECT `name` AS "이름", `city` AS "사는곳" 
+FROM `member_info` 
+WHERE `name` LIKE "a%"
+-> %를 뒤에 붙여 like검색하면 a로 시작하는 모든 것 검색
+
+예시2)
+SELECT `name` AS "이름", `city` AS "사는곳" 
+FROM `member_info` 
+WHERE `name` LIKE "%tt"
+-> %를 앞에 붙여서 like검색하면 tt로 끝나는 모든 것 검색
+
 
 [ 조건은 WHERE ] -> DELETE (삭제)할때도 매우중요함!
 - 단일조건 : WHERE 컬럼명 = 값
