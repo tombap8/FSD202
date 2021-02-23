@@ -285,6 +285,21 @@ FROM `member_info`
 WHERE `name` LIKE "%net%"
 -> %를 앞뒤에 붙여서 like검색하면 net가 들어간 모든 것 검색
 
+예시4)
+SELECT `name` AS "이름", `city` AS "사는곳" 
+FROM `member_info` 
+WHERE `name` LIKE "a_______%"
+-> 언더바(_)를 사용할 개수만큼 글자수의 제한을 주어 
+그것이상의 모든 것 검색(즉, a로 시작하고 8글자이상을 검색)
+
+예시5)
+SELECT `name` AS "이름", `city` AS "사는곳" 
+FROM `member_info` 
+WHERE `name` LIKE "a%v"
+-> %를 중간에 사용하여 a로 시작하고 v로 끝나는 모든것 검색
+
+참고) 선택시 컬럼명에 AS를 사용하고 뒤에 문자를 적으면
+    선택결과 출력시 해당 이름으로 결과가 출력된다!
 
 [ 조건은 WHERE ] -> DELETE (삭제)할때도 매우중요함!
 - 단일조건 : WHERE 컬럼명 = 값
