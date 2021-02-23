@@ -265,7 +265,7 @@ SELECT COUNT(*) FROM `테이블명`
 -> 뒤에 조건문이 있다면 조건에 해당하는 레코드 개수
 
 <<<< 검색에 사용되는 select >>>>>>>
--> LIKE 키워드!
+-> LIKE 키워드! + "%"
 
 예시1)
 SELECT `name` AS "이름", `city` AS "사는곳" 
