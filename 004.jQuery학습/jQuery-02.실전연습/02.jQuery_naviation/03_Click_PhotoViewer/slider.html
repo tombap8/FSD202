@@ -149,6 +149,31 @@
             overflow: hidden;
         }
         
+        /*이동버튼*/
+        .abtn{
+            position: absolute;
+            /*부모? #slider*/
+            width: 25px;
+            height: 49px;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로방향 정중앙 이동*/
+        }
+        /*마우스 오버시 배경이미지 위치이동*/
+        .abtn:hover{
+            background-position: 0 -49px;
+        }
+        /*왼쪽버튼*/
+        .lb{
+            left: 5px;
+            background: url(image/btn_left.png) no-repeat;
+        }
+        /*오른쪽버튼*/
+        .rb{
+            right: 5px;
+            background: url(image/btn_right.png) no-repeat;
+        }
+        
     </style>
 
 </head>
