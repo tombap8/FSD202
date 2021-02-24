@@ -86,7 +86,30 @@
     <script src="jquery.mousefollower.js"></script>
     <script>
         $(function() { // jQB /////////////////
-
+            
+            // 마우스 팔로워 플러그인 적용하기
+            // 움직일 대상: .btna
+            // 설정범위는 움직일 대상이 포함된 부모요소
+            
+            $(".btna").mousefollower();
+            
+            $(".btna").hover(
+                function() { // over
+                    
+                    $(".inside",this).css({
+                        transform:"scale(1)"
+                    });//// css ////////////
+                    
+                },
+                function() { // out
+                    
+                    $(".inside",this).css({
+                        transform:"scale(0)"
+                    });//// css ////////////
+                
+                }); ///// hover ///////////
+            
+            
            
 
         }); ///////// jQB /////////////////////
