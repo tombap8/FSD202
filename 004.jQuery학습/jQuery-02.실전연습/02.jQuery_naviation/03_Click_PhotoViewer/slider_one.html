@@ -53,31 +53,32 @@
                 if (dir) {
                     // 1. left:(-100*두수차)% 이동
                     sld.animate({
-                        left: (-100 * num) + "%"
-                    }, 600, function() {
+                            left: (-100 * num) + "%"
+                        }, 600, "easeInOutQuart",
+                        function() {
 
-                        // 이동후 차이수만큼 for문으로 반복작업
-                        // 임시변수에 차이수넣기
-                        let temp = num;
+                            // 이동후 차이수만큼 for문으로 반복작업
+                            // 임시변수에 차이수넣기
+                            let temp = num;
 
-                        for (let i = 0; i < num; i++) {
+                            for (let i = 0; i < num; i++) {
 
-                            // left값을 순차적으로 변경하기
-                            // 위해 temp값을 1씩감소함!
-                            temp--;
+                                // left값을 순차적으로 변경하기
+                                // 위해 temp값을 1씩감소함!
+                                temp--;
 
-                            // 2. 맨앞 li 맨뒤로 이동
-                            $("ul", this).append(
-                                $("ul li", this).first()
-                            );
-                            // 3. left값 순차적 초기화
-                            $(this).css({
-                                left: (-100 * temp) + "%"
-                            });
+                                // 2. 맨앞 li 맨뒤로 이동
+                                $("ul", this).append(
+                                    $("ul li", this).first()
+                                );
+                                // 3. left값 순차적 초기화
+                                $(this).css({
+                                    left: (-100 * temp) + "%"
+                                });
 
-                        } ////// for문 ///////////////
+                            } ////// for문 ///////////////
 
-                    }); ///// animate ////
+                        }); ///// animate ////
                 } /////// if ///////////////////////////
 
                 /////////// 왼쪽버튼방향 /////////////////
@@ -108,7 +109,8 @@
                     // 3. left값을 0으로 애니메이션
                     sld.animate({
                         left: "0"
-                    }, 600); /// animate ///
+                    }, 600, "easeInOutQuart");
+                    /// animate ///
 
                 } //////////// else /////////////////////
 

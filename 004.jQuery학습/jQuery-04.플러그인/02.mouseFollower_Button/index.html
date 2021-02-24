@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery mouseFollower Plugin</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        /*팔로워*/
+        .badge {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            transform: translate(-50%, -50%);
+        }
+
+        .inside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+            border-radius: 50%;
+            background-color: #fff;
+            transition: all .1s;
+            cursor: pointer;
+        }
+
+        /*글자박스*/
+        .btit {
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%) scale(0);
+/*            outline: 1px solid red;*/
+            font: 22px/80px Verdana;
+            color: #555;
+            text-align: center;
+            transition: all .1s;
+        }
+
+        /*
+    .badge.on{
+        opacity: .5;
+        transform: translate(-50%,-50%) scale(1.2);
+    }
+    
+    
+*/
+
+        .btna {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+        }
+
+        .ar1 {
+            left: 0;
+            background-color: #ffafaf;
+        }
+
+        .ar2 {
+            right: 0;
+            background-color: #769bff;
+        }
+
+    </style>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.mousefollower.js"></script>
+    <script>
+        $(function() { // jQB /////////////////
+
+           
+
+        }); ///////// jQB /////////////////////
+        /////////////////////////////////////
+
+    </script>
+</head>
+
+<body>
+
+    <div class="btna ar1">
+
+        <div class="badge">
+            <div class="inside">
+            </div>
+        </div>
+
+
+        <span class="btit badge">Prev</span>
+
+    </div>
+
+    <div class="btna ar2">
+
+        <div class="badge">
+            <div class="inside">
+            </div>
+        </div>
+
+        <span class="btit badge">Next</span>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
