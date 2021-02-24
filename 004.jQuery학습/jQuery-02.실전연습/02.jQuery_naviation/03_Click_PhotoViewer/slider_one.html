@@ -155,7 +155,10 @@
 
             $(".rb").click(function() {
 
-
+                // 광클금지 
+                if(protFn()) return false;
+                sprot = 1;
+                
                 // 슬라이드 변경함수 호출
                 chgSld(1, 1);
 
