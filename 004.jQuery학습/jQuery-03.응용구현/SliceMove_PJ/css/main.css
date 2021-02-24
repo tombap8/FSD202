@@ -117,6 +117,36 @@ h1,h2,h3,h4,h5,h6{
     transform: translateY(-50%);
     width: 100%;
 }
+/*4. 로고*/
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url(../images/OB/browsers-bg.png);
+    background-repeat: no-repeat;
+    background-size: auto 200px;
+}
+
+/*크롬로고*/
+.google{
+    background-position: 0 0;
+}
+/*파폭로고*/
+.firefox{
+    background-position: -100px 0;
+}
+/*익스로고*/
+.ie{
+    background-position: -200px 0;
+}
+/*사파리로고*/
+.safari{
+    background-position: -300px 0;
+}
+/*오페라로고*/
+.opera{
+    background-position: -400px 0;
+}
 
 
 
