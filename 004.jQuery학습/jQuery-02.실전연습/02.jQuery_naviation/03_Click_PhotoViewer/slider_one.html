@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> 슬라이딩 내비게이션(무한이동슬라이드) 함수통합</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////
+
+            //슬라이드 순번
+            let snum = 0;
+            // 블릿요소
+            let bbtn = $("#btnGroup li");
+
+            // 블릿변경함수 //
+            let chgBlt = function(dir,seq) {
+                // dir - 이동방향(1-오른쪽,0-왼쪽)
+                // seq - 블릿순번
+
+                if (dir===1) { // 오른쪽버튼
+                    snum++;
+                    if (snum === 4) snum = 0;
+                } /////////// if //////////
+                else if(dir===0) { // 왼쪽버튼
+                    snum--;
+                    if (snum === -1) snum = 3;
+                } ///////// else if ///////
+                else if(dir===2){
+                    snum = seq;
+                } /////////// else /////////
+
+                /// 해당 블릿 class="on"넣기
+                bbtn.eq(snum).addClass("on")
+                    .siblings().removeClass("on");
+
+
+            }; ////// chgBlt함수 ///////
+            
+            ////////////////////////////////////
+            ////////// 슬라이드 변경함수 //////////
+            ////////////////////////////////////
+            let chgSld = function(dir,num,idx){
+                // dir - 이동방향(1-오른쪽,0-왼쪽)
+                // num - 이동횟수
+                // idx - 이동슬라이드 순번
+                
+                //////// 오른쪽버튼 방향 ////////////////
+                if(dir){
+                    // 1. left:(-100*두수차)% 이동
+                    sld.animate({
+                        left: (-100 * num) + "%"
+                    }, 600, function() {
+
+                        // 이동후 차이수만큼 for문으로 반복작업
+                        // 임시변수에 차이수넣기
+                        let temp = num;
+
+                        for (let i = 0; i < num; i++) {
+
+                            // left값을 순차적으로 변경하기
+                            // 위해 temp값을 1씩감소함!
+                            temp--;
+
+                            // 2. 맨앞 li 맨뒤로 이동
+                            $("ul", this).append(
+                                $("ul li", this).first()
+                            );
+                            // 3. left값 순차적 초기화
+                            $(this).css({
+                                left: (-100 * temp) + "%"
+                            });
+
+                        } ////// for문 ///////////////
+
+                        // 슬라이드 이동 후 슬라이드번호변경
+                        snum = idx;
+                        
+                    }); ///// animate ////
+                } /////// if ///////////////////////////
+                
+                /////////// 왼쪽버튼방향 /////////////////
+                else{ 
+                    // 차이수만큼 for문으로 반복작업하기
+                    // 반복작업 임시변수
+                    let temp = 0;
+
+                    for (let i = 0; i < num; i++) {
+                        
+                        // 임시변수 1씩증가!
+                        temp++;
+                        
+                        // 1. 맨뒤 li를 맨앞으로 이동
+                        sld.find("ul").prepend(
+                            sld.find("ul>li").last()
+                        );
+                        // 2. left값을 순차적으로 변경
+                        sld.css({
+                            left: (-100*temp)+"%"
+                        });//// css //////
+
+
+                    } /////// for문 //////////
+
+
+
+                    // 3. left값을 0으로 애니메이션
+                    sld.animate({
+                        left: "0"
+                    }, 600, function(){
+                        // 슬라이드 이동 후 슬라이드번호변경
+                        snum = idx;
+                    }); /// animate ///
+                    
+                } //////////// else /////////////////////
+                
+                
+                
+            };////////// chgSld 함수 ////////////////////
+            ////////////////////////////////////////////
+            
+
+
+            ////////////////////////////
+            //// 오른쪽버튼 클릭시 ///////
+            // 이동원리: left를 -100%로 이동 후
+            // 맨앞 li를 잘라서 맨뒤로 이동
+            // 이때 left값을 0으로 초기화!
+            ///////////////////////////////
+            //이벤트대상: .rb
+
+            //변경대상: #viewer
+            let sld = $("#viewer");
+
+            $(".rb").click(function() {
+                
+                
+                // 슬라이드 변경함수 호출
+                chgSld(1,1,snum);
+                
+                // 블릿변경함수 호출
+                chgBlt(1,0); // 오른쪽은 1
+
+
+            }); ////////// click /////////////
+
+            ////////////////////////////
+            //// 왼쪽버튼 클릭시 /////////
+            // 이동원리: 맨뒤li를 맨앞으로 이동한다
+            // left값을 -100%로 변경한다
+            // left: 0으로 애니메이션 이동한다!
+            /////////////////////////////////
+            // 이벤트대상: .lb
+            // 변경대상: #viewer (sld변수)
+
+            $(".lb").click(function() {
+                
+                // 슬라이드 변경함수 호출
+                chgSld(0,1,snum);
+
+                // 블릿변경함수 호출
+                chgBlt(0,0); //왼쪽은 0
+                
+
+
+            }); //////// click //////////////
+
+
+            ////////////////////////////////////////
+            ///// 블릿버튼 클릭하여 슬라이드 이동하기 ///
+            // 대상: #btnGroup li a
+            // 이동방법: 클릭된 블릿의 순번을 알아내고
+            //          현재 슬라이드의 순번을 알아내어
+            //          두 순번으 차를 구한다!
+            // 이 차만큼 왼쪽와 오른쪽의 이동을 구현한다!
+            ////////////////////////////////////////
+            $("#btnGroup li a").click(function(e) {
+
+                // 기본이동막기
+                e.preventDefault();
+
+                // 1. 클릭된 블릿 a요소의 부모 li순번
+                let idx = $(this).parent().index();
+                console.log("블릿:" + idx + "/슬라:" + snum);
+
+                // 2. 현재슬라이드 순번(snum)과 차이구하기
+                let diff = idx - snum;
+                console.log("두수차:" + diff);
+                // 두수의 차에 대한 해석
+                // 양수는 오른쪽버튼과 같은 방향
+                // 음수는 왼쪽버튼과 같은 방향
+                // 차이수는 슬라이드 변경 개수
+
+                // 차이수를 절대값으로 설정!
+                // Math.abs() 숫자를 양수의 절대값 변경
+                let abs = Math.abs(diff);
+                console.log("절대값:" + abs);
+
+                //////////////////////////////////////////
+                /// 3.두수의 차가 양수 - 오른쪽이동버튼원리 ///
+                //////////////////////////////////////////
+                if (diff > 0) {
+
+                    // 슬라이드 변경함수 호출
+                    chgSld(1,abs,idx);
+
+                } /////// if //////////////////////////
+
+                /////////////////////////////////////////
+                /// 4.두수의 차가 음수 - 왼쪽이동버튼원리 ////
+                /////////////////////////////////////////
+                else if (diff < 0) {
+                    
+                    // 슬라이드 변경함수 호출
+                    chgSld(0,abs,idx);
+
+                } ////// else if //////////////////////
+                
+                ////////////////////////////////////////
+                //// 5. 블릿변경하기 /////////////////////
+                ////////////////////////////////////////
+                chgBlt(2,idx);// 블릿변경함수에 순번을 보냄!
+
+            }); ////////// click ///////////////////////
+            ///////////////////////////////////////////
+
+
+        }); ////////// jQB //////////////////////
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05184D;
+        }
+
+        div#slider {
+            position: relative;
+            /*부모자격*/
+            width: 600px;
+            max-width: 100%;
+            /*설정된 width보다 화면이 작아질때 100%로 크기변경*/
+/*            height: 350px;*/
+            /*비율유지박스는 높이값을 안쓴다! auto임!*/
+
+            margin: 0 auto;
+            background: #FFF;
+            border: #FDF6DD 2px solid;
+            margin-top: 100px;
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기*/
+        }
+        /*비율유지 가상요소 넣기*/
+        #slider::before{
+            content: "";
+            display: block;
+            padding-top: 60%;
+        }
+
+        div#viewer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*위치이동 초기값*/
+            width: 400%;
+            /*슬라이드가 4장이므로 부모크기의 4배로 설정*/
+            height: 100%;
+        }
+
+        /*슬라이드 부모 ul*/
+        #viewer ul {
+            display: flex;
+            /*플렉스 디스플레이!*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*슬라이드 개별 li*/
+        #viewer ul li {
+            /*부모가 display:flex 이므로 
+            width는 등분할, height 는 자동 100%채우기가 셋팅됨!*/
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /*--------   ul li CSS ------------ */
+        #btnGroup {
+            position: absolute;
+            bottom: 2%;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #btnGroup li {
+            width: 16px;
+            height: 16px;
+            list-style: none;
+            margin-right: 6px;
+            /*background-color: #60F;
+            cursor: pointer;*/
+        }
+
+        ul#btnGroup li a {
+            text-decoration: none;
+            text-align: center;
+            background: #FDF6DD;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+            background: url(image/btn.png) no-repeat;
+        }
+
+        /*마우스 오버시 블릿 배경이미지 위치변경하기*/
+        /*동시에! li가 class="on"일 경우 같은 변경*/
+        ul#btnGroup li a:hover,
+        ul#btnGroup li.on a {
+            background-position: 0 -16px;
+        }
+
+        /*IR설명숨기기*/
+        .bld {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /*이동버튼*/
+        .abtn {
+            position: absolute;
+            /*부모? #slider*/
+            width: 25px;
+            height: 49px;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로방향 정중앙 이동*/
+        }
+
+        /*마우스 오버시 배경이미지 위치이동*/
+        .abtn:hover {
+            background-position: 0 -49px;
+        }
+
+        /*왼쪽버튼*/
+        .lb {
+            left: 5px;
+            background: url(image/btn_left.png) no-repeat;
+        }
+
+        /*오른쪽버튼*/
+        .rb {
+            right: 5px;
+            background: url(image/btn_right.png) no-repeat;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div id="slider">
+
+        <div id="viewer">
+            <ul>
+                <li>
+                    <a href=""><img id="image1" src="image/slide1.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image2" src="image/slide2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image3" src="image/slide3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img id="image4" src="image/slide4.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <ul id="btnGroup">
+            <li class="on">
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+        </ul>
+
+        <!--양쪽이동버튼-->
+        <a href="#" class="abtn lb"><span class="bld">왼쪽이동버튼</span></a>
+        <a href="#" class="abtn rb"><span class="bld">오른쪽이동버튼</span></a>
+
+    </div>
+
+    <!---------- jQuery code Start ---------->
+    <script>
+
+
+    </script>
+</body></html>
