@@ -82,6 +82,16 @@ h1,h2,h3,h4,h5,h6{
     background-image: radial-gradient(closest-side at 50% 50%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
 }
 
+/******************* 컨텐츠 박스 *********************/
+.cbox{
+    position: relative;
+    top: 15%;
+    width: 270px;
+    height: 81%;
+    margin: 0 auto;
+    outline: 1px solid red;
+}
+
 
 
 
