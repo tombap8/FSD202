@@ -16,29 +16,6 @@
             // 광클금지변수(0-허용,1-불허용)
             let sprot = 0;
 
-            ///////////////////////////////////
-            ///////// 광클금지함수 //////////////
-            ///////////////////////////////////
-            let protFn = function() {
-
-                // 리턴값
-                let res;
-
-                if (sprot) { // 광클체크변수가 1일때
-                    res = true;
-                    setTimeout(function() {
-                        sprot = 0; //해제
-                    }, 600);
-                } //// if /////////////////
-                else {
-                    res = false;
-                } ///// else //////////////
-
-                return res;
-
-            }; /////// protFn 함수 /////////////
-            //////////////////////////////////
-
             //////////////////////////////////
             /////////// 블릿변경함수 ///////////
             //////////////////////////////////
@@ -155,10 +132,14 @@
 
             $(".rb").click(function() {
 
-                // 광클금지 
-                if(protFn()) return false;
-                sprot = 1;
-                
+                /////// 광클금지 ///////
+                if (sprot) return false;
+                sprot = 1; //잠금!
+                setTimeout(function() {
+                    sprot = 0; //해제!
+                }, 600); ///setTimeout///
+                ///////////////////////
+
                 // 슬라이드 변경함수 호출
                 chgSld(1, 1);
 
@@ -178,6 +159,14 @@
             // 변경대상: #viewer (sld변수)
 
             $(".lb").click(function() {
+
+                /////// 광클금지 ///////
+                if (sprot) return false;
+                sprot = 1; //잠금!
+                setTimeout(function() {
+                    sprot = 0; //해제!
+                }, 600); ///setTimeout///
+                ///////////////////////
 
                 // 슬라이드 변경함수 호출
                 chgSld(0, 1);
@@ -202,6 +191,14 @@
 
                 // 기본이동막기
                 e.preventDefault();
+
+                /////// 광클금지 ///////
+                if (sprot) return false;
+                sprot = 1; //잠금!
+                setTimeout(function() {
+                    sprot = 0; //해제!
+                }, 600); ///setTimeout///
+                ///////////////////////
 
                 // 1. 클릭된 블릿 a요소의 부모 li순번
                 let idx = $(this).parent().index();
