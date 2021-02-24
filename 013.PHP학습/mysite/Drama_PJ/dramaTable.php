@@ -263,7 +263,8 @@
                 //      하나씩 담는다
                 
                 while($row=$res->fetch_assoc()){
-                    echo "<tr>".
+                    echo 
+                    "<tr>".
                         "<td>".$row["idx"]."</td>".
                         "<td>".$row["dname"]."</td>".
                         "<td>".$row["actors"]."</td>".
@@ -271,7 +272,7 @@
                         "<td>".$row["gubun"]."</td>".
                         "<td>".$row["stime"]."</td>".
                         "<td>".$row["total"]."</td>".
-                        "</tr>";
+                    "</tr>";
                 } /////// while /////////////////
                 
                 
