@@ -170,7 +170,7 @@
 
     <h2><?=$tit[$rdn]?></h2>
     <figure>
-        <img src="<?= $isrc["마을"] ?>" alt="오늘의 이미지" style="width:auto;">
+        <img src="<?= $isrc["카페"] ?>" alt="오늘의 이미지" style="width:auto;">
     </figure>
 
     <h2>0~9중에 내가 좋아하는 숫자는 <?=$mynum?>다!</h2>
