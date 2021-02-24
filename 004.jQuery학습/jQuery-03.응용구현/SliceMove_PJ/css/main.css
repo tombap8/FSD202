@@ -239,6 +239,56 @@ h1,h2,h3,h4,h5,h6{
     color: #a3ecff;
 }
 
+/*10. 가용시스템박스*/
+.cbox > li:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*11. 가용시스템 타이틀*/
+.cbox > li:nth-child(4) > h5{
+    font-size: 10px;
+}
+/*12. 가용시스템 표시박스*/
+.cbox > li:nth-child(4) > ul{
+    display: flex;
+    justify-content: center;
+    width: 135px;
+    margin: 10px auto;
+}
+
+/*13. 가용시스템 li*/
+.cbox > li:nth-child(4) > ul > li{
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    background-image: url(../images/OB/operatingsystems-bg.png);
+    background-repeat: no-repeat;
+    background-size: auto 25px;
+}
+/*시스템별 배경이미지 위치변경*/
+/*
+    아래에서 말단 클래스명으로 배경위치를 잡은 것이
+    적용되려면 공통 설정시 배경위치를 잡지 않으면 된다!
+    (위에서 background로 한꺼번에 설정하지 말것!)
+*/
+/*윈도우*/
+.win{
+    background-position: 0 0;
+}
+/*맥*/
+.mac{
+    background-position: -25px 0;
+}
+/*리눅스*/
+.lin{
+    background-position: -50px 0;
+}
+
+
+
+
 
 
 
