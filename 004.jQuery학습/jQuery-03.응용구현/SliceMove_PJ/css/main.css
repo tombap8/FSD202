@@ -131,21 +131,41 @@ h1,h2,h3,h4,h5,h6{
 .google{
     background-position: 0 0;
 }
+/*크롬로고 마우스 오버시*/
+.wrap > ul > li:hover .google{
+    background-position: 0 -100px;
+}
 /*파폭로고*/
 .firefox{
     background-position: -100px 0;
+}
+/*파폭로고 마우스 오버시*/
+.wrap > ul > li:hover .firefox{
+    background-position: -100px -100px;
 }
 /*익스로고*/
 .ie{
     background-position: -200px 0;
 }
+/*익스로고 마우스 오버시*/
+.wrap > ul > li:hover .ie{
+    background-position: -200px -100px;
+}
 /*사파리로고*/
 .safari{
     background-position: -300px 0;
 }
+/*사파리로고 마우스 오버시*/
+.wrap > ul > li:hover .safari{
+    background-position: -300px -100px;
+}
 /*오페라로고*/
 .opera{
     background-position: -400px 0;
+}
+/*오페라로고 마우스 오버시*/
+.wrap > ul > li:hover .opera{
+    background-position: -400px -100px;
 }
 
 
