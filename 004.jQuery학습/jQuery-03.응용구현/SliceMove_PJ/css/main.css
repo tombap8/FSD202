@@ -226,6 +226,12 @@ h1,h2,h3,h4,h5,h6{
     color: #f25648;
 }
 
+/*8. 다운로드 버전글자박스*/
+.cbox > li:nth-child(3) > h5{
+    font-size: 10px;
+    line-height: 30px;
+}
+
 
 
 
