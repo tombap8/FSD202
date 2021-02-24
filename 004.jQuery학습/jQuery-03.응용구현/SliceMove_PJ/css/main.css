@@ -110,6 +110,13 @@ h1,h2,h3,h4,h5,h6{
 .cbox > li:nth-child(1) h4{
     font-size: 12px;
 }
+/*3. 로고박스*/
+.cbox > li:nth-child(2) {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 100%;
+}
 
 
 
