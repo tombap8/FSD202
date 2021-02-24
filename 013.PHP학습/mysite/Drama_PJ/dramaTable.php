@@ -175,7 +175,8 @@
             $dbname = "mydb";//사용DB명
             
             /// DB서버와 연결하기 ///
-            $conn = new mysqli($servername,$username,$password,$dbname);
+            $conn = new mysqli(
+                $servername,$username,$password,$dbname);
             // PHP의 DB연결 메서드
             // mysqli(서버명,계정명,비번,DB명)
         
@@ -208,10 +209,10 @@
             }
         
         
+        /// 2. 전체 테이블 데이터 불러오는 쿼리문 만들기
+        
+        
         ?>
-        <script>
-            document.getElementById().style.left = "";
-        </script>
         
         <!--테이블 본문-->
         <!--tbody는 일반 테이블에 안써도 출력됨-->
