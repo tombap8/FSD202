@@ -196,6 +196,35 @@ h1,h2,h3,h4,h5,h6{
     margin-top: 60px;
     
 }
+/*버튼에 마우스 오버시 배경색*/
+.btndown:hover{
+    background-color: #fff;
+}
+
+/*크롬버튼 오버시 글자색*/
+.btnC:hover{
+    color: #f2b635;
+}
+
+/*파폭버튼 오버시 글자색*/
+.btnF:hover{
+    color: #f19a2a;
+}
+
+/*익스버튼 오버시 글자색*/
+.btnI:hover{
+    color: #00caff;
+}
+
+/*사파리버튼 오버시 글자색*/
+.btnS:hover{
+    color: #00a0e6;
+}
+
+/*오페라버튼 오버시 글자색*/
+.btnO:hover{
+    color: #f25648;
+}
 
 
 
