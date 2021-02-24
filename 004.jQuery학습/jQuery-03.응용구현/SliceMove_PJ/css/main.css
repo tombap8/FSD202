@@ -92,6 +92,26 @@ h1,h2,h3,h4,h5,h6{
     outline: 1px solid red;
 }
 
+/*공통 li*/
+.cbox > li{
+    text-align: center;
+    color: #fff;
+    /*트랜지션*/
+    transition: opacity .4s;
+}
+
+/*구성요소 디자인*/
+
+/*1. 점유율 숫자*/
+.cbox > li:nth-child(1) h2{
+    font-size: 58px;
+}
+/*2. 점유율 안내문구*/
+.cbox > li:nth-child(1) h4{
+    font-size: 12px;
+}
+
+
 
 
 
