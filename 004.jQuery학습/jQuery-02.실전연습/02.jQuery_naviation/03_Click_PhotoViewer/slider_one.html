@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> 슬라이딩 내비게이션(무한이동슬라이드) 함수통합</title>
+    <title> 슬라이딩 내비게이션(무한이동슬라이드) 
+    함수통합</title>
     <script src="jquery-1.7.2.min.js"></script>
     <script src="jquery-ui.min.js"></script>
     <script>
@@ -72,9 +73,6 @@
                             });
 
                         } ////// for문 ///////////////
-
-                        // 슬라이드 이동 후 슬라이드번호변경
-                        snum = idx;
                         
                     }); ///// animate ////
                 } /////// if ///////////////////////////
@@ -107,10 +105,7 @@
                     // 3. left값을 0으로 애니메이션
                     sld.animate({
                         left: "0"
-                    }, 600, function(){
-                        // 슬라이드 이동 후 슬라이드번호변경
-                        snum = idx;
-                    }); /// animate ///
+                    }, 600); /// animate ///
                     
                 } //////////// else /////////////////////
                 
