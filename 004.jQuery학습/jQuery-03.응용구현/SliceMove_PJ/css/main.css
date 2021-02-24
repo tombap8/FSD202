@@ -89,7 +89,7 @@ h1,h2,h3,h4,h5,h6{
     width: 270px;
     height: 81%;
     margin: 0 auto;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
 }
 
 /*공통 li*/
