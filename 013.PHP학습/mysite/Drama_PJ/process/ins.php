@@ -26,8 +26,31 @@ $sql = "INSERT INTO `drama_info`".
 "VALUES".
 "('$dname','$actors','$broad','$gubun','$stime','$total')";
 
-echo $sql;
+//echo $sql;
 
+// 3. 쿼리문 DB에 던지기~!
+// 이것은 select가 아니라 insert이기 때문에 입력성공여부만 알면된다!
+// $insSts변수에 담는다!
+$insSts = $conn->query($sql);
+// 연결객체에서 query()메서드로 쿼리를 날린다~!!!!
+
+// 4. 결과검증하기!
+if($insSts){
+    echo '
+        <script>
+            alert("성공적으로 테이블에 레코드가 입력되었습니다!");
+        
+        </script>
+    ';
+} /////// if ///////////////
+else{ // 입력실패시 $conn->error로 에러 메시지띄우기 ///
+    echo "
+        <script>
+            alert('테이블에 레코드 입력이 실패하였습니다ㅜ.ㅜ;;; \n 에러코드: $conn->error');
+        
+        </script>
+    ";
+} ////// else //////////////
 
 
 
