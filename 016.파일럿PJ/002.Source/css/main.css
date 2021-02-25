@@ -12,7 +12,7 @@
 }
 
 /*IR class*/
-.ir{
+.ir {
     display: block;
     overflow: hidden;
     text-indent: -1000em;
@@ -26,36 +26,60 @@
 
 /*******************/
 /*1.상단영역*/
-.top{
-    
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /*높이는 자동!*/
+    background-color: rgba(0, 0, 0, 0.1);
 }
+/*1-1.로고*/
+#logo{
+    width: 14vw;
+    /* vw단위는 보이는 화면기준*/
+    min-width: 150px;
+    /*최소한계크기 지정*/
+    padding: 30px 0 20px 25px;
+}
+#logo img{
+    width: 100%;
+    /* %단위는 싸고있는 부모요소 기준*/
+}
+/*1-2.메뉴*/
+#gnb{
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+}
+/*1-3.햄버거버튼*/
+#ham{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
 /*2.배너영역*/
-.ban{
+.ban {
     background: #ffc8c8;
 }
+
 /*3.남자패션영역*/
-.men{
+.men {
     background: #8682ff;
 }
+
 /*4.여자패션영역*/
-.women{
+.women {
     background: #9ffff0;
 }
+
 /*5.스타일영역*/
-.style{
+.style {
     background: #f963ff;
 }
+
 /*6.하단영역*/
-.info{
+.info {
     background: #edff67;
 }
-
-
-
-
-
-
-
-
-
-
