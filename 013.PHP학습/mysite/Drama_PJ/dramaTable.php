@@ -245,6 +245,7 @@
 
 
     </table>
+    
 
 
     <!--구분테이블 박스-->
@@ -265,6 +266,10 @@
                 <td>토일:토일드라마</td>
             </tr>
         </table>
+        
+        <!--입력페이지이동-->
+        <button onclick="location.href='insert.php'" style="float:right;">입력하기</button>
+        
     </div>
 
 

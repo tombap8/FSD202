@@ -39,7 +39,7 @@ if($insSts){
     echo '
         <script>
             alert("성공적으로 테이블에 레코드가 입력되었습니다!");
-        
+            location.replace("../dramaTable.php");
         </script>
     ';
 } /////// if ///////////////
