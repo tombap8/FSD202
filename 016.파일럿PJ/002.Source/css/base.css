@@ -45,7 +45,9 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    font: 14px "NGothicEB", Gulim;
+    font: 10px "NGothicEB", Gulim;
+    /* 10px로 한 이유는 
+    em,rem,% 글자 상대단위 계산을 편하게 하기위함*/
 }
 
 body {
