@@ -33,6 +33,7 @@
     width: 100vw;
     /*높이는 자동!*/
     background-color: rgba(0, 0, 0, 0.1);
+    z-index: 9999;/*가장위!*/
 }
 
 /*1-1.로고*/
