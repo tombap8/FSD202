@@ -73,13 +73,62 @@
     color: aqua;
 }
 
-
-
 /*1-3.햄버거버튼*/
 #ham {
     position: absolute;
-    top: 50px;
-    right: 10px;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    /*세로중앙이동*/
+    
+    width: 40px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;/*손가락모양*/
+}
+
+#ham span{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    /*트랜지션*/
+    transition: all .3s ease-in-out;
+}
+
+/*햄버거 막대 기본상태*/
+#ham span:nth-child(1){
+    top: 0;
+    left: 0;
+}
+#ham span:nth-child(2){
+    top: 10px;
+    left: -50%;
+}
+#ham span:nth-child(3){
+    top: 20px;
+    left: 0;
+}
+
+/*마우스 오버시 중앙막대 들어옴*/
+#ham:hover span:nth-child(2){
+    left: 0%;
+}
+
+
+/*햄버거 막대 변경상태(클래스 on적용)*/
+#ham.on span:nth-child(1){
+    top: 10px;
+    transform: rotate(45deg);
+}
+#ham.on span:nth-child(2){
+    left: 50%;
+    width: 0;
+}
+#ham.on span:nth-child(3){
+    top: 10px;
+    transform: rotate(-45deg);
 }
 
 /*2.배너영역*/
