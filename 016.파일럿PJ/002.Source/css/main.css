@@ -57,19 +57,19 @@
     transform: translateY(-50%);
 }
 
-#gnb li{
+#gnb li {
     font: 2rem 'Ubuntu';
     /* Root가 10px * 2rem = 20px임! */
     padding: .6rem;
 }
 
-#gnb li a{
+#gnb li a {
     color: #fff;
 }
 
 /*마우스오버시,선택on메뉴*/
 #gnb li:hover a,
-#gnb li.on a{
+#gnb li.on a {
     color: aqua;
 }
 
@@ -80,15 +80,16 @@
     right: 2%;
     transform: translateY(-50%);
     /*세로중앙이동*/
-    
+
     width: 40px;
     height: 25px;
     background-color: transparent;
     border: none;
-    cursor: pointer;/*손가락모양*/
+    cursor: pointer;
+    /*손가락모양*/
 }
 
-#ham span{
+#ham span {
     position: absolute;
     width: 100%;
     height: 5px;
@@ -98,47 +99,84 @@
 }
 
 /*햄버거 막대 기본상태*/
-#ham span:nth-child(1){
+#ham span:nth-child(1) {
     top: 0;
     left: 0;
 }
-#ham span:nth-child(2){
+
+#ham span:nth-child(2) {
     top: 10px;
     left: -50%;
 }
-#ham span:nth-child(3){
+
+#ham span:nth-child(3) {
     top: 20px;
     left: 0;
 }
 
 /*마우스 오버시 중앙막대 들어옴*/
-#ham:hover span:nth-child(2){
+#ham:hover span:nth-child(2) {
     left: 0%;
 }
 
 
 /*햄버거 막대 변경상태(클래스 on적용)*/
-#ham.on span:nth-child(1){
+#ham.on span:nth-child(1) {
     top: 10px;
     transform: rotate(45deg);
 }
-#ham.on span:nth-child(2){
+
+#ham.on span:nth-child(2) {
     left: 50%;
     width: 0;
 }
-#ham.on span:nth-child(3){
+
+#ham.on span:nth-child(3) {
     top: 10px;
     transform: rotate(-45deg);
 }
 
 /*햄버거버튼 포커스 테두리없애기*/
-#ham:focus{
+#ham:focus {
     outline: none;
 }
 
 /*2.배너영역*/
 .ban {
-    background: #ffc8c8;
+    position: relative;
+    /*부모자격*/
+}
+
+/*배너슬라이드*/
+.slide {
+    position: absolute;
+    width: 600vw;
+    /*보이는 화면의 6배(슬라이드 6장)*/
+    height: 100vh;
+    display: flex;
+}
+.slide>li{
+    flex: 1;/*등분할*/
+}
+/*개별 슬라이드 
+- 고유한 클래스로 배경이미지 셋팅*/
+.slide>li.ban1{
+    background: url(../images/ban01New.jpg) no-repeat center/cover;
+}
+.slide>li.ban2{
+    background: url(../images/ban02New.jpg) no-repeat center/cover;
+}
+.slide>li.ban3{
+    background: url(../images/ban03New.jpg) no-repeat center/cover;
+}
+.slide>li.ban4{
+    background: url(../images/ban04New.jpg) no-repeat center/cover;
+}
+.slide>li.ban5{
+    background: url(../images/ban05New.jpg) no-repeat center/cover;
+}
+.slide>li.ban6{
+    background: url(../images/ban06New.jpg) no-repeat center/cover;
 }
 
 /*3.남자패션영역*/
