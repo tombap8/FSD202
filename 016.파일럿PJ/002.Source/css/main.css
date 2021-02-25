@@ -131,6 +131,11 @@
     transform: rotate(-45deg);
 }
 
+/*햄버거버튼 포커스 테두리없애기*/
+#ham:focus{
+    outline: none;
+}
+
 /*2.배너영역*/
 .ban {
     background: #ffc8c8;
