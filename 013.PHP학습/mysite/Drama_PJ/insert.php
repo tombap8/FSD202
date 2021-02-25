@@ -13,6 +13,32 @@
             margin-top: 15px;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(function(){ /// jQB //////////////////
+        $("#sbtn").click(function(e){
+            e.preventDefault();
+            
+            // 각 항목이 비었는지 검사하기
+            let res=true;//검사결과
+            
+            $("input[type=text]").each(
+                function(idx,ele){
+                //console.log("순번:"+idx);
+                    
+                // 각 입력양식 값이 빈값여부체크
+                if($(ele).val().trim()==="") 
+                    res = false;
+                                        
+            });////// each /////////
+            
+            console.log("검사결과:"+res);
+            
+        });////// click //////////////
+        
+        
+    });////////// jQB //////////////////////
+    </script>
 </head>
 <body>
    <h1>드라마 데이터 입력하기</h1>
