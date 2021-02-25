@@ -7,6 +7,11 @@
         body{
             text-align: center;
         }
+        
+        label{
+            display: block;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -27,6 +32,13 @@
        <label for="total">방영횟수</label>
        <input type="text" name="total" id="total">
        
+       <br><br>
+       <input type="submit" value="전송버튼" id="sbtn">
+       <!--
+           form요소 내부의 submit버튼을 클릭하면
+           form요소에 셋팅된 action속성의 페이지로
+           전송된다!
+       -->
    </form>
    
    
