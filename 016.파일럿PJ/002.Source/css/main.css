@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* 메인 css - main.css */
+
+@import url(base.css);
+@import url(reset.css);
+
+/*공통 class*/
+.page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*IR class*/
+.ir{
+    display: block;
+    overflow: hidden;
+    text-indent: -1000em;
+}
+
+/*숨김class*/
+.bld {
+    display: none;
+}
