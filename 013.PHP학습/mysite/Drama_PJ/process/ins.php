@@ -24,7 +24,7 @@ $insSts;
 $sql = "INSERT INTO `drama_info`".
 "(`dname`,`actors`,`broad`,`gubun`,`stime`,`total`)".
 "VALUES".
-"($dname,$actors,$broad,$gubun,$stime,$total)";
+"('$dname','$actors','$broad','$gubun','$stime','$total')";
 
 echo $sql;
 
