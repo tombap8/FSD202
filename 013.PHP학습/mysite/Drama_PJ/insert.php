@@ -59,17 +59,17 @@
    <form action="process/ins.php" method="post" id="dform">
        
        <label for="dname">드라마명</label>
-       <input type="text" name="dname" id="dname">
+       <input type="text" name="dname" id="dname" maxlength="100">
        <label for="actors">주연</label>
-       <input type="text" name="actors" id="actors">
+       <input type="text" name="actors" id="actors" maxlength="100">
        <label for="broad">제작사</label>
-       <input type="text" name="broad" id="broad">
+       <input type="text" name="broad" id="broad" maxlength="50">
        <label for="gubun">구분</label>
-       <input type="text" name="gubun" id="gubun">
+       <input type="text" name="gubun" id="gubun" maxlength="10">
        <label for="stime">방영시간</label>
-       <input type="text" name="stime" id="stime">
+       <input type="text" name="stime" id="stime" maxlength="50">
        <label for="total">방영횟수</label>
-       <input type="text" name="total" id="total">
+       <input type="text" name="total" id="total" maxlength="20">
        
        <br><br>
        <input type="submit" value="전송버튼" id="sbtn">
