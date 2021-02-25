@@ -28,20 +28,17 @@ strong {
 
 @font-face {
     font-family: 'NGothic';
-    src: url('../fonts/NanumGothic.woff') format('woff'),
-        url('../fonts/NanumGothic.ttf') format('truetype');
+    src: url('../fonts/NanumGothic.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('../fonts/UbuntuCondensed-Regular.woff') format('woff'),
-        url('../fonts/UbuntuCondensed-Regular.ttf') format('truetype');
+    src: url('../fonts/UbuntuCondensed-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'NGothicEB';
-    src: url('../fonts/NanumGothicExtraBold.woff') format('woff'),
-        url('../fonts/NanumGothicExtraBold.ttf') format('truetype');
+    src: url('../fonts/NanumGothicExtraBold.woff') format('woff');
 }
 
 html,
