@@ -193,6 +193,21 @@
     background: url(../images/ban06New.jpg) no-repeat center/cover;
 }
 
+/*배너이동시 보호막*/
+.prot{
+    position: absolute;
+    /*부모? .ban*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00f;
+    opacity: .5;
+}
+
+
+
+
 /*3.남자패션영역*/
 .men {
     background: #8682ff;
