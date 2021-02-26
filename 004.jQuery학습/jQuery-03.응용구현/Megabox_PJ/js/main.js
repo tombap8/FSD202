@@ -320,12 +320,8 @@ $(function () { /// jQB ///////////////////////
         mv.attr("src", "mv/" + mi + ".mp4");
 
         mv.on("canplaythrough", function () {
-            
-            // 해당 동영상 플레이하기!
             $(this).get(0).play();
-            
         }); ////// canplaythrough //////////
-
 
 
 
