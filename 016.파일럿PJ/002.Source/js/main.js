@@ -72,8 +72,18 @@ $(function () { /// jQB //////////////////
 
             // 오른쪽이동 애니메이션 : 0으로 이동!
             $(this).stop().animate({
-                left: "0px"
-            }, 1500, "easeOutCubic");
+                    left: "0px"
+                }, 1500, "easeOutCubic",
+                function () { /// 애니후 ////
+                    // 이동 후 앞에 아무것도 없으므로
+                    // 맨뒤li를 맨 앞으로 이동후 left값을 -100%변경
+                    // 처음과 같은 상태로 만들어준다!!!
+                    $(this).prepend($("li", this).last())
+                        .css({
+                            left: -win + "px"
+                        }); /////// css /////////
+
+                }); /////// animate //////////
 
         } //////// else if //////////////////////
 
