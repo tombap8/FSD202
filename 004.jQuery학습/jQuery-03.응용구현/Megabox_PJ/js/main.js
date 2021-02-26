@@ -5,7 +5,7 @@ let autoI;
 // 타임아웃용 전역변수
 let autoT;
 // 포스터상태 전역변수
-let ptsts = 1;//1-허용,0-불허용
+let ptsts = 1; //1-허용,0-불허용
 
 //////// 로드구역 ////////////////////////////////
 // addEventListener(이벤트명,함수) - JS내장함수
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded",
             //console.log("나,왼쪽!");
 
             // 자동호출지우기(포스터 허용상태일때만 호출!)
-            if(ptsts) clearAuto();
+            if (ptsts) clearAuto();
 
             // 이미지변경함수 호출!
             chgImg(0); //전달값0
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded",
             //console.log("나,오른쪽!");
 
             // 자동호출지우기(포스터 허용상태일때만 호출!)
-            if(ptsts) clearAuto();
+            if (ptsts) clearAuto();
 
             // 이미지변경함수 호출!
             chgImg(1); //전달값1
@@ -197,62 +197,62 @@ window.addEventListener("DOMContentLoaded",
 
 
 $(function () { /// jQB ///////////////////////
-    
+
     // 동영상요소
     let mv = $("#mv");
-    
+
     ///////////////////////////////////////////
     // 1. 영화포스터 클릭시 영화예고편 보여주기 ////
     // 대상선정: .gbox img
-    $(".gbox img").click(function(){
-        
+    $(".gbox img").click(function () {
+
         // 0. 포스터 자동넘김 지우기!
         clearInterval(autoI);
         // 0. 포스터 자동타임아웃 지우기!
         clearTimeout(autoT);
-        
-        
+
+
         // 1-0. 중앙의 포스터가 아닌 경우 중앙으로 오게하기!
         // 중앙인지 왼쪽인지 오른쪽인지 알아내기
-        
+
         // 포스터 순번 : index() 메서드 사용!
         let pseq = $(this).index();
-        console.log("포순:"+pseq);
-        
+        console.log("포순:" + pseq);
+
         // pseq===1 왼쪽포스터일때 왼쪽이동버튼 클릭
-        if(pseq===1) $(".lb").trigger("click");
+        if (pseq === 1) $(".lb").trigger("click");
         // pseq===3 오른쪽포스터일때 오른쪽이동버튼 클릭
-        else if(pseq===3) $(".rb").trigger("click");
+        else if (pseq === 3) $(".rb").trigger("click");
         // pseq===0, pseq===4 양쪽포스터 클릭되지 않게함!
         // pseq===2 중앙포스터는 하단으로 작아진 상태면
         // 클릭되지 않게함!(ptsts가 0되기 전엔 실행됨!)
-        else if(pseq===0 || pseq===4 ||
-               (pseq===2 && ptsts===0)) 
-            return false;//아래쪽코드 실행말고 그냥돌아가!
+        else if (pseq === 0 || pseq === 4 ||
+            (pseq === 2 && ptsts === 0))
+            return false; //아래쪽코드 실행말고 그냥돌아가!
         // trigger(이벤트명) -  선택요소에 이벤트발생
-        
-        
+
+
         // 0. 포스터 상태값 변경하기!
         //(위의 분기문 아래에 써야함!)
         ptsts = 0;
         // 이동버튼 클릭시 clearAuto함수 호출제한!
-        
+
         //1-1. 영화포스터 네비 작아지게 하단이동 애니
         // 방법: transform: scale() 사용
         // css변경으로 애니메이션을 위해 transition사용
         // 대상: .gbox
         $(".gbox").css({
             top: "80%",
-            transform:"translate(-50%,-50%) scale(.4)",
-            transition:"all .6s ease-in-out"
-        });///////// css ///////////////////
-        
+            transform: "translate(-50%,-50%) scale(.4)",
+            transition: "all .6s ease-in-out"
+        }); ///////// css ///////////////////
+
         // 버튼도 축소이동 애니메이션하기
         $(".abtn").css({
             top: "80%",
-            transform:"translateY(-50%) scale(.5)",
-            transition:"all .6s ease-in-out"
-        });///// css ///////////////////////
+            transform: "translateY(-50%) scale(.5)",
+            transition: "all .6s ease-in-out"
+        }); ///// css ///////////////////////
         // 버튼위치 세부조정
         $(".lb").css({
             left: "20%"
@@ -260,19 +260,19 @@ $(function () { /// jQB ///////////////////////
         $(".rb").css({
             right: "20%"
         }); /// css //////
-        
-        
+
+
         // 1-2. 동영상 보이게 하고 data-mv 속성값으로 
         //     동영상 정보를 불러온다!
-        
+
         // 동영상정보(data-mv:동영상파일명)
         let mi = $(this).attr("data-mv");
-        console.log("동영상정보:"+mi);
-        
+        console.log("동영상정보:" + mi);
+
         // 변경대상: #mv -> 변수 mv에 할당!
-        mv.attr("src","mv/"+mi+".mp4").fadeIn(300);
+        mv.attr("src", "mv/" + mi + ".mp4").fadeIn(300);
         // 동영상 src를 변경한 후 서서히 나타나게함!
-        
+
         // 동영상 재생하기 ////////////
         // 동영상이 로딩되어 준비되기전 play() 명령을 내리면
         // 에러가 발생한다!
@@ -282,20 +282,20 @@ $(function () { /// jQB ///////////////////////
         // canplaythrough 이벤트!!!
         // -> user agent 가 media를 재생할 수 있을때 발행함!
         // 따라서 이 이벤트가 발생할때 play()하면 된다!!!
-            
-        mv.on("canplaythrough",function(){
-            mv.get(0).play();
-        });////// canplaythrough //////////
-        
-        
+
+        mv.on("canplaythrough", function () {
+            $(this).get(0).play();
+        }); ////// canplaythrough //////////
+
+
         // 제이쿼리에서 video태그 요소를 선택하면
         // 미디어 요소를 위한 컬렉션을 생성하기 때문에
         // get(0)이라고 별도의 선택 메서드를 써야한다!
         // play() 메서드는 동영상을 재생하는 기능임!
-        
-    });//////////// click ////////////////
+
+    }); //////////// click ////////////////
     /////////////////////////////////////////
-    
+
     ////////////////////////////////////////////
     //// 2. 이동버튼 클릭시 중앙에 위치한 //////////
     ////////포스터의 예고편 재생하기 /////////////// 
@@ -303,32 +303,40 @@ $(function () { /// jQB ///////////////////////
     // 이미지 버튼이벤트 구현이 상단에 JS로 되어있지만
     // 별도의 기능을 위해 아래쪽에 다시 새롭게 만들어서
     // 구현해도 전혀 문제가 없다!
-    $(".abtn").click(function(){
-        
+    $(".abtn").click(function () {
+
         // 만약 아래로 작아진 상태가 아니면
         //즉, ptsts===1 이면 아래쪽 코드 실행안함!
-        if(ptsts) return false;// 돌아가!
-        
+        if (ptsts) return false; // 돌아가!
+
         //console.log("중앙포스터 영화상영!");
-        
+
         // 중앙포스터라면 몇번째 순번인가? 2번!!!
         // 중앙포스터의 data-mv값을 읽어온다!
         // 왜? 이것이 영화파일명이니까~!
         let mi = $(".gbox img").eq(2).attr("data-mv");
         //console.log("영화파일명:"+mi);
-        
-        // 해당 동영상 플레이하기!
-        mv.attr("src","mv/"+mi+".mp4")
-        .get(0).play();
-        
-        
-    });/////////// click ////////////////
-    
-    
-    
-    
-    
-    
+
+        mv.attr("src", "mv/" + mi + ".mp4");
+
+        mv.on("canplaythrough", function () {
+            
+            // 해당 동영상 플레이하기!
+            $(this).get(0).play();
+            
+        }); ////// canplaythrough //////////
+
+
+
+
+
+    }); /////////// click ////////////////
+
+
+
+
+
+
 
 
     ///////////////////////////////////////////
