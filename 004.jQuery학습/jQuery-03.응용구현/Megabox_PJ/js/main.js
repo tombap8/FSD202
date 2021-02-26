@@ -356,12 +356,14 @@ $(function () { /// jQB ///////////////////////
         function() { // over
             csrc = $(this).attr("src")
             .replace(".png","-1.png");
-            console.log("변경파일:"+csrc);
+            //console.log("변경파일:"+csrc);
+            $(this).attr("src",csrc);
         },
         function() { // out
             csrc = $(this).attr("src")
             .replace("-1.png",".png");
-            console.log("변경파일:"+csrc);
+            //console.log("변경파일:"+csrc);
+            $(this).attr("src",csrc);
         }); ///// hover ///////////
 
 
