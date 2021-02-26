@@ -111,22 +111,21 @@
         
     ?>
    
-   <form action="process/ins.php" method="post" id="dform">
-       
+   <form action="process/mod.php" method="post" id="dform">
        <label for="dname">드라마명</label>
-       <input type="text" name="dname" id="dname" maxlength="100">
+       <input type="text" name="dname" id="dname" maxlength="100" value="<?=$row["dname"]?>">
        <label for="actors">주연</label>
-       <input type="text" name="actors" id="actors" maxlength="100">
+       <input type="text" name="actors" id="actors" maxlength="100" value="<?=$row["actors"]?>">
        <label for="broad">제작사</label>
-       <input type="text" name="broad" id="broad" maxlength="50">
+       <input type="text" name="broad" id="broad" maxlength="50" value="<?=$row["broad"]?>">
        <label for="gubun">구분</label>
-       <input type="text" name="gubun" id="gubun" maxlength="10">
+       <input type="text" name="gubun" id="gubun" maxlength="10" value="<?=$row["gubun"]?>">
        <label for="stime">방영시간</label>
-       <input type="text" name="stime" id="stime" maxlength="50">
+       <input type="text" name="stime" id="stime" maxlength="50" value="<?=$row["stime"]?>">
        <label for="total">방영횟수</label>
-       <input type="text" name="total" id="total" maxlength="20">
+       <input type="text" name="total" id="total" maxlength="20" value="<?=$row["total"]?>">
        
-       <br><br>
+       <br><br>       
        <input type="submit" value="수정하기" id="sbtn">
        <!--
            form요소 내부의 submit버튼을 클릭하면

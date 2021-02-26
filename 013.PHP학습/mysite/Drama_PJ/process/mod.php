@@ -1,6 +1,6 @@
 <?php
 ################################################
-########## INSERT 처리 페이지 ####################
+########## UPDATE 처리 페이지 ####################
 ################################################
 
 /// POST방식으로 넘어온 데이터를 php에서 받아서 처리한다!!!
@@ -19,16 +19,17 @@ $total = $_POST["total"];
 include "../DBconn.inc";
 
 // 2. 입력쿼리 만들기
-// INSERT INTO 테이블명 (필드명) VALUES (값)
+// UPDATE 테이블명 SET 컬럼명=값,.... 
 
 // 성공여부변수
 $insSts;
 
 // 쿼리변수
-$sql = "INSERT INTO `drama_info`".
-"(`dname`,`actors`,`broad`,`gubun`,`stime`,`total`)".
-"VALUES".
-"('$dname','$actors','$broad','$gubun','$stime','$total')";
+$sql = "UPDATE `drama_info`".
+    " SET ".
+"`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total'".
+    "WHERE `idx`="
+
 
 //echo $sql;
 
