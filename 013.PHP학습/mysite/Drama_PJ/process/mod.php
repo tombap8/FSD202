@@ -12,6 +12,8 @@ $broad = $_POST["broad"];
 $gubun = $_POST["gubun"];
 $stime = $_POST["stime"];
 $total = $_POST["total"];
+# idx값을 히든필드에 넣은 것 가져오기
+$num = $_POST["num"];
 
 //echo "1.드라마명: $dname<br>2.주연: $actors<br>3.제작사: $broad<br>4.구분: $gubun<br>5.방영시간: $stime<br>6.방영횟수: $total";
 
@@ -25,10 +27,10 @@ include "../DBconn.inc";
 $insSts;
 
 // 쿼리변수
+// DB에서 직접 검증한다!!!
 $sql = "UPDATE `drama_info`".
-    " SET ".
-"`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total'".
-    "WHERE `idx`="
+    " SET ".    "`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total'".
+    "WHERE `idx`=".$num;
 
 
 //echo $sql;
@@ -43,7 +45,7 @@ $insSts = $conn->query($sql);
 if($insSts){
     echo '
         <script>
-            alert("성공적으로 테이블에 레코드가 입력되었습니다!");
+            alert("성공적으로 테이블의 레코드가 수정되었습니다!");
             location.replace("../dramaTable.php");
         </script>
     ';
