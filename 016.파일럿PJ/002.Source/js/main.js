@@ -53,10 +53,19 @@ $(function () { /// jQB //////////////////
             // 왼쪽이동 애니메이션 : -200%이동과 동일!
             $(this).stop().animate({
                 left: -win * 2 + "px"
-            }, 1500,"easeInOutCubic");
-
+            }, 1500, "easeOutCubic");
 
         } ///////// if //////////////////////////
+
+        // 3. left값이 -90%보다 크면 오른쪽으로 이동하기 ///
+        else if (sleft > -win * 0.9) {
+
+            // 오른쪽이동 애니메이션 : 0으로 이동!
+            $(this).stop().animate({
+                left: "0px"
+            }, 1500, "easeOutCubic");
+
+        } //////// else if //////////////////////
 
 
     }); /////// dragstop, touchend 이벤트함수 ///////
