@@ -59,6 +59,41 @@
 <body>
    <h1>드라마 데이터 수정하기</h1>
    
+   <?php 
+        # 수정할 레코드는 GET방식으로 URL을 통해 전달된 키=값 쌍이다!
+        # PHP에서 GET방식의 값을 받는 방법은 
+        # $_GET[키이름]
+        # 그리고 URL로 전달하지 않는 경우는 돌아가도록 처리
+    
+        # GET방식으로 특정키가 있는지 여부를 조사하는 메서드는?
+        # isset(변수) - 변수에 할당되었으면 1을 리턴한다!
+        # 이것을 if문에 사용하면 에러를 방지할 수 있다!
+    
+        # num 키가 있으면 처리!!!
+        if(isset($_GET["num"])){ 
+        
+            // 1. DB연결 문자열 불러오기
+            include "DBconn.inc";
+
+            /// 2. 해당 테이블 데이터 불러오는 쿼리문 만들기
+            $sql = "SELECT * FROM `drama_info`";
+
+            /// 3. 쿼리문을 DB에 실행 후 결과를 가져온다!
+            $res = $conn->query($sql);
+            
+        } /////////////// if ///////////////////
+        
+        # 없으면 돌아가! JS로 처리하여 되돌아감!
+        else{
+            echo '
+                <script>
+                    location.href = "dramaTable.php";
+                </script>
+            ';
+        } /////////// else ///////////////////
+        
+    ?>
+   
    <form action="process/ins.php" method="post" id="dform">
        
        <label for="dname">드라마명</label>
