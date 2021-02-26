@@ -227,7 +227,13 @@
                     echo 
                     "<tr>".
                         "<td>".$row["idx"]."</td>".
-                        "<td>".$row["dname"]."</td>".
+                        //// 수정페이지로 링크걸기 ////
+                        "<td><a href='modify.php?num=".
+                        $row["idx"].//보내는 유일키
+                        "'>".
+                        $row["dname"].
+                        "</a></td>".
+                        /////////////////////////////
                         "<td>".$row["actors"]."</td>".
                         "<td>".$row["broad"]."</td>".
                         "<td>".$row["gubun"]."</td>".
