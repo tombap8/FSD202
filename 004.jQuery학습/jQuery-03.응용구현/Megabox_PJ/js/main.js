@@ -273,8 +273,20 @@ $(function () { /// jQB ///////////////////////
         mv.attr("src","mv/"+mi+".mp4").fadeIn(300);
         // 동영상 src를 변경한 후 서서히 나타나게함!
         
-        // 동영상 재생하기
-        mv.get(0).play();
+        // 동영상 재생하기 ////////////
+        // 동영상이 로딩되어 준비되기전 play() 명령을 내리면
+        // 에러가 발생한다!
+        // 내용: DOMException: The play() request was interrupted by a new load request.
+        // play() 요청은 로드 요청에 의해 방해되었음!
+        // 이런 요청방해 에러를 없애려면 이벤트체크를 하나해야함!
+        // canplaythrough 이벤트!!!
+        // -> user agent 가 media를 재생할 수 있을때 발행함!
+        // 따라서 이 이벤트가 발생할때 play()하면 된다!!!
+            
+        mv.on("canplaythrough",function(){
+            mv.get(0).play();
+        });////// canplaythrough //////////
+        
         
         // 제이쿼리에서 video태그 요소를 선택하면
         // 미디어 요소를 위한 컬렉션을 생성하기 때문에
