@@ -201,8 +201,9 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #00f;
+    background-color: #f00;
     opacity: .5;
+    display: none;/*처음에 숨김*/
 }
 
 

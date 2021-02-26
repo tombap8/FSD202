@@ -36,10 +36,16 @@ $(function () { /// jQB //////////////////
     let win = $(window).width();
     // 슬라이드 left값
     let sleft;
+    // 배너커버
+    let prot = $(".prot");
 
+    //////////// 드래그 이벤트 함수 ////////////
     sld.on("dragstop touchend", function () {
 
         //console.log("드래그끝!");
+
+        // 광드래그 막기용 커버작동!
+        prot.show();
 
         // 1. 슬라이드 left이동 변경값 체크!
         sleft = $(this).offset().left;
@@ -63,6 +69,9 @@ $(function () { /// jQB //////////////////
                             left: -win + "px"
                         }); ////// css /////////
 
+                    // 광드래그 커버제거!
+                    prot.hide();
+
                 }); //////// animate /////////////
 
         } ///////// if //////////////////////////
@@ -83,17 +92,26 @@ $(function () { /// jQB //////////////////
                             left: -win + "px"
                         }); /////// css /////////
 
+                    // 광드래그 커버제거!
+                    prot.hide();
+
                 }); /////// animate //////////
 
         } //////// else if //////////////////////
 
         /// 4. 범위에 들지 않은 경우(-110%~-90%) 제자리로 돌아가기
         else {
-            
+
             $(this).stop().animate({
-                left: -win + "px"
-            }, 400, "easeOutCubic");
-            
+                    left: -win + "px"
+                }, 400, "easeOutCubic",
+                function () { // 애니후 ///
+                
+                    // 광드래그 커버제거!
+                    prot.hide();
+                
+                }); ////////// animate /////////////
+
         } ///////////// else //////////////////
 
 
