@@ -28,8 +28,8 @@ $insSts;
 
 // 쿼리변수
 // DB에서 직접 검증한다!!!
-$sql = "UPDATE `drama_info`".
-    " SET ".    "`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total'".
+$sql = "UPDATE `drama_info` ".
+    "SET ".    "`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total' ".
     "WHERE `idx`=".$num;
 
 
