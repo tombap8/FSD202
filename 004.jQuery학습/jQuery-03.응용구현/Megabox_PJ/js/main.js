@@ -217,7 +217,7 @@ $(function () { /// jQB ///////////////////////
 
         // 포스터 순번 : index() 메서드 사용!
         let pseq = $(this).index();
-        console.log("포순:" + pseq);
+        //console.log("포순:" + pseq);
 
         // pseq===1 왼쪽포스터일때 왼쪽이동버튼 클릭
         if (pseq === 1) $(".lb").trigger("click");
@@ -267,7 +267,7 @@ $(function () { /// jQB ///////////////////////
 
         // 동영상정보(data-mv:동영상파일명)
         let mi = $(this).attr("data-mv");
-        console.log("동영상정보:" + mi);
+        //console.log("동영상정보:" + mi);
 
         // 변경대상: #mv -> 변수 mv에 할당!
         mv.attr("src", "mv/" + mi + ".mp4").fadeIn(300);
@@ -284,6 +284,12 @@ $(function () { /// jQB ///////////////////////
         // 따라서 이 이벤트가 발생할때 play()하면 된다!!!
 
         mv.on("canplaythrough", function () {
+            
+            // 동영상 볼륨 셋팅하기(처음볼륨조절): volume 속성
+            // volume값은 0~1까지 중간 소수점표현
+            $(this).get(0).volume = 0.2;//40%볼륨
+            
+            // 동영상 재생하기 //
             $(this).get(0).play();
         }); ////// canplaythrough //////////
 
@@ -374,7 +380,7 @@ $(function () { /// jQB ///////////////////////
         // 구현포인트: 비디오가 재생상태인지 멈춤상태인지 알아내기!
         let paused_sts = mv.get(0).paused;
         // paused 속성은 현재 비디오가 멈춤상태이면 true값을 리턴!
-        console.log("현재비디오가 멈춤상태인가? "+paused_sts);
+        //console.log("현재비디오가 멈춤상태인가? "+paused_sts);
         
         // 1.비디오가 멈춤상태이면 재생하기
         if(paused_sts){ 
