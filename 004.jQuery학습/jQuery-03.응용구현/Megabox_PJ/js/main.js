@@ -340,6 +340,29 @@ $(function () { /// jQB ///////////////////////
         function () { // out시 서서히 사라짐
             ctrl.fadeOut(200);
         }); ///// hover ///////////
+    
+    // 2. 동영상 제어버튼 오버/아웃시 이미지 변경하기 ///
+    // 이벤트 대상: .btngrp img
+    // 변경원리: 기존버튼의 src를 읽어와서
+    //          파일명의".png"를 "-1.png"로 변경함
+    // "-1.png"가 진한 이미지임!
+    
+    // 기존파일경로
+    let csrc;
+    
+    //////// hover 함수 ////////////
+    // replace(바꿀값,바뀔값)
+    $(".btngrp img").hover(
+        function() { // over
+            csrc = $(this).attr("src")
+            .replace(".png","-1.png");
+            console.log("변경파일:"+csrc);
+        },
+        function() { // out
+            csrc = $(this).attr("src")
+            .replace("-1.png",".png");
+            console.log("변경파일:"+csrc);
+        }); ///// hover ///////////
 
 
 
