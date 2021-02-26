@@ -76,10 +76,27 @@
             include "DBconn.inc";
 
             /// 2. 해당 테이블 데이터 불러오는 쿼리문 만들기
-            $sql = "SELECT * FROM `drama_info`";
+            # 쿼리문은 DB에서 직접확인한다!!!
+            $sql = "SELECT * FROM `drama_info` WHERE `idx`=".
+                $_GET["num"];
 
             /// 3. 쿼리문을 DB에 실행 후 결과를 가져온다!
-            $res = $conn->query($sql);
+            $res = $conn->query($sql);            
+            
+            /// 4. 만약 데이터가 없으면 다시 돌아감!
+            if($res -> num_rows === 0){
+                echo '
+                    <script>
+                        location.href = "dramaTable.php";
+                    </script>
+                ';
+            } ////// if ////////////////////////
+            
+            /// 5. 실행된 쿼리 결과집합에서 데이터 가져오기
+            $row = $res -> fetch_assoc();
+            // (데이터를) 뺏지! 어서! 
+            // -> fetch_assoc() 컬럼명으로 가져옴!
+            
             
         } /////////////// if ///////////////////
         
