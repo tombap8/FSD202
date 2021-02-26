@@ -358,6 +358,13 @@ h3 {
     right: 10%;
 }
 
+/******* 동영상 컨크롤 버튼 ********/
+
+/*컨트롤 버튼 공통 - 컨트롤들은 처음에 안보임*/
+.ctrl{
+    display: none;
+}
+
 /*play, stop버튼*/
 .btngrp{
     position: absolute;
