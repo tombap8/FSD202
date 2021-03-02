@@ -399,6 +399,9 @@ h3 {
     height: 6px;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;/*손가락*/
+    transform: scaleY(.5);
+    /*스케일을 Y축으로 반으로 줄임*/
+    transition: transform .2s;
 }
 /*시간 진행바*/
 .tBar{
@@ -408,6 +411,21 @@ h3 {
     width: 50%;
     height: 100%;
     background: #f00;
+}
+/*진행바 꼭지*/
+.tBar::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f00;
+    transform: scale(0);
+    /*크기를 안보이게 스케일 0으로*/
+    transition: transform .2s;
 }
 
 
