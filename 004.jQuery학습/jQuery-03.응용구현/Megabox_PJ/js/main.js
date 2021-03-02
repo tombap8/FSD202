@@ -429,6 +429,15 @@ $(function () { /// jQB ///////////////////////
         // !(not)연산자로 true면 false, false면 true로 반대변경
         mv.get(0).muted = !sound;
         
+        // 3. 소리상태 이미지 변경하기 ////
+        // 현재 변경된 소리 상태는 sound 가 아니라 !sound임
+        if(!sound) { // 소리가 안나는 상태
+            $(this).attr("src","images/speaker-mute_blue.png");
+        } ////// if문 ///////////////////
+        else{ // 소리가 나는 상태
+            $(this).attr("src","images/speaker_blue.png");
+        } ////// else문 ////////////////
+        
         
         
         
