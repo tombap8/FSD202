@@ -55,6 +55,16 @@
         ///// 삭제하기 버튼 클릭시 ////////
         $("#dbtn").click(function(){
             
+            let conf = confirm("정말 삭제하시겠습니까?");
+            // confirm(메시지) 
+            // - "확인"시 true, "취소"시 false 리턴
+            console.log("삭제여부:"+conf);
+            
+            // 분기하기 (true일경우)
+            if(conf){
+                console.log("del.php?num="+$("#num").val());
+            } //////// if /////////////
+            
         });///////// click /////////////
         ////////////////////////////////
         
@@ -133,7 +143,7 @@
        <input type="text" name="total" id="total" maxlength="20" value="<?=$row["total"]?>">
        
        <!--히든필드!!! "idx"컬럼값 넣기(POST방식으로 함께보냄)-->
-       <input type="hidden" name="num" value="<?=$_GET["num"]?>">
+       <input type="hidden" name="num" id="num" value="<?=$_GET["num"]?>">
        
        <br><br>       
        <input type="submit" value="수정하기" id="sbtn">
