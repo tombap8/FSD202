@@ -459,6 +459,11 @@ $(function () { /// jQB ///////////////////////
         // currentTime 속성: 비디오의 현재시간
         console.log("현재시간:"+ctime);
         
+        // 2. 비디오 전체재생시간 가져오기
+        let maxtime = mv[0].duration;
+        // duration 속성: 비디오 전체시간
+        console.log("전체시간:"+maxtime);
+        
         
     });//////////// timeupdate 이벤트 함수 ///////////////
     ////////////////////////////////////////////////////
