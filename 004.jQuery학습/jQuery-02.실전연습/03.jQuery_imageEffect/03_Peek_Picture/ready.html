@@ -19,6 +19,31 @@
         // 최대이동 left값
         let maxL = 1400 - 800;
         
+        // 랜덤하게 발생한 이동값으로 애니메이션 이동하기 //
+        /*//////////////////////////////////////////////
+            함수명: movImg
+            기능: 범위를 가지는 위치값을 랜덤으로 애니메이션하기
+        *///////////////////////////////////////////////
+        let movImg = function(){
+            
+            // 랜덤 top, left값 만들기
+            //Math.ceil(Math.random()*최대값)
+            //-> 1~최대값 사이의 랜덤수 발생!
+            
+            // 랜덤 top값 셋팅변수
+            let setT = Math.ceil(Math.random()*maxT);
+            
+            // 랜덤 left값 셋팅변수
+            let setL = Math.ceil(Math.random()*maxL);
+            
+            console.log("top:"+setT+"/left:"+setL);
+            
+            
+        }; //// movImg 함수 /////////////
+        
+        // 테스트하기
+        $("#bgbox").click(movImg);
+        
         
     });////////// jQB //////////////////////
     
