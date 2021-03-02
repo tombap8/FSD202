@@ -416,11 +416,20 @@ $(function () { /// jQB ///////////////////////
     //////////////////////////////////////////////////////
     $(".sound img").click(function(){
         // 구현포인트: 소리안남 상태 알아내기
+        
+        // 1. 현재 소리상태
         let sound = mv.get(0).muted;
         // muted 속성: 
         //  선택된 비디오의 소리가 안나면 true, 나면 false
         // muted 속성에 값을 할당하면 소리안남 상태변경 가능!
         console.log("소리가 안나니?"+sound);
+        
+        // 2. muted 로 소리설정하기
+        // - 현재 true/false값을 반대로 넣으면 된다!
+        // !(not)연산자로 true면 false, false면 true로 반대변경
+        mv.get(0).muted = !sound;
+        
+        
         
         
         
