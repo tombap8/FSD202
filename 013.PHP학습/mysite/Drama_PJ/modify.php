@@ -62,11 +62,17 @@
             
             // 분기하기 (true일경우)
             if(conf){
-                console.log("del.php?num="+$("#num").val());
+                console.log("process/del.php?num="+$("#num").val());
             } //////// if /////////////
             
         });///////// click /////////////
         ////////////////////////////////
+        
+        /// 리스트로 돌아가기 버튼 //////
+        $("#lbtn").click(function(){
+            location.href = "dramaTable.php";
+        });////////// click ////////////////
+        ////////////////////////////////////
         
         
         
@@ -154,6 +160,10 @@
        -->
         <!--삭제하기 버튼-->
        <input type="button" value="삭제하기" id="dbtn">
+       
+       <br><br>
+       <!--리스트로 돌아가기-->
+       <input type="button" value="리스트로 돌아가기" id="lbtn">
    </form>
    
    
