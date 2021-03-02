@@ -62,7 +62,8 @@
             
             // 분기하기 (true일경우)
             if(conf){
-                console.log("process/del.php?num="+$("#num").val());
+                //console.log("process/del.php?num="+$("#num").val());
+                location.href = "process/del.php?num="+$("#num").val();
             } //////// if /////////////
             
         });///////// click /////////////
