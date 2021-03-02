@@ -23,11 +23,14 @@
                 .stop().animate({
                     width: "600px",
                     top: "0",
-                    left: "0"
-                })
+                    left: "0",
+                    opacity: 1
+                },400);/// animate ///
             },
             function() { // out
-            
+                $("img",this).stop().fadeTo(400,0);
+                // fadeTo(시간,오파,이징,함수)
+                // opacity값만 애니메이션함
             }); ///// hover ///////////
         
         
