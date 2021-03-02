@@ -14,7 +14,7 @@ console.log(pm);
 console.log("문자열 찾기:" + pm.indexOf("?"));
 if (pm.indexOf("?") === -1) {
     alert("비정상적인 접근입니다!");
-    location.href = "index.html";
+    location.href = "index.php";
 } ////// if //////////////////////
 
 
