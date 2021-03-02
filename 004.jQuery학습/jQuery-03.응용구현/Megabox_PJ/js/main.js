@@ -457,12 +457,34 @@ $(function () { /// jQB ///////////////////////
         let ctime = mv[0].currentTime;
         // mv[0] === mv.get(0)
         // currentTime 속성: 비디오의 현재시간
-        console.log("현재시간:"+ctime);
+        //console.log("현재시간:"+ctime);
         
         // 2. 비디오 전체재생시간 가져오기
         let maxtime = mv[0].duration;
-        // duration 속성: 비디오 전체시간
-        console.log("전체시간:"+maxtime);
+        // duration 속성: 비디오 전체시간(초)
+        //console.log("전체시간:"+maxtime);
+        
+        // 3. 진행바 변경하기
+        // 현재진행시간이 0일 경우 전체시간이 안나오므로
+        // if문으로 이를 막아준다!(부모가 0되면 안된다!)
+        // !isNaN(전체시간) -> 숫자이면 들어가!
+        if(!isNaN(maxtime)){
+            
+            // 우리가 구하고자 하는 것은 백분율(%)이다
+            // 계산식: 현재시간 / 전체시간 *100
+            //      = ctime / maxtime *100
+            
+            // 퍼센트 진행율
+            let percent = ctime / maxtime *100;
+            console.log("진행율:"+percent);
+            
+            // 진행바의 width를 %값으로 변경!
+            $(".tBar").css({
+                width: percent + "%"
+            }); //// css /////////////
+            
+        } /////// if문 /////////////////////////
+        
         
         
     });//////////// timeupdate 이벤트 함수 ///////////////
