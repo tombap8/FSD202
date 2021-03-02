@@ -379,6 +379,17 @@ h3 {
     width: 100%;
 }
 
+/*sound버튼*/
+.sound{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 5%;
+}
+.sound img{
+    width: 100%;
+}
+
 
 
 
