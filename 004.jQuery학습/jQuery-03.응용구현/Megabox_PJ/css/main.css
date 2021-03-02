@@ -428,6 +428,16 @@ h3 {
     transition: transform .2s;
 }
 
+/*.pBar에 마우스 오버시 원래크기로 Y축 scale복원하기*/
+.pBar:hover{
+    transform: scaleY(1);
+}
+/*.pBar에 마우스 오버시 원래크기로 .tBar 꼭지 scale복원하기*/
+.pBar:hover .tBar::after{
+    transform: scale(1);
+}
+
+
 
 
 
