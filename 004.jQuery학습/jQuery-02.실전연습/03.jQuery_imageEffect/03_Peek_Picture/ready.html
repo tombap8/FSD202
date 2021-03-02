@@ -14,10 +14,10 @@
         // left값 범위: 이미지 width - 박스 width
         
         // 최대이동 top값
-        let maxT = 950 - 300;
+        let maxT = 950 - 300;//650
         
         // 최대이동 left값
-        let maxL = 1400 - 800;
+        let maxL = 1400 - 800;//600
         
         // 랜덤하게 발생한 이동값으로 애니메이션 이동하기 //
         /*//////////////////////////////////////////////
@@ -26,7 +26,7 @@
         *///////////////////////////////////////////////
         let movImg = function(){
             
-            // 랜덤 top, left값 만들기
+            // 1. 랜덤 top, left값 만들기
             //Math.ceil(Math.random()*최대값)
             //-> 1~최대값 사이의 랜덤수 발생!
             
@@ -38,11 +38,27 @@
             
             console.log("top:"+setT+"/left:"+setL);
             
+            // 2. 이미지 이동 애니메이션 하기
+            // 대상: #bgbox img
+            $("#bgbox img").animate({
+                top: -setT + "px",
+                left: -setL + "px"
+            }, 2000, "easeInOutSine");
+            
+            // 3. 호출시간을 랜덤하게 생성하여 재귀호출하기
+            // 재귀호출: 함수가 자기자신을 다시 호출함
+            // 사용함수: setTimout(함수명,시간)
+            setTimeout(movImg,3000);
+            
+            
             
         }; //// movImg 함수 /////////////
         
         // 테스트하기
-        $("#bgbox").click(movImg);
+        //$("#bgbox").click(movImg);
+        
+        //최초호출하기
+        setTimeout(movImg, 2000);
         
         
     });////////// jQB //////////////////////
