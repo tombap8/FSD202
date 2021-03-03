@@ -335,14 +335,20 @@ $(function () { /// jQB //////////////////
         //// 이메일 검사결과 메시지 찍기 //////
         if(pass) { // 통과시 ////
             // 원래는 PHP DB입력 처리 페이지로 가야함!
+            $("#mform").submit();
+            // submit() 메서드
+            // form요소의 action 설정 페이지로 데이터전송
+            // 방식은 method에 지정된 post방식으로 넘어감
+            
+            
             // 지금은 바로 로그인 페이지로 감!
             
             // 가입축하 메시지
-            alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
+            //alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
             
             // 로그인 페이지로 이동
             //location.href = "login.html";
-            location.replace("login.html");
+            //location.replace("login.html");
             /*
                 location.href 는 이전 페이지로 돌아갈 수 있다
                 그런데 민감한 데이터를 입력 후 이전 페이지로 가게 되면

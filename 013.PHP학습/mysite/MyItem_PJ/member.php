@@ -22,7 +22,7 @@
             <h2 class="tit">회원가입</h2>
             <!--입력양식박스-->
             <div id="meminfo">
-                <form action="process.php" method="post">
+                <form action="process/ins.php" method="post" id="mform">
                     <ul>
                         <li>
                             <label for="mid">아이디</label>
