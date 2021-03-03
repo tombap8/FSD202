@@ -17,6 +17,16 @@ $seleml = $_POST["seleml"];
 // 5-3.직접입력 이메일 뒷주소
 $email2 = $_POST["email2"];
 
+echo "1.아이디 : $mid<br>";
+echo "2.비번 : $mpw<br>";
+echo "3.이름 : $mnm<br>";
+echo "4.성별 : $gen<br>";
+echo "5-1.이멜앞 : $email1<br>";
+echo "5-2.이멜뒷 : $seleml<br>";
+echo "5-3.직접입력 : $email2<br>";
+
+
+
 
 
 ?>
