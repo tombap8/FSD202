@@ -5,6 +5,20 @@
     <title>슬라이더바를 사용한 컨텐츠 보기</title>
     <script src="jquery-1.7.2.min.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script>
+    $(function(){ /// jQB //////////////////
+        
+        // 드래그 셋팅대상: #bar
+        $("#bar").draggable({
+            axis: "x", //x축고정
+            containment: "parent" 
+            // 드래그범위를 부모박스에 한정!
+        });
+        
+        
+    });////////// jQB //////////////////////
+    
+    </script>
     <style>
         * {
             margin: 0px;
