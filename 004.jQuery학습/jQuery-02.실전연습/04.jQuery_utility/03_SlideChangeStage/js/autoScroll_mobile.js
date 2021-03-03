@@ -43,7 +43,7 @@ $(function () { ///// jQB /////////////////
     ///// 1.터치시작시 화면 터치위치값 변수에 넣기 //////
     // 대상: document
     // 사용위치속성: screenY (페이지이동이 Y축방향이므로!)
-    $(document).on("touchstart",function(e){
+    $(document).on("touchstart",function(e){//e-이벤트전달변수
         
         // 모바일 터치 위치값 변수에 할당하기
         tcd1 = e.originalEvent.touches[0].screenY;
@@ -52,9 +52,23 @@ $(function () { ///// jQB /////////////////
     });////// touchstart 함수 /////////////////////
     ///////////////////////////////////////////////
     
-    
-    
-    
+    ///// 2.터치가 끝날때 화면 터치위치값 변수에 넣기 //////
+    // 대상: document
+    // 사용위치속성: screenY (페이지이동이 Y축방향이므로!)
+    $(document).on("touchend",function(e){//e-이벤트전달변수
+        
+        // 모바일 터치 위치값 변수에 할당하기
+        tcd2 = e.originalEvent.changedTouches[0].screenY;
+        console.log("터치끝:"+tcd2);
+        
+    });////// touchstart 함수 /////////////////////
+    ///////////////////////////////////////////////
+    /*
+    [ 모바일 이벤트 관련 속성, 컬렉션 ]
+    1. originalEvent - 모바일 관련 이벤트 처리 속성
+    2. touches[0] - 터치이벤트를 담은 컬렉션 (0번은 담겨진것 하나)
+    3. changedTouches[0] - 변경된 터치이벤트를 담은 컬렉션
+    */
     
     
     
