@@ -24,13 +24,15 @@
             text-shadow: 0 0 2px #777;
         }
 
-        ul,ol {
+        ul,
+        ol {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        ul::after,ol::after {
+        ul::after,
+        ol::after {
             content: "";
             display: block;
             clear: both;
@@ -141,17 +143,18 @@
         .gnb li.on {
             transform: scale(1.1);
         }
-        
+
         /*블릿 네비게이션*/
-        .bnav{
+        .bnav {
             position: fixed;
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
             width: 15px;
         }
+
         /*블릿모양*/
-        .bnav li{
+        .bnav li {
             position: relative;
             /*span의 부모자격*/
             width: 15px;
@@ -162,37 +165,42 @@
             margin: 6px 0;
             box-shadow: 0 0 2px #999;
         }
+
         /*블릿글자*/
-        .bnav span{
+        .bnav span {
             position: absolute;
             top: -50%;
             right: 200%;
             font: bold .9rem "맑은 고딕", Verdana;
-            white-space: nowrap;/*줄바꿈방지*/
-            text-shadow: 1px 0 #000,-1px 0 #000,
+            white-space: nowrap;
+            /*줄바꿈방지*/
+            text-shadow: 1px 0 #000, -1px 0 #000,
                 0 1px #000, 0 -1px #000;
             /*그림자로 글자 테두리주기*/
             display: none;
             /*글자숨기기*/
         }
+
         /*블릿 a링크*/
-        .bnav a{
+        .bnav a {
             display: block;
             width: 100%;
             height: 100%;
         }
+
         /*마우스 오버시 글자보이기*/
         /*동시에 class="on"이면 글자보이기*/
         .bnav li:hover span,
-        .bnav li.on span{
+        .bnav li.on span {
             display: block;
         }
+
         /*선택메뉴(class="on") 배경색넣고 조금크게하기*/
-        .bnav li.on{
+        .bnav li.on {
             background-color: #EC686A;
             transform: scale(1.15);
         }
-        
+
 
 
 
@@ -225,6 +233,69 @@
         #pg7 {
             background: url(images/pic7.png) no-repeat top/cover;
         }
+
+        /*모바일 미디어쿼리*/
+        @media only screen and (max-width:500px) {
+
+            html,
+            body {
+                overflow: visible;
+                /*hidden을 기본값으로변경*/
+                height: 100vh;
+                /*모바일 브라우저에 컨트롤바가 유동적으로 생겼다 사라져도
+                보이는 화면을 모두 잡아준다! 100%를 대체함*/
+            }
+
+            /*상단영역*/
+            .top {
+                height: 120px;
+            }
+
+            /*로고 가로중앙*/
+            #logo {
+                margin: 0 auto;
+            }
+
+            /*GNB변경*/
+            .gnb {
+                top: 68px;
+                left: 50%;
+                right: auto;
+                /*해제*/
+                transform: translateX(-50%);
+                width: 330px;
+                /*줄바꿈되는 메뉴에 공간확보*/
+            }
+
+
+            /*마우스 오버시 처리(원래값으로 변경)*/
+            /*
+                모바일에서 마우스 오버가 없지만
+                탭을 하면 마우스 오버설정된 디자인이 적용된다!
+                이것을 없애기 위해 기존에 설정된 :hover에
+                미디어 쿼리 구역에 복사하여
+                처음 설정으로 변경해 놓으면 된다!
+            */
+            
+            /*마우스오버시 a요소변경*/
+            .gnb a:hover{
+                color: #fff;
+                text-decoration: none;
+            }
+
+            /*마우스오버시 li변경*/
+            .gnb li:hover {
+                transform: scale(1);
+            }
+
+            /*마우스 오버시 글자보이기*/
+            .bnav li:hover span{
+                display: none;
+            }
+
+        }
+
+        /*미디어쿼리*/
     </style>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -232,7 +303,7 @@
     <script>
         $(function() { /// jQB ///////////////////////
 
-            
+
             ///////////////////////////////////////////
             /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
             // a요소에 href="#아이디명" 하면 바로이동은 가능
@@ -273,23 +344,23 @@
                 // 적용되어 마우스 오버시와 동일 디자인이 유지된다
                 // 이것을 하는 이유는 현재 페이지가 무엇인지
                 // 표시하기 위함이다!
-                
+
                 // 두개의 네비게이션을 동시에 변경하기
-                
+
                 // 클릭된 순번 알아내기(클릭된 a의 부모 li순번)
                 let idx = $(this).parent().index();
-                console.log("클릭순번:"+idx);
-                
+                console.log("클릭순번:" + idx);
+
                 // GNB네비게이션 클래스 넣기
                 $(".gnb li").eq(idx).addClass("on")
                     .siblings().removeClass("on");
-                
+
                 // 블릿네비게이션 클래스 넣기
                 $(".bnav li").eq(idx).addClass("on")
                     .siblings().removeClass("on");
-                
+
                 /// 스크롤 페이지 전역변수에 순번반영해야함!!!
-                pno = idx;/// 매우중요!!!!!!
+                pno = idx; /// 매우중요!!!!!!
 
             }); ///////// click //////////////
 
