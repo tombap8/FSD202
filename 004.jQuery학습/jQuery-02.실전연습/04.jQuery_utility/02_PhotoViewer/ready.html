@@ -46,6 +46,10 @@
         // 드래그 이벤트: drag
         $("#bar").on("drag",function(){
             
+            // 1.현재 바 이동값
+            barpos = $(this).offset().left;
+            console.log("바이:"+barpos);
+            
         });///////// drag 함수 ///////////////
         /////////////////////////////////////
         
