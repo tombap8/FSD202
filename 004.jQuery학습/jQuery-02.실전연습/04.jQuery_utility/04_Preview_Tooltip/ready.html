@@ -19,7 +19,16 @@
                 
                 // 2. a요소 자신의 data-tip 속성값 읽어오기
                 let data = $(this).attr("data-tit");
-                console.log("data:"+data);
+                //console.log("data:"+data);
+                
+                // 3. 클래스가 "img" 인 것은 이미지로 셋팅
+                // 아니면 글자 텍스트로 셋팅하기!
+                // 마우스 오버된 a요소의 클래스가 "img"인지 여부는
+                // ->>>> is() 메서드를 사용!!!!!
+                // $(선택자).is(특정요소명) 
+                //  -> 선택요소에 특정요소가 있는지 검사하여 
+                // true/false를 리턴함!
+                console.log("확인:"+$(this).is(".img"));
             },
             function() { // out /////////////////////////
                 
