@@ -58,6 +58,16 @@
             (단, 부모박스가 최소한 position이 relative여야함!)
             */
             
+            // 2. 우리가 알고자 하는 이미지 이동값 구해오기
+            // 이이 = 바이 * 이최 / 바최
+            imgpos = barpos * imgmax / barmax;
+            
+            // 3. 이미지 이동 적용하기
+            // 대상: #content
+            $("#content").css({
+                left: -imgpos + "px"
+            });//////// css ///////////
+            
         });///////// drag 함수 ///////////////
         /////////////////////////////////////
         
@@ -85,6 +95,9 @@
         }
 
         #scrollBar {
+            position: relative;
+            /*제이쿼리의 position().left를 위해
+            부모자격을 줘야함!!!*/
             width: 600px;
             height: 30px;
             background: #bddeff;
