@@ -69,8 +69,10 @@
             $("a").mousemove(function(e) { // e-이벤트전달변수
 
                 // 1. top, left값 정하기(마우스포인터 위치기준)
-                let tpos = e.pageY;
-                let lpos = e.pageX;
+                let tpos = e.pageY + $(this).height();
+                let lpos = e.pageX - $("#tip").width() / 2;
+                // y축으로는 a요소의 높이만큼 더하고(아래쪽으로 내려감)
+                // x축으로는 툴팁박스의 가로폭 절반을 뺀다(중간위치)
 
                 // 2. 툴팁박스 위치변경하기
                 $("#tip").css({
