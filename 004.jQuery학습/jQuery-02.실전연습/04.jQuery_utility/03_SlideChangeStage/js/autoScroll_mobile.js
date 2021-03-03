@@ -61,6 +61,55 @@ $(function () { ///// jQB /////////////////
         tcd2 = e.originalEvent.changedTouches[0].screenY;
         console.log("터치끝:"+tcd2);
         
+        /// 방향 판별하기 ///////
+        let delta = tcd1 - tcd2;
+        // 기본 마우스 휠과 같은 변수명 사용함~(편리하려고)
+        console.log("차:"+delta);
+        
+        /////////////////////////////////////////////////////
+        ///////// 여기서부터는 마우스휠코드와 동일함 /////////////
+        // 단, 양수/음수의 의미는 다름!
+        
+        //양수: 윗쪽방향 스와이프 -> 스크롤 아래로 -> 페이지번호증가
+        if (delta > 0) { 
+            pno++;
+            if (pno === totnum) pno = totnum - 1; //끝번호고정!
+        } /////////// if ////////////////////////////////////
+        
+        //음수: 아래쪽방향 스와이프 -> 스크롤 위로 -> 페이지번호감소
+        else {
+            pno--;
+            if (pno < 0) pno = 0; //첫번호고정!
+        } /////////// else //////////////////////////////////
+
+        console.log("페이지번호:"+pno);
+
+        // 3. 이동할 페이지(.page)의 위치값 알아내기
+        // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!
+        let pgpos = $(".page").eq(pno).offset().top;
+        // offset().top은 현재 선택요소의 top위치값을 숫자로 리턴함!
+
+        //console.log("이동위치:"+pgpos);
+
+        // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
+        $("html,body").stop().animate({
+            scrollTop: pgpos + "px"
+        }, 1200, "easeInOutQuint"); /// animate ///
+
+
+        // 5. 메뉴변경하기 - 페이지 순번과 동일함!
+        // GNB네비게이션 클래스 넣기
+        $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+        // 블릿네비게이션 클래스 넣기
+        $(".bnav li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+
+        
+        
+        
     });////// touchstart 함수 /////////////////////
     ///////////////////////////////////////////////
     /*
