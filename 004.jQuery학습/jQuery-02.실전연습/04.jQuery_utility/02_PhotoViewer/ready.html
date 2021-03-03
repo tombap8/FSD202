@@ -47,8 +47,16 @@
         $("#bar").on("drag",function(){
             
             // 1.현재 바 이동값
-            barpos = $(this).offset().left;
+            barpos = $(this).position().left;
             console.log("바이:"+barpos);
+            /*
+            [ offset() 은 화면기준! ]
+            offset().left 값은 화면 좌측 기준선으로 부터의 거리임
+            
+            [ position() 은 static이 아닌 부모기준! ]
+            position().left 는 부모박스 기준으로 부터의 거리임
+            (단, 부모박스가 최소한 position이 relative여야함!)
+            */
             
         });///////// drag 함수 ///////////////
         /////////////////////////////////////
