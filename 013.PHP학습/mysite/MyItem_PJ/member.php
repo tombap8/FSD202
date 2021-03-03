@@ -47,10 +47,13 @@
                         <li>
                             <label for="gen1">성별</label>
                             남성
-                            <input type="radio" id="gen1" name="gen">
+                            <input type="radio" id="gen1" name="gen" value="m">
                             여성
-                            <input type="radio" id="gen2" name="gen" checked>
+                            <input type="radio" id="gen2" name="gen" checked value="w">
                             <!--
+                               라디오버튼 선택값 구분을 위해
+                               value값을 지정해 준다!
+                               
                                 라디오 버튼에서 name속성값이
                                 같아야 하나만 선택되는 라디오버튼
                                 을 만들 수 있다!
