@@ -53,6 +53,10 @@ VALUES
 
 //echo $sql;
 
+####### DB연결하기 !!! ######
+include "dbcon.inc";
+############################
+
 // 쿼리를 DB에 실행하여 결과를 가져온다!
 // query() 메서드는 쿼리를 DB에 실행후 결과를 가져옴!
 $insSts = $conn->query($sql);
