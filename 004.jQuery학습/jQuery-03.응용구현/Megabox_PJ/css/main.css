@@ -52,6 +52,33 @@ h3 {
 
 /*공통 class*/
 
+/*드래그 선택 안되게 하는 CSS*/
+.disableselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge*/
+    user-select: none;
+    /* Non-prefixed version, currently 
+    not supported by any browser */
+}
+
+.disabledrag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+
+
 /*페이지 공통 class*/
 .page {
     position: relative;
@@ -245,7 +272,8 @@ h3 {
     position: absolute;
     top: 0;
     width: 100%;
-    display: none;/*처음에 안보임*/
+    display: none;
+    /*처음에 안보임*/
 }
 
 /*비율유지class-정사각형비율(1:1)*/
@@ -262,7 +290,7 @@ h3 {
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     /*부모자격*/
     width: 20%;
     /*비율유지하려고 height안씀!*/
@@ -275,7 +303,7 @@ h3 {
     position: absolute;
     top: 0;
     width: 100%;
-/*    height: 100%;*/
+    /*    height: 100%;*/
     border-radius: 15px;
     box-shadow: 6px 6px 5px #333;
     /*트랜지션:속시이지*/
@@ -289,7 +317,8 @@ h3 {
     left: -210%;
     transform: scale(.7);
     opacity: 0;
-    cursor: default;/*일반커서로 변경*/
+    cursor: default;
+    /*일반커서로 변경*/
 }
 
 /*(2)왼쪽옆*/
@@ -299,7 +328,7 @@ h3 {
     transform: scale(.9);
     opacity: 1;
     /*CSS필터*/
-/*    filter: grayscale(50%) blur(1px);*/
+    /*    filter: grayscale(50%) blur(1px);*/
 }
 
 /*(3)중앙*/
@@ -308,7 +337,7 @@ h3 {
     left: 0;
     transform: scale(1);
     opacity: 1;
-/*    filter: saturate(1.5);*/
+    /*    filter: saturate(1.5);*/
     /*채도(satureate)를 기본(1)보다 높임!*/
 }
 
@@ -319,7 +348,7 @@ h3 {
     transform: scale(.9);
     opacity: 1;
     /*CSS필터*/
-/*    filter: grayscale(50%) blur(1px);*/
+    /*    filter: grayscale(50%) blur(1px);*/
 }
 
 /*(5)오른쪽끝*/
@@ -328,7 +357,8 @@ h3 {
     left: 210%;
     transform: scale(.7);
     opacity: 0;
-    cursor: default;/*일반커서로 변경*/
+    cursor: default;
+    /*일반커서로 변경*/
 }
 
 /*4.이동버튼 셋팅*/
@@ -361,59 +391,65 @@ h3 {
 /******* 동영상 컨크롤 버튼 ********/
 
 /*컨트롤 버튼 공통 - 컨트롤들은 처음에 안보임*/
-.ctrl{
+.ctrl {
     display: none;
 }
 
 /*play, stop버튼*/
-.btngrp{
+.btngrp {
     position: absolute;
     /*부모? #screen*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     /*정중앙이동*/
     width: 20%;
 }
-.btngrp img{
+
+.btngrp img {
     width: 100%;
 }
 
 /*sound버튼*/
-.sound{
+.sound {
     position: absolute;
     top: 2%;
     right: 2%;
     width: 5%;
 }
-.sound img{
+
+.sound img {
     width: 100%;
 }
 
 /*비디오 진행바*/
 /*진행바 트랙*/
-.pBar{
+.pBar {
     position: absolute;
     bottom: 3px;
     width: 100%;
     height: 6px;
     background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;/*손가락*/
+    cursor: pointer;
+    /*손가락*/
     transform: scaleY(.5);
     /*스케일을 Y축으로 반으로 줄임*/
     transition: transform .2s;
 }
+
 /*시간 진행바*/
-.tBar{
+.tBar {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0%;/*처음에 0*/
+    width: 0%;
+    /*처음에 0*/
     height: 100%;
     background: #f00;
 }
+
 /*진행바 꼭지*/
-.tBar::after{
+.tBar::after {
     content: "";
     display: block;
     position: absolute;
@@ -429,19 +465,11 @@ h3 {
 }
 
 /*.pBar에 마우스 오버시 원래크기로 Y축 scale복원하기*/
-.pBar:hover{
+.pBar:hover {
     transform: scaleY(1);
 }
+
 /*.pBar에 마우스 오버시 원래크기로 .tBar 꼭지 scale복원하기*/
-.pBar:hover .tBar::after{
+.pBar:hover .tBar::after {
     transform: scale(1);
 }
-
-
-
-
-
-
-
-
-
