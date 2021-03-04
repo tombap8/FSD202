@@ -625,7 +625,7 @@ $(function () { /// jQB ///////////////////////
     mv.on("timeupdate",function(){
         
         // 비디오 현재시간 -> changeTime 시분초 변환함수호출!
-        let cTime = changeTime(mv[0].currentTime); 
+        let cTime = mv[0].currentTime; 
         cTime = Math.floor(cTime);//소숫점 아래 버리기
         cTime = changeTime(cTime);
         
