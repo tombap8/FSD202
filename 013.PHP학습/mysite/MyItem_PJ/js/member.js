@@ -380,8 +380,8 @@ $(function () { /// jQB //////////////////
                     // res는 처리페이지에서 찍어주는 값이
                     // 넘어온다!(echo로)
                     
-                    //alert(res);
-                    document.write(res);
+                    alert(res);
+                    //document.write(res);
                     
                     
                 } //// 콜백함수 ///////
