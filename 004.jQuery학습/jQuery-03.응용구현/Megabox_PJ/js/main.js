@@ -517,6 +517,20 @@ $(function () { /// jQB ///////////////////////
     mousedown -> "딸"
     mouseup -> "각"
     */
+    
+    // 대상선정: .pBar(진행바 부모)
+    let pbar = $(".pBar");
+    
+    pbar.mousedown(function(e){// e-이벤트 전달변수
+        
+        // 마우스 다운 즉, "딸" 하는 순간 드래그 시작!
+        timeDrag = true; // 드래그 상태값 변경(true-드래그중!)
+        
+        // 타임바업데이트 함수 호출!
+        updateBar(e.offsetX);
+        // e.offsetX - 현재 클릭된 마우스포인터 위치의 x좌표값!
+        
+    });////// mousedown 함수 /////////////////////
 
 
 
