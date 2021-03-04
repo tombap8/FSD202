@@ -494,7 +494,18 @@ $(function () { /// jQB ///////////////////////
     */ ////////////////////////////////////////////////////
     let updateBar = function (x) { // x - 마우스포인터 x좌표
 
-        console.log("x:" + x + " / drag:" + timeDrag);
+        //console.log("x:" + x + " / drag:" + timeDrag);
+        
+        // 1. 넘겨준 x좌표를 백분율(%)로 변환!(타임바 변경위해)
+        // 백분율 = x좌표 / .pBar의 가로 width *100
+        let percent = x / pbar.width() *100;
+        
+        // 2. 타임바 변경하기
+        $(".tBar").css({
+            width: percent + "%"
+        });////// css /////////////
+        
+        
 
 
     }; /////// updateBar 함수 /////////////////////////////
