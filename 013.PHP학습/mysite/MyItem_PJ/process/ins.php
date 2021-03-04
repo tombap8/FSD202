@@ -51,7 +51,24 @@ $sql = "INSERT INTO `member`
 VALUES 
 ('$mid','$mpw','$mnm','$gen','$email1','$emailback')";
 
-echo $sql;
+//echo $sql;
+
+// 쿼리를 DB에 실행하여 결과를 가져온다!
+// query() 메서드는 쿼리를 DB에 실행후 결과를 가져옴!
+$insSts = $conn->query($sql);
+
+// 결과가 나온경우 처리 ///////////
+if($insSts){
+    echo "ok";
+} ///////// if문 ///////////////////////
+else{ // 에러가 난 경우 처리 ///////
+    echo "error:".$conn->error;
+} ////////// else문 /////////////////////
+
+// 보통 페이지가 종료되면 자동으로 연결을 끊어주지만
+// 연결을 종료하는 메서드가 있기에 이를 호출해도 된다!
+// close() 메서드
+$conn->close();
 
 
 
