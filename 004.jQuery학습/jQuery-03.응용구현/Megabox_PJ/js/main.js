@@ -609,8 +609,10 @@ $(function () { /// jQB ///////////////////////
     /// 비디오 기본정보 로드 완료시에 실행 //////////////////
     mv.on("loadedmetadata", function(){
         
-        // 전체시간
+        // 전체시간 -> changeTime 시분초 변환함수호출!
         let maxtime = mv[0].duration;
+        maxtime = Math.floor(maxtime);//소숫점 아래 버리기
+        maxtime = changeTime(maxtime);
         
         // 화면에 출력
         $(".duration").text(maxtime);        
@@ -622,8 +624,10 @@ $(function () { /// jQB ///////////////////////
     // 비디오 시간이 업데이트 될때 계속 찍어야함! /////////////
     mv.on("timeupdate",function(){
         
-        // 비디오 현재시간
-        let cTime = mv[0].currentTime; 
+        // 비디오 현재시간 -> changeTime 시분초 변환함수호출!
+        let cTime = changeTime(mv[0].currentTime); 
+        cTime = Math.floor(cTime);//소숫점 아래 버리기
+        cTime = changeTime(cTime);
         
         // 화면에 출력!
         $(".current").text(cTime);
@@ -689,3 +693,34 @@ $(function () { /// jQB ///////////////////////
 
 
 }); ///////////// jQB ////////////////////////
+
+/*///////////////////////////////////////
+	함수명: changeTime
+	기능: 초를 보내면 시분초 변환해주는 함수
+*/ ///////////////////////////////////////
+function changeTime(sec) { //sec 초단위값
+    "use strict";//엄격한 문법적용
+    var pad = function (x) {
+        return (x < 10) ? "0" + x : x;
+    };
+    var res; //결과값
+    if (sec < 3600) { // 한시간이 넘지 않으면 분,초만 필요함
+        res = pad(parseInt(sec / 60 % 60)) + ":" + pad(sec % 60);
+    } else { // 한시간이 넘으면 시,분,초가 모두 필요함
+        res = pad(parseInt(sec / (60 * 60))) + ":" + pad(parseInt(sec / 60 % 60)) + ":" + pad(sec % 60);
+
+    }
+    return res;
+} ///////////////// changeTime함수 ////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
