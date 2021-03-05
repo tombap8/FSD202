@@ -648,7 +648,7 @@ $(function () { /// jQB ///////////////////////
         //현재 볼륨바의 이동값
         let barpos = $(this).position().left;
         // position().left는 static이 아닌 부모박스기준 left
-        //console.log("바위치:"+barpos);
+        console.log("바위치:"+barpos);
 
 
         // 바이동 최소값: 0, 바이동 최대값: 54
