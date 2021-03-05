@@ -232,8 +232,7 @@
     height: 100%;
 }
 
-/*선택블릿on,마우스오버시*/
-.indic li:hover,
+/*선택블릿on*/
 .indic li.on {
     background-color: #fff;
     opacity: 1;
