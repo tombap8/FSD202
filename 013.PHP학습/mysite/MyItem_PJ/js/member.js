@@ -464,7 +464,7 @@ $(function () { /// jQB //////////////////
                         alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
 
                         // 로그인 페이지로 이동
-                        location.replace("login.html");
+                        location.replace("login.php");
                         
                     } //// if ///////////////////////////////
                     else {
