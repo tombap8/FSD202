@@ -40,6 +40,16 @@ $(function () { /// jQB //////////////////
     let prot = $(".prot");
     // 배너순번(블릿순번)
     let bseq = 0;
+    
+    /// 만약 화면 크기가 중간에 변경될 경우 window크기 재할당!
+    $(window).resize(function(){
+        
+        console.log("리사이즈!");
+        
+        // 윈도우 크기 재설정!
+        win = $(window).width();
+        
+    });////// resize 메서드 /////////////////
 
     //////////// 드래그 이벤트 함수 ////////////
     sld.on("dragstop touchend", function () {
