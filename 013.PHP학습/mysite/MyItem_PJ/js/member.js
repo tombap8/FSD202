@@ -110,20 +110,21 @@ $(function () { /// jQB //////////////////
                         //success(결과값,성공상태값,XMLHttpRequest)
                         // 보통 하나만 쓰면 결과값을 리턴받는다!
                         success: function (res) { //res결과값
-                            alert(res);
+                            //alert(res);
+                            
                             ///// 성공시 //////
-//                            if(res==="ok"){
-//                                msg.html('<b>훌륭한 아이디네요~!</b>');
-//                            } ///// if ///////////
+                            if(res==="ok"){
+                                msg.html('<b>훌륭한 아이디네요~!</b>');
+                            } ///// if ///////////
                             
                             ///// 실패시 //////
-//                            else if(res==="no"){
-//                                msg.text("사용중인 ID입니다!");
-//                                // 불통과 이므로 pass변수에 false처리
-//                                pass = false;
-//                                // 주의: 위의 async설정이 false여야
-//                                // 본변수에 접근하여 설정가능함!
-//                            } ///// else /////////
+                            else if(res==="no"){
+                                msg.text("사용중인 ID입니다!");
+                                // 불통과 이므로 pass변수에 false처리
+                                pass = false;
+                                // 주의: 위의 async설정이 false여야
+                                // 본변수에 접근하여 설정가능함!
+                            } ///// else /////////
                             
                         }, //// success //////////
                         // 에러처리함수
