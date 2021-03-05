@@ -66,6 +66,40 @@ $(function () { /// jQB //////////////////
 
                 // 유효성 검사결과가 true이면 //////
                 if (validReg(cv, cid)) {
+                    /*
+                   [ AJAX로 아이디 중복 검사하기! ]
+                    AJAX의 처리 유형 2가지
+                    
+                    1) post방식 처리 메서드
+                    - $.post(URL,data,callback)
+                    
+                    2) get방식 처리 메서드
+                    - $.get(URL,callback) 
+                    
+                    3) 위의 2가지 유형중 선택처리 메서드
+                    - $.ajax(URL,TYPE,DATA,DATA TYPE,ASYNC옵션,SUCCESS)
+                    
+                    - 상세 파라미터값:
+                    $.ajax(
+                        전송할 페이지,
+                        전송방식(GET/POST),
+                        보낼데이터,
+                        전송할 데이터 타입,
+                        ASYNC옵션(보통은 FALSE),
+                        결과값 리턴 함수
+                    )
+                    */
+                    $.ajax(
+                        전송할 페이지,
+                        전송방식(GET/POST),
+                        보낼데이터,
+                        전송할 데이터 타입,
+                        ASYNC옵션(보통은 FALSE),
+                        결과값 리턴 함수
+                    )
+                    
+                    
+                    
                     msg.html('<b>훌륭한 아이디네요~!</b>');
                 } ///// if문 : 아이디검사결과 true /////
                 // 아이디 유효성검사 불통과시 //////
@@ -378,7 +412,7 @@ $(function () { /// jQB //////////////////
                 //3.전송후 실행함수
                 function(res){//res - 결과값
                     // res는 처리페이지에서 찍어주는 값이
-                    // 넘어온다!(echo로)
+                    // 넘어온다!(echo로 찍은 값이 res에 담긴다)
                     
                     alert(res);
                     //document.write(res);
