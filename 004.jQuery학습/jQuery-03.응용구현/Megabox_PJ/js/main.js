@@ -671,7 +671,11 @@ $(function () { /// jQB ///////////////////////
         
         // 현재 볼륨 크기를 측정
         let cvol = mv[0].volume;
-        console.log("현재볼륨:"+cvol);
+        //console.log("현재볼륨:"+cvol);
+        
+        // 백분율로 변경하기
+        cvol = Math.floor(cvol*100);
+        console.log("볼륨%:"+cvol);
         
     });//////// mouseenter ////////////////////
     ////////////////////////////////////////////
