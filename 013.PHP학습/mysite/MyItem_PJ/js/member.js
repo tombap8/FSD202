@@ -104,28 +104,28 @@ $(function () { /// jQB //////////////////
                         //ASYNC옵션(보통은 FALSE)
                         //false로 해야 본 페이지변수를 사용가능
                         //(기본값true)
-                        async :false,
+                        async: false,
                         //결과값 리턴 함수
                         //success(result,status,xhr)
                         //success(결과값,성공상태값,XMLHttpRequest)
                         // 보통 하나만 쓰면 결과값을 리턴받는다!
                         success: function (res) { //res결과값
                             //alert(res);
-                            
+
                             ///// 성공시 //////
-                            if(res==="ok"){
+                            if (res === "ok") {
                                 msg.html('<b>훌륭한 아이디네요~!</b>');
                             } ///// if ///////////
-                            
+
                             ///// 실패시 //////
-                            else if(res==="no"){
+                            else if (res === "no") {
                                 msg.text("사용중인 ID입니다!");
                                 // 불통과 이므로 pass변수에 false처리
                                 pass = false;
                                 // 주의: 위의 async설정이 false여야
                                 // 본변수에 접근하여 설정가능함!
                             } ///// else /////////
-                            
+
                         }, //// success //////////
                         // 에러처리함수
                         // error:function(xhr,status,error)
@@ -133,16 +133,16 @@ $(function () { /// jQB //////////////////
                         //  function(
                         //  XMLHttpRequest객체,실패상태,에러결과값)
                         // 우리는 3번째 에러결과값만 필요하다!
-                        error:function(xhr,status,error){
-                            alert("연결실행실패:"+error);
+                        error: function (xhr, status, error) {
+                            alert("연결실행실패:" + error);
                         } ///// error ///////////////
-                
+
                     }); ////////// ajax 메서드 /////////////////////
-                   ///////////////////////////////////////////////
+                    ///////////////////////////////////////////////
 
 
 
-                    
+
                 } ///// if문 : 아이디검사결과 true /////
                 // 아이디 유효성검사 불통과시 //////
                 else {
@@ -456,9 +456,20 @@ $(function () { /// jQB //////////////////
                     // res는 처리페이지에서 찍어주는 값이
                     // 넘어온다!(echo로 찍은 값이 res에 담긴다)
 
-                    alert(res);
+                    //alert(res);
                     //document.write(res);
+                    // 가입축하 메시지
+                    if (res === "ok") {
 
+                        alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
+
+                        // 로그인 페이지로 이동
+                        location.replace("login.html");
+                        
+                    } //// if ///////////////////////////////
+                    else {
+                        alert("회원가입에 실패하였습니다.관리자에게 문의해 주세요! 실패이유:"+res);
+                    } ////// else /////////////////////////
 
                 } //// 콜백함수 ///////
 
