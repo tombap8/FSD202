@@ -495,32 +495,32 @@ $(function () { /// jQB ///////////////////////
     let updateBar = function (x) { // x - 마우스포인터 x좌표
 
         //console.log("x:" + x + " / drag:" + timeDrag);
-        
+
         // 1. 넘겨준 x좌표를 백분율(%)로 변환!(타임바 변경위해)
         // 백분율 = x좌표 / .pBar의 가로 width *100
-        let percent = x / pbar.width() *100;
-        
+        let percent = x / pbar.width() * 100;
+
         // 2. 타임바 변경하기
         $(".tBar").css({
             width: percent + "%"
-        });////// css /////////////
-        
+        }); ////// css /////////////
+
         // 비디오전체시간(duration은 전체시간속성)
         let maxtime = mv[0].duration;
-        
+
         // 3. 비디오 시간 변경하기
         // 위에서 구한 백분율(%)을 활용한다!
         // 비디오현재시간(%) = 비디오현재시간 / 비디오전체시간 * 100
         // 비디오현재시간 = 비디오현재시간(%) * 비디오전체시간 / 100
         mv[0].currentTime = percent * maxtime / 100;
-        
+
         // 비디오 현재시간 속성은 currentTime이다!
         // 이퀄 왼쪽에 currentTime속성을 쓰고 할당하면 
         // 비디오 실제 시간이 변경된다!!!
-        
+
         // 시간이동시 동영상이 멈춤일때라도
         // 다시 재생되므로 멈춤버튼으로 버튼을 변경해 준다!
-        $(".btngrp img").attr("src","images/vbt1.png");
+        $(".btngrp img").attr("src", "images/vbt1.png");
 
     }; /////// updateBar 함수 /////////////////////////////
     //////////////////////////////////////////////////////    
@@ -557,32 +557,32 @@ $(function () { /// jQB ///////////////////////
         // e.offsetX - 현재 클릭된 마우스포인터 위치의 x좌표값!
 
     }); ////// mousedown 함수 /////////////////////////////
-    
+
     //// 마우스 왼쪽버튼을 뗄때 (드래그해제) ///////////////////
-    pbar.mouseup(function(e){ // e-이벤트 전달변수
-        
+    pbar.mouseup(function (e) { // e-이벤트 전달변수
+
         // 마우스 업 즉, "각" 하는 순간 드래그 끝!
-        timeDrag = false;//드래그 상태값 변경(false-드래그끝)
-        
+        timeDrag = false; //드래그 상태값 변경(false-드래그끝)
+
         // 타임바 업데이트 함수 호출!
         updateBar(e.offsetX);
-        
-    });/////// mouseup 함수 ////////////////////////////////
-    
+
+    }); /////// mouseup 함수 ////////////////////////////////
+
     //// 마우스가 .pBar 위에서 마우스 다운상태로 움직일때 ////////
-    pbar.mousemove(function(e){ //e-이벤트전달변수
-        
+    pbar.mousemove(function (e) { //e-이벤트전달변수
+
         // 마우스 다운상태 일때만 타임바업데이트 함수호출
         // 즉, timeDrag 변수가 true일때만 호출하면 된다!
-        if(timeDrag){
-            
+        if (timeDrag) {
+
             // 타임업데이트 함수 호출!
             updateBar(e.offsetX);
-            
+
         } //////// if문 /////////////
-        
-    });//////// mousemove 함수 //////////////////
-    
+
+    }); //////// mousemove 함수 //////////////////
+
     ///// 드래그 상태 오작동 막기!!! ////////////////////////
     /// .pBar 위에서 마우스 다운 상태로 영역을 벗어나면
     /// timeDrag 상태값이 true이므로 다음에 마우스 다운이 아닌
@@ -591,80 +591,91 @@ $(function () { /// jQB ///////////////////////
     /// false로 변경해야 드래그 상태 오작동을 막을 수 있다!!!
     //////////////////////////////////////////////////////
     /// 마우스 포인터가 영역을 벗어날때 이벤트: mouseleave
-    pbar.mouseleave(function(){
-        
+    pbar.mouseleave(function () {
+
         // 드래그상태값 변경!
         timeDrag = false;
-        
+
     }); ///// mouseleave 함수 //////////////////////////
-    
+
     ////////////////////////////////////////////////////
     ///// 비디오 시간 표시하기 ////////////////////////////
     //// [ 비디오관련 이벤트 ] /////
     // 1. timeupdate 이벤트: 비디오 태그가 재생 중 시간변경시 발생
     // 2. loadedmetadata 이벤트: 비디오 기본정보 로딩완료시 발생
     ////////////////////////////////////////////////////////
-    
+
     ////////// 전체시간 찍기 /////////////////////////////
     /// 비디오 기본정보 로드 완료시에 실행 //////////////////
-    mv.on("loadedmetadata", function(){
-        
+    mv.on("loadedmetadata", function () {
+
         // 전체시간 -> changeTime 시분초 변환함수호출!
         let maxtime = mv[0].duration;
-        maxtime = Math.floor(maxtime);//소숫점 아래 버리기
+        maxtime = Math.floor(maxtime); //소숫점 아래 버리기
         maxtime = changeTime(maxtime);
-        
+
         // 화면에 출력
-        $(".duration").text(maxtime);        
-        
-    });/////// loadedmetadata 함수 ///////////////////////
+        $(".duration").text(maxtime);
+
+    }); /////// loadedmetadata 함수 ///////////////////////
     /////////////////////////////////////////////////////
-    
+
     ///// 현재 진행시간 찍기 ///////////////////////////////
     // 비디오 시간이 업데이트 될때 계속 찍어야함! /////////////
-    mv.on("timeupdate",function(){
-        
+    mv.on("timeupdate", function () {
+
         // 비디오 현재시간 -> changeTime 시분초 변환함수호출!
-        let cTime = mv[0].currentTime; 
-        cTime = Math.floor(cTime);//소숫점 아래 버리기
+        let cTime = mv[0].currentTime;
+        cTime = Math.floor(cTime); //소숫점 아래 버리기
         cTime = changeTime(cTime);
-        
+
         // 화면에 출력!
         $(".current").text(cTime);
-        
-    });/////// timeupdate 함수 ///////////////////////////
+
+    }); /////// timeupdate 함수 ///////////////////////////
     /////////////////////////////////////////////////////
-    
+
     ///////// 볼륨컨트롤 구현하기 /////////////////////
     //// 볼륨바 드래그 가능하게 설정!
     $("#bar").draggable({
         axis: "x", //x축고정
         containment: "parent" // 작동범위부모고정
-    });/////// draggable ///////
-    
+    }); /////// draggable ///////
+
     /// 바를 드래그 이동시 볼륨변경하기 //////
-    $("#bar").on("drag",function(){
-        
+    $("#bar").on("drag", function () {
+
         //현재 볼륨바의 이동값
         let barpos = $(this).position().left;
         // position().left는 static이 아닌 부모박스기준 left
         //console.log("바위치:"+barpos);
-        
+
+
         // 바이동 최소값: 0, 바이동 최대값: 54
         // 비를 계산(최대값을 나눔)
         let val = barpos / 54;
         //console.log("볼륨비:"+val);
-        
+
         // 비디오에 볼륨적용하기
         // volume의 값은 0~1 사이의 값을 적용한다!
         // 우리가 위에서 구한 비가 곧 볼륨값이 된다!
         mv[0].volume = val;
-        
-    });////////// drag //////////////////
+
+       
+    }); ////////// drag //////////////////
     /////////////////////////////////////
     
+    /// 스크린에 마우스가 들어올때 볼륨 컨트롤바 위치//////
+    /// 현재 볼륨크기로 위치 이동하기 //////////////////
+    $("#screen").mouseenter(function(){
+        
+        // 현재 볼륨 크기를 측정
+        let cvol = mv[0].volume;
+        console.log("현재볼륨:"+cvol);
+        
+    });//////// mouseenter ////////////////////
+    ////////////////////////////////////////////
     
-
 
 
     ///////////////////////////////////////////
@@ -727,7 +738,7 @@ $(function () { /// jQB ///////////////////////
 	기능: 초를 보내면 시분초 변환해주는 함수
 */ ///////////////////////////////////////
 function changeTime(sec) { //sec 초단위값
-    "use strict";//엄격한 문법적용
+    "use strict"; //엄격한 문법적용
     var pad = function (x) {
         return (x < 10) ? "0" + x : x;
     };
@@ -740,13 +751,3 @@ function changeTime(sec) { //sec 초단위값
     }
     return res;
 } ///////////////// changeTime함수 //////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
