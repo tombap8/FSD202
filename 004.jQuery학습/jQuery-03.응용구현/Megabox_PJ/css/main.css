@@ -496,6 +496,7 @@ h3 {
 /*볼륨바*/
 #bar{
     position: relative;
+    left: 20%;/*첫볼륨위치(JS에서 20%볼륨)*/
     display: block;
     width: 6px;
     height: 11px;
