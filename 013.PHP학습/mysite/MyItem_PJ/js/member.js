@@ -77,7 +77,7 @@ $(function () { /// jQB //////////////////
                     - $.get(URL,callback) 
                     
                     3) 위의 2가지 유형중 선택처리 메서드
-                    - $.ajax(URL,TYPE,DATA,DATA TYPE,ASYNC옵션,SUCCESS)
+                    - $.ajax(URL,TYPE,DATA,DATA TYPE,ASYNC옵션,SUCCESS,ERROR)
                     
                     - 상세 파라미터값:
                     $.ajax(
@@ -86,21 +86,62 @@ $(function () { /// jQB //////////////////
                         보낼데이터,
                         전송할 데이터 타입,
                         ASYNC옵션(보통은 FALSE),
-                        결과값 리턴 함수
+                        결과값 리턴 함수,
+                        에러처리함수
                     )
                     */
                     $.ajax(
-                        전송할 페이지,
-                        전송방식(GET/POST),
-                        보낼데이터,
-                        전송할 데이터 타입,
-                        ASYNC옵션(보통은 FALSE),
-                        결과값 리턴 함수
-                    )
+                        //전송할 페이지
+                        url: "process/chkID.php",
+                        //전송방식(GET/POST)
+                        type: "post",
+                        //보낼데이터
+                        data: {
+                            "mid": $("#mid").val()
+                        },
+                        //전송할 데이터 타입
+                        dataType: "html",
+                        //ASYNC옵션(보통은 FALSE)
+                        //false로 해야 본 페이지변수를 사용가능
+                        //(기본값true)
+                        async :false,
+                        //결과값 리턴 함수
+                        //success(result,status,xhr)
+                        //success(결과값,성공상태값,XMLHttpRequest)
+                        // 보통 하나만 쓰면 결과값을 리턴받는다!
+                        success: function (res) { //res결과값
+                            
+                            ///// 성공시 //////
+                            if(res==="ok"){
+                                msg.html('<b>훌륭한 아이디네요~!</b>');
+                            } ///// if ///////////
+                            
+                            ///// 실패시 //////
+                            else if(res==="no"){
+                                msg.text("사용중인 ID입니다!");
+                                // 불통과 이므로 pass변수에 false처리
+                                pass = false;
+                                // 주의: 위의 async설정이 false여야
+                                // 본변수에 접근하여 설정가능함!
+                            } ///// else /////////
+                            
+                        }, //// success //////////
+                        // 에러처리함수
+                        // error:function(xhr,status,error)
+                        // error:
+                        //  function(
+                        //  XMLHttpRequest객체,실패상태,에러결과값)
+                        // 우리는 3번째 에러결과값만 필요하다!
+                        error:function(xhr,status,error){
+                            alert("연결실행실패:"+error);
+                        } ///// error ///////////////
+                
+                    ); ////////// ajax 메서드 /////////////////////
+                   ///////////////////////////////////////////////
+
+
+
                     
-                    
-                    
-                    msg.html('<b>훌륭한 아이디네요~!</b>');
                 } ///// if문 : 아이디검사결과 true /////
                 // 아이디 유효성검사 불통과시 //////
                 else {
@@ -342,42 +383,42 @@ $(function () { /// jQB //////////////////
 
         // 2. pass 통과여부변수에 true 설정하기
         pass = true;
-        
+
         // 3. 입력창 blur 이벤트 발생시키기(전체검사)
         // 대상: input[type=text][id!=email2],input[type=password]
         // 방법: trigger 메서드로 대상요소에 blur이벤트를 강제발생시킴!
         // 주의사항: 검사대상에서 숨겨놓은 email2를 반드시 뺌
         // 항목제외 -> [id!=email2]
         $("input[type=text][id!=email2],input[type=password]")
-        .trigger("blur");
-        
+            .trigger("blur");
+
         // 4. 이메일 검사를 위해 선택박스에 change 이벤트 발생시키기
         seleml.trigger("change");
-        
+
         // 5. 이메일 직접입력일때와 아닐때를 구분하여 keyup 이벤트 발생시키기
-        
+
         //직접입력일때는 뒷주소에 발생!
-        if(seleml.val()==="free")
+        if (seleml.val() === "free")
             eml2.trigger("keyup");
         //직접입력이 아닐때는 앞주소에 발생!
         else
             eml1.trigger("keyup");
-        
-        console.log("통과여부:"+pass);
-        
+
+        console.log("통과여부:" + pass);
+
         ///////////////////////////////////
         //// 이메일 검사결과 메시지 찍기 //////
-        if(pass) { // 통과시 ////
+        if (pass) { // 통과시 ////
             // 원래는 PHP DB입력 처리 페이지로 가야함!
             //$("#mform").submit();
             // submit() 메서드
             // form요소의 action 설정 페이지로 데이터전송
             // 방식은 method에 지정된 post방식으로 넘어감
-            
+
             // 직접 처리페이지로 가지 않고
             // 비동기적으로 처리할 수 있다!!!
             // 그게 바로~~~~ AJAX!
-            
+
             /*/////////////////////////////////////////
             [ AJAX = Asynchronous JavaScript and XML. ]
             - 비동기통신이란? 쉽게 말해서 페이지가 새로 
@@ -394,45 +435,45 @@ $(function () { /// jQB //////////////////
                 3.전송후 실행함수
             );
             
-            */////////////////////////////////////////
+            */ ////////////////////////////////////////
             $.post(
                 //1.전송할 페이지주소
                 "process/ins.php",
                 //2.전송할 데이터(객체형식으로!)
                 {
-                    "mid": $("#mid").val(),//아이디
-                    "mpw": $("#mpw").val(),//비번
-                    "mnm": $("#mnm").val(),//이름
+                    "mid": $("#mid").val(), //아이디
+                    "mpw": $("#mpw").val(), //비번
+                    "mnm": $("#mnm").val(), //이름
                     "gen": //성별
-                    $(":radio[name=gen]:checked").val(),
-                    "email1": $("#email1").val(),//이멜
-                    "seleml": $("#seleml").val(),//이멜
-                    "email2": $("#email2").val()//이멜
+                        $(":radio[name=gen]:checked").val(),
+                    "email1": $("#email1").val(), //이멜
+                    "seleml": $("#seleml").val(), //이멜
+                    "email2": $("#email2").val() //이멜
                 },
                 //3.전송후 실행함수
-                function(res){//res - 결과값
+                function (res) { //res - 결과값
                     // res는 처리페이지에서 찍어주는 값이
                     // 넘어온다!(echo로 찍은 값이 res에 담긴다)
-                    
+
                     alert(res);
                     //document.write(res);
-                    
-                    
+
+
                 } //// 콜백함수 ///////
-                
-            );/////// ajax : post /////////////////////
+
+            ); /////// ajax : post /////////////////////
             ///////////////////////////////////////////
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             // 지금은 바로 로그인 페이지로 감!
-            
+
             // 가입축하 메시지
             //alert("회원가입을 축하드립니다~!! 짝짝짝!!!");
-            
+
             // 로그인 페이지로 이동
             //location.href = "login.html";
             //location.replace("login.html");
@@ -443,14 +484,14 @@ $(function () { /// jQB //////////////////
                 이런 경우 location.replace(이동할주소페이지)를 사용하면
                 이전페이지로 갈 수 없다!
             */
-            
+
         } ///////// if ////////////////
         else { // 불통과시
-            
+
             alert("입력을 수정하세요~!");
-            
+
         } ///////// else ////////////////
-        
+
 
 
     }); /////////////// click //////////////////////
