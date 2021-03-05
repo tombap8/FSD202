@@ -514,6 +514,28 @@ h3 {
     box-shadow: 0 0 3px #777 inset;/*안쪽그림자*/
 }
 
+/*축소/확대버튼*/
+.expand{
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font: 16px Verdana;
+    color: #CCC;
+    text-shadow: 0 0 2px #777;
+}
+/*처음에 두번째 축소하기 버튼 숨기기*/
+.expand a:last-child{
+    display: none;
+}
+/*#screen에 클래스 "on"이 적용된 경우*/
+/*확대하기 버튼 숨기기*/
+#screen.on .expand a:first-child{
+    display: none;
+}
+/*축소하기 버튼 보이기*/
+#screen.on .expand a:last-child{
+    display: inline;
+}
 
 
 
