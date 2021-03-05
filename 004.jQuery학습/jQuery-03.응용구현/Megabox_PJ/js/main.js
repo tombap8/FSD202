@@ -648,9 +648,17 @@ $(function () { /// jQB ///////////////////////
         //현재 볼륨바의 이동값
         let barpos = $(this).position().left;
         // position().left는 static이 아닌 부모박스기준 left
-        console.log("바위치:"+barpos);
+        //console.log("바위치:"+barpos);
         
         // 바이동 최소값: 0, 바이동 최대값: 54
+        // 비를 계산(최대값을 나눔)
+        let val = barpos / 54;
+        console.log("볼륨비:"+val);
+        
+        // 비디오에 볼륨적용하기
+        // volume의 값은 0~1 사이의 값을 적용한다!
+        // 우리가 위에서 구한 비가 곧 볼륨값이 된다!
+        mv[0].volume = val;
         
     });////////// drag //////////////////
     /////////////////////////////////////
