@@ -258,6 +258,15 @@ h3 {
     transform: translate(-50%, -50%);
     width: 32%;
     /*background-color: #f00;*/
+    
+    /*트랜지션:속시이지*/
+    transition:  all 1s ease-in-out;
+}
+
+/*스크린 확대 class*/
+#screen.on{
+    width: 70%;
+    z-index: 1;
 }
 
 /*스크린비율유지박스*/
