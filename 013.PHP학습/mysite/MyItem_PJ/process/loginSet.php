@@ -22,6 +22,10 @@ $mpw = $_POST["mpw"];
 # php 에서 해시암호화 문자 비교 메서드가 있음!
 # password_verify(입력된비번, DB해시비번)
 # 결과: 만약 같으면 true, 같지않으면 false를 리턴해준다!
+# -> 결과를 값으로 찍으면 true일때 1이 나오고, false일때 null값을 준다!
+# -> 이것을 if문으로 처리할때 
+#   1은 true로 해석되고 
+#   null값은 false로 해석된다!
 
 // 쿼리문 만들기
 $sql = "SELECT `mid`,`mpw`,`name`,`auth` FROM `member` WHERE `mid` = '$mid'";
