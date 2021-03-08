@@ -8,7 +8,19 @@
 $mid = $_POST["mid"];
 $mpw = $_POST["mpw"];
 
-echo "아이디: $mid / 비번: $mpw";
+//echo "아이디: $mid / 비번: $mpw";
+
+# 순서상 먼저 아이디가 있는지 검사
+# 있다면
+# 해당 아이디로 DB에 쿼리하여 비밀번호를 가져온다!
+# 비밀번호를 입력한 것과 비교하여 검사 결과를 낸다!
+
+// 쿼리문 만들기
+$sql = "SELECT `mid`,`mpw` FROM `member` WHERE `mid` = '$mid'";
+
+echo $sql;
+
+
 
 
 
