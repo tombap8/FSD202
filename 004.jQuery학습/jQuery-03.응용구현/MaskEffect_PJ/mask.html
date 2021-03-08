@@ -25,11 +25,16 @@
                 // 1. pageX, pageY : 화면기준
                 // 2. offsetX, offsetY : 선택요소기준
                 
-                console.log("offsetX:"+e.offsetX);
-                console.log("pageX:"+e.pageX);
+                //console.log("offsetX:"+e.offsetX);
+                //console.log("pageX:"+e.pageX);
                 
+                // left위치값
+                let posx = e.offsetX;
                 
-                
+                // 움직일 대상: #mask
+                $("#mask").css({
+                    left: posx + "px"
+                });///////// css /////////////
                 
             });//////// mousemove ////////////
 
