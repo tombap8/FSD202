@@ -16,7 +16,7 @@ $mpw = $_POST["mpw"];
 # 비밀번호를 입력한 것과 비교하여 검사 결과를 낸다!
 
 // 쿼리문 만들기
-$sql = "SELECT `mid`,`mpw` FROM `member` WHERE `mid` = '$mid'";
+$sql = "SELECT `mid`,`mpw`,`name`,`auth` FROM `member` WHERE `mid` = '$mid'";
 
 echo $sql;
 
