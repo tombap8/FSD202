@@ -55,8 +55,17 @@
         
         /// 처음에 큰 이미지 박스 정중앙에 위치하기
         
-        // 중앙top값
+        // 중앙top값: (작은박스높이값 - 큰이미지박스높이값)/2
         let cTop = (wrp.height() - ibx.height()) / 2;
+        
+        // 중앙left값: (작은박스너비값 - 큰이미지박스너비값)/2
+        let cLeft = (wrp.width() - ibx.width()) / 2;
+        
+        // 이미지박스 중앙에 위치시키기
+        ibx.css({
+            top: cTop + "px",
+            left: cLeft + "px"
+        });///////// css ////////////
         
         
         
