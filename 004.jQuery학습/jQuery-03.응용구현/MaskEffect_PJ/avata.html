@@ -10,24 +10,55 @@
 
             // 위치보정함수 호출
             calc();
-            
+
             // 윈도우 화면 사이즈 변경시 위치보정함수 호출
             $(window).resize(calc);
-            
+
+
+            // 마스크박스
+            let mk = $("#mask");
+
+            // 커버박스
+            let cv = $("#cover");
+
             // 마우스가 #cover 위에서 움직일때 //
             // #mask박스 이동하기 /////////////
             // 이벤트 대상: #cover
             // 사용이벤트: mousemove
-            $("#cover").mousemove(function(e){
+            cv.mousemove(function(e) {
                 // e-이벤트전달변수
-                
+
                 // 마우스 포인터 위치값 알아내기
                 // 1. pageX, pageY : 화면기준
                 // 2. offsetX, offsetY : 선택요소기준
-                
-                
-                
-            });//////// mousemove ////////////
+
+                // x축 위치값 보정(박스크기의 절반빼기)
+                let posx = e.offsetX - 100;
+
+                // y축 위치값 보정(박스크기의 절반빼기)
+                let posy = e.offsetY - 100;
+
+                // 움직일 대상: #mask
+                mk.css({
+                    top: posy + "px",
+                    left: posx + "px"
+                }); /////// css ///////////
+
+
+            }); //////// mousemove ////////////
+
+            // 처음에 마스크 숨기기 ///
+            mk.hide();
+
+            // 커버박스에 오버시 보이고, 아웃시 숨기기
+            cv.hover(
+                function() { // over
+                    mk.show();
+                },
+                function() { // out
+                    mk.hide();
+                }); ///// hover ///////////
+            ///////////////////////////////
 
 
 
@@ -98,10 +129,11 @@
             left: 0;
             width: 200px;
             height: 200px;
-            border-radius: 50%;/*원*/
+            border-radius: 50%;
+            /*원*/
             background: url(images/man.jpg) no-repeat fixed;
-            border: 5px dotted red;
-            
+            /*border: 5px dotted red;*/
+
             /*트랜지션:속시이지*/
             transition: top .4s ease-out,
                 left .4s ease-out;
