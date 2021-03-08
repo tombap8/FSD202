@@ -28,13 +28,14 @@
                 //console.log("offsetX:"+e.offsetX);
                 //console.log("pageX:"+e.pageX);
                 
-                // left위치값
-                let posx = e.offsetX;
+                // left위치값(1.2를 곱해서 위치보정!)
+                let posx = e.offsetX * 1.2;
                 
                 // 움직일 대상: #mask
                 $("#mask").css({
-                    left: posx + "px"
+                    left: -posx + "px"
                 });///////// css /////////////
+                // -posx로 방향을 반대로!
                 
             });//////// mousemove ////////////
 
