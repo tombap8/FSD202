@@ -37,7 +37,7 @@
                 $(".wrap").width()/2;
             
             // 고정된 배경이미지 위치보정
-            $("#bg").css({
+            $("#bg,#mask").css({
                 backgroundPosition: bgleft+"px "+
                 bgtop+"px"
             });////// css ////////
@@ -71,6 +71,16 @@
             width: 1007px;
             height: 455px;
             background: url(images/main2.jpg) no-repeat fixed;
+        }
+        
+        /*마스크 효과 box*/
+        #mask{
+            position: absolute;
+            left: -546px;/*왼쪽으로 박스이동(얼굴절반)*/
+            width: 1007px;
+            height: 455px;
+            background: url(images/main1.jpg) no-repeat fixed;
+            outline: 1px dotted navy;
         }
     </style>
 </head>
