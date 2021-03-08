@@ -13,8 +13,8 @@
             // 윈도우 화면 사이즈 변경시 위치보정함수 호출
             $(window).resize(calc);
 
-            
-            
+
+
         }); ////////// jQB //////////////////////
 
         /*/////////////////////////////////////////////
@@ -25,24 +25,24 @@
             이해: 배경이미지를 고정할 경우 보이는 화면에
             위치가 고정되므로 유동적인 박스 위치에 
             배경을 고정할때는 위치를 재설정해야한다!
-        */////////////////////////////////////////////
+        */ ////////////////////////////////////////////
         function calc() {
             // 박스의 실제위치를 구함
             // 실제 박스위치에 크기의 절반을 더한 이유는
             // transform에서 위치이동을 했기때문이다!
             let bgtop = $(".wrap").offset().top +
-                $(".wrap").height()/2;
-            
+                $(".wrap").height() / 2;
+
             let bgleft = $(".wrap").offset().left +
-                $(".wrap").width()/2;
-            
+                $(".wrap").width() / 2;
+
             // 고정된 배경이미지 위치보정
             $("#bg,#mask").css({
-                backgroundPosition: bgleft+"px "+
-                bgtop+"px"
-            });////// css ////////
-            
-            
+                backgroundPosition: bgleft + "px " +
+                    bgtop + "px"
+            }); ////// css ////////
+
+
         } /////// calc함수 ////////////////////////////
         /////////////////////////////////////////////
     </script>
@@ -62,7 +62,9 @@
             transform: translate(-50%, -50%);
             width: 1007px;
             height: 455px;
-            outline: 1px solid red;
+            outline: 1px solid #ccc;
+            overflow: hidden;
+            /*바깥으로 나가는 #mask박스 숨기기*/
         }
 
         /*가장 아래 깔리는 박스*/
@@ -72,15 +74,26 @@
             height: 455px;
             background: url(images/main2.jpg) no-repeat fixed;
         }
-        
+
         /*마스크 효과 box*/
-        #mask{
+        #mask {
             position: absolute;
-            left: -546px;/*왼쪽으로 박스이동(얼굴절반)*/
+            left: -546px;
+            /*왼쪽으로 박스이동(얼굴절반)*/
             width: 1007px;
             height: 455px;
             background: url(images/main1.jpg) no-repeat fixed;
-            outline: 1px dotted navy;
+            /*outline: 1px dotted navy;*/
+            
+            /*트랜지션:속시이지*/
+            transition: left .4s ease-out;
+        }
+
+        /*이벤트가 적용되는 box*/
+        #cover {
+            position: absolute;
+            width: 1007px;
+            height: 455px;
         }
     </style>
 </head>
