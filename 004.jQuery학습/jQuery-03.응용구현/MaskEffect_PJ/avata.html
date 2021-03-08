@@ -25,17 +25,7 @@
                 // 1. pageX, pageY : 화면기준
                 // 2. offsetX, offsetY : 선택요소기준
                 
-                //console.log("offsetX:"+e.offsetX);
-                //console.log("pageX:"+e.pageX);
                 
-                // left위치값(1.2를 곱해서 위치보정!)
-                let posx = e.offsetX * 1.2;
-                
-                // 움직일 대상: #mask
-                $("#mask").css({
-                    left: -posx + "px"
-                });///////// css /////////////
-                // -posx로 방향을 반대로!
                 
             });//////// mousemove ////////////
 
@@ -110,10 +100,11 @@
             height: 200px;
             border-radius: 50%;/*원*/
             background: url(images/man.jpg) no-repeat fixed;
-            outline: 5px dotted red;
+            border: 5px dotted red;
             
             /*트랜지션:속시이지*/
-            transition: all .4s ease-out;
+            transition: top .4s ease-out,
+                left .4s ease-out;
         }
 
         /*이벤트가 적용되는 box*/
