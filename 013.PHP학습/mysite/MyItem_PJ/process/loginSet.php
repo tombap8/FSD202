@@ -39,7 +39,7 @@ $res = $conn->query($sql);
 # $res->num_rows 결과레코드 개수를 담은 속성
 $cnt = $res->num_rows;
 
-echo "레코드개수: $cnt";
+//echo "레코드개수: $cnt";
 
 # 2.레코드 개수가 1인 경우 비밀번호 비교하기
 if($cnt){
@@ -48,7 +48,12 @@ if($cnt){
     # 결과집합의 레코드를 이름으로 가져온다!
     $row = $res->fetch_assoc();
 
-    echo $row["mpw"];
+    //echo $row["mpw"];
+    
+    # 비번비교하기
+    # password_verify(입력된비번, DB해시비번)
+    
+    echo password_verify($mpw,$row["mpw"]);
     
 } ////////// if문 //////////////////////
 
