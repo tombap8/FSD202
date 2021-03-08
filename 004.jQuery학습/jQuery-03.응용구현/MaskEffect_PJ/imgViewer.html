@@ -113,7 +113,24 @@
             mposX = e.pageX;
             mposY = e.pageY;
             
-            console.log("x:"+mposX+"/y:"+mposY);
+            //console.log("x:"+mposX+"/y:"+mposY);
+            
+            // 계산식: 이이 = 마이*이최/마최
+            // 마이 -> mposY, mposX
+            // 이최 -> itmax, ilmax
+            // 마최 -> mtmax, mlmax
+            
+            // 이미지 Y축이동값 : 마이*이최/마최
+            let iposY = mposY * itmax / mtmax;
+            
+            // 이미지 X축이동값 : 마이*이최/마최
+            let iposX = mposX * ilmax / mlmax;
+            
+            // 실제 이미지 위치이동 적용하기 ///
+            ibx.css({
+                top: iposY + "px",
+                left: iposX + "px"
+            });//////////// css //////////////
             
             
         });////////// mousemove /////////////////
