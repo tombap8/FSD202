@@ -259,6 +259,7 @@ $(function () { /// jQB //////////////////
             // 3. h2.btit 디자인하기
             .css({
                 position: "absolute",
+                // 부모는? 싸고있는 li
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%,-50%)",

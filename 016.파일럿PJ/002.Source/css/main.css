@@ -161,6 +161,8 @@
 }
 
 .slide > li {
+    position: relative;
+    /*부모자격 - 슬라이드 타이틀*/
     flex: 1;
     /*등분할*/
     float: none;
