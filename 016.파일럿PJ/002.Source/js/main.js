@@ -40,25 +40,25 @@ $(function () { /// jQB //////////////////
     let prot = $(".prot");
     // 배너순번(블릿순번)
     let bseq = 0;
-    
+
     /// 만약 화면 크기가 중간에 변경될 경우 window크기 재할당!
-    $(window).resize(function(){
-        
+    $(window).resize(function () {
+
         console.log("리사이즈!");
-        
+
         // 윈도우 크기 재설정!
         win = $(window).width();
-        
-    });////// resize 메서드 /////////////////
+
+    }); ////// resize 메서드 /////////////////
 
     //////////// 드래그 이벤트 함수 ////////////
     sld.on("dragstop touchend", function () {
 
         //console.log("드래그끝!");
-        
+
         // 자동슬라이드 지우기!!!
         clearAuto();
-        
+
 
         // 광드래그 막기용 커버작동!
         prot.show();
@@ -154,10 +154,10 @@ $(function () { /// jQB //////////////////
     let autoSlide = function () {
 
         // 슬라이드 왼쪽이동하기 (드래그이동 if문과 동일) //
-        
+
         // 광드래그 막기용 커버작동!
         prot.show();
-        
+
         // 왼쪽이동 애니메이션 : -200%이동과 동일!
         sld.stop().animate({
                 left: -win * 2 + "px"
@@ -179,29 +179,29 @@ $(function () { /// jQB //////////////////
         // 배너블릿 순번증가
         bseq++;
         if (bseq === 6) bseq = 0; //한계수
-        
+
         /// 블릿 해당순번 li에 class "on"넣기 ///
         $(".indic li").eq(bseq).addClass("on")
             .siblings().removeClass("on");
 
     }; //////// autoSlide 함수 ///////////////////////
     ////////////////////////////////////////////////
-    
-    
-    let autoI;//인터발용변수
+
+
+    let autoI; //인터발용변수
     /*//////////////////////////////////////////////
         함수명: autoCall
         기능: 메인 슬라이드 배너 넘기기 자동호출!
-    *///////////////////////////////////////////////
-    let autoCall = function(){
+    */ //////////////////////////////////////////////
+    let autoCall = function () {
         autoI = setInterval(autoSlide, 4000);
-    };////////// autoCall 함수 //////////////////////
+    }; ////////// autoCall 함수 //////////////////////
     ////////////////////////////////////////////////
 
     //// 슬라이드 자동넘김 최초호출!!! ///
     autoCall();
-    
-    
+
+
     // 타임아웃용변수
     let autoT;
     /*/////////////////////////////////////////////
@@ -209,22 +209,22 @@ $(function () { /// jQB //////////////////
         기능: 메인 배너 슬라이드 자동호출 지우기 
             일정시간 후 자동넘김 재호출!
         어디서호출? : 직접 드래그시 호출!
-    *//////////////////////////////////////////////
-    let clearAuto = function(){
-        
+    */ /////////////////////////////////////////////
+    let clearAuto = function () {
+
         // 인터발 지우기
         clearInterval(autoI);
         // 타임아웃 지우기(실행 쓰나미방지!)
         clearTimeout(autoT);
-        
+
         // 매번 재호출 셋팅!
         autoT = setTimeout(autoCall, 4000);
         // 4초후에 자동넘김함수 재호출!
-        
-    };///////// clearAuto 함수 /////////////////////
+
+    }; ///////// clearAuto 함수 /////////////////////
     ///////////////////////////////////////////////
-    
-    
+
+
     //// 배너 슬라이드 타이틀 글자 셋팅 /////
     let bantxt = [
         "Men's Season<br>Collection",
@@ -233,31 +233,48 @@ $(function () { /// jQB //////////////////
         "T-Shirt<br>Collection",
         "Shoes<br>Collection",
         "Wind Jacket<br>Collection"
-    ];////// 배너 슬라이드 타이틀 /////////
-    
+    ]; ////// 배너 슬라이드 타이틀 /////////
+
     /*////////////////////////////////////////////////
         함수명: banTit
         기능: 각 배너 슬라이드에 도착 후 글자 등장 애니메이션
-    */////////////////////////////////////////////////
-    let banTit = function(){
-        
+    */ ////////////////////////////////////////////////
+    let banTit = function () {
+
+        // 0. h2.btit요소를 먼저 지우고 시작함!
+        $(".btit").remove();
+
         // 1.배너 도착 후 타이틀을 슬라이드에 h2태그로 넣기
         // 대상: .slide li
         // 실제배너는 맨앞에 하나가 있고 두번째 이므로 1번이다!
         sld.find("li").eq(1)
-        .append('<h2 class="btit"></h2>');
-        
+            .append('<h2 class="btit"></h2>');
+
         // 2.생성된 h2.btit 요소에 html로 글자넣기
         // 글자는 bantxt 배열변수에 이미셋팅함!
         // bseq는 배너 및 블릿 순번변수(0~5)
-        $(".btit").html(bantxt[bseq]);
-        
-        
-    };//////////// banTit 함수 ///////////////////////
+        $(".btit") //주인공!
+            .html(bantxt[bseq])
+
+            // 3. h2.btit 디자인하기
+            .css({
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+                font: "bold 1vw Verdana",
+                color: "#fff",
+                textShadow: "1px 1px 3px #777",
+                whiteSpace: "nowrap",
+                textAlign: "center"
+            })
+
+
+    }; //////////// banTit 함수 ///////////////////////
     //////////////////////////////////////////////////
-    
+
     // banTit함수 최초호출!
-    setTimeout(banTit,2000);
+    setTimeout(banTit, 2000);
 
 
 
