@@ -263,7 +263,7 @@ $(function () { /// jQB //////////////////
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%,-50%)",
-                font: "bold 1vw Verdana",
+                font: "bold 4vw Verdana",
                 color: "#fff",
                 textShadow: "1px 1px 3px #777",
                 whiteSpace: "nowrap",
