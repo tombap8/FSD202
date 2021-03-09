@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Fashion Gallery</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        /*갤러리 타이틀*/
+        .tit {
+            width: 400px;
+            font: bold 3.2rem arial;
+            text-align: center;
+            color: #fff;
+            margin: 0 auto;
+            /*블록박스 가로중앙*/
+            margin-top: 100px;
+        }
+        
+        /*갤러리 박스*/
+        #gallery{
+            width: 950px;
+            margin: 0 auto;
+            margin-top: 50px;
+            outline: 1px solid lime;
+            overflow: hidden;
+            /*자식요소의 마진포함(위아래마진)!*/
+        }
+        
+        /*각 갤러리 박스 공통*/
+        .photobox{
+            width: 180px;
+            height: 250px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .photobox img{
+            width: 100%;
+            height: 100%;
+        }
+        
+    </style>
 </head>
+
 <body>
-    
-</body>
-</html>
+    <!--갤러리 타이틀-->
+    <h1 class="tit">Fashion Gallery</h1>
+
+    <!--갤러리 박스-->
+    <div id="gallery">
+        <div class="photobox">
+            <img src="images/mob/1.jpg" alt="fashion">
+            <span class="cover"></span>
+            <span class="txt"></span>
+        </div>
+    </div>
+
+</body></html>
