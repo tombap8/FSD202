@@ -243,12 +243,13 @@ $(function () { /// jQB //////////////////
         
         // 1.배너 도착 후 타이틀을 슬라이드에 h2태그로 넣기
         // 대상: .slide li
-        // bseq는 배너 및 블릿 순번변수(0~5)
-        sld.find("li").eq(bseq)
+        // 실제배너는 맨앞에 하나가 있고 두번째 이므로 1번이다!
+        sld.find("li").eq(1)
         .append('<h2 class="btit"></h2>');
         
         // 2.생성된 h2.btit 요소에 html로 글자넣기
         // 글자는 bantxt 배열변수에 이미셋팅함!
+        // bseq는 배너 및 블릿 순번변수(0~5)
         $(".btit").html(bantxt[bseq]);
         
         
