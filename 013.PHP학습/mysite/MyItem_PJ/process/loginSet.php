@@ -8,7 +8,7 @@
 $mid = $_POST["mid"];
 $mpw = $_POST["mpw"];
 
-echo "아이디: $mid / 비번: $mpw";
+//echo "아이디: $mid / 비번: $mpw";
 
 # 순서상 먼저 아이디가 있는지 검사
 # 있다면
@@ -30,7 +30,7 @@ echo "아이디: $mid / 비번: $mpw";
 // 쿼리문 만들기
 $sql = "SELECT `mid`,`mpw`,`name`,`auth` FROM `member` WHERE `mid` = '$mid'";
 
-echo " / 쿼리문 : ".$sql;
+//echo " / 쿼리문 : ".$sql;
 
 # DB연결하기
 include "dbcon.inc";
@@ -43,7 +43,7 @@ $res = $conn->query($sql);
 # $res->num_rows 결과레코드 개수를 담은 속성
 $cnt = $res->num_rows;
 
-echo " / 레코드개수: $cnt";
+//echo " / 레코드개수: $cnt";
 
 # 2.레코드 개수가 1인 경우 비밀번호 비교하기
 if($cnt){
@@ -52,13 +52,13 @@ if($cnt){
     # 결과집합의 레코드를 이름으로 가져온다!
     $row = $res->fetch_assoc();
 
-    echo " / DB비밀번호 : ".$row["mpw"];
+    //echo " / DB비밀번호 : ".$row["mpw"];
     
     # 비번비교하기
     # password_verify(입력된비번, DB해시비번)
     
-    echo " / 비번검증 : ".
-        password_verify($mpw,$row["mpw"]);
+    //echo " / 비번검증 : ".
+    //    password_verify($mpw,$row["mpw"]);
     
 } ////////// if문 //////////////////////
 
