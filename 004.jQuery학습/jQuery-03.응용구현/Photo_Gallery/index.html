@@ -101,11 +101,29 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script>
-    $(function(){ /// jQB //////////////////
-        
-        
-        
-    });////////// jQB //////////////////////
+        $(function() { /// jQB //////////////////
+
+            // 갤러리박스
+            let gbx = $("#gallery");
+
+            // 1. 포토박스에 html생성 및 초기화, 캡션글 넣기
+            // 대상: #gallery
+            // for문으로 갤러리박스를 생성해 준다!
+            // for(시;한;증){구현코드}
+            for (let i = 0; i < 5; i++) {
+                gbx.append(
+                    '<div class="photobox">' +
+                    '    <img src="images/mob/' + (i + 1) +
+                    '.jpg" alt="fashion">' +
+                    '    <span class="cover"></span>' +
+                    '    <span class="txt"></span>' +
+                    '</div>'
+                );
+            } /////////// for문 ////////////
+
+
+
+        }); ////////// jQB //////////////////////
     </script>
 </head>
 
@@ -114,12 +132,8 @@
     <h1 class="tit">Fashion Gallery</h1>
 
     <!--갤러리 박스-->
-    <div id="gallery">
-        <div class="photobox">
-            <img src="images/mob/1.jpg" alt="fashion">
-            <span class="cover"></span>
-            <span class="txt">이미지 설명입니다.</span>
-        </div>
-    </div>
+    <div id="gallery"></div>
+
+
 
 </body></html>
