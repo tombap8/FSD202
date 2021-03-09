@@ -260,15 +260,24 @@ $(function () { /// jQB //////////////////
             .css({
                 position: "absolute",
                 // 부모는? 싸고있는 li
-                top: "50%",
+                top: "55%",
+                /*top값을 55%에서 50%로 올라오며 등장예정!*/
                 left: "50%",
                 transform: "translate(-50%,-50%)",
                 font: "bold 4vw Verdana",
                 color: "#fff",
                 textShadow: "1px 1px 3px #777",
                 whiteSpace: "nowrap",
-                textAlign: "center"
-            })
+                textAlign: "center",
+                opacity: 0 // 처음에 투명숨김
+            }) ////////// css //////////////////
+        
+        // 4.애니메이션 등장하기 : 올라오면서 나타나
+        .animate({
+            top: "50%",
+            opacity: 1
+        }, 1000, "easeInOutQuart");
+        
 
 
     }; //////////// banTit 함수 ///////////////////////
