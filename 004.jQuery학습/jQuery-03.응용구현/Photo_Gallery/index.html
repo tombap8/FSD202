@@ -30,6 +30,8 @@
         
         /*갤러리 박스*/
         #gallery{
+            display: flex;
+            /*자식요소를 옆으로 흐르게!*/
             width: 950px;
             margin: 0 auto;
             margin-top: 50px;
@@ -40,6 +42,8 @@
         
         /*각 갤러리 박스 공통*/
         .photobox{
+            position: relative;
+            /*부모자격!*/
             width: 180px;
             height: 250px;
             cursor: pointer;
@@ -48,6 +52,42 @@
         .photobox img{
             width: 100%;
             height: 100%;
+        }
+        /*커버*/
+        .cover{
+            position: absolute;
+            /*나의부모? .photobox*/
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            opacity: .5;
+        }
+        /*
+            흐림 효과구분명:
+            1. 검정색 반투명-> 오버레이효과(overlay)
+            2. 흰색 반투명-> 트랜스페런트효과(transparent)
+        */
+        
+        /*설명박스*/
+        .txt{
+            position: absolute;
+            /*나의부모? .photobox*/
+            top: 70%;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            color: #fff;
+            font: .68rem/4.68rem "맑은 고딕", "굴림";
+            /*
+                [rem단위 변환]
+                글자크기 변환: 11px/16px=0.68
+                줄간격변환: 75px/16px=4.68
+            */
+            text-align: center;
+            white-space: nowrap;/*줄바꿈방지*/
+            background-color: rgba(0, 0, 0, 0.5);
         }
         
     </style>
@@ -62,7 +102,7 @@
         <div class="photobox">
             <img src="images/mob/1.jpg" alt="fashion">
             <span class="cover"></span>
-            <span class="txt"></span>
+            <span class="txt">이미지 설명입니다.</span>
         </div>
     </div>
 
