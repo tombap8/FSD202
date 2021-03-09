@@ -179,6 +179,7 @@ $(function () { /// jQB //////////////////
         // 배너블릿 순번증가
         bseq++;
         if (bseq === 6) bseq = 0; //한계수
+        
         /// 블릿 해당순번 li에 class "on"넣기 ///
         $(".indic li").eq(bseq).addClass("on")
             .siblings().removeClass("on");
@@ -222,6 +223,23 @@ $(function () { /// jQB //////////////////
         
     };///////// clearAuto 함수 /////////////////////
     ///////////////////////////////////////////////
+    
+    
+    //// 배너 슬라이드 타이틀 글자 셋팅 /////
+    let bantxt = [
+        "Men's Season<br>Collection",
+        "2021 Special<br>Collection",
+        "GongYoo<br>Collection",
+        "T-Shirt<br>Collection",
+        "Shoes<br>Collection",
+        "Wind Jacket<br>Collection"
+    ];////// 배너 슬라이드 타이틀 /////////
+    
+    /*////////////////////////////////////////////////
+        함수명: banTit
+        기능: 각 배너 슬라이드에 도착 후 글자 등장 애니메이션
+    */////////////////////////////////////////////////
+    
 
 
 
