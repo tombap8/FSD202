@@ -103,6 +103,15 @@
     <script>
         $(function() { /// jQB //////////////////
 
+            // 이미지 설명글 셋팅하기 //
+            let msg = [
+                "고귀하고 엘레강스한 여자",
+                "시크하고 도도한 여자",
+                "여신같고 신비로운 여자",
+                "환상속에 꿈을 꾸는 여자",
+                "고풍스런 미를 지닌 여자"
+            ]; ///// 이미지 설명글 /////
+
             // 갤러리박스
             let gbx = $("#gallery");
 
@@ -116,7 +125,7 @@
                     '    <img src="images/mob/' + (i + 1) +
                     '.jpg" alt="fashion">' +
                     '    <span class="cover"></span>' +
-                    '    <span class="txt"></span>' +
+                    '    <span class="txt">' + msg[i] + '</span>' +
                     '</div>'
                 );
             } /////////// for문 ////////////
