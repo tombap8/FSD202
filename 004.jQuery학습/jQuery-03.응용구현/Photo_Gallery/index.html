@@ -16,9 +16,10 @@
             background-color: #000;
             overflow: hidden;
         }
-        
+
         /*공통 CSS*/
-        .bld{/*ir용*/
+        .bld {
+            /*ir용*/
             display: block;
             width: 0;
             height: 0;
@@ -105,9 +106,9 @@
             /*줄바꿈방지*/
             background-color: rgba(0, 0, 0, 0.5);
         }
-        
+
         /*큰 이미지 배경박스*/
-        #dpbg{
+        #dpbg {
             position: fixed;
             /*무조건 화면기준!*/
             top: 0;
@@ -115,11 +116,12 @@
             width: 100vw;
             height: 100vh;
             background-color: rgba(255, 255, 255, 0.9);
-            display: none;/*처음에 안보임*/
+            display: none;
+            /*처음에 안보임*/
         }
-        
+
         /*닫기버튼*/
-        .cbtn{
+        .cbtn {
             position: absolute;
             /*부모는? #dpbg*/
             top: 5%;
@@ -130,17 +132,18 @@
             background: url(images/mv_btns.png) no-repeat;
             background-position: -129px -342px;
             /*sprites*/
-            
+
             /*트랜지션*/
             transition: transform .3s;
         }
+
         /*닫기버튼 오버시*/
-        .cbtn:hover{
+        .cbtn:hover {
             transform: rotate(-90deg);
         }
-        
+
         /*이동버튼 공통*/
-        .abtn{
+        .abtn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -150,31 +153,35 @@
             background: url(images/mv_btns.png) no-repeat;
             /*outline: 1px solid red;*/
         }
+
         /*오른쪽버튼*/
-        .rb{
+        .rb {
             right: 5%;
             background-position: 0 -100px;
         }
+
         /*오른쪽버튼 오버시*/
-        .rb:hover{
+        .rb:hover {
             background-position: -167px 0;
         }
+
         /*왼쪽버튼*/
-        .lb{
+        .lb {
             left: 5%;
             background-position: -232px 0;
         }
+
         /*왼쪽버튼 오버시*/
-        .lb:hover{
+        .lb:hover {
             background-position: 0 -221px;
         }
-        
+
         /*큰 이미지 박스*/
-        #dpbox{
+        #dpbox {
             position: fixed;
             top: 50vh;
             left: 50vw;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             /*정중앙 이동*/
             height: 60vmin;
             /*
@@ -184,14 +191,14 @@
                 vmin은 보이는 화면에서 가로/세로 중 작은 쪽을
                 기준하는 상대 단위이다!(특히 모바일 화면에서 필요!)
             */
-            display: none;/*처음에 안보임*/
+            display: none;
+            /*처음에 안보임*/
         }
+
         /*큰 이미지*/
-        #dpbox img{
+        #dpbox img {
             height: 100%;
         }
-        
-        
     </style>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -248,7 +255,7 @@
                     $(".txt", this)
                         .stop().animate({
                             top: "70%"
-                        },300); //// animate /////
+                        }, 300); //// animate /////
 
                 }, ///////////////////////////
                 function() { // out
@@ -261,61 +268,73 @@
                     $(".txt", this)
                         .stop().animate({
                             top: "100%"
-                        },300); //// animate /////
+                        }, 300); //// animate /////
 
                 }); ///// hover ///////////
-            
+
             // 큰 이미지 배경박스
             let dpbg = $("#dpbg");
-            
+
             // 큰 이미지 박스
             let dpbx = $("#dpbox");
-            
+
             ///////////////////////////////////////////
             ///// 3. 포토박스 클릭시 숨겨있던 큰 이미지 ////
             ///// 배경박스와 큰 이미지 박스가 나타나보임 ////
             ///////////////////////////////////////////
             // 대상: .photobox -> pbx 변수
-            
-            pbx.click(function(){
-                
+
+            pbx.click(function() {
+
                 // 1. 큰 이미지 배경박스 보이기
                 dpbg.fadeIn(300);
-                
+
                 // 2. 큰 이미지박스에 이미지 넣기
-                
+
                 // 2-1.클릭된 박스의 썸네일 이미지 경로를 읽어온다
-                let isrc = $("img",this).attr("src");
-                
+                let isrc = $("img", this).attr("src");
+
                 // 2-2.그 경로에서 "/mob"경로만 제거한다!
                 // replace(바꿀값,바뀔값) - 문자데이터 치환!
-                isrc = isrc.replace("/mob","");
-                
+                isrc = isrc.replace("/mob", "");
+
                 //console.log("경로:"+isrc);
-                
+
                 // 2-3. 이미지 설명 가져오기
-                let itxt = $(".txt",this).text();
-                
-                console.log("설명:"+itxt);
-                
-                
-                
-            });//////// click ////////////////////////
+                let itxt = $(".txt", this).text();
+
+                console.log("설명:" + itxt);
+
+                // 2-4. 큰 이미지 박스에 img태그 넣기
+                dpbx
+                    .html(
+                    '<img src="' + isrc + '" alt="fashion">'
+                )
+                // 2-5. 큰 이미지 박스 서서히 보이기
+                .fadeIn(300);
+
+
+
+
+
+            }); //////// click ////////////////////////
             //////////////////////////////////////////
-            
+
             ///////////////////////////////////////
             /////// 4. 닫기버튼 클릭시 닫기 //////////
             ///////////////////////////////////////
             // 대상: .cbtn
-            $(".cbtn").click(function(){
-                
+            $(".cbtn").click(function() {
+
                 // 1. 큰 이미지 배경박스 숨기기
                 dpbg.fadeOut(300);
-                
-            });//////////// click //////////////////
+                // 2. 큰 이미지 박스 숨기기
+                dpbx.fadeOut(300);
+
+            }); //////////// click //////////////////
             ////////////////////////////////////////
-            
-            
+
+
 
 
 
@@ -329,7 +348,7 @@
 
     <!--갤러리 박스-->
     <div id="gallery"></div>
-    
+
     <!--큰 이미지 배경박스-->
     <div id="dpbg">
         <a href="#" class="cbtn">
@@ -342,15 +361,15 @@
             <span class="bld">오른쪽이동버튼</span>
         </a>
     </div>
-    
+
     <!--큰 이미지박스-->
     <div id="dpbox">
         <!--<img src="flexImg/16.jpg" alt="fashion">-->
     </div>
-    
-    
-    
-    
+
+
+
+
 
 
 
