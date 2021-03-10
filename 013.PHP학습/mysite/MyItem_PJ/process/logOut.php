@@ -7,4 +7,7 @@ session_start();
 # 2. 세션종료(세션관련 변수등 모두 파기함!)
 session_destroy();
 
+// 돌아갈때 리턴값
+echo "ok";
+
 ?>
