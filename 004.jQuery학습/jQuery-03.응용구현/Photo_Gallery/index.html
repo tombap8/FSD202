@@ -168,6 +168,27 @@
             background-position: 0 -221px;
         }
         
+        /*큰 이미지 박스*/
+        #dpbox{
+            position: fixed;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%,-50%);
+            /*정중앙 이동*/
+            height: 60vmin;
+            /*
+                이미지가 가로가 세로보다 긴 경우 화면이
+                가로가 세로 보다 작을 경우 양쪽이 잘리게 되는 것을
+                방지하기 위해 vmin단위를 사용한다!
+                vmin은 보이는 화면에서 가로/세로 중 작은 쪽을
+                기준하는 상대 단위이다!(특히 모바일 화면에서 필요!)
+            */
+        }
+        /*큰 이미지*/
+        #dpbox img{
+            height: 100%;
+        }
+        
         
     </style>
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -270,7 +291,7 @@
     
     <!--큰 이미지박스-->
     <div id="dpbox">
-        
+        <img src="flexImg/16.jpg" alt="fashion">
     </div>
     
     
