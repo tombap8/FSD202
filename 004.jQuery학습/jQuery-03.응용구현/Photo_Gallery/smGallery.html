@@ -44,9 +44,10 @@
         #gallery {
             display: flex;
             /*자식요소를 옆으로 흐르게!*/
+            flex-wrap: wrap;
+            /*flex에서 줄바꿈설정!*/
             width: 950px;
-            margin: 0 auto;
-            margin-top: 50px;
+            margin: 50px auto 100px;
             outline: 1px solid lime;
             overflow: hidden;
             /*자식요소의 마진포함(위아래마진)!*/
@@ -209,13 +210,12 @@
         $(function() { /// jQB //////////////////
 
             // 이미지 설명글 셋팅하기 //
-            let msg = [
-                "고귀하고 엘레강스한 여자",
-                "시크하고 도도한 여자",
-                "여신같고 신비로운 여자",
-                "환상속에 꿈을 꾸는 여자",
-                "고풍스런 미를 지닌 여자"
-            ]; ///// 이미지 설명글 /////
+            let msg = []; // 배열변수
+
+            // 메시지 셋팅
+            for (let i = 0; i < 50; i++) {
+                msg[i] = "WOD21-0" + (i + 1);
+            } ////////// for문 //////////////
 
             // 갤러리박스
             let gbx = $("#gallery");
@@ -226,10 +226,10 @@
             // 대상: #gallery
             // for문으로 갤러리박스를 생성해 준다!
             // for(시;한;증){구현코드}
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 50; i++) {
                 gbx.append(
                     '<div class="photobox">' +
-                    '    <img src="images/mob/' + (i + 1) +
+                    '    <img src="images/dress/' + (i + 1) +
                     '.jpg" alt="fashion">' +
                     '    <span class="cover"></span>' +
                     '    <span class="txt">' + msg[i] + '</span>' +
@@ -308,7 +308,7 @@
 
                 // 2-2.그 경로에서 "/mob"경로만 제거한다!
                 // replace(바꿀값,바뀔값) - 문자데이터 치환!
-                isrc = isrc.replace("/mob", "");
+                //isrc = isrc.replace("/mob", "");
 
                 //console.log("경로:"+isrc);
 
@@ -334,7 +334,10 @@
             /////// 4. 닫기버튼 클릭시 닫기 //////////
             ///////////////////////////////////////
             // 대상: .cbtn
-            $(".cbtn").click(function() {
+            $(".cbtn").click(function(e) {
+                
+                // 0. 기본이동막기
+                e.preventDefault();
 
                 // 1. 큰 이미지 배경박스 숨기기
                 dpbg.fadeOut(300);
@@ -356,7 +359,10 @@
             // 이동방법: 변수 cseq에 담긴 순번을 이용하여 
             // 이전/다음 이미지와 설명으로 변경한다!
             // 대상: .abtn
-            $(".abtn").click(function() {
+            $(".abtn").click(function(e) {
+                
+                // 0. 기본이동막기
+                e.preventDefault();
 
                 // is() 메서드를 사용하여 방향구분하기!!!
                 // 클릭된 요소의 클래스가 rb인지 lb인지 구분한다!
@@ -392,7 +398,7 @@
                 // 대상: #dpbox img
                 dpbx.find("img")
                     .attr("src",
-                        "images/" + (cseq + 1) + ".jpg");
+                        "images/dress/" + (cseq + 1) + ".jpg");
 
                 // 4. 큰 이미지 설명글 변경하기
                 // -> 메시지 배열변수의 해당순번값을 가져온다!
