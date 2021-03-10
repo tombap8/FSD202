@@ -10,6 +10,32 @@
 </head>
 
 <body>
+  <script>
+    
+      /// 로그인 메시지 박스 만들기 ////
+      $(function(){ /// jQB //////////////////
+        // 1. 상단영역(#top)에 로그인 박스넣기
+          $("#top").append('<div id="loginMsg"></div>');
+          // 2. 로그인 박스 CSS 디자인하기
+          $("#loginMsg").css({
+              position: "absolute",
+              width: "400px",
+              height: "50px",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              fontSize: "11px",
+              lineHeight:"50px",
+              textAlign: "center",
+              whiteSpace: "nowrap"
+          }); ////// css //////////
+          
+          
+      });////////// jQB //////////////////////
+    
+    
+    </script>
+  
    <?php 
     # 세션 변수가 셋팅되었는지 검색하려면 먼저 세션을 시작해야함!!!
     session_start();
@@ -23,14 +49,8 @@
         // 메시지
         $msg = $_SESSION["name"]."님, 환영합니다!";
         
-        echo "<script>alert('".$msg."');</script>";
+        //echo "<script>alert('".$msg."');</script>";
     } ////////// if문 ///////////////////////
-    else{
-        
-        echo "<script>
-                alert('변수가 셋팅되지 않았습니다!');
-            </script>";
-    } ///////// else문 ////////////
     
     
     ?>
