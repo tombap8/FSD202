@@ -23,9 +23,7 @@
         // 메시지
         $msg = $_SESSION["name"]."님, 환영합니다!";
         
-        echo "<script>
-                alert('".$msg."');
-            </script>";
+        echo "<script>alert('".$msg."');</script>";
     } ////////// if문 ///////////////////////
     else{
         
