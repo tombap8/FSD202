@@ -11,16 +11,20 @@
 
 <body>
    <?php 
+    # 세션 변수가 셋팅되었는지 검색하려면 먼저 세션을 시작해야함!!!
+    session_start();
+    
+    
     # 세션변수가 셋팅된 경우에만 로그인 상태변경 실행
     # $_SESSION["mid"] 아이디 세션변수가 셋팅되었는가?
     # isset(변수) -> 변수값이 셋팅된 여부를 판별(셋팅시 1리턴)
     if(isset($_SESSION["mid"])){
         
-        // 이름
-        $mnm = $_SESSION["name"];
+        // 메시지
+        $msg = $_SESSION["name"]."님, 환영합니다!";
         
         echo "<script>
-                alert('$mnm님, 환영합니다!');
+                alert('".$msg."');
             </script>";
     } ////////// if문 ///////////////////////
     else{
