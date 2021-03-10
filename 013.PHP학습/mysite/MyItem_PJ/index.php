@@ -24,6 +24,17 @@
               // 콘솔창에 전달값을 찍어봄!
               console.log(msg+"/"+auth);
               
+              // 1. 로그인 환영 메시지 출력하기
+              $("#loginMsg").text(msg);
+              
+              // 2. 로그인 버튼을 로그아웃 버튼으로 변경하기
+              // 대상: .tmenu li:eq(1) a
+              $(".tmenu li").eq(1).find("a").text("로그아웃")
+              // 3. 로그아웃 클릭시 로그아웃하기
+              .click(function(){
+                  
+              });///// click /////////////////////
+              
               
           });////////// jQB //////////////////////
           
@@ -33,7 +44,7 @@
       /// 로그인 메시지 박스 만들기 ////
       $(function(){ /// jQB //////////////////
         // 1. 상단영역(#top)에 로그인 박스넣기
-          $("#top").append('<div id="loginMsg">박새로미님 환영합니다!</div>');
+          $("#top").append('<div id="loginMsg"></div>');
           // 2. 로그인 박스 CSS 디자인하기
           $("#loginMsg").css({
               position: "absolute",
