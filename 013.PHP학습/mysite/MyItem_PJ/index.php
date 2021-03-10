@@ -15,7 +15,7 @@
       /// 로그인 메시지 박스 만들기 ////
       $(function(){ /// jQB //////////////////
         // 1. 상단영역(#top)에 로그인 박스넣기
-          $("#top").append('<div id="loginMsg"></div>');
+          $("#top").append('<div id="loginMsg">박새로미님 환영합니다!</div>');
           // 2. 로그인 박스 CSS 디자인하기
           $("#loginMsg").css({
               position: "absolute",
@@ -24,7 +24,8 @@
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              fontSize: "11px",
+              fontSize: "14px",
+              fontWeight: "bold",
               lineHeight:"50px",
               textAlign: "center",
               whiteSpace: "nowrap"
