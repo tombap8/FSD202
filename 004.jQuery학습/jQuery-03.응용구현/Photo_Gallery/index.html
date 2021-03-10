@@ -16,6 +16,14 @@
             background-color: #000;
             overflow: hidden;
         }
+        
+        /*공통 CSS*/
+        .bld{/*ir용*/
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
 
         /*갤러리 타이틀*/
         .tit {
@@ -97,6 +105,30 @@
             /*줄바꿈방지*/
             background-color: rgba(0, 0, 0, 0.5);
         }
+        
+        /*큰 이미지 배경박스*/
+        #dpbg{
+            position: fixed;
+            /*무조건 화면기준!*/
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /*닫기버튼*/
+        .cbtn{
+            position: absolute;
+            /*부모는? #dpbg*/
+            top: 5%;
+            right: 5%;
+            width: 40px;
+            height: 39px;
+            outline: 1px solid red;
+        }
+        
+        
     </style>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
