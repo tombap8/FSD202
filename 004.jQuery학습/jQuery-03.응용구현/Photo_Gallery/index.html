@@ -129,6 +129,13 @@
             background: url(images/mv_btns.png) no-repeat;
             background-position: -129px -342px;
             /*sprites*/
+            
+            /*트랜지션*/
+            transition: transform .3s;
+        }
+        /*닫기버튼 오버시*/
+        .cbtn:hover{
+            transform: rotate(-90deg);
         }
         
         /*이동버튼 공통*/
@@ -140,7 +147,7 @@
             width: 56px;
             height: 111px;
             background: url(images/mv_btns.png) no-repeat;
-            outline: 1px solid red;
+            /*outline: 1px solid red;*/
         }
         /*오른쪽버튼*/
         .rb{
@@ -149,7 +156,6 @@
         }
         /*오른쪽버튼 오버시*/
         .rb:hover{
-            right: 5%;
             background-position: -167px 0;
         }
         /*왼쪽버튼*/
@@ -159,7 +165,6 @@
         }
         /*왼쪽버튼 오버시*/
         .lb:hover{
-            left: 5%;
             background-position: 0 -221px;
         }
         
