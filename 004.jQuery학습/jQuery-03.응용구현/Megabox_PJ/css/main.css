@@ -549,7 +549,14 @@ h3 {
     color: #fff;
     text-shadow: 0 0 3px #777;
     padding: 20px;
-    outline: 3px dotted lime;
+    /*outline: 3px dotted lime;*/
+}
+/*플러그인 문구에 태그를 사용할 수 없으므로
+css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
+.type-wrap::first-line{
+    color: powderblue;
+    font-size: 40px;
+    line-height: 100px;
 }
 
 

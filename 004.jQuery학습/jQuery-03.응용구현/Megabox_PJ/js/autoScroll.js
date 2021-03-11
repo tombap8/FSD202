@@ -177,7 +177,7 @@ function pageAction() {
         // 한번만 실행하기 위해 실행상태값 변경하기
         pg2sts = 1; //잠금!
         
-        console.log("타이핑실행!");
+        //console.log("타이핑실행!");
 
         // typed 플러그인 적용하기!
         let typed = new Typed('#typed', {
