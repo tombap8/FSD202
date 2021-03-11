@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/typed.min.js"></script>
     <script src="js/autoScroll.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -41,6 +42,7 @@
     </div>
 
     <!--2. 페이지 영역-->
+
     <!--2-1.영화메뉴 페이지-->
     <section id="pg1" class="page">
         <!--스크린박스-->
@@ -55,36 +57,36 @@
                     <img src="images/vbt1.png" alt="재생멈춤버튼">
                 </a>
             </div>
-            
+
             <!--sound버튼-->
             <div class="sound ctrl">
                 <a href="#">
                     <img src="images/speaker_blue.png" alt="스피커">
                 </a>
             </div>
-            
+
             <!--동영상 진행바-->
             <div class="pBar ctrl">
                 <div class="tBar"></div>
             </div>
-            
+
             <!--동영상 전체시간, 현재진행시간 표시-->
             <div class="cTime ctrl">
-                <span class="current">01:20</span> / 
+                <span class="current">01:20</span> /
                 <span class="duration">03:50</span>
             </div>
-            
+
             <!--볼륨버튼-->
             <div class="volume ctrl">
                 <span id="bar"></span>
             </div>
-            
+
             <!--확대/축소버튼-->
             <div class="expand ctrl">
                 <a href="#" title="화면확대하기">▣</a>
                 <a href="#" title="화면축소하기">▦</a>
             </div>
-            
+
 
         </div>
 
@@ -108,12 +110,28 @@
 
 
     </section>
-    <section id="pg2" class="page"></section>
-    <section id="pg3" class="page"></section>
-    <section id="pg4" class="page"></section>
-    <section id="pg5" class="page"></section>
-    <section id="pg6" class="page"></section>
-    <section id="pg7" class="page"></section>
+
+    <!--2-2.큐페이션 페이지:typed 플러그인-->
+    <section id="pg2" class="page">
+        <div class="type-wrap">
+            <span id="typed" style="white-space:pre;"></span>
+            <!--
+                white-space: pre
+                있는 그대로 화면에 출력!
+                이 설정이 없으면 줄바꿈 타이핑이 적용안됨!
+            -->
+        </div>
+    </section>
+
+    <!--2-3.영화관 페이지:swiper 플러그인-->
+    <section id="pg3" class="page">
+
+    </section>
+
+    <!--2-4.특별관 페이지:photobox 플러그인-->
+    <section id="pg4" class="page">
+
+    </section>
 
     <!--3. 블릿 네비게이션-->
     <ol class="bnav">
