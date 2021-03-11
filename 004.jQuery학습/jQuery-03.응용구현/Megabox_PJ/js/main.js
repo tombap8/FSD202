@@ -343,13 +343,17 @@ $(function () { /// jQB ///////////////////////
     // 1. 동영상 제어버튼 숨기기/보이기 ///
     // 컨트롤 공통 class : .ctrl
     let ctrl = $(".ctrl");
-    $("#screen").hover(
-        function () { // over시 서서히 보임
-            ctrl.fadeIn(200);
-        },
-        function () { // out시 서서히 사라짐
-            ctrl.fadeOut(200);
-        }); ///// hover ///////////
+    // 포스터를 클릭하여 동영상 실행할때 적용하자!
+    let ctrlGo = function(){        
+        $("#screen").hover(
+            function () { // over시 서서히 보임
+                ctrl.fadeIn(200);
+            },
+            function () { // out시 서서히 사라짐
+                ctrl.fadeOut(200);
+            }); 
+        ///// hover ///////////
+    };///////// ctrlGo함수 ////////////////////////
 
     // 2. 동영상 제어버튼 오버/아웃시 이미지 변경하기 ///
     // 이벤트 대상: .btngrp img
