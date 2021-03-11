@@ -559,6 +559,29 @@ css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
     line-height: 100px;
 }
 
+/************* 3. 영화관 페이지 : 스와이퍼 플러그인 ***********/
+/*스와이퍼 전체박스*/
+.swiper-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 250px;
+    height: 370px;
+}
+/*스와이퍼 개별리스트*/
+.swiper-slide{
+    display: flex;
+    /*원래 flex는 부모박스에 잡지만
+    swiper는 자식요소에 셋팅한다!*/
+    justify-content: center;
+    align-content: center;
+}
+/*스와이퍼 이미지*/
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
 
 
 
