@@ -568,6 +568,7 @@ css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
     transform: translate(-50%,-50%);
     width: 250px;
     height: 370px;
+    box-shadow: 0 0 10px 5px #fff;
 }
 /*스와이퍼 개별리스트*/
 .swiper-slide{
