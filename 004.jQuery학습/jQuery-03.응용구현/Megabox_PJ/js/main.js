@@ -214,6 +214,9 @@ $(function () { /// jQB ///////////////////////
         clearInterval(autoI);
         // 0. 포스터 자동타임아웃 지우기!
         clearTimeout(autoT);
+        
+        // 스크린 마우스 오버 컨트롤 보이기/숨기기 함수한번만 호출
+        
 
 
         // 1-0. 중앙의 포스터가 아닌 경우 중앙으로 오게하기!
@@ -344,6 +347,7 @@ $(function () { /// jQB ///////////////////////
     // 컨트롤 공통 class : .ctrl
     let ctrl = $(".ctrl");
     // 포스터를 클릭하여 동영상 실행할때 적용하자!
+    // 포스터 클릭시 ctrlGo() 함수호출!
     let ctrlGo = function(){        
         $("#screen").hover(
             function () { // over시 서서히 보임
