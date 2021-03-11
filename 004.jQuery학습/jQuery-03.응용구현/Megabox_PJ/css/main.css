@@ -537,6 +537,21 @@ h3 {
     display: inline;
 }
 
+/******** 2. 큐레이션 페이지: typed 플러그인 **********/
+.type-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 620px;
+    height: 300px;
+    font: bold 20px/50px "맑은 고딕";
+    color: #fff;
+    text-shadow: 0 0 3px #777;
+    padding: 20px;
+    outline: 3px dotted lime;
+}
+
 
 
 
