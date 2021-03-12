@@ -69,6 +69,9 @@ $(function () { /// jQB //////////////////
         $(".cvbx").hover(
                 function () { /// over
                     cbtn.show(); //닫기버튼 보이기
+                    $(this).css({
+                        cursor: "none" //커서숨기기
+                    });//// css /////
                 },
                 function () { /// out
                     cbtn.hide(); //닫기버튼 숨기기
