@@ -133,6 +133,8 @@ h1,h2,h3,h4,h5,h6{
 }
 .gnb li:nth-child(2) a{
     background-color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+    /*"HOME PAGE"메뉴는 손가락표시 없앰!*/
 }
 .gnb li:nth-child(3) a{
     background-color: #656565;

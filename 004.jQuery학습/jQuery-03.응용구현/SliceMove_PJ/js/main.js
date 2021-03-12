@@ -106,11 +106,11 @@ $(function () { /// jQB //////////////////
                 // 1.GNB메뉴 원상복귀(복귀후 하위 li들 복귀)
                 $(".gnb").animate({
                     left: "-300px"
-                }, 500, "easeInOutCubic",function(){
-                    
-                    //$("li",this).css({})
-                    
-                });//////// animate //////////////
+                }, 500, "easeInOutCubic", function () {
+
+                    // 초기화방법 중 style시트 인라인코드 지우기!
+                    $("li", this).attr("style", "");
+                }); //////// animate //////////////
 
 
                 // 2.컨텐츠영역+탑영역(.stg) 원상복귀
@@ -119,19 +119,18 @@ $(function () { /// jQB //////////////////
                 }, 500, "easeInOutCubic");
 
                 // 3.커버영역 서서히 사라지기(사라진후 제거!)
-                $(this).fadeOut(500,function(){
+                $(this).fadeOut(500, function () {
                     $(this).remove();
-                });///////// fadeOut ////////////
+                }); ///////// fadeOut ////////////
 
                 // 4.닫기이미지 삭제하기
                 cbtn.remove();
-            
+
                 // 5.햄버거버튼 복귀
                 $("#ham").show();
 
 
-            }); //////////// 커버영역 click ////////////////
-
+            }); //////////// 커버영역 click ///////////
 
 
     }); /////// 햄버거 버튼 click /////////////////
