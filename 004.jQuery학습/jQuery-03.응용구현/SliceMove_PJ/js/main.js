@@ -69,7 +69,7 @@ $(function () { /// jQB //////////////////
         $(".cvbx").hover(
                 function () { /// over
                     cbtn.show(); //닫기버튼 보이기
-                    $(this).css({
+                    $(this).css({// 커버박스에서만 적용!
                         cursor: "none" //커서숨기기
                     });//// css /////
                 },
