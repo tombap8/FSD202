@@ -39,8 +39,12 @@ $(function () { /// jQB //////////////////
 
         /// 전체 영역 덮는 커버 넣기
         $("body").append('<div class="cvbx"></div>');
+
+        // 암전커버
+        let cvbx = $(".cvbx");
+
         // 커버셋팅
-        $(".cvbx").css({
+        cvbx.css({
             position: "fixed",
             top: "0",
             left: "0",
@@ -66,12 +70,12 @@ $(function () { /// jQB //////////////////
         }); /////// css //////////
 
         /// 커버영역 위에 올라가면 닫기버튼 이미지 보이기 ///
-        $(".cvbx").hover(
+        cvbx.hover(
                 function () { /// over
                     cbtn.show(); //닫기버튼 보이기
-                    $(this).css({// 커버박스에서만 적용!
+                    $(this).css({ // 커버박스에서만 적용!
                         cursor: "none" //커서숨기기
-                    });//// css /////
+                    }); //// css /////
                 },
                 function () { /// out
                     cbtn.hide(); //닫기버튼 숨기기
@@ -82,23 +86,52 @@ $(function () { /// jQB //////////////////
             /// 커버영역 위에서 마우스가 움직일때 닫기버튼 따라다니기 //
             .mousemove(function (e) { // e-이벤트전달변수
                 // e.pageX, e.pageY 화면에서의 커서위치값!
-            
+
                 let posx = e.pageX + 5;
                 let posy = e.pageY + 5;
                 // 5를 더한 이유는 닫기이미지가 
                 // 커서아래에 오지 않게하여
                 // .cvbx에 오버시 깜박거리는 현상을 없앤다!
-            
+
                 cbtn.css({
                     top: posy + "px",
                     left: posx + "px"
                 }); ///// css ////////
 
-            }); ///// mousemove ///////////////
+            }) ///// mousemove ///////////////
+
+            // 커버영역을 클릭하면 원상복귀!!!
+            .click(function () {
+
+                // 1.GNB메뉴 원상복귀(복귀후 하위 li들 복귀)
+                $(".gnb").animate({
+                    left: "-300px"
+                }, 500, "easeInOutCubic",function(){
+                    
+                    //$("li",this).css({})
+                    
+                });//////// animate //////////////
+
+
+                // 2.컨텐츠영역+탑영역(.stg) 원상복귀
+                $(".stg").animate({
+                    left: "0px"
+                }, 500, "easeInOutCubic");
+
+                // 3.커버영역 서서히 사라지기(사라진후 제거!)
+                $(this).fadeOut(500,function(){
+                    $(this).remove();
+                });///////// fadeOut ////////////
+
+                // 4.닫기이미지 삭제하기
+                cbtn.remove();
+
+
+            }); //////////// 커버영역 click ////////////////
 
 
 
-    }); /////// click /////////////////
+    }); /////// 햄버거 버튼 click /////////////////
 
 
 
