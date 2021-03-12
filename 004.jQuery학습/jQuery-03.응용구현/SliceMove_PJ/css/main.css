@@ -76,7 +76,7 @@ h1,h2,h3,h4,h5,h6{
 .gnb ul{
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #F2B635;
 }
 /*GNB List*/
 .gnb li{
@@ -90,7 +90,7 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     font-weight: bold;
     font-size: 13px;
-    outline: 3px dotted lime;
+    /*outline: 3px dotted lime;*/
 }
 /*1,7번 li 높이조정*/
 .gnb li:nth-child(1),
@@ -122,6 +122,8 @@ h1,h2,h3,h4,h5,h6{
     /*트랜스폼은 최소한 inline-block이어야함!
     inline요소는 안먹힌다!*/
 }
+
+
 
 
 
