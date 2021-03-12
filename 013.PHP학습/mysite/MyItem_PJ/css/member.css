@@ -54,6 +54,7 @@ select:focus {
     padding: 30px 51px;
     box-sizing: border-box;
     /*마진,패딩포함박스*/
+    display: none;/*처음에 안보임*/
 }
 
 /*리스트 ul*/
@@ -151,6 +152,18 @@ select:focus {
 /*메시지 그린색*/
 .msg b{
     color: green;
+}
+
+/*약관동의박스*/
+#conf{
+    width: 700px;
+    height: 600px;
+    margin: 20px auto 80px;
+    /*마진 3개쓰면 위 양쪽 아래순*/
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
 }
 
 

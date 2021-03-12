@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <!--로그인세션처리 인클루드-->
+    <?php include "inc/login_session.inc"; ?>
+    
     <!--전체박스-->
     <div class="wrap">
         <!--1.상단영역-->
