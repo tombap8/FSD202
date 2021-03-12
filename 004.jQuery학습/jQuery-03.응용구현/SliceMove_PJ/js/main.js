@@ -29,7 +29,7 @@ $(function () { /// jQB //////////////////
             $(ele).delay(100 * idx)
                 .animate({
                     left: "0"
-                },400,"easeOutQuint");
+                },600,"easeOutQuint");
             ///////// animate /////////
 
         }); //////// each ///////////////////
