@@ -90,7 +90,6 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     font-weight: bold;
     font-size: 13px;
-    color: #fff;
     outline: 3px dotted lime;
 }
 /*1,7번 li 높이조정*/
@@ -104,6 +103,11 @@ h1,h2,h3,h4,h5,h6{
 /*마지막 li 높이조정*/
 .gnb li:nth-child(8){
     height: 10%;
+}
+/*메뉴 글자 a요소*/
+.gnb a{
+    text-decoration: none;
+    color: #fff;
 }
 
 
