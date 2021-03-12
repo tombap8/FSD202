@@ -80,9 +80,11 @@ $(function () { /// jQB //////////////////
             .mousemove(function (e) { // e-이벤트전달변수
                 // e.pageX, e.pageY 화면에서의 커서위치값!
             
-                let posx = e.pageX - 11;
-                let posy = e.pageY - 11;
-                // 11을 뺀이유는 이미지 중간정도에 커서가 오게함!
+                let posx = e.pageX + 5;
+                let posy = e.pageY + 5;
+                // 5를 더한 이유는 닫기이미지가 
+                // 커서아래에 오지 않게하여
+                // .cvbx에 오버시 깜박거리는 현상을 없앤다!
             
                 cbtn.css({
                     top: posy + "px",
