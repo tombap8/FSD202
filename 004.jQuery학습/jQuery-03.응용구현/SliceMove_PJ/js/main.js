@@ -16,6 +16,12 @@ $(function(){ /// jQB //////////////////
         }, 500,"easeInOutCubic");
         
         
+        // 상단박스 오른쪽이동하기!
+        $(".top").animate({
+            left: "300px"
+        }, 500,"easeInOutCubic");
+        
+        
         
     });/////// click /////////////////
     
