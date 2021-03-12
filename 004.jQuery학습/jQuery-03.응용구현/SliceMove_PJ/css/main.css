@@ -123,7 +123,31 @@ h1,h2,h3,h4,h5,h6{
     inline요소는 안먹힌다!*/
 }
 
-
+/*GNB메뉴 배경색*/
+#gnb li:nth-child(1) a{
+    background-color: #2c2c2c;
+}
+#gnb li:nth-child(2) a{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#gnb li:nth-child(3) a{
+    background-color: #656565;
+}
+#gnb li:nth-child(4) a{
+    background-color: #545454;
+}
+#gnb li:nth-child(5) a{
+    background-color: #494949;
+}
+#gnb li:nth-child(6) a{
+    background-color: #3c3c3c;
+}
+#gnb li:nth-child(7) a{
+    background-color: #2c2c2c;
+}
+#gnb li:nth-child(1) a{
+    background-color: #333333;
+}
 
 
 
