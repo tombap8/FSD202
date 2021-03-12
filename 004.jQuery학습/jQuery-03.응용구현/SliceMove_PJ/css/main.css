@@ -68,10 +68,12 @@ h1,h2,h3,h4,h5,h6{
 .gnb{
     position: fixed;
     top: 0;
-    left: 0;
+    left: -300px;
+    /*왼쪽에 나가있음!*/
     width: 300px;
     height: 100vh;
     z-index: 99999;/*가장위!*/
+    outline: 3px dashed red;
 }
 .gnb ul{
     width: 100%;
@@ -81,6 +83,8 @@ h1,h2,h3,h4,h5,h6{
 /*GNB List*/
 .gnb li{
     position: relative;
+    left: -100%;
+    /*ul자식요소 왼쪽에 나가있음*/
     width: 100%;
     height: 15%;
     /*
