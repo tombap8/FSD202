@@ -61,7 +61,8 @@ $(function () { /// jQB //////////////////
         // 닫기버튼 css ///
         cbtn.css({
             position: "absolute",
-            display: "none" //처음에 안보임!
+            display: "none", //처음에 안보임!
+            zIndex: "9999999" // 가장위!
         }); /////// css //////////
 
         /// 커버영역 위에 올라가면 닫기버튼 이미지 보이기 ///
@@ -78,9 +79,14 @@ $(function () { /// jQB //////////////////
             /// 커버영역 위에서 마우스가 움직일때 닫기버튼 따라다니기 //
             .mousemove(function (e) { // e-이벤트전달변수
                 // e.pageX, e.pageY 화면에서의 커서위치값!
+            
+                let posx = e.pageX - 11;
+                let posy = e.pageY - 11;
+                // 11을 뺀이유는 이미지 중간정도에 커서가 오게함!
+            
                 cbtn.css({
-                    top: e.pageY + "px",
-                    left: e.pageX + "px"
+                    top: posy + "px",
+                    left: posx + "px"
                 }); ///// css ////////
 
             }); ///// mousemove ///////////////
