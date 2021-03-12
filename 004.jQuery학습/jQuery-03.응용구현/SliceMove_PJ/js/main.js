@@ -5,6 +5,9 @@ $(function () { /// jQB //////////////////
     // 햄버거 버튼 클릭시 메뉴 들어오기
     $("#ham").click(function () {
 
+        // 햄버거버튼(자기자신) 숨기기
+        $(this).hide();
+
         // 메뉴 들어오기
         $(".gnb").animate({
             left: "0"
@@ -47,6 +50,40 @@ $(function () { /// jQB //////////////////
             opacity: ".2",
             zIndex: "9999" // 상단영역보다 위
         }); //////// css //////////
+
+        //// 닫기 버튼 이미지 넣기 ////
+        $("body").append(
+            '<img src="images/OB/close_.png" alt="닫기버튼" id="cbtn">');
+
+        // 닫기버튼
+        let cbtn = $("#cbtn");
+
+        // 닫기버튼 css ///
+        cbtn.css({
+            position: "absolute",
+            display: "none" //처음에 안보임!
+        }); /////// css //////////
+
+        /// 커버영역 위에 올라가면 닫기버튼 이미지 보이기 ///
+        $(".cvbx").hover(
+                function () { /// over
+                    cbtn.show(); //닫기버튼 보이기
+                },
+                function () { /// out
+                    cbtn.hide(); //닫기버튼 숨기기
+                })
+            //////// hover /////////////////
+
+            /// 위에서 이어짐(.cvbx)
+            /// 커버영역 위에서 마우스가 움직일때 닫기버튼 따라다니기 //
+            .mousemove(function (e) { // e-이벤트전달변수
+                // e.pageX, e.pageY 화면에서의 커서위치값!
+                cbtn.css({
+                    top: e.pageY + "px",
+                    left: e.pageX + "px"
+                }); ///// css ////////
+
+            }); ///// mousemove ///////////////
 
 
 
