@@ -93,6 +93,18 @@ h1,h2,h3,h4,h5,h6{
     color: #fff;
     outline: 3px dotted lime;
 }
+/*1,7번 li 높이조정*/
+.gnb li:nth-child(1),
+.gnb li:nth-child(7){
+    height: 7.5%;
+    /*
+        7.5% *2 = 15%
+    */
+}
+/*마지막 li 높이조정*/
+.gnb li:nth-child(8){
+    height: 10%;
+}
 
 
 
