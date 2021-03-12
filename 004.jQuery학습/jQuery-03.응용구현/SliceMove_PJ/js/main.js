@@ -29,10 +29,24 @@ $(function () { /// jQB //////////////////
             $(ele).delay(100 * idx)
                 .animate({
                     left: "0"
-                },600,"easeOutQuint");
+                }, 600, "easeOutQuint");
             ///////// animate /////////
 
         }); //////// each ///////////////////
+
+        /// 전체 영역 덮는 커버 넣기
+        $("body").append('<div class="cvbx"></div>');
+        // 커버셋팅
+        $(".cvbx").css({
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "#000",
+            opacity: ".2",
+            zIndex: "9999" // 상단영역보다 위
+        }); //////// css //////////
 
 
 
