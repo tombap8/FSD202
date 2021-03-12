@@ -32,6 +32,34 @@ h1,h2,h3,h4,h5,h6{
     overflow: hidden;
 }
 
+/*상단영역*/
+.top{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+/*큰 타이틀*/
+.top h1{
+    font-size: 15px;
+    padding-top: 15px;
+}
+/*작은 타이틀*/
+.top h2{
+    font-size: 12px;
+}
+/*햄버거버튼*/
+#ham{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
 /******** 개별디자인 **********/
 /*컨텐츠 전체박스*/
 .wrap{
