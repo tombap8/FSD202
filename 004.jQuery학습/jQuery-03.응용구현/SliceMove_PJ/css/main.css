@@ -106,8 +106,21 @@ h1,h2,h3,h4,h5,h6{
 }
 /*메뉴 글자 a요소*/
 .gnb a{
+    display: block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: #fff;
+    line-height: 13px;
+}
+/*메뉴 세로 중앙이동*/
+.gnb span{
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    transform: translateY(-50%);
+    /*트랜스폼은 최소한 inline-block이어야함!
+    inline요소는 안먹힌다!*/
 }
 
 
