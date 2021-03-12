@@ -8,12 +8,12 @@ $(function(){ /// jQB //////////////////
         // 메뉴 들어오기
         $(".gnb").animate({
             left: "0"
-        }, 500);
+        }, 500,"easeInOutCubic");
         
         // 컨텐츠박스 오른쪽이동하기!
         $(".wrap").animate({
             left: "300px"
-        }, 500);
+        }, 500,"easeInOutCubic");
         
         
         
