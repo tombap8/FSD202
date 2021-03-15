@@ -139,8 +139,13 @@ $(function () { ///// jQB /////////////////
 
         // 5. 메뉴변경하기 - 페이지 순번과 동일함!
         // GNB네비게이션 클래스 넣기
-        $(".gnb li").eq(pno).addClass("on")
-            .siblings().removeClass("on");
+        if(pno===0){//첫페이지에서는 클래스 전부지우기
+            $("#gnb li").removeClass("on");
+        } ///////// if /////////////////
+        else{// 다른 페이지에서는 해당페이지에 맞게 클래스넣기
+            $("#gnb li").eq(pno-1).addClass("on")
+                .siblings().removeClass("on");
+        } //////// else //////////////////
 
         // 블릿네비게이션 클래스 넣기
         $(".bnav li").eq(pno).addClass("on")
