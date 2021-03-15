@@ -261,16 +261,16 @@
             <tr>
                 <!--rowspan은 위아래 td를 터준다!
                rowspan="통합할 td의 개수"-->
-                <td rowspan="3">구분</td>
-                <td>월화:월화드라마</td>
+                <td rowspan="3">권한구분</td>
+                <td>S:최고관리자</td>
             </tr>
             <tr>
                 <!--<td>구분</td>-->
-                <td>수목:수목드라마</td>
+                <td>A:관리자</td>
             </tr>
             <tr>
                 <!--<td>구분</td>-->
-                <td>토일:토일드라마</td>
+                <td>M:일반회원</td>
             </tr>
         </table>
         
