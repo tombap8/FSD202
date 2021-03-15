@@ -202,6 +202,12 @@ function pageAction() {
                 transition: "all 1.5s ease-in-out"
             }); ///////// css ////////////////////
 
+        // 2. 글자는 0.5초 늦게 나오게 셋팅변경
+        $(".page").eq(pno)
+            .find(".txtc h3 a").css({
+                transitionDelay: ".5s"
+            }); ///////// css ///////////
+
 
     } ////// if ///////////////////////////
 
