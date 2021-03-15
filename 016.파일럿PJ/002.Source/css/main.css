@@ -143,7 +143,48 @@
     outline: none;
 }
 
-/*2.배너영역*/
+/*블릿 네비게이션*/
+.bnav {
+    position: fixed;
+    left: 5%;/*변경*/
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+/*블릿모양*/
+.bnav li {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+}
+
+/*블릿글자*/
+.bnav span {
+    display: none;
+    /*글자숨기기*/
+}
+
+/*블릿 a링크*/
+.bnav a {
+    display: block;
+    width: 60%;
+    height: 100%;
+    background-color: #777;
+    transition: all .3s;
+}
+
+/*마우스 오버시 글자보이기*/
+/*동시에 class="on"이면 글자보이기*/
+.bnav li:hover a,
+.bnav li.on a {
+    width: 100%;
+    background-color: #000;
+}
+
+
+
+/***********2.배너영역**************/
 .ban {
     position: relative;
     /*부모자격*/
