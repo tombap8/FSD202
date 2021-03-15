@@ -286,6 +286,10 @@ ul.pgc > li.txtc h3 {
 
 /*a링크*/
 ul.pgc > li.txtc h3 a {
+    position: relative;
+    /*등장액션 top값을 쓰기위해*/
+    display: block;
+    /*트랜스폼적용위해*/
     color: #222;
 }
 
