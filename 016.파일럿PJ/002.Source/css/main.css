@@ -243,8 +243,23 @@
 /******* 남자,여자 스타일 패션영역 공통 class *****/
 /*컨텐츠페이지박스*/
 ul.pgc{
-    
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 90%;
 }
+/*이미지박스*/
+ul.pgc>li.imgc{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+/*이미지*/
+ul.pgc>li.imgc img{
+    height: 100%;
+}
+
+
 
 
 
