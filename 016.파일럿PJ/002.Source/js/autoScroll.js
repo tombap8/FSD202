@@ -172,12 +172,12 @@ function initSet() {
     // 변경내용: top:100px, opacity:0, rotate(15deg)
     // 단, transform-origin: left top 즉, 기준값 왼쪽,위로 변경
     $(".imgc img, .txtc h3 a").css({
-        transform:"rotate(15deg)",
-        transformOrigin:"left top", //축변경(center에서 변경함!)
+        transform: "rotate(15deg)",
+        transformOrigin: "left top", //축변경(center에서 변경함!)
         top: "100px",
         opacity: 0
-    });///////// css /////////////////////
-    
+    }); ///////// css /////////////////////
+
 
 } ////// initSet 함수 /////////////////////////////
 /////////////////////////////////////////////////
@@ -193,6 +193,15 @@ function pageAction() {
     if (pno > 0 && pno < 4) {
 
         console.log("액션!" + pno);
+        // 1. 각 페이지별 등장액션
+        $(".page").eq(pno)
+            .find(".imgc img, .txtc h3 a").css({
+                transform: "rotate(0deg)",
+                top: "0px",
+                opacity: 1,
+                transition: "all 1.5s ease-in-out"
+            }); ///////// css ////////////////////
+
 
     } ////// if ///////////////////////////
 
