@@ -242,63 +242,101 @@
 
 /******* 남자,여자 스타일 패션영역 공통 class *****/
 /*컨텐츠페이지박스*/
-ul.pgc{
+ul.pgc {
     position: relative;
     top: 5%;
     width: 100%;
     height: 90%;
 }
+
 /*이미지박스*/
-ul.pgc>li.imgc{
+ul.pgc > li.imgc {
     width: 50%;
     height: 100%;
     overflow: hidden;
 }
+
 /*이미지*/
-ul.pgc>li.imgc img{
+ul.pgc > li.imgc img {
     height: 100%;
 }
+
 /*글자박스*/
-ul.pgc>li.txtc{
+ul.pgc > li.txtc {
     position: relative;
     /*부모자격*/
     width: 50%;
     height: 100%;
     overflow: hidden;
 }
+
 /*글자*/
-ul.pgc>li.txtc h3{
+ul.pgc > li.txtc h3 {
     position: absolute;
     /*나의부모? li.txtc*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     /*정중앙이동*/
-    font: bold 3.25rem 'Ubuntu';
+    font: bold 4.6rem 'Ubuntu';
+    /*root(html)에 10px로 설정됨!*/
     letter-spacing: 3px;
     /*자간*/
 }
+
 /*a링크*/
-ul.pgc>li.txtc h3 a{
+ul.pgc > li.txtc h3 a {
     color: #222;
 }
 
 
-
-
 /*********3.남자패션영역*********/
 .men {
-    background: #8682ff;
+    /*background: #8682ff;*/
 }
 
 /********4.여자패션영역********/
 .women {
-    background: #9ffff0;
+    /*background: #9ffff0;*/
+}
+
+/*이미지박스*/
+.women ul.pgc > li.imgc {
+    width: 70%;
+}
+
+/*이미지*/
+.women ul.pgc > li.imgc img {
+    margin-left: -200px;
+}
+
+/*글자박스*/
+.women ul.pgc > li.txtc {
+    width: 30%;
 }
 
 /********5.스타일영역********/
 .style {
-    background: #f963ff;
+    /*background: #f963ff;*/
+}
+
+/*이미지박스*/
+.style ul.pgc > li.imgc {
+    position: relative;
+    /*부모자격*/
+    width: 40%;
+}
+
+/*이미지*/
+.style ul.pgc > li.imgc img{
+    position: absolute;
+    /*부모? li.imgc*/
+    right: 0;
+}
+
+/*글자박스*/
+.style ul.pgc > li.txtc {
+    width: 20%;
 }
 
 /********6.하단영역********/
