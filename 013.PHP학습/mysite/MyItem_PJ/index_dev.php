@@ -90,9 +90,10 @@
 
                 // 5. auth 권한 값이 "A"일 경우 
                 //    "관리자" 메뉴 생성하여 추가하기
-                if (auth === "A") {
+                if (auth === "A" || auth === "S") {
                     $(".tmenu")
-                        .append("<li><a href=''>관리자</a></li>");
+                        .append(
+                            "<li><a href='admin/index.php'>관리자</a></li>");
                 } /////////// if /////////////////
 
 

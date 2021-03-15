@@ -74,6 +74,14 @@ session_start();
           // 4. 회원가입 버튼 제거하기
           // 대상: .tmenu li:eq(0)
           $(".tmenu li").first().remove();
+          
+        // 5. auth 권한 값이 "A"일 경우 
+        //    "관리자" 메뉴 생성하여 추가하기
+        if (auth === "A" || auth === "S") {
+            $(".tmenu")
+                .append(
+                    "<li><a href='admin/index.php'>관리자</a></li>");
+        } /////////// if /////////////////
 
 
 
