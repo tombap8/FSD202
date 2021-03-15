@@ -256,8 +256,11 @@ ul.pgc > li.imgc {
     overflow: hidden;
 }
 
-/*이미지*/
+/*이미지:등장액션대상!*/
 ul.pgc > li.imgc img {
+    position: relative;
+    /*등장액션 top값 쓰기위해*/
+    /*인라인요소지만 이미지엔 transform적용됨!*/
     height: 100%;
 }
 
@@ -284,7 +287,7 @@ ul.pgc > li.txtc h3 {
     /*자간*/
 }
 
-/*a링크*/
+/*a링크:등장액션대상!*/
 ul.pgc > li.txtc h3 a {
     position: relative;
     /*등장액션 top값을 쓰기위해*/
