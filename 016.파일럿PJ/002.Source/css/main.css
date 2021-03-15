@@ -258,7 +258,30 @@ ul.pgc>li.imgc{
 ul.pgc>li.imgc img{
     height: 100%;
 }
-
+/*글자박스*/
+ul.pgc>li.txtc{
+    position: relative;
+    /*부모자격*/
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+/*글자*/
+ul.pgc>li.txtc h3{
+    position: absolute;
+    /*나의부모? li.txtc*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*정중앙이동*/
+    font: bold 3.25rem 'Ubuntu';
+    letter-spacing: 3px;
+    /*자간*/
+}
+/*a링크*/
+ul.pgc>li.txtc h3 a{
+    color: #222;
+}
 
 
 
