@@ -339,6 +339,27 @@ ul.pgc > li.txtc h3 a {
     width: 20%;
 }
 
+/*스타일 글자공통*/
+.style ul.pgc > li.txtc h3 {
+    transform: none;/*해제*/
+    font-size: 3.7rem;
+    letter-spacing: 1px;
+}
+
+/*스타일 남자글자*/
+.style ul.pgc > li.txtc h3.tm {
+    top: 30%;
+    left: auto;/*기존값해제*/
+    right: 10%;
+}
+/*스타일 여자글자*/
+.style ul.pgc > li.txtc h3.tw {
+    top: 70%;
+    left: 10%;
+}
+
+
+
 /********6.하단영역********/
 .info {
     background: #edff67;
