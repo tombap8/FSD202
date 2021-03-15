@@ -167,6 +167,17 @@ $(function () { ///// jQB /////////////////
 function initSet() {
 
     console.log("등장액션초기화!");
+    // 전체공통
+    // 대상: 이미지와 a요소
+    // 변경내용: top:100px, opacity:0, rotate(15deg)
+    // 단, transform-origin: left top 즉, 기준값 왼쪽,위로 변경
+    $(".imgc img, .txtc h3 a").css({
+        transform:"rotate(15deg)",
+        transformOrigin:"left top", //축변경(center에서 변경함!)
+        top: "100px",
+        opacity: 0
+    });///////// css /////////////////////
+    
 
 } ////// initSet 함수 /////////////////////////////
 /////////////////////////////////////////////////
