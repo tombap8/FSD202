@@ -300,17 +300,17 @@ ul.pgc > li.txtc h3 a {
     /*background: #9ffff0;*/
 }
 
-/*이미지박스*/
+/*여자 이미지박스*/
 .women ul.pgc > li.imgc {
     width: 70%;
 }
 
-/*이미지*/
+/*여자 이미지*/
 .women ul.pgc > li.imgc img {
     margin-left: -200px;
 }
 
-/*글자박스*/
+/*여자 글자박스*/
 .women ul.pgc > li.txtc {
     width: 30%;
 }
@@ -320,21 +320,21 @@ ul.pgc > li.txtc h3 a {
     /*background: #f963ff;*/
 }
 
-/*이미지박스*/
+/*스타일 이미지박스*/
 .style ul.pgc > li.imgc {
     position: relative;
     /*부모자격*/
     width: 40%;
 }
 
-/*이미지*/
+/*스타일 이미지*/
 .style ul.pgc > li.imgc img{
     position: absolute;
     /*부모? li.imgc*/
     right: 0;
 }
 
-/*글자박스*/
+/*스타일 글자박스*/
 .style ul.pgc > li.txtc {
     width: 20%;
 }
