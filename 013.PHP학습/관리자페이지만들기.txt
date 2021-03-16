@@ -13,6 +13,7 @@
  1) Drama_PJ를 기본 모델로 사용한다
  2) Drama_PJ를 카피하여 MyItem_PJ폴더 하위에
     복사한다. 그리고 폴더명을 "admin"으로 변경한다.
+    dramaTable.php를 index.php로 이름변경한다.
  3) Drama_PJ의 기본 테이블을 "member"로 변경후
     리스트 페이지의 모든 항목을 "member"의 컬럼
     에 맞도록 매칭하여 변경한다.
