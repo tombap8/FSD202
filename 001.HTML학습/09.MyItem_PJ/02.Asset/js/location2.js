@@ -56,7 +56,7 @@ function myMap(v1, v2, msg) {
     var marker = new google.maps.Marker({
         position: myCenter,
         // 서버에 있는 이미지를 불러올 수 있다!
-        icon: "https://kr.seaicons.com/wp-content/uploads/2016/03/Map-Marker-Marker-Outside-Chartreuse-icon.png",
+        icon: "https://aux4.iconspalace.com/uploads/9891377811176944030.png",
         // 지도표시자를 위아래로 애니메이션 하는 옵션
         // BOUNCE 는 위아래움직임, DROP 은 한번에 내려옴
         animation: google.maps.Animation.BOUNCE,
