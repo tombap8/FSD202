@@ -11,6 +11,8 @@ $(function () { /// jQB //////////////////
         // 1. 맵메뉴 class변경하기
         $(this).addClass("on")
             .siblings().removeClass("on");
+        
+        
 
 
 
@@ -20,10 +22,10 @@ $(function () { /// jQB //////////////////
 
 
 /*///////////////////////////////////////////
-          함수명: myMap
-          기능: 구글맵 위치셋팅
+  함수명: myMap
+  기능: 구글맵 위치셋팅
 */ ////////////////////////////////////////////
-function myMap(v1, v2) {
+function myMap(v1, v2) {// v1-위도, v2-경도
     // 지도를 넣을 대상
     var mapCanvas = document.querySelector(".gmap");
     // 지도 위도,경도값 셋팅
@@ -43,7 +45,7 @@ function myMap(v1, v2) {
         // 지도표시자를 위아래로 애니메이션 하는 옵션
         // BOUNCE 는 위아래움직임, DROP 은 한번에 내려옴
         animation: google.maps.Animation.BOUNCE,
-        // title은 마우스 오버시 툴
+        // title은 마우스 오버시 툴팁메시지
         title: "여기는 내일 투어할 수족관입니다!"
 
     });
