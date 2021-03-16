@@ -16,7 +16,7 @@
     line-height: 45px;
     color: #777;
     text-shadow: 1px 1px 1px #999;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
 }
 /*가상요소로 아이콘 넣기*/
 .tit::before{
@@ -41,6 +41,14 @@
     transform: scale(1.1);
 }
 
+/*맵박스*/
+#map{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    outline: 3px solid #ccc;
+}
 
 
 
