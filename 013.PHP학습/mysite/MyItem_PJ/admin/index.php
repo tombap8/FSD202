@@ -327,7 +327,7 @@
         </table>
         
         <!--입력페이지이동-->
-        <button onclick="location.href='insert.php'" style="float:right;">입력하기</button>
+        <button onclick="location.href='../index.php'" style="float:right;">사이트로 돌아가기</button>
         
     </div>
 

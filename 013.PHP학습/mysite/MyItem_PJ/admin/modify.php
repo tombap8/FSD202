@@ -51,27 +51,11 @@
             
             
         });////// click //////////////
-        
-        ///// 삭제하기 버튼 클릭시 ////////
-        $("#dbtn").click(function(){
-            
-            let conf = confirm("정말 삭제하시겠습니까?");
-            // confirm(메시지) 
-            // - "확인"시 true, "취소"시 false 리턴
-            console.log("삭제여부:"+conf);
-            
-            // 분기하기 (true일경우)
-            if(conf){
-                //console.log("process/del.php?num="+$("#num").val());
-                location.href = "process/del.php?num="+$("#num").val();
-            } //////// if /////////////
-            
-        });///////// click /////////////
-        ////////////////////////////////
+       
         
         /// 리스트로 돌아가기 버튼 //////
         $("#lbtn").click(function(){
-            location.href = "dramaTable.php";
+            location.href = "index.php";
         });////////// click ////////////////
         ////////////////////////////////////
         
@@ -135,22 +119,24 @@
     
         
     ?>
-   <form action="process/mod.php" method="post" id="dform">
       
-       <label for="dname">아이디</label>
-       <input type="text" name="dname" id="dname" maxlength="100" value="<?=$row["mid"]?>" disabled>
+       <label for="mid">아이디</label>
+       <input type="text" name="mid" id="mid" maxlength="100" value="<?=$row["mid"]?>" disabled>
        
-       <label for="actors">이름</label>
-       <input type="text" name="actors" id="actors" maxlength="100" value="<?=$row["name"]?>">
+       <label for="name">이름</label>
+       <input type="text" name="name" id="name" maxlength="100" value="<?=$row["name"]?>">
        
-       <label for="broad">성별</label>
-       <input type="text" name="broad" id="broad" maxlength="50" value="<?=$row["gen"]?>">
+       <label for="gen">성별</label>
+       <input type="text" name="gen" id="gen" maxlength="50" value="<?=$row["gen"]?>">
        
-       <label for="gubun">이메일</label>
-       <input type="text" name="gubun" id="gubun" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>">
+       <label for="email">이메일</label>
+       <input type="text" name="email" id="email" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>">
        
-       <label for="stime">권한</label>
-       <input type="text" name="stime" id="stime" maxlength="50" value="<?=$row["auth"]?>">
+   <form action="process/mod.php" method="post" id="dform">
+      <!--form요소로 싸고 있는 input요소의 값만 보낼 수 있다!-->
+      
+       <label for="auth">권한</label>
+       <input type="text" name="auth" id="auth" maxlength="50" value="<?=$row["auth"]?>">
        
        
        <!--히든필드!!! "idx"컬럼값 넣기(POST방식으로 함께보냄)-->

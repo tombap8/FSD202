@@ -6,12 +6,8 @@
 /// POST방식으로 넘어온 데이터를 php에서 받아서 처리한다!!!
 // $_POST[폼요소의 name값] -> post방식으로 넘어온 값을 받는다!
 
-$dname = $_POST["dname"];
-$actors = $_POST["actors"];
-$broad = $_POST["broad"];
-$gubun = $_POST["gubun"];
-$stime = $_POST["stime"];
-$total = $_POST["total"];
+// 변경할 권한값
+$auth = $_POST["auth"];
 # idx값을 히든필드에 넣은 것 가져오기
 $num = $_POST["num"];
 
@@ -28,8 +24,9 @@ $insSts;
 
 // 쿼리변수
 // DB에서 직접 검증한다!!!
-$sql = "UPDATE `drama_info` ".
-    "SET ".    "`dname`='$dname',`actors`='$actors',`broad`='$broad',`gubun`='$gubun',`stime`='$stime',`total`='$total' ".
+$sql = "UPDATE `member` ".
+    "SET".
+    "`auth`='$auth'".
     "WHERE `idx`=".$num;
 
 
@@ -46,7 +43,7 @@ if($insSts){
     echo '
         <script>
             alert("성공적으로 테이블의 레코드가 수정되었습니다!");
-            location.replace("../dramaTable.php");
+            location.replace("../index.php");
         </script>
     ';
 } /////// if ///////////////
