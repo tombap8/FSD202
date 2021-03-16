@@ -12,6 +12,12 @@ $(function () { /// jQB //////////////////
         $(this).addClass("on")
             .siblings().removeClass("on");
         
+        // 2. 클릭된 a요소의 href속성값 읽어오기
+        // 이 속성값은 지도의 표시할 위도,경도값이다!
+        let pos = $(this).attr("href");
+        pos = pos.split(",");//위도,경도값 잘라서 배열로!
+        console.log("위도:"+pos[0]+"/경도:"+pos[1]);
+        
         
 
 
