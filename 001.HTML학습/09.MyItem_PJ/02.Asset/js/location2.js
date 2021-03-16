@@ -18,7 +18,11 @@ $(function () { /// jQB //////////////////
         pos = pos.split(",");//위도,경도값 잘라서 배열로!
         console.log("위도:"+pos[0]+"/경도:"+pos[1]);
         
-        // 3. 구글맵 함수 호출
+        // 3. 툴팁 메시지 가져오기
+        let msg = $(this).attr("data-msg");
+        console.log("툴팁:"+msg);
+        
+        // 4. 구글맵 함수 호출
         myMap(pos[0],pos[1]);
 
     }); /////////// click ////////////
