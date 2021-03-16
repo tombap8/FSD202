@@ -173,7 +173,7 @@
             echo "<script>
                 alert(
                 '권한이 없으므로 본 페이지를 열람할 수 없습니다!');
-                history.back();//이전페이지로 돌아감!
+                location.replace('../index.php');//첫페이지로!
             </script>";
         } ///////// else문 관리자가 아닐 경우 /////////////
         
