@@ -16,6 +16,10 @@ $(function(){ /// jQB //////////////////
         $(".maps").eq(idx).show()
         .siblings().hide();
         
+        // 3. 맵메뉴 class변경하기
+        $(this).addClass("on")
+        .siblings().removeClass("on");
+        
         
     });/////////// click ////////////
     
