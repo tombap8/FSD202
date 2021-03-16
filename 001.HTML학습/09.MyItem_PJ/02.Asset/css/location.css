@@ -26,6 +26,15 @@
     margin-left: 5px;
 }
 
+/*지도메뉴*/
+.menu{
+    width: 700px;
+    margin: 5px auto;
+}
+.menu a{
+    margin: 0 9px;
+}
+
 
 
 
