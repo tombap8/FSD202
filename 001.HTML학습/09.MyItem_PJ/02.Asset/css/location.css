@@ -18,3 +18,16 @@
     text-shadow: 1px 1px 1px #999;
     outline: 1px solid red;
 }
+/*가상요소로 아이콘 넣기*/
+.tit::before{
+    content: url(../images/loca_icon.png);
+    vertical-align: -12px;
+    margin-right: 13px;
+    margin-left: 5px;
+}
+
+
+
+
+
+
