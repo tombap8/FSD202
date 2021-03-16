@@ -28,7 +28,7 @@
                     <!--카멜레온-->
                     <img id="cam" src="images/mlogo_05.png" alt="카멜레온">
                 </div>
-                
+
             </h1>
             <!--1-2.공통메뉴-->
             <ul class="tmenu">
@@ -121,8 +121,8 @@
             <h2 class="tit">오시는길</h2>
             <!--지도메뉴-->
             <h4 class="menu">
-                <a href="#" class="on">구글맵</a> | 
-                <a href="#">네이버맵</a> | 
+                <a href="#" class="on">구글맵</a> |
+                <a href="#">네이버맵</a> |
                 <a href="#">다음맵</a>
             </h4>
             <!--맵박스-->
@@ -138,7 +138,50 @@
                     4.소스에 붙여 넣는다.
                 -->
                 <!--네이버맵-->
+                <table class="nmap maps">
+                    <tbody>
+                        <tr>
+                            <td style="border:1px solid #cecece;"><a href="https://v4.map.naver.com/?searchCoord=384b92cdd5195464fff63d0cc5bb93a43e4186d3fb8b007279e4017835800d2c&amp;query=7ZWY7J2066%2B465SU7Ja07Lu07ZOo7YSw7ZWZ7JuQIOyiheuhnOy6oO2NvOyKpA%3D%3D&amp;tab=1&amp;lng=60829a44383e918967a53a0e11b2fe67&amp;mapMode=0&amp;mpx=6abe89eafd27fa258bcc492d192db44a2669ea6f5fb42549a56396351c88457214cc6cd4017d6a7ece26dfdd95d01ca0d8bcc8650fbf60027e1d8d52a77817c9&amp;lat=d08f2b7130eb75b7c9af647fb447fe96&amp;dlevel=12&amp;enc=b64&amp;menu=location" target="_blank"><img src="http://prt.map.naver.com/mashupmap/print?key=p1588755358160_1132089476" width="690" height="360" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;"></a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2020.5.6</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://v4.map.naver.com/?searchCoord=384b92cdd5195464fff63d0cc5bb93a43e4186d3fb8b007279e4017835800d2c&amp;query=7ZWY7J2066%2B465SU7Ja07Lu07ZOo7YSw7ZWZ7JuQIOyiheuhnOy6oO2NvOyKpA%3D%3D&amp;tab=1&amp;lng=60829a44383e918967a53a0e11b2fe67&amp;mapMode=0&amp;mpx=6abe89eafd27fa258bcc492d192db44a2669ea6f5fb42549a56396351c88457214cc6cd4017d6a7ece26dfdd95d01ca0d8bcc8650fbf60027e1d8d52a77817c9&amp;lat=d08f2b7130eb75b7c9af647fb447fe96&amp;dlevel=12&amp;enc=b64&amp;menu=location" target="_blank">지도 크게 보기</a> </td>
+                                            <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">©&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="https://www.navercorp.com" target="_blank">NAVER Corp.</a></span> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--
+                    네이버맵은 서비스가 아직 미비하여 
+                    기존 서비스맵으로 대체함
+                -->
                 <!--다음맵-->
+                <!-- * 카카오맵 - 지도퍼가기 -->
+                <!-- 1. 지도 노드 -->
+                <div id="daumRoughmapContainer1615860935571" class="root_daum_roughmap root_daum_roughmap_landing dmap maps"></div>
+
+                <!--
+                    2. 설치 스크립트
+                    * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                -->
+                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                <!-- 3. 실행 스크립트 -->
+                <script charset="UTF-8">
+                    new daum.roughmap.Lander({
+                        "timestamp": "1615860935571",
+                        "key": "24unm",
+                        "mapWidth": "700",
+                        "mapHeight": "400"
+                    }).render();
+                </script>
+
             </div>
         </main>
         <!--3.하단영역-->
