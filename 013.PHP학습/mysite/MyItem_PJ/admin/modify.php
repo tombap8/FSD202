@@ -135,8 +135,6 @@
     
         
     ?>
-    idx, mid, name, gen, email1, email2, auth
-   번호, 아이디, 이름, 성별, 이메일, 권한
    <form action="process/mod.php" method="post" id="dform">
       
        <label for="dname">아이디</label>
