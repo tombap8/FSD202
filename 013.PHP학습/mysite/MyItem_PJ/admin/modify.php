@@ -101,7 +101,7 @@
 
             /// 2. 해당 테이블 데이터 불러오는 쿼리문 만들기
             # 쿼리문은 DB에서 직접확인한다!!!
-            $sql = "SELECT * FROM `drama_info` WHERE `idx`=".
+            $sql = "SELECT * FROM `member` WHERE `idx`=".
                 $_GET["num"];
 
             /// 3. 쿼리문을 DB에 실행 후 결과를 가져온다!
@@ -111,7 +111,7 @@
             if($res -> num_rows === 0){
                 echo '
                     <script>
-                        location.href = "dramaTable.php";
+                        location.href = "index.php";
                     </script>
                 ';
             } ////// if ////////////////////////
@@ -128,39 +128,43 @@
         else{
             echo '
                 <script>
-                    location.href = "dramaTable.php";
+                    location.href = "index.php";
                 </script>
             ';
         } /////////// else ///////////////////
+    
         
     ?>
-   
+    idx, mid, name, gen, email1, email2, auth
+   번호, 아이디, 이름, 성별, 이메일, 권한
    <form action="process/mod.php" method="post" id="dform">
-       <label for="dname">드라마명</label>
-       <input type="text" name="dname" id="dname" maxlength="100" value="<?=$row["dname"]?>">
-       <label for="actors">주연</label>
-       <input type="text" name="actors" id="actors" maxlength="100" value="<?=$row["actors"]?>">
-       <label for="broad">제작사</label>
-       <input type="text" name="broad" id="broad" maxlength="50" value="<?=$row["broad"]?>">
-       <label for="gubun">구분</label>
-       <input type="text" name="gubun" id="gubun" maxlength="10" value="<?=$row["gubun"]?>">
-       <label for="stime">방영시간</label>
-       <input type="text" name="stime" id="stime" maxlength="50" value="<?=$row["stime"]?>">
-       <label for="total">방영횟수</label>
-       <input type="text" name="total" id="total" maxlength="20" value="<?=$row["total"]?>">
+      
+       <label for="dname">아이디</label>
+       <input type="text" name="dname" id="dname" maxlength="100" value="<?=$row["mid"]?>" disabled>
+       
+       <label for="actors">이름</label>
+       <input type="text" name="actors" id="actors" maxlength="100" value="<?=$row["name"]?>">
+       
+       <label for="broad">성별</label>
+       <input type="text" name="broad" id="broad" maxlength="50" value="<?=$row["gen"]?>">
+       
+       <label for="gubun">이메일</label>
+       <input type="text" name="gubun" id="gubun" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>">
+       
+       <label for="stime">권한</label>
+       <input type="text" name="stime" id="stime" maxlength="50" value="<?=$row["auth"]?>">
+       
        
        <!--히든필드!!! "idx"컬럼값 넣기(POST방식으로 함께보냄)-->
        <input type="hidden" name="num" id="num" value="<?=$_GET["num"]?>">
        
        <br><br>       
-       <input type="submit" value="수정하기" id="sbtn">
+       <input type="submit" value="권한수정하기" id="sbtn">
        <!--
            form요소 내부의 submit버튼을 클릭하면
            form요소에 셋팅된 action속성의 페이지로
            전송된다!
        -->
-        <!--삭제하기 버튼-->
-       <input type="button" value="삭제하기" id="dbtn">
        
        <br><br>
        <!--리스트로 돌아가기-->
