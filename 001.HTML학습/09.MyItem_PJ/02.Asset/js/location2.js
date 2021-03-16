@@ -23,7 +23,7 @@ $(function () { /// jQB //////////////////
         console.log("툴팁:"+msg);
         
         // 4. 구글맵 함수 호출
-        myMap(pos[0],pos[1]);
+        myMap(pos[0],pos[1],msg);
 
     }); /////////// click ////////////
     
@@ -38,7 +38,9 @@ $(function () { /// jQB //////////////////
   함수명: myMap
   기능: 구글맵 위치셋팅
 */ ////////////////////////////////////////////
-function myMap(v1, v2) {// v1-위도, v2-경도
+function myMap(v1, v2, msg) {
+    // v1-위도, v2-경도, msg-툴팁메시지
+    
     // 지도를 넣을 대상
     var mapCanvas = document.querySelector(".gmap");
     // 지도 위도,경도값 셋팅
@@ -59,7 +61,7 @@ function myMap(v1, v2) {// v1-위도, v2-경도
         // BOUNCE 는 위아래움직임, DROP 은 한번에 내려옴
         animation: google.maps.Animation.BOUNCE,
         // title은 마우스 오버시 툴팁메시지
-        title: "여기는 내일 투어할 수족관입니다!"
+        title: msg // 지도별 전달된 툴팁메시지 넣기!
 
     });
     marker.setMap(map);
