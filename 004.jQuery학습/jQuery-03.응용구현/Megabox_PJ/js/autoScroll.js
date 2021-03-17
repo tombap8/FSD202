@@ -13,6 +13,12 @@ let psts = 0;
 let winH = $(window).height();
 /////////////////////////////////////
 
+/// 개발시에 창사이즈 변경하면 이를 반영함 //
+// resize() 메서드: 선택요소의 창크기변경시 실행
+$(window).resize(function(){
+    winH = $(window).height();
+});//////// resize ////////////
+
 $(function () { ///// jQB /////////////////
     /*
     [ 자동스크롤 구현! ]
