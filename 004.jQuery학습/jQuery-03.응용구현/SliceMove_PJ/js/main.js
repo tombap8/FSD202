@@ -15,13 +15,21 @@ $(function () { /// jQB //////////////////
         zIndex: "999999999"
     }); /////// css ////////////
 
-    // 2. 인트로 셋팅: 첫번째 li만 flex:1, 나머지는 0
-    // 효과: 처음에 첫번째 브라우저 파트만 전체를 차지함
-    // 대상: .wrap>ul>li+li -> 앞에 li가 있는 li만 선택
-    //      즉, 첫번째 li는 제외함!
-    $(".wrap>ul>li+li").css({
-        flex: "0"
-    }); ////// css ///////////////////
+    // 2. 인트로 셋팅: 1초후 flex와 transition을 적용한다!
+    // 효과: 1초후 5개의 등분할 영역으로 애니메이션 등장함!
+    // 대상: .wrap>ul>li
+    setTimeout(function () {
+        $(".wrap>ul>li").css({
+            flex: "1",
+            transition: "all 1.2s ease-in-out"
+        }); ////// css ///////////////////
+    }, 1000); /// setTimeout /////////////
+    
+    // 3. 인트로 등장 총 시간 후 커버 없애기
+    // 총시간: 1000+1200=2200 (2.2초)
+    setTimeout(function(){
+        $("#icv").remove();
+    },2200); /// setTimeout ///////////////
 
 
 
