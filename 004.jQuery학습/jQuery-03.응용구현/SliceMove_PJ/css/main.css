@@ -178,7 +178,7 @@ h1,h2,h3,h4,h5,h6{
     transition: all .3s ease-out;
 }
 
-/*인트로셋팅!*/
+/*인트로셋팅! class="on"을 .wrap에 추가하면 된다!*/
 .wrap.on>ul>li{
     flex: 0;/*모두0*/
     transition: none;
