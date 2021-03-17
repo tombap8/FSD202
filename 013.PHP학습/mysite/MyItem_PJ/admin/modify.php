@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>드라마 데이터 수정하기</title>
+    <title>회원권한 수정하기</title>
     <style>
         body{
             text-align: center;
@@ -70,7 +70,7 @@
     </script>
 </head>
 <body>
-   <h1>드라마 데이터 수정하기</h1>
+   <h1>회원권한 수정하기</h1>
    
    <?php 
         # 수정할 레코드는 GET방식으로 URL을 통해 전달된 키=값 쌍이다!
@@ -123,6 +123,14 @@
         } /////////// else ///////////////////
     
         
+     // 성별코드 글자표시변경
+    $gen = 
+        $row["gen"]==="m"?
+        "남자" : "여자";
+    // 3항연산자 -> 비?집:놀이동산;
+    
+    
+    
     ?>
       
        <label for="mid">아이디</label>
@@ -132,7 +140,7 @@
        <input type="text" name="name" id="name" maxlength="100" value="<?=$row["name"]?>" disabled>
        
        <label for="gen">성별</label>
-       <input type="text" name="gen" id="gen" maxlength="50" value="<?=$row["gen"]?>" disabled>
+       <input type="text" name="gen" id="gen" maxlength="50" value="<?=$gen?>" disabled>
        
        <label for="email">이메일</label>
        <input type="text" name="email" id="email" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>" disabled>
@@ -141,7 +149,30 @@
       <!--form요소로 싸고 있는 input요소의 값만 보낼 수 있다!-->
       
        <label for="auth">권한</label>
-       <input type="text" name="auth" id="auth" maxlength="50" value="<?=$row["auth"]?>">
+       <select name="auth" id="auth">
+           <option value="S">최고관리자</option>
+           <option value="A">관리자</option>
+           <option value="M">일반회원</option>
+       </select>
+       
+       <?php
+        # 권한데이터값으로 select의 option선택변경하기!
+        # 기존데이터값 변수에 넣기
+        $auth = $row["auth"];
+        
+        # JS로 선택박스 선택값 변경하기
+        echo "
+            <script>
+            
+            $('#auth').val('$auth')
+            .prop('selected',true);
+            
+            // prop(속성명,속성값)
+            
+            </script>
+        ";
+    
+        ?>
        
        <!--히든필드!!! "idx"컬럼값 넣기(POST방식으로 함께보냄)-->
        <input type="hidden" name="num" id="num" value="<?=$_GET["num"]?>">
