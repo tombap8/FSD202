@@ -31,7 +31,19 @@
         height: 100vmax;
         /*화면기준 vmax는 가로,세로길이중 큰쪽기준*/
     }
-
+    
+    /* 5.내용박스중 숨김 박스를 처음부터 보이게함 */
+    .cbox >li:nth-child(1), .cbox >li:nth-child(3){
+        opacity: 1; 
+    }
+    
+    /* 6. 작은 사이즈를 위한 조정:브라우저아이콘박스 */
+    .cbox > li:nth-child(2){
+        top: 40%;
+    }
+    .cbox > li:nth-child(2) > h4{
+        margin-top: 0;
+    }
 
 
 
