@@ -173,13 +173,14 @@ h1,h2,h3,h4,h5,h6{
 }
 /*파티션 박스*/
 .wrap>ul>li{
-    flex: 1;/*등분할!*/
+    flex: 0;/*등분할!-처음에 첫번째것만 빼고 나머지 모두0*/
     overflow: hidden;
-    transition: all .3s ease-out;
+    /*transition: all .3s ease-out;*/
 }
 
 /*1.크롬*/
 .wrap>ul>li:nth-child(1){
+    flex: 1;/*처음에 이것만 전체보이기*/
     background-color: #f2b635;
 }
 /*2.파폭*/
