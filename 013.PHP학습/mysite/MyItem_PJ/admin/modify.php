@@ -6,11 +6,16 @@
     <style>
         body{
             text-align: center;
+            font-size: 20px;
         }
         
         label{
             display: block;
             margin-top: 15px;
+        }
+        
+        input, select{
+            font-size: 20px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -124,13 +129,13 @@
        <input type="text" name="mid" id="mid" maxlength="100" value="<?=$row["mid"]?>" disabled>
        
        <label for="name">이름</label>
-       <input type="text" name="name" id="name" maxlength="100" value="<?=$row["name"]?>">
+       <input type="text" name="name" id="name" maxlength="100" value="<?=$row["name"]?>" disabled>
        
        <label for="gen">성별</label>
-       <input type="text" name="gen" id="gen" maxlength="50" value="<?=$row["gen"]?>">
+       <input type="text" name="gen" id="gen" maxlength="50" value="<?=$row["gen"]?>" disabled>
        
        <label for="email">이메일</label>
-       <input type="text" name="email" id="email" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>">
+       <input type="text" name="email" id="email" maxlength="10" value="<?=$row["email1"]?>@<?=$row["email2"]?>" disabled>
        
    <form action="process/mod.php" method="post" id="dform">
       <!--form요소로 싸고 있는 input요소의 값만 보낼 수 있다!-->
