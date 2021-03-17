@@ -27,24 +27,38 @@
     }
 
     /* 4.flex박스 파티션 li요소의 높이값 지정*/
-    .wrap>ul>li{
+    .wrap > ul > li {
         height: 100vmax;
         /*화면기준 vmax는 가로,세로길이중 큰쪽기준*/
     }
-    
+
     /* 5.내용박스중 숨김 박스를 처음부터 보이게함 */
-    .cbox >li:nth-child(1), .cbox >li:nth-child(3){
-        opacity: 1; 
+    .cbox > li:nth-child(1),
+    .cbox > li:nth-child(3) {
+        opacity: 1;
     }
-    
+
     /* 6. 작은 사이즈를 위한 조정:브라우저아이콘박스 */
-    .cbox > li:nth-child(2){
+    .cbox > li:nth-child(2) {
         top: 40%;
     }
-    .cbox > li:nth-child(2) > h4{
+
+    .cbox > li:nth-child(2) > h4 {
         margin-top: 0;
     }
 
+    /*7. 작은타이틀 모바일용 보이기/데스크탑용 숨기기*/
+    /* 박스조정도 같이! */
+    .top h2{
+        width: 60vw;
+        margin: 0 auto;
+    }
+    .mb {
+        display: inline;
+    }
+    .dt{
+        display: none;
+    }
 
 
 

@@ -51,6 +51,11 @@ h1,h2,h3,h4,h5,h6{
 .top h2{
     font-size: 12px;
 }
+/*처음에 작은타이틀 모바일용 숨기기*/
+.mb{
+    display: none;
+}
+
 /*햄버거버튼*/
 #ham{
     position: absolute;
