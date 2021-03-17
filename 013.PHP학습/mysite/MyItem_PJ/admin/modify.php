@@ -138,7 +138,6 @@
        <label for="auth">권한</label>
        <input type="text" name="auth" id="auth" maxlength="50" value="<?=$row["auth"]?>">
        
-       
        <!--히든필드!!! "idx"컬럼값 넣기(POST방식으로 함께보냄)-->
        <input type="hidden" name="num" id="num" value="<?=$_GET["num"]?>">
        
