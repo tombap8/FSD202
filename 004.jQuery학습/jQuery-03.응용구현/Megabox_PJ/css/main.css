@@ -584,6 +584,26 @@ css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
     height: 100%;
 }
 
+/***** 4.특별관 페이지 - photobox 플러그인 디자인***/
+#gallery{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+}
+#gallery img{
+    height: 100%;
+    border: 1px solid #fff;
+    transition: all .4s ease-out;
+}
+#gallery img:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+
+
+
 
 
 
