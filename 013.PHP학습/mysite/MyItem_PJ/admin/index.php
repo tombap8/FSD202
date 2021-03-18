@@ -248,6 +248,7 @@
         /// 2. 전체 테이블 데이터 불러오는 쿼리문 만들기
         $sql = "SELECT * FROM `member` ORDER BY `idx` DESC ".
             "LIMIT ".(($no-1)*$linePerPage).",".$linePerPage;
+        // LIMIT 0,5 -> 첫 레코드 부터 5개 가져오기
         // ORDER BY `idx` DESC
         // `idx` 등록된 글 번호 내림차순(최신글 맨위!)
         // LIMIT 시작레코드번호,개수 -> 시작레코드번호 부터 몇개
