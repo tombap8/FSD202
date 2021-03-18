@@ -605,6 +605,14 @@ css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
     z-index: 1;
 }
 
+/*특별관 타이틀박스*/
+.txts{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font: bold 2rem "맑은 고딕";
+    color: #fff;
+}
 
 
 
