@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Gallery</title>
+    <style>
+        /*웹폰트*/
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /*height: 100%;*/
+            overflow-x: hidden;
+            /*가로스크롤 안생기게함!*/
+        }
+
+        body {
+            background-color: #000;
+            /*overflow: hidden;*/
+        }
+
+        /*공통 CSS*/
+        .bld {
+            /*ir용*/
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /*갤러리 타이틀*/
+        .tit {
+            width: 400px;
+            font: bold 3.2rem arial;
+            text-align: center;
+            color: #fff;
+            margin: 0 auto;
+            /*블록박스 가로중앙*/
+            margin-top: 100px;
+        }
+
+        /*갤러리 박스*/
+        #gallery {
+            display: flex;
+            /*자식요소를 옆으로 흐르게!*/
+            flex-wrap: wrap;
+            /*flex에서 줄바꿈설정!*/
+            width: 950px;
+            margin: 50px auto 100px;
+            outline: 1px solid lime;
+            overflow: hidden;
+            /*자식요소의 마진포함(위아래마진)!*/
+        }
+
+        /*각 갤러리 박스 공통*/
+        .photobox {
+            position: relative;
+            /*부모자격!*/
+            width: 180px;
+            height: 250px;
+            cursor: pointer;
+            margin: 5px;
+            overflow: hidden;
+            /*넘치는 자식요소 숨기기(글자설명박스)*/
+        }
+
+        .photobox img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*커버*/
+        .cover {
+            position: absolute;
+            /*나의부모? .photobox*/
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            opacity: .5;
+        }
+
+        /*
+            흐림 효과구분명:
+            1. 검정색 반투명-> 오버레이효과(overlay)
+            2. 흰색 반투명-> 트랜스페런트효과(transparent)
+        */
+
+        /*설명박스*/
+        .txt {
+            position: absolute;
+            /*나의부모? .photobox*/
+            top: 100%;
+            /*아래쪽에 내려가있음!
+            마우스 오버시 70%로 아래쪽에서 올라올 것임!*/
+            left: 0;
+            width: 100%;
+            height: 30%;
+            color: #fff;
+            font: .68rem/4.68rem "맑은 고딕", "굴림";
+            /*
+                [rem단위 변환]
+                글자크기 변환: 11px/16px=0.68
+                줄간격변환: 75px/16px=4.68
+            */
+            text-align: center;
+            white-space: nowrap;
+            /*줄바꿈방지*/
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /*큰 이미지 배경박스*/
+        #dpbg {
+            position: fixed;
+            /*무조건 화면기준!*/
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: none;
+            /*처음에 안보임*/
+        }
+
+        /*닫기버튼*/
+        .cbtn {
+            position: absolute;
+            /*부모는? #dpbg*/
+            top: 5%;
+            right: 5%;
+            width: 40px;
+            height: 39px;
+            /*outline: 1px solid red;*/
+            background: url(images/mv_btns.png) no-repeat;
+            background-position: -129px -342px;
+            /*sprites*/
+
+            /*트랜지션*/
+            transition: transform .3s;
+        }
+
+        /*닫기버튼 오버시*/
+        .cbtn:hover {
+            transform: rotate(-90deg);
+        }
+
+        /*이동버튼 공통*/
+        .abtn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            /*세로중앙이동*/
+            width: 56px;
+            height: 111px;
+            background: url(images/mv_btns.png) no-repeat;
+            /*outline: 1px solid red;*/
+        }
+
+        /*오른쪽버튼*/
+        .rb {
+            right: 5%;
+            background-position: 0 -100px;
+        }
+
+        /*오른쪽버튼 오버시*/
+        .rb:hover {
+            background-position: -167px 0;
+        }
+
+        /*왼쪽버튼*/
+        .lb {
+            left: 5%;
+            background-position: -232px 0;
+        }
+
+        /*왼쪽버튼 오버시*/
+        .lb:hover {
+            background-position: 0 -221px;
+        }
+
+        /*큰 이미지 박스*/
+        #dpbox {
+            position: fixed;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            /*정중앙 이동*/
+            height: 60vmin;
+            /*
+                이미지가 가로가 세로보다 긴 경우 화면이
+                가로가 세로 보다 작을 경우 양쪽이 잘리게 되는 것을
+                방지하기 위해 vmin단위를 사용한다!
+                vmin은 보이는 화면에서 가로/세로 중 작은 쪽을
+                기준하는 상대 단위이다!(특히 모바일 화면에서 필요!)
+            */
+            display: none;
+            /*처음에 안보임*/
+        }
+
+        /*큰 이미지*/
+        #dpbox img {
+            height: 100%;
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////
+
+            // 이미지 설명글 셋팅하기 //
+            let msg = []; // 배열변수
+
+            // 메시지 셋팅
+            for (let i = 0; i < 50; i++) {
+                msg[i] = "WOD21-0" + (i + 1);
+            } ////////// for문 //////////////
+
+            // 갤러리박스
+            let gbx = $("#gallery");
+
+            ///////////////////////////////////////////////
+            // 1. 포토박스에 html생성 및 초기화, 캡션글 넣기 ///
+            ///////////////////////////////////////////////
+            // 대상: #gallery
+            // for문으로 갤러리박스를 생성해 준다!
+            // for(시;한;증){구현코드}
+            for (let i = 0; i < 50; i++) {
+                gbx.append(
+                    '<div class="photobox">' +
+                    '    <img src="images/dress/' + (i + 1) +
+                    '.jpg" alt="fashion">' +
+                    '    <span class="cover"></span>' +
+                    '    <span class="txt">' + msg[i] + '</span>' +
+                    '</div>'
+                );
+            } /////////// for문 ////////////
+
+            // 포토박스 //
+            let pbx = $(".photobox");
+
+            ////////////////////////////////////////////////
+            //// 2. 포토박스에 마우스 오버/아웃시 변경효과주기 ///
+            ////////////////////////////////////////////////
+            // 대상: .photobox
+            // 사용메서드: hover(함수1,함수2)
+            // 주의사항: $(선택자,this) -> 마우스오버/아웃 해당요소만!
+            //          stop()을 써야 애니메이션이 큐에 쌓이지 않는다!
+            pbx.hover(
+                function() { // over
+
+                    // 1. 반투명커버 사라지기
+                    $(".cover", this)
+                        .stop().fadeOut(200);
+
+                    // 2. 글자박스 올라오기
+                    $(".txt", this)
+                        .stop().animate({
+                            top: "70%"
+                        }, 300); //// animate /////
+
+                }, ///////////////////////////
+                function() { // out
+
+                    // 1. 반투명커버 나타나기
+                    $(".cover", this)
+                        .stop().fadeIn(200);
+
+                    // 2. 글자박스 내려가기
+                    $(".txt", this)
+                        .stop().animate({
+                            top: "100%"
+                        }, 300); //// animate /////
+
+                }); ///// hover ///////////
+
+            // 큰 이미지 배경박스
+            let dpbg = $("#dpbg");
+
+            // 큰 이미지 박스
+            let dpbx = $("#dpbox");
+
+            // 포토박스 클릭시 순번변수
+            // (이전/다음 이미지 클릭시 사용)
+            let cseq;
+
+            ///////////////////////////////////////////
+            ///// 3. 포토박스 클릭시 숨겨있던 큰 이미지 ////
+            ///// 배경박스와 큰 이미지 박스가 나타나보임 ////
+            ///////////////////////////////////////////
+            // 대상: .photobox -> pbx 변수
+
+            pbx.click(function() {
+
+                // 0. 클릭된 포토박스 순번 저장하기
+                // -> 이전/다음 이동버튼 클릭시 활용!!!
+                cseq = $(this).index();
+                //console.log("순번:"+cseq);
+
+                // 1. 큰 이미지 배경박스 보이기
+                dpbg.fadeIn(300);
+
+                // 2. 큰 이미지박스에 이미지 넣기
+
+                // 2-1.클릭된 박스의 썸네일 이미지 경로를 읽어온다
+                let isrc = $("img", this).attr("src");
+
+                // 2-2.그 경로에서 "/mob"경로만 제거한다!
+                // replace(바꿀값,바뀔값) - 문자데이터 치환!
+                //isrc = isrc.replace("/mob", "");
+
+                //console.log("경로:"+isrc);
+
+                // 2-3. 이미지 설명 가져오기
+                let itxt = $(".txt", this).text();
+
+                //console.log("설명:" + itxt);
+
+                // 2-4. 큰 이미지 박스에 img태그 넣기
+                dpbx
+                    .html(
+                        '<img src="' + isrc +
+                        '" alt="fashion">' +
+                        '<h4>' + itxt + '</h4>'
+                    )
+                    // 2-5. 큰 이미지 박스 서서히 보이기
+                    .fadeIn(300);
+
+            }); //////// click ////////////////////////
+            //////////////////////////////////////////
+
+            ///////////////////////////////////////
+            /////// 4. 닫기버튼 클릭시 닫기 //////////
+            ///////////////////////////////////////
+            // 대상: .cbtn
+            $(".cbtn").click(function(e) {
+                
+                // 0. 기본이동막기
+                e.preventDefault();
+
+                // 1. 큰 이미지 배경박스 숨기기
+                dpbg.fadeOut(300);
+                // 2. 큰 이미지 박스 숨기기
+                dpbx.fadeOut(300);
+
+            }); //////////// click //////////////////
+            ////////////////////////////////////////
+
+            // 포토박스 개수 미리 계산하기!
+            // - 한계값 체크시 사용
+            // - 갤러리에 이미지 개수가 변경되어도 안심!
+            let pcnt = pbx.length;
+            //console.log("포토박스개수:"+pcnt);
+
+            /////////////////////////////////////////////////
+            ///// 5. 이동버튼 클릭시 큰 이미지와 설명 변경하기 ////
+            /////////////////////////////////////////////////
+            // 이동방법: 변수 cseq에 담긴 순번을 이용하여 
+            // 이전/다음 이미지와 설명으로 변경한다!
+            // 대상: .abtn
+            $(".abtn").click(function(e) {
+                
+                // 0. 기본이동막기
+                e.preventDefault();
+
+                // is() 메서드를 사용하여 방향구분하기!!!
+                // 클릭된 요소의 클래스가 rb인지 lb인지 구분한다!
+                // 결과로 true/false를 리턴해준다! 
+
+                // $(this).is(".rb") -> 클릭된 요소가 .rb인가?
+                //console.log("오른쪽버튼?"+$(this).is(".rb"));
+
+                // 1. 오른쪽버튼 ///////////////////////
+                if ($(this).is(".rb")) {
+
+                    // 전역변수 cseq 순번 증가!
+                    cseq++;
+                    // 한계수 체크(마지막번호는 전체개수-1)
+                    if (cseq > pcnt - 1) cseq = 0; //처음으로보냄
+
+                } ///////// if ////////////////////
+
+                // 2. 왼쪽버튼 ////////////////////////
+                else {
+
+                    // 전역변수 cseq 순번 감소!
+                    cseq--;
+                    // 한계수 체크
+                    if (cseq < 0) cseq = pcnt - 1;
+
+                } ////////// else ///////////////////
+
+                console.log("순번:" + cseq);
+
+                // 3. 큰 이미지 박스의 이미지 src 변경하기
+                // 주의사항: 이미지번호는 순번보다 1크다!
+                // 대상: #dpbox img
+                dpbx.find("img")
+                    .attr("src",
+                        "images/dress/" + (cseq + 1) + ".jpg");
+
+                // 4. 큰 이미지 설명글 변경하기
+                // -> 메시지 배열변수의 해당순번값을 가져온다!
+                // 대상: #dpbox h4
+                dpbx.find("h4").text(msg[cseq]);
+
+
+
+            }); /////// click //////////////////////////////
+            ///////////////////////////////////////////////
+
+
+
+
+
+        }); ////////// jQB //////////////////////
+    </script>
+</head>
+
+<body>
+    <!--갤러리 타이틀-->
+    <h1 class="tit">Fashion Gallery</h1>
+
+    <!--갤러리 박스-->
+    <div id="gallery">
+        <div class="track t1"></div>
+        <div class="track t2"></div>
+        <div class="track t3"></div>
+    </div>
+
+    <!--큰 이미지 배경박스-->
+    <div id="dpbg">
+        <a href="#" class="cbtn">
+            <span class="bld">닫기버튼</span>
+        </a>
+        <a href="#" class="abtn lb">
+            <span class="bld">왼쪽이동버튼</span>
+        </a>
+        <a href="#" class="abtn rb">
+            <span class="bld">오른쪽이동버튼</span>
+        </a>
+    </div>
+
+    <!--큰 이미지박스-->
+    <div id="dpbox">
+        <!--<img src="flexImg/16.jpg" alt="fashion">-->
+    </div>
+
+
+
+
+
+
+
+</body></html>
