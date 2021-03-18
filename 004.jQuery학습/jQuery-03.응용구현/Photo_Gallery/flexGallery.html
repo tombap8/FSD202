@@ -19,7 +19,7 @@
         }
 
         body {
-            background-color: #000;
+            /*background-color: #000;*/
             /*overflow: hidden;*/
         }
 
@@ -216,28 +216,39 @@
             let msg = []; // 배열변수
 
             // 메시지 셋팅
-            for (let i = 0; i < 50; i++) {
-                msg[i] = "WOD21-0" + (i + 1);
+            for (let i = 0; i < 52; i++) {
+                msg[i] = "스타화보2021-0" + (i + 1);
             } ////////// for문 //////////////
 
-            // 갤러리박스
-            let gbx = $("#gallery");
+            // 갤러리박스 트랙
+            let gbx = $("#gallery .track");
 
             ///////////////////////////////////////////////
             // 1. 포토박스에 html생성 및 초기화, 캡션글 넣기 ///
             ///////////////////////////////////////////////
-            // 대상: #gallery
-            // for문으로 갤러리박스를 생성해 준다!
+            // 대상: #gallery .track
+            // for문으로 포토박스를 순서대로 트랙에 생성해 준다!
             // for(시;한;증){구현코드}
-            for (let i = 0; i < 50; i++) {
-                gbx.append(
+            
+            // 트랙구분번호
+            let tn = 0;
+            
+            for (let i = 0; i < 52; i++) {
+                gbx.eq(tn).append(
                     '<div class="photobox">' +
-                    '    <img src="images/dress/' + (i + 1) +
+                    '    <img src="flexImg/' + (i + 1) +
                     '.jpg" alt="fashion">' +
-                    '    <span class="cover"></span>' +
+//                    '    <span class="cover"></span>' +
                     '    <span class="txt">' + msg[i] + '</span>' +
                     '</div>'
                 );
+                
+                // 한번 넣고 트랙번호 변경하기
+                tn++;//트랙순번1증가
+                // 트랙순번은 0,1,2 이므로 3이면 처음0번으로!
+                if(tn===3) tn=0;
+                
+                
             } /////////// for문 ////////////
 
             // 포토박스 //
@@ -432,9 +443,9 @@
 
     <!--갤러리 박스-->
     <div id="gallery">
-        <div class="track t1"></div>
-        <div class="track t2"></div>
-        <div class="track t3"></div>
+        <div class="track"></div>
+        <div class="track"></div>
+        <div class="track"></div>
     </div>
 
     <!--큰 이미지 배경박스-->
