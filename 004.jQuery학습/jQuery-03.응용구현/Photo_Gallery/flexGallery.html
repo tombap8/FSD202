@@ -32,15 +32,57 @@
             overflow: hidden;
         }
 
+        /*상단영역*/
+        .top{
+            position: relative;
+            /*부모자격*/
+            width: 980px;
+            max-width: 100%;
+            margin: 0 auto;
+            font-family: 'Nanum Gothic',sans-serif;
+        }
+        
         /*갤러리 타이틀*/
         .tit {
             width: 400px;
-            font: bold 3.2rem arial;
+            font-size: 2.5rem;
             text-align: center;
-            color: #fff;
+            color: #222;
             margin: 0 auto;
             /*블록박스 가로중앙*/
-            margin-top: 100px;
+            /*margin-top: 100px;*/
+        }
+        /*링크이동*/
+        .link{
+            position: absolute;
+            top: 0;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #222;
+        }
+        /*왼쪽이동버튼*/
+        .lps{
+            left: 0;
+        }
+        /*오른쪽이동버튼*/
+        .rps{
+            right: 0;
+        }
+        
+        /*포토수표시박스*/
+        .pinfo{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -35px;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+        .pinfo i{
+            font-style: normal;
+            color: #f00;
         }
 
         /*갤러리 박스*/
@@ -50,6 +92,8 @@
             /*flex-wrap: wrap;*/
             /*flex에서 줄바꿈설정!*/
             width: 980px;
+            max-width: 100%;
+            /*창크기가 width보다 작아지면 100%적용*/
             margin: 50px auto 100px;
             /*outline: 1px solid lime;*/
             overflow: hidden;
