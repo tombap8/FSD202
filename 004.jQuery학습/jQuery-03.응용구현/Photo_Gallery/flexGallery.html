@@ -480,16 +480,18 @@
                 console.log("순번:" + cseq);
 
                 // 3. 큰 이미지 박스의 이미지 src 변경하기
-                // 주의사항: 이미지번호는 순번보다 1크다!
+                // 주의사항: cseq는 이미지번호를 그대로 구해왔으므로
+                //          1을 빼지 않아도 된다!
                 // 대상: #dpbox img
                 dpbx.find("img")
                     .attr("src",
-                        "flexImg/" + (cseq + 1) + ".jpg");
+                        "flexImg/" + cseq + ".jpg");
 
                 // 4. 큰 이미지 설명글 변경하기
                 // -> 메시지 배열변수의 해당순번값을 가져온다!
+                // 주의사항: 메시지는 이미지번호보다 1작다!(배열이니까!)
                 // 대상: #dpbox h4
-                dpbx.find("h4").text(msg[cseq]);
+                dpbx.find("h4").text(msg[cseq-1]);
 
 
 
