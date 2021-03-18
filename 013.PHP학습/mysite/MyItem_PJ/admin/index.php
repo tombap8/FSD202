@@ -277,6 +277,9 @@
                 //해석: 긁어모은 데이터를 $row변수에 
                 //      하나씩 담는다
                 
+                # 리스트번호: 리스트순번
+                $lno = 1;
+                
                 while($row=$res->fetch_assoc()){
                     
                     // 성별코드 글자표시변경
@@ -296,7 +299,8 @@
                     
                     echo 
                     "<tr>".
-                        "<td>".$row["idx"]."</td>".
+                        // 리스트의 순번을 새로 붙여준다!
+                        "<td>".$lno."</td>".
                         //// 수정페이지로 링크걸기 ////
                         "<td><a href='modify.php?num=".
                         $row["idx"].//보내는 유일키
@@ -310,6 +314,11 @@
                         $row["email2"]."</td>".
                         "<td>".$authcode."</td>".
                     "</tr>";
+                    
+                    # 리스트번호 증가
+                    $lno++;//1씩증가
+                    
+                    
                 } /////// while /////////////////
                 
                 
@@ -326,22 +335,7 @@
 
     <!--구분테이블 박스-->
     <div class="gubun">
-        <table id="gubun" class="tbl">
-            <tr>
-                <!--rowspan은 위아래 td를 터준다!
-               rowspan="통합할 td의 개수"-->
-                <td rowspan="3">권한구분</td>
-                <td>S:최고관리자</td>
-            </tr>
-            <tr>
-                <!--<td>구분</td>-->
-                <td>A:관리자</td>
-            </tr>
-            <tr>
-                <!--<td>구분</td>-->
-                <td>M:일반회원</td>
-            </tr>
-        </table>
+        <!--구분테이블 삭제-->
 
         <!--입력페이지이동-->
         <button onclick="location.href='../index.php'" style="float:right;">사이트로 돌아가기</button>
