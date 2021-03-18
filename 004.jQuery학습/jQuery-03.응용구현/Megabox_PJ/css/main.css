@@ -613,6 +613,21 @@ css에서 가상요소 첫번째줄만 적용하는 코딩이 필요!*/
     font: bold 2rem "맑은 고딕";
     color: #fff;
 }
+/*패딩으로 띄어쓰기*/
+.pd{
+    padding-right: 10px;
+}
+/*float해제로 줄바꿈*/
+.ent{
+    clear: left;
+}
+/*글자초기셋팅*/
+.txts > li{
+    position: relative;
+    top: -100px;
+    left: 200px;
+    opacity: 0;
+}
 
 
 
