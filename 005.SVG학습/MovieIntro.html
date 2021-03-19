@@ -145,8 +145,19 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0);
+            /*반투명배경 처음에 투명하게 alpha값 0*/
+            
+            /*애니메이션:이시이지반방마*/
+            animation: logobg 2s ease-out 20s forwards;
         }
+        /*로고배경 키프레임*/
+        @keyframes logobg{
+            to{
+                background-color: rgba(0, 0, 0, 0.5);
+                /*alpha값 반투명 0.5로 변경*/
+            }
+        }/*키프레임*/
         #mytri img{
             position: absolute;
             left: -6px;
@@ -175,7 +186,7 @@
             
             /*선애니메이션 키프레임과 동일함! 이것을 호출!*/
             /*애니메이션:이시이지반방마*/
-            animation: lineAni 3s linear 18s forwards;
+            animation: lineAni 5s linear 15s forwards;
         }
         
         
