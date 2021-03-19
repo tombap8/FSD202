@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클리핑과 마스킹 기법</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-image: linear-gradient(to bottom, blue, green);
+        }
+        /*
+        [ CSS Clipping ]
+        - 이미지의 일부영역을 지정하여 부분만 보이게 하는 display기법
+        [ CSS Masking ]
+        - 이미지위에 다른 이미지나 다른 효과를 이용하여 이미지의 일부를 자연스럽게 감추는 기법
+        */
+        
+        /*1. 정원클리핑*/
+        .clip-circle{
+            clip-path: circle(110px at 124px 134px);
+            /*clip-path: circle(반지름 at x좌표 y좌표)*/
+        }
+        
+        
+    
+    </style>
+</head>
+<body>
+   <!--클리핑효과주기-->
+    <img src="images/img2.jpg" alt="image" class="clip-circle">
+    <img src="images/img1.jpg" alt="image" class="clip-ellipse">
+   
+   
+   
+   
+   
+   
+    
+</body>
+</html>
