@@ -137,6 +137,34 @@
             }
         }/*키프레임*/
         
+        /*삼각형과 이미지박스*/
+        #mytri{
+            position: absolute;
+            width: 1000px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #mytri img{
+            position: absolute;
+            left: -6px;
+            width: 100%;
+        }
+        /*삼각형 svg박스*/
+        #mytri svg{
+            position: relative;
+            display: block;/*박스중앙먹히게*/
+            margin: 0 auto;/*가로중앙*/
+            width: 300px;
+            height: 300px;
+            outline: 3px solid lime;
+        }
+        /*삼각형*/
+        #mytri polygon{
+            stroke: #fff;
+        }
         
         
         
@@ -152,13 +180,25 @@
         <div><span class="bld">공각스틸컷</span></div>
     </div>
   
-  
    
    <!--라인애니메이션박스-->
   <svg class="stg">
       <line class="line1" x1="0%" y1="0%" x2="100%" y2="100%"></line>
       <line class="line1" x1="100%" y1="0%" x2="0%" y2="100%"></line>
   </svg>
+   
+   <!--삼각형과 이미지박스-->
+    <div id="mytri">
+        <img src="images/GoastInTheShell_logo.png" alt="logo">
+        <svg class="tribox">
+            <polygon points="0%,100% 100%,100% 50%,0"></polygon>
+        </svg>
+    </div>
+   
+   
+   
+   
+   
     
 </body>
 </html>
