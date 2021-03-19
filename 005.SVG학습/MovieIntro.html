@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG 애니메이션 무비 인트로</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-color: #000;
+        }
+        
+        .stg{
+            width: 100%;
+            height: 100%;
+        }
+        
+        /*line설정*/
+        .line1{
+            stroke: #00FDD2;/*선색*/
+            stroke-width: 3;/*선두께*/
+            stroke-dasharray: 150%;
+            /* 50%시 3조각 : 50%*3=150% */
+            stroke-dashoffset: 150%;/*공백부터*/
+            /*애니메이션:이시이지반방마*/
+            animation: lineAni 5s ease-in-out 2s forwards;
+            /*forwards 마지막상태유지*/
+        }
+        
+        /*선애니메이션 키프레임*/
+        @keyframes lineAni{
+            to{
+                stroke-dashoffset: 0%;
+            }
+        }/*키프레임*/
+        
+    </style>
+</head>
+<body>
+   
+   <!--라인애니메이션박스-->
+  <svg class="stg">
+      <line class="line1" x1="0%" y1="0%" x2="100%" y2="100%"></line>
+      <line class="line1" x1="100%" y1="0%" x2="0%" y2="100%"></line>
+  </svg>
+    
+</body>
+</html>
