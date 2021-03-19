@@ -9,6 +9,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
         }
         body{
             background-image: linear-gradient(to bottom,#000,#ccc);
@@ -23,9 +24,20 @@
         .line1{
             stroke: #fff;/*선색*/
             stroke-width: 4;/*선두께*/
-            stroke-dasharray: 50%;
-            /*50%시 조각*/
+            stroke-dasharray: 150%;
+            /* 50%시 3조각 : 50%*3=150% */
+            stroke-dashoffset: 150%;/*공백부터*/
+            /*애니메이션:이시이지반방마*/
+            animation: lineAni 5s ease-in-out 2s forwards;
+            /*forwards 마지막상태유지*/
         }
+        
+        /*선애니메이션 키프레임*/
+        @keyframes lineAni{
+            to{
+                stroke-dashoffset: 0%;
+            }
+        }/*키프레임*/
         
     </style>
 </head>
