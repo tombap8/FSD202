@@ -7,13 +7,36 @@
         body{
             background-color: #000;
         }
+        
+        /*이미지박스*/
+        .myp{
+            position: relative;
+            /*부모자격*/
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+        }
+        /*SVG박스*/
+        .myp>svg{/*이미지위로 겹쳐지게*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /*polygon요소*/
+        .myp>svg>polygon{
+            
+        }
+        
     </style>
 </head>
 <body>
    <div class="myp">
        <img src="images/img1.jpg" alt="사진">
        <svg>
-           <polygon></polygon>
+           <polygon points="0,0 400,0 400,300 0,300"></polygon>
        </svg>
    </div>
    <!--
