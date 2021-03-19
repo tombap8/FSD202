@@ -27,6 +27,19 @@
             /*clip-path: circle(반지름 at x좌표 y좌표)*/
         }
         
+        /*2. 타원클리핑*/
+        .clip-ellipse{
+            clip-path: ellipse(170px 90px at 183px 144px)
+            /*clip-path: ellipse(장축 단축 at x좌표 y좌표)*/
+        }
+        /*3. 다각형 클리핑*/
+        .clip-polygon{
+            clip-path: polygon(0% 50%,50% 10%,80% 30%,45% 90%, 10% 70%);
+            /*clip-path: polygon(x1 y1,x2 y2,...)*/
+                /*각 좌표는 px,%모두 사용가능*/
+        }
+        /*4. svg클리핑*/
+        
         
     
     </style>
@@ -35,7 +48,16 @@
    <!--클리핑효과주기-->
     <img src="images/img2.jpg" alt="image" class="clip-circle">
     <img src="images/img1.jpg" alt="image" class="clip-ellipse">
-   
+    <img src="images/img3.jpg" alt="image" class="clip-polygon">
+    <img src="images/img5.jpg" alt="image" class="clip-svg">
+   <svg width="0" height="0">
+	<defs>
+		<clippath id="myClip">
+			<circle cx="90" cy="100" r="50"></circle>
+			<circle cx="90" cy="200" r="80"></circle>
+		</clippath>		
+	</defs>	
+</svg>
    
    
    
