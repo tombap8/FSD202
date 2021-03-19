@@ -15,7 +15,11 @@
             background-color: #000;
         }
         
+        /*라인애니박스*/
         .stg{
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
         }
@@ -38,6 +42,49 @@
                 stroke-dashoffset: 0%;
             }
         }/*키프레임*/
+        
+        /*공통class*/
+        .bld{/*ir*/
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        /*공각기동대 스틸컷박스*/
+        #myc{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        /*스틸컷 개별박스 공통*/
+        #myc>div{
+            position: absolute;
+            /*부모는? #myc*/
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+        }
+        /*윗박스*/
+        #myc>div:first-child{
+            width: 100%;
+            height: 50%;
+            background-image: url(images/sc1.jpg);
+            /*삼각형클리핑*/
+            clip-path: polygon(0% 0%,100% 0%,50% 100%);
+        }
+        /*오른쪽박스*/
+        #myc>div:nth-child(2){
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url(images/sc4.jpg);
+            /*삼각형클리핑*/
+            clip-path: polygon(100% 0%,100% 100%,0% 50%);
+        }
+        
+        
+        
         
     </style>
 </head>
