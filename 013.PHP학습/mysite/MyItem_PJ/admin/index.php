@@ -379,10 +379,14 @@
         //echo "총 페이지수 : $totalPage 개";
         
         # for문을 사용하여 페이징 숫자 링크를 생성한다!
-        for($i=0; $i<$totalPage; $i++){
+        for($i=1; $i <= $totalPage; $i++){
             
-            $pg .= "<a href='index.php?no='></a>";
+            # 페이지 이동 a링크 만들기
+            $pg .= "<a href='index.php?no=$i'>$i</a>";
             // .=은 문자대입연산자(기존값에 문자값을 더함)
+            
+            # 페이지 번호 사이 구분자 넣기(마지막제외!)
+            if($i < $totalPage) $pg .= " | ";
             
         } ////////// for문 ///////////////////////
         
