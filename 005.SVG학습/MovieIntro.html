@@ -151,19 +151,31 @@
             position: absolute;
             left: -6px;
             width: 100%;
+            opacity: 0;/*처음에 숨김*/
+            
         }
         /*삼각형 svg박스*/
-        #mytri svg{
+        #mytri svg.tribox{
             position: relative;
             display: block;/*박스중앙먹히게*/
             margin: 0 auto;/*가로중앙*/
             width: 300px;
             height: 300px;
-            outline: 3px solid lime;
+            /*outline: 3px solid lime;*/
         }
         /*삼각형*/
         #mytri polygon{
-            stroke: #fff;
+            fill: transparent;
+            /*배경투명(기본:검정)*/
+            stroke: #fff;/*선색*/
+            stroke-width: 5;/*선두께*/
+            stroke-dasharray: 330%;
+            /*50%시 6조각: 50%*6=300% */
+            stroke-dashoffset: 330%;/*공백부터*/
+            
+            /*선애니메이션 키프레임과 동일함! 이것을 호출!*/
+            /*애니메이션:이시이지반방마*/
+            animation: lineAni 3s linear 18s forwards;
         }
         
         
