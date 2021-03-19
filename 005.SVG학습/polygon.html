@@ -27,7 +27,13 @@
         
         /*polygon요소*/
         .myp>svg>polygon{
+            fill: transparent;/*투명*/
+            /*기본채우기 색은 검정*/
+            stroke: lime;/*선색*/
+            stroke-width: 15;/*선두께-숫자만쓰면 px*/
             
+            /*여기서부터가 svg애니메이션 핵심!*/
+            stroke-dasharray: 10;
         }
         
     </style>
