@@ -48,6 +48,21 @@
             */
         }
         
+        /*5. 글자이미지로 마스킹하기*/
+        /*
+            필요한 것들!
+            - 투명 배경 글자 이미지가 필요(글자는 검은색)
+            - 설정방법이 배경이미지 설정과 매우유사함
+            - 설정시 접두어가 필요(-webkit-:크롬,사파리)
+        
+        */
+        .masking1{
+            -webkit-mask-image: url(images/letter.png);
+            -webkit-mask-position: -80px -150px;
+            -webkit-mask-size: 150%;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
     
     </style>
 </head>
