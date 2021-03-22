@@ -56,9 +56,14 @@ $(function () { /// jQB //////////////////
         // 두개의 네비게이션을 동시에 변경하기
 
         // GNB네비게이션 클래스 넣기
-        $("#gnb li").eq(pno).addClass("on")
-            .siblings().removeClass("on");
-
+        if(pno===0){//첫번째 메뉴 이므로 모든 class="on"지우기
+            $("#gnb li").removeClass("on");
+        }
+        else{
+            $("#gnb li").eq(pno-1).addClass("on")
+                .siblings().removeClass("on");
+        }
+        
         // 블릿네비게이션 클래스 넣기
         $(".bnav li").eq(pno).addClass("on")
             .siblings().removeClass("on");
