@@ -123,6 +123,10 @@
 
 
 /*햄버거 막대 변경상태(클래스 on적용)*/
+#ham.on{
+    z-index: 999999;
+    /* x버튼일때 전체메뉴 보다 위*/
+}
 #ham.on span:nth-child(1) {
     top: 10px;
     transform: rotate(45deg);
