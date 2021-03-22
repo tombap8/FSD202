@@ -9,7 +9,7 @@ $(function () { /// jQB //////////////////
     // 제이쿼리에서 이것을 해주자!
     // 클릭 이벤트 대상: .gnb a 동시에 .bnav a
     ///////////////////////////////////////////
-    $(".gnb a,.bnav a").click(function (e) {
+    $("#gnb a,.bnav a").click(function (e) {
 
         e.preventDefault(); //a이동막기!
 
@@ -17,6 +17,13 @@ $(function () { /// jQB //////////////////
         // 알아낸 순번을 전역 페이지번호(pno)에 넣기!
         pno = $(this).parent().index();
         //console.log("클릭순번:" + pno);
+        
+        // 만약 #gnb a이면 1을 더함(배너메뉴가 없으므로!)
+        let isGNB = $(this).parent().parent().is("ul#gnb");
+        // parent()를 두번쓴것은 li위에 ul인지 ol인지로 올라가서
+        // is() 메서드로 이것이 ul#gnb 인것을 확인한다!
+        // 이것이 맞으면 true가 리턴된다!
+        console.log("부모가#gnb인가?"+isGNB);
 
 
         // 2.기존 위치값 읽어오기 변경!!!!
