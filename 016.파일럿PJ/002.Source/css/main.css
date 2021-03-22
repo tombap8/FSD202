@@ -196,6 +196,72 @@
     background-color: #000;
 }
 
+/******** 전체메뉴박스 *******/
+.mbox{
+    position: fixed;
+    /*화면기준*/
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background: url(../images/mobile/ban04.jpg) no-repeat;
+    /*모바일에서 동영상 제거시 배경이미지가 보이도록 미리셋팅함!*/
+}
+/*동영상 반투명 가림막*/
+.mbox::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .3;
+}
+/*배경동영상*/
+.bgm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*동영상 화면채우기*/
+}
+/*전체메뉴*/
+.mlist{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;/*가림막보다위*/
+    font-family: 'Ubuntu';
+}
+/*메뉴링크 공통*/
+.mlist a{
+    color: #fff;
+}
+.mlist a:hover{
+    color: #4f6085;
+}
+/*메뉴 각 박스*/
+.mlist dl{
+    width: 300px;
+    margin-bottom: 30px;
+    float: left;/*옆으로 흐르게*/
+}
+/*상위메뉴(dt)*/
+.mlist dt{
+    font-size: 2.8rem;
+}
+/*하위메뉴(dd)*/
+.mlist dd{
+    font-size: 2.1rem;
+}
+
+
 
 
 /***********2.배너영역**************/
