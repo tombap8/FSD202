@@ -425,6 +425,7 @@ ul.pgc > li.txtc h3 a {
     left: 50%;
     transform: translate(-50%,-50%);
     width: 710px;
+    font-size: 1.4rem;
     line-height: 20px;
     color: #fffefe;
     padding: 14px;
