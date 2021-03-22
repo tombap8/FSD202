@@ -420,6 +420,7 @@
     color: #555;
     text-align: center;
     transition: all .1s;
+    cursor: pointer;/*손가락모양*/
 }
 .btna {
     position: absolute;
