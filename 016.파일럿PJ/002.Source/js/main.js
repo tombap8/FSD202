@@ -22,11 +22,11 @@ $(function () { /// jQB //////////////////
         // parent()를 두번쓴것은 li위에 ul인지 ol인지로 올라가서
         // is() 메서드로 이것이 ul#gnb 인것을 확인한다!
         // 이것이 맞으면 true가 리턴된다!
-        console.log("부모가#gnb인가?"+isGNB);
+        //console.log("부모가#gnb인가?"+isGNB);
         
         if(isGNB) pno++;//1을 더함!
         
-        console.log("클릭순번:" + pno);
+        //console.log("클릭순번:" + pno);
 
 
         // 2.기존 위치값 읽어오기 변경!!!!
@@ -56,7 +56,7 @@ $(function () { /// jQB //////////////////
         // 두개의 네비게이션을 동시에 변경하기
 
         // GNB네비게이션 클래스 넣기
-        $(".gnb li").eq(pno).addClass("on")
+        $("#gnb li").eq(pno).addClass("on")
             .siblings().removeClass("on");
 
         // 블릿네비게이션 클래스 넣기
