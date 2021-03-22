@@ -505,11 +505,11 @@ $(function () { /// jQB //////////////////
             let isAR1 = $(this).is(".ar1");
 
             if (isAR1) {
-                console.log("난,왼쪽!");
+                //console.log("난,왼쪽!");
                 goRight();
             } ///// if문 ///////////
             else {
-                console.log("난,오른쪽!");
+                //console.log("난,오른쪽!");
                 autoSlide();
             } ///// else ////////////////
 
