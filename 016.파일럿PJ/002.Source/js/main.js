@@ -299,23 +299,24 @@ $(function () { /// jQB //////////////////
     */ //////////////////////////////////////////////
     let goRight = function () {
 
-        // 슬라이드 왼쪽이동하기 (드래그이동 if문과 동일) //
+        // 슬라이드 오른쪽이동하기 //
+        //(드래그이동 else if문과 동일) 
 
         // 광드래그 막기용 커버작동!
         prot.show();
 
-        // 왼쪽이동 애니메이션 : -200%이동과 동일!
+        // 오른쪽이동 애니메이션 : 0px이동과 동일!
         sld.stop().animate({
-                left: -win * 2 + "px"
+                left: "0px"
             }, 1500, "easeOutCubic",
-            function () { // 애니후
-                // 이동후에 앞에 두개의 슬라이드가 있으므로
-                // 하나를 뒤로 이동시킨후 left값을 다시 -100%로 변경
-                // 처음과 똑같은 상태로 만들어준다!
-                $(this).append($("li", this).first())
+            function () { /// 애니후 ////
+                // 이동 후 앞에 아무것도 없으므로
+                // 맨뒤li를 맨 앞으로 이동후 left값을 -100%변경
+                // 처음과 같은 상태로 만들어준다!!!
+                $(this).prepend($("li", this).last())
                     .css({
                         left: -win + "px"
-                    }); ////// css /////////
+                    }); /////// css /////////
 
                 // 광드래그 커버제거!
                 prot.hide();
@@ -323,11 +324,11 @@ $(function () { /// jQB //////////////////
                 // 배너타이틀 등장함수 호출!
                 banTit();
 
-            }); //////// animate /////////////
+            }); /////// animate //////////
 
-        // 배너블릿 순번증가
-        bseq++;
-        if (bseq === 6) bseq = 0; //한계수
+        //배너블릿 순번감소
+        bseq--;
+        if (bseq === -1) bseq = 5; //한계수
 
         /// 블릿 해당순번 li에 class "on"넣기 ///
         $(".indic li").eq(bseq).addClass("on")
@@ -456,53 +457,53 @@ $(function () { /// jQB //////////////////
     // 반드시 사용해야 한다!
 
     $(".btna").hover(
-        function () { // over
+            function () { // over
 
-            // 흰원 나타나기
-            $(".inside", this).css({
-                transform: "scale(1)"
-            }); //// css ////////////
+                // 흰원 나타나기
+                $(".inside", this).css({
+                    transform: "scale(1)"
+                }); //// css ////////////
 
-            // 글자 나타나기
-            $(".bbtit", this).css({
-                transform: "translate(-50%, -50%) scale(1)"
-            })
+                // 글자 나타나기
+                $(".bbtit", this).css({
+                    transform: "translate(-50%, -50%) scale(1)"
+                })
 
-        },
-        function () { // out
+            },
+            function () { // out
 
-            // 흰원 사라지기
-            $(".inside", this).css({
-                transform: "scale(0)"
-            }); //// css ////////////
+                // 흰원 사라지기
+                $(".inside", this).css({
+                    transform: "scale(0)"
+                }); //// css ////////////
 
-            // 글자 사라지기
-            $(".bbtit", this).css({
-                transform: "translate(-50%, -50%) scale(0)"
-            })
+                // 글자 사라지기
+                $(".bbtit", this).css({
+                    transform: "translate(-50%, -50%) scale(0)"
+                })
 
-        }) ///// hover ///////////
-    
-    // .btna 클릭시 (위에서 셋팅 이어짐!)
-    .click(function(){
-        
-        // 배너자동호출 지우기
-        clearAuto();
-        
-        // 왼쪽버튼 여부(클래스 ar1으로 확인)
-        let isAR1 = $(this).is(".ar1");
-        
-        if(isAR1){
-            console.log("난,왼쪽!");
-            alert("왼쪽은 스와이프 하세요!");
-        } ///// if문 ///////////
-        else{
-            console.log("난,오른쪽!");
-            autoSlide();
-        } ///// else ////////////////
-        
-        
-    });/////// click ////////////////////
+            }) ///// hover ///////////
+
+        // .btna 클릭시 (위에서 셋팅 이어짐!)
+        .click(function () {
+
+            // 배너자동호출 지우기
+            clearAuto();
+
+            // 왼쪽버튼 여부(클래스 ar1으로 확인)
+            let isAR1 = $(this).is(".ar1");
+
+            if (isAR1) {
+                console.log("난,왼쪽!");
+                alert("왼쪽은 스와이프 하세요!");
+            } ///// if문 ///////////
+            else {
+                console.log("난,오른쪽!");
+                autoSlide();
+            } ///// else ////////////////
+
+
+        }); /////// click ////////////////////
 
 
 
