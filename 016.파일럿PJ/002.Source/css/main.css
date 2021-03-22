@@ -211,6 +211,7 @@
     z-index: 99999;
     background: url(../images/mobile/ban04.jpg) no-repeat;
     /*모바일에서 동영상 제거시 배경이미지가 보이도록 미리셋팅함!*/
+    display: none;/*처음에 안보임*/
 }
 /*동영상 반투명 가림막*/
 .mbox::after{
