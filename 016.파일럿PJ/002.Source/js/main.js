@@ -495,7 +495,7 @@ $(function () { /// jQB //////////////////
 
             if (isAR1) {
                 console.log("난,왼쪽!");
-                alert("왼쪽은 스와이프 하세요!");
+                goRight();
             } ///// if문 ///////////
             else {
                 console.log("난,오른쪽!");
