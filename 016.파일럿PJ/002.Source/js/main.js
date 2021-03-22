@@ -18,7 +18,8 @@ $(function () { /// jQB //////////////////
         let isHAM = $(this).is(".on");
         console.log("햄버거?"+isHAM);
         
-        $(".bgm")[0].play();
+        if(isHAM) $(".bgm")[0].play();
+        else $(".bgm")[0].pause();
         
         
         
