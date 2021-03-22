@@ -123,10 +123,11 @@
 
 
 /*햄버거 막대 변경상태(클래스 on적용)*/
-#ham.on{
+#ham.on {
     z-index: 999999;
     /* x버튼일때 전체메뉴 보다 위*/
 }
+
 #ham.on span:nth-child(1) {
     top: 10px;
     transform: rotate(45deg);
@@ -177,8 +178,9 @@
     height: 5px;
     transition: all .3s;
 }
+
 /*막대 색은 가상요소로!(너무 높이값이 작아서)*/
-.bnav a::before{
+.bnav a::before {
     content: "";
     display: block;
     width: 100%;
@@ -194,6 +196,7 @@
 .bnav li.on a {
     width: 100%;
 }
+
 /*마우스 오버시 가상요소*/
 .bnav li:hover a::before,
 .bnav li.on a::before {
@@ -201,7 +204,7 @@
 }
 
 /******** 전체메뉴박스 *******/
-.mbox{
+.mbox {
     position: fixed;
     /*화면기준*/
     top: 0;
@@ -211,10 +214,12 @@
     z-index: 99999;
     background: url(../images/mobile/ban04.jpg) no-repeat;
     /*모바일에서 동영상 제거시 배경이미지가 보이도록 미리셋팅함!*/
-    display: none;/*처음에 안보임*/
+    display: none;
+    /*처음에 안보임*/
 }
+
 /*동영상 반투명 가림막*/
-.mbox::after{
+.mbox::after {
     content: "";
     display: block;
     position: absolute;
@@ -225,8 +230,9 @@
     background-color: #000;
     opacity: .3;
 }
+
 /*배경동영상*/
-.bgm{
+.bgm {
     position: absolute;
     top: 0;
     left: 0;
@@ -235,37 +241,45 @@
     object-fit: cover;
     /*동영상 화면채우기*/
 }
+
 /*전체메뉴*/
-.mlist{
+.mlist {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;/*가림막보다위*/
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /*가림막보다위*/
     font-family: 'Ubuntu';
 }
+
 /*메뉴링크 공통*/
-.mlist a{
+.mlist a {
     color: #fff;
 }
-.mlist a:hover{
+
+.mlist a:hover {
     color: #4f6085;
 }
+
 /*메뉴 각 박스*/
-.mlist dl{
+.mlist dl {
     width: 300px;
     margin-bottom: 30px;
-    float: left;/*옆으로 흐르게*/
+    float: left;
+    /*옆으로 흐르게*/
 }
+
 /*상위메뉴(dt)*/
-.mlist dt{
+.mlist dt {
     font-size: 2.8rem;
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
 }
+
 /*하위메뉴(dd)*/
-.mlist dd{
+.mlist dd {
     font-size: 2.1rem;
     padding-bottom: 5px;
 }
@@ -370,6 +384,63 @@
     opacity: 1;
 }
 
+
+/*양쪽이동버튼 mousefollower플러그인*/
+/*팔로워*/
+.badge {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+}
+
+.inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all .1s;
+    cursor: pointer;
+}
+
+/*글자박스*/
+.btit {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0);
+    /*            outline: 1px solid red;*/
+    font: 22px/80px Verdana;
+    color: #555;
+    text-align: center;
+    transition: all .1s;
+}
+.btna {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+}
+
+.ar1 {
+    left: 0;
+    background-color: #ffafaf;
+}
+
+.ar2 {
+    right: 0;
+    background-color: #769bff;
+}
+
+
+
+
+
 /******* 남자,여자 스타일 패션영역 공통 class *****/
 /*컨텐츠페이지박스*/
 ul.pgc {
@@ -465,7 +536,7 @@ ul.pgc > li.txtc h3 a {
 }
 
 /*스타일 이미지*/
-.style ul.pgc > li.imgc img{
+.style ul.pgc > li.imgc img {
     position: absolute;
     /*부모? li.imgc*/
     right: 0;
@@ -478,7 +549,8 @@ ul.pgc > li.txtc h3 a {
 
 /*스타일 글자공통*/
 .style ul.pgc > li.txtc h3 {
-    transform: none;/*해제*/
+    transform: none;
+    /*해제*/
     font-size: 3.7rem;
     letter-spacing: 1px;
 }
@@ -486,9 +558,11 @@ ul.pgc > li.txtc h3 a {
 /*스타일 남자글자*/
 .style ul.pgc > li.txtc h3.tm {
     top: 30%;
-    left: auto;/*기존값해제*/
+    left: auto;
+    /*기존값해제*/
     right: 10%;
 }
+
 /*스타일 여자글자*/
 .style ul.pgc > li.txtc h3.tw {
     top: 70%;
@@ -504,13 +578,14 @@ ul.pgc > li.txtc h3 a {
     background: #101629;
     height: 50%;
 }
+
 /*회사주소박스*/
-.info address{
+.info address {
     position: absolute;
     /*부모? .info*/
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 710px;
     font-size: 1.4rem;
     line-height: 20px;
@@ -519,12 +594,3 @@ ul.pgc > li.txtc h3 a {
     border: 4px double #fffefe;
     /*double은 이중선*/
 }
-
-
-
-
-
-
-
-
-
