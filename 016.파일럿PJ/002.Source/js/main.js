@@ -398,7 +398,10 @@ $(function () { /// jQB //////////////////
         // 대상: .slide li
         // 실제배너는 맨앞에 하나가 있고 두번째 이므로 1번이다!
         sld.find("li").eq(1)
-            .append('<h2 class="btit"></h2>');
+            .append('<h2 class="btit disableselect disabledrag"></h2>');
+        // class명에 disableselect,disabledrag는
+        // 드래그시 글자가 영역잡히는 것을 막기위한 css
+        // 클랙스 적용이다!
 
         // 2-0.슬라이드 이미지에 따라 글자위치 조정하기
         // 2,3번 슬라이드만 오른쪽이고 나머지는 왼쪽임
@@ -487,6 +490,14 @@ $(function () { /// jQB //////////////////
         // .btna 클릭시 (위에서 셋팅 이어짐!)
         .click(function () {
 
+            // 광클막기! /////////////////
+            if(btna_sts) return false;
+            btna_sts = 1;//잠금
+            setTimeout(function(){
+                btna_sts = 0;
+                //1.5초(애니시간)후 해제
+            },1500);//// setTimeout ////
+        
             // 배너자동호출 지우기
             clearAuto();
 
@@ -504,6 +515,9 @@ $(function () { /// jQB //////////////////
 
 
         }); /////// click ////////////////////
+    
+    // 버튼 광클릭막기 상태값
+    let btna_sts = 0;//1-막기,0-허용
 
 
 
