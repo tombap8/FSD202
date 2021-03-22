@@ -421,7 +421,7 @@ $(function () { /// jQB //////////////////
             }); //// css ////////////
 
             // 글자 나타나기
-            $(".btit", this).css({
+            $(".bbtit", this).css({
                 transform: "translate(-50%, -50%) scale(1)"
             })
 
@@ -434,7 +434,7 @@ $(function () { /// jQB //////////////////
             }); //// css ////////////
 
             // 글자 사라지기
-            $(".btit", this).css({
+            $(".bbtit", this).css({
                 transform: "translate(-50%, -50%) scale(0)"
             })
 
