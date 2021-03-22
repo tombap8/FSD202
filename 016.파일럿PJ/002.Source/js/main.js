@@ -1,33 +1,33 @@
 //// 디스커버리 메인 JS - main.js ////
 
 $(function () { /// jQB //////////////////
-    
+
     ////// 햄버거 버튼 클릭시 전체메뉴 보이기/숨기기 /////
     // 대상: #ham
-    $("#ham").click(function(){
-        
+    $("#ham").click(function () {
+
         // 1. 햄버거 버튼에 class="on" 넣기/빼기
         $(this).toggleClass("on");
-        
+
         // 2. 전체메뉴박스 서서히 보이기/숨기기
         $(".mbox").fadeToggle(400);
-        
+
         // 3. 동영상 재생/멈춤(get(0) 또는 [0]으로 선택)
-        
+
         // 동영상 재상/멈춤을 위한 햄버거 버튼 class="on"여부
         let isHAM = $(this).is(".on");
-        console.log("햄버거?"+isHAM);
-        
-        if(isHAM) $(".bgm")[0].play();
+        console.log("햄버거?" + isHAM);
+
+        if (isHAM) $(".bgm")[0].play();
         else $(".bgm")[0].pause();
-        
-        
-        
-    });//////// click /////////////////
-    
-    
-    
-    
+
+
+
+    }); //////// click /////////////////
+
+
+
+
     ///////////////////////////////////////////
     /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
     // a요소에 href="#아이디명" 하면 바로이동은 가능
@@ -42,16 +42,16 @@ $(function () { /// jQB //////////////////
         // 1.클릭된 순번 알아내기(클릭된 a의 부모 li순번)
         // 알아낸 순번을 전역 페이지번호(pno)에 넣기!
         pno = $(this).parent().index();
-        
+
         // 만약 #gnb a이면 1을 더함(배너메뉴가 없으므로!)
         let isGNB = $(this).parent().parent().is("ul#gnb");
         // parent()를 두번쓴것은 li위에 ul인지 ol인지로 올라가서
         // is() 메서드로 이것이 ul#gnb 인것을 확인한다!
         // 이것이 맞으면 true가 리턴된다!
         //console.log("부모가#gnb인가?"+isGNB);
-        
-        if(isGNB) pno++;//1을 더함!
-        
+
+        if (isGNB) pno++; //1을 더함!
+
         //console.log("클릭순번:" + pno);
 
 
@@ -82,22 +82,22 @@ $(function () { /// jQB //////////////////
         // 두개의 네비게이션을 동시에 변경하기
 
         // GNB네비게이션 클래스 넣기
-        if(pno===0){//첫번째 메뉴 이므로 모든 class="on"지우기
+        if (pno === 0) { //첫번째 메뉴 이므로 모든 class="on"지우기
             $("#gnb li").removeClass("on");
         } ///// if /////////////////////////
-        else{//해당순번보다 1작게 해야 3개의 gnb중에서 매칭됨!
-            $("#gnb li").eq(pno-1).addClass("on")
+        else { //해당순번보다 1작게 해야 3개의 gnb중에서 매칭됨!
+            $("#gnb li").eq(pno - 1).addClass("on")
                 .siblings().removeClass("on");
         } ////// else ////////////////////////
-        
+
         // 블릿네비게이션 클래스 넣기
         $(".bnav li").eq(pno).addClass("on")
             .siblings().removeClass("on");
 
     }); ///////// click ///////////////////
-    
-    
-    
+
+
+
 
     // 슬라이드 //////////
     let sld = $(".slide");
@@ -398,6 +398,47 @@ $(function () { /// jQB //////////////////
     // banTit함수 최초호출!
     setTimeout(banTit, 2000);
 
+
+
+    // 마우스 팔로워 플러그인 적용하기
+    // 움직일 대상: .btna
+    // 설정범위는 움직일 대상이 포함된 부모요소
+
+    $(".btna").mousefollower();
+    // 주의사항!
+    // mousefollower() 메서드를 적용하는 것은
+    // 마우스 따라다닐 범위 요소를 선택하는 것이다!
+    // 그 안에 .badge 라는 것이 실제로 따라다닌다!
+    // 클래스명 badge를 이 플러그인의 설정에 따라
+    // 반드시 사용해야 한다!
+
+    $(".btna").hover(
+        function () { // over
+
+            // 흰원 나타나기
+            $(".inside", this).css({
+                transform: "scale(1)"
+            }); //// css ////////////
+
+            // 글자 나타나기
+            $(".btit", this).css({
+                transform: "translate(-50%, -50%) scale(1)"
+            })
+
+        },
+        function () { // out
+
+            // 흰원 사라지기
+            $(".inside", this).css({
+                transform: "scale(0)"
+            }); //// css ////////////
+
+            // 글자 사라지기
+            $(".btit", this).css({
+                transform: "translate(-50%, -50%) scale(0)"
+            })
+
+        }); ///// hover ///////////
 
 
 
