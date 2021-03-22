@@ -58,11 +58,11 @@ $(function () { /// jQB //////////////////
         // GNB네비게이션 클래스 넣기
         if(pno===0){//첫번째 메뉴 이므로 모든 class="on"지우기
             $("#gnb li").removeClass("on");
-        }
-        else{
+        } ///// if /////////////////////////
+        else{//해당순번보다 1작게 해야 3개의 gnb중에서 매칭됨!
             $("#gnb li").eq(pno-1).addClass("on")
                 .siblings().removeClass("on");
-        }
+        } ////// else ////////////////////////
         
         // 블릿네비게이션 클래스 넣기
         $(".bnav li").eq(pno).addClass("on")
