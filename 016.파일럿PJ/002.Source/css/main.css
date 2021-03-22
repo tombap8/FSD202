@@ -412,5 +412,31 @@ ul.pgc > li.txtc h3 a {
 
 /********6.하단영역********/
 .info {
-    background: #edff67;
+    position: relative;
+    /*부모자격*/
+    background: #101629;
+    height: 50%;
 }
+/*회사주소박스*/
+.info address{
+    position: absolute;
+    /*부모? .info*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 710px;
+    line-height: 20px;
+    color: #fffefe;
+    padding: 14px;
+    border: 4px double #fffefe;
+    /*double은 이중선*/
+}
+
+
+
+
+
+
+
+
+
