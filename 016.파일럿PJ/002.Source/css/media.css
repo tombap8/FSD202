@@ -73,6 +73,14 @@
         height: 200%;
     }
 
+    /* 12. 스타일 여자글자 세부조정 */
+    .style ul.pgc > li.txtc h3.tw {
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
 
 
 }
