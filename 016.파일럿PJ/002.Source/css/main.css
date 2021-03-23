@@ -239,7 +239,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 99999;
-    background: url(../images/mobile/ban04.jpg) no-repeat;
+    background: url(../images/mobile/ban04.jpg) no-repeat center/cover;
     /*모바일에서 동영상 제거시 배경이미지가 보이도록 미리셋팅함!*/
     display: none;
     /*처음에 안보임*/
