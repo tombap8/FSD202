@@ -9,7 +9,7 @@
     font-family: "맑은 고딕", "굴림";
     font-size: 14px;
     border-collapse: collapse;
-    width: 600px;
+    width: 750px;
     margin: 0 auto;
 }
 
@@ -46,6 +46,23 @@
 		padding: 위아래 오른왼;(2개)
 		padding: 모든방향;(1개)
 	*/
+}
+
+/*각 th별 가로크기지정 */
+.dtbl th:nth-child(1){
+    width: 50px;
+}
+.dtbl th:nth-child(2){
+    width: 420px;
+}
+.dtbl th:nth-child(3){
+    width: 100px;
+}
+.dtbl th:nth-child(4){
+    width: 100px;
+}
+.dtbl th:nth-child(5){
+    width: 80px;
 }
 
 .dtbl tbody tr td {
