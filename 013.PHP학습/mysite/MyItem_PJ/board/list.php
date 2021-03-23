@@ -176,7 +176,7 @@
         $pg = "";
         
         # 전체 레코드 수 구하기 쿼리
-        $cnt_sql = "SELECT COUNT(*) FROM `member`";
+        $cnt_sql = "SELECT COUNT(*) FROM `board_free`";
         $total = $conn->query($cnt_sql);//쿼리날리고
         $total = $total->fetch_row();//결과레코드가져오기
         // fetch_row() 데이터 레코드를 배열번호로만 저장!
