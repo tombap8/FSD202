@@ -148,7 +148,17 @@
     .slide > li.ban6 {
         background-image: url(../images/mobile/ban06.jpg);
     }
-    
+
+    /* 18. 햄버거 버튼 오버상태 일반화하기 - 원래상태로 */
+    #ham:hover span:nth-child(2) {
+        left: -50%;
+    }
+
+    /* 19. 상단영역 배경색 투명도변경 */
+    .top {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
 
 
 

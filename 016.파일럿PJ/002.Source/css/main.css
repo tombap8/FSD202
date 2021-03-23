@@ -161,7 +161,8 @@
 }
 
 #ham.on span:nth-child(2) {
-    left: 50%;
+    left: 50% !important;
+    /*모바일 :hover 설정변경때문에 !important를 줌*/
     width: 0;
 }
 
