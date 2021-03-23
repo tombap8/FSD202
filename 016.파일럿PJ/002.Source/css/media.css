@@ -42,18 +42,23 @@
         transform: translateX(-50%);
     }
 
-    /*컨텐츠페이지박스*/
+    /* 7. 컨텐츠페이지박스 높이값 변경*/
     ul.pgc {
+        height: 60vh;
+    }
+
+    /* 8. 이미지박스 가로값 변경 */
+    ul.pgc > li.imgc {
         width: 100%;
     }
 
-    /*글자박스*/
+    /* 9. 글자박스 가로값, 포지션변경 */
     ul.pgc > li.txtc {
         position: absolute;
         width: 100%;
     }
 
-    /*a링크:등장액션대상!*/
+    /* 10. a링크 글자색 변경, 글자그림자 추가 */
     ul.pgc > li.txtc h3 a {
         color: #fff;
         text-shadow: 0 0 3px BLACK;
