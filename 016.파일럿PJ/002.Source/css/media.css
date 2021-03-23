@@ -59,7 +59,7 @@
         position: absolute;
         width: 100%;
         z-index: 1;
-        /*겹쳐질때 글자가 위*/        
+        /*겹쳐질때 글자가 위*/
         text-align: center;
     }
 
@@ -92,6 +92,34 @@
         /*기존값해제*/
         transform: translateX(-50%);
         text-align: center;
+    }
+
+    /* 14. 하단영역 변경 */
+    .info {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 15. 회사주소박스 변경 */
+    .info address {
+        position: static;
+        /*static으로 변경하면 top,left같은
+        위치이동값이 모두 적용되지 않는다!*/
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 16. 전체메뉴 조정 */
+    /*상위메뉴(dt)*/
+    .mlist dt {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    /*하위메뉴(dd)*/
+    .mlist dd {
+        padding-bottom: 0px;
     }
 
 
