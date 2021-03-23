@@ -123,6 +123,35 @@
     }
 
 
+    /* 17. 모바일 사이즈에 맞는 배너 이미지 변경 */
+    .slide > li.ban1 {
+        background-image: url(../images/mobile/ban01.jpg);
+    }
+
+    .slide > li.ban2 {
+        background-image: url(../images/mobile/ban02.jpg);
+    }
+
+    .slide > li.ban3 {
+        background-image: url(../images/mobile/ban03.jpg);
+    }
+
+    .slide > li.ban4 {
+        background-image: url(../images/mobile/ban04.jpg);
+    }
+
+    .slide > li.ban5 {
+        background-image: url(../images/mobile/ban05.jpg);
+    }
+
+    .slide > li.ban6 {
+        background-image: url(../images/mobile/ban06.jpg);
+    }
+
+
+
+
+
 }
 
 /*모바일 미디어쿼리*/
