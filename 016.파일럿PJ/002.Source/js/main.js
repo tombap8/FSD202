@@ -407,6 +407,13 @@ $(function () { /// jQB //////////////////
         // 2,3번 슬라이드만 오른쪽이고 나머지는 왼쪽임
         let tpos = "20%"; //왼쪽기준
         if (bseq === 1 || bseq === 2) tpos = "70%";
+        
+        // 모바일일경우 중앙으로 보내기
+        if(mob) tpos = "50%";
+        
+        // 글자크기
+        let fz = "4vw";
+        if(mob) fz = "5vw";
 
         // 2.생성된 h2.btit 요소에 html로 글자넣기
         // 글자는 bantxt 배열변수에 이미셋팅함!
@@ -423,7 +430,7 @@ $(function () { /// jQB //////////////////
                 left: tpos,
                 // 오른쪽,왼쪽 변경값을 변수로 설정함!
                 transform: "translate(-50%,-50%)",
-                font: "bold 4vw Verdana",
+                font: "bold "+fz+" Verdana",
                 color: "#fff",
                 textShadow: "1px 1px 3px #777",
                 whiteSpace: "nowrap",
