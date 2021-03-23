@@ -14,7 +14,8 @@
     /*배너 양쪽이동 버튼 영역, 
     GNB메뉴, 블릿메뉴*/
     .btna,
-    #gnb, .bnav {
+    #gnb,
+    .bnav {
         display: none;
     }
 
@@ -23,18 +24,40 @@
         padding: 30px 0 20px;
         margin: 0 auto;
     }
-    
+
     /* 4. 전체 페이지공통 높이값 제거 */
-    .page{
+    .page {
         height: auto;
     }
-    
+
     /* 5. 배너 포지션 및 높이값 변경 */
-    .slide{
+    .slide {
         position: relative;
         height: 60vh;
     }
 
+    /* 6. 블릿박스 위치변경 */
+    .indic {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*컨텐츠페이지박스*/
+    ul.pgc {
+        width: 100%;
+    }
+
+    /*글자박스*/
+    ul.pgc > li.txtc {
+        position: absolute;
+        width: 100%;
+    }
+
+    /*a링크:등장액션대상!*/
+    ul.pgc > li.txtc h3 a {
+        color: #fff;
+        text-shadow: 0 0 3px BLACK;
+    }
 
 
 
