@@ -59,13 +59,16 @@
         position: absolute;
         width: 100%;
         z-index: 1;
-        /*겹쳐질때 글자가 위*/
+        /*겹쳐질때 글자가 위*/        
+        text-align: center;
     }
 
     /* 10. a링크 글자색 변경, 글자그림자 추가 */
     ul.pgc > li.txtc h3 a {
         color: #fff;
         text-shadow: 0 0 3px BLACK;
+        font-size: 4.6rem;
+        /*모든 글자크기 일치*/
     }
 
     /* 11. 스타일 글자박스 높이값 변경 */
