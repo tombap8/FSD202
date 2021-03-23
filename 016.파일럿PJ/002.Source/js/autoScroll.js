@@ -14,8 +14,8 @@ let winH = $(window).height();
 
 // 모바일여부 코드(1-모바일,0-일반)
 let mob = 0;
-if($(window).width()<500) mob=1;
-console.log("모바일:"+mob);
+if ($(window).width() <= 500) mob = 1;
+console.log("모바일:" + mob);
 /////////////////////////////////////
 
 $(function () { ///// jQB /////////////////
@@ -144,11 +144,11 @@ $(function () { ///// jQB /////////////////
 
         // 5. 메뉴변경하기 - 페이지 순번과 동일함!
         // GNB네비게이션 클래스 넣기
-        if(pno===0){//첫페이지에서는 클래스 전부지우기
+        if (pno === 0) { //첫페이지에서는 클래스 전부지우기
             $("#gnb li").removeClass("on");
         } ///////// if /////////////////
-        else{// 다른 페이지에서는 해당페이지에 맞게 클래스넣기
-            $("#gnb li").eq(pno-1).addClass("on")
+        else { // 다른 페이지에서는 해당페이지에 맞게 클래스넣기
+            $("#gnb li").eq(pno - 1).addClass("on")
                 .siblings().removeClass("on");
         } //////// else //////////////////
 
@@ -164,7 +164,7 @@ $(function () { ///// jQB /////////////////
 
 
     /// 등장액션 초기화함수 호출!
-    if(!mob) initSet();
+    if (!mob) initSet();
     // 모바일일땐 초기화를 하지 않는다!
 
 
