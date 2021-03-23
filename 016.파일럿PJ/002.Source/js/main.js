@@ -14,13 +14,17 @@ $(function () { /// jQB //////////////////
 
         // 3. 동영상 재생/멈춤(get(0) 또는 [0]으로 선택)
 
-        // 동영상 재상/멈춤을 위한 햄버거 버튼 class="on"여부
-        let isHAM = $(this).is(".on");
-        console.log("햄버거?" + isHAM);
+        // 모바일이 아닐때만 실행
+        if (!mob) {
 
-        if (isHAM) $(".bgm")[0].play();
-        else $(".bgm")[0].pause();
+            // 동영상 재상/멈춤을 위한 햄버거 버튼 class="on"여부
+            let isHAM = $(this).is(".on");
+            console.log("햄버거?" + isHAM);
 
+            if (isHAM) $(".bgm")[0].play();
+            else $(".bgm")[0].pause();
+
+        } ///////// if /////////////////
 
 
     }); //////// click /////////////////
@@ -406,13 +410,13 @@ $(function () { /// jQB //////////////////
         // 2,3번 슬라이드만 오른쪽이고 나머지는 왼쪽임
         let tpos = "20%"; //왼쪽기준
         if (bseq === 1 || bseq === 2) tpos = "70%";
-        
+
         // 모바일일경우 중앙으로 보내기
-        if(mob) tpos = "50%";
-        
+        if (mob) tpos = "50%";
+
         // 글자크기
         let fz = "4vw";
-        if(mob) fz = "7vw";
+        if (mob) fz = "7vw";
 
         // 2.생성된 h2.btit 요소에 html로 글자넣기
         // 글자는 bantxt 배열변수에 이미셋팅함!
@@ -429,7 +433,7 @@ $(function () { /// jQB //////////////////
                 left: tpos,
                 // 오른쪽,왼쪽 변경값을 변수로 설정함!
                 transform: "translate(-50%,-50%)",
-                font: "bold "+fz+" Verdana",
+                font: "bold " + fz + " Verdana",
                 color: "#fff",
                 textShadow: "1px 1px 3px #777",
                 whiteSpace: "nowrap",
@@ -497,13 +501,13 @@ $(function () { /// jQB //////////////////
         .click(function () {
 
             // 광클막기! /////////////////
-            if(btna_sts) return false;
-            btna_sts = 1;//잠금
-            setTimeout(function(){
+            if (btna_sts) return false;
+            btna_sts = 1; //잠금
+            setTimeout(function () {
                 btna_sts = 0;
                 //1.5초(애니시간)후 해제
-            },1500);//// setTimeout ////
-        
+            }, 1500); //// setTimeout ////
+
             // 배너자동호출 지우기
             clearAuto();
 
@@ -521,9 +525,9 @@ $(function () { /// jQB //////////////////
 
 
         }); /////// click ////////////////////
-    
+
     // 버튼 광클릭막기 상태값
-    let btna_sts = 0;//1-막기,0-허용
+    let btna_sts = 0; //1-막기,0-허용
 
 
 

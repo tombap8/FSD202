@@ -12,10 +12,11 @@
 
     /* 2. 숨기기 */
     /*배너 양쪽이동 버튼 영역, 
-    GNB메뉴, 블릿메뉴*/
+    GNB메뉴, 블릿메뉴, 전체메뉴동영상*/
     .btna,
     #gnb,
-    .bnav {
+    .bnav,
+    .bgm {
         display: none;
     }
 
@@ -147,8 +148,7 @@
     .slide > li.ban6 {
         background-image: url(../images/mobile/ban06.jpg);
     }
-
-
+    
 
 
 
