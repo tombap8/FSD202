@@ -11,6 +11,11 @@ const totnum = 5;
 let psts = 0;
 // 전체 윈도우 높이값(페이지이동시 사용!)
 let winH = $(window).height();
+
+// 모바일여부 코드(1-모바일,0-일반)
+let mob = 0;
+if($(window).width()<500) mob=1;
+console.log("모바일:"+mob);
 /////////////////////////////////////
 
 $(function () { ///// jQB /////////////////
