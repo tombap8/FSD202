@@ -81,6 +81,15 @@
         text-align: center;
     }
 
+    /* 13. 스타일 남자글자 세부조정*/
+    .style ul.pgc > li.txtc h3.tm {
+        top: 74%;
+        left: 50%;
+        right: auto;
+        /*기존값해제*/
+        transform: translateX(-50%);
+        text-align: center;
+    }
 
 
 }
