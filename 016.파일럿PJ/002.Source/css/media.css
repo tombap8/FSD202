@@ -48,20 +48,29 @@
     }
 
     /* 8. 이미지박스 가로값 변경 */
-    ul.pgc > li.imgc {
+    /*우선순위를 높이기 위해 부모공통 .page를 써줌*/
+    .page ul.pgc > li.imgc {
         width: 100%;
     }
 
     /* 9. 글자박스 가로값, 포지션변경 */
-    ul.pgc > li.txtc {
+    /*우선순위를 높이기 위해 부모공통 .page를 써줌*/
+    .page ul.pgc > li.txtc {
         position: absolute;
         width: 100%;
+        z-index: 1;
+        /*겹쳐질때 글자가 위*/
     }
 
     /* 10. a링크 글자색 변경, 글자그림자 추가 */
     ul.pgc > li.txtc h3 a {
         color: #fff;
         text-shadow: 0 0 3px BLACK;
+    }
+
+    /* 11. 스타일 글자박스 높이값 변경 */
+    .style ul.pgc > li.txtc {
+        height: 200%;
     }
 
 
