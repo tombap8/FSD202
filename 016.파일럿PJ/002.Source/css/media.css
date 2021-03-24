@@ -25,6 +25,15 @@
         margin: 10px;
     }
 
+    /*3.메뉴조정*/
+    #gnb {
+        right: 15%;
+    }
+
+    #gnb li {
+        font-size: 3rem;
+    }
+
 
 }
 
@@ -144,7 +153,8 @@
         transform: none;
         width: 100%;
         box-sizing: border-box;
-        margin: 0;/*추가*/
+        margin: 0;
+        /*추가*/
     }
 
     /* 16. 전체메뉴 조정 */
