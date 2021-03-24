@@ -43,6 +43,12 @@
     .mlist dl {
         width: 33.333%;
     }
+    
+    /* 5. 숨기기 */
+    /*전체메뉴동영상*/    
+    .bgm {
+        display: none;
+    }
 
 
 }
@@ -66,11 +72,10 @@
 
     /* 2. 숨기기 */
     /*배너 양쪽이동 버튼 영역, 
-    GNB메뉴, 블릿메뉴, 전체메뉴동영상*/
+    GNB메뉴, 블릿메뉴*/
     .btna,
     #gnb,
-    .bnav,
-    .bgm {
+    .bnav{
         display: none;
     }
 
