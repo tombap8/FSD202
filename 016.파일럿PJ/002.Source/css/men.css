@@ -1,0 +1,625 @@
+@charset "utf-8";
+/* 메인 css - main.css */
+
+@import url(base.css);
+@import url(reset.css);
+
+/*공통 class*/
+.page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*IR class*/
+.ir {
+    display: block;
+    overflow: hidden;
+    text-indent: -1000em;
+    /*글자들여쓰기로 글자숨기기*/
+}
+
+/*숨김class*/
+.bld {
+    display: none;
+}
+
+/*드래그 선택 안되게 하는 CSS*/
+.disableselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge*/
+    user-select: none;
+    /* Non-prefixed version, currently 
+    not supported by any browser */
+}
+
+.disabledrag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+
+
+/*******************/
+/*1.상단영역*/
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /*높이는 자동!*/
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    /*가장위!*/
+}
+
+/*1-1.로고*/
+#logo {
+    width: 14vw;
+    /* vw단위는 보이는 화면기준*/
+    min-width: 150px;
+    /*최소한계크기 지정*/
+    padding: 30px 0 20px 25px;
+}
+
+#logo img {
+    width: 100%;
+    /* %단위는 싸고있는 부모요소 기준*/
+}
+
+/*1-2.메뉴*/
+#gnb {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+#gnb li {
+    font: 2rem 'Ubuntu';
+    /* Root가 10px * 2rem = 20px임! */
+    padding: .6rem;
+}
+
+#gnb li a {
+    color: #fff;
+}
+
+/*마우스오버시,선택on메뉴*/
+#gnb li:hover a,
+#gnb li.on a {
+    color: aqua;
+}
+
+/*1-3.햄버거버튼*/
+#ham {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    /*세로중앙이동*/
+
+    width: 40px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /*손가락모양*/
+}
+
+#ham span {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    /*트랜지션*/
+    transition: all .3s ease-in-out;
+}
+
+/*햄버거 막대 기본상태*/
+#ham span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+#ham span:nth-child(2) {
+    top: 10px;
+    left: -50%;
+}
+
+#ham span:nth-child(3) {
+    top: 20px;
+    left: 0;
+}
+
+/*마우스 오버시 중앙막대 들어옴*/
+#ham:hover span:nth-child(2) {
+    left: 0%;
+}
+
+
+/*햄버거 막대 변경상태(클래스 on적용)*/
+#ham.on {
+    z-index: 999999;
+    /* x버튼일때 전체메뉴 보다 위*/
+}
+
+#ham.on span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+#ham.on span:nth-child(2) {
+    left: 50% !important;
+    /*모바일 :hover 설정변경때문에 !important를 줌*/
+    width: 0;
+}
+
+#ham.on span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+}
+
+/*햄버거버튼 포커스 테두리없애기*/
+#ham:focus {
+    outline: none;
+}
+
+/*블릿 네비게이션*/
+.bnav {
+    position: fixed;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+}
+
+/*블릿모양*/
+.bnav li {
+    width: 100%;
+    height: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/*블릿글자*/
+.bnav span {
+    display: none;
+    /*글자숨기기*/
+}
+
+/*블릿 a링크*/
+.bnav a {
+    display: block;
+    width: 60%;
+    height: 5px;
+    transition: all .3s;
+}
+
+/*막대 색은 가상요소로!(너무 높이값이 작아서)*/
+.bnav a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #777;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.5);
+    transition: all .3s;
+}
+
+/*마우스 오버시 글자보이기*/
+/*동시에 class="on"이면 글자보이기*/
+.bnav li:hover a,
+.bnav li.on a {
+    width: 100%;
+}
+
+/*마우스 오버시 가상요소*/
+.bnav li:hover a::before,
+.bnav li.on a::before {
+    background-color: #000;
+}
+
+/******** 전체메뉴박스 *******/
+.mbox {
+    position: fixed;
+    /*화면기준*/
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background: url(../images/mobile/ban04.jpg) no-repeat center/cover;
+    /*모바일에서 동영상 제거시 배경이미지가 보이도록 미리셋팅함!*/
+    display: none;
+    /*처음에 안보임*/
+}
+
+/*동영상 반투명 가림막*/
+.mbox::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .3;
+}
+
+/*배경동영상*/
+.bgm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*동영상 화면채우기*/
+}
+
+/*전체메뉴*/
+.mlist {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /*가림막보다위*/
+    font-family: 'Ubuntu';
+}
+
+/*메뉴링크 공통*/
+.mlist a {
+    color: #fff;
+}
+
+.mlist a:hover {
+    color: #4f6085;
+}
+
+/*메뉴 각 박스*/
+.mlist dl {
+    width: 300px;
+    margin-bottom: 30px;
+    float: left;
+    /*옆으로 흐르게*/
+}
+
+/*상위메뉴(dt)*/
+.mlist dt {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/*하위메뉴(dd)*/
+.mlist dd {
+    font-size: 2.1rem;
+    padding-bottom: 5px;
+}
+
+
+
+
+/***********2.배너영역**************/
+.ban {
+    position: relative;
+    /*부모자격*/
+}
+
+/*배너슬라이드*/
+.slide {
+    position: absolute;
+    left: -100%;
+    /*끝슬라이드 왼쪽에 나가있음!*/
+    width: 600vw;
+    /*보이는 화면의 6배(슬라이드 6장)*/
+    height: 100vh;
+    display: flex;
+}
+
+.slide > li {
+    position: relative;
+    /*부모자격 - 슬라이드 타이틀*/
+    flex: 1;
+    /*등분할*/
+    float: none;
+    /*공통float해제*/
+}
+
+/*개별 슬라이드 
+- 고유한 클래스로 배경이미지 셋팅*/
+.slide > li.ban1 {
+    background: url(../images/ban01New.jpg) no-repeat center/cover;
+}
+
+.slide > li.ban2 {
+    background: url(../images/ban02New.jpg) no-repeat center/cover;
+}
+
+.slide > li.ban3 {
+    background: url(../images/ban03New.jpg) no-repeat center/cover;
+}
+
+.slide > li.ban4 {
+    background: url(../images/ban04New.jpg) no-repeat center/cover;
+}
+
+.slide > li.ban5 {
+    background: url(../images/ban05New.jpg) no-repeat center/cover;
+}
+
+.slide > li.ban6 {
+    background: url(../images/ban06New.jpg) no-repeat center/cover;
+}
+
+/*배너이동시 보호막*/
+.prot {
+    position: absolute;
+    /*부모? .ban*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /*background-color: #f00;*/
+    /*opacity: .5;*/
+    display: none;
+    /*처음에 숨김*/
+}
+
+/*블릿박스*/
+.indic {
+    position: absolute;
+    left: 1.5%;
+    bottom: 4%;
+    width: 168px;
+    height: 10px;
+    z-index: 1;
+}
+
+.indic > li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 9px;
+    background-color: #ccc;
+    opacity: .5;
+}
+
+.indic a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*선택블릿on*/
+.indic li.on {
+    background-color: #fff;
+    opacity: 1;
+}
+
+
+/*양쪽이동버튼 mousefollower플러그인*/
+/*팔로워*/
+.badge {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+}
+
+.inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all .1s;
+    cursor: pointer;
+}
+
+/*글자박스*/
+.bbtit {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0);
+    /*            outline: 1px solid red;*/
+    font: 22px/80px Verdana;
+    color: #555;
+    text-align: center;
+    transition: all .1s;
+    cursor: pointer;/*손가락모양*/
+}
+.btna {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+}
+
+.ar1 {
+    left: 0;
+    /*background-color: #ffafaf;*/
+}
+
+.ar2 {
+    right: 0;
+    /*background-color: #769bff;*/
+}
+
+
+
+
+
+/******* 남자,여자 스타일 패션영역 공통 class *****/
+/*컨텐츠페이지박스*/
+ul.pgc {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 90%;
+}
+
+/*이미지박스*/
+ul.pgc > li.imgc {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*이미지:등장액션대상!*/
+ul.pgc > li.imgc img {
+    position: relative;
+    /*등장액션 top값 쓰기위해*/
+    /*인라인요소지만 이미지엔 transform적용됨!*/
+    height: 100%;
+}
+
+/*글자박스*/
+ul.pgc > li.txtc {
+    position: relative;
+    /*부모자격*/
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*글자*/
+ul.pgc > li.txtc h3 {
+    position: absolute;
+    /*나의부모? li.txtc*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*정중앙이동*/
+    font: bold 4.6rem 'Ubuntu';
+    /*root(html)에 10px로 설정됨!*/
+    letter-spacing: 3px;
+    /*자간*/
+}
+
+/*a링크:등장액션대상!*/
+ul.pgc > li.txtc h3 a {
+    position: relative;
+    /*등장액션 top값을 쓰기위해*/
+    display: block;
+    /*트랜스폼적용위해*/
+    color: #222;
+}
+
+
+/*********3.남자패션영역*********/
+.men {
+    /*background: #8682ff;*/
+}
+
+/********4.여자패션영역********/
+.women {
+    /*background: #9ffff0;*/
+}
+
+/*여자 이미지박스*/
+.women ul.pgc > li.imgc {
+    width: 70%;
+}
+
+/*여자 이미지*/
+.women ul.pgc > li.imgc img {
+    margin-left: -200px;
+}
+
+/*여자 글자박스*/
+.women ul.pgc > li.txtc {
+    width: 30%;
+}
+
+/********5.스타일영역********/
+.style {
+    /*background: #f963ff;*/
+}
+
+/*스타일 이미지박스*/
+.style ul.pgc > li.imgc {
+    position: relative;
+    /*부모자격*/
+    width: 40%;
+}
+
+/*스타일 이미지*/
+.style ul.pgc > li.imgc img {
+    position: absolute;
+    /*부모? li.imgc*/
+    right: 0;
+}
+
+/*스타일 글자박스*/
+.style ul.pgc > li.txtc {
+    width: 20%;
+}
+
+/*스타일 글자공통*/
+.style ul.pgc > li.txtc h3 {
+    transform: none;
+    /*해제*/
+    font-size: 3.7rem;
+    letter-spacing: 1px;
+}
+
+/*스타일 남자글자*/
+.style ul.pgc > li.txtc h3.tm {
+    top: 30%;
+    left: auto;
+    /*기존값해제*/
+    right: 10%;
+}
+
+/*스타일 여자글자*/
+.style ul.pgc > li.txtc h3.tw {
+    top: 70%;
+    left: 10%;
+}
+
+
+
+/********6.하단영역********/
+.info {
+    position: relative;
+    /*부모자격*/
+    background: #101629;
+    height: 50%;
+}
+
+/*회사주소박스*/
+.info address {
+    position: absolute;
+    /*부모? .info*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 710px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    color: #fffefe;
+    padding: 14px;
+    border: 4px double #fffefe;
+    /*double은 이중선*/
+}

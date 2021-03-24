@@ -1,0 +1,233 @@
+@charset "utf-8";
+/*디스커버리 미디어쿼리 - media.css*/
+
+/*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
+@media only screen and (max-width:1024px) {
+
+    /*0. 전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html {
+        font-size: 6px;
+    }
+
+    /* 1.하단영역 조정 */
+    .info {
+        position: relative;
+        height: auto;
+    }
+
+    /* 2.회사주소박스 조정 */
+    .info address {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin: 10px;
+    }
+
+    /*3.메뉴조정*/
+    #gnb {
+        right: 15%;
+    }
+
+    #gnb li {
+        font-size: 3rem;
+    }
+
+    /*4. 전체메뉴조정*/
+    .mlist {
+        width: 80%;
+    }
+
+    /*메뉴 각 박스*/
+    .mlist dl {
+        width: 33.333%;
+    }
+    
+    /* 5. 숨기기 */
+    /*전체메뉴동영상*/    
+    .bgm {
+        display: none;
+    }
+
+
+}
+
+/*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
+
+
+/*모바일 미디어쿼리 - 500px이하*/
+@media only screen and (max-width:500px) {
+
+    /* 0. 전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html {
+        font-size: 10px;
+    }
+
+    /* 1. body에 스크롤바 생성하기*/
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    /* 2. 숨기기 */
+    /*배너 양쪽이동 버튼 영역, 
+    GNB메뉴, 블릿메뉴*/
+    .btna,
+    #gnb,
+    .bnav{
+        display: none;
+    }
+
+    /* 3. 로고 중앙 */
+    #logo {
+        padding: 30px 0 20px;
+        margin: 0 auto;
+    }
+
+    /* 4. 전체 페이지공통 높이값 제거 */
+    .page {
+        height: auto;
+    }
+
+    /* 5. 배너 포지션 및 높이값 변경 */
+    .slide {
+        position: relative;
+        height: 60vh;
+    }
+
+    /* 6. 블릿박스 위치변경 */
+    .indic {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 7. 컨텐츠페이지박스 높이값 변경*/
+    ul.pgc {
+        height: 60vh;
+    }
+
+    /* 8. 이미지박스 가로값 변경 */
+    /*우선순위를 높이기 위해 부모공통 .page를 써줌*/
+    .page ul.pgc > li.imgc {
+        width: 100%;
+    }
+
+    /* 9. 글자박스 가로값, 포지션변경 */
+    /*우선순위를 높이기 위해 부모공통 .page를 써줌*/
+    .page ul.pgc > li.txtc {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        /*겹쳐질때 글자가 위*/
+        text-align: center;
+    }
+
+    /* 10. a링크 글자색 변경, 글자그림자 추가 */
+    ul.pgc > li.txtc h3 a {
+        color: #fff;
+        text-shadow: 0 0 3px BLACK;
+        font-size: 3.7rem;
+        /*모든 글자크기 일치*/
+    }
+
+    /* 11. 스타일 글자박스 높이값 변경 */
+    .style ul.pgc > li.txtc {
+        height: 200%;
+    }
+
+    /* 12. 스타일 여자글자 세부조정 */
+    .style ul.pgc > li.txtc h3.tw {
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    /* 13. 스타일 남자글자 세부조정*/
+    .style ul.pgc > li.txtc h3.tm {
+        top: 74%;
+        left: 50%;
+        right: auto;
+        /*기존값해제*/
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    /* 14. 하단영역 변경 */
+    .info {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 15. 회사주소박스 변경 */
+    .info address {
+        position: static;
+        /*static으로 변경하면 top,left같은
+        위치이동값이 모두 적용되지 않는다!*/
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        /*추가*/
+    }
+
+    /* 16. 전체메뉴 조정 */
+    
+    /*메뉴 각 박스 : 추가(1024px설정때문)*/
+    .mlist dl {
+        width: 100%;
+    }
+    /*상위메뉴(dt)*/
+    .mlist dt {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    /*하위메뉴(dd)*/
+    .mlist dd {
+        padding-bottom: 0px;
+    }
+
+
+    /* 17. 모바일 사이즈에 맞는 배너 이미지 변경 */
+    .slide > li.ban1 {
+        background-image: url(../images/mobile/ban01.jpg);
+    }
+
+    .slide > li.ban2 {
+        background-image: url(../images/mobile/ban02.jpg);
+    }
+
+    .slide > li.ban3 {
+        background-image: url(../images/mobile/ban03.jpg);
+    }
+
+    .slide > li.ban4 {
+        background-image: url(../images/mobile/ban04.jpg);
+    }
+
+    .slide > li.ban5 {
+        background-image: url(../images/mobile/ban05.jpg);
+    }
+
+    .slide > li.ban6 {
+        background-image: url(../images/mobile/ban06.jpg);
+    }
+
+    /* 18. 햄버거 버튼 오버상태 일반화하기 - 원래상태로 */
+    #ham:hover span:nth-child(2) {
+        left: -50%;
+    }
+
+    /* 19. 상단영역 배경색 투명도변경 */
+    .top {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+
+
+
+}
+
+/*모바일 미디어쿼리*/

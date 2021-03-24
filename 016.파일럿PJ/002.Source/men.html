@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Expedition - MEN Page</title>
+    <link rel="stylesheet" href="css/men.css">
+    <link rel="stylesheet" href="css/media_men.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.mousefollower.js"></script>
+    <script src="js/jquery-touch-punch.min.js"></script>
+    <!--터치펀치로 모바일 드래그 작동가능-->
+    <script src="js/men.js"></script>
+
+</head>
+
+<body>
+    <!--1.상단영역-->
+    <header class="top">
+        <!--1-1.로고(타이틀)-->
+        <h1 id="logo">
+            <img src="images/main_logo.png" alt="메인로고">
+        </h1>
+        <!--1-2.메뉴-->
+        <ul id="gnb">
+            <li><a href="#men">MEN</a></li>
+            <li><a href="#women">WOMEN</a></li>
+            <li><a href="#style">STYLE</a></li>
+        </ul>
+        <!--1-3.햄버거버튼-->
+        <button id="ham">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!--전체메뉴 박스-->
+        <!--
+            fixed 포지션이기 때문에 하단에 별도로 만들어도 되지만
+            햄버거버튼이 이것보다 위에 올게 할때 z-index를 써야함
+            이때 위치관계는 같은 레벨(형제요소)로 있어야 비교가 된다!
+            그래서 햄버거버튼과 같은 형제로 요소를 구현함!
+        -->
+        <div class="mbox">
+            <!--배경동영상-->
+            <video class="bgm" src="images/disc2018.mp4" muted loop></video>
+            <!--전체메뉴-->
+            <nav class="mlist">
+                <dl>
+                    <dt><a href="#">MEN</a></dt>
+                    <dd><a href="#">T-SHIRT</a></dd>
+                    <dd><a href="#">JACKET</a></dd>
+                    <dd><a href="#">TRANING WARE</a></dd>
+                    <dd><a href="#">BEACH WARE</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">WOMEN</a></dt>
+                    <dd><a href="#">T-SHIRT</a></dd>
+                    <dd><a href="#">JACKET</a></dd>
+                    <dd><a href="#">TRANING WARE</a></dd>
+                    <dd><a href="#">BEACH WARE</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">STYLE</a></dt>
+                    <dd><a href="#">COLLECTION</a></dd>
+                    <dd><a href="#">SEASON AD</a></dd>
+                    <dd><a href="#">STAR &amp; NEWS</a></dd>
+                    <dd><a href="#">MAIN ITEM</a></dd>
+                </dl>
+            </nav>
+        </div>
+
+
+
+    </header>
+    <!--2.배너영역-->
+    <section class="ban page">
+        <!--배너슬라이드-->
+        <ul class="slide">
+            <li class="ban6">
+                <span class="ir">배너6</span>
+            </li>
+            <li class="ban1">
+                <span class="ir">배너1</span>
+            </li>
+            <li class="ban2">
+                <span class="ir">배너2</span>
+            </li>
+            <li class="ban3">
+                <span class="ir">배너3</span>
+            </li>
+            <li class="ban4">
+                <span class="ir">배너4</span>
+            </li>
+            <li class="ban5">
+                <span class="ir">배너5</span>
+            </li>
+        </ul>
+
+        <!--배너블릿박스-->
+        <ol class="indic">
+            <li class="on">
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="bld">블릿</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="ir">블릿</span>
+                </a>
+            </li>
+        </ol>
+
+        <!--배너화면보호막-->
+        <div class="prot"></div>
+
+        <!--양쪽이동버튼 mousefollower플러그인-->
+        <div class="btna ar1">
+            <div class="badge">
+                <div class="inside"></div>
+            </div>
+            <span class="bbtit badge disableselect disabledrag">Prev</span>
+        </div>
+
+        <div class="btna ar2">
+            <div class="badge">
+                <div class="inside"></div>
+            </div>
+            <span class="bbtit badge disableselect disabledrag">Next</span>
+        </div>
+
+
+    </section>
+    <!--3.남자패션영역-->
+    <section class="men page">
+        <h2 class="bld">남자패션영역</h2>
+        <ul class="pgc">
+            <li class="imgc">
+                <img src="images/men02.png" alt="공유다">
+            </li>
+            <li class="txtc">
+                <h3>
+                    <a href="men.html">
+                        MEN'S<br>ESSENTIALS
+                    </a>
+                </h3>
+            </li>
+        </ul>
+    </section>
+    <!--4.여자패션영역-->
+    <section class="women page">
+        <h2 class="bld">여자패션영역</h2>
+        <ul class="pgc">
+            <li class="txtc">
+                <h3>
+                    <a href="#">
+                        WOMEN'<br>ESSENTIALS
+                    </a>
+                </h3>
+            </li>
+            <li class="imgc">
+                <img src="images/women01.png" alt="여자">
+            </li>
+        </ul>
+    </section>
+    <!--5.스타일영역-->
+    <section class="style page">
+        <h2 class="bld">스타일패션영역</h2>
+        <ul class="pgc">
+            <li class="imgc">
+                <img src="images/style02.png" alt="여자스타일">
+            </li>
+            <li class="txtc">
+                <h3 class="tm">
+                    <a href="#">
+                        MEN'S<br>STYLE
+                    </a>
+                </h3>
+                <h3 class="tw">
+                    <a href="#">
+                        WOMEN'S<br>STYLE
+                    </a>
+                </h3>
+            </li>
+            <li class="imgc">
+                <img src="images/style03.png" alt="남자스타일">
+            </li>
+        </ul>
+    </section>
+    <!--6.하단영역-->
+    <footer class="info page">
+        <h2 class="bld">회사정보페이지</h2>
+        <address>
+            서울특별시 강남구 언주로 541 에프앤에프빌딩<br>
+            사업자등록번호 : 214-86-09977 / 통신판매업 신고번호 : 제2011-서울강남-00086호 (주) 에프앤에프 / 대표 : 김창수<br>
+            교환·반품 반송처 : (17384) 경기도 이천시 마장면 프리미엄아울렛로 113-37 F&amp;F 물류센터 디스커버리 물류부<br><br>
+
+            고객센터　<em>080 - 820 - 8802</em> 　　
+            평일 오전 9시 ~ 오후 6시 (토·일·공휴일 휴무) <br>
+            A/S : 02 - 3474 - 8914　
+            E - MAIL : <a href="mailto:discovery@fnf.co.kr" title="메일 보내기">discovery@fnf.co.kr</a> 　
+            FAX : 02 - 520 - 0991 <br><br>
+
+            COPYRIGHT F&amp;F CO.,LTD.ALL RIGHTS RESERVED
+        </address>
+    </footer>
+
+
+    <!--7. 블릿 네비게이션-->
+    <ol class="bnav">
+        <li class="on">
+            <a href="#pg1"><span>BANNER</span></a>
+        </li>
+        <li><a href="#pg2"><span>MEN</span></a></li>
+        <li><a href="#pg3"><span>WOMEN</span></a></li>
+        <li><a href="#pg4"><span>STYLE</span></a></li>
+    </ol>
+
+
+
+
+
+</body></html>
