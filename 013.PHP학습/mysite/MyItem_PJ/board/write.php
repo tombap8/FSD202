@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <title>게시판 - 글쓰기 페이지</title>
     <link rel="stylesheet" href="board.css">
+    <script language="javascript">
+        function check_form(form) {
+            if (!write_form.name.value) {
+                alert('이름을 입력하세요.');
+                write_form.name.focus();
+                return;
+            }
+
+            if (!write_form.passwd.value) {
+                alert('패스워드를 입력하세요.');
+                write_form.passwd.focus();
+                return;
+            }
+
+            if (!write_form.subject.value) {
+                alert('글 제목을 입력하세요.');
+                write_form.subject.focus();
+                return;
+            }
+
+            if (!write_form.content.value) {
+                alert('글 내용을 입력하세요.');
+                write_form.content.focus();
+                return;
+            }
+
+            write_form.submit();
+        }
+
+    </script>
 </head>
 <body>
    
