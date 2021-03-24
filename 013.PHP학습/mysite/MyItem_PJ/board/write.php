@@ -60,6 +60,23 @@
     </script>
 </head>
 <body>
+  <?php
+    
+    # 입력상태를 알리기위한 GET방식 url키값 "mode"가 있는지 확인
+    # isset() 메서드로 GET값을 확인한다.(있으면 1을 리턴함)
+    # GET방식은 $_GET[키이름] 으로 확인한다
+    
+    $mode="";
+    
+    // GET방식으로 넘어온 "mode"라는 이름의 키가 있으면
+    // 그 값을 $mode라는 변수에 담아라!
+    if(isset($_GET["mode"])){
+        $mode = $_GET["mode"];
+    } ///// if문 /////////////
+    
+    echo "mode키값:$mode";
+    
+    ?>
    
    <form name="write_form" method="post" action="write.php?mode=post">
         <table class="dtblview">
