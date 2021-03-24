@@ -152,10 +152,20 @@ $(function () { /// jQB //////////////////
 
     }); ////// resize 메서드 /////////////////
 
+    // 터치이벤트 연속발생방지
+    let protTch = 0;
+    
     //////////// 드래그 이벤트 함수 ////////////
     sld.on("dragstop touchend", function () {
+        
+        // 터치이벤트일때 연속 두번 발생방지
+        if(protTch) return;
+        protTch = 1;//잠금!
+        setTimeout(function(){
+            protTch = 0;//해제!
+        },500);//// setTimeout //////
 
-        //console.log("드래그끝!");
+        console.log("드래그끝!");
 
         // 자동슬라이드 지우기!!!
         clearAuto();
