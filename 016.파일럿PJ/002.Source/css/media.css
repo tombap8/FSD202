@@ -34,6 +34,16 @@
         font-size: 3rem;
     }
 
+    /*4. 전체메뉴조정*/
+    .mlist {
+        width: 80%;
+    }
+
+    /*메뉴 각 박스*/
+    .mlist dl {
+        width: 33.333%;
+    }
+
 
 }
 
@@ -158,6 +168,11 @@
     }
 
     /* 16. 전체메뉴 조정 */
+    
+    /*메뉴 각 박스*/
+    .mlist dl {
+        width: 100%;
+    }
     /*상위메뉴(dt)*/
     .mlist dt {
         margin-bottom: 10px;
