@@ -1,8 +1,25 @@
 @charset "utf-8";
 /*디스커버리 미디어쿼리 - media.css*/
 
+/*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
+@media only screen and (max-width:1024px) {
+    /*전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html{
+        font-size: 6px;
+    }
+    
+    
+}
+/*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
+
+
 /*모바일 미디어쿼리 - 500px이하*/
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:500px) {    
+    
+    /*전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html{
+        font-size: 10px;
+    }
 
     /* 1. body에 스크롤바 생성하기*/
     body {
