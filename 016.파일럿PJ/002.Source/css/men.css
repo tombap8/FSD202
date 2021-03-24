@@ -422,6 +422,14 @@ ul.pgc > li.txtc h3 a {
 .newarr {
     background: #8682ff;
 }
+/*타이틀*/
+.tit{    
+    font-size: 4rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    
+}
 
 /********4.해변패션영역********/
 .beach {
@@ -443,7 +451,7 @@ ul.pgc > li.txtc h3 a {
     width: 30%;
 }
 
-/********5.스타일영역********/
+/********5.남자스타일영역********/
 .style {
     /*background: #f963ff;*/
 }
