@@ -5,11 +5,25 @@
     <title>게시판 - 글쓰기 페이지</title>
     <link rel="stylesheet" href="board.css">
     <script language="javascript">
-        function check_form(form) {
+        
+        // 폼태그 안에서 버튼 클릭시 함수를 호출하면
+        // 호출된 함수에서 함수의 전달값 form 이라고 쓴 부분에 
+        // form 요소의 모든 입력요소가 전달된다!!!
+        
+        function check_form(form) {//form-폼내부요소 전달값
+            
+            // 아래 모든 if문의 조건문은 이렇다!
+            // !write_form.name.value
+            // 폼요소이름명.요소이름.값 -> 이것 앞에 NOT 연산자
+            // 해석: 선택된 요소의 값이 있으면 true
+            //       값이 없으면 false 이므로 false일때
+            //      메시지를 띄우려고 NOT(!)연산자로 결과를
+            //      반대로 만들어 준것이다
+            
             if (!write_form.name.value) {
                 alert('이름을 입력하세요.');
-                write_form.name.focus();
-                return;
+                write_form.name.focus();//포커스 넣기
+                return;//돌아감(함수를 빠져나감!)
             }
 
             if (!write_form.passwd.value) {
@@ -30,7 +44,14 @@
                 return;
             }
 
+            // if문에 걸려서 return 으로 돌아나가지 않는다면
+            // 아래있는 submit() 메서드가 실행된다!
             write_form.submit();
+            // 서브밋이 실행된 form요소의 action속성값에 셋팅된
+            // 페이지로 이동한다.
+            // 여기서는 "write.php?mode=post"
+            // 즉, 본 페이지를 다시 부르면서 GET방식으로
+            // url에 키=값을 전달한다.
         }
 
     </script>
