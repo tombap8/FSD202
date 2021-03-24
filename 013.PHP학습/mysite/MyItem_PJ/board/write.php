@@ -62,11 +62,14 @@
 <body>
   <?php
     
+    # 왜?????? GET방식으로 키를 mode로 해서 값을 넘기는가?
+    # 이유는 이것이 있을때만 DB에 데이터를 입력할 것임!
+    
     # 입력상태를 알리기위한 GET방식 url키값 "mode"가 있는지 확인
     # isset() 메서드로 GET값을 확인한다.(있으면 1을 리턴함)
     # GET방식은 $_GET[키이름] 으로 확인한다
     
-    $mode="";
+    $mode="form";
     
     // GET방식으로 넘어온 "mode"라는 이름의 키가 있으면
     // 그 값을 $mode라는 변수에 담아라!
@@ -74,8 +77,17 @@
         $mode = $_GET["mode"];
     } ///// if문 /////////////
     
-    echo "mode키값:$mode";
+    //echo "mode키값:$mode";
     
+    # 변수의 문자값을 검증하는 메서드소개!
+    # strcmp(변수,값) ->같지 않으면 1/true , 같으면 0/false
+    # 이 메서드는 값이 같지 않는지를 물어보는것!
+    
+    //echo "<br>현재mode의 값이 form인가? ".strcmp($mode,"form");
+    
+    # 만약 mode의 값이 "form"이면 아래 form태그를 출력한다!
+    # !strcmp() -> 결과를 반대로 해서 값이 같으면 1/true
+    if(!strcmp($mode,"form")){
     ?>
    
    <form name="write_form" method="post" action="write.php?mode=post">
@@ -143,6 +155,47 @@
             </tr>
         </table>
     </form>
+    
+    <?php 
+        
+    } // if문 끝: !strcmp($mode,"form") 일때 ////////
+    ////////////////////////////////////////////////
+    
+    ###############################################
+    ### $mode가 "post"일때 : DB에 값을 입력할 것임! ###
+    ###############################################
+    elseif(!strcmp($mode,"post")){
+        
+        # post방식으로 전달 받은 값 확인하기!
+        # $_POST[폼요소이름]
+        $name = $_POST["name"];
+        $passwd = $_POST["passwd"];
+        $email = $_POST["email"];
+        $homepage = $_POST["homepage"];
+        $subject = $_POST["subject"];
+        $content = $_POST["content"];
+        
+        echo "
+            이름: $name <br>
+            비번: $passwd <br>
+            이메일: $email <br>
+            홈페이지: $homepage <br>
+            제목: $subject <br>
+            내용: $content <br>
+        ";
+        
+        
+        
+        
+    } //// elseif문 : !strcmp($mode,"post") 일때 //////
+    //////////////////////////////////////////////////
+    
+    
+        
+    ?>
+    
+    
+    
     
 </body>
 </html>
