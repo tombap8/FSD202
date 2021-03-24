@@ -3,21 +3,39 @@
 
 /*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
 @media only screen and (max-width:1024px) {
-    /*전체 rem단위 글자 조정을 위해 html글자 크기변경*/
-    html{
+
+    /*0. 전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html {
         font-size: 6px;
     }
-    
-    
+
+    /* 1.하단영역 조정 */
+    .info {
+        position: relative;
+        height: auto;
+    }
+
+    /* 2.회사주소박스 조정 */
+    .info address {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin: 10px;
+    }
+
+
 }
+
 /*태블릿/모바일가로 미디어쿼리 - 1024px이하*/
 
 
 /*모바일 미디어쿼리 - 500px이하*/
-@media only screen and (max-width:500px) {    
-    
-    /*전체 rem단위 글자 조정을 위해 html글자 크기변경*/
-    html{
+@media only screen and (max-width:500px) {
+
+    /* 0. 전체 rem단위 글자 조정을 위해 html글자 크기변경*/
+    html {
         font-size: 10px;
     }
 
