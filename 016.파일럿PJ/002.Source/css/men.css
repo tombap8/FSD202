@@ -4,6 +4,11 @@
 @import url(base.css);
 @import url(reset.css);
 
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 /*공통 class*/
 .page {
     width: 100vw;
