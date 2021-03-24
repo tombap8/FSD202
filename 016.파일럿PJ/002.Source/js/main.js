@@ -146,15 +146,18 @@ $(function () { /// jQB //////////////////
     $(window).resize(function () {
 
         console.log("리사이즈!");
+        
+        // 사이즈가 변경되면 페이지 자체를 리로드함!
+        location.reload();
 
         // 윈도우 크기 재설정!
-        win = $(window).width();
+        //win = $(window).width();
         
         // 모바일 코드 변경!
-        mob = 0;
-        if (win <= 1024) mob = 2;
-        if (win <= 500) mob = 1;
-        console.log("모바일:" + mob);
+//        mob = 0;
+//        if (win <= 1024) mob = 2;
+//        if (win <= 500) mob = 1;
+//        console.log("모바일:" + mob);
 
     }); ////// resize 메서드 /////////////////
 
