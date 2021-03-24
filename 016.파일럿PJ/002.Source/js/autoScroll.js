@@ -12,9 +12,11 @@ let psts = 0;
 // 전체 윈도우 높이값(페이지이동시 사용!)
 let winH = $(window).height();
 
-// 모바일여부 코드(1-모바일,0-일반)
+// 모바일여부 코드(1-모바일,0-일반,2-태블릿/모바일가로)
 let mob = 0;
-if ($(window).width() <= 500) mob = 1;
+let winW = $(window).width();//윈도우가로크기
+if (winW <= 1024) mob = 2;
+if (winW <= 500) mob = 1;
 console.log("모바일:" + mob);
 /////////////////////////////////////
 
