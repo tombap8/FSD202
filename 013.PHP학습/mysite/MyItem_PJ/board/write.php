@@ -46,9 +46,10 @@
 
             // if문에 걸려서 return 으로 돌아나가지 않는다면
             // 아래있는 submit() 메서드가 실행된다!
+            // 폼요소이름.submit()
             write_form.submit();
-            // 서브밋이 실행된 form요소의 action속성값에 셋팅된
-            // 페이지로 이동한다.
+            // 서브밋이 실행되면 form요소의 action속성값에 
+            // 셋팅된 페이지로 이동한다.
             // 여기서는 "write.php?mode=post"
             // 즉, 본 페이지를 다시 부르면서 GET방식으로
             // url에 키=값을 전달한다.
