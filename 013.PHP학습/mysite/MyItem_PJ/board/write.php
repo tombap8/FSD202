@@ -208,6 +208,7 @@
         if($res){
             echo "
                 <script>
+                    alert('작성하신 글이 저장되었습니다!');
                     location.replace('list.php');
                 </script>
             ";
