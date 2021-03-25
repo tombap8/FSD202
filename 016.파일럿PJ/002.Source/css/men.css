@@ -360,9 +360,15 @@ body{
 /*스와이퍼 슬라이드 버튼 위치변경*/
 .swiper-button-prev{
     left: 100px;
+    color: #a2a2a2;
 }
 .swiper-button-next{
     right: 100px;
+    color: #a2a2a2;
+}
+/*스와이퍼 버튼 공통 오버시*/
+.swbtn:hover{
+    color: #f00;
 }
 
 /******* 남자 해변패션,스타일 영역 공통 class *****/
