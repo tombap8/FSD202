@@ -16,12 +16,15 @@
         .js-reveal {
             opacity: 1;
             transition: opacity .7s ease-in, 
-                margin-top .7s ease-out;
+                transform .7s ease-out;
         }
 
         .js-reveal--hidden {
             opacity: 0;
-            margin-top: 3em;
+            transform: translateY(3rem);
+            /*마진보다는 현재 위치에서 다른 요소에 영향을 안주는
+            transform으로 위치이동하는 것이 일반적이다!*/
+            /*margin-top: 3em;*/
         }
     </style>
 </head>
@@ -127,22 +130,22 @@
         <h2 class="bld">남자스타일패션영역</h2>
         <ul class="pgc">
             <li class="imgc">
-                <img src="images/style02.jpg" alt="남자스타일">
+                <img src="images/style02.jpg" alt="남자스타일" class="js-reveal">
             </li>
             <li class="txtc">
                 <h3 class="tm">
-                    <a href="#">
+                    <a href="#" class="js-reveal">
                         MEN'S<br>SPORT STYLE
                     </a>
                 </h3>
                 <h3 class="tw">
-                    <a href="#">
+                    <a href="#" class="js-reveal">
                         MEN'S<br>LIFE STYLE
                     </a>
                 </h3>
             </li>
             <li class="imgc">
-                <img src="images/style03.jpg" alt="남자스타일">
+                <img src="images/style03.jpg" alt="남자스타일" class="js-reveal">
             </li>
         </ul>
     </section>
