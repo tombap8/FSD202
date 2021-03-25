@@ -13,18 +13,25 @@
     <script src="js/men.js"></script>
     <style>
         /*스크롤리빌 플러그인 class*/
-        .js-reveal {
+        .js-reveal, js-reveal2 {
             opacity: 1;
             transition: opacity .7s ease-in, 
                 transform .7s ease-out;
         }
 
+        /*등장액션 숨기기(Y축)*/
         .js-reveal--hidden {
             opacity: 0;
             transform: translateY(100px);
             /*마진보다는 현재 위치에서 다른 요소에 영향을 안주는
             transform으로 위치이동하는 것이 일반적이다!*/
             /*margin-top: 3em;*/
+        }
+        
+        /*다른 등장액션 숨기기(X축)*/
+        .js-reveal2--hidden {
+            opacity: 0;
+            transform: translateX(100px);
         }
     </style>
 </head>
@@ -121,7 +128,7 @@
                 </h3>
             </li>
             <li class="imgc">
-                <img src="images/men01.png" alt="남자해변패션" class="js-reveal">
+                <img src="images/men01.png" alt="남자해변패션" class="js-reveal2">
             </li>
         </ul>
     </section>
@@ -130,7 +137,7 @@
         <h2 class="bld">남자스타일패션영역</h2>
         <ul class="pgc">
             <li class="imgc">
-                <img src="images/style02.jpg" alt="남자스타일" class="js-reveal">
+                <img src="images/style02.jpg" alt="남자스타일" class="js-reveal2">
             </li>
             <li class="txtc">
                 <h3 class="tm">
@@ -145,7 +152,7 @@
                 </h3>
             </li>
             <li class="imgc">
-                <img src="images/style03.jpg" alt="남자스타일" class="js-reveal">
+                <img src="images/style03.jpg" alt="남자스타일" class="js-reveal2">
             </li>
         </ul>
     </section>

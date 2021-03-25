@@ -21,7 +21,7 @@
         //hide anything not in the viewport
         
         // 등장위치를 조정하는 값(화면높이에서 뺄값)
-        let gap = 200;
+        let gap = 100;
         // -> 효과는 화면아래에서 얼마나 여유공간을 둘 것인가임!
 
         //on scroll
