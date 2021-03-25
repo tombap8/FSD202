@@ -199,7 +199,25 @@
              '$subject','$content','',
              20210325,'127.0.0.1')";
         
-        echo $sql;
+        //echo $sql;
+        
+        # 쿼리문 날리기(실행), 변수에 결과담기
+        $res = $conn->query($sql);
+        
+        # 성공시 리스트페이지로 가기
+        if($res){
+            echo "
+                <script>
+                    location.replace('list.php');
+                </script>
+            ";
+        } ///////////// if /////////////////
+        else{
+            echo $conn->error;
+        } ///////////// else //////////////////
+        
+        
+        
         
         
     } //// elseif문 : !strcmp($mode,"post") 일때 //////
