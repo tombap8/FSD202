@@ -13,10 +13,11 @@
     <script src="js/men.js"></script>
     <style>
         /*스크롤리빌 플러그인 class*/
-        .js-reveal, .js-reveal2 {
+        .js-reveal,
+        .js-reveal2 {
             opacity: 1;
-            transition: opacity .7s ease-in, 
-                transform .7s ease-out;
+            transition: opacity 1.7s ease-in,
+                transform 1.7s ease-out;
         }
 
         /*등장액션 숨기기(Y축)*/
@@ -27,7 +28,7 @@
             transform으로 위치이동하는 것이 일반적이다!*/
             /*margin-top: 3em;*/
         }
-        
+
         /*다른 등장액션 숨기기(X축)*/
         .js-reveal2--hidden {
             opacity: 0;
@@ -96,20 +97,24 @@
 
     </header>
     <!--2.배너영역-->
-    <section class="ban page">
+    <section class="ban page swiper-container">
         <!--배너슬라이드-->
-        <ul class="slide">
-            <li class="ban1">
+        <ul class="slide swiper-wrapper">
+            <li class="ban1 swiper-slide">
                 <span class="ir">배너1</span>
             </li>
-            <li class="ban2">
+            <li class="ban2 swiper-slide">
                 <span class="ir">배너2</span>
             </li>
-            <li class="ban3">
+            <li class="ban3 swiper-slide">
                 <span class="ir">배너3</span>
             </li>
         </ul>
-
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </section>
     <!--3.신상품영역-->
     <section class="newarr page">
