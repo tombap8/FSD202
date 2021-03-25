@@ -123,21 +123,38 @@
                 // 1+ 레코드 시작번호(0,5,10,15,...)
                 
                 while($row=$res->fetch_assoc()){
+                    
+                    # DB 컬럼 값 변수처리
+                    // 1.일련번호
+                    $uno = $row["uno"];
+                    // 2.제목
+                    $subject = $row["subject"];
+                    // 3.이름
+                    $name = $row["name"];
+                    // 4.입력일
+                    $register_date = $row["register_date"];
+                    // 5.조회수
+                    $hit = $row["hit"];
+                    
+                    
+                    # 날짜형식변환: DB에 날짜가 숫자형식으로 되어있음
+                    // date(형식,숫자형날짜데이터)
+                    // 형식: 년(Y), 월(m), 일(d)
+                    $register_date = 
+                        date("Y-m-d",$register_date);
+                    
                                         
                     echo 
                     "<tr>".
                         // 리스트의 순번을 새로 붙여준다!
-                        "<td>".$lno."</td>".
+                        "<td>$lno</td>".
                         //// 글보기는 리스트페이지다
-                        "<td><a href='list.php?no=".
-                        $row["uno"].//보내는 유일키
-                        "'>".
-                        $row["subject"].
-                        "</a></td>".
-                        /////////////////////////////
-                        "<td>".$row["name"]."</td>".
-                        "<td>".$row["register_date"]."</td>".
-                        "<td>".$row["hit"]."</td>".
+                        "<td>
+                            <a href='list.php?no=$uno'>$subject</a>
+                        </td>".
+                        "<td>$name</td>".
+                        "<td>$register_date</td>".
+                        "<td>$hit</td>".
                     "</tr>";
                     
                     # 리스트번호 증가

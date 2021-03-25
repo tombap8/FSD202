@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>게시판 - 글쓰기 페이지</title>
     <link rel="stylesheet" href="board.css">
     <script language="javascript">
-        
         // 폼태그 안에서 버튼 클릭시 함수를 호출하면
         // 호출된 함수에서 함수의 전달값 form 이라고 쓴 부분에 
         // form 요소의 모든 입력요소가 전달된다!!!
-        
-        function check_form(form) {//form-폼내부요소 전달값
-            
+
+        function check_form(form) { //form-폼내부요소 전달값
+
             // 아래 모든 if문의 조건문은 이렇다!
             // !write_form.name.value
             // 폼요소이름명.요소이름.값 -> 이것 앞에 NOT 연산자
@@ -19,11 +19,11 @@
             //       값이 없으면 false 이므로 false일때
             //      메시지를 띄우려고 NOT(!)연산자로 결과를
             //      반대로 만들어 준것이다
-            
+
             if (!write_form.name.value) {
                 alert('이름을 입력하세요.');
-                write_form.name.focus();//포커스 넣기
-                return;//돌아감(함수를 빠져나감!)
+                write_form.name.focus(); //포커스 넣기
+                return; //돌아감(함수를 빠져나감!)
             }
 
             if (!write_form.passwd.value) {
@@ -53,14 +53,15 @@
             // 여기서는 "write.php?mode=post"
             // 즉, 본 페이지를 다시 부르면서 GET방식으로
             // url에 키=값을 전달한다.
-        
+
         } //////// check_form 함수 //////////////////////
         ////////////////////////////////////////////////
 
     </script>
 </head>
+
 <body>
-  <?php
+    <?php
     
     # 왜?????? GET방식으로 키를 mode로 해서 값을 넘기는가?
     # 이유는 이것이 있을때만 DB에 데이터를 입력할 것임!
@@ -89,8 +90,8 @@
     # !strcmp() -> 결과를 반대로 해서 값이 같으면 1/true
     if(!strcmp($mode,"form")){
     ?>
-   
-   <form name="write_form" method="post" action="write.php?mode=post">
+
+    <form name="write_form" method="post" action="write.php?mode=post">
         <table class="dtblview">
             <caption>방명록 게시판</caption>
             <tr>
@@ -155,7 +156,7 @@
             </tr>
         </table>
     </form>
-    
+
     <?php 
         
     } // if문 끝: !strcmp($mode,"form") 일때 ////////
@@ -178,8 +179,30 @@
         # 별도 처리항목
         // 현재날짜넣기: time() 메서드는 현재날짜를 구해온다!
         $register_date = time();
+        // 날짜형식의 값을 DB에 숫자형의 컬럼에 넣으면
+        // 날짜를 숫자로 변환하여 입력된다!
+        // 따라서 list같은 곳에서 날짜를 화면에 찍으려면 
+        // 날짜형식 출력변환을 해 줘야한다!
+        
         // 아이피주소:getenv('REMOTE_ADDR') 접속자 아이피를 구해온다!
         $client_ip = getenv('REMOTE_ADDR');
+        
+            
+        /// 비밀번호는 암호화 하여 입력해야한다!!!
+        // PHP의 암호와 방식 중 하나!
+        // password_hash(일반문자비밀번호, PASSWORD_DEFAULT)
+        // 같은 비번이라도 만들때 마다 다른문자로 생성된다!
+        // 따라서 일반적인 복호화는 불가능하다!
+
+        // 암호화된 비밀번호로 변환하여 다시 할당!
+        $passwd = password_hash($passwd, PASSWORD_DEFAULT);
+        // 암호화 변환된 문자는 60개의 문자이므로 DB 비번 컬럼의 
+        // 데이터 길이가 넉넉한지 반드시 확인해야한다!!!
+        // 만약 수정해야 한다면 DB에서 아래문장으로 쿼리를 날린다!
+        /*ALTER TABLE `board_free`
+        MODIFY COLUMN `passwd` varchar(100);*/
+        
+        echo "비번: $passwd";
         
         /*echo "
             이름: $name <br>
@@ -205,23 +228,24 @@
              '$subject','$content','',
              '$register_date','$client_ip')";
         
+        
         //echo $sql;
         
         # 쿼리문 날리기(실행), 변수에 결과담기
-        $res = $conn->query($sql);
+        //$res = $conn->query($sql);
         
         # 성공시 리스트페이지로 가기
-        if($res){
-            echo "
-                <script>
-                    alert('작성하신 글이 저장되었습니다!');
-                    location.replace('list.php');
-                </script>
-            ";
-        } ///////////// if /////////////////
-        else{
-            echo $conn->error;
-        } ///////////// else //////////////////
+//        if($res){
+//            echo "
+//                <script>
+//                    alert('작성하신 글이 저장되었습니다!');
+//                    location.replace('list.php');
+//                </script>
+//            ";
+//        } ///////////// if /////////////////
+//        else{
+//            echo $conn->error;
+//        } ///////////// else //////////////////
         
         
         
@@ -233,9 +257,10 @@
     
         
     ?>
-    
-    
-    
-    
+
+
+
+
 </body>
+
 </html>
