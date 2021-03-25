@@ -175,16 +175,31 @@
         $subject = $_POST["subject"];
         $content = $_POST["content"];
         
-        echo "
+        /*echo "
             이름: $name <br>
             비번: $passwd <br>
             이메일: $email <br>
             홈페이지: $homepage <br>
             제목: $subject <br>
             내용: $content <br>
-        ";
+        ";*/
         
+        # DB 연결하기
+        include "DBconn.inc";
         
+        # 쿼리문 만들기
+        $sql = "INSERT INTO `board_free`
+            (`gno`,`reply_depth`,`name`, 
+             `passwd`, `email`, `homepage`, 
+             `subject`, `content`, `html_tag`, 
+             `register_date`, `client_ip`) 
+            VALUES 
+            (1,'1','$name',
+             '$passwd','$email','$homepage',
+             '$subject','$content','',
+             20210325,'127.0.0.1')";
+        
+        echo $sql;
         
         
     } //// elseif문 : !strcmp($mode,"post") 일때 //////
