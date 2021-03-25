@@ -9,7 +9,21 @@
     <script src="js/smoothScroll20.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.scroll-reveal.js"></script>
     <script src="js/men.js"></script>
+    <style>
+        /*스크롤리빌 플러그인 class*/
+        .js-reveal {
+            opacity: 1;
+            transition: opacity .7s ease-in, 
+                margin-top .7s ease-out;
+        }
+
+        .js-reveal--hidden {
+            opacity: 0;
+            margin-top: 3em;
+        }
+    </style>
 </head>
 
 <body>
@@ -90,7 +104,7 @@
     <!--3.신상품영역-->
     <section class="newarr page">
         <h2 class="tit">NEW ARRIVAL</h2>
-        
+
     </section>
     <!--4.해변패션영역-->
     <section class="beach page">
