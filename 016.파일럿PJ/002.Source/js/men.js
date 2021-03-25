@@ -15,24 +15,28 @@ $(function () { /// jQB //////////////////
 
     /// 부드러운 스크롤 호출!(제이쿼리 아님!)
     startSS();
-    
+
     /// 스크롤 리빌 플러그인 호출!
-    $.fn.scrollReveal();  
-    
+    $.fn.scrollReveal();
+
     /// 스와이퍼 플러그인 호출!
     var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,//한 페이지당 슬라이드수
-      spaceBetween: 0, // 슬라이드 사이 간격
-      loop: true, // 무한루프 설정
-      pagination: {// 하단 블릿설정
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {// 양쪽이동버튼 설정
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });////////// swiper //////////////////
+        slidesPerView: 1, //한 페이지당 슬라이드수
+        spaceBetween: 0, // 슬라이드 사이 간격
+        loop: true, // 무한루프 설정
+        pagination: { // 하단 블릿설정
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: { // 양쪽이동버튼 설정
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    }); ////////// swiper //////////////////
 
 
     ////// 햄버거 버튼 클릭시 전체메뉴 보이기/숨기기 /////
