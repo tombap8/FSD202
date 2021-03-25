@@ -24,6 +24,7 @@ $(function () { /// jQB //////////////////
         slidesPerView: 1, //한 페이지당 슬라이드수
         spaceBetween: 0, // 슬라이드 사이 간격
         loop: true, // 무한루프 설정
+        speed: 1200,// 슬라이드속도
         pagination: { // 하단 블릿설정
             el: '.swiper-pagination',
             clickable: true,

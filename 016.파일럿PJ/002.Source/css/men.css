@@ -357,6 +357,13 @@ body{
     background: url(../images/banmen03.png) no-repeat center/cover;
 }
 
+/*스와이퍼 슬라이드 버튼 위치변경*/
+.swiper-button-prev{
+    left: 100px;
+}
+.swiper-button-next{
+    right: 100px;
+}
 
 /******* 남자 해변패션,스타일 영역 공통 class *****/
 /*컨텐츠페이지박스*/
