@@ -7,6 +7,7 @@
             windowWidth = $(window).width(),//윈도우가로값(예비용)
             initialScroll = $(window).scrollTop(),//스크롤위치값
             items = $('.js-reveal'),//등장액션대상 클래스요소
+            items2 = $('.js-reveal2'),//등장액션대상 클래스요소2
             scroll;//이동시 스크롤위치값
 
         //hide anything not in the viewport
@@ -16,6 +17,13 @@
         items.each(function(){
             if($(this).offset().top >= windowHeight){
                 $(this).addClass('js-reveal--hidden');
+            }
+        }); /////////// each 메서드 /////////////////// 
+        
+        // 다른 등장액션 셋팅!
+        items2.each(function(){
+            if($(this).offset().top >= windowHeight){
+                $(this).addClass('js-reveal2--hidden');
             }
         }); /////////// each 메서드 ///////////////////
         //hide anything not in the viewport
@@ -36,6 +44,13 @@
             items.each( function(){
                 if($(this).offset().top <= (scroll + windowHeight - gap)){
                     $(this).removeClass('js-reveal--hidden');
+                } ///////// if문 /////////////////////////
+            }); ///// each 메서드 ///////////////////////
+            
+            // 다른 등장액션!
+            items2.each( function(){
+                if($(this).offset().top <= (scroll + windowHeight - gap)){
+                    $(this).removeClass('js-reveal2--hidden');
                 } ///////// if문 /////////////////////////
             }); ///// each 메서드 ///////////////////////
             
