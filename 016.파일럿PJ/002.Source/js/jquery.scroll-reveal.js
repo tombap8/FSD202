@@ -17,7 +17,7 @@
             if($(this).offset().top >= windowHeight){
                 $(this).addClass('js-reveal--hidden');
             }
-        });
+        }); /////////// each 메서드 ///////////////////
         //hide anything not in the viewport
         
         // 등장위치를 조정하는 값(화면높이에서 뺄값)
@@ -36,11 +36,12 @@
             items.each( function(){
                 if($(this).offset().top <= (scroll + windowHeight - gap)){
                     $(this).removeClass('js-reveal--hidden');
-                }
-            });
-        });
+                } ///////// if문 /////////////////////////
+            }); ///// each 메서드 ///////////////////////
+            
+        });//////////// scroll메서드 //////////////////////
 
-        return this;
+        return this;//처리결과를 본 페이지로 돌려보낸다!
     };
 }( jQuery ));
 
