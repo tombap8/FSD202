@@ -175,6 +175,12 @@
         $subject = $_POST["subject"];
         $content = $_POST["content"];
         
+        # 별도 처리항목
+        // 현재날짜넣기: time() 메서드는 현재날짜를 구해온다!
+        $register_date = time();
+        // 아이피주소:getenv('REMOTE_ADDR') 접속자 아이피를 구해온다!
+        $client_ip = getenv('REMOTE_ADDR');
+        
         /*echo "
             이름: $name <br>
             비번: $passwd <br>
