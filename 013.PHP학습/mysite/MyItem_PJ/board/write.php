@@ -203,7 +203,7 @@
             (1,'1','$name',
              '$passwd','$email','$homepage',
              '$subject','$content','',
-             20210325,'127.0.0.1')";
+             '$register_date','$client_ip')";
         
         //echo $sql;
         
