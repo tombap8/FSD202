@@ -80,9 +80,8 @@ $(function () { /// jQB //////////////////
         // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
         $("html,body").stop().animate({
             scrollTop: pgpos + "px"
-        }, 1200, "easeInOutQuint", pageAction);
+        }, 1200, "easeInOutQuint");
         ///// animate /////
-        // 맨 끝에 콜백함수로 페이지액션함수를 호출한다!
         // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
         // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
 
