@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>게시판 리스트 페이지</title>
     <link rel="stylesheet" href="board.css">
 </head>
+
 <body>
-   
-   <!--게시판 리스트-->
+
+    <!--게시판 리스트-->
     <table class="dtbl">
         <caption>방명록 게시판</caption>
         <!--상단 컬럼명 표시영역-->
@@ -20,8 +22,8 @@
                 <th>조회수</th>
             </tr>
         </thead>
-        
-        
+
+
 
         <?php 
         
@@ -90,9 +92,9 @@
         
         ?>
 
-        
-        
-        
+
+
+
         <!--중앙 레코드 표시부분-->
         <tbody>
             <?php
@@ -160,8 +162,8 @@
         ?>
 
         </tbody>
-        
-        
+
+
         <?php
         ########## 페이징 링크 만들기 ###################
         
@@ -228,22 +230,37 @@
         
         ###############################################
         ?>
-        
-        
+
+
         <!--하단 페이징 표시부분-->
         <tfoot>
             <tr>
                 <td colspan="5">
                     <!--PHP에서 페이징을 구성하여 표시한다!-->
-                  <?=$pg?>
+                    <?=$pg?>
 
                 </td>
             </tr>
         </tfoot>
     </table>
-   
-   
-   
-    
+
+    <br>
+    <table class="dtbl btngrp">
+        <tr>
+            <td>
+                <button>
+                    <a href="list.php">글 목록</a>
+                </button>
+                <button class="wbtn">
+                    <a href="write.php">글 쓰기</a>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
 </body>
+
 </html>
