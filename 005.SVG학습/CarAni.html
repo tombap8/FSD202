@@ -151,6 +151,25 @@
         }
         
         
+        /*시작버튼*/
+        .sbtn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            height: 200px;
+            font: bold 70px Verdana;
+            color: blueviolet;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+        }
+        .sbtn:hover{
+            background-color: cyan;
+        }
+        
+        
         /********** 애니메이션 키프레임 ************/
         
         /*1. 자동차 선그리기*/
@@ -245,6 +264,12 @@
     
     <!--로고이미지-->
     <img src="images/volkswagen.jpg" alt="logo" id="logo">
+    
+    <!--효과음 오디오-->
+    <audio src="images/carsound.mp3"></audio>
+    
+    <!--시작버튼-->
+    <button class="sbtn">Start!</button>
     
     <!--
     [ SVG : path ]
