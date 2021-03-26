@@ -254,6 +254,15 @@
                 // 1. 버튼자신 사라지기
                 $(this).fadeOut(400);
                 
+                // 2. body에 class "on"넣기
+                $("body").addClass("on");
+                
+                // 3. 1초후 오디오 플레이하기
+                // 오디오 씽크를 맞추려고 1초후임!
+                setTimeout(function(){
+                    $(".aud").get(0).play();                    
+                },1000);/// setTimeout ///////
+                
                 
             });/////// click /////////////
             
@@ -283,7 +292,7 @@
     <img src="images/volkswagen.jpg" alt="logo" id="logo">
     
     <!--효과음 오디오-->
-    <audio src="images/carsound.mp3"></audio>
+    <audio src="images/carsound.mp3" class="aud"></audio>
     
     <!--시작버튼-->
     <button class="sbtn">Start!</button>
