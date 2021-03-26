@@ -103,6 +103,15 @@
                 rot 2s linear 17s infinite;
         }
         
+        /*로고*/
+        #logo{
+            position: absolute;
+            top: 50%;
+            left: 150%;/*오른쪽 바깥에 나가있음!*/
+            transform: translate(-50%,-50%);
+            width: 25%;
+        }
+        
         
         
         
@@ -165,6 +174,14 @@
             to{
                 transform: rotate(-360deg);
                 /*-360도는 반시계반향 한바퀴*/
+            }
+        }/*키프레임*/
+        
+        
+        /*9. 로고 들어오기*/
+        @keyframes comelogo{
+            to{
+                left: 50%;
             }
         }/*키프레임*/
         
