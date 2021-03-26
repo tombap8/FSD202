@@ -120,11 +120,17 @@
         .bw{
             bottom: 240px;
             right: 272px;
+        }
+        
+                
+        /*뒷바퀴 애니메이션*/
+        body.on .bw{            
             
             /*애니메이션:이시이지반방마*/
             animation: showcar 2s ease-in-out 12s forwards,
                 brrBW .03s linear 14s infinite alternate,
                 rot 2s linear 17s infinite;
+            
         }
         
         /*로고*/
@@ -134,9 +140,14 @@
             left: 150%;/*오른쪽 바깥에 나가있음!*/
             transform: translate(-50%,-50%);
             width: 25%;
+        }        
+                
+        /*로고 애니메이션*/
+        body.on #logo{
             
             /*애니메이션: 이시이지반방마*/
             animation: comelogo 4s ease-in-out 17s forwards;
+            
         }
         
         
