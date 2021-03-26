@@ -25,35 +25,67 @@
         $read_uno = $_GET["read_uno"];
     } /////// if ////////////////
     
+    // 1. DB연결 문자열 불러오기(맨위에서 한번만 해준다!!!)
+    include "DBconn.inc";
     
+    
+    ##################################################
+    #### 만약 $mode가 "read"이면 아래쪽 읽기테이블 출력 ###
+    ##################################################
+    if(!strcmp($mode,"read")){
+        
+        # 1. uno해당 레코드 읽어오기 위한 쿼리문 만들기
+        $sql = "SELECT * FROM `board_free` 
+                WHERE `uno`= $read_uno";
+        
+        # 2. 쿼리날리기(실행!)
+        $res = $conn->query($sql);
+        
+        # 3. 결과가져오기
+        $row = $res->fetch_assoc();
+        
+        # 4. DB 컬럼 값 변수처리
+        // (1) 글쓴이
+        $name = $row["name"];
+        // (2) 홈페이지
+        $homepage = $row["homepage"];
+        // (4) 글 제목
+        $subject = $row["subject"];
+        // (5) 글 내용
+        $content = $row["content"];
+        
+        
     ?>
-    
+
     <table class="dtblview">
         <tr>
             <td>글쓴이</td>
-            <td></td>
+            <td><?=$name?></td>
         </tr>
         <tr>
             <td>홈페이지</td>
-            <td></td>
+            <td><?=$homepage?></td>
         </tr>
         <tr>
             <td>글 제목</td>
-            <td></td>
+            <td><?=$subject?></td>
         </tr>
         <tr>
             <td>글 내용</td>
-            <td></td>
+            <td><?=$content?></td>
         </tr>
     </table>
+
+    <?php
+        
+        
+    } /////// if : $mode가 "read"인 경우 ///////////////
+    ///////////////////////////////////////////////////
     
     
     
-    
-    
-    
-    
-    
+    ?>
+
 
     <!--게시판 리스트-->
     <table class="dtbl">
@@ -90,7 +122,7 @@
         
         
         // 1. DB연결 문자열 불러오기
-        include "DBconn.inc";
+        // -> 상단에서 한번 DB연결함!(읽기모드때문에)
         
         /// 2. 전체 테이블 데이터 불러오는 쿼리문 만들기
         $sql = "SELECT * FROM `board_free` ORDER BY `uno` DESC ".
