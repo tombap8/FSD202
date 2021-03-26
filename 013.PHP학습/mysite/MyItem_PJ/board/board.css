@@ -111,11 +111,19 @@
     font-family: "맑은 고딕", "굴림";
     font-size: 14px;
     border-collapse: collapse;
-    width: 600px;
+    width: 750px;
     margin: 20px auto;
     border-top: 2px solid #999;
     /*두종색*/
     border-bottom: 2px solid #999;
+}
+/*첫째열*/
+.dtblview td:first-child {
+    width: 100px;
+}
+/*둘째열*/
+.dtblview td:last-child {
+    width: 650px;
 }
 
 .dtblview td {
