@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <title>SVG - Car Animation</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            overflow: hidden;
+        }
+        
+        /*자동차박스*/
+        #mypath{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /*정중앙이동*/
+            width: 1359px;
+            height: 791px;
+            outline: 1px solid red;
+        }
+        /*자동차이미지*/
+        #car {
+            position: absolute;
+            top: 0;
+            opacity: 1;
+        }
+        /*svg선*/
+        .svg_path{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        /*path요소*/
+        .svg_path > path{
+            fill: transparent;
+            /*채우기(기본:검정) 투명처리*/
+            stroke: #000;
+            /*선색*/
+            stroke-width: 5px;
+            
+        }
     
     </style>
 </head>
