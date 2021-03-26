@@ -8,6 +8,25 @@
 </head>
 
 <body>
+    <?php
+    
+    # 읽기모드 여부(값이 "read"이면 읽기모드임)
+    $mode = "";
+    
+    # 글번호(DB레코드 고유번호)
+    $read_uno = "";
+    
+    # 만약 url에 전달값 키가 있다면 읽어서 위의 변수에 담는다!
+    if(isset($_GET["mode"])){
+        $mode = $_GET["mode"];
+    } /////// if ////////////////
+    
+    if(isset($_GET["read_uno"])){
+        $read_uno = $_GET["read_uno"];
+    } /////// if ////////////////
+    
+    
+    ?>
 
     <!--게시판 리스트-->
     <table class="dtbl">
