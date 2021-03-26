@@ -150,7 +150,7 @@
                         "<td>$lno</td>".
                         //// 글보기는 리스트페이지다
                         "<td>
-                            <a href='list.php?no=$uno'>$subject</a>
+                            <a href='list.php?no=$no&mode=read&read_uno=$uno'>$subject</a>
                         </td>".
                         "<td>$name</td>".
                         "<td>$register_date</td>".

@@ -175,6 +175,7 @@
         $homepage = $_POST["homepage"];
         $subject = $_POST["subject"];
         $content = $_POST["content"];
+        $html_tag = $_POST["html_tag"];//추가(체크박스)
         
         # 별도 처리항목
         // 현재날짜넣기: time() 메서드는 현재날짜를 구해온다!
@@ -202,7 +203,7 @@
         /*ALTER TABLE `board_free`
         MODIFY COLUMN `passwd` varchar(100);*/
         
-        echo "비번: $passwd";
+        //echo "비번: $passwd";
         
         /*echo "
             이름: $name <br>
@@ -225,27 +226,27 @@
             VALUES 
             (1,'1','$name',
              '$passwd','$email','$homepage',
-             '$subject','$content','',
+             '$subject','$content','$html_tag',
              '$register_date','$client_ip')";
         
         
         //echo $sql;
         
         # 쿼리문 날리기(실행), 변수에 결과담기
-        //$res = $conn->query($sql);
+        $res = $conn->query($sql);
         
         # 성공시 리스트페이지로 가기
-//        if($res){
-//            echo "
-//                <script>
-//                    alert('작성하신 글이 저장되었습니다!');
-//                    location.replace('list.php');
-//                </script>
-//            ";
-//        } ///////////// if /////////////////
-//        else{
-//            echo $conn->error;
-//        } ///////////// else //////////////////
+        if($res){
+            echo "
+                <script>
+                    alert('작성하신 글이 저장되었습니다!');
+                    location.replace('list.php');
+                </script>
+            ";
+        } ///////////// if /////////////////
+        else{
+            echo $conn->error;
+        } ///////////// else //////////////////
         
         
         
