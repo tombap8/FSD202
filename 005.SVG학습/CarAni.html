@@ -29,7 +29,7 @@
         #car {
             position: absolute;
             top: 0;
-            opacity: 1;
+            opacity: 0;/*처음에 투명*/
         }
         /*svg선*/
         .svg_path{
@@ -45,8 +45,33 @@
             stroke: #000;
             /*선색*/
             stroke-width: 5px;
+            /*선두께*/
+            stroke-linecap: round;
+            /*선끝둥글게*/
+            
+            /*라인애니에서 중요한 부분!*/
+            stroke-dasharray: 240%;
+            /*
+                선공백 셋팅에서 50%를 주고 몇조각인가?
+                5조각이므로 50%*5=250%에서 부터 조정함!
+            */
+            stroke-dashoffset: 240%;
+            /*시작점밀기: 공백부터시작!*/
+            
+            /*애니메이션:이시이지반방마*/
+            animation: drawing 10s linear 2s forwards;
             
         }
+        
+        /* 애니메이션 키프레임 */
+        
+        /*1. 자동차 선그리기*/
+        @keyframes drawing{
+            to{
+                stroke-dashoffset: 0;
+            }
+        }/*키프레임*/
+        
     
     </style>
 </head>
