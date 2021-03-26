@@ -27,6 +27,33 @@
     
     
     ?>
+    
+    <table class="dtblview">
+        <tr>
+            <td>글쓴이</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>홈페이지</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>글 제목</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>글 내용</td>
+            <td></td>
+        </tr>
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
 
     <!--게시판 리스트-->
     <table class="dtbl">
