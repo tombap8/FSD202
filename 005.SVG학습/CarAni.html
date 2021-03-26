@@ -24,20 +24,33 @@
             width: 1359px;
             height: 791px;
             /*outline: 1px solid red;*/
+        }
+        
+        /*자동차박스 애니메이션*/
+        body.on #mypath{
             
             /*애니메이션: 이시이지반방마*/
             animation: gocar 4s ease-in-out 17s forwards;
+            
         }
+        
         /*자동차이미지*/
         #car {
             position: absolute;
             top: 0;
             opacity: 0;/*처음에 투명*/
+        }
+        
+        /*자동차이미지 애니메이션*/
+        body.on #car{
             
-            /*애니메이션:이시이지반방마*/
+            /*애니메이션: 이시이지반방마*/
             animation: showcar 2s ease-in-out 12s forwards,
                 brrcar .03s linear 14s infinite alternate;
+            
         }
+                
+        
         /*svg선*/
         .svg_path{
             position: absolute;
@@ -65,6 +78,11 @@
             stroke-dashoffset: 240%;
             /*시작점밀기: 공백부터시작!*/
             
+        }      
+        
+        /*path요소 애니메이션*/
+        body.on .svg_path > path{
+            
             /*애니메이션:이시이지반방마*/
             animation: drawing 10s linear 2s forwards,
                 hideline 2s ease-in-out 12s forwards;
@@ -86,12 +104,18 @@
         .fw{
             bottom: 235px;
             left: 250px;
+        }
+                
+        /*앞바퀴 애니메이션*/
+        body.on .fw{
             
             /*애니메이션:이시이지반방마*/
             animation: showcar 2s ease-in-out 12s forwards,
                 brrFW .03s linear 14s infinite alternate,
                 rot 2s linear 17s infinite;
+            
         }
+        
         /*뒷바퀴*/
         .bw{
             bottom: 240px;
