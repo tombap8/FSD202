@@ -68,6 +68,30 @@
             
         }
         
+        /*바퀴공통*/
+        .ba{
+            position: absolute;
+            width: 133px;
+            height: 133px;
+            border-radius: 50%;
+            background: url(images/car.jpg) no-repeat;
+            background-position: -249px -424px;
+            outline: 2px solid lime;
+        }
+        /*앞바퀴*/
+        .fw{
+            bottom: 235px;
+            left: 250px;
+        }
+        /*뒷바퀴*/
+        .bw{
+            bottom: 240px;
+            right: 272px;
+        }
+        
+        
+        
+        
         /* 애니메이션 키프레임 */
         
         /*1. 자동차 선그리기*/
@@ -113,6 +137,11 @@
         <svg class="svg_path">
             <path d="M117,512c0,0-11-53,0-75c0,0,22-14,25-14c0,0,13-60,97-79c0,0,76-22,189-33c0,0,119-91,159-97c0,0,109-38,321-7c0,0,76,13,208,96c0,0,56,37,84,88c0,0,30,18,30,29	c0,0,6,52,0,59c0,0-13,29-41,33l-80,6c0,0-21,56-82,57c0,0-68,12-96-53l-525,8c0,0-12,46-87,52c0,0-51,7-85-50l-94-2L117,512z"></path>
         </svg>
+        
+        <!--자동차 앞바퀴-->
+        <div class="ba fw"></div>
+        <!--자동차 뒷바퀴-->
+        <div class="ba bw"></div>
         
     </div>
     
