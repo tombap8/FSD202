@@ -75,7 +75,21 @@
             <td><?=$content?></td>
         </tr>
     </table>
-
+    <br>
+    <table class="dtbl btngrp">
+        <tr>
+            <td width="375">
+                <button><a href="list.php">글 목록</a></button>
+                <button class="wbtn"><a href="write.php?mode=form">글 쓰기</a></button>
+            </td>
+            <td width="375" align="right">
+                <button class="wbtn"><a href="modify.php?mode=form&modify_uno=9">글 수정</a></button>
+                <button class="wbtn"><a href="delete.php?mode=form&delete_uno=9">글 삭제</a></button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    
     <?php
         
         
