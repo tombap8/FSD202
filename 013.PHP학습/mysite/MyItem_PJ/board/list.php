@@ -53,6 +53,37 @@
         $subject = $row["subject"];
         // (5) 글 내용
         $content = $row["content"];
+
+        # 문자열 처리하기 PHP 메서드
+        # (1) htmlspecialchars(문자열)
+        # - 전달된 문자열에 특정한 특수문자를 html에서 
+        #   에러가 없도록 변환하는 메서드
+        # - 이점: 해커들로 부터 악성코드 공격을 어느정도
+        #  방지할 수 있다. 
+        #   XSS(크로스 사이드 스크립트) 공격방지 
+        # - 변환되는 특수문자:
+        #   &(앰퍼센드) -> &amp;
+        #   ""(겹따옴표) -> &quot;
+        #   ''(홑따옴표) -> &#039;
+        #   <(미만) -> &lt;
+        #   >(초과) -> &gt;
+
+        # (2) stripslashes(문자열)
+        # - DB에 쓰면 안되는 홑따옴표 같은 문자를 역슬래쉬로 
+        #   변환 한 것을 반대로 풀어줌!
+
+        # (3) addslashes(문자열) 
+        # - DB입력시 사용불가 문자를 역슬래쉬로 
+        #   변환해주는 메서드
+        # - stripslashes메서드의 반대격
+
+        # (4) nl2br(문자열)
+        # - 문자열의 모든 줄바꿈표시를 html 줄바꿈 태그인 <br>
+        #   태그로 변환해 주는 메서드
+
+        # 적용하기
+        $subject = htmlspecialchars($subject);
+        $subject = stripslashes($subject);
         
         
     ?>
