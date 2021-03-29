@@ -160,6 +160,15 @@ $(function () { /// jQB //////////////////
     // 신상품 박스 이동함수 호출 (인터발)
     newcall = setInterval(flowImg,20);
 
+    // 신상품 박스에 마우스 오버시 이동멈춤/ 아웃시 다시이동
+    $(".flowImg").hover(
+        function(){ // over
+            clearInterval(newcall);//인터발지움
+        },
+        function(){ // out
+            newcall = setInterval(flowImg,20);
+        });///// hover ///////////////
+
 }); ////////// jQB //////////////////////
 
 // 신상품 박스 이동값 변수
