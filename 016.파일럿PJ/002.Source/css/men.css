@@ -486,6 +486,8 @@ ul.pgc>li.txtc h3 a {
     height: 100%;
     border: 2px solid #fff;
     transform: scaleX(.94) scaleY(.85);
+    box-sizing: border-box;
+    /* 보더때문에 늘어나지 않게 처리! */
 }
 
 /* 가상요소로 화살표만들기 */
