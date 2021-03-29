@@ -41,7 +41,7 @@ $(function () { /// jQB //////////////////
         slidesPerView: 1, //한 페이지당 슬라이드수
         spaceBetween: 0, // 슬라이드 사이 간격
         loop: true, // 무한루프 설정
-        speed: 1200,// 슬라이드속도
+        speed: 1200, // 슬라이드속도
         pagination: { // 하단 블릿설정
             el: '.swiper-pagination',
             clickable: true,
@@ -158,11 +158,11 @@ $(function () { /// jQB //////////////////
     let newcall;
 
     // 신상품 박스 이동함수 호출 (인터발)
-    newcall = setInterval(flowImg,20);
+    newcall = setInterval(flowImg, 20);
 
     // 신상품 박스에 마우스 오버시 이동멈춤/ 아웃시 다시이동
     $(".flowImg li").hover(
-        function(){ // over
+        function () { // over
 
             // 1. 인터발지움
             clearInterval(newcall);
@@ -175,10 +175,10 @@ $(function () { /// jQB //////////////////
             // 3.클래스 값으로 신상 객체의 값을 가져옴!
             ssi = sinsang[ssi];
 
-            console.log("신상정보:"+ssi);
+            console.log("신상정보:" + ssi);
 
             // 4.신상정보 구분자(^)를 줄바꿈기호(<br>)로 바꾸기
-            ssi = ssi.replace(/\^/g,"<br>");
+            ssi = ssi.replace(/\^/g, "<br>");
             // replace(정규식바꿀값,바뀔값)
             // 정규식으로 쓰면 모두 바꿀 수 있다
             // 정규식 : /값/g (g는 모두찾는 flag-global의 뜻)
@@ -191,32 +191,32 @@ $(function () { /// jQB //////////////////
             $(".ibox").html(ssi);
 
         },
-        function(){ // out
+        function () { // out
 
             // 1. 인터발 재실행
-            newcall = setInterval(flowImg,20);
+            newcall = setInterval(flowImg, 20);
 
             // 2.신상정보박스 하나만 남기기위해 지우기
             $(".ibox").remove();
 
-        });///// hover ///////////////
+        }); ///// hover ///////////////
 
-        // 신상품 클릭시 상세페이지 이동하기 ///
-        $(".flowImg a").click(function(e){
-            //기본이동막기
-            e.preventDefault();
+    // 신상품 클릭시 상세페이지 이동하기 ///
+    $(".flowImg a").click(function (e) {
+        //기본이동막기
+        e.preventDefault();
 
-        });///////// click //////////////////
+    }); ///////// click //////////////////
 
 }); ////////// jQB //////////////////////
 
 // 신상품 박스 이동값 변수
-let fnum = 0;//left값
+let fnum = 0; //left값
 
 /*/////////////////////////////////////////////
     함수명: flowImg
     기능: 이미지를 왼쪽으로 계속 이동하여 흐르게함
-*//////////////////////////////////////////////
+*/ /////////////////////////////////////////////
 function flowImg() {
 
     // 1. left값 1씩증가!
@@ -226,12 +226,14 @@ function flowImg() {
     // 대상: .flowImg
     let flowImg = $(".flowImg");
     // 조건: 상품하나당 크기(295px)를 넘으면 실행
-    if(fnum > 295){  
+    if (fnum > 295) {
         // 1. 맨앞li 맨뒤로 이동      
         flowImg
-        .append(flowImg.find("li").first())
-        // 2. left값 초기화!
-        .css({left:"0"});
+            .append(flowImg.find("li").first())
+            // 2. left값 초기화!
+            .css({
+                left: "0"
+            });
         // 3. fnum값 초기화!
         fnum = 0;
 
@@ -242,7 +244,7 @@ function flowImg() {
     // 3. left값 대상에 적용하기
     flowImg.css({
         left: -fnum + "px"
-    });////// css //////////////
+    }); ////// css //////////////
 
 } ////////// flowImg 함수 //////////////////////////
 ///////////////////////////////////////////////////
