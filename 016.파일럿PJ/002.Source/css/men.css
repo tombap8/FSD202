@@ -449,8 +449,22 @@ ul.pgc > li.txtc h3 a {
     margin-top: 150px;
 }
 .flowImg li{
+    position: relative;
+    /* 부모자격 */
     width: 295px;
     height: 295px;
+}
+
+/* 신상정보박스 */
+.ibox{
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    font: 14px/24px 'Ubuntu';
+    background-color: #101629;
+    color:#fff;
+    padding: 20px 0;
 }
 
 /********4.해변패션영역********/
