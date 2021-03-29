@@ -163,17 +163,25 @@ $(function () { /// jQB //////////////////
     // 신상품 박스에 마우스 오버시 이동멈춤/ 아웃시 다시이동
     $(".flowImg li").hover(
         function(){ // over
-            clearInterval(newcall);//인터발지움
 
-            // 마우스 오버시에 li의 class값 읽어오기
+            // 1. 인터발지움
+            clearInterval(newcall);
+
+            // 2. 마우스 오버시에 li의 class값 읽어오기
             // class명과 같은 이름의 객체값에서 신상정보 가져옴!
             let ssi = $(this).attr("class");
             // this는 오버된 li자신!
 
-            // 클래스 값으로 신상 객체의 값을 가져옴!
+            // 3.클래스 값으로 신상 객체의 값을 가져옴!
             ssi = sinsang[ssi];
 
-            console.log("신상정보:"+ssi)
+            console.log("신상정보:"+ssi);
+
+            // 4.신상정보 박스 만들고 나타나기
+            $(this).append('<div class="ibox"></div>');
+
+            // 5.신상정보박스에 신상정보넣기
+            $(".ibox").html(ssi);
 
         },
         function(){ // out
