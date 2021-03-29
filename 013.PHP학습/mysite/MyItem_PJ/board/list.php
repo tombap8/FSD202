@@ -53,6 +53,8 @@
         $subject = $row["subject"];
         // (5) 글 내용
         $content = $row["content"];
+        // (6) html사용 여부(체크시 값이 "on"임)
+        $html_tag = $row["html_tag"];
 
         # 문자열 처리하기 PHP 메서드
         # (1) htmlspecialchars(문자열)
@@ -84,6 +86,22 @@
         # 적용하기
         $subject = htmlspecialchars($subject);
         $subject = stripslashes($subject);
+
+        # 글 내용에는 무엇을 적용해야하나?
+        #-> 글 제목과 같이 htmlspecialchars,
+        #   stripslashes를 동일하게 적용한다
+        # 그리고 br태그 변환도 해준다!
+        # 단, 대상은 html이 체크되지 않은 것만!!!
+
+        # 글 내용 중 html에 체크되지 않은 것만 적용
+        # strcmp(변수,값) 변수와 그 값이 다르면 true
+        if(strcmp($html_tag,"on")){
+            
+            $content = htmlspecialchars($content);
+            $content = stripslashes($content);
+            $content = nl2br($content);
+
+        } ///////// if문 /////////////////////////
         
         
     ?>
