@@ -188,7 +188,13 @@ $(function () { /// jQB //////////////////
             $(this).append('<div class="ibox"></div>');
 
             // 6.신상정보박스에 신상정보넣기
-            $(".ibox").html(ssi);
+            $(".ibox").html(ssi)
+
+            // 7.신상정보박스 애니메이션 등장하기
+            .animate({
+                top: "105%",
+                opacity: 1
+            }, 300, "easeOutCirc");
 
         },
         function () { // out
