@@ -443,6 +443,8 @@ ul.pgc > li.txtc h3 a {
 
 /* 신상품 박스 */
 .flowImg{
+    position: relative;
+    left: 0;/* 이동기준값 */
     display: flex;
     margin-top: 150px;
 }
