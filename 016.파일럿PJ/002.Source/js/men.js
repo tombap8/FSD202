@@ -174,10 +174,26 @@ function flowImg() {
     // 1. left값 1씩증가!
     fnum++;
 
-    // 2. left값 대상에 적용하기
+    // 2. li하나당 크기가 되면 잘라서 뒤로 보내기
     // 대상: .flowImg
-    $(".flowImg").css({
-        left: fnum + "px"
+    let flowImg = $(".flowImg");
+    // 조건: 상품하나당 크기(295px)를 넘으면 실행
+    if(fnum > 295){  
+        // 1. 맨앞li 맨뒤로 이동      
+        flowImg
+        .append(flowImg.find("li").first())
+        // 2. left값 초기화!
+        .css({left:"0"});
+        // 3. fnum값 초기화!
+        fnum = 0;
+
+    } ///// if문 //////////////
+
+
+
+    // 3. left값 대상에 적용하기
+    flowImg.css({
+        left: -fnum + "px"
     });////// css //////////////
 
 } ////////// flowImg 함수 //////////////////////////
