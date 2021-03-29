@@ -169,12 +169,19 @@ $(function () { /// jQB //////////////////
             // class명과 같은 이름의 객체값에서 신상정보 가져옴!
             let ssi = $(this).attr("class");
             // this는 오버된 li자신!
-            console.log("클래스명:"+ssi)
+            console.log("신상정보:"+ssi)
 
         },
         function(){ // out
             newcall = setInterval(flowImg,20);
         });///// hover ///////////////
+
+        // 신상품 클릭시 상세페이지 이동하기 ///
+        $(".flowImg a").click(function(e){
+            //기본이동막기
+            e.preventDefault();
+            
+        });///////// click //////////////////
 
 }); ////////// jQB //////////////////////
 
