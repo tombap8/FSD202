@@ -430,7 +430,7 @@ ul.pgc > li.txtc h3 a {
 
 /*********3.신상품영역*********/
 .newarr {
-    background: #8682ff;
+    /* background: #8682ff; */
 }
 /*타이틀*/
 .tit{    
@@ -439,6 +439,16 @@ ul.pgc > li.txtc h3 a {
     margin: 0 auto;
     margin-top: 100px;
     
+}
+
+/* 신상품 박스 */
+.flowImg{
+    display: flex;
+    margin-top: 150px;
+}
+.flowImg li{
+    width: 295px;
+    height: 295px;
 }
 
 /********4.해변패션영역********/
