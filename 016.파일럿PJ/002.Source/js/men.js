@@ -161,9 +161,16 @@ $(function () { /// jQB //////////////////
     newcall = setInterval(flowImg,20);
 
     // 신상품 박스에 마우스 오버시 이동멈춤/ 아웃시 다시이동
-    $(".flowImg").hover(
+    $(".flowImg li").hover(
         function(){ // over
             clearInterval(newcall);//인터발지움
+
+            // 마우스 오버시에 li의 class값 읽어오기
+            // class명과 같은 이름의 객체값에서 신상정보 가져옴!
+            let ssi = $(this).attr("class");
+            // this는 오버된 li자신!
+            console.log("클래스명:"+ssi)
+
         },
         function(){ // out
             newcall = setInterval(flowImg,20);
