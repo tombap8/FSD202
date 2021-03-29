@@ -471,6 +471,8 @@ ul.pgc>li.txtc h3 a {
     background-color: #101629;
     color: #fff;
     padding: 20px 0;
+    opacity: 0;
+    /* 처음에 투명 */
 }
 
 /* 가상요소로 안쪽 테두리 */
@@ -487,7 +489,7 @@ ul.pgc>li.txtc h3 a {
 }
 
 /* 가상요소로 화살표만들기 */
-.ibox::after{
+.ibox::after {
     content: '';
     display: block;
     position: absolute;
@@ -499,7 +501,8 @@ ul.pgc>li.txtc h3 a {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 20px solid #101629;/* 삼각형 */
+    border-bottom: 20px solid #101629;
+    /* 삼각형 */
     /* border-top: 20px solid #101629;역삼각형 */
 
 }
