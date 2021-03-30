@@ -32,14 +32,14 @@
         jQuery(document).ready(function($) {
             //Demo1
             $("#image1")
-                .css({
+                /* .css({
                     marginLeft: "350px"
-                })
+                }) */
                 .addimagezoom({
                     zoomrange: [3, 8], //확대범위[최소비율, 최대비율]
                     largeimage: "images/hayden.jpg", //확대로볼이미지
                     magnifiersize: [300, 335], //확대화면 크기[가로,세로]
-                    magnifierpos: "left", //확대화면 위치(공간확보 필수)
+                    magnifierpos: "right", //확대화면 위치(공간확보 필수)
                     cursorshade: true, //사진위확대범위 표시자(true보임)
                     cursorshadecolor: "#fff", //확대범위표시 색상
                     cursorshadeopacity: 0.4 //확대범위 투명도
