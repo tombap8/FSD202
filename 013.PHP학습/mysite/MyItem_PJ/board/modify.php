@@ -134,9 +134,9 @@
 
     ?>
 
-    <form name="write_form" method="post" action="write.php?mode=post">
+    <form name="modify_form" method="post" action="modify.php?mode=post&modify_uno=<?=$modify_uno?>">
         <table class="dtblview">
-            <caption>방명록 게시판</caption>
+            <caption>방명록 게시판 - 글 수정</caption>
             <tr>
                 <td width="100">
                     이름
