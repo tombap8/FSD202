@@ -80,6 +80,9 @@ jQuery(document).ready(function ($) {
 
     } ////////// if /////////////////////
 
+    // 썸네일 이미지 html코드를 실제 적용요소에 넣기!
+    $(".thumbs").html(hcode);
+
 
 
 
