@@ -47,7 +47,7 @@
             // if문에 걸려서 return 으로 돌아나가지 않는다면
             // 아래있는 submit() 메서드가 실행된다!
             // 폼요소이름.submit()
-            write_form.submit();
+            modify_form.submit();
             // 서브밋이 실행되면 form요소의 action속성값에 
             // 셋팅된 페이지로 이동한다.
             // 여기서는 "write.php?mode=post"
@@ -205,15 +205,99 @@
     } // if문 끝: !strcmp($mode,"form") 일때 ////////
     ////////////////////////////////////////////////
     
-    ###############################################
-    ### $mode가 "post"일때 : DB에 값을 입력할 것임! ###
-    ###############################################
+    #####################################################
+    ### $mode가 "post"일때 : DB에 값을 업데이트할 것임! ###
+    #####################################################
     elseif(!strcmp($mode,"post")){
+
+        # 업데이트 가능한 여부는 비번확인이다!!!
+
+        # 어떻게 비밀번호를 비교할 것인가???
+        # DB에 입력된 비번은 해시암호화된 비번이므로
+        # 단순 문자 비교를 하면 절대로 같을 수 없다!!!
+
+        # php 에서 해시암호화 문자 비교 메서드가 있음!
+        # password_verify(입력된비번, DB해시비번)
+        # 결과: 만약 같으면 true, 같지않으면 false를 리턴해준다!
+        # -> 결과를 값으로 찍으면 true일때 1이 나오고, false일때 null값을 준다!
+        # -> 이것을 if문으로 처리할때 
+        #   1은 true로 해석되고 
+        #   null값은 false로 해석된다!
+
+        // 쿼리문 만들기
+        $sql = "SELECT `passwd` FROM `board_free` 
+                WHERE `uno`= $modify_uno";
+
+        //echo " / 쿼리문 : ".$sql;
+
+        # 쿼리 날리기
+        # $conn->query(쿼리문)
+        $res = $conn->query($sql);
+
+        # 1. 레코드 유무 판별
+        # $res->num_rows 결과레코드 개수를 담은 속성
+        $cnt = $res->num_rows;
+
+        //echo " / 레코드개수: $cnt";
+
+        # 2.레코드 개수가 1인 경우 비밀번호 비교하기
+        if($cnt){
+            
+            # $res->fetch_assoc() : 
+            # 결과집합의 레코드를 이름으로 가져온다!
+            $row = $res->fetch_assoc();
+
+            //echo " / DB비밀번호 : ".$row["mpw"];
+            
+            # 비번비교하기
+            # password_verify(입력된비번, DB해시비번)
+            
+            //echo " / 비번검증 : ".
+            //    password_verify($mpw,$row["mpw"]);
+            
+            # 비번검증
+            $allow = password_verify($mpw,$row["mpw"]);
+            ###################################
+            # 비번검증 결과 통과시 세션을 시작하고 #
+            # 세션변수에 개인정보할당
+            if($allow){
+                
+                # 세션은 서버에 기록되는 사용자변수!
+                # 세션연결하기 : 사용자의 로그인 상태를 기록함!
+                session_start();// 세션이 시작됨!
+                # DB에서 가져온 값 세션변수에 할당하기!
+                # $_SESSION[변수명] - 서버세션변수에 기록!
+                
+                # 사용자 아이디
+                $_SESSION["mid"] = $mid;
+                # 사용자 이름
+                $_SESSION["name"] = $row["name"];
+                # 사용자 권한
+                $_SESSION["auth"] = $row["auth"];
+                
+                # 성공시
+                echo "ok";
+                
+            } /////// if //////////////////////
+            
+            # 비밀번호 불통과시 ##################
+            else{
+                
+                echo "again";
+                
+            } /////// else /////////////////////
+            
+            
+            
+        } ////////// if문 //////////////////////
+
+
+
         
         # post방식으로 전달 받은 값 확인하기!
         # $_POST[폼요소이름]
         $name = $_POST["name"];
-        $passwd = $_POST["passwd"];
+        //$passwd = $_POST["passwd"];
         $email = $_POST["email"];
         $homepage = $_POST["homepage"];
         $subject = $_POST["subject"];
@@ -257,8 +341,8 @@
             내용: $content <br>
         ";*/
         
-        # DB 연결하기
-        include "DBconn.inc";
+        # DB 연결하기 - 위에서 연결한번 하였음!
+        //include "DBconn.inc";//주석!
         
         # 쿼리문 만들기
         $sql = "INSERT INTO `board_free`
