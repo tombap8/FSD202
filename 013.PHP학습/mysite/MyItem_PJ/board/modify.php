@@ -264,106 +264,65 @@
             # 비번검증 결과 통과시 세션을 시작하고 #
             # 세션변수에 개인정보할당
             if($allow){
-                echo "업데이트 허용!";
+                // echo "업데이트 허용!";
+
+                # post방식으로 전달 받은 값 확인하기!
+                # $_POST[폼요소이름]
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $homepage = $_POST["homepage"];
+                $subject = $_POST["subject"];
+                $content = $_POST["content"];
+                $html_tag = $_POST["html_tag"];//추가(체크박스)
+                
+                
+                # 쿼리문 만들기
+                $sql = "
+                UPDATE `board_free`
+                SET `name`='$name', `email`='$email', `homepage`='$homepage', `subject`='$subject', `content`='$content', `html_tag`='$html_tag'
+                ";
+                
+                echo $sql;
+                
+                # 쿼리문 날리기(실행), 변수에 결과담기
+                //$res = $conn->query($sql);
+                
+                # 성공시 리스트페이지로 가기
+                // if($res){
+                //     echo "
+                //         <script>
+                //             alert('작성하신 글이 저장되었습니다!');
+                //             location.replace('list.php');
+                //         </script>
+                //     ";
+                // } ///////////// if /////////////////
+                // else{
+                //     echo $conn->error;
+                // } ///////////// else //////////////////
+                
+                
+                
+
+
+
             } /////// if //////////////////////
             
             # 비밀번호 불통과시 ##################
             else{
                 
-                echo "업데이트 불가";
+                echo "
+                    <script>
+                        alert('비밀번호가 일치하지 않습니다!');
+                        history.back();
+                    </script>
+                ";
                 
             } /////// else /////////////////////
             
             
             
         } ////////// if문 //////////////////////
-
-
-
-        
-        # post방식으로 전달 받은 값 확인하기!
-        # $_POST[폼요소이름]
-        $name = $_POST["name"];
-        //$passwd = $_POST["passwd"];
-        $email = $_POST["email"];
-        $homepage = $_POST["homepage"];
-        $subject = $_POST["subject"];
-        $content = $_POST["content"];
-        $html_tag = $_POST["html_tag"];//추가(체크박스)
-        
-        # 별도 처리항목
-        // 현재날짜넣기: time() 메서드는 현재날짜를 구해온다!
-        $register_date = time();
-        // 날짜형식의 값을 DB에 숫자형의 컬럼에 넣으면
-        // 날짜를 숫자로 변환하여 입력된다!
-        // 따라서 list같은 곳에서 날짜를 화면에 찍으려면 
-        // 날짜형식 출력변환을 해 줘야한다!
-        
-        // 아이피주소:getenv('REMOTE_ADDR') 접속자 아이피를 구해온다!
-        $client_ip = getenv('REMOTE_ADDR');
-        
-            
-        /// 비밀번호는 암호화 하여 입력해야한다!!!
-        // PHP의 암호와 방식 중 하나!
-        // password_hash(일반문자비밀번호, PASSWORD_DEFAULT)
-        // 같은 비번이라도 만들때 마다 다른문자로 생성된다!
-        // 따라서 일반적인 복호화는 불가능하다!
-
-        // 암호화된 비밀번호로 변환하여 다시 할당!
-        // $passwd = password_hash($passwd, PASSWORD_DEFAULT);
-        // 암호화 변환된 문자는 60개의 문자이므로 DB 비번 컬럼의 
-        // 데이터 길이가 넉넉한지 반드시 확인해야한다!!!
-        // 만약 수정해야 한다면 DB에서 아래문장으로 쿼리를 날린다!
-        /*ALTER TABLE `board_free`
-        MODIFY COLUMN `passwd` varchar(100);*/
-        
-        //echo "비번: $passwd";
-        
-        /*echo "
-            이름: $name <br>
-            비번: $passwd <br>
-            이메일: $email <br>
-            홈페이지: $homepage <br>
-            제목: $subject <br>
-            내용: $content <br>
-        ";*/
-        
-        # DB 연결하기 - 위에서 연결한번 하였음!
-        //include "DBconn.inc";//주석!
-        
-        # 쿼리문 만들기
-        $sql = "INSERT INTO `board_free`
-            (`gno`,`reply_depth`,`name`, 
-             `passwd`, `email`, `homepage`, 
-             `subject`, `content`, `html_tag`, 
-             `register_date`, `client_ip`) 
-            VALUES 
-            (1,'1','$name',
-             '$passwd','$email','$homepage',
-             '$subject','$content','$html_tag',
-             '$register_date','$client_ip')";
-        
-        
-        //echo $sql;
-        
-        # 쿼리문 날리기(실행), 변수에 결과담기
-        //$res = $conn->query($sql);
-        
-        # 성공시 리스트페이지로 가기
-        // if($res){
-        //     echo "
-        //         <script>
-        //             alert('작성하신 글이 저장되었습니다!');
-        //             location.replace('list.php');
-        //         </script>
-        //     ";
-        // } ///////////// if /////////////////
-        // else{
-        //     echo $conn->error;
-        // } ///////////// else //////////////////
-        
-        
-        
+       
         
         
     } //// elseif문 : !strcmp($mode,"post") 일때 //////
