@@ -57,7 +57,7 @@ $(function () { /// jQB //////////////////
     }); ////////// swiper //////////////////
 
     ///// 페럴랙스 플러그인 호출 ////////
-    $(".plx").parallax("50%",0.7);
+    $(".plx").parallax("50%", 0.7);
 
 
 
@@ -194,11 +194,11 @@ $(function () { /// jQB //////////////////
             // 6.신상정보박스에 신상정보넣기
             $(".ibox").html(ssi)
 
-            // 7.신상정보박스 애니메이션 등장하기
-            .animate({
-                top: "105%",
-                opacity: 1
-            }, 300, "easeOutCirc");
+                // 7.신상정보박스 애니메이션 등장하기
+                .animate({
+                    top: "105%",
+                    opacity: 1
+                }, 300, "easeOutCirc");
 
         },
         function () { // out
@@ -213,13 +213,16 @@ $(function () { /// jQB //////////////////
 
     // 신상품 클릭시 상세페이지 이동하기 ///
     $(".flowImg a").click(function (e) {
-        //기본이동막기
+        // 기본이동막기
         e.preventDefault();
 
-        // a요소 부모 li의 class명 읽어오기
+        // 1. a요소 부모 li의 class명 읽어오기
         let cls = $(this).parent().attr("class");
-        console.log("클래스명:"+cls);
+        console.log("클래스명:" + cls);
 
+        // 2. 남자상세페이지로 위의 값을 가지고 넘어간다
+        location.href = "men_detail.html?gno="+cls;
+        // GET방식으로 URL을 통해 전달값을 보낸다!
 
 
     }); ///////// click //////////////////
