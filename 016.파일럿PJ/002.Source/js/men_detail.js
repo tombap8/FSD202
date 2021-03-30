@@ -47,6 +47,15 @@ jQuery(document).ready(function($){
     // 아이디명이 전달값에 들어온 이름으로 셋팅된다!
     $("#bigimg").attr("id",pm);
 
+    // 큰 이미지가 있는 경우
+    if(pm==="m1" || pm==="m2"){
+        $("#"+pm).attr("src","images/"+pm+"-1.jpg");
+    }
+    // 큰 이미지가 없는 경우
+    else{
+        $("#"+pm).attr("src","images/"+pm+".png");
+    }
+
 
 
 
