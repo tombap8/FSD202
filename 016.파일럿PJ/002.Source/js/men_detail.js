@@ -62,13 +62,21 @@ jQuery(document).ready(function($){
     // 코드변수
     let hcode = "";
 
-    // 썸네일이 있는 경우
+    // 썸네일이 있는 경우 //////
     if(pm==="m1" || pm==="m2"){
 
         for(let i=1; i<=6; i++){
             hcode += '<a href="images/'+pm+'-'+i+'.jpg" data-large="images/'+pm+'-'+i+'.jpg"><img src="images/'+pm+'-'+i+'.jpg" alt="썸네일" /></a>';
         } ////// for문 //////////////
 
+    } ////////// if /////////////////////
+
+    // 썸네일이 없는 경우 //////
+    else{
+
+        for(let i=1; i<=6; i++){
+            hcode += '<a href="images/'+pm+'.png" data-large="images/'+pm+'.png"><img src="images/'+pm+'.png" alt="썸네일" /></a>';
+        } ////// for문 //////////////
 
     } ////////// if /////////////////////
 
