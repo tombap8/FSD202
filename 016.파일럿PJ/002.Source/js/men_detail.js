@@ -21,6 +21,10 @@ let pm = location.href;
 // location.href 가 오른쪽에 있고 왼쪽 변수에 할당때는
 // url정보를 가져와서 변수에 할당한다!
 
+// url데이터 가공 - 물음표(?)로 잘라 뒤엣것 [1]
+// 그리고 이퀄(=)로 잘라 뒤엣것 [1]
+pm = pm.split("?")[1].split("=")[1];
+
 console.log("전달값:"+pm);
 
 
