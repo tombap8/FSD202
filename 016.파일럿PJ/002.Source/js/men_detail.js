@@ -39,21 +39,21 @@ console.log("전달값:" + pm);
 ////// 페이지 셋팅 /////////////////////////
 // $를 사용하지 않는 제이쿼리 호출은 멀티줌 플러그인 때문!
 // 전달값으로 내부에서 $를 쓸 수 있도록 전달값을 셋팅해야함!
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
     // 1. 큰 이미지 변경하기
     // - 축소/확대 플러그인을 적용하기 위해 
     // 적용할 큰 이미지의 id를 동적으로 변경한다!
     // 아이디명이 전달값에 들어온 이름으로 셋팅된다!
-    $("#bigimg").attr("id",pm);
+    $("#bigimg").attr("id", pm);
 
     // 큰 이미지가 있는 경우
-    if(pm==="m1" || pm==="m2"){
-        $("#"+pm).attr("src","images/"+pm+"-1.jpg");
+    if (pm === "m1" || pm === "m2") {
+        $("#" + pm).attr("src", "images/" + pm + "-1.jpg");
     }
     // 큰 이미지가 없는 경우
-    else{
-        $("#"+pm).attr("src","images/"+pm+".png");
+    else {
+        $("#" + pm).attr("src", "images/" + pm + ".png");
     }
 
     // 2. 썸네일 이미지 변경하기
@@ -63,19 +63,19 @@ jQuery(document).ready(function($){
     let hcode = "";
 
     // 썸네일이 있는 경우 //////
-    if(pm==="m1" || pm==="m2"){
+    if (pm === "m1" || pm === "m2") {
 
-        for(let i=1; i<=6; i++){
-            hcode += '<a href="images/'+pm+'-'+i+'.jpg" data-large="images/'+pm+'-'+i+'.jpg"><img src="images/'+pm+'-'+i+'.jpg" alt="썸네일" /></a>';
+        for (let i = 1; i <= 6; i++) {
+            hcode += '<a href="images/' + pm + '-' + i + '.jpg" data-large="images/' + pm + '-' + i + '.jpg"><img src="images/' + pm + '-' + i + '.jpg" alt="썸네일" /></a>';
         } ////// for문 //////////////
 
     } ////////// if /////////////////////
 
     // 썸네일이 없는 경우 //////
-    else{
+    else {
 
-        for(let i=1; i<=6; i++){
-            hcode += '<a href="images/'+pm+'.png" data-large="images/'+pm+'.png"><img src="images/'+pm+'.png" alt="썸네일" /></a>';
+        for (let i = 1; i <= 6; i++) {
+            hcode += '<a href="images/' + pm + '.png" data-large="images/' + pm + '.png"><img src="images/' + pm + '.png" alt="썸네일" /></a>';
         } ////// for문 //////////////
 
     } ////////// if /////////////////////
@@ -84,5 +84,4 @@ jQuery(document).ready(function($){
 
 
 
-});//////// jQB ///////////////////////////////
-
+}); //////// jQB ///////////////////////////////
