@@ -608,8 +608,8 @@ ul.pgc>li.txtc h3 a {
     top: 50%;
     right: 20%;
     width: 50%;
-    height: 30%;
-    outline: 3px dotted red;
+    height: 40%;
+    border: 3px double skyblue;
     background: url(../images/gong.jpg) no-repeat fixed center top/cover;
 }
 
