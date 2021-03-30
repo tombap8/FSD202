@@ -20,27 +20,27 @@
             //      메시지를 띄우려고 NOT(!)연산자로 결과를
             //      반대로 만들어 준것이다
 
-            if (!write_form.name.value) {
+            if (!modify_form.name.value) {
                 alert('이름을 입력하세요.');
-                write_form.name.focus(); //포커스 넣기
+                modify_form.name.focus(); //포커스 넣기
                 return; //돌아감(함수를 빠져나감!)
             }
 
-            if (!write_form.passwd.value) {
+            if (!modify_form.passwd.value) {
                 alert('패스워드를 입력하세요.');
-                write_form.passwd.focus();
+                modify_form.passwd.focus();
                 return;
             }
 
-            if (!write_form.subject.value) {
+            if (!modify_form.subject.value) {
                 alert('글 제목을 입력하세요.');
-                write_form.subject.focus();
+                modify_form.subject.focus();
                 return;
             }
 
-            if (!write_form.content.value) {
+            if (!modify_form.content.value) {
                 alert('글 내용을 입력하세요.');
-                write_form.content.focus();
+                modify_form.content.focus();
                 return;
             }
 
