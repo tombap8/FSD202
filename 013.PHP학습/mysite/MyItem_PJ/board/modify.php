@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>게시판 - 글쓰기 페이지</title>
+    <title>게시판 - 글 수정 페이지</title>
     <link rel="stylesheet" href="board.css">
     <script language="javascript">
         // 폼태그 안에서 버튼 클릭시 함수를 호출하면
@@ -70,7 +70,7 @@
     # isset() 메서드로 GET값을 확인한다.(있으면 1을 리턴함)
     # GET방식은 $_GET[키이름] 으로 확인한다
     
-    $mode="form";
+    $mode="";
     
     // GET방식으로 넘어온 "mode"라는 이름의 키가 있으면
     // 그 값을 $mode라는 변수에 담아라!
@@ -79,6 +79,16 @@
     } ///// if문 /////////////
     
     //echo "mode키값:$mode";
+
+    
+    // 레코드 고유번호
+    $modify_uno = "";
+
+    # 넘어온 수정 레코드 고유번호값을 읽어서 변수에 저장!
+    if(isset($_GET["modify_uno"])){
+        $modify_uno = $_GET["modify_uno"];
+    } ///// if문 /////////////
+
     
     # 변수의 문자값을 검증하는 메서드소개!
     # strcmp(변수,값) ->같지 않으면 1/true , 같으면 0/false
@@ -88,6 +98,8 @@
     
     # 만약 mode의 값이 "form"이면 아래 form태그를 출력한다!
     # !strcmp() -> 결과를 반대로 해서 값이 같으면 1/true
+    # 수정 페이지 이므로 해당 레코드번호에 맞는 데이터를 가져와서
+    # 수정 페이지 입력항목에 셋팅한다!!!
     if(!strcmp($mode,"form")){
     ?>
 
