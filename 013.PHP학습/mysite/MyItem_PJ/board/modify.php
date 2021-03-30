@@ -89,6 +89,10 @@
         $modify_uno = $_GET["modify_uno"];
     } ///// if문 /////////////
 
+
+    // 1. DB연결 문자열 불러오기(맨위에서 한번만 해준다!!!)
+    include "DBconn.inc";
+
     
     # 변수의 문자값을 검증하는 메서드소개!
     # strcmp(변수,값) ->같지 않으면 1/true , 같으면 0/false
@@ -101,6 +105,31 @@
     # 수정 페이지 이므로 해당 레코드번호에 맞는 데이터를 가져와서
     # 수정 페이지 입력항목에 셋팅한다!!!
     if(!strcmp($mode,"form")){
+
+        # 1. uno해당 레코드 읽어오기 위한 쿼리문 만들기
+        $sql = "SELECT * FROM `board_free` 
+                WHERE `uno`= $modify_uno";
+        
+        # 2. 쿼리날리기(실행!)
+        $res = $conn->query($sql);
+        
+        # 3. 결과가져오기
+        $row = $res->fetch_assoc();
+        
+        # 4. DB 컬럼 값 변수처리
+        // (1) 글쓴이
+        $name = $row["name"];
+        // (2) 홈페이지
+        $homepage = $row["homepage"];
+        // (4) 글 제목
+        $subject = $row["subject"];
+        // (5) 글 내용
+        $content = $row["content"];
+        // (6) html사용 여부(체크시 값이 "on"임)
+        $html_tag = $row["html_tag"];
+
+
+
     ?>
 
     <form name="write_form" method="post" action="write.php?mode=post">
@@ -111,7 +140,7 @@
                     이름
                 </td>
                 <td width="650">
-                    <input type="text" name="name" size="20">
+                    <input type="text" name="name" size="20" value="<?=$name?>">
                 </td>
             </tr>
             <tr>
