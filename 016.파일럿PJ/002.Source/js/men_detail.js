@@ -56,6 +56,23 @@ jQuery(document).ready(function($){
         $("#"+pm).attr("src","images/"+pm+".png");
     }
 
+    // 2. 썸네일 이미지 변경하기
+    // 6개의 이미지를 for문을 돌려서 코드를 만든다!
+
+    // 코드변수
+    let hcode = "";
+
+    // 썸네일이 있는 경우
+    if(pm==="m1" || pm==="m2"){
+
+        for(let i=1; i<=6; i++){
+            hcode += '<a href="images/'+pm+'-'+i+'.jpg" data-large="images/'+pm+'-'+i+'.jpg"><img src="images/'+pm+'-'+i+'.jpg" alt="썸네일" /></a>';
+        } ////// for문 //////////////
+
+
+    } ////////// if /////////////////////
+
+
 
 
 
