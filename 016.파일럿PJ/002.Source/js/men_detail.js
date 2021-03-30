@@ -100,7 +100,7 @@ jQuery(document).ready(function ($) {
     $("#gcode").text(ss[1]);
 
     // 3-3. 상품가격 넣기
-    $("#total").text(ss[2]);
+    $("#gprice").text(ss[2]);
 
 
 
