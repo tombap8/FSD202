@@ -254,36 +254,23 @@
             
             //echo " / 비번검증 : ".
             //    password_verify($mpw,$row["mpw"]);
+
+            # POST방식으로 넘겨 받은 입력된 비번
+            $passwd = $_POST["passwd"];
             
             # 비번검증
-            $allow = password_verify($mpw,$row["mpw"]);
+            $allow = password_verify($passwd,$row["passwd"]);
             ###################################
             # 비번검증 결과 통과시 세션을 시작하고 #
             # 세션변수에 개인정보할당
             if($allow){
-                
-                # 세션은 서버에 기록되는 사용자변수!
-                # 세션연결하기 : 사용자의 로그인 상태를 기록함!
-                session_start();// 세션이 시작됨!
-                # DB에서 가져온 값 세션변수에 할당하기!
-                # $_SESSION[변수명] - 서버세션변수에 기록!
-                
-                # 사용자 아이디
-                $_SESSION["mid"] = $mid;
-                # 사용자 이름
-                $_SESSION["name"] = $row["name"];
-                # 사용자 권한
-                $_SESSION["auth"] = $row["auth"];
-                
-                # 성공시
-                echo "ok";
-                
+                echo "업데이트 허용!";
             } /////// if //////////////////////
             
             # 비밀번호 불통과시 ##################
             else{
                 
-                echo "again";
+                echo "업데이트 불가";
                 
             } /////// else /////////////////////
             
@@ -323,7 +310,7 @@
         // 따라서 일반적인 복호화는 불가능하다!
 
         // 암호화된 비밀번호로 변환하여 다시 할당!
-        $passwd = password_hash($passwd, PASSWORD_DEFAULT);
+        // $passwd = password_hash($passwd, PASSWORD_DEFAULT);
         // 암호화 변환된 문자는 60개의 문자이므로 DB 비번 컬럼의 
         // 데이터 길이가 넉넉한지 반드시 확인해야한다!!!
         // 만약 수정해야 한다면 DB에서 아래문장으로 쿼리를 날린다!
@@ -360,20 +347,20 @@
         //echo $sql;
         
         # 쿼리문 날리기(실행), 변수에 결과담기
-        $res = $conn->query($sql);
+        //$res = $conn->query($sql);
         
         # 성공시 리스트페이지로 가기
-        if($res){
-            echo "
-                <script>
-                    alert('작성하신 글이 저장되었습니다!');
-                    location.replace('list.php');
-                </script>
-            ";
-        } ///////////// if /////////////////
-        else{
-            echo $conn->error;
-        } ///////////// else //////////////////
+        // if($res){
+        //     echo "
+        //         <script>
+        //             alert('작성하신 글이 저장되었습니다!');
+        //             location.replace('list.php');
+        //         </script>
+        //     ";
+        // } ///////////// if /////////////////
+        // else{
+        //     echo $conn->error;
+        // } ///////////// else //////////////////
         
         
         
