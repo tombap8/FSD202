@@ -275,12 +275,14 @@
                 $content = $_POST["content"];
                 $html_tag = $_POST["html_tag"];//추가(체크박스)
                 
-                
+                # html_tag "on"이 아닐때 처리
+                if(strcmp($html_tag,"on")) $html_tag = "";
+
                 # 쿼리문 만들기
                 $sql = "
                 UPDATE `board_free`
-                SET `name`='$name', `email`='$email', `homepage`='$homepage', `subject`='$subject', `content`='$content', `html_tag`='$html_tag'
-                ";
+                SET `name`='$name', `email`='$email', `homepage`='$homepage', `subject`='$subject', `content`='$content', `html_tag`='$html_tag' 
+                WHERE `uno`= $modify_uno";
                 
                 echo $sql;
                 
