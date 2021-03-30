@@ -600,3 +600,17 @@ ul.pgc>li.txtc h3 a {
     border: 4px double #fffefe;
     /*double은 이중선*/
 }
+
+/* 페럴랙스 박스 */
+.plx{
+    position: absolute;
+    /* 부모는? .pgc */
+    top: 50%;
+    right: 20%;
+    width: 50%;
+    height: 30%;
+    outline: 3px dotted red;
+    background: url(../images/gong.jpg) no-repeat fixed center top/cover;
+}
+
+
