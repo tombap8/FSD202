@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내가 만드는 패럴렉스!</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*세로%기준*/
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, #ddd, #ccc);
+        }
+
+        #wrap {
+            /*body기준으로 화면크기에 맞춤!*/
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+
+
+        #pabox {
+            position: relative;
+            top: 1000px;
+            height: 500px;
+            overflow: hidden;
+            font: bold 70px/500px Verdana;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 3px #777;
+            margin-bottom: 1000px;
+        }
+
+        #pabox img {
+            /*패럴렉스 이미지*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: top .3s ease-out;
+        }
+
+        .tit {
+            position: relative;
+            z-index: 1;
+            /*z-index는 static이 아닌 포지션을 주어야 적용된다!*/
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!--부드러운 스크롤 플러그인-->
+    <script src="js/jquery.smoothwheel.js"></script>
+    <script>
+        $(function() { /////// jQB ///////////////////////
+            console.log("로딩완료!");
+
+            // 부드러운 스크롤 적용함수 호출!
+            $("#wrap").smoothWheel();
+
+
+            // 패럴렉스는 스크롤 이벤트와 절대관계가 있다!
+
+            // 스크롤위치 저장변수
+            var scNum = 0;
+
+            // 패럴렉스 적용대상 위치값(기준값)
+            var pa1 = $("#pabox").offset().top;
+            // offset().top은 맨위에서부터 위치값
+            console.log("패럴위치:" + pa1);
+            
+            // 변경한계설정을 위한 패럴렉스 타겟 움직일 범위
+            // 이미지크기 - 박스크기
+            var pa1H = $("#pabox img").height() - 
+            $("#pabox").height();
+            
+            console.log("움직범위:"+pa1H);
+
+            // 패럴렉스적용 이동값 변수
+            var paNum = 0;
+            
+            // 시작범위(등장시작부터하려고 화면만큼 뺀다)
+            var startL = pa1 - $(window).height();
+            // 끝범위(박스가 보이는 동안에 하려고 박스높이만큼 더한다)
+            var endL = $("#pabox").height();
+
+            ////////////// scroll //////////////////
+            $("#wrap").scroll(function() {
+                // 스크롤바 위치값(scrollTop)
+                var scTop = $(this).scrollTop();
+
+                //console.log("스위:"+scTop);
+
+                // 패럴렉스 적용범위
+                // 기준값 전과후 범위
+                if (scTop > startL && scTop < pa1 + endL) {
+
+                    // 스크롤 이동방향 알아내기
+
+                    // 스크롤 위치 차이변수
+                    var diff = scNum - scTop;
+                    // 이전스크롤위치 - 현재스크롤위치
+                    //console.log("차이:"+diff);
+
+
+
+                    // 결과해석에 의한 방향:
+                    // 음수는 아랫방향(내려감)
+                    // 양수는 윗방향(올라감)
+                    if (diff < 0) {
+                        //console.log("내려감");
+                        // 패럴렉스 이동위치값 증가
+                        paNum += 1;
+
+                    } //// if ////////
+                    else {
+                        //console.log("올라감");
+                        // 패럴렉스 이동위치값 감소
+                        paNum -= 1;
+
+
+                    } //// else ////////
+
+                    // 한계값 설정(움직일 수 있는 양쪽한계)
+                    if (paNum < 0) paNum = 0;
+                    if (paNum > pa1H) paNum = pa1H;
+
+
+                    // 변경적용하기 ///
+                    $("#pabox img").css({
+                        top: -paNum + "px"
+                    }); ////// css /////////
+
+
+
+                    // 스크롤위치값 업데이트하기!!!(중요)
+                    scNum = scTop;
+
+
+                } /////////// if ////////////////////////////
+
+
+
+
+            }); ////// scroll /////////////////////
+
+
+
+        }); ////////// jQB ///////////////////////////////
+        /////////////////////////////////////////////////
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+
+
+        <div id="pabox">
+            <span class="tit">My Parallax Goooood!</span>
+            <img src="images/city.jpg" alt="도시">
+        </div>
+
+
+    </div>
+</body></html>

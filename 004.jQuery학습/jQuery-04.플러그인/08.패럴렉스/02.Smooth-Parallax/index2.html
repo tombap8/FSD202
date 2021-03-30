@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parallax plugin</title>
+    <style>
+        body {
+            height: 2000px;
+            background: url(images/city.jpg) repeat-y 0/100%;
+        }
+
+        #mini {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 100px);
+            /*transform 중앙이동을 할 경우 enllax플러그인에서
+            transform을 사용함으로인해 이 값이 지워지므로 
+            calc방식으로 중앙 이동을 하자!*/
+            width: 200px;
+        }
+    </style>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.enllax.min.js"></script>
+    <script>
+        $(function() { // jQB /////////////////
+
+            $("#mini").enllax();
+            
+            
+        }); ///////// jQB /////////////////////
+        /////////////////////////////////////
+    </script>
+</head>
+
+<body>
+
+
+    <img src="images/mini.png" alt="minions" id="mini" class="thumbnail" data-enllax-ratio="-2" data-enllax-type="foreground">
+
+
+
+
+
+
+</body></html>
