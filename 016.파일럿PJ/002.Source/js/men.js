@@ -216,6 +216,12 @@ $(function () { /// jQB //////////////////
         //기본이동막기
         e.preventDefault();
 
+        // a요소 부모 li의 class명 읽어오기
+        let cls = $(this).parent().attr("class");
+        console.log("클래스명:"+cls);
+
+
+
     }); ///////// click //////////////////
 
 }); ////////// jQB //////////////////////
