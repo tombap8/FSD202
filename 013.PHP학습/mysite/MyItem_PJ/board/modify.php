@@ -119,7 +119,9 @@
         # 4. DB 컬럼 값 변수처리
         // (1) 글쓴이
         $name = $row["name"];
-        // (2) 홈페이지
+        // (2) 이메일
+        $email = $row["email"];
+        // (3) 홈페이지
         $homepage = $row["homepage"];
         // (4) 글 제목
         $subject = $row["subject"];
@@ -156,7 +158,7 @@
                     이메일
                 </td>
                 <td>
-                    <input type="text" name="email" size="40">
+                    <input type="text" name="email" size="40" value="<?=$email?>">
                 </td>
             </tr>
             <tr>
@@ -164,7 +166,7 @@
                     홈페이지
                 </td>
                 <td>
-                    <input type="text" name="homepage" size="40">
+                    <input type="text" name="homepage" size="40" value="<?=$homepage?>">
                 </td>
             </tr>
             <tr>
@@ -172,7 +174,7 @@
                     글 제목
                 </td>
                 <td>
-                    <input type="text" name="subject" size="60">
+                    <input type="text" name="subject" size="60" value="<?=$subject?>">
                 </td>
             </tr>
             <tr>
@@ -180,9 +182,9 @@
                     글 내용
                 </td>
                 <td>
-                    HTML TAG <input type="checkbox" name="html_tag">
+                    HTML TAG <input type="checkbox" name="html_tag" <?php if(!strcmp($html_tag,"on")) echo "checked"; ?>>
                     <br>
-                    <textarea name="content" cols="60" rows="10"></textarea>
+                    <textarea name="content" cols="60" rows="10"><?=$content?></textarea>
                 </td>
             </tr>
         </table>
