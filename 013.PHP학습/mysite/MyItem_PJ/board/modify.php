@@ -273,10 +273,11 @@
                 $homepage = $_POST["homepage"];
                 $subject = $_POST["subject"];
                 $content = $_POST["content"];
-                $html_tag = $_POST["html_tag"];//추가(체크박스)
-                
-                # html_tag "on"이 아닐때 처리
-                if(strcmp($html_tag,"on")) $html_tag = "";
+                $html_tag = "";
+
+                //넘어온 값이 있으면 읽어오기
+                if(isset($_POST["html_tag"]))
+                    $html_tag = $_POST["html_tag"];//추가(체크박스)
 
                 # 쿼리문 만들기
                 $sql = "
@@ -284,26 +285,23 @@
                 SET `name`='$name', `email`='$email', `homepage`='$homepage', `subject`='$subject', `content`='$content', `html_tag`='$html_tag' 
                 WHERE `uno`= $modify_uno";
                 
-                echo $sql;
+                //echo $sql;
                 
                 # 쿼리문 날리기(실행), 변수에 결과담기
-                //$res = $conn->query($sql);
+                $res = $conn->query($sql);
                 
                 # 성공시 리스트페이지로 가기
-                // if($res){
-                //     echo "
-                //         <script>
-                //             alert('작성하신 글이 저장되었습니다!');
-                //             location.replace('list.php');
-                //         </script>
-                //     ";
-                // } ///////////// if /////////////////
-                // else{
-                //     echo $conn->error;
-                // } ///////////// else //////////////////
-                
-                
-                
+                if($res){
+                    echo "
+                        <script>
+                            alert('작성하신 글이 수정되었습니다!');
+                            location.replace('list.php');
+                        </script>
+                    ";
+                } ///////////// if /////////////////
+                else{
+                    echo $conn->error;
+                } ///////////// else //////////////////
 
 
 
