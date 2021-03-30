@@ -102,6 +102,9 @@ jQuery(document).ready(function ($) {
     // 3-3. 상품가격 넣기
     $("#gprice").text(ss[2]);
 
+    // 3-4. 토탈가격 초기셋팅 : "원"문자삭제
+    $("#total").text(ss[2].replace("원",""));
+
 
 
 
