@@ -205,6 +205,8 @@ jQuery(document).ready(function ($) {
 
         // 1. 기본단가 숫자로 만들기
         let price = $("#gprice").text();
+        price = price.replace(/,/g,"").replace("원","");
+        price = Number(price);//숫자형변환
         console.log("단가:"+price);
 
     };//////// chgTot함수 ///////////////////
