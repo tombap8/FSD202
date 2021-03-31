@@ -103,7 +103,35 @@ jQuery(document).ready(function ($) {
     $("#gprice").text(ss[2]);
 
     // 3-4. 토탈가격 초기셋팅 : "원"문자삭제
-    $("#total").text(ss[2].replace("원",""));
+    $("#total").text(ss[2].replace("원", ""));
+
+
+    // 4. 상품 상세이미지 넣기
+    // 대상: .dimgs 
+    // 여러이미지가 준비된 것
+    if (pm === "m1" || pm === "m2") {
+
+        for (let i = 1; i <= 6; i++) {
+            $(".dimgs")
+                .append('<img src="images/'+pm+'-'+i+'.jpg" alt="상세이미지">');
+        } /////// for ////////////
+
+    } //////// if ///////////////////////
+    // 이미지가 하나인 경우
+    else {
+
+        for (let i = 1; i <= 6; i++) {
+            $(".dimgs")
+                .append('<img src="images/'+pm+'.png" alt="상세이미지">');
+        } /////// for ////////////
+
+    } //////// if ///////////////////////
+
+
+
+
+
+
 
 
 
