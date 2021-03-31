@@ -11,6 +11,10 @@ $(function () { /// jQB //////////////////
         // 1. 클릭된 a요소의 순번알아오기
         let idx = $(this).index();
         console.log("순번:" + idx);
+        
+        // 맵2 클릭시
+        if(idx===3) location.href = "location2.php";
+
 
         // 2. a요소의 순번과 같은 번호의 .maps요소 보이기
         $(".maps").eq(idx).show()

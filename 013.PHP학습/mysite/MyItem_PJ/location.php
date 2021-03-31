@@ -25,9 +25,10 @@
             <h2 class="tit">오시는길</h2>
             <!--지도메뉴-->
             <h4 class="menu">
-                <a href="#" class="on">구글맵</a> |
-                <a href="#">네이버맵</a> |
-                <a href="#">다음맵</a>
+                <a href="#" class="on">구글맵</a> | 
+                <a href="#">네이버맵</a> | 
+                <a href="#">다음맵</a> | 
+                <a href="#">맵2</a>
             </h4>
             <!--맵박스-->
             <div id="map">
@@ -82,7 +83,7 @@
                 <!-- 3. 실행 스크립트 -->
                 <!--다음맵 클릭시에 함수로 실행변경!-->
         </main>
-        
+
         <!--3.하단영역-->
         <?php include "inc/info.inc" ?>
     </div>
