@@ -66,7 +66,18 @@
 (3) 내 아이디명으로 된 DB를 선택한다.
 (4) SQL탭 메뉴를 선택후 아까 생성한 SQL파일의 내용을 복사 후 붙여놓고 실행한다!
 
---> 소스에서 DB접속 정보 중 아이디, 비번을 수정한다!
+5. 소스에서 DB접속 정보 중 아이디, 비번을 수정한다!
+(1) C:\xampp\htdocs\mysite\MyItem_PJ\process\dbcon.inc
+(2) C:\xampp\htdocs\mysite\MyItem_PJ\admin\DBconn.inc
+(3) C:\xampp\htdocs\mysite\MyItem_PJ\board\DBconn.inc
+
+-> 공통으로 바뀔 부분 : 여기!!!!!!!!!! 부분
+
+/// DB연결 문자열 ///
+$servername = "localhost";//DB서버명
+$username = "여기!!!!!!!!!!";//DB최고관리자권한
+$password = "여기!!!!!!!!!!!";//root에는 비번이 없음
+$dbname = "여기!!!!!!!!!!!";//사용DB명
 
 
 
