@@ -143,7 +143,7 @@ jQuery(document).ready(function ($) {
     $("#"+pm).addimagezoom({
         zoomrange: [2, 10], //확대범위[최소비율, 최대비율]
         largeimage: imgsrc, //확대로볼이미지
-        magnifiersize: [300, 335], //확대화면 크기[가로,세로]
+        magnifiersize: [700, 700], //확대화면 크기[가로,세로]
         magnifierpos: "right", //확대화면 위치(공간확보 필수)
         cursorshade: true, //사진위확대범위 표시자(true보임)
         cursorshadecolor: "#000", //확대범위표시 색상
