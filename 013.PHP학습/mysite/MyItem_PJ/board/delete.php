@@ -8,24 +8,53 @@
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <link rel="stylesheet" type="text/css" href="board.css">
+    <script language = "javascript">
+    function check_form(form) {
+        if(!delete_form.passwd.value) {
+        alert('패스워드를 입력하세요.');
+        delete_form.passwd.focus();
+        return;
+        }
+
+        delete_form.submit();
+    }
+    </script>
  </head>
 
  <body>
-<script language = "javascript">
-  function check_form(form) {
-    if(!delete_form.passwd.value) {
-      alert('패스워드를 입력하세요.');
-      delete_form.passwd.focus();
-      return;
-    }
+<?php
+    # DB 연결하기
+    include "DBconn.inc";
 
-    delete_form.submit();
-  }
-</script>
+    # 처리모드
+    $mode = "";
+
+    if(isset($_GET["mode"])){
+        $mode = $_GET["mode"];
+    } ////// if //////////////
+
+    # 레코드번호
+    $delete_uno = "";
+
+    if(isset($_GET["delete_uno"])){
+        $mode = $_GET["delete_uno"];
+    } ////// if //////////////
+
+    # 처음에 페이지 열때 : $mode 값이 "form"일때
+    if(!strcmp($mode,"form")){
+
+        # 사용자명 쿼리
+        $sql = "";
+
+    } /////// $mode가 "form"일때 //////////////////////
+
+
+
+?>
   <form name = "delete_form" method = "post" 
   action = "delete.php?mode=post&delete_uno=9">
     <table class="dtbl">
-	<caption>방명록 게시판</caption>       
+	<caption>방명록 게시판 - 글 삭제</caption>       
      <tr> 
         <td align = "center">
           <b>맥아더</b> 님의 글을 삭제합니다.
