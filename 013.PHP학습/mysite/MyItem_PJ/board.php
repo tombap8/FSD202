@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Item PJ - 게시판 페이지</title>
-    <link rel="stylesheet" href="css/temp.css">
+    <link rel="stylesheet" href="css/board.css">
     <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/linksys.js"></script>
