@@ -193,8 +193,17 @@ jQuery(document).ready(function ($) {
         // val() 메서드 사용
         $("#sum").val(gnum);
 
+        // 총합계 변경 함수 호출
+        chgTot(gnum);
+
     });////////// click ////////////////
 
+    /// 8. 총합계 변경 함수 ////
+    let chgTot = function(){
+
+        console.log("총합계호출!");
+
+    };//////// chgTot함수 ///////////////////
 
 
 
