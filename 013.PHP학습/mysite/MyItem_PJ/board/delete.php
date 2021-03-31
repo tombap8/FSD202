@@ -44,20 +44,26 @@
     if(!strcmp($mode,"form")){
 
         # 사용자명 쿼리
-        $sql = "";
+        $sql = "SELECT `name` FROM `board_free` WHERE `uno` = $delete_uno";
 
-    } /////// $mode가 "form"일때 //////////////////////
+        # 쿼리 날리기 : query() 메서드사용
+        // $conn은 mysqli() 의 DB연결객체임!
+        $res = $conn->query($sql);
 
+        # 결과 레코드 가져오기 : fetch_assoc() 메서드 사용
+        $row = $res->fetch_assoc();
 
+        # "사용자명" 데이터 변수에 할당
+        $name = $row["name"];
 
 ?>
   <form name = "delete_form" method = "post" 
-  action = "delete.php?mode=post&delete_uno=9">
+  action = "delete.php?mode=post&delete_uno=<?=$delete_uno?>">
     <table class="dtbl">
 	<caption>방명록 게시판 - 글 삭제</caption>       
      <tr> 
         <td align = "center">
-          <b>맥아더</b> 님의 글을 삭제합니다.
+          <b><?=$name?></b> 님의 글을 삭제합니다.
         </td>
       </tr>
       <tr> 
@@ -78,6 +84,12 @@
       </tr> 
     </table> 
   </form>   
+
+  <?php
+    } /////// $mode가 "form"일때 //////////////////////
+
+
+  ?>
 
 
  </body>
