@@ -199,9 +199,13 @@ jQuery(document).ready(function ($) {
     });////////// click ////////////////
 
     /// 8. 총합계 변경 함수 ////
-    let chgTot = function(){
+    let chgTot = function(gnum){//gnum-수량
 
-        console.log("총합계호출!");
+        //console.log("총합계호출!"+gnum);
+
+        // 1. 기본단가 숫자로 만들기
+        let price = $("#gprice").text();
+        console.log("단가:"+price);
 
     };//////// chgTot함수 ///////////////////
 
