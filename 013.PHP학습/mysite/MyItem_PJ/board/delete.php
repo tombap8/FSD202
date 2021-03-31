@@ -96,7 +96,7 @@
         # 입력한 비밀번호 확인하기! : modify.php의 비번비교과 같음!
         // 쿼리문 만들기
         $sql = "SELECT `passwd` FROM `board_free` 
-                WHERE `uno`= $modify_uno";
+                WHERE `uno`= $delete_uno";
 
         //echo " / 쿼리문 : ".$sql;
 
