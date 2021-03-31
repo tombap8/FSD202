@@ -38,6 +38,7 @@
                 <!-- this키워드는 아이프레임 자신을 함수에 보내는 것임 -->
             </div>
         </main>
+        
         <!--3.하단영역-->
         <?php include "inc/info.inc" ?>
     </div>
