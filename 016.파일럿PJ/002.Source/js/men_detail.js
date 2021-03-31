@@ -213,11 +213,17 @@ jQuery(document).ready(function ($) {
         let sum = price * gnum;
         console.log("총합계:"+sum);
 
+        // 3. 총합계 출력하기
+        // 대상: #total
+        // 콤마찍어 출력하기 : numberWithCommas함수호출
+        $("#total").text(numberWithCommas(sum));
+
     };//////// chgTot함수 ///////////////////
 
 
-
-
-
-
 }); //////// jQB ///////////////////////////////
+
+//정규식함수(숫자 세자리마다 콤마해주는 기능)
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
