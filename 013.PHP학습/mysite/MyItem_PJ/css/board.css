@@ -8,11 +8,11 @@
 
 /* 게시판 박스 */
 #bbox{
-    width: 700px;
+    width: 750px;
     min-height: 300px;
     /* iframe높이값 크기에 맞춰서 변해야 하므로 height는 설정안함! */
     margin: 0 auto;
-    padding-bottom: 100px;
+    padding: 70px 0;
 }
 /* 아이프레임 */
 #bbox iframe{
