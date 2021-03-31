@@ -158,6 +158,14 @@ jQuery(document).ready(function ($) {
     // 축소/확대를 하므로 작은 이미지로 나오는 것을 고치려면
     // 이미지를 700X700으로 변경하여 넣으면 된다!
 
+    // 6. 뒤로가기 버튼
+    $(".back").click(function(e){
+        e.preventDefault();//기본막기
+        history.back();
+        
+
+    });/////// click /////////////////
+
 
 
 
