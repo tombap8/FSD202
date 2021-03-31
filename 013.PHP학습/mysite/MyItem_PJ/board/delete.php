@@ -33,11 +33,13 @@
         $mode = $_GET["mode"];
     } ////// if //////////////
 
+    //echo $mode;
+
     # 레코드번호
     $delete_uno = "";
 
     if(isset($_GET["delete_uno"])){
-        $mode = $_GET["delete_uno"];
+        $delete_uno = $_GET["delete_uno"];
     } ////// if //////////////
 
     # 처음에 페이지 열때 : $mode 값이 "form"일때
