@@ -173,11 +173,24 @@ jQuery(document).ready(function ($) {
 
     // 7. 구매수량 증감 버튼
     // 대상: .chg_num img
+    // 증감수
+    let gnum = 1;
     $(".chg_num img").click(function(){
         // 순번
         let idx = $(this).index();
         console.log("순번:"+idx);
 
+        // 증가 0, 감소 1
+        if(idx){//감소
+            gnum--;
+            if(gnum<1) gnum=1;
+        } ///////// if //////////////
+        else{//증가
+            gnum++;
+        } ///////// else //////////
+
+        //출력대상: #sum
+        $("#sum").text(gnum);
 
     });////////// click ////////////////
 
