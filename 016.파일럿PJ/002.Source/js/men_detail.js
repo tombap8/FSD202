@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
         for (let i = 1; i <= 6; i++) {
             $(".dimgs")
                 .append('<img src="images/'+pm+'-'+i+'.jpg" alt="상세이미지">');
-        } /////// for ////////////
+        } /////// for ///////////////////
 
     } //////// if ///////////////////////
     // 이미지가 하나인 경우
@@ -123,11 +123,41 @@ jQuery(document).ready(function ($) {
         for (let i = 1; i <= 6; i++) {
             $(".dimgs")
                 .append('<img src="images/'+pm+'.png" alt="상세이미지">');
-        } /////// for ////////////
+        } /////// for //////////////////
 
     } //////// if ///////////////////////
 
 
+    /// 5. 멀티줌 플러그인 적용하기 /////////////
+    // 대상: 동적으로 생성된 큰 이미지 아이디명을 사용
+
+    // 확대이미지 설정변수
+    let imgsrc;
+    if(pm==="m1"||pm==="m2"){
+        imgsrc = "images/"+pm+"-1.jpg";
+    }
+    else{
+        imgsrc = "images/"+pm+".png";
+    }
+
+    $("#"+pm).addimagezoom({
+        zoomrange: [2, 10], //확대범위[최소비율, 최대비율]
+        largeimage: imgsrc, //확대로볼이미지
+        magnifiersize: [300, 335], //확대화면 크기[가로,세로]
+        magnifierpos: "right", //확대화면 위치(공간확보 필수)
+        cursorshade: true, //사진위확대범위 표시자(true보임)
+        cursorshadecolor: "#000", //확대범위표시 색상
+        cursorshadeopacity: 0.4, //확대범위 투명도
+
+        //갤러리관련 설정
+        //갤러리 설정시 id명과 같은 이름의 class를 썸네일 박스에 주고 thumbs라는 클래스명도 주면 하나의 갤러리 셋이 완성된다.
+        descArea: "#description", //사진설명글 박스 div아이디
+        speed: 500, //썸네일 클릭시 큰이미지 나타나는 속도
+        descpos: true, //설명위치를 사진 바로 아래로 이동여부
+        imagevertcenter: true, //큰이미지의 세로 정렬 중앙
+        magvertcenter: true //확대화면 세로 중앙정렬
+
+    }); ///Demo3
 
 
 
