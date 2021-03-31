@@ -162,7 +162,12 @@ jQuery(document).ready(function ($) {
     $(".back").click(function(e){
         e.preventDefault();//기본막기
         history.back();
-        
+        /* 
+            history 페이지 이동에 관한 3가지 JS함수
+            1. history.back() - 이전에 열었던 페이지로 이동
+            2. history.go(숫자) - 숫자만큼 전후 페이지로 이동
+            3. history.forward() - 이후페이지로 다시 이동
+        */
 
     });/////// click /////////////////
 
