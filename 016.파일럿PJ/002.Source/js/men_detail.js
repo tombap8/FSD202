@@ -151,13 +151,8 @@ jQuery(document).ready(function ($) {
 
         //갤러리관련 설정
         //갤러리 설정시 id명과 같은 이름의 class를 썸네일 박스에 주고 thumbs라는 클래스명도 주면 하나의 갤러리 셋이 완성된다.
-        descArea: "#description", //사진설명글 박스 div아이디
-        speed: 500, //썸네일 클릭시 큰이미지 나타나는 속도
-        descpos: true, //설명위치를 사진 바로 아래로 이동여부
-        imagevertcenter: true, //큰이미지의 세로 정렬 중앙
-        magvertcenter: true //확대화면 세로 중앙정렬
 
-    }); ///Demo3
+    }); /// multizoom 플러그인 ////////////////
 
 
 
