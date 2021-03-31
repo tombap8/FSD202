@@ -90,6 +90,98 @@
   <?php
     } /////// $mode가 "form"일때 //////////////////////
 
+    # 삭제하기 : $mode가 "post"일때 ///////////////////
+    elseif(!strcmp($mode,"post")){
+
+        # 입력한 비밀번호 확인하기! : modify.php의 비번비교과 같음!
+        // 쿼리문 만들기
+        $sql = "SELECT `passwd` FROM `board_free` 
+                WHERE `uno`= $modify_uno";
+
+        //echo " / 쿼리문 : ".$sql;
+
+        # 쿼리 날리기
+        # $conn->query(쿼리문)
+        $res = $conn->query($sql);
+
+        # 1. 레코드 유무 판별
+        # $res->num_rows 결과레코드 개수를 담은 속성
+        $cnt = $res->num_rows;
+
+        //echo " / 레코드개수: $cnt";
+
+        # 2.레코드 개수가 1인 경우 비밀번호 비교하기
+        if($cnt){
+            
+            # $res->fetch_assoc() : 
+            # 결과집합의 레코드를 이름으로 가져온다!
+            $row = $res->fetch_assoc();
+
+            //echo " / DB비밀번호 : ".$row["mpw"];
+            
+            # 비번비교하기
+            # password_verify(입력된비번, DB해시비번)
+            
+            //echo " / 비번검증 : ".
+            //    password_verify($mpw,$row["mpw"]);
+
+            # POST방식으로 넘겨 받은 입력된 비번
+            $passwd = $_POST["passwd"];
+            
+            # 비번검증
+            $allow = password_verify($passwd,$row["passwd"]);
+            ###################################
+            # 비번검증 결과 통과시 세션을 시작하고 #
+            # 세션변수에 개인정보할당
+            if($allow){
+                // echo "삭제 허용!";
+
+                # 쿼리문 만들기
+                $sql = "
+                DELETE FROM `board_free` 
+                WHERE `uno`= $delete_uno";
+                
+                //echo $sql;
+                
+                # 쿼리문 날리기(실행), 변수에 결과담기
+                $res = $conn->query($sql);
+                
+                # 성공시 리스트페이지로 가기
+                if($res){
+                    echo "
+                        <script>
+                            alert('작성하신 글이 삭제되었습니다!');
+                            location.replace('list.php');
+                        </script>
+                    ";
+                } ///////////// if /////////////////
+                else{
+                    echo $conn->error;
+                } ///////////// else //////////////////
+
+
+
+            } /////// if //////////////////////
+            
+            # 비밀번호 불통과시 ##################
+            else{
+                
+                echo "
+                    <script>
+                        alert('비밀번호가 일치하지 않습니다!');
+                        history.back();
+                    </script>
+                ";
+                
+            } /////// else /////////////////////
+            
+            
+            
+        } ////////// if문 //////////////////////
+       
+
+
+    } ///////////// $mode가 "post"일때 ///////////////////
 
   ?>
 
