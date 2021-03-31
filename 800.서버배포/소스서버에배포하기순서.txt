@@ -79,6 +79,14 @@ $username = "여기!!!!!!!!!!";//DB최고관리자권한
 $password = "여기!!!!!!!!!!!";//root에는 비번이 없음
 $dbname = "여기!!!!!!!!!!!";//사용DB명
 
+예)
+/// DB연결 문자열 ///
+$servername = "localhost";//DB서버명
+$username = "tombap8";//DB최고관리자권한
+$password = "dfusdif312423423";//root에는 비번이 없음
+$dbname = "tombap8";//사용DB명
+
+
 
 
 	
