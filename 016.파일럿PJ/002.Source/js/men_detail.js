@@ -171,6 +171,15 @@ jQuery(document).ready(function ($) {
 
     });/////// click /////////////////
 
+    // 7. 구매수량 증감 버튼
+    // 대상: .chg_num img
+    $(".chg_num img").click(function(){
+        // 순번
+        let idx = $(this).index();
+        console.log("순번:"+idx);
+
+
+    });////////// click ////////////////
 
 
 
