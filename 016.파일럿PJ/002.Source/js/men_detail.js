@@ -209,6 +209,10 @@ jQuery(document).ready(function ($) {
         price = Number(price);//숫자형변환
         console.log("단가:"+price);
 
+        // 2. 총합계 계산하기: 기본단가 X 수량
+        let sum = price * gnum;
+        console.log("총합계:"+sum);
+
     };//////// chgTot함수 ///////////////////
 
 
