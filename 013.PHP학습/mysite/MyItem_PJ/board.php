@@ -16,7 +16,7 @@
             let iframeHeight = 
             (i).contentWindow.document.body.scrollHeight;
             // 2. 아이프레임에 높이값 적용하기
-            (i).height = iframeHeight;
+            (i).height = iframeHeight + 50;//50px정도 보정함
         } ////// autoResize 함수 /////////////
     </script>
 </head>
