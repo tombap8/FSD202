@@ -189,8 +189,9 @@ jQuery(document).ready(function ($) {
             gnum++;
         } ///////// else //////////
 
-        //출력대상: #sum
-        $("#sum").text(gnum);
+        //출력대상: #sum (input요소니까 value값으로 넣어줌)
+        // val() 메서드 사용
+        $("#sum").val(gnum);
 
     });////////// click ////////////////
 
