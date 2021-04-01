@@ -1,8 +1,13 @@
 [ 꼭 알고 마무리하자! ]
 
 1. JS확장판 : Angular , React , Vue
+
 2. 그누보드 : PHP게시판+커뮤니티+관리자페이지
+https://sir.kr/main/g5/
 
 3. 워드프레스 : PHP설치형 블로그
+https://wordpress.org/download/ 
+
 4. 부트스트랩: JS+CSS+HTML 프레임워크
+https://www.w3schools.com/bootstrap/default.asp
 
