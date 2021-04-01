@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!-- 
+        주의사항: type 지정으로 "text/babel"로 해야함!
+        수순 JS만 사용하는게 아니어서 babel이라는 언어지정이 필요!
+    -->
+    <script type="text/babel">
+        // JS에서 클래스란?
+        // - 함수는 단순 기능을 명령어로 구성한 메모리 구역이라면
+        // 클래스는 이런 함수나 변수 모든 요소를 하나의 구역으로 
+        // 설정하여 확장성 있는 모델을 구성해주는 오브젝트임!
+        // React.Component 는 기본 모델이 리엑트에서 온것임!
+        class Showme extends React.Component{
+            // 클래스의 구성요소 중 메서드
+            render() {
+                return <h1>나는 풀스택개발자다!</h1>
+            }
+        } /////////  class ///////////////////////
+
+        // html로드구역 //////////////////////////
+        window.addEventListener("load",function(){
+
+            // 가상돔(Virtual DOM)으로 리엑트 구성하여 넣기
+            ReactDOM.render(<Showme />, document.getElementById("mydiv"));
+            // ReactDOM.render(태그형태로 출력할 클래스호출, 출력할 요소);
+
+
+
+        });////// load ///////////////////////////
+
+
+    </script>
+
+
+</head>
+<body>
+    <!-- 출력요소 -->
+    <div id="mydiv"></div>
+    
+</body>
+</html>
