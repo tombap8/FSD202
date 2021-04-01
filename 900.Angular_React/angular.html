@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body>
+    <!-- 
+        앵귤러 JS는 속성 형태로 요소에 코딩된다!
+        속성의 시작은 앵귤러의 ng를 따서 앞에 사용함
+        1. ng-app 속성: 어플리케이션으로 사용할 요소
+        2. ng-model 속성: 디자인요소의 작동 모델을 지정함
+        3. ng-bind 속성: ng-model과 연동할 뷰요소를 지정함
+                        - 이때 ng-model의 값과 같은 이름을 쓴다!
+
+        [ MVC 개발유형을 따라 만들어진 라이브러리 ]
+        M : Model - 비지니스 로직을 구현하는 파트
+        V : View - 화면출력을 위한 파트
+        C : Controler - 모델과 뷰 사이의 상호작용을 위한 파트
+     -->
+    <div ng-app="">
+        <!-- 출력형태나 데이터를 지정하는 모델요소 -->
+        <p>
+            Name: <input type="text" ng-model="name">
+        </p>
+        <!-- 출력할 뷰요소 -->
+        <p ng-bind="name"></p>
+    </div>
+
+    
+</body>
+</html>
