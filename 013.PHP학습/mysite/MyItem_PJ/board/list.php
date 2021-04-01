@@ -33,6 +33,14 @@
     #### 만약 $mode가 "read"이면 아래쪽 읽기테이블 출력 ###
     ##################################################
     if(!strcmp($mode,"read")){
+
+        # 0. 조회수 증가하기
+        # (1) 조회수 증가를 위한 쿼리문(update)
+        $sql = "UPDATE `board_free` 
+            SET `hit`= `hit`+1
+            WHERE `uno` = $read_uno";
+        # (2) 조회수 쿼리 날리기(반영만 하면 끝!)
+        $res = $conn->query($sql);
         
         # 1. uno해당 레코드 읽어오기 위한 쿼리문 만들기
         $sql = "SELECT * FROM `board_free` 
